@@ -1,0 +1,18 @@
+site_name: Epip Encounters
+site_url: https://pinewood.team/epip/
+theme: readthedocs
+
+nav:
+  - Home: index.md
+  - Patch Notes: patchnotes.md
+  - Documentation: 
+    - "Introduction": "docs.md"
+    - "Game":
+      - "Root": "Game/index.md"
+      - "Character": "Game/Character.md"
+      - "Item": "Game/Item.md"
+    - "Client":
+      - "Root": "Client/index.md"
+      - "Input": "Client/input.md"
+      - "UI":
+        - "Examine": "Client/UI/Examine.md"
