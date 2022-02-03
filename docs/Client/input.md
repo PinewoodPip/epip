@@ -5,7 +5,6 @@
 <doc lib="ClientInput">
 
 ```lua
----@type Input
 ---Returns true if the game is unpaused and there are no focused elements in Flash.
 ---@return boolean
 function Input.IsAcceptingInput() -- Client-only
@@ -21,7 +20,7 @@ function Input.KeyHeld(id) -- Client-only
 ---Returns whether a modifier key is being held.  
 ---Set modifier keys with `Input.SetModifierKey`.  
 ---Default is ToggleSneakCones.
----@param num number|nil Which modifier key to check.
+---@param num number? Which modifier key to check.
 ---@return boolean
 function Input.IsHoldingModifierKey(num) -- Client-only
 ```

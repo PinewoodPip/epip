@@ -8,7 +8,7 @@ This change will be a long process. There are still many features of the mod tha
 
 Anything that is documented here is considered stable and unlikely to change drastically - **any changes to these calls/systems will be mentioned in future patch notes.**
 
-The definitions here are auto-generated from EmmyLua annotations within the scripts (using `update_docs.py` found in the mod). Functions are tagged through `@generic` to denote tags like "Client-only", "EE-only". Declaring these at the top of the file tags all functions in the file.
+The definitions here are auto-generated from EmmyLua annotations within the scripts (using `update_docs.py` found in the mod). Functions are tagged through `@meta` to denote tags like "Client-only", "EE-only". Declaring these at the top of the file tags all functions in the file.
 
 ## Introduction
 
@@ -54,25 +54,25 @@ end)
 Hooks are not limited to changing primitives, they are often also used in UI scripts to allow for manipulation of the data that the engine is passing it, parsed into handy tables. The following example adds Critical Chance to the Examine UI.
 
 ```lua
--- Add Critical Damage to the examine menu when its data is being updated.
-Client.UI.Examine:RegisterHook("ExamineDataManipulation", function(examineData)
+-- Add Critical Chance to the examine menu when its data is being updated.
+Client.UI.Examine:RegisterHook("Update", function(examineData)
     local char = Client.UI.Examine.GetCharacter()
 
-    -- Do nothing for non-character examines
-    if not char then return nil end
-
-    local critEntry = {
-        id = 9,
-        label = "Critical Chance",
-        iconID = Examine.ICONS.CRITICAL_CHANCE,
-        value = string.format("%d%%", char.Stats.CriticalChance),
-        type = Examine.ENTRY_TYPES.STAT,
-    }
-
-    -- Insert crit chance after damage
-    local damageElement,damageIndex,damageCategory = examineData:GetElement(4, 6)
-
-    examineData:InsertElement(damageCategory.id, critEntry, damageIndex + 1)
+    -- Only do this for characters being examined
+    if char then
+        local critEntry = {
+            id = 9,
+            label = "Critical Chance",
+            iconID = Client.UI.Examine.ICONS.CRITICAL_CHANCE,
+            value = string.format("%d%%", char.Stats.CriticalChance),
+            type = Client.UI.Examine.ENTRY_TYPES.STAT,
+        }
+    
+        -- Insert crit chance after damage
+        local damageElement,damageIndex,damageCategory = examineData:GetElement(4, 6)
+    
+        examineData:InsertElement(damageCategory.id, critEntry, damageIndex + 1)
+    end
 
     return examineData
 end)
@@ -82,6 +82,7 @@ end)
 The following EmmyLua aliases are defined (in `EpipIdeHelpers.lua`):
 
 ```lua
+
 ---@alias Entity EclCharacter | EsvCharacter | EclItem | EsvItem
 ---@alias Character EsvCharacter | EclCharacter
 ---@alias Item EclItem | EsvItem
@@ -90,4 +91,17 @@ The following EmmyLua aliases are defined (in `EpipIdeHelpers.lua`):
 ---@alias EquipmentSubType "Platemail" | "Robes" | "Leather" | "Belt" | "Ring" | "Amulet" | "Shield" | "Dagger" | "Sword" | "Axe" | "Mace" | "Sword" | "Spear" | "Staff" | "Bow" | "Crossbow" | "Wand"
 
 ---@alias StackType "Battered" | "B" | "Harried" | "H"
+
+---@alias Gender "Male" | "Female"
+---@alias Race "Human" | "Elf" | "Dwarf" | "Lizard"
+
+-- For doc generation; does not actually work in IDE
+---@class Event
+---@class Hook
+
+---------------------------------------------
+-- UI
+---------------------------------------------
+
+---@alias MessageBoxType "Message" | "Input"
 ```

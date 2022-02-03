@@ -7,6 +7,7 @@ The "Client character" here refers to the currently-controlled character on the 
 <doc fields="Client">
 
 ```lua
+---@class Client
 ---@field UI ClientUI
 ---@field Input ClientInput
 ---@field IS_HOST boolean Internal; do not set!
@@ -17,7 +18,6 @@ The "Client character" here refers to the currently-controlled character on the 
 <doc lib="Client">
 
 ```lua
----@type Client
 ---Get the Source Infusion level the client character is currently preparing.
 ---@return number Infusion level
 function Client.GetPreparedInfusionLevel() -- Client-only, EE-related
@@ -28,13 +28,22 @@ function Client.GetPreparedInfusionLevel() -- Client-only, EE-related
 function Client.IsPreparingInfusion() -- Client-only, EE-related
 ```
 ```lua
----Returns true if the client is the host of the current session.
+---Returns true if the client is the host of the current session.  
+---Relies on GameMenu.
 ---@return boolean
 function Client.IsHost() -- Client-only
 ```
 ```lua
----Returns the currently-controlled character on the client.
+---Returns the currently-controlled character on the client.  
+---Checks StatusConsole, then CharacterCreation as a fallback.
 ---@return EclCharacter
 function Client.GetCharacter() -- Client-only
+```
+```lua
+--- Copies text to the clipboard.  
+---Some characters, like newlines, will be trimmed out as per the vanilla scripting on the swf.
+---Relies on MessageBox.
+---@param text string
+function Client.CopyToClipboard(text) -- Client-only
 ```
 </doc>

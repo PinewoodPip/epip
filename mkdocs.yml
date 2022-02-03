@@ -16,3 +16,4 @@ nav:
       - "Input": "Client/input.md"
       - "UI":
         - "Examine": "Client/UI/Examine.md"
+        - "MessageBox": "Client/UI/MessageBox.md"
