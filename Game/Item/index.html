@@ -84,6 +84,20 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/MessageBox/">MessageBox</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/CharacterSheet/">CharacterSheet</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Epip</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Epip/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Epip/StatsTab/">StatsTab</a>
+                </li>
     </ul>
                 </li>
     </ul>
@@ -197,7 +211,7 @@ function Game.Items.ApplyDye(item, dye)
 ---@return string,Dye The dye ID and data table.
 function Game.Items.GetCurrentDye(item)
 </code></pre>
-<pre><code class="language-lua">--- Returns true if item is equipped by char. Assumes the item cannot be equipped into an unindented slot. Rings are checked for both slots.
+<pre><code class="language-lua">--- Returns true if item is equipped by char. Assumes the item cannot be equipped into an unintended slot. Rings are checked for both slots.
 ---@param char Character
 ---@param item Item
 ---@return boolean

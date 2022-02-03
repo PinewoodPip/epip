@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://pinewood.team/epip/Client/input/">
+  <link rel="canonical" href="https://pinewood.team/epip/Epip/StatsTab/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Input - Epip Encounters</title>
+  <title>StatsTab - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Input";
-    var mkdocs_page_input_path = "Client\\input.md";
-    var mkdocs_page_url = "/epip/Client/input/";
+    var mkdocs_page_name = "StatsTab";
+    var mkdocs_page_input_path = "Epip\\StatsTab.md";
+    var mkdocs_page_url = "/epip/Epip/StatsTab/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -68,35 +68,33 @@
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Client</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../">Root</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Client/">Root</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Input</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Client/input/">Input</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">UI</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../UI/Examine/">Examine</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/Examine/">Examine</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../UI/MessageBox/">MessageBox</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/MessageBox/">MessageBox</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../UI/CharacterSheet/">CharacterSheet</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/CharacterSheet/">CharacterSheet</a>
                 </li>
     </ul>
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Epip</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Epip/">Root</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Epip</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Root</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../Epip/StatsTab/">StatsTab</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Features</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">StatsTab</a>
+    <ul class="current">
+    </ul>
                 </li>
     </ul>
                 </li>
@@ -128,11 +126,15 @@
         
       
         
-          <li>Client &raquo;</li>
+          <li>Epip &raquo;</li>
+        
+      
+        
+          <li>Features &raquo;</li>
         
       
     
-    <li>Input</li>
+    <li>StatsTab</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -144,33 +146,20 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="input">Input</h1>
-<p><code>Client.Input</code> contains input-related queries.</p>
-<h2 id="functions">Functions</h2>
-<p><doc lib="ClientInput"></p>
-<pre><code class="language-lua">---Returns true if the game is unpaused and there are no focused elements in Flash.
----@return boolean
-function Input.IsAcceptingInput() -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Returns true if the key bound to the event `id` is being held.  
----Note that not all InputEvents support being held.
----@param id number Input event id.
----@return boolean
-function Input.KeyHeld(id) -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Returns whether a modifier key is being held.  
----Set modifier keys with `Input.SetModifierKey`.  
----Default is ToggleSneakCones.
----@param num number? Which modifier key to check.
----@return boolean
-function Input.IsHoldingModifierKey(num) -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Sets the InputEvent for a modifier key.  
----You can declare as many modifier keys as you want,  
----and query them with `Input.IsHoldingModifierKey()`.
----@param event number The InputEvent.
----@param num number Which modifier key to set.
-function Input.SetModifierKey(event, num) -- Client-only
+                <h1 id="statstab">StatsTab</h1>
+<p><code>Epip.Features.StatsTab</code> implements collapsable categories for the Character Sheet stats tab, as well as Ascension node stats, server-side value calculations and synching, and all stats present in the mod by default.</p>
+<p>TODO document the rest of the system - Only Shared.lua is here atm.</p>
+<h1 id="functions">Functions</h1>
+<p><doc lib="EpipStatsTab"></p>
+<pre><code class="language-lua">---@alias EpipStatCategoryBehaviour &quot;GreyOut&quot; | &quot;Hidden&quot;
+---Registers a stat bound to an Ascension node.
+---@param clusterId string
+---@param nodeIndex number
+---@param nodeSubIndex number
+---@param keyword Keyword
+---@param keywordType KeywordBoonType
+---@param statData EpipStat Stat metadata.
+function EpipStats.AddNodeStat(clusterId, nodeIndex, nodeSubIndex, keyword, keywordType, statData) -- Must be called on both contexts
 </code></pre>
 <p></doc></p>
               
@@ -179,8 +168,6 @@ function Input.SetModifierKey(event, num) -- Client-only
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../UI/Examine/" class="btn btn-neutral float-right" title="Examine">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../" class="btn btn-neutral" title="Root"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -211,8 +198,6 @@ function Input.SetModifierKey(event, num) -- Client-only
     
       <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../UI/Examine/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -82,6 +82,20 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../MessageBox/">MessageBox</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../CharacterSheet/">CharacterSheet</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Epip</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Epip/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Epip/StatsTab/">StatsTab</a>
+                </li>
     </ul>
                 </li>
     </ul>
@@ -172,7 +186,7 @@ function ExamineData:InsertElement(category, element, index) -- Client-only
 function ExamineData:GetElement(category, statID) -- Client-only
 </code></pre>
 <pre><code class="language-lua">---Get the character currently being examined.
----@return Character
+---@return EclCharacter
 function Examine.GetCharacter() -- Client-only
 </code></pre>
 <p></doc></p>

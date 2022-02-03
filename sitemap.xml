@@ -26,12 +26,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://pinewood.team/epip/Client/UI/CharacterSheet/</loc>
+         <lastmod>2022-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://pinewood.team/epip/Client/UI/Examine/</loc>
          <lastmod>2022-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pinewood.team/epip/Client/UI/MessageBox/</loc>
+         <lastmod>2022-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pinewood.team/epip/Epip/</loc>
+         <lastmod>2022-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pinewood.team/epip/Epip/StatsTab/</loc>
          <lastmod>2022-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>

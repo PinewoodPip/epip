@@ -88,6 +88,20 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../Client/UI/MessageBox/">MessageBox</a>
                 </li>
+                <li class="toctree-l3"><a class="reference internal" href="../Client/UI/CharacterSheet/">CharacterSheet</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Epip</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Epip/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../Epip/StatsTab/">StatsTab</a>
+                </li>
     </ul>
                 </li>
     </ul>
@@ -207,6 +221,9 @@ end)
 ---@alias Gender &quot;Male&quot; | &quot;Female&quot;
 ---@alias Race &quot;Human&quot; | &quot;Elf&quot; | &quot;Dwarf&quot; | &quot;Lizard&quot;
 
+---@alias Keyword &quot;ViolentStrike&quot; | &quot;VitalityVoid&quot; | &quot;Predator&quot; | &quot;Elementalist&quot; | &quot;Prosperity&quot; | &quot;Paucity&quot; | &quot;IncarnateChampion&quot; | &quot;Defiance&quot; | &quot;Occultist&quot; | &quot;Disintegrate&quot; | &quot;Wither&quot; | &quot;Centurion&quot; | &quot;Abeyance&quot; | &quot;Benevolence&quot; | &quot;Presence&quot; | &quot;Ward&quot; | &quot;Celestial&quot; | &quot;Purity&quot; | &quot;VolatileArmor&quot; | &quot;Voracity&quot;
+---@alias KeywordBoonType &quot;Activator&quot; | &quot;Mutator&quot;
+
 -- For doc generation; does not actually work in IDE
 ---@class Event
 ---@class Hook
@@ -216,6 +233,38 @@ end)
 ---------------------------------------------
 
 ---@alias MessageBoxType &quot;Message&quot; | &quot;Input&quot;
+
+---------------------------------------------
+-- GAME.TOOLTIP
+---------------------------------------------
+
+---@class TooltipData
+---@field Data table[]
+
+---@param data table[]
+---@return TooltipData
+function TooltipData:Create(data) end
+
+---@param type string
+---@return table
+function TooltipData:GetElement(type) end
+
+---@param type string
+---@return table[]
+function TooltipData:GetElements(type) end
+
+---@param type string
+function TooltipData:RemoveElements(type) end
+
+---@param type string
+function TooltipData:RemoveElement(type) end
+
+---@param ele table
+function TooltipData:AppendElement(ele) end
+
+---@param ele table
+---@param appendAfter table
+function TooltipData:AppendElementAfter(ele, appendAfter) end
 </code></pre>
               
             </div>
