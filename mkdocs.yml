@@ -17,3 +17,8 @@ nav:
       - "UI":
         - "Examine": "Client/UI/Examine.md"
         - "MessageBox": "Client/UI/MessageBox.md"
+        - "CharacterSheet": "Client/UI/CharacterSheet.md"
+    - "Epip":
+      - "Root": "Epip/index.md"
+      - "Features":
+        - "StatsTab": "Epip/StatsTab.md"

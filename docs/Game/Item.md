@@ -80,7 +80,7 @@ function Game.Items.ApplyDye(item, dye)
 function Game.Items.GetCurrentDye(item)
 ```
 ```lua
---- Returns true if item is equipped by char. Assumes the item cannot be equipped into an unindented slot. Rings are checked for both slots.
+--- Returns true if item is equipped by char. Assumes the item cannot be equipped into an unintended slot. Rings are checked for both slots.
 ---@param char Character
 ---@param item Item
 ---@return boolean

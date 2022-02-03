@@ -52,7 +52,7 @@ function ExamineData:GetElement(category, statID) -- Client-only
 ```
 ```lua
 ---Get the character currently being examined.
----@return Character
+---@return EclCharacter
 function Examine.GetCharacter() -- Client-only
 ```
 </doc>

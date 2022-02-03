@@ -95,6 +95,9 @@ The following EmmyLua aliases are defined (in `EpipIdeHelpers.lua`):
 ---@alias Gender "Male" | "Female"
 ---@alias Race "Human" | "Elf" | "Dwarf" | "Lizard"
 
+---@alias Keyword "ViolentStrike" | "VitalityVoid" | "Predator" | "Elementalist" | "Prosperity" | "Paucity" | "IncarnateChampion" | "Defiance" | "Occultist" | "Disintegrate" | "Wither" | "Centurion" | "Abeyance" | "Benevolence" | "Presence" | "Ward" | "Celestial" | "Purity" | "VolatileArmor" | "Voracity"
+---@alias KeywordBoonType "Activator" | "Mutator"
+
 -- For doc generation; does not actually work in IDE
 ---@class Event
 ---@class Hook
@@ -104,4 +107,36 @@ The following EmmyLua aliases are defined (in `EpipIdeHelpers.lua`):
 ---------------------------------------------
 
 ---@alias MessageBoxType "Message" | "Input"
+
+---------------------------------------------
+-- GAME.TOOLTIP
+---------------------------------------------
+
+---@class TooltipData
+---@field Data table[]
+
+---@param data table[]
+---@return TooltipData
+function TooltipData:Create(data) end
+
+---@param type string
+---@return table
+function TooltipData:GetElement(type) end
+
+---@param type string
+---@return table[]
+function TooltipData:GetElements(type) end
+
+---@param type string
+function TooltipData:RemoveElements(type) end
+
+---@param type string
+function TooltipData:RemoveElement(type) end
+
+---@param ele table
+function TooltipData:AppendElement(ele) end
+
+---@param ele table
+---@param appendAfter table
+function TooltipData:AppendElementAfter(ele, appendAfter) end
 ```
