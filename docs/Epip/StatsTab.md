@@ -50,7 +50,7 @@ Finally, you need to register a hook to update the stat's value. This can be don
 If the stat's value can be queried from the client context, you only need a simple hook on the client:
 
 ```lua
-Tab.RegisterStatValueHook("PartyFunds_Gold", function(value, data, char)
+StatsTab.RegisterStatValueHook("PartyFunds_Gold", function(value, data, char)
     return Game.Items.GetPartyTemplateCount("LOOT_Gold_A_1c3c9c74-34a1-4685-989e-410dc080be6f")
 end)
 ```
@@ -58,7 +58,7 @@ end)
 For stats that require info from the server, there is a special system in place that synchronizes stat values with tags. To set a stat's value from the server context, you need to use a different event (note it's not a hook, you must call `UpdateTaggedStat` yourself). On the client, the stat's value will be queried automatically from such tag if it is set; the advantage here being that there is no need to request stats from the server every time the tab is opened.
 
 ```lua
-EpipStats.RegisterStatUpdateListener("Keyword_VitalityVoid_Power", function(char, data)
+StatsTab.RegisterStatUpdateListener("Keyword_VitalityVoid_Power", function(char, data)
     Osi.QRY_AMER_KeywordStat_VitalityVoid_GetPower(char.MyGuid, 1)
 
     local value = Osi.DB_AMER_KeywordStat_OUTPUT_Real:Get(nil)[1][1] * 100
@@ -78,7 +78,7 @@ There's just one small catch: owned nodes are only tracked if there's a stat def
 A category holds stats, and can be collapsed in the menu. Stats only render if they're within a category that is open. They can be added with `RegisterCategory(id: string, data: EpipStatCategory, index?: integer)`. See the `EpipStatCategory` struct.
 
 ```lua
-EpipStats.RegisterCategory("Vitals", {
+StatsTab.RegisterCategory("Vitals", {
     Header = "<font size='21'>————— Vitals —————</font>",
     Name = "Vitals",
     Behaviour = "GreyOut",
