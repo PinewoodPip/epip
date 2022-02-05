@@ -2,7 +2,22 @@
 
 ## v1044 (upcoming)
 Requires v56 of the extender.
-[Download here](https://drive.google.com/file/d/1pYIXbo9Nw_5FllYnvGtfGNDeftDOWyBP/view?usp=sharing). (26/1/22)
+[Download here](https://drive.google.com/file/d/1pYIXbo9Nw_5FllYnvGtfGNDeftDOWyBP/view?usp=sharing). (5/2/22)
+
+### 5/2/22 Docs inauguration patch :flashed:
+
+- Added new stats to the stats tab (more coming later):
+	- Party gold, splinters
+	- Celestial restoration
+	- Vitality Void damage, radius
+	- Prosperity threshold
+- Rewrote the ingame options menu; the mod's settings now gets its own tab instead of being stuffed into Gameplay
+- You can now switch to and from Tactician difficulty at any time from settings
+- Improved context menu scrolling
+- Touchups to MessageBox, Examine
+- Cleaned up Utilities.lua, removed old unused methods
+- Removed support for the archaic config file structure (from before the ingame settings menu; very old)
+- Created documentation for `Game`, OptionsSettings, MessageBox, StatsTab, Examine, and CharacterSheet
 
 ### 26/1/22: birthday patch :flashed:
 
