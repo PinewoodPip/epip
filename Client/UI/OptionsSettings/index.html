@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/epip/Client/UI/OptionsSettings/">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>OptionsSettings - Epip Encounters</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "OptionsSettings";
+    var mkdocs_page_input_path = "Client\\UI\\OptionsSettings.md";
+    var mkdocs_page_url = "/epip/Client/UI/OptionsSettings/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Epip Encounters</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../patchnotes/">Patch Notes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Game</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Game/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Game/Character/">Character</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Game/Item/">Item</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Client</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../input/">Input</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">UI</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">OptionsSettings</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#adding-settings">Adding settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#events">Events</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../Examine/">Examine</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../MessageBox/">MessageBox</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../CharacterSheet/">CharacterSheet</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Epip</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Epip/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Epip/StatsTab/">StatsTab</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Epip Encounters</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+        
+          <li>Client &raquo;</li>
+        
+      
+        
+          <li>UI &raquo;</li>
+        
+      
+    
+    <li>OptionsSettings</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="optionssettings">OptionsSettings</h1>
+<p>Handles the settings menu. Extended to allow for custom setting tabs. Note that the input menu is a different UI - documentation for it pending.</p>
+<h2 id="adding-settings">Adding settings</h2>
+<p>To create a tab with settings for your mod, start by calling <code>RegisterMod(mod: string, data: OptionsSettingsOptionSet)</code>, before <code>SessionLoading</code> - preferably in the lua script's body.</p>
+<p>The data table should have your mod's name, header (displayed at the top) and side button label (displayed on the button that switches tabs). You may also pass <code>Options</code> in the table at this time, or register settings later through <code>RegisterOptions</code>.</p>
+<pre><code class="language-lua">Client.UI.OptionsSettings.RegisterMod(&quot;EpipEncounters&quot;, {
+    SideButtonLabel = &quot;Epip Encounters&quot;,
+    TabHeader = &quot;&lt;font color='7e72d6' size='23'&gt;Epip Encounters&lt;/font&gt;&quot;,
+})
+</code></pre>
+<p><code>Options</code> is a list of the options for the settings tab, in order that they will appear in. They are in the <code>OptionsSettingsOption</code> format - see <a href="#fields">fields</a>.</p>
+<p>The following types of options exist:</p>
+<ul>
+<li><code>Checkbox</code>: <code>OptionsSettingsCheckbox</code> struct</li>
+<li><code>Dropdown</code>: <code>OptionsSettingsDropdown</code> struct</li>
+<li><code>Slider</code>: <code>OptionsSettingsSlider</code> struct</li>
+<li><code>Button</code>: <code>OptionsSettingsButton</code> struct</li>
+<li><code>Header</code>: <code>OptionsSettingsHeader</code> struct, just a text label. Good for dividing sections of your setting menu.</li>
+</ul>
+<p>Example options, a dropdown and a slider:</p>
+<pre><code class="language-lua">{
+    ID = &quot;ExaminePosition&quot;,
+    Type = &quot;Dropdown&quot;,
+    Label = &quot;Examine Menu Position&quot;,
+    Tooltip = &quot;Controls the default position of the Examine menu when it is opened.&quot;,
+    DefaultValue = 1,
+    Options = {
+        &quot;Center&quot;,
+        &quot;Middle Right&quot;,
+        &quot;Middle Left&quot;
+    }
+},
+{
+    ID = &quot;OverheadsSize&quot;,
+    Type = &quot;Slider&quot;,
+    Label = &quot;Overhead Text Size&quot;,
+    MinAmount = 10,
+    MaxAmount = 45,
+    DefaultValue = 19,
+    Interval = 1,
+    HideNumbers = false,
+    Tooltip = &quot;Controls the size of regular text above characters talking.&lt;br&gt;&lt;br&gt;Default is 19.&quot;,
+},
+</code></pre>
+<p>Once you've got your mod and settings registered, they will appear in the settings menu. The user will be able to change them, and their values will be stored to the disk.</p>
+<p>To query the value of a setting, use <code>GetOptionValue(mod: string, setting: string)</code>. For checkboxes this returns <code>boolean</code>, for other elements it's <code>number</code>. <strong>Dropdowns use 1-based indexing! (1 = first option)</strong>. You can also set the stored value (or hook <code>GetOptionValue</code>). If you do this, keep in mind that it will not be automatically saved to disk.</p>
+<pre><code class="language-lua">if (Minimap.visible ~= Client.UI.OptionsSettings.GetOptionValue(&quot;EpipEncounters&quot;, &quot;Minimap&quot;)) then
+    Client.UI.OptionsSettings.SetOptionValue(&quot;EpipEncounters&quot;, &quot;Minimap&quot;, Minimap.visible)
+
+    Client.UI.OptionsSettings.SaveSettings()
+end
+</code></pre>
+<p>You may use the <code>IsElementEnabled</code> hook to make elements in your menu non-interactable. You can use this to require a setting to first have another one enabled/disabled by the user.</p>
+<h2 id="events">Events</h2>
+<p><doc events="OptionsSettingsUI"></p>
+<pre><code class="language-lua">---Fired when a custom option's value is set, either from loading or applying changes through the menu/SetOptionValue.
+---@event OptionSet
+---@param data OptionsSettingsOption
+---@param value any
+</code></pre>
+<pre><code class="language-lua">---Fired when an option element needs to be rendered in the UI.
+---@event ElementRenderRequest
+---@param type string
+---@param data OptionsSettingsOption
+---@param numID number The numeric ID this element should use.
+</code></pre>
+<pre><code class="language-lua">---Fired when a settings tab is rendered. Values &gt; 3 are custom tabs; their info should be queried from OptionsSettings.currentCustomTabs
+---@event TabRendered
+---@param tab number
+</code></pre>
+<pre><code class="language-lua">---Fired when a custom checkbox is clicked while enabled.
+---@event CheckboxClicked
+---@param element OptionsSettingsOption
+---@param active boolean
+</code></pre>
+<pre><code class="language-lua">---Fired when a custom button is clicked while enabled.
+---@event ButtonClicked
+---@param element OptionsSettingsOption
+</code></pre>
+<pre><code class="language-lua">---Fired when a custom slider's value is changed by the user.
+---@event SliderChanged
+---@param element OptionsSettingsOption
+---@param value number
+</code></pre>
+<pre><code class="language-lua">---Fired when a custom dropdown's option is changed by the user.
+---@event DropdownChanged
+---@param element OptionsSettingsOption
+---@param optionIndex number 1-based index.
+</code></pre>
+<pre><code class="language-lua">---Fired when a custom setting's value change is applied from the menu (through the &quot;Apply changes&quot; button).
+---@event ChangeApplied
+---@param option OptionsSettingsOption
+---@param value any
+</code></pre>
+<pre><code class="language-lua">---Hook to manipulate if an element should be interactable in the UI. Can be used, for example, to make a setting require another to be toggled on first.
+---@hook IsElementEnabled
+---@param enabled boolean Defaults to true.
+---@param data OptionsSettingsOption
+</code></pre>
+<pre><code class="language-lua">---Hook to manipulate a custom option's value. Can be used, for example, to disable a setting based on another's value.
+---@hook GetOptionValue
+---@param value any Defaults to the stored value.
+---@param data OptionsSettingsOption
+</code></pre>
+<pre><code class="language-lua">---Fired while `baseUpdate_Array` is being parsed in Flash. Hook to manipulate the parsed array.
+---@hook BaseUpdate
+---@param elements table[] TODO document fields
+</code></pre>
+<pre><code class="language-lua">---Hook to manipulate the label of tab buttons for mods.
+---@hook GetSideButtonLabel
+---@param label string Defaults to OptionsSettingsOption.SideButtonLabel or OptionsSettingsOption.Mod
+</code></pre>
+<pre><code class="language-lua">---Hook to manipulate the header of mod setting menus.
+---@hook GetTabHeader
+---@param label string Defaults to OptionsSettingsOption.TabHeader or OptionsSettingsOption.Mod
+</code></pre>
+<p></doc></p>
+<h2 id="fields">Fields</h2>
+<p><doc fields="OptionsSettingsUI"></p>
+<pre><code class="language-lua">---@class OptionsSettingsUI
+---@field Options table&lt;string, OptionsSettingsOptionSet&gt;
+---@field OptionValues table&lt;string, table&gt;
+---@field PendingValueChanges table&lt;string, table&gt;
+---@field TABS table&lt;string, number&gt;
+---@field SAVE_FILENAME string
+---@field currentTab number
+---@field currentElements table&lt;number, OptionsSettingsOption&gt;
+---@field currentCustomTabs table&lt;number, string&gt; Binds a side button's numerical ID to the mod it's for.
+</code></pre>
+<p></doc></p>
+<h2 id="methods">Methods</h2>
+<p><doc lib="OptionsSettingsUI"></p>
+<pre><code class="language-lua">---Registers a mod for use with the options menu.
+---@param mod string
+---@param data OptionsSettingsOptionSet
+function OptionsSettings.RegisterMod(mod, data) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Adds options to a mod's option menu.
+---@param mod string
+---@param data OptionsSettingsOption[]
+function OptionsSettings.RegisterOptions(mod, data) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Adds an option to a mod's options menu.
+---@param mod string
+---@param data OptionsSettingsOption
+function OptionsSettings.RegisterOption(mod, data) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Returns whether a custom option's element is interactable. Hookable.
+---@param id string
+---@return boolean
+function OptionsSettings.IsElementEnabled(id) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Set the state of an option in the UI. Does not change the stored value of custom options.
+---@param id string|number
+---@param state any
+---@param elementType OptionsSettingsOptionType? Needs to be provided for vanilla options. TODO get automatically
+function OptionsSettings.SetElementState(id, state, elementType) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Set an element to be enabled/disabled (interactable or not). TODO other types
+---@param id string|number
+---@param enabled boolean
+---@param elementType OptionsSettingsOptionType
+function OptionsSettings.SetElementEnabled(id, enabled, elementType) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Get the numerical id of a custom option element in the UI.
+---@param id string
+---@return number
+function OptionsSettings.GetElementNumID(id) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Get the data for an option.
+---@param id string
+---@return OptionsSettingsOption
+function OptionsSettings.GetOptionData(id) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Get the value of a custom option.
+---@param mod string
+---@param id string
+---@return any Type varies based on element type. Boolean for checkboxes, number for other vanilla elements.
+function OptionsSettings.GetOptionValue(mod, id) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Set a custom option's value. Immediately synchronized to server, if need be.
+---@param mod string
+---@param option string
+---@param value any
+function OptionsSettings.SetOptionValue(mod, option, value) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Render a slider.
+---@param data OptionsSettingsSlider
+---@param numID number
+function OptionsSettings.RenderSlider(data, numID) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Render a button.
+---@param data OptionsSettingsButton
+---@param numID number
+function OptionsSettings.RenderButton(data, numID) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Render a header.
+---@param data OptionsSettingsHeader
+---@param numID number
+function OptionsSettings.RenderHeader(data, numID) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Render a checkbox option.
+---@param data OptionsSettingsCheckbox
+---@param numID number
+function OptionsSettings.RenderCheckbox(data, numID) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Render a dropdown option.
+---@param data OptionsSettingsDropdown
+---@param numID number
+function OptionsSettings.RenderDropdown(data, numID) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Returns the MovieClip for an element.
+---@param id string|number String or number ID of the element.
+---@return FlashMovieClip
+function OptionsSettings.GetOptionElement(id) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---Add an entry to a dropdown element.
+---@param id stirng|number
+---@param option string Label.
+function OptionsSettings.RenderDropdownEntry(id, option) -- Client-only
+</code></pre>
+<pre><code class="language-lua">---@param option OptionsSettingsOption
+---@param value any
+function OptionsSettings.SynchToServer(option, value) -- Client-only
+</code></pre>
+<p></doc></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Examine/" class="btn btn-neutral float-right" title="Examine">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../input/" class="btn btn-neutral" title="Input"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../input/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Examine/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

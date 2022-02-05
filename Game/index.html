@@ -80,6 +80,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">UI</a>
     <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../Client/UI/OptionsSettings/">OptionsSettings</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../Client/UI/Examine/">Examine</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../Client/UI/MessageBox/">MessageBox</a>
@@ -147,7 +149,7 @@
                 <h1 id="game">Game</h1>
 <p>The <code>Game</code> table contains multiple libraries focusing on querying data about the current game session, such as information from characters and items.</p>
 <p>The <code>Game.Math</code> and <code>Game.Tooltip</code> tables from the Extender remain.</p>
-<p><code>Game.Tooltip.TooltipHooks.GetCompareItem</code> is edited to fix an issue with item comparisons passing the wrong <code>EclItem</code> <a href="https://github.com/Norbyte/ositools/issues/72">(issue)</a>. Additionally, tooltips are now re-rendered whenever the <code>Toggle Sneak Cones</code> key is pressed/unpressed, to allow it to be used as a "modifier" for conditional tooltip rendering.</p>
+<p><code>Game.Tooltip.TooltipHooks.GetCompareItem</code> is edited to fix an issue with item comparisons passing the wrong <code>EclItem</code> <a href="https://github.com/Norbyte/ositools/issues/72">(issue)</a>. Additionally, tooltips are now re-rendered whenever the <code>Toggle Sneak Cones</code> key is pressed/unpressed, to allow it to be used as a "modifier key" for conditional tooltip rendering.</p>
 <h2 id="fields">Fields</h2>
 <p><doc fields="Game"></p>
 <pre><code class="language-lua">---@class Game

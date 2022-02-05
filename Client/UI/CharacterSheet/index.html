@@ -76,6 +76,8 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">UI</a>
     <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../OptionsSettings/">OptionsSettings</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../Examine/">Examine</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../MessageBox/">MessageBox</a>
@@ -155,8 +157,7 @@
                 <h1 id="charactersheet">CharacterSheet</h1>
 <h2 id="events">Events</h2>
 <p><doc events="CharacterSheetUI"></p>
-<pre><code class="language-lua">---@alias SecondaryStatGroup table&lt;string, number&gt;
----Hook to manipulate a secondary stats update.
+<pre><code class="language-lua">---Hook to manipulate a secondary stats update.
 ---@hook SecondaryStatUpdate
 ---@param stats SecondaryStatBase[]
 ---@param char EclCharacter
