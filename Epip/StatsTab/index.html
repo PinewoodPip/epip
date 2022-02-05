@@ -197,12 +197,12 @@
 </code></pre>
 <p>Finally, you need to register a hook to update the stat's value. This can be done in 2 ways: on client or on server (do not do both).</p>
 <p>If the stat's value can be queried from the client context, you only need a simple hook on the client:</p>
-<pre><code class="language-lua">Tab.RegisterStatValueHook(&quot;PartyFunds_Gold&quot;, function(value, data, char)
+<pre><code class="language-lua">StatsTab.RegisterStatValueHook(&quot;PartyFunds_Gold&quot;, function(value, data, char)
     return Game.Items.GetPartyTemplateCount(&quot;LOOT_Gold_A_1c3c9c74-34a1-4685-989e-410dc080be6f&quot;)
 end)
 </code></pre>
 <p>For stats that require info from the server, there is a special system in place that synchronizes stat values with tags. To set a stat's value from the server context, you need to use a different event (note it's not a hook, you must call <code>UpdateTaggedStat</code> yourself). On the client, the stat's value will be queried automatically from such tag if it is set; the advantage here being that there is no need to request stats from the server every time the tab is opened.</p>
-<pre><code class="language-lua">EpipStats.RegisterStatUpdateListener(&quot;Keyword_VitalityVoid_Power&quot;, function(char, data)
+<pre><code class="language-lua">StatsTab.RegisterStatUpdateListener(&quot;Keyword_VitalityVoid_Power&quot;, function(char, data)
     Osi.QRY_AMER_KeywordStat_VitalityVoid_GetPower(char.MyGuid, 1)
 
     local value = Osi.DB_AMER_KeywordStat_OUTPUT_Real:Get(nil)[1][1] * 100
@@ -216,7 +216,7 @@ end)
 <p>There's just one small catch: owned nodes are only tracked if there's a stat defined for them. When you add stats in an update, you should call <code>StatsTab.RecalculateNodeStats()</code> on the server during the patch routine. You can also call <code>NRD_ModCall("EpipEncounters", "PerformFullStatsUpdate");</code> from Osiris, but this will be removed in the future.</p>
 <h2 id="creating-categories">Creating Categories</h2>
 <p>A category holds stats, and can be collapsed in the menu. Stats only render if they're within a category that is open. They can be added with <code>RegisterCategory(id: string, data: EpipStatCategory, index?: integer)</code>. See the <code>EpipStatCategory</code> struct.</p>
-<pre><code class="language-lua">EpipStats.RegisterCategory(&quot;Vitals&quot;, {
+<pre><code class="language-lua">StatsTab.RegisterCategory(&quot;Vitals&quot;, {
     Header = &quot;&lt;font size='21'&gt;————— Vitals —————&lt;/font&gt;&quot;,
     Name = &quot;Vitals&quot;,
     Behaviour = &quot;GreyOut&quot;,
