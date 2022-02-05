@@ -4,7 +4,6 @@
 <doc events="CharacterSheetUI">
 
 ```lua
----@alias SecondaryStatGroup table<string, number>
 ---Hook to manipulate a secondary stats update.
 ---@hook SecondaryStatUpdate
 ---@param stats SecondaryStatBase[]

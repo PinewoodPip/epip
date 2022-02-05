@@ -4,7 +4,7 @@ The `Game` table contains multiple libraries focusing on querying data about the
 
 The `Game.Math` and `Game.Tooltip` tables from the Extender remain.
 
-`Game.Tooltip.TooltipHooks.GetCompareItem` is edited to fix an issue with item comparisons passing the wrong `EclItem` [(issue)](https://github.com/Norbyte/ositools/issues/72). Additionally, tooltips are now re-rendered whenever the `Toggle Sneak Cones` key is pressed/unpressed, to allow it to be used as a "modifier" for conditional tooltip rendering.
+`Game.Tooltip.TooltipHooks.GetCompareItem` is edited to fix an issue with item comparisons passing the wrong `EclItem` [(issue)](https://github.com/Norbyte/ositools/issues/72). Additionally, tooltips are now re-rendered whenever the `Toggle Sneak Cones` key is pressed/unpressed, to allow it to be used as a "modifier key" for conditional tooltip rendering.
 
 ## Fields
 <doc fields="Game">

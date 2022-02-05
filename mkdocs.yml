@@ -15,6 +15,7 @@ nav:
       - "Root": "Client/index.md"
       - "Input": "Client/input.md"
       - "UI":
+        - "OptionsSettings" : "Client/UI/OptionsSettings.md"
         - "Examine": "Client/UI/Examine.md"
         - "MessageBox": "Client/UI/MessageBox.md"
         - "CharacterSheet": "Client/UI/CharacterSheet.md"

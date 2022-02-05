@@ -15,7 +15,7 @@ function Game.Items.GetPartyTemplateCount(template) -- Client-only
 --- Count the items in an entity's inventory that match a predicate.  
 --- Different from the server implementation, as item amounts cannot be queried on client from the item object. We rely on partyInventory UI instead.
 ---@param entity Entity
----@param predicate function
+---@param predicate fun(item: EclItem)
 ---@return number
 function Game.Items.CountItemsInInventory(entity, predicate) -- Client-only
 ```
@@ -23,7 +23,7 @@ function Game.Items.CountItemsInInventory(entity, predicate) -- Client-only
 --- Count the items in an entity's inventory that match a predicate function.  
 --- Predicate is passed ``EsvItem`` and should return true for items to be counted.
 ---@param entity Entity
----@param predicate function
+---@param predicate fun(item: EsvItem)
 ---@return number
 function Game.Items.CountItemsInInventory(entity, predicate) -- Server-only
 ```
@@ -109,7 +109,7 @@ function Game.Items.HasRunes(item)
 --- Returns a list of the items in the entity's inventory that match an optional predicate function.  
 --- Predicate is passed the EclItem/EsvItem and should return true for items to be included.
 ---@param entity Entity
----@param predicate function
+---@param predicate fun(item: Item)
 ---@return Item[]
 function Game.Items.GetItemsInInventory(entity, predicate)
 ```
