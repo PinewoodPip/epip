@@ -55,6 +55,8 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#v1044-upcoming">v1044 (upcoming)</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#19222-huge-hotbar-rewrite">19/2/22 Huge Hotbar rewrite</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#5222-docs-inauguration-patch-flashed">5/2/22 Docs inauguration patch :flashed:</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#26122-birthday-patch-flashed">26/1/22: birthday patch :flashed:</a>
@@ -180,8 +182,41 @@
               
                 <h1 id="changelog">Changelog</h1>
 <h2 id="v1044-upcoming">v1044 (upcoming)</h2>
-<p>Requires v56 of the extender.
-<a href="https://drive.google.com/file/d/1pYIXbo9Nw_5FllYnvGtfGNDeftDOWyBP/view?usp=sharing">Download here</a>. (5/2/22)</p>
+<p>Requires v56 of the extender.</p>
+<p>To get it, create a file named <code>OsiUpdateChannel.txt</code> in the same directory where you installed the extender (where <code>DXGI.dll</code> is) with the contents:</p>
+<pre><code class="language-json">Devel
+</code></pre>
+<p><a href="https://drive.google.com/file/d/1pYIXbo9Nw_5FllYnvGtfGNDeftDOWyBP/view?usp=sharing">Download here</a>. (19/2/22)</p>
+<h3 id="19222-huge-hotbar-rewrite">19/2/22 Huge Hotbar rewrite</h3>
+<p>Rewrote the hotbar UI. This involves mostly technical changes, in preparations for a standalone release.</p>
+<p><strong>Your hotkey keybindings will be reset with this update! Please bind them again.</strong></p>
+<p>Visible changes:</p>
+<ul>
+<li>Fixed the top of the buttons area blocking clicks onto the world and other UIs</li>
+<li>Any skill or item can now be dragged from the hotbar to the customizable buttons to bind it there (useful for old mods that use skills/items to bring up menus)<ul>
+<li>The "use last slot" action has been removed due to this.</li>
+</ul>
+</li>
+<li>Removed the "view changelog" action</li>
+<li>The slot rendering is now entirely scripted (no help from the engine) which works around a crash and removes the need for an initialization procedure (that annoying "switch to the first row" message)</li>
+<li>Saving your current amount of bars and order should be a lot more reliable (now happens upon pausing the game, instead of a timer)</li>
+<li>Action buttons can now be highlighted or disabled; ex. the pyramids one is disabled if the party has no pyramids</li>
+<li>Added an action to open the pyramids UI</li>
+<li>Fixed the source skill border clipping into other rows</li>
+<li>Added compatibility for Weapon Expansion: adds an action for toggling the menu, and repositions the original button when you have 2 rows of action buttons</li>
+<li>Actions in the drawer are now ordered in a consistent manner</li>
+<li>Added a context menu when you right click a row; from there, you can:<ul>
+<li>"Push" groups of slots to the left/right (useful for inserting skills inbetween slots)</li>
+<li>Clear rows, or unmemorized skills</li>
+<li>Save and load "loadouts" of rows. Loadouts can be applied even if your character doesn't currently know all the skills from it.</li>
+</ul>
+</li>
+</ul>
+<p>Other changes:</p>
+<ul>
+<li>Simple tooltips (the ones that go in that very small black box) now appear much faster, rather than being delayed</li>
+<li>Added numerous calls to <code>Game.Character</code> and <code>Game.Item</code>, mostly related to functionality needed for the hotbar.</li>
+</ul>
 <h3 id="5222-docs-inauguration-patch-flashed">5/2/22 Docs inauguration patch :flashed:</h3>
 <ul>
 <li>Added new stats to the stats tab (more coming later):<ul>
