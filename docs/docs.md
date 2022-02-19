@@ -4,6 +4,8 @@ The features of Epip Encounters are built on top of a lot of trial-and-error res
 
 Since late 2021, the focus of development has shifted to making the internals of the mod available as libraries, aiming to provide utility, better maintainability, extendability and easy manipulation of UIs from lua.
 
+The ultimate goal is to make the mod easy for someone else to continue working on after/if I depart - EE is an overhaul built to last and be tinkered with, and I would like to honor that in my own project.
+
 This change will be a long process. There are still many features of the mod that remain to be rewritten to the new standards and methodology, or extended to provide functionality beyond what the current mod needs.
 
 Anything that is documented here is considered stable and unlikely to change drastically - **any changes to these calls/systems will be mentioned in future patch notes.**

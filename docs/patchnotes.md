@@ -2,7 +2,42 @@
 
 ## v1044 (upcoming)
 Requires v56 of the extender.
-[Download here](https://drive.google.com/file/d/1pYIXbo9Nw_5FllYnvGtfGNDeftDOWyBP/view?usp=sharing). (5/2/22)
+
+To get it, create a file named `OsiUpdateChannel.txt` in the same directory where you installed the extender (where `DXGI.dll` is) with the contents:
+```json
+Devel
+```
+
+[Download here](https://drive.google.com/file/d/1pYIXbo9Nw_5FllYnvGtfGNDeftDOWyBP/view?usp=sharing). (19/2/22)
+
+### 19/2/22 Huge Hotbar rewrite
+Rewrote the hotbar UI. This involves mostly technical changes, in preparations for a standalone release.
+
+**Your hotkey keybindings will be reset with this update! Please bind them again.**
+
+Visible changes:
+
+- Fixed the top of the buttons area blocking clicks onto the world and other UIs
+- Any skill or item can now be dragged from the hotbar to the customizable buttons to bind it there (useful for old mods that use skills/items to bring up menus)
+	- The "use last slot" action has been removed due to this.
+- Removed the "view changelog" action
+- The slot rendering is now entirely scripted (no help from the engine) which works around a crash and removes the need for an initialization procedure (that annoying "switch to the first row" message)
+- Saving your current amount of bars and order should be a lot more reliable (now happens upon pausing the game, instead of a timer)
+- Action buttons can now be highlighted or disabled; ex. the pyramids one is disabled if the party has no pyramids
+- Added an action to open the pyramids UI
+- Fixed the source skill border clipping into other rows
+- Added compatibility for Weapon Expansion: adds an action for toggling the menu, and repositions the original button when you have 2 rows of action buttons
+- Actions in the drawer are now ordered in a consistent manner
+- Added a context menu when you right click a row; from there, you can:
+	- "Push" groups of slots to the left/right (useful for inserting skills inbetween slots)
+	- Clear rows, or unmemorized skills
+	- Save and load "loadouts" of rows. Loadouts can be applied even if your character doesn't currently know all the skills from it.
+
+Other changes:
+
+- Simple tooltips (the ones that go in that very small black box) now appear much faster, rather than being delayed
+- Added numerous calls to `Game.Character` and `Game.Item`, mostly related to functionality needed for the hotbar.
+
 
 ### 5/2/22 Docs inauguration patch :flashed:
 
