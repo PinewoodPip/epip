@@ -44,6 +44,12 @@ Additionally, as a compatibility consideration for older mods, you can drag any 
 
 *Documentation pending completion; if someone wants to start making custom buttons with these already let me know; the API won't change.
 
+## Context Menu
+
+Right click a row to open up a context menu where you can perform multiple handy operations, such as clearing it, moving a group of slots to the sides (great for insert new spells inbetween!) or saving/loading a preset.
+
+![Context menu.](img/hotbar/context_menu.png)
+
 ## Compatibility
 Incompatible with mods that modify `hotBar.swf`. This might be worked around in the future if it becomes a concern.
 
