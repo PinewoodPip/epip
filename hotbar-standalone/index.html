@@ -136,26 +136,32 @@
               
                 <h1 id="standalone-hotbar-mod">Standalone Hotbar Mod</h1>
 <p>The Improved Hotbar mod allows you to have multiple bars at once (up to 5), and adds new functionality to improve the hotbar experience further.</p>
+<p><strong>Requires v56 of the extender! This version of the extender is not public yet, you have to install it manually:</strong></p>
+<p>To get it, create a file named <code>OsiUpdateChannel.txt</code> in the same directory where you installed the extender (where <code>DXGI.dll</code> is) with the contents:</p>
+<pre><code class="language-json">Devel
+</code></pre>
+<p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297">Workshop page HERE</a></p>
 <h2 id="extra-bars">Extra Bars</h2>
-<p>TODO IMAGE</p>
-<p>To add more bars, click the +/- buttons between the action buttons and the slots.</p>
+<p><img alt="Extra bars." src="../img/hotbar/five_bars.png" /></p>
+<p>To add more bars, click the small +/- buttons between the buttons and the slots.</p>
 <p>You may cycle each bar independently. The original cycling hotkeys cycle the bottom bar; holding shift while doing so (the "Show sneak cones" key) will cycle the bar above it.</p>
 <h2 id="action-buttons">Action Buttons</h2>
-<p>The buttons in the bottom left part of the hotbar have been revamped, and are now customizable. In addition to them being re-arrangable by drag-and-dropping <strong>(if the hotbar is unlocked)</strong>, mods can add their own "action buttons" there with custom functionality.</p>
-<p>Right-click these buttons to open the "actions drawer", where you can see all the actions that you can <strong>drag-and-drop</strong> to assign them to the buttons at the bottom. You may also click them in the drawer to use them. <strong>To assign keyboard hotkeys to these, go to the controls settings menu and assign the "Hotbar Custom Hotkey" keys.</strong></p>
-<p>TODO controls image</p>
+<p>The buttons in the bottom left part of the hotbar have been revamped, and are now customizable. In addition to them being re-arrangable by drag-and-dropping <strong>(if the hotbar is unlocked)</strong>, mods can add their own "action buttons" there with custom functionality*.</p>
+<p><img alt="Custom hotkeys." src="../img/hotbar/hotkeys.png" /></p>
+<p>Right-click these buttons (or click the button with the ^ arrows) to open the "actions drawer", where you can see all the actions that you can <strong>drag-and-drop</strong> to assign them to the buttons at the bottom. You may also click them in the drawer to use them. <strong>To assign keyboard hotkeys to these, go to the controls settings menu and assign the "Hotbar Custom Hotkey" keys.</strong></p>
+<p><img alt="Assign/unbind these!" src="../img/hotbar/bindings_warning.png" /></p>
 <p>These buttons are shared across all your characters; you only need to bind them once, and then can enjoy their convenience from any character.</p>
 <p>Several new "actions" are implemented:</p>
 <ul>
-<li>Resting: uses a bedroll from the party inventory. No longer do you need to place one on your hotbar nor even have one per character!</li>
-<li>Pyramids: opens the Teleporter Pyramid UI. Again, reduces hotbar clutter and saves time spent looking through your inventory to find out where the heck these are.</li>
-<li>Toggle Party Link: chains/unchains your active character with others nearby instantly.</li>
-<li>Waypoints: opens the fast travel menu.</li>
-<li>Ping: shortcut to the ping function.</li>
-<li>Chat/Combat Log: toggle the respective UIs.</li>
+<li><strong>Resting</strong>: uses a bedroll from the party inventory. No longer do you need to place one on your hotbar nor even have one per character!</li>
+<li><strong>Pyramids</strong>: opens the Teleporter Pyramid UI. Again, reduces hotbar clutter and saves time spent looking through your inventory to find out where the heck these are.</li>
+<li><strong>Chain/unchain</strong>: chains/unchains your active character with others nearby instantly.</li>
+<li><strong>Waypoints</strong>: opens the fast travel menu.</li>
+<li><strong>Ping</strong>: shortcut to the ping function.</li>
+<li><strong>Chat/Combat Log</strong>: toggle the respective UIs. The original char button has been yeeted.</li>
 </ul>
 <p>Additionally, as a compatibility consideration for older mods, you can drag any skill or item from the hotbar to these buttons to bind them there. This is useful for mods that implement menus through skills or usable items (ex. LL's older mods).</p>
-<p>TODO IMAGE</p>
+<p>*Documentation pending completion; if someone wants to start making custom buttons with these already let me know; the API won't change.</p>
 <h2 id="compatibility">Compatibility</h2>
 <p>Incompatible with mods that modify <code>hotBar.swf</code>. This might be worked around in the future if it becomes a concern.</p>
 <p>Arena mode and GM mode are untested. Consider them unsupported! <strong>Also note that the mod automatically unbinds some GM keybindings that are used for the customizable buttons the first time you install it (since they clash with some regular game hotkeys).</strong></p>
@@ -167,7 +173,9 @@
 </ul>
 <h2 id="known-issues">Known issues</h2>
 <ul>
+<li>On lower resolutions, a piece of art from the right-most edge might "clip" into the slots area</li>
 <li>Some art is ugly/unfinished</li>
+<li><strong>Upon making new profiles, the keybindings used for the customizable buttons aren't reset</strong> - check them if your keys start doing weird stuff in a new game!</li>
 <li>Items slotted into the customizable buttons don't display proper names</li>
 <li>Skills slotted into the customizable buttons don't grey out properly, ex. if you don't meet their requirements (doesn't affect their use)</li>
 <li>The console log is spammed during session reloads</li>
