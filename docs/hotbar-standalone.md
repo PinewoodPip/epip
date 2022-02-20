@@ -2,36 +2,47 @@
 
 The Improved Hotbar mod allows you to have multiple bars at once (up to 5), and adds new functionality to improve the hotbar experience further.
 
+**Requires v56 of the extender! This version of the extender is not public yet, you have to install it manually:**
+
+To get it, create a file named `OsiUpdateChannel.txt` in the same directory where you installed the extender (where `DXGI.dll` is) with the contents:
+```json
+Devel
+```
+
+[Workshop page HERE](https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297)
+
 ## Extra Bars
 
-TODO IMAGE
+![Extra bars.](img/hotbar/five_bars.png)
 
-To add more bars, click the +/- buttons between the action buttons and the slots.
+To add more bars, click the small +/- buttons between the buttons and the slots.
 
 You may cycle each bar independently. The original cycling hotkeys cycle the bottom bar; holding shift while doing so (the "Show sneak cones" key) will cycle the bar above it.
 
 ## Action Buttons
 
-The buttons in the bottom left part of the hotbar have been revamped, and are now customizable. In addition to them being re-arrangable by drag-and-dropping **(if the hotbar is unlocked)**, mods can add their own "action buttons" there with custom functionality.
+The buttons in the bottom left part of the hotbar have been revamped, and are now customizable. In addition to them being re-arrangable by drag-and-dropping **(if the hotbar is unlocked)**, mods can add their own "action buttons" there with custom functionality*.
 
-Right-click these buttons to open the "actions drawer", where you can see all the actions that you can **drag-and-drop** to assign them to the buttons at the bottom. You may also click them in the drawer to use them. **To assign keyboard hotkeys to these, go to the controls settings menu and assign the "Hotbar Custom Hotkey" keys.**
+![Custom hotkeys.](img/hotbar/hotkeys.png)
 
-TODO controls image
+Right-click these buttons (or click the button with the ^ arrows) to open the "actions drawer", where you can see all the actions that you can **drag-and-drop** to assign them to the buttons at the bottom. You may also click them in the drawer to use them. **To assign keyboard hotkeys to these, go to the controls settings menu and assign the "Hotbar Custom Hotkey" keys.**
+
+![Assign/unbind these!](img/hotbar/bindings_warning.png)
 
 These buttons are shared across all your characters; you only need to bind them once, and then can enjoy their convenience from any character.
 
 Several new "actions" are implemented:
 
-- Resting: uses a bedroll from the party inventory. No longer do you need to place one on your hotbar nor even have one per character!
-- Pyramids: opens the Teleporter Pyramid UI. Again, reduces hotbar clutter and saves time spent looking through your inventory to find out where the heck these are.
-- Toggle Party Link: chains/unchains your active character with others nearby instantly.
-- Waypoints: opens the fast travel menu.
-- Ping: shortcut to the ping function.
-- Chat/Combat Log: toggle the respective UIs.
+- **Resting**: uses a bedroll from the party inventory. No longer do you need to place one on your hotbar nor even have one per character!
+- **Pyramids**: opens the Teleporter Pyramid UI. Again, reduces hotbar clutter and saves time spent looking through your inventory to find out where the heck these are.
+- **Chain/unchain**: chains/unchains your active character with others nearby instantly.
+- **Waypoints**: opens the fast travel menu.
+- **Ping**: shortcut to the ping function.
+- **Chat/Combat Log**: toggle the respective UIs. The original char button has been yeeted.
 
 Additionally, as a compatibility consideration for older mods, you can drag any skill or item from the hotbar to these buttons to bind them there. This is useful for mods that implement menus through skills or usable items (ex. LL's older mods).
 
-TODO IMAGE
+*Documentation pending completion; if someone wants to start making custom buttons with these already let me know; the API won't change.
 
 ## Compatibility
 Incompatible with mods that modify `hotBar.swf`. This might be worked around in the future if it becomes a concern.
@@ -45,7 +56,9 @@ Compatibility considerations:
 - Epic Encounters 2: the original actions remain (Source Infuse, Meditate)
 
 ## Known issues
+- On lower resolutions, a piece of art from the right-most edge might "clip" into the slots area
 - Some art is ugly/unfinished
+- **Upon making new profiles, the keybindings used for the customizable buttons aren't reset** - check them if your keys start doing weird stuff in a new game!
 - Items slotted into the customizable buttons don't display proper names
 - Skills slotted into the customizable buttons don't grey out properly, ex. if you don't meet their requirements (doesn't affect their use)
 - The console log is spammed during session reloads
