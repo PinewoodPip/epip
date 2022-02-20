@@ -9,15 +9,9 @@ To get it, create a file named `OsiUpdateChannel.txt` in the same directory wher
 Devel
 ```
 
-[Workshop page HERE](https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297)
+You'll know you did it right if "v56" shows up at the bottom of the main menu with all the buttons.
 
-## Extra Bars
-
-![Extra bars.](img/hotbar/five_bars.png)
-
-To add more bars, click the small +/- buttons between the buttons and the slots.
-
-You may cycle each bar independently. The original cycling hotkeys cycle the bottom bar; holding shift while doing so (the "Show sneak cones" key) will cycle the bar above it.
+> [Workshop page HERE](https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297)
 
 **Please report any issues! Either through DM or a comment on the page/discussions section.**
 
@@ -33,6 +27,14 @@ To do so, create a `OsirisExtenderSettings.json` file in the `DefEd/bin` folder 
 ```
 
 After you're done using the mod you can delete both that file and the one for v56 of the extender (you should also do that once v56 releases publicly).
+
+## Extra Bars
+
+![Extra bars.](img/hotbar/five_bars.png)
+
+To add more bars, click the small +/- buttons between the buttons and the slots.
+
+You may cycle each bar independently. The original cycling hotkeys cycle the bottom bar; holding shift while doing so (the "Show sneak cones" key) will cycle the bar above it.
 
 ## Action Buttons
 
@@ -53,7 +55,7 @@ Several new "actions" are implemented:
 - **Chain/unchain**: chains/unchains your active character with others nearby instantly.
 - **Waypoints**: opens the fast travel menu.
 - **Ping**: shortcut to the ping function.
-- **Chat/Combat Log**: toggle the respective UIs. The original char button has been yeeted.
+- **Chat/Combat Log**: toggle the respective UIs. The original chat button has been yeeted.
 
 Additionally, as a compatibility consideration for older mods, you can drag any skill or item from the hotbar to these buttons to bind them there. This is useful for mods that implement menus through skills or usable items (ex. LL's older mods). **You can only do this from the hotbar slots at the moment! So drag an item to the hotbar, THEN drag it to these buttons.**
 
@@ -61,7 +63,7 @@ Additionally, as a compatibility consideration for older mods, you can drag any 
 
 ## Context Menu
 
-Right click a row to open up a context menu where you can perform multiple handy operations, such as clearing it, moving a group of slots to the sides (great for insert new spells inbetween!) or saving/loading a preset.
+Right click a row to open up a context menu where you can perform multiple handy operations, such as clearing it, moving a group of slots to the sides (great for inserting new spells inbetween!) or saving/loading a preset.
 
 ![Context menu.](img/hotbar/context_menu.png)
 

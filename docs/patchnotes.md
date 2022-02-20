@@ -10,6 +10,10 @@ Devel
 
 [Download here](https://drive.google.com/file/d/1pYIXbo9Nw_5FllYnvGtfGNDeftDOWyBP/view?usp=sharing). (19/2/22)
 
+## ??/?/22 Next update
+
+- Fixed bugs with unbinding actions in the hotbar, as well as clearing unmemorized slots
+
 ### 19/2/22 Huge Hotbar rewrite
 Rewrote the hotbar UI. This involves mostly technical changes, in preparations for a standalone release.
 
