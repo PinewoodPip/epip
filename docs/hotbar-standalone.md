@@ -19,6 +19,8 @@ To add more bars, click the small +/- buttons between the buttons and the slots.
 
 You may cycle each bar independently. The original cycling hotkeys cycle the bottom bar; holding shift while doing so (the "Show sneak cones" key) will cycle the bar above it.
 
+**Please report any issues! Either through DM or a comment on the page/discussions section.**
+
 ## Action Buttons
 
 The buttons in the bottom left part of the hotbar have been revamped, and are now customizable. In addition to them being re-arrangable by drag-and-dropping **(if the hotbar is unlocked)**, mods can add their own "action buttons" there with custom functionality*.
