@@ -21,6 +21,19 @@ You may cycle each bar independently. The original cycling hotkeys cycle the bot
 
 **Please report any issues! Either through DM or a comment on the page/discussions section.**
 
+**Also consider enabling the extender console so you can see error messages while ingame. If something doesn't work or appears broken, chances are there is a useful red message in there for me!**
+
+To do so, create a `OsirisExtenderSettings.json` file in the `DefEd/bin` folder (same folder where you put the extender) with the contents:
+
+```json
+{
+	"CreateConsole": true,
+	"DeveloperMode": true,
+}
+```
+
+After you're done using the mod you can delete both that file and the one for v56 of the extender (you should also do that once v56 releases publicly).
+
 ## Action Buttons
 
 The buttons in the bottom left part of the hotbar have been revamped, and are now customizable. In addition to them being re-arrangable by drag-and-dropping **(if the hotbar is unlocked)**, mods can add their own "action buttons" there with custom functionality*.
@@ -42,7 +55,7 @@ Several new "actions" are implemented:
 - **Ping**: shortcut to the ping function.
 - **Chat/Combat Log**: toggle the respective UIs. The original char button has been yeeted.
 
-Additionally, as a compatibility consideration for older mods, you can drag any skill or item from the hotbar to these buttons to bind them there. This is useful for mods that implement menus through skills or usable items (ex. LL's older mods).
+Additionally, as a compatibility consideration for older mods, you can drag any skill or item from the hotbar to these buttons to bind them there. This is useful for mods that implement menus through skills or usable items (ex. LL's older mods). **You can only do this from the hotbar slots at the moment! So drag an item to the hotbar, THEN drag it to these buttons.**
 
 *Documentation pending completion; if someone wants to start making custom buttons with these already let me know; the API won't change.
 
