@@ -16,7 +16,9 @@ Special thanks to:
 
 Only English is supported. Text related to gameplay changes will not show up in other languages. Mods that also modify UI are largely incompatible. ["No More Dragging"](https://steamcommunity.com/sharedfiles/filedetails/?id=2546859598) and its expanded container version is compatible, for now.
 
-[Latest stable version, v1043](https://drive.google.com/file/d/12v42kFeIrPcwR5s_blArLLzBZZuqYlVF/view?usp=sharing)
+See the [patchnotes](patchnotes.md) page for latest version.
+
+Last version compatible with the Script Extender v55: [v1043](https://drive.google.com/file/d/12v42kFeIrPcwR5s_blArLLzBZZuqYlVF/view?usp=sharing) **(not recommended)**
 
 ## Features
 

@@ -1,18 +1,75 @@
 # Changelog
 
-## v1044 (upcoming)
-Requires v56 of the extender.
+The latest versions of the mod require v56 of the extender.
 
 To get it, create a file named `OsiUpdateChannel.txt` in the same directory where you installed the extender (where `DXGI.dll` is) with the contents:
 ```json
 Devel
 ```
 
-[Download here](https://drive.google.com/file/d/1pYIXbo9Nw_5FllYnvGtfGNDeftDOWyBP/view?usp=sharing). (19/2/22)
+## v1045 - 1/4/22 Anniversary patch :flashed:
+[Download here](https://drive.google.com/file/d/1ae8TmPU6_SfluvLisYRL-enx9JAAEkBS/view?usp=sharing). (1/4/22)
 
-## ??/?/22 Next update
+As of today, Epip is now one year old! My attention span for projects tends to be very low (as evidenced by my other EE stuff), but Epip looks to be an exception to that and it's incredible what it has become - all its UI changes were nearly unimaginable just a year ago. Thank you all for the support throughout the months, even at times when the patches were a buggy mess.
 
+Just like the initial release of the mod on April 1st, this anniversary patch is very real, and best experienced on this day of the month.
+
+Changelog:
+
+- Pressing escape while in the EE UIs now backs out of them rather than bring up the pause menu
+- The stats tab now shows damage dealt and received in the current fight (or previous fight, when out of combat)
+- Added a new bug to the character sheet
+- Performance improvements to the hotbar
+- Gold/Splinter counter in the stats tab should now be more reliable
+- Minor technical changes to make the mod compatible with Descent
+- Added a scrollbar to the hotbar buttons drawer
+- The hotbar now goes below the inventory and character sheet
+- Hotbar cooldown animations should now be smoother
 - Fixed bugs with unbinding actions in the hotbar, as well as clearing unmemorized slots
+- Fixed muted characters not having their slots greyed out in hotbar
+- You can now activate your Epip Encounters license ingame from the options menu
+- Tooltips can now be scrolled on one axis with the mouse wheel
+- The punisher now drops MicroBoss™ loot to make him feel more optional
+- Added a cinematic camera option, on by default
+- Reworked the vanity feature: it now opens a custom tab in your character sheet. Browsing templates is a lot more convenient this way. Saved outfits are now categorized by race & gender (doesn't stop you from applying them to anyone though)
+	- It wouldn't be an Epip patch if something didn't ship unfinished, which is why I must announce that the promised feature to mark templates as favorite did not make it in.
+
+![New transmog menu.](img/transmog.png)
+
+**On the technical side of things:**
+
+- Added an alias for the `Ext` table to make it easier to type:
+```lua
+SEX = Ext -- Short for "Script EXtender"
+SEX.Print("Welcome to Norbyte's SEX v56 !")
+```
+- Fixed more inconsistencies with copy/paste in the message boxes
+- Added an option to log AI scoring to the console: the top 3 actions will be shown anytime decisions are made. Work-in-progress as some of the AI features in the extender are currently bugged.
+
+![AI Logging.](img/ai.png)
+
+- Tooltips for Ascension stats in the stats tab are now created dynamically, so there's no need to edit them if you've edited the description/name
+- Added a `Server` table on the client, from which listeners for any Osiris symbol can be created, eliminating the need for boilerplate code on the server side if you need to listen for Osiris stuff.
+- Added an `Osiris` table on server to make user queries and DB queries a bit less aids to use in lua:
+```lua
+-- DBs with only one tuple return their contents directly, rather than as a list
+local _, value = Osiris.DB_PIP_EpicStats_DamageDealt(char.MyGuid, nil)
+
+-- User queries can also return variables directly from their output DBs, even for queries with multiple outputs
+local value = Osiris.QRY_AMER_KeywordStat_VitalityVoid_GetRadius(char.MyGuid, 1)
+```
+
+**On the future side of things:**
+
+Development has slowed down throughout March due to work and studies, but I'm not planning on stopping work on Epip anytime soon, and there are lots of exciting features in the planning stages. There is no time estimate for any of them, they're just things I know I will try out *eventually*. I know creating expectations never ends up well, but for the anniversary I felt it would be nice to write down the ideas I'm planning for the near future:
+
+- **Character sheet overhaul:** the attribute/ability/talent tabs will become easily moddable, for modifying or adding new entries to them. This will pave the way for custom attributes and abilities. The UI currently used for the custom vanity tab will be made generic, so anyone can add their own tabs.
+- **Proper controller support for EE UIs:** a large undertaking, but something that looks to be very possible and would be a massive quality of life improvement.
+- **Custom journal UI:** will replace the current changelog functionality. The plan is to use the GM mode's journal UI as a base, since it's a slick, full-screen UI with support for nested categories. The functionality will be made generic, you'd be able to use it for more than just changelogs.
+- **A way to create UIs just from lua:** work on this already started back in early January; it's used for the \[REDACTED\] in Fort Joy, but it's quite incomplete. The plan is to allow for creation of UIs with backgrounds, text, and all the Larian form elements (buttons, dropdowns, sliders etc.), all without touching any swf.
+- More documentation for the source code, namely the remaining UI scripts and the base metatables
+
+Thanks for reading and I hope you have an epic 1st of April.
 
 ### 19/2/22 Huge Hotbar rewrite
 Rewrote the hotbar UI. This involves mostly technical changes, in preparations for a standalone release.
