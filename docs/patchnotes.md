@@ -7,8 +7,28 @@ To get it, create a file named `OsiUpdateChannel.txt` in the same directory wher
 Devel
 ```
 
+## v1046
+[Download here](https://drive.google.com/file/d/1wELP_GrSv-JwKwWQA7gCcM9Ox2-CvrU5/view?usp=sharing). (14/4/22)
+
+- Added a new journal UI, replaces the quest log for changelogs. Access it from the hotbar
+- Fixed Inconspicuous not being hidden in character creation
+- Hotbar config (hotkeys) now also saves when you save the game, not just when the game is paused
+- Incompatible giftbags can no longer be enabled (you should still be able to disable them, if you had them)
+- Added a way to mark templates as favorites in the vanity UI, moving them to a special category
+- Vanity UI now shows categories in a consistent order
+- Small change to stats tab to make stats editable post-SessionLoaded
+- Character sheet now goes below the hotbar again
+- Increased the hotbar's "refresh rate", fixing an issue with slots being clickable when they shouldn't
+- Fixed the hotbar drawer locking up your scroll wheel
+- Renamed the transmog context menu option to "Vanity", made it only usable on equipped items
+- Added support for Rendal's NPC Armors to the vanity UI
+- Reduced logging when developer mode is off
+- You can no longer open the vanity menu while in combat
+- Your currently equipped template in the vanity menu is now indicated by an icon instead of a suffix
+- Fixed Immersive Meditation ignoring the setting
+- Fixed a performance issue with the stats tab
+
 ## v1045 - 1/4/22 Anniversary patch :flashed:
-[Download here](https://drive.google.com/file/d/1ae8TmPU6_SfluvLisYRL-enx9JAAEkBS/view?usp=sharing). (1/4/22)
 
 As of today, Epip is now one year old! My attention span for projects tends to be very low (as evidenced by my other EE stuff), but Epip looks to be an exception to that and it's incredible what it has become - all its UI changes were nearly unimaginable just a year ago. Thank you all for the support throughout the months, even at times when the patches were a buggy mess.
 
