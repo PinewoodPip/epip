@@ -7,7 +7,7 @@ To get it, create a file named `OsiUpdateChannel.txt` in the same directory wher
 Devel
 ```
 
-## v1046
+## v1046 - 14/04/22
 [Download here](https://drive.google.com/file/d/1wELP_GrSv-JwKwWQA7gCcM9Ox2-CvrU5/view?usp=sharing). (14/4/22)
 
 - Added a new journal UI, replaces the quest log for changelogs. Access it from the hotbar
