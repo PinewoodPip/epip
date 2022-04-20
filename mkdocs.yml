@@ -1,6 +1,9 @@
 site_name: Epip Encounters
 site_url: https://pinewood.team/epip/
 theme: readthedocs
+markdown_extensions:
+    - toc:
+        permalink: True
 
 nav:
   - Home: index.md
