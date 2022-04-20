@@ -154,8 +154,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="charactersheet">CharacterSheet</h1>
-<h2 id="events">Events</h2>
+                <h1 id="charactersheet">CharacterSheet<a class="headerlink" href="#charactersheet" title="Permanent link">&para;</a></h1>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
 <p><doc events="CharacterSheetUI"></p>
 <pre><code class="language-lua">---Hook to manipulate a secondary stats update.
 ---@hook SecondaryStatUpdate
@@ -163,7 +163,7 @@
 ---@param char EclCharacter
 </code></pre>
 <p></doc></p>
-<h2 id="functions">Functions</h2>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <p><doc lib="CharacterSheetUI"></p>
 <pre><code class="language-lua">---Get the current character on the sheet.  
 ---Defaults to client character if the sheet is uninitialized.
@@ -174,16 +174,16 @@ function CharacterSheet.GetCharacter() -- Client-only
 function CharacterSheet.DecodeSecondaryStats(ui) -- Client-only
 </code></pre>
 <p></doc></p>
-<h2 id="fields">Fields</h2>
+<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
 <p><doc fields="CharacterSheetUI"></p>
 <pre><code class="language-lua">---@class CharacterSheetUI
 ---@field StatsTab CharacterSheetStatsTab
 ---@field SECONDARY_STAT_GROUPS table&lt;string, number&gt; IDs of secondarystat groups.
 </code></pre>
 <p></doc></p>
-<h1 id="statstab">StatsTab</h1>
+<h1 id="statstab">StatsTab<a class="headerlink" href="#statstab" title="Permanent link">&para;</a></h1>
 <p><code>Client.UI.CharacterSheet.StatsTab</code> handles the basic functionality of the custom stats tab. Collapsable categories and server-side querying of stats is implemented in <code>Epip.Features.StatsTab</code>.</p>
-<h2 id="events_1">Events</h2>
+<h2 id="events_1">Events<a class="headerlink" href="#events_1" title="Permanent link">&para;</a></h2>
 <p><doc events="CharacterSheetUIStatsTab"></p>
 <pre><code class="language-lua">---Fired when a stat is rendered.
 ---@event EntryAdded
@@ -230,7 +230,7 @@ function CharacterSheet.DecodeSecondaryStats(ui) -- Client-only
 ---@param value number
 </code></pre>
 <p></doc></p>
-<h2 id="functions_1">Functions</h2>
+<h2 id="functions_1">Functions<a class="headerlink" href="#functions_1" title="Permanent link">&para;</a></h2>
 <p><doc lib="CharacterSheetUIStatsTab"></p>
 <pre><code class="language-lua">---Get the data table of a stat.
 ---@param id string
@@ -268,7 +268,7 @@ function StatsTab.RegisterStatValueFormatHook(stat, handler) -- Client-only
 function StatsTab.RegisterStatValueHook(stat, handler) -- Client-only
 </code></pre>
 <p></doc></p>
-<h2 id="fields_1">Fields</h2>
+<h2 id="fields_1">Fields<a class="headerlink" href="#fields_1" title="Permanent link">&para;</a></h2>
 <p><doc fields="CharacterSheetUIStatsTab"></p>
 <pre><code class="language-lua">---@class CharacterSheetUIStatsTab
 ---@field Stats table&lt;string, StatsTabStat&gt;

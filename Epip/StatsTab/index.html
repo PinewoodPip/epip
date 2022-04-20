@@ -160,10 +160,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="statstab">StatsTab</h1>
+                <h1 id="statstab">StatsTab<a class="headerlink" href="#statstab" title="Permanent link">&para;</a></h1>
 <p><code>Epip.Features.StatsTab</code> implements collapsable categories for the Character Sheet stats tab, as well as Ascension node stats, server-side value calculations and synching, and all stats present in the mod by default. Is this decoupling overengineered? Possibly, but it's a good showcase of how easily extensible systems can be if you stuff them with events.</p>
 <p>TODO document the rest of the system - Only Shared.lua is here atm.</p>
-<h2 id="creating-stats">Creating Stats</h2>
+<h2 id="creating-stats">Creating Stats<a class="headerlink" href="#creating-stats" title="Permanent link">&para;</a></h2>
 <p>There's 3 steps to creating a stat. <strong>Steps 1 and 2 have to be done on both contexts.</strong></p>
 <ol>
 <li>Define the stat; it's name, tooltip, how it displays, etc.</li>
@@ -210,11 +210,11 @@ end)
     EpipStats.UpdateTaggedStat(char, &quot;Keyword_VitalityVoid_Power&quot;, value)
 end)
 </code></pre>
-<h2 id="creating-ascension-node-stats">Creating Ascension Node Stats</h2>
+<h2 id="creating-ascension-node-stats">Creating Ascension Node Stats<a class="headerlink" href="#creating-ascension-node-stats" title="Permanent link">&para;</a></h2>
 <p>Stats related to Ascension nodes are automatically updated if their ID follows a specific format. All you need to do is define one; no further event listeners required. It will also be automatically put into the relevant keyword's category.</p>
 <p>You can create such stat with <code>StatsTab.AddNodeStat(clusterId: string, nodeIndex: number, nodeSubIndex: number, keyword: Keyword, keywordType: KeywordBoonType, statData: EpipStat)</code>. <code>StatData</code> is the stat definition, like with a normal stat. <strong>The indexes are 0-based.</strong> <code>ClusterId</code> is the ID of the Aspect, ex. <code>Force_TheFalcon</code>.</p>
 <p>There's just one small catch: owned nodes are only tracked if there's a stat defined for them. When you add stats in an update, you should call <code>StatsTab.RecalculateNodeStats()</code> on the server during the patch routine. You can also call <code>NRD_ModCall("EpipEncounters", "PerformFullStatsUpdate");</code> from Osiris, but this will be removed in the future.</p>
-<h2 id="creating-categories">Creating Categories</h2>
+<h2 id="creating-categories">Creating Categories<a class="headerlink" href="#creating-categories" title="Permanent link">&para;</a></h2>
 <p>A category holds stats, and can be collapsed in the menu. Stats only render if they're within a category that is open. They can be added with <code>RegisterCategory(id: string, data: EpipStatCategory, index?: integer)</code>. See the <code>EpipStatCategory</code> struct.</p>
 <pre><code class="language-lua">StatsTab.RegisterCategory(&quot;Vitals&quot;, {
     Header = &quot;&lt;font size='21'&gt;————— Vitals —————&lt;/font&gt;&quot;,
@@ -228,9 +228,9 @@ end)
     },
 })
 </code></pre>
-<h2 id="modifying-stats">Modifying Stats</h2>
+<h2 id="modifying-stats">Modifying Stats<a class="headerlink" href="#modifying-stats" title="Permanent link">&para;</a></h2>
 <p>Stat definitions are stored in <code>StatsTab.STATS</code>. You may screw with them at any time. Categories are in <code>CATEGORIES</code> instead, and their rendering order is defined in <code>CATEGORIES_ORDER</code>.</p>
-<h2 id="fields">Fields</h2>
+<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
 <p><doc fields="EpipStats"></p>
 <pre><code class="language-lua">---@class EpipStats
 ---@field CATEGORIES table&lt;string, EpipStatCategory&gt; Category definitions.
@@ -243,7 +243,7 @@ end)
 ---@field TOOLTIP_TALENT_NAME string TODO remove
 </code></pre>
 <p></doc></p>
-<h2 id="functions">Functions</h2>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <p><doc lib="EpipStatsTab"></p>
 <pre><code class="language-lua">---Registers a stat bound to an Ascension node.
 ---@param clusterId string

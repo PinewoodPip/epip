@@ -156,9 +156,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="optionssettings">OptionsSettings</h1>
+                <h1 id="optionssettings">OptionsSettings<a class="headerlink" href="#optionssettings" title="Permanent link">&para;</a></h1>
 <p>Handles the settings menu. Extended to allow for custom setting tabs. Note that the input menu is a different UI - documentation for it pending.</p>
-<h2 id="adding-settings">Adding settings</h2>
+<h2 id="adding-settings">Adding settings<a class="headerlink" href="#adding-settings" title="Permanent link">&para;</a></h2>
 <p>To create a tab with settings for your mod, start by calling <code>RegisterMod(mod: string, data: OptionsSettingsOptionSet)</code>, before <code>SessionLoading</code> - preferably in the lua script's body.</p>
 <p>The data table should have your mod's name, header (displayed at the top) and side button label (displayed on the button that switches tabs). You may also pass <code>Options</code> in the table at this time, or register settings later through <code>RegisterOptions</code>.</p>
 <pre><code class="language-lua">Client.UI.OptionsSettings.RegisterMod(&quot;EpipEncounters&quot;, {
@@ -209,7 +209,7 @@
 end
 </code></pre>
 <p>You may use the <code>IsElementEnabled</code> hook to make elements in your menu non-interactable. You can use this to require a setting to first have another one enabled/disabled by the user.</p>
-<h2 id="events">Events</h2>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
 <p><doc events="OptionsSettingsUI"></p>
 <pre><code class="language-lua">---Fired when a custom option's value is set, either from loading or applying changes through the menu/SetOptionValue.
 ---@event OptionSet
@@ -273,7 +273,7 @@ end
 ---@param label string Defaults to OptionsSettingsOption.TabHeader or OptionsSettingsOption.Mod
 </code></pre>
 <p></doc></p>
-<h2 id="fields">Fields</h2>
+<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
 <p><doc fields="OptionsSettingsUI"></p>
 <pre><code class="language-lua">---@class OptionsSettingsUI
 ---@field Options table&lt;string, OptionsSettingsOptionSet&gt;
@@ -286,7 +286,7 @@ end
 ---@field currentCustomTabs table&lt;number, string&gt; Binds a side button's numerical ID to the mod it's for.
 </code></pre>
 <p></doc></p>
-<h2 id="methods">Methods</h2>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <p><doc lib="OptionsSettingsUI"></p>
 <pre><code class="language-lua">---Registers a mod for use with the options menu.
 ---@param mod string
