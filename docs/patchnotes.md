@@ -7,8 +7,20 @@ To get it, create a file named `OsiUpdateChannel.txt` in the same directory wher
 Devel
 ```
 
+## v1047 - 20/04/22
+[Download here](https://drive.google.com/file/d/13dI7QVVfyO-y-4tfJwmHgOEKr1jOV9se/view?usp=sharing). (20/4/22)
+
+- Added an option to show artifact/protean chances on enemy health bars when the "Show Sneak Cones" (shift by default) key is held. Also works on containers, without needing the key to be held. 
+- Fixed an issue with some setup event being unreliable (likely the source of many hotbar problems)
+- Fixed some events being fired once per user
+- Fixed equip animations in the character sheet
+- Client timers are now truly client-side
+    - As a result hotkey'd skills on the hotbar should now have a lot less delay
+- Fixed hotbar not being greyed out for dead characters
+- Fixed "None"-type weapons not being considered melee, causing incarnate bull rush to appear grayed out in the hotbar
+- Fixed another large performance issue with the stats tab
+
 ## v1046 - 14/04/22
-[Download here](https://drive.google.com/file/d/1wELP_GrSv-JwKwWQA7gCcM9Ox2-CvrU5/view?usp=sharing). (14/4/22)
 
 - Added a new journal UI, replaces the quest log for changelogs. Access it from the hotbar
 - Fixed Inconspicuous not being hidden in character creation
