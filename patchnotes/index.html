@@ -53,6 +53,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1047-200422">v1047 - 20/04/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1046-140422">v1046 - 14/04/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1045-1422-anniversary-patch-flashed">v1045 - 1/4/22 Anniversary patch :flashed:</a>
@@ -187,8 +189,22 @@
 <p>To get it, create a file named <code>OsiUpdateChannel.txt</code> in the same directory where you installed the extender (where <code>DXGI.dll</code> is) with the contents:</p>
 <pre><code class="language-json">Devel
 </code></pre>
+<h2 id="v1047-200422">v1047 - 20/04/22</h2>
+<p><a href="https://drive.google.com/file/d/13dI7QVVfyO-y-4tfJwmHgOEKr1jOV9se/view?usp=sharing">Download here</a>. (20/4/22)</p>
+<ul>
+<li>Added an option to show artifact/protean chances on enemy health bars when the "Show Sneak Cones" (shift by default) key is held. Also works on containers, without needing the key to be held. </li>
+<li>Fixed an issue with some setup event being unreliable (likely the source of many hotbar problems)</li>
+<li>Fixed some events being fired once per user</li>
+<li>Fixed equip animations in the character sheet</li>
+<li>Client timers are now truly client-side<ul>
+<li>As a result hotkey'd skills on the hotbar should now have a lot less delay</li>
+</ul>
+</li>
+<li>Fixed hotbar not being greyed out for dead characters</li>
+<li>Fixed "None"-type weapons not being considered melee, causing incarnate bull rush to appear grayed out in the hotbar</li>
+<li>Fixed another large performance issue with the stats tab</li>
+</ul>
 <h2 id="v1046-140422">v1046 - 14/04/22</h2>
-<p><a href="https://drive.google.com/file/d/1wELP_GrSv-JwKwWQA7gCcM9Ox2-CvrU5/view?usp=sharing">Download here</a>. (14/4/22)</p>
 <ul>
 <li>Added a new journal UI, replaces the quest log for changelogs. Access it from the hotbar</li>
 <li>Fixed Inconspicuous not being hidden in character creation</li>
