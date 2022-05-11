@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/epip/Tutorials/testing/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Testing - Epip Encounters</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Testing";
+    var mkdocs_page_input_path = "Tutorials\\testing.md";
+    var mkdocs_page_url = "/epip/Tutorials/testing/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Epip Encounters</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../patchnotes/">Patch Notes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Game</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Game/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Game/Character/">Character</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Game/Item/">Item</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Client/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Client/input/">Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">UI</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/OptionsSettings/">OptionsSettings</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/Examine/">Examine</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/MessageBox/">MessageBox</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/CharacterSheet/">CharacterSheet</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Epip</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Epip/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Epip/StatsTab/">StatsTab</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Testing</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#running-osiris">Running Osiris</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Epip Encounters</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tutorials &raquo;</li>
+        
+      
+    
+    <li>Testing</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p>Testing and debugging mods in-game can be made a lot easier with the extender.</p>
+<h2 id="script-extender-console">Script Extender Console<a class="headerlink" href="#script-extender-console" title="Permanent link">&para;</a></h2>
+<p>Enabled by setting <code>CreateConsole</code> to <code>true</code> in <code>OsirisExtenderSettings.json</code>, the extender console logs messages from the extender, as well as lua scripting and osiris DebugBreaks.</p>
+<p>The console can also be used to run lua code (and therefore osiris as well). Pressing enter in the console window will enter the lua console, in server context by default. Typing <code>server</code>/<code>client</code> switches between the lua contexts.</p>
+<h3 id="running-osiris">Running Osiris<a class="headerlink" href="#running-osiris" title="Permanent link">&para;</a></h3>
+<p>Calls, events and queries from the base game can be called directly, executing right away:</p>
+<pre><code class="language-lua">print(CharacterGetHostCharacter())
+</code></pre>
+<p>Note that for queries, no out parameters are specified; they are instead returned as variables. Lua supports multiple returns per call, and the print function will print them all in order. User queries return true for success and false for failure - you have to lookup the return DBs yourself.</p>
+<p>For custom symbols, you must add an <code>Osi.</code> prefix (the Osi table is used to resolve custom osiris symbols, whereas the Larian ones are in the global table/scope):</p>
+<pre><code class="language-lua">Osi.PROC_AMER_GEN_OpenQueuedMessageBox(CharacterGetHostCharacter(), &quot;Test&quot;)
+</code></pre>
+<p>DBs can be interacted with in all the usual manners:</p>
+<ul>
+<li>Queried with <code>Osi.DB_MyDB:Get(param1, param2, ...)</code>. Use <code>nil</code> for placeholders/wildcards.</li>
+<li>Set by calling the symbol: <code>Osi.DB_MyDB(myValue1, myValue2)</code></li>
+<li>Deleted with the delete function: <code>Osi.DB_MyDB:Delete(param1, param2, ...)</code>. Once again, <code>nil</code> can be used as a wildcard.</li>
+</ul>
+<p>Querying DBs returns a list of all the valid tuples. In the console, the <code>Ext.Dump()</code> function can be used to print values as json. A useful shorthand for the function is <code>_D()</code>:</p>
+<p><img alt="Dumping a DB." src="../dump.png" /></p>
+<p>As of v56, all extender objects can be dumped as well, revealing their mapped properties and methods:</p>
+<p><img alt="Dumping an ItemColor." src="../stat_dump.png" /></p>
+<p>The <code>_C()</code> function is a shorthand for returning the currently active character, available on both client and server.</p>
+<pre><code>S &gt;&gt; print(_C())
+esv::Character (00007FF4C7E13200)
+</code></pre>
+<p>Note that this returns an extender character object (<code>esv::Character</code>), not the GUID. The GUID of most objects is mapped to the <code>.MyGuid</code> property, and it's what you have to use for osiris:</p>
+<p><img alt="Calling an osiris symbol with an EsvCharacter." src="../char_print.png" /></p>
+<p>The boolean type is automatically converted to <code>0</code>/<code>1</code> when used in a call, but queries will still return integers.</p>
+<p>On the client context, <code>_E()</code> returns the character currently being examined in the examine UI.</p>
+<h2 id="epip-helpers">Epip Helpers<a class="headerlink" href="#epip-helpers" title="Permanent link">&para;</a></h2>
+<p>Epip has some easy-to-use features to make testing ingame easier, if <code>DeveloperMode</code> is set to <code>true</code> in <code>OsirisExtenderSettings.json</code>.</p>
+<p>The most important of these is the Force Story Patching setting in the mod's settings menu. It will cause story compilation and patching to occur on any session load, making it far more convenient to test script changes ingame. This and other debug settings are always at the top of the menu, only visible in developer mode.</p>
+<p>The other useful, non-UI-related tool is the cheat context menu, accessed by right-clicking a character in the world or a player portrait on the left:</p>
+<p><img alt="Cheat debug menu." src="../cheat_context_menu.png" /></p>
+<p>The "Copy GUID to clipboard" option is self-explanatory. "Teleport to object" teleports the character to another character, item, or trigger, by its GUID. You can combine these two options to quickly teleport party members to eachother.</p>
+<p>"Pipmode" grants immortality, instantly-refreshing cooldowns, as well as infinite AP and SP. The options following it allow you to grant EE scripted stats to the character, with +/- buttons. Holding the "Show sneak cones" key (shift by default) adds/removes 10 points at a time. <strong>The longer menus can be scrolled with the mouse wheel, though it doesn't look intuitive at the moment.</strong> You may also add SpecialLogic and spells through a popup box:</p>
+<p><img alt="Adding a spell." src="../add_spell.png" /></p>
+<p>Lastly, the "Items..." submenu allows you to spawn item templates, generate treasure loot onto yourself, as well as quickly spawning in all artifacts and runes (can take a while to have it all generate!).</p>
+<h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">&para;</a></h2>
+<p>I have a simple AutoHotkey script for modding, with the following macros:</p>
+<ul>
+<li><code>Ctrl+M4</code>: focuses the console. M4 is the mouse side button that performs the 'back' function.</li>
+<li><code>Ctrl+M5</code>: focuses the game.</li>
+<li><code>Shift+M5</code>: focuses VS Code.</li>
+<li><code>Ctrl+R</code>: resets lua scripts (types <code>reset</code> in the console), sets some Epip tables to be available from the global context in the client console, then focuses the game.</li>
+</ul>
+<pre><code class="language-ahk">ConsoleWindowClass := &quot;ConsoleWindowClass&quot;
+GameWindowClass := &quot;SDL_app&quot;
+ConsoleWindow := &quot;D:OS2 Script Extender Debug Console&quot;
+
+^r::LuaReset()
+
++XButton2::FocusVSC()
+^XButton1::FocusConsole()
+^XButton2::FocusGame()
+
+LuaReset()
+{
+    global ConsoleWindow
+
+    SetKeyDelay, 10
+
+    WinGet, PID, PID, %GameWindow%
+    ControlSend, , {enter}reset{enter}, %ConsoleWindow%
+    ControlSend, , client{enter}, %ConsoleWindow%
+
+    FocusGame()
+
+    ControlSend, , epip = Mods.EpipEncounters{enter}, %ConsoleWindow%
+    ControlSend, , ui = epip.Client.UI{enter}exit{enter}, %ConsoleWindow%
+}
+
+FocusGame()
+{
+    global GameWindowClass
+
+    WinActivate, ahk_class %GameWindowClass%
+}
+
+FocusConsole()
+{
+    global ConsoleWindowClass
+
+    WinActivate, ahk_class %ConsoleWindowClass%
+}
+
+FocusVSC()
+{
+    WinGet, PID, PID, ahk_exe Code.exe
+    WinActivate, ahk_pid %PID%
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../Epip/StatsTab/" class="btn btn-neutral" title="StatsTab"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Epip/StatsTab/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

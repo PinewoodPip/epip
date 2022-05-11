@@ -76,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://pinewood.team/epip/Tutorials/testing/</loc>
+         <lastmod>2022-05-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://pinewood.team/epip/Tutorials/Lua/</loc>
          <lastmod>2022-05-11</lastmod>
          <changefreq>daily</changefreq>
