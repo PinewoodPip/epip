@@ -26,3 +26,6 @@ nav:
       - "Root": "Epip/index.md"
       - "Features":
         - "StatsTab": "Epip/StatsTab.md"
+  - Tutorials:
+    # - "Lua": "Tutorials/Lua/index.md"
+    - "Testing": "Tutorials/testing.md"
