@@ -7,9 +7,36 @@ To get it, create a file named `OsiUpdateChannel.txt` in the same directory wher
 Devel
 ```
 
-## v1047 - 20/04/22
-[Download here](https://drive.google.com/file/d/13dI7QVVfyO-y-4tfJwmHgOEKr1jOV9se/view?usp=sharing). (20/4/22)
+## v1048 - 14/05/22
+[Download here](https://drive.google.com/file/d/11Zz6D80HVBFh6rUsyQFVQDi_eKjAjyZw/view?usp=sharing). (14/05/22)
 
+- Added a warning upon loading a save with mods known to be problematic
+- Graying out hotbar slots while casting skills should now work similarly to before
+- Added Derpy's scripted encounters to the Treasure Table Display
+- Added an option to disable area transition labels or change their duration. It now also hides immediately if you hover over a character/item to bring up its healthbar
+- Possibly fixed a significant stuttering issue with the hotbar
+- Added a button to revert a transmog'd item's appearance (not retroactive; will only work on newly transmogged items)
+- Changing tabs in the Vanity UI now plays a sound
+- Rounded the numbers in the Treasure Table Display
+- Added a dyes tab to the vanity menu
+	- RGB sliders are not finished yet (you can use them in developer mode, but they will not be saved)
+
+On the technical side:
+
+- Fixed a net error message upon loading into the main menu
+- Fixed a startup error related to the Osiris table
+- Added UIObject flag helper methods to the UI table (though Norbyte confirmed these will be usable like other enums in the future)
+- Added ways to set and delete tuples to the Osiris table with :Set() and :Delete(); :Get() queries the DB (previous usage still works).
+- Osiris table's DB queries now return the list of tuples as the last return value, always
+- Added a separate UI for querying time from flash
+- Fixed time functions not accounting for daylight savings (iggy oversight)
+- Added annotations for the _Feature table/class
+- Added a `Text` library with a handy format function
+- Improvements to events and hooks: libraries can now hold their events and hooks as tables in `Event` and `Hooks` fields respectively, from which you can easily see all listener types available and register listeners. Doing it this way enables auto-completion and intellisense/EmmyLua annotations for listener parameters, which was not possible before. Old libraries will slowly be updated to use this, and the old method of registering listeners will stay.
+
+The standalone hotbar mod will be updated tomorrow (15th May).
+
+## v1047 - 20/04/22
 - Added an option to show artifact/protean chances on enemy health bars when the "Show Sneak Cones" (shift by default) key is held. Also works on containers, without needing the key to be held. 
 - Fixed an issue with some setup event being unreliable (likely the source of many hotbar problems)
 - Fixed some events being fired once per user

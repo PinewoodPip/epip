@@ -22,7 +22,7 @@ To do so, create a `OsirisExtenderSettings.json` file in the `DefEd/bin` folder 
 ```json
 {
 	"CreateConsole": true,
-	"DeveloperMode": true,
+	"DeveloperMode": true
 }
 ```
 
