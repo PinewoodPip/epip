@@ -53,6 +53,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1048-140522">v1048 - 14/05/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1047-200422">v1047 - 20/04/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1046-140422">v1046 - 14/04/22</a>
@@ -194,8 +196,37 @@
 <p>To get it, create a file named <code>OsiUpdateChannel.txt</code> in the same directory where you installed the extender (where <code>DXGI.dll</code> is) with the contents:</p>
 <pre><code class="language-json">Devel
 </code></pre>
+<h2 id="v1048-140522">v1048 - 14/05/22<a class="headerlink" href="#v1048-140522" title="Permanent link">&para;</a></h2>
+<p><a href="https://drive.google.com/file/d/11Zz6D80HVBFh6rUsyQFVQDi_eKjAjyZw/view?usp=sharing">Download here</a>. (14/05/22)</p>
+<ul>
+<li>Added a warning upon loading a save with mods known to be problematic</li>
+<li>Graying out hotbar slots while casting skills should now work similarly to before</li>
+<li>Added Derpy's scripted encounters to the Treasure Table Display</li>
+<li>Added an option to disable area transition labels or change their duration. It now also hides immediately if you hover over a character/item to bring up its healthbar</li>
+<li>Possibly fixed a significant stuttering issue with the hotbar</li>
+<li>Added a button to revert a transmog'd item's appearance (not retroactive; will only work on newly transmogged items)</li>
+<li>Changing tabs in the Vanity UI now plays a sound</li>
+<li>Rounded the numbers in the Treasure Table Display</li>
+<li>Added a dyes tab to the vanity menu<ul>
+<li>RGB sliders are not finished yet (you can use them in developer mode, but they will not be saved)</li>
+</ul>
+</li>
+</ul>
+<p>On the technical side:</p>
+<ul>
+<li>Fixed a net error message upon loading into the main menu</li>
+<li>Fixed a startup error related to the Osiris table</li>
+<li>Added UIObject flag helper methods to the UI table (though Norbyte confirmed these will be usable like other enums in the future)</li>
+<li>Added ways to set and delete tuples to the Osiris table with :Set() and :Delete(); :Get() queries the DB (previous usage still works).</li>
+<li>Osiris table's DB queries now return the list of tuples as the last return value, always</li>
+<li>Added a separate UI for querying time from flash</li>
+<li>Fixed time functions not accounting for daylight savings (iggy oversight)</li>
+<li>Added annotations for the _Feature table/class</li>
+<li>Added a <code>Text</code> library with a handy format function</li>
+<li>Improvements to events and hooks: libraries can now hold their events and hooks as tables in <code>Event</code> and <code>Hooks</code> fields respectively, from which you can easily see all listener types available and register listeners. Doing it this way enables auto-completion and intellisense/EmmyLua annotations for listener parameters, which was not possible before. Old libraries will slowly be updated to use this, and the old method of registering listeners will stay.</li>
+</ul>
+<p>The standalone hotbar mod will be updated tomorrow (15th May).</p>
 <h2 id="v1047-200422">v1047 - 20/04/22<a class="headerlink" href="#v1047-200422" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/13dI7QVVfyO-y-4tfJwmHgOEKr1jOV9se/view?usp=sharing">Download here</a>. (20/4/22)</p>
 <ul>
 <li>Added an option to show artifact/protean chances on enemy health bars when the "Show Sneak Cones" (shift by default) key is held. Also works on containers, without needing the key to be held. </li>
 <li>Fixed an issue with some setup event being unreliable (likely the source of many hotbar problems)</li>
