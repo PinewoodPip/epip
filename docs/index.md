@@ -2,6 +2,23 @@
 
 Epip Encounters is an add-on mod for [Epic Encounters 2](https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#) which introduces numerous Quality of Life changes as well as UI improvements.
 
+## Download
+
+**[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/v52). Load after both EE Core and EE Origins.**
+
+**The latest versions of the mod require v56 of the extender.**
+
+To get it, create a file named `OsiUpdateChannel.txt` in the same directory where you installed the extender (where `DXGI.dll` is) with the contents:
+```json
+Devel
+```
+
+[Latest version, v1049.](https://drive.google.com/file/d/18GC23zThzYV7hyCM0eMkmVdUttD7tXUF/view?usp=sharing). (23/06/22)
+
+Only English is supported. Text related to gameplay changes will not show up in other languages. Mods that also modify UI are largely incompatible. ["No More Dragging"](https://steamcommunity.com/sharedfiles/filedetails/?id=2546859598) and its expanded container version is compatible, for now.
+
+See the [patchnotes](patchnotes.md) page for patchnotes.
+
 Special thanks to:
 
 - Ameranth for programming help as well as the amazing moddability of EE
@@ -9,18 +26,9 @@ Special thanks to:
 - Norbyte for the Script Extender and it's fantastic UI features
 - Elric for his help with designing and drawing new UIs
 
-
-## Download
-
-**[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/v52). Load after both EE Core and EE Origins.**
-
-Only English is supported. Text related to gameplay changes will not show up in other languages. Mods that also modify UI are largely incompatible. ["No More Dragging"](https://steamcommunity.com/sharedfiles/filedetails/?id=2546859598) and its expanded container version is compatible, for now.
-
-See the [patchnotes](patchnotes.md) page for latest version.
-
-Last version compatible with the Script Extender v55: [v1043](https://drive.google.com/file/d/12v42kFeIrPcwR5s_blArLLzBZZuqYlVF/view?usp=sharing) **(not recommended)**
-
 ## Features
+
+This section of the site gets outdated rather quickly; I suggested browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest features. 
 
 ### Health Bar
 The health bar at the top of the screen now shows a character’s resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer. The actual B/H statuses are now hidden in this UI to reduce clutter. Credits to Elric for the new art assets used!
