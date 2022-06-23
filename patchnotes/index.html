@@ -53,6 +53,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1049-230622">v1049 - 23/06/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1048-140522">v1048 - 14/05/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1047-200422">v1047 - 20/04/22</a>
@@ -192,12 +194,82 @@
             <div class="section">
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
-<p>The latest versions of the mod require v56 of the extender.</p>
-<p>To get it, create a file named <code>OsiUpdateChannel.txt</code> in the same directory where you installed the extender (where <code>DXGI.dll</code> is) with the contents:</p>
-<pre><code class="language-json">Devel
-</code></pre>
+<p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
+<h2 id="v1049-230622">v1049 - 23/06/22<a class="headerlink" href="#v1049-230622" title="Permanent link">&para;</a></h2>
+<p><a href="https://drive.google.com/file/d/18GC23zThzYV7hyCM0eMkmVdUttD7tXUF/view?usp=sharing">Download here</a>.</p>
+<ul>
+<li>Added an option to enable improvements to the combat log. Messages can be filtered by type, and certain messages will be merged into one line if they occur one after another, such as surface damage and healing. <strong>This option will only work when playing in english</strong>, unless someone is willing to help me make string patterns for other languages.<ul>
+<li>Right-click the combat log to set your filters. You can also clear the log from that menu.</li>
+<li>When damage messages are merged into one line, they will display the amount of hits that were merged at the end. The exception to this is damage that occurs within 25ms of eachother, such as weapon attacks with coatings. These are counted as a single hit.</li>
+<li>Messages parsed by the new combat log system will now have a consistent base color, gray, instead of randomly using white.</li>
+<li>Some messages have been slightly reworded for consistency</li>
+</ul>
+</li>
+<li>Added options in the cheat menu to add/remove tags. You can use this to clear a character's main character status by removing the <code>AVATAR</code> tag.</li>
+<li>Added a button in the debug sections of the options menu to warp to AMER_Test</li>
+<li>AMER_Test got Pinewood'd a bit</li>
+<li>Weapon tooltips now show +elemental damage modifiers</li>
+<li>Updated Derpy's treasure table displays</li>
+<li>Removed the option to disable custom context menus</li>
+<li>Fixed keyword source tooltips being off-by-one</li>
+<li>Hotbar action button tooltips now show their keybind (without shortening)</li>
+<li>Removed the automatic unbinding for GM keybinds, since they are no longer used for the hotbar</li>
+<li>Added chat commands:<ul>
+<li>/rp displays a message over your character's head</li>
+<li>/emote performs an animation</li>
+<li>/help lists help for all commands</li>
+</ul>
+</li>
+<li>Added a new tab in the controls menu where you can bind hotbar action hotkeys as well as standalone hotkeys for Meditate and Source Infuse. <strong>You must rebind your hotbar hotkeys</strong></li>
+<li>Two keybinds previously used by the hotbar are now reserved as special keys that can be bound in the new custom keybinds UI. The purpose of them is to allow extra mouse buttons and other special bindings to be used with the new system until it is improved.</li>
+<li>Fixed numerous problems while playing with controllers</li>
+<li>Added a setting to make the Escape key close the Amer UIs entirely rather than popping page</li>
+<li>Fixed a hotbar refresh issue when pushing slots around</li>
+<li>Fixed hotbar action buttons no longer properly showing active/inactive state</li>
+<li>Removed the option to disable wrapping statuses (it has not actually worked for a long time) as well as the vanity menu</li>
+</ul>
+<p>Vanity:</p>
+<ul>
+<li>Added custom RGB dyes to the dyes tab</li>
+<li>Added all built-in ItemColor entries as selectable dyes</li>
+<li>Saving now also happens when you add/delete an outfit or a dye</li>
+<li>You can no longer transmog GB5 items</li>
+<li>Fixed spears not being available in the transmog menu</li>
+<li>Fixed the vanity option not appearing for non-shield offhands</li>
+<li>Added a button to delete outfits</li>
+<li>Fixed positioning of the vanity UI while playing on resolutions other than 1080p, or when dragging the character sheet</li>
+<li>Fixed saving outfits with weapons not working</li>
+<li>Removed the dye context menu for real</li>
+<li>The UI now shows a message if you select an empty slot, instead of opening a message box</li>
+<li>Slight changes to positioning of elements</li>
+<li>Improved performance</li>
+<li>The character sheet unallocated points notifications are now hidden while in the UI</li>
+</ul>
+<p>Other:</p>
+<ul>
+<li>Fixed a bug with hotbar action buttons resetting</li>
+<li>Added a "Healing done" stat to the stats tab</li>
+<li>The "Damage dealt" stat now also considers your owned summons</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Reworked how the selected item is tracked in the Vanity UI</li>
+<li>Reworked all tabs of Vanity to be separate, independent features</li>
+<li>Added initial groundwork for supporting controllers in Amer's UIs</li>
+<li>Added APIs for <code>chatLog</code>, <code>optionsInput</code></li>
+<li><code>_Feature:DebugLog()</code> is now polymorphic like the regular print function</li>
+<li>Added the <code>Input</code> UI, with possibilities for tracking text keys from the keyboard, and intercepting interface events</li>
+<li>Added FlexStats for sight and hearing, ranging from -128 to +128 (except for sight which goes to +2048)</li>
+<li>Added support for saving settings on the server</li>
+<li>Removed unused ItemColor stats</li>
+<li>Removed unused PersistentVars table</li>
+<li>Hooks can now be set to only return the first non-nil value (and stop propagation after that)</li>
+<li>Cleaned up the client bootstrap script</li>
+<li>Added an !animtest command on server, auto-playing all female human animations on the host character. There's no stopping it once started, so be careful!</li>
+<li>Added a !soundtest command on the client, which tests all UI sounds. Might've been added before this version, I don't recall exactly when it was implemented.</li>
+<li>Added some sick ASCII signatures to the bootstrap scripts, as well as a readme</li>
+</ul>
 <h2 id="v1048-140522">v1048 - 14/05/22<a class="headerlink" href="#v1048-140522" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/11Zz6D80HVBFh6rUsyQFVQDi_eKjAjyZw/view?usp=sharing">Download here</a>. (14/05/22)</p>
 <ul>
 <li>Added a warning upon loading a save with mods known to be problematic</li>
 <li>Graying out hotbar slots while casting skills should now work similarly to before</li>
