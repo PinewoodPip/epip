@@ -1,0 +1,24 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hljs-comment {
+  color: #3e3e3e;
+}
+
+.hljs-params {
+  color: #893917;
+  font-weight: bold;
+}
+
+.hljs-keyword {
+  color: #893917
+}
+
+.hljs-title {
+  color: #032982;
+}

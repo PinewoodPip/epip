@@ -94,8 +94,42 @@ StatsTab.RegisterCategory("Vitals", {
 ## Modifying Stats
 Stat definitions are stored in `StatsTab.STATS`. You may screw with them at any time. Categories are in `CATEGORIES` instead, and their rendering order is defined in `CATEGORIES_ORDER`.
 
-## Fields
-<doc fields="EpipStats">
+## Methods
+
+<epip class="EpipStatsTab" symbols="Function">
+
+```lua
+---Registers a stat bound to an Ascension node.
+---@param clusterId string
+---@param nodeIndex number
+---@param nodeSubIndex number
+---@param keyword Keyword
+---@param keywordType KeywordBoonType
+---@param statData EpipStat Stat metadata.
+function Epip.Features.EpipStats.AddNodeStat(clusterId, nodeIndex, nodeSubIndex, keyword, keywordType, statData) --RequireBothContexts
+
+---Register a stat.
+---@param id string
+---@param data EpipStat
+function Epip.Features.EpipStats.RegisterStat(id, data) --RequireBothContexts
+
+---Register a category.
+---@param id string
+---@param data EpipStatCategory
+---@param index? integer Order in the stats tab relative to other categories.
+function Epip.Features.EpipStats.RegisterCategory(id, data, index) --RequireBothContexts
+
+---Add a stat to a category.
+---@param statID string
+---@param categoryID string
+---@param index? integer
+function Epip.Features.EpipStats.AddStatToCategory(statID, categoryID, index) --RequireBothContexts
+
+```
+</epip>
+
+## Objects
+<epip class="EpipStatsTab" symbols="Class">
 
 ```lua
 ---@class EpipStats
@@ -107,40 +141,25 @@ Stat definitions are stored in `StatsTab.STATS`. You may screw with them at any 
 ---@field STAT_VALUE_TAG_PREFIX string
 ---@field TOOLTIP_TALENT number TODO remove
 ---@field TOOLTIP_TALENT_NAME string TODO remove
-```
-</doc>
 
-## Functions
-<doc lib="EpipStatsTab">
 
-```lua
----Registers a stat bound to an Ascension node.
----@param clusterId string
----@param nodeIndex number
----@param nodeSubIndex number
----@param keyword Keyword
----@param keywordType KeywordBoonType
----@param statData EpipStat Stat metadata.
-function EpipStats.AddNodeStat(clusterId, nodeIndex, nodeSubIndex, keyword, keywordType, statData) -- Must be called on both contexts
+---@class EpipStat
+---@field Name string
+---@field Description string Fallback description in case a formatted Tooltip isn't set.
+---@field Tooltip TooltipData
+---@field Footnote string Italic text after description, in new paragraph.
+---@field Suffix string Suffix for value display.
+---@field Prefix string Prefix for value display.
+---@field Boolean boolean Boolean stats show no value label.
+---@field MaxCharges string If specified, this stat will display as "{Value}/{Value of MaxCharges stat}"
+---@field IgnoreForHiding boolean If true, this stat will not be considered as added when determining if a Hidden category should display.
+
+
+---@class EpipStatCategory
+---@field Header string Name of the collapsable stat.
+---@field Name string Name of the category in the tooltip.
+---@field Behaviour EpipStatCategoryBehaviour Controls how default-value stats are shown. GreyOut greys out their label and value, hidden hides them - and the whole category - if no stats are owned.
+---@field Stats string[] Stats displayed in the category, ordered.
+
+
 ```
-```lua
----Register a stat.
----@param id string
----@param data EpipStat
-function EpipStats.RegisterStat(id, data) -- Must be called on both contexts
-```
-```lua
----Register a category.
----@param id string
----@param data EpipStatCategory
----@param index? integer Order in the stats tab relative to other categories.
-function EpipStats.RegisterCategory(id, data, index)
-```
-```lua
----Add a stat to a category.
----@param statID string
----@param categoryID string
----@param index? integer
-function EpipStats.AddStatToCategory(statID, categoryID, index) -- Must be called on both contexts
-```
-</doc>

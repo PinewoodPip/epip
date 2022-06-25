@@ -2,26 +2,39 @@ site_name: Epip Encounters
 site_url: https://pinewood.team/epip/
 theme: readthedocs
 markdown_extensions:
+    - pymdownx.highlight:
+        anchor_linenums: true
     - toc:
         permalink: True
+    # - pymdownx.inlinehilite
+    - pymdownx.snippets
+    # - pymdownx.superfences
+
+extra_css:
+  - css/extra.css
 
 nav:
   - Home: index.md
   - Patch Notes: patchnotes.md
   - Documentation: 
     - "Introduction": "docs.md"
+    - "Global Tables":
+      - "Feature": "Global Tables/Feature.md"
     - "Game":
       - "Root": "Game/index.md"
       - "Character": "Game/Character.md"
       - "Item": "Game/Item.md"
     - "Client":
       - "Root": "Client/index.md"
-      - "Input": "Client/input.md"
+      # - "Input": "Client/input.md"
       - "UI":
+        - "ChatLog" : "Client/UI/ChatLog.md"
         - "OptionsSettings" : "Client/UI/OptionsSettings.md"
+        - "OptionsInput" : "Client/UI/OptionsInput.md"
         - "Examine": "Client/UI/Examine.md"
         - "MessageBox": "Client/UI/MessageBox.md"
         - "CharacterSheet": "Client/UI/CharacterSheet.md"
+        - "GiftBagContent": "Client/UI/GiftBagContent.md"
     - "Epip":
       - "Root": "Epip/index.md"
       - "Features":
