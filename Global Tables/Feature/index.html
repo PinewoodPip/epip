@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://pinewood.team/epip/Game/Item/">
+  <link rel="canonical" href="https://pinewood.team/epip/Global%20Tables/Feature/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Item - Epip Encounters</title>
+  <title>Feature - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Item";
-    var mkdocs_page_input_path = "Game\\Item.md";
-    var mkdocs_page_url = "/epip/Game/Item/";
+    var mkdocs_page_name = "Feature";
+    var mkdocs_page_input_path = "Global Tables\\Feature.md";
+    var mkdocs_page_url = "/epip/Global%20Tables/Feature/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -59,23 +59,25 @@
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../../docs/">Introduction</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Global Tables</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Global%20Tables/Feature/">Feature</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Global Tables</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Feature</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#objects">Objects</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Game</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../">Root</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Game</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Game/">Root</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Character/">Character</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Game/Character/">Character</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Item</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Game/Item/">Item</a>
                 </li>
     </ul>
                     </li>
@@ -146,11 +148,11 @@
         
       
         
-          <li>Game &raquo;</li>
+          <li>Global Tables &raquo;</li>
         
       
     
-    <li>Item</li>
+    <li>Feature</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -162,118 +164,111 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="item">Item<a class="headerlink" href="#item" title="Permanent link">&para;</a></h1>
-<p>Contains queries related to items. Most functions expect you to pass <code>Item</code> as the first parameter (alias for <code>EclItem</code> and <code>EsvItem</code>).</p>
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
-<p><epip class="GameItem" symbols="Function"></p>
-<pre><code class="language-lua">---Returns true if the item is an Artifact by checking the AMER_UNI tag.
----@param item Item
+                <h1 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h1>
+<p>The <code>_Feature</code> table is the table that most libraries and actual mod features inherit from; it provides a plethora of generic utilities useful for any sort of script.</p>
+<p>Included are logging methods, shorthands for applying path overrides, event &amp; hook creation and dispatching, and more.</p>
+<p>To use this table, you should call <code>Epip.AddFeature()</code>. This will register your script's table to the <code>Epip.Features</code> table and initialize the <code>_Feature</code> metatable.</p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><epip class="Feature" symbols="Function"></p>
+<pre><code class="language-lua">---Add an event to the Events field.
+---@param name string
+---@param data? Event
+function _Feature:AddEvent(name, data)
+
+---Add a hook to the Hooks field.
+---@param name string
+---@param data? Hook
+function _Feature:AddHook(name, data)
+
+---Returns whether the feature has *not* been disabled. Use to condition your feature's logic.
 ---@return boolean 
-function Game.Items.IsArtifact(item)
+function _Feature:IsEnabled()
 
----Returns whether item is a melee weapon (satisfying a MeleeWeapon requirement)
----Returns true for None-type weaponry.
----@param item Item
----@return boolean 
-function Game.Items.IsMeleeWeapon(item)
+---Invoked on SessionLoaded if the feature is not disabled.
+---Override to run initialization routines.
+---Sets the Disabled flag.
+function _Feature:Disable()
 
----Returns whether item is a shield (satisfying a ShieldWeapon requirement)
----@param item Item
----@return boolean 
-function Game.Items.IsShield(item)
+---Called after a feature is initialized with Epip.AddFeature(),
+---if it is not disabled.
+---Override to run initialization routines.
+---Register an event listener.
+---To define events with multiple variables, you can easily create a wrapper function for this (and FireEvent)
+---that registers an event listener with a prefix(es).
+---@param event string
+---@param handler function
+function _Feature:RegisterListener(event, handler)
 
----Returns whether item is a dagger (satisfying a DaggerWeapon requirement)
----@param item Item
----@return boolean 
-function Game.Items.IsDagger(item)
+---Fire an event.
+---@param event string
+function _Feature:FireEvent(event, ...)
 
----Returns whether item is a ranged weapon; bow or crossbow only!
----@param item Item
----@return boolean 
-function Game.Items.IsRangedWeapon(item)
+---Register a hook.
+---@param event string
+---@param handler function
+function _Feature:RegisterHook(event, handler)
 
---- Gets the amount of Loremaster necessary to identify an item.  
---- Ignores whether the item is already identified.
----@param item Item
----@return number 
-function Game.Items.Items.GetIdentifyRequirement(item)
+---Get a value from registered hook listeners.
+---@param event string
+---@param defaultValue any Default value, will be passed to the first listener.
+function _Feature:ReturnFromHooks(event, defaultValue, ...)
 
---- Returns true if the item is an armor piece or a weapon.
----@param item Item
----@return boolean 
-function Game.Items.Items.IsEquipment(item)
+---Fire an event to all contexts and peers.
+---@param event string
+function _Feature:FireGlobalEvent(event, ...)
 
---- Returns true for dyeable items (equipment, except rings/amulet/belt).
----@param item Item
----@return boolean 
-function Game.Items.Items.IsDyeable(item)
+---Show debug-level logging from this feature.
+---Only work in Developer mode.
+function _Feature:Debug()
 
---- Alias for Item.Stats.ItemSlot
----@param item Item
----@return string 
-function Game.Items.Items.GetItemSlot(item)
+---Returns whether :Debug() has been ran successfully.
+function _Feature:IsDebug()
 
---- Like ItemSlot, but distinguishes armor subtypes  
---- Get subtype of item (ex. &quot;Dagger&quot; or &quot;Platemail&quot;).  
---- Returns ItemSlot for items with no subtypes
----@param item Item
----@return EquipmentSubType 
-function Game.Items.Items.GetEquipmentSubtype(item)
+---Stop all non-error, non-warning logging from this feature.
+function _Feature:Mute()
 
---- Applies a dye to the item.
----@param item Item
----@param dye Dye
----@return boolean False if item is already dyed with the same dye, or if dye is ``nil``.
-function Game.Items.Items.ApplyDye(item, dye)
+---Stop all non-error logging.
+function _Feature:ShutUp()
 
---- Returns the ID and data for the most recently-applied dye deltamod on the item.
----@param item Item
----@return string,Dye The dye ID and data table.
-function Game.Items.Items.GetCurrentDye(item)
+---Log a value in Debug mode.
+function _Feature:DebugLog(...)
 
---- Returns true if item is equipped by char. Assumes the item cannot be equipped into an unintended slot. Rings and weapons are checked for both slots.
----@param char Character
----@param item Item
----@return boolean 
-function Game.Items.Items.IsEquipped(char, item)
+---Dump a value to the console, in Debug mode.
+---@param msg any
+function _Feature:Dump(msg)
 
----Returns the slot that an item is equipped in, or nil if it is not.
----@param item Item
----@return EquipSlot? 
-function Game.Items.Items.GetEquippedSlot(item)
+---Log a value.
+---@param msg any
+function _Feature:Log(msg)
 
---- Count the items in an entity's inventory that match a predicate function.  
---- Predicate is passed ``Item`` and should return true for items to be counted.
----@param entity Entity
----@param predicate fun(item: EsvItem)
----@return number 
-function Game.Items.Items.CountItemsInInventory(entity, predicate)
+---Log values without any prefixing.
+function _Feature:RawLog(...)
 
---- Gets the stats object of the rune inserted at rune index ``index`` on item.
----@param item Item
----@param index number
----@return StatItem 
-function Game.Items.Items.GetRune(item, index)
+---Log a warning.
+---@param msg any
+function _Feature:LogWarning(msg)
 
---- Returns a list of runes on the item.
----@param item Item
----@return table&lt;number, StatItem&gt; Empty slots are nil.
-function Game.Items.Items.GetRunes(item)
-
---- Returns true if item has any runes slotted.
----@param item Item
----@return boolean 
-function Game.Items.Items.HasRunes(item)
-
---- Returns a list of the items in the entity's inventory that match an optional predicate function.  
---- Predicate is passed the EclItem/EsvItem and should return true for items to be included.
----@param entity Entity
----@param predicate fun(item: Item)
----@return Item[] 
-function Game.Items.Items.GetItemsInInventory(entity, predicate)
+---Log an error.
+---@param msg any
+function _Feature:LogError(msg)
 
 </code></pre>
 <p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="Feature" symbols="Class"></p>
+<pre><code class="language-lua">---@class Feature
+---@field Name string Used for logging, event handling. Do not set!
+---@field CONTEXT Context Set automatically.
+---@field Disabled boolean
+---@field Logging integer Logging level.
+---@field Events table&lt;string, Event&gt; Metatables initialized automatically.
+---@field Hooks table&lt;string, Hook&gt; Metatables initialized automatically.
+---@field LOGGING_LEVEL table&lt;string, integer&gt; Valid logging levels.
+---@field REQUIRED_MODS table&lt;GUID, string&gt; The feature will be automatically disabled if any required mods are missing.
+---@field FILEPATH_OVERRIDES table&lt;string, string&gt;
+
+
+</code></pre>
               
             </div>
           </div>
@@ -281,10 +276,10 @@ function Game.Items.Items.GetItemsInInventory(entity, predicate)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../Client/" class="btn btn-neutral float-right" title="Root">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../Game/" class="btn btn-neutral float-right" title="Root">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Character/" class="btn btn-neutral" title="Character"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../docs/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -310,10 +305,10 @@ function Game.Items.Items.GetItemsInInventory(entity, predicate)
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Character/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../docs/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../Client/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../Game/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

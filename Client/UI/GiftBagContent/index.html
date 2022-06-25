@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://pinewood.team/epip/Client/UI/CharacterSheet/">
+  <link rel="canonical" href="https://pinewood.team/epip/Client/UI/GiftBagContent/">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>CharacterSheet - Epip Encounters</title>
+  <title>GiftBagContent - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "CharacterSheet";
-    var mkdocs_page_input_path = "Client\\UI\\CharacterSheet.md";
-    var mkdocs_page_url = "/epip/Client/UI/CharacterSheet/";
+    var mkdocs_page_name = "GiftBagContent";
+    var mkdocs_page_input_path = "Client\\UI\\GiftBagContent.md";
+    var mkdocs_page_url = "/epip/Client/UI/GiftBagContent/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
@@ -91,17 +91,17 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../MessageBox/">MessageBox</a>
                 </li>
-                <li class="toctree-l3 current"><a class="reference internal current" href="./">CharacterSheet</a>
+                <li class="toctree-l3"><a class="reference internal" href="../CharacterSheet/">CharacterSheet</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">GiftBagContent</a>
     <ul class="current">
-    <li class="toctree-l4"><a class="reference internal" href="#events">Events</a>
+    <li class="toctree-l4"><a class="reference internal" href="#events-hooks">Events &amp; Hooks</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a>
+    <li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a>
+    <li class="toctree-l4"><a class="reference internal" href="#objects">Objects</a>
     </li>
     </ul>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../GiftBagContent/">GiftBagContent</a>
                 </li>
     </ul>
                 </li>
@@ -158,7 +158,7 @@
         
       
     
-    <li>CharacterSheet</li>
+    <li>GiftBagContent</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -170,132 +170,53 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="charactersheet">CharacterSheet<a class="headerlink" href="#charactersheet" title="Permanent link">&para;</a></h1>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
-<p><doc events="CharacterSheetUI"></p>
-<pre><code class="language-lua">---Hook to manipulate a secondary stats update.
----@hook SecondaryStatUpdate
----@param stats SecondaryStatBase[]
----@param char EclCharacter
+                <h1 id="giftbagcontent">GiftBagContent<a class="headerlink" href="#giftbagcontent" title="Permanent link">&para;</a></h1>
+<p>The GiftBagContent UI is the ingame giftbags menu.</p>
+<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
+<p><epip class="GiftBagContentUI" symbols="Event,Hook"></p>
+<pre><code class="language-lua">---Fired after the UI's content is updated, upon opening the UI.
+---@event ContentUpdated
+---@field RegisterListener fun(self, listener:fun(content:GiftBagContentUIEntry[]))
+---@field Fire fun(self, content:GiftBagContentUIEntry[])
+
+
+---Fired when the content of the UI needs to be updated.
+---@hook GetContent
+---@field RegisterHook fun(self, handler:fun(content:GiftBagContentUIEntry[]))
+---@field Return fun(self, content:GiftBagContentUIEntry[])
+
+
 </code></pre>
-<p></doc></p>
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
-<p><doc lib="CharacterSheetUI"></p>
-<pre><code class="language-lua">---Get the current character on the sheet.  
----Defaults to client character if the sheet is uninitialized.
----@return EclCharacter
-function CharacterSheet.GetCharacter() -- Client-only
+<p></epip></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><epip class="GiftBagContentUI" symbols="Function"></p>
+<pre><code class="language-lua">---Returns a giftbag mod by its numerical ID.
+---@param id number
+---@return GUID 
+function Client.UI.GiftBagContent.GetModGUID(id)
+
+---Renders the contents of the UI, based on the data arrays in flash.
+function Client.UI.GiftBagContent.RenderContent()
+
 </code></pre>
-<pre><code class="language-lua">---@return SecondaryStatBase[]
-function CharacterSheet.DecodeSecondaryStats(ui) -- Client-only
+<p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="GiftBagContentUI" symbols="Class"></p>
+<pre><code class="language-lua">---@class GiftBagContentUI : Feature
+
+
+---Represents a mod entry in the UI.
+---@class GiftBagContentUIEntry
+---@field ID number ID in UI.
+---@field Name string
+---@field Description string
+---@field Enabled boolean
+---@field Locked boolean Locked giftbags cannot be toggled.
+---@field Mod string GUID of giftbag mod.
+
+
 </code></pre>
-<p></doc></p>
-<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
-<p><doc fields="CharacterSheetUI"></p>
-<pre><code class="language-lua">---@class CharacterSheetUI
----@field StatsTab CharacterSheetStatsTab
----@field SECONDARY_STAT_GROUPS table&lt;string, number&gt; IDs of secondarystat groups.
-</code></pre>
-<p></doc></p>
-<h1 id="statstab">StatsTab<a class="headerlink" href="#statstab" title="Permanent link">&para;</a></h1>
-<p><code>Client.UI.CharacterSheet.StatsTab</code> handles the basic functionality of the custom stats tab. Collapsable categories and server-side querying of stats is implemented in <code>Epip.Features.StatsTab</code>.</p>
-<h2 id="events_1">Events<a class="headerlink" href="#events_1" title="Permanent link">&para;</a></h2>
-<p><doc events="CharacterSheetUIStatsTab"></p>
-<pre><code class="language-lua">---Fired when a stat is rendered.
----@event EntryAdded
----@param data StatsTabStat
----@param value number
-</code></pre>
-<pre><code class="language-lua">---Fired before stats are (re-)rendered.
----@event PreRender
-</code></pre>
-<pre><code class="language-lua">---Fired after a full render of the tab is complete.
----@event PostRender
-</code></pre>
-<pre><code class="language-lua">---Fired when a stat element is created in Flash.
----@event EntryRendered
----@param element FlashMovieClip
----@param elementID string
-</code></pre>
-<pre><code class="language-lua">---Fired when a stat is clicked.
----@event StatClicked
----@param elementID string
-</code></pre>
-<pre><code class="language-lua">---Fired when a stat tooltip is being rendered.
----@event TooltipRendering
----@param statID string
----@param data StatsTabStat
----@param tooltip TooltipData The default tooltip, using Tooltip from the stat data, or Description as a fallback.
-</code></pre>
-<pre><code class="language-lua">---Hook to change the calculated value of a stat.
----@hook GetStatValue
----@param value number
----@param data StatsTabStat
----@param char EclCharacter
-</code></pre>
-<pre><code class="language-lua">---Hook to manipulate the string display of a stat's value.
----@hook FormatStatValue
----@param value number
----@param data StatsTabStat
----@param char EclCharacter
-</code></pre>
-<pre><code class="language-lua">---Hook to manipulate the label display of a stat.
----@hook FormatLabel
----@param label string
----@param data StatsTabStat
----@param value number
-</code></pre>
-<p></doc></p>
-<h2 id="functions_1">Functions<a class="headerlink" href="#functions_1" title="Permanent link">&para;</a></h2>
-<p><doc lib="CharacterSheetUIStatsTab"></p>
-<pre><code class="language-lua">---Get the data table of a stat.
----@param id string
----@return StatsTabStat
-function StatsTab.GetStatData(id) -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Get the numerical value of a stat. Hookable.
----@param id string
----@param char EclCharacter
----@return number
-function StatsTab.GetStatValue(id, char) -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Get the text display for a stat's value.
----@param id string The stat ID.
----@param value number The value to format.
----@return string|number
-function StatsTab.FormatStatValue(id, value) -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Render a stat onto the tab.
----@param id string
-function StatsTab.RenderStat(id) -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Call to perform a full re-render of the tab.
----TODO some SetDirty call to prevent infinite loops with multiple modules calling this?
-function StatsTab.RenderStats() -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Register a FormatStatValue hook for a specific stat.
----@param stat string
----@param handler function
-function StatsTab.RegisterStatValueFormatHook(stat, handler) -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Register a GetStatValue hook for a specific stat.
----@param stat string
----@param handler function
-function StatsTab.RegisterStatValueHook(stat, handler) -- Client-only
-</code></pre>
-<p></doc></p>
-<h2 id="fields_1">Fields<a class="headerlink" href="#fields_1" title="Permanent link">&para;</a></h2>
-<p><doc fields="CharacterSheetUIStatsTab"></p>
-<pre><code class="language-lua">---@class CharacterSheetUIStatsTab
----@field Stats table&lt;string, StatsTabStat&gt;
----@field StatsOrder string[] Order in which stats are rendered.
----@field TOOLTIP_TALENT_ID number Enum of the talent ID we hijack the tooltip of.
----@field TOOLTIP_TALENT_NAME string String ID of the talent we hijack the tooltip of.
----@field DEFAULT_STAT_VALUE number
----@field ignoreUpdate boolean Internal; do not set
----@field nextNumericalID number Internal; do not set
-</code></pre>
-<p></doc></p>
+<p></epip></p>
               
             </div>
           </div>
@@ -303,10 +224,10 @@ function StatsTab.RegisterStatValueHook(stat, handler) -- Client-only
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../GiftBagContent/" class="btn btn-neutral float-right" title="GiftBagContent">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../../Epip/" class="btn btn-neutral float-right" title="Root">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../MessageBox/" class="btn btn-neutral" title="MessageBox"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../CharacterSheet/" class="btn btn-neutral" title="CharacterSheet"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -332,10 +253,10 @@ function StatsTab.RegisterStatValueHook(stat, handler) -- Client-only
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../MessageBox/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../CharacterSheet/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../GiftBagContent/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../../Epip/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

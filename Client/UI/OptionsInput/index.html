@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://pinewood.team/epip/Client/UI/MessageBox/">
+  <link rel="canonical" href="https://pinewood.team/epip/Client/UI/OptionsInput/">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>MessageBox - Epip Encounters</title>
+  <title>OptionsInput - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "MessageBox";
-    var mkdocs_page_input_path = "Client\\UI\\MessageBox.md";
-    var mkdocs_page_url = "/epip/Client/UI/MessageBox/";
+    var mkdocs_page_name = "OptionsInput";
+    var mkdocs_page_input_path = "Client\\UI\\OptionsInput.md";
+    var mkdocs_page_url = "/epip/Client/UI/OptionsInput/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
@@ -85,13 +85,19 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../OptionsSettings/">OptionsSettings</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../OptionsInput/">OptionsInput</a>
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">OptionsInput</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#events-hooks">Events &amp; Hooks</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#objects">Objects</a>
+    </li>
+    </ul>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../Examine/">Examine</a>
                 </li>
-                <li class="toctree-l3 current"><a class="reference internal current" href="./">MessageBox</a>
-    <ul class="current">
-    </ul>
+                <li class="toctree-l3"><a class="reference internal" href="../MessageBox/">MessageBox</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../CharacterSheet/">CharacterSheet</a>
                 </li>
@@ -152,7 +158,7 @@
         
       
     
-    <li>MessageBox</li>
+    <li>OptionsInput</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -164,43 +170,109 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="messagebox">MessageBox<a class="headerlink" href="#messagebox" title="Permanent link">&para;</a></h1>
-<p><code>Client.UI.MessageBox</code> is used to send custom prompts (like with <code>OpenMessageBox</code> in Osiris).</p>
-<h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h1>
-<p>Subscribe with <code>Client.UI.MessageBox:RegisterListener(event: string, handler: function)</code>. You can subscribe to events coming from a specific message box with <code>RegisterMessageListener()</code> instead.</p>
-<p><doc events="MessageBoxUI"></p>
-<pre><code class="language-lua">---Fired when a button is pressed on any custom message box.
----@event ButtonClicked
----@param id number Button ID.
----@param data MessageBoxData
+                <h1 id="optionsinput">OptionsInput<a class="headerlink" href="#optionsinput" title="Permanent link">&para;</a></h1>
+<p>The OptionsInput UI script handles new functionality for the input settings menu, which, curiously, is actually a separate UI from the settings menu, and just like it, it does not exist whilst not open.</p>
+<p>Epip extends it to provide custom keybinding configuration tabs, as well as to read the user's current keybindings as strings to display elsewhere.</p>
+<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
+<p><epip class="OptionsInputUI" symbols="Event,Hook"></p>
+<pre><code class="language-lua">---Saves the user's bindings to the disk.
+---@event ActionExecuted
+---@field RegisterListener fun(self, listener:fun(action:string, binding:string))
+---@field Fire fun(self, action:string, binding:string)
+
+
 </code></pre>
-<pre><code class="language-lua">---Fired when a message box with an input field is closed.
----@event InputSubmitted
----@param input string
----@param id number Button ID.
----@param data MessageBoxData
+<p></epip></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><epip class="OptionsInputUI" symbols="Function"></p>
+<pre><code class="language-lua">function Client.UI.OptionsInput.SaveBindings()
+
+---Loads the user's bindings from the disk.
+function Client.UI.OptionsInput.LoadBindings()
+
+---@param actionID string
+---@param bindingIndex integer
+---@param keybind string
+function Client.UI.OptionsInput.SetKeybind(actionID, bindingIndex, keybind)
+
+---Updates the input map. Call this every time after modifying the user's keybindings.
+---@return table&lt;string, string[]&gt;
+function Client.UI.OptionsInput.UpdateInputMap()
+
+---@param index integer
+function Client.UI.OptionsInput:GetShortInputString(index)
+
+---Get the saved keybinds for an action.
+---@param action string
+---@return OptionsInputSavedKeybind 
+function Client.UI.OptionsInput.GetKeybinds(action)
+
+---Get the data for a custom action.
+---@return OptionsInputKeybind 
+function Client.UI.OptionsInput.GetActionData(action)
+
+---@param action OptionsInputKeybind
+function Client.UI.OptionsInput.RegisterAction(action)
+
+---@param id string
+---@param tab OptionsInputTab
+function Client.UI.OptionsInput.RegisterTab(id, tab)
+
+---@param tabID string
+---@param keybind OptionsInputKeybind
+function Client.UI.OptionsInput.AddEntry(tabID, keybind)
+
+---@param tabID integer
+function Client.UI.OptionsInput.GetTabIndex(tabID)
+
+---@return boolean 
+function Client.UI.OptionsInput.IsBindingKey()
+
+---@param key string
+function Client.UI.OptionsInput.SetPotentialBinding(key)
+
 </code></pre>
-<p></doc></p>
-<h1 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h1>
-<p><doc fields="MessageBoxUI"></p>
-<pre><code class="language-lua">---@class MessageBoxUI
----@field POPUP_TYPES table&lt;string, number&gt;
----@field currentCustomMessageBox MessageBoxData Internal; do not set!
+<p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="OptionsInputUI" symbols="Class"></p>
+<pre><code class="language-lua">---@class OptionsInputUI : Feature
+---@field CUSTOM_TABS table&lt;string, OptionsInputTab&gt;
+---@field TAB_ORDER string[]
+---@field nextCustomTabID integer
+---@field renderedCustomTabs table&lt;integer, string&gt;
+---@field tabIndexes table&lt;string, integer&gt;
+---@field nextEntryID integer
+---@field entries table&lt;integer, string&gt;
+---@field keyBeingBound? string
+---@field indexBeingBound? integer
+---@field potentialBinding? string
+---@field BINDINGS table&lt;string, OptionsInputSavedKeybind&gt;
+---@field ACTIONS table&lt;string, OptionsInputKeybind&gt;
+---@field INPUT_MAP table&lt;string, string[]&gt; Maps keyboard inputs to a list of actions that are bound to it.
+
+
+---@class OptionsInputTab
+---@field ID string
+---@field Name string
+---@field Label string?
+---@field Keybinds OptionsInputKeybind[]
+
+
+---@class OptionsInputKeybind
+---@field Name string
+---@field ID string
+---@field DefaultInput1 string TODO
+---@field DefaultInput2 string TODO
+
+
+---@class OptionsInputSavedKeybind
+---@field ID string
+---@field Input1 OptionsInputBinding
+---@field Input2 OptionsInputBinding
+
+
 </code></pre>
-<p></doc></p>
-<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
-<p><doc lib="MessageBoxUI"></p>
-<pre><code class="language-lua">---Show a message box.
----@param data MessageBoxData
-function MessageBox.ShowMessageBox(data) -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Register an event listener for a message box with a specific ID.
----@param id string Message box ID.
----@param event string Event ID. See the regular events.
----@param handler function
-function MessageBox:RegisterMessageListener(id, event, handler) -- Client-only
-</code></pre>
-<p></doc></p>
+<p></epip></p>
               
             </div>
           </div>
@@ -208,10 +280,10 @@ function MessageBox:RegisterMessageListener(id, event, handler) -- Client-only
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../CharacterSheet/" class="btn btn-neutral float-right" title="CharacterSheet">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Examine/" class="btn btn-neutral float-right" title="Examine">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Examine/" class="btn btn-neutral" title="Examine"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../OptionsSettings/" class="btn btn-neutral" title="OptionsSettings"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -237,10 +309,10 @@ function MessageBox:RegisterMessageListener(id, event, handler) -- Client-only
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Examine/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../OptionsSettings/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../CharacterSheet/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Examine/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

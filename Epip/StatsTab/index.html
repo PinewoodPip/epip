@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../css/theme.css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
@@ -58,6 +59,12 @@
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../../docs/">Introduction</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Global Tables</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Global%20Tables/Feature/">Feature</a>
+                </li>
+    </ul>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Game</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Game/">Root</a>
@@ -72,17 +79,21 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/">Root</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Client/input/">Input</a>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">UI</a>
     <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/ChatLog/">ChatLog</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/OptionsSettings/">OptionsSettings</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/OptionsInput/">OptionsInput</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/Examine/">Examine</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/MessageBox/">MessageBox</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/CharacterSheet/">CharacterSheet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/GiftBagContent/">GiftBagContent</a>
                 </li>
     </ul>
                 </li>
@@ -104,9 +115,9 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#modifying-stats">Modifying Stats</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#fields">Fields</a>
+    <li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a>
+    <li class="toctree-l4"><a class="reference internal" href="#objects">Objects</a>
     </li>
     </ul>
                 </li>
@@ -235,8 +246,38 @@ end)
 </code></pre>
 <h2 id="modifying-stats">Modifying Stats<a class="headerlink" href="#modifying-stats" title="Permanent link">&para;</a></h2>
 <p>Stat definitions are stored in <code>StatsTab.STATS</code>. You may screw with them at any time. Categories are in <code>CATEGORIES</code> instead, and their rendering order is defined in <code>CATEGORIES_ORDER</code>.</p>
-<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
-<p><doc fields="EpipStats"></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><epip class="EpipStatsTab" symbols="Function"></p>
+<pre><code class="language-lua">---Registers a stat bound to an Ascension node.
+---@param clusterId string
+---@param nodeIndex number
+---@param nodeSubIndex number
+---@param keyword Keyword
+---@param keywordType KeywordBoonType
+---@param statData EpipStat Stat metadata.
+function Epip.Features.EpipStats.AddNodeStat(clusterId, nodeIndex, nodeSubIndex, keyword, keywordType, statData) --RequireBothContexts
+
+---Register a stat.
+---@param id string
+---@param data EpipStat
+function Epip.Features.EpipStats.RegisterStat(id, data) --RequireBothContexts
+
+---Register a category.
+---@param id string
+---@param data EpipStatCategory
+---@param index? integer Order in the stats tab relative to other categories.
+function Epip.Features.EpipStats.RegisterCategory(id, data, index) --RequireBothContexts
+
+---Add a stat to a category.
+---@param statID string
+---@param categoryID string
+---@param index? integer
+function Epip.Features.EpipStats.AddStatToCategory(statID, categoryID, index) --RequireBothContexts
+
+</code></pre>
+<p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="EpipStatsTab" symbols="Class"></p>
 <pre><code class="language-lua">---@class EpipStats
 ---@field CATEGORIES table&lt;string, EpipStatCategory&gt; Category definitions.
 ---@field CATEGORIES_ORDER string[]
@@ -246,37 +287,28 @@ end)
 ---@field STAT_VALUE_TAG_PREFIX string
 ---@field TOOLTIP_TALENT number TODO remove
 ---@field TOOLTIP_TALENT_NAME string TODO remove
+
+
+---@class EpipStat
+---@field Name string
+---@field Description string Fallback description in case a formatted Tooltip isn't set.
+---@field Tooltip TooltipData
+---@field Footnote string Italic text after description, in new paragraph.
+---@field Suffix string Suffix for value display.
+---@field Prefix string Prefix for value display.
+---@field Boolean boolean Boolean stats show no value label.
+---@field MaxCharges string If specified, this stat will display as &quot;{Value}/{Value of MaxCharges stat}&quot;
+---@field IgnoreForHiding boolean If true, this stat will not be considered as added when determining if a Hidden category should display.
+
+
+---@class EpipStatCategory
+---@field Header string Name of the collapsable stat.
+---@field Name string Name of the category in the tooltip.
+---@field Behaviour EpipStatCategoryBehaviour Controls how default-value stats are shown. GreyOut greys out their label and value, hidden hides them - and the whole category - if no stats are owned.
+---@field Stats string[] Stats displayed in the category, ordered.
+
+
 </code></pre>
-<p></doc></p>
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
-<p><doc lib="EpipStatsTab"></p>
-<pre><code class="language-lua">---Registers a stat bound to an Ascension node.
----@param clusterId string
----@param nodeIndex number
----@param nodeSubIndex number
----@param keyword Keyword
----@param keywordType KeywordBoonType
----@param statData EpipStat Stat metadata.
-function EpipStats.AddNodeStat(clusterId, nodeIndex, nodeSubIndex, keyword, keywordType, statData) -- Must be called on both contexts
-</code></pre>
-<pre><code class="language-lua">---Register a stat.
----@param id string
----@param data EpipStat
-function EpipStats.RegisterStat(id, data) -- Must be called on both contexts
-</code></pre>
-<pre><code class="language-lua">---Register a category.
----@param id string
----@param data EpipStatCategory
----@param index? integer Order in the stats tab relative to other categories.
-function EpipStats.RegisterCategory(id, data, index)
-</code></pre>
-<pre><code class="language-lua">---Add a stat to a category.
----@param statID string
----@param categoryID string
----@param index? integer
-function EpipStats.AddStatToCategory(statID, categoryID, index) -- Must be called on both contexts
-</code></pre>
-<p></doc></p>
               
             </div>
           </div>
