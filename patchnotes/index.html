@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1050-260622">v1050 - 26/06/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1049-230622">v1049 - 23/06/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1048-140522">v1048 - 14/05/22</a>
@@ -206,8 +208,35 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
+<h2 id="v1050-260622">v1050 - 26/06/22<a class="headerlink" href="#v1050-260622" title="Permanent link">&para;</a></h2>
+<p><a href="https://drive.google.com/file/d/1JQypHpj4SxP0C_61eDbuqbmfJJHt6uEO/view?usp=sharing">Download here</a>.</p>
+<p>A small assortment of huge vanity improvements!</p>
+<p>Vanity:</p>
+<ul>
+<li>Added a button to delete custom dyes</li>
+<li>Switching characters no longer closes the UI</li>
+<li>The current tab is remembered when switching items through the context menu</li>
+<li>Added a toggle to prevent the sliders from being set to the item's current color (makes it easier to reuse a dye on multiple items)</li>
+<li>Added fields to enter colors in hexadecimal</li>
+<li>Added buttons to copy/paste colors</li>
+<li>Added buttons to import/export dyes to/from the clipboard</li>
+<li>Sliders can now detect the default color of an item that hasn't been dyed before</li>
+<li>Added a checkbox to auto-transmog equipped items to your old item's appearance <strong>while the UI is not open</strong> (so you can switch out items in the UI without needing to toggle it off)</li>
+<li>Fixed the Vanity option appearing on non-equipped items</li>
+</ul>
+<p>Other:</p>
+<ul>
+<li>Added keybinds for the debug teleport (no longer uses the ping key)</li>
+<li>Custom keybinds no longer fire while in dialogue</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Added support for dev-only keybinds</li>
+<li>Moved <code>Flash</code> table to <code>Client</code></li>
+<li>Added a <code>Color</code> table</li>
+<li>Created a github repository: <a href="https://github.com/PinewoodPip/EpipEncounters/commits/main">https://github.com/PinewoodPip/EpipEncounters/commits/main</a></li>
+</ul>
 <h2 id="v1049-230622">v1049 - 23/06/22<a class="headerlink" href="#v1049-230622" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/18GC23zThzYV7hyCM0eMkmVdUttD7tXUF/view?usp=sharing">Download here</a>.</p>
 <ul>
 <li>Added an option to enable improvements to the combat log. Messages can be filtered by type, and certain messages will be merged into one line if they occur one after another, such as surface damage and healing. <strong>This option will only work when playing in english</strong>, unless someone is willing to help me make string patterns for other languages.<ul>
 <li>Right-click the combat log to set your filters. You can also clear the log from that menu.</li>
