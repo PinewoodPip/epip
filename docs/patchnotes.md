@@ -2,8 +2,37 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
+## v1050 - 26/06/22
+[Download here](https://drive.google.com/file/d/1JQypHpj4SxP0C_61eDbuqbmfJJHt6uEO/view?usp=sharing).
+
+A small assortment of huge vanity improvements!
+
+Vanity:
+
+- Added a button to delete custom dyes
+- Switching characters no longer closes the UI
+- The current tab is remembered when switching items through the context menu
+- Added a toggle to prevent the sliders from being set to the item's current color (makes it easier to reuse a dye on multiple items)
+- Added fields to enter colors in hexadecimal
+- Added buttons to copy/paste colors
+- Added buttons to import/export dyes to/from the clipboard
+- Sliders can now detect the default color of an item that hasn't been dyed before
+- Added a checkbox to auto-transmog equipped items to your old item's appearance **while the UI is not open** (so you can switch out items in the UI without needing to toggle it off)
+- Fixed the Vanity option appearing on non-equipped items
+
+Other:
+
+- Added keybinds for the debug teleport (no longer uses the ping key)
+- Custom keybinds no longer fire while in dialogue
+
+On the technical side of things:
+
+- Added support for dev-only keybinds
+- Moved `Flash` table to `Client`
+- Added a `Color` table
+- Created a github repository: [https://github.com/PinewoodPip/EpipEncounters/commits/main](https://github.com/PinewoodPip/EpipEncounters/commits/main)
+
 ## v1049 - 23/06/22
-[Download here](https://drive.google.com/file/d/18GC23zThzYV7hyCM0eMkmVdUttD7tXUF/view?usp=sharing).
 
 - Added an option to enable improvements to the combat log. Messages can be filtered by type, and certain messages will be merged into one line if they occur one after another, such as surface damage and healing. **This option will only work when playing in english**, unless someone is willing to help me make string patterns for other languages.
 	- Right-click the combat log to set your filters. You can also clear the log from that menu.
