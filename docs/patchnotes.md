@@ -2,8 +2,22 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
+## v1051 - 28/06/22
+[Download here](https://drive.google.com/file/d/1v6mQqLrZqECMZxkL9H8G9cgZFLU7BR2t/view?usp=sharing).
+
+Small bug fixes, and a moderate QoL addition for vanity dyes.
+
+- Added Ctrl+C/V support to the dye tab text fields
+- Fixed Epic Enemies tooltip (thanks Pancarte)
+- Fixed outfits ignoring transmog restrictions
+- Fixed vanity dye slider text values sometimes not moving around
+- Fixed items transmogged into artifacts gaining the special tooltip color (this will require an EE Core update to fully work)
+
+On the technical side of things:
+
+- Cleaned up `MessageBox`
+
 ## v1050 - 26/06/22
-[Download here](https://drive.google.com/file/d/1JQypHpj4SxP0C_61eDbuqbmfJJHt6uEO/view?usp=sharing).
 
 A small assortment of huge vanity improvements!
 
