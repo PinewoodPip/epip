@@ -38,6 +38,7 @@ nav:
     - "Epip":
       - "Root": "Epip/index.md"
       - "Features":
+        - "EpicEnemies" : "Epip/EpicEnemies.md"
         - "StatsTab": "Epip/StatsTab.md"
   - Tutorials:
     # - "Lua": "Tutorials/Lua/index.md"

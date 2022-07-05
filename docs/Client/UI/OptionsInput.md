@@ -7,10 +7,20 @@ Epip extends it to provide custom keybinding configuration tabs, as well as to r
 <epip class="OptionsInputUI" symbols="Event,Hook">
 
 ```lua
----Saves the user's bindings to the disk.
 ---@event ActionExecuted
 ---@field RegisterListener fun(self, listener:fun(action:string, binding:string))
 ---@field Fire fun(self, action:string, binding:string)
+
+
+---@hook ShouldRenderEntry
+---@field RegisterHook fun(self, handler:fun(render:boolean, entry:OptionsInputKeybind))
+---@field Return fun(self, render:boolean, entry:OptionsInputKeybind)
+
+
+---Saves the user's bindings to the disk.
+---@hook CanExecuteAction
+---@field RegisterHook fun(self, handler:fun(execute:boolean, action:string, data:OptionsInputKeybind))
+---@field Return fun(self, execute:boolean, action:string, data:OptionsInputKeybind)
 
 
 ```
@@ -20,51 +30,61 @@ Epip extends it to provide custom keybinding configuration tabs, as well as to r
 <epip class="OptionsInputUI" symbols="Function">
 
 ```lua
-function Client.UI.OptionsInput.SaveBindings()
+function Options.SaveBindings()
+
+---Returns whether a keybind should show up in the UI.
+---@param entry OptionsInputKeybind
+---@return boolean 
+function Options.ShouldRenderEntry(entry)
+
+---Returns whether an action can be currently executed.
+---@param actionID string
+---@return boolean 
+function Options.CanExecuteAction(actionID)
 
 ---Loads the user's bindings from the disk.
-function Client.UI.OptionsInput.LoadBindings()
+function Options.LoadBindings()
 
 ---@param actionID string
 ---@param bindingIndex integer
 ---@param keybind string
-function Client.UI.OptionsInput.SetKeybind(actionID, bindingIndex, keybind)
+function Options.SetKeybind(actionID, bindingIndex, keybind)
 
 ---Updates the input map. Call this every time after modifying the user's keybindings.
 ---@return table<string, string[]>
-function Client.UI.OptionsInput.UpdateInputMap()
+function Options.UpdateInputMap()
 
 ---@param index integer
-function Client.UI.OptionsInput:GetShortInputString(index)
+function _SavedKeybind:GetShortInputString(index)
 
 ---Get the saved keybinds for an action.
 ---@param action string
 ---@return OptionsInputSavedKeybind 
-function Client.UI.OptionsInput.GetKeybinds(action)
+function Options.GetKeybinds(action)
 
 ---Get the data for a custom action.
 ---@return OptionsInputKeybind 
-function Client.UI.OptionsInput.GetActionData(action)
+function Options.GetActionData(action)
 
 ---@param action OptionsInputKeybind
-function Client.UI.OptionsInput.RegisterAction(action)
+function Options.RegisterAction(action)
 
 ---@param id string
 ---@param tab OptionsInputTab
-function Client.UI.OptionsInput.RegisterTab(id, tab)
+function Options.RegisterTab(id, tab)
 
 ---@param tabID string
 ---@param keybind OptionsInputKeybind
-function Client.UI.OptionsInput.AddEntry(tabID, keybind)
+function Options.AddEntry(tabID, keybind)
 
 ---@param tabID integer
-function Client.UI.OptionsInput.GetTabIndex(tabID)
+function Options.GetTabIndex(tabID)
 
 ---@return boolean 
-function Client.UI.OptionsInput.IsBindingKey()
+function Options.IsBindingKey()
 
 ---@param key string
-function Client.UI.OptionsInput.SetPotentialBinding(key)
+function Options.SetPotentialBinding(key)
 
 ```
 </epip>
@@ -99,8 +119,9 @@ function Client.UI.OptionsInput.SetPotentialBinding(key)
 ---@class OptionsInputKeybind
 ---@field Name string
 ---@field ID string
----@field DefaultInput1 string TODO
----@field DefaultInput2 string TODO
+---@field DefaultInput1 string?
+---@field DefaultInput2 string?
+---@field DeveloperOnly boolean? If true, the binding will not be visible in the UI outside of developer mode (and won't function either)
 
 
 ---@class OptionsInputSavedKeybind

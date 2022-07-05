@@ -106,24 +106,24 @@ Stat definitions are stored in `StatsTab.STATS`. You may screw with them at any 
 ---@param keyword Keyword
 ---@param keywordType KeywordBoonType
 ---@param statData EpipStat Stat metadata.
-function Epip.Features.EpipStats.AddNodeStat(clusterId, nodeIndex, nodeSubIndex, keyword, keywordType, statData) --RequireBothContexts
+function EpipStats.AddNodeStat(clusterId, nodeIndex, nodeSubIndex, keyword, keywordType, statData) --RequireBothContexts
 
 ---Register a stat.
 ---@param id string
 ---@param data EpipStat
-function Epip.Features.EpipStats.RegisterStat(id, data) --RequireBothContexts
+function EpipStats.RegisterStat(id, data) --RequireBothContexts
 
 ---Register a category.
 ---@param id string
 ---@param data EpipStatCategory
 ---@param index? integer Order in the stats tab relative to other categories.
-function Epip.Features.EpipStats.RegisterCategory(id, data, index) --RequireBothContexts
+function EpipStats.RegisterCategory(id, data, index) --RequireBothContexts
 
 ---Add a stat to a category.
 ---@param statID string
 ---@param categoryID string
 ---@param index? integer
-function Epip.Features.EpipStats.AddStatToCategory(statID, categoryID, index) --RequireBothContexts
+function EpipStats.AddStatToCategory(statID, categoryID, index) --RequireBothContexts
 
 ```
 </epip>

@@ -29,10 +29,10 @@ The GiftBagContent UI is the ingame giftbags menu.
 ---Returns a giftbag mod by its numerical ID.
 ---@param id number
 ---@return GUID 
-function Client.UI.GiftBagContent.GetModGUID(id)
+function GB.GetModGUID(id)
 
 ---Renders the contents of the UI, based on the data arrays in flash.
-function Client.UI.GiftBagContent.RenderContent()
+function GB.RenderContent()
 
 ```
 </epip>

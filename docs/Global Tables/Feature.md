@@ -12,11 +12,13 @@ To use this table, you should call `Epip.AddFeature()`. This will register your 
 ---Add an event to the Events field.
 ---@param name string
 ---@param data? Event
+---@return Event 
 function _Feature:AddEvent(name, data)
 
 ---Add a hook to the Hooks field.
 ---@param name string
 ---@param data? Hook
+---@return Hook 
 function _Feature:AddHook(name, data)
 
 ---Returns whether the feature has *not* been disabled. Use to condition your feature's logic.

@@ -2,8 +2,36 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
+## v1052 - 05/07/22
+[Download here](https://drive.google.com/file/d/1t-Y4zycQJRb4HvTTzTmWOrObNtfVoy8x/view?usp=sharing).
+
+Epic Enemies:
+
+- Reworked the Epic Enemies feature. It is now configured through the regular settings menu, not the EE one. If you're continuing an old save, the options in your EE menu will remain, but they will no longer do anything.
+    - The amount of effects enemies gain is now customizable
+    - The weighted chance of each perk appearing can be customized individually - it's also possible to adjust the chances for whole groups of effects at once (ex. all Centurion effects)
+    - All artifacts can now be made available to enemies
+    - Effects with conditional activations are supported, and can grant a variety of other perks (statuses, stats, summons, etc.) though there are no new effects that use this yet - new content will be added soon
+
+Hotbar:
+
+- The "active skill" animation on the hotbar should be more reliable now (and no longer appears if you click spells in the spellbook)
+- Fixed shield skills not greying out when disarmed
+
+On the technical side of things:
+
+- Removed the infamous empty net script
+- Cleaned up script loading on the server
+- Generated new IDE helpers for built-in v56 types
+- OptionsSettings UI now has less thicc text labels so you can actually write stuff there without taking up the whole screen
+
+Known issues:
+
+- Artifact effects in Epic Enemies have no descriptions (text keys are really unreliable apparently)
+- Switching tabs in the Epic Enemies settings menu scrolls you to the top
+- Epic Enemies no longer gives extra Predator range
+
 ## v1051 - 28/06/22
-[Download here](https://drive.google.com/file/d/1v6mQqLrZqECMZxkL9H8G9cgZFLU7BR2t/view?usp=sharing).
 
 Small bug fixes, and a moderate QoL addition for vanity dyes.
 

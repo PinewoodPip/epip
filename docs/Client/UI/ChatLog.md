@@ -38,19 +38,19 @@ Examples of its use are the chat commands features, which intercept sent message
 ---@param tab integer|string Tab ID. See ChatLog.TABS enum. For custom tabs, use your string ID.
 ---@param userName string
 ---@param message string
-function Client.UI.ChatLog.AddFormattedMessage(tab, userName, message)
+function Chat.AddFormattedMessage(tab, userName, message)
 
 ---Clear a chat tab's messages.
 ---Render raw text onto the chatbox.
 ---@param tab integer|string
 ---@param tab? integer|string Tab ID. See ChatLog.TABS enum. For custom tabs, use your string ID. Defaults to current tab.
 ---@param text string
-function Client.UI.ChatLog.AddMessage(tab, text)
+function Chat.AddMessage(tab, text)
 
 ---Adds a tab to the chat log.
 ---@param tabID string
 ---@param label string
-function Client.UI.ChatLog.AddTab(tabID, label)
+function Chat.AddTab(tabID, label)
 
 ```
 </epip>
