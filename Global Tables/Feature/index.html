@@ -111,6 +111,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
     <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Epip/EpicEnemies/">EpicEnemies</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../Epip/StatsTab/">StatsTab</a>
                 </li>
     </ul>
@@ -173,11 +175,13 @@
 <pre><code class="language-lua">---Add an event to the Events field.
 ---@param name string
 ---@param data? Event
+---@return Event 
 function _Feature:AddEvent(name, data)
 
 ---Add a hook to the Hooks field.
 ---@param name string
 ---@param data? Hook
+---@return Hook 
 function _Feature:AddHook(name, data)
 
 ---Returns whether the feature has *not* been disabled. Use to condition your feature's logic.

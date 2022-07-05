@@ -113,6 +113,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
     <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Epip/EpicEnemies/">EpicEnemies</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Epip/StatsTab/">StatsTab</a>
                 </li>
     </ul>
@@ -201,19 +203,19 @@
 ---@param tab integer|string Tab ID. See ChatLog.TABS enum. For custom tabs, use your string ID.
 ---@param userName string
 ---@param message string
-function Client.UI.ChatLog.AddFormattedMessage(tab, userName, message)
+function Chat.AddFormattedMessage(tab, userName, message)
 
 ---Clear a chat tab's messages.
 ---Render raw text onto the chatbox.
 ---@param tab integer|string
 ---@param tab? integer|string Tab ID. See ChatLog.TABS enum. For custom tabs, use your string ID. Defaults to current tab.
 ---@param text string
-function Client.UI.ChatLog.AddMessage(tab, text)
+function Chat.AddMessage(tab, text)
 
 ---Adds a tab to the chat log.
 ---@param tabID string
 ---@param label string
-function Client.UI.ChatLog.AddTab(tabID, label)
+function Chat.AddTab(tabID, label)
 
 </code></pre>
 <p></epip></p>

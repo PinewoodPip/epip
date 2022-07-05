@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1052-050722">v1052 - 05/07/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1051-280622">v1051 - 28/06/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1050-260622">v1050 - 26/06/22</a>
@@ -163,6 +165,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
     <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../Epip/EpicEnemies/">EpicEnemies</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../Epip/StatsTab/">StatsTab</a>
                 </li>
     </ul>
@@ -210,8 +214,37 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
+<h2 id="v1052-050722">v1052 - 05/07/22<a class="headerlink" href="#v1052-050722" title="Permanent link">&para;</a></h2>
+<p><a href="https://drive.google.com/file/d/1t-Y4zycQJRb4HvTTzTmWOrObNtfVoy8x/view?usp=sharing">Download here</a>.</p>
+<p>Epic Enemies:</p>
+<ul>
+<li>Reworked the Epic Enemies feature. It is now configured through the regular settings menu, not the EE one. If you're continuing an old save, the options in your EE menu will remain, but they will no longer do anything.<ul>
+<li>The amount of effects enemies gain is now customizable</li>
+<li>The weighted chance of each perk appearing can be customized individually - it's also possible to adjust the chances for whole groups of effects at once (ex. all Centurion effects)</li>
+<li>All artifacts can now be made available to enemies</li>
+<li>Effects with conditional activations are supported, and can grant a variety of other perks (statuses, stats, summons, etc.) though there are no new effects that use this yet - new content will be added soon</li>
+</ul>
+</li>
+</ul>
+<p>Hotbar:</p>
+<ul>
+<li>The "active skill" animation on the hotbar should be more reliable now (and no longer appears if you click spells in the spellbook)</li>
+<li>Fixed shield skills not greying out when disarmed</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Removed the infamous empty net script</li>
+<li>Cleaned up script loading on the server</li>
+<li>Generated new IDE helpers for built-in v56 types</li>
+<li>OptionsSettings UI now has less thicc text labels so you can actually write stuff there without taking up the whole screen</li>
+</ul>
+<p>Known issues:</p>
+<ul>
+<li>Artifact effects in Epic Enemies have no descriptions (text keys are really unreliable apparently)</li>
+<li>Switching tabs in the Epic Enemies settings menu scrolls you to the top</li>
+<li>Epic Enemies no longer gives extra Predator range</li>
+</ul>
 <h2 id="v1051-280622">v1051 - 28/06/22<a class="headerlink" href="#v1051-280622" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/1v6mQqLrZqECMZxkL9H8G9cgZFLU7BR2t/view?usp=sharing">Download here</a>.</p>
 <p>Small bug fixes, and a moderate QoL addition for vanity dyes.</p>
 <ul>
 <li>Added Ctrl+C/V support to the dye tab text fields</li>

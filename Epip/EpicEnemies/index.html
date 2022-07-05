@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/epip/Epip/EpicEnemies/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>EpicEnemies - Epip Encounters</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "EpicEnemies";
+    var mkdocs_page_input_path = "Epip\\EpicEnemies.md";
+    var mkdocs_page_url = "/epip/Epip/EpicEnemies/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Epip Encounters</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../patchnotes/">Patch Notes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Global Tables</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Global%20Tables/Feature/">Feature</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Game</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Game/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Game/Character/">Character</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Game/Item/">Item</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Client/">Root</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">UI</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/ChatLog/">ChatLog</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/OptionsSettings/">OptionsSettings</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/OptionsInput/">OptionsInput</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/Examine/">Examine</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/MessageBox/">MessageBox</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/CharacterSheet/">CharacterSheet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/GiftBagContent/">GiftBagContent</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Epip</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Root</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Features</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">EpicEnemies</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#creating-effects">Creating Effects</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#scripting-effects">Scripting Effects</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eventshooks">Events/Hooks</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../StatsTab/">StatsTab</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Tutorials/testing/">Testing</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Epip Encounters</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+        
+          <li>Epip &raquo;</li>
+        
+      
+        
+          <li>Features &raquo;</li>
+        
+      
+    
+    <li>EpicEnemies</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="epic-enemies">Epic Enemies<a class="headerlink" href="#epic-enemies" title="Permanent link">&para;</a></h2>
+<p>Epic Enemies is a randomizer feature that gives enemies in combat random keyword effects, artifacts and other boons. It is accessed from its own settings tab in the settings menu.</p>
+<h3 id="creating-effects">Creating Effects<a class="headerlink" href="#creating-effects" title="Permanent link">&para;</a></h3>
+<p>An <em>Effect</em> is a perk that an enemy can roll if Epic Enemies is enabled. Effects can belong to a category; each category gets their own settings sliders for all its effects in the UI.</p>
+<p>If you wish to add effects, you should register your own category for them with <code>RegisterEffectCategory()</code>. You may define the effects while defining the category (of type <code>EpicEnemiesEffect</code>), and they will be automatically registered as well. Registering effects directly with <code>RegisterEffect()</code> does not bind them to any category by default, meaning they will not appear in the UI and will not be customizable - this is great if you wish to create auxiliary effects with 0 weight and script their applications yourself.</p>
+<p>Effects can be rolled on a character with <code>InitializeCharacter()</code>. By default, this happens when they enter combat, and numerous characters are excluded: players, summons, and already initialized characters. You may tag characters with <code>PIP_EpicEnemies_Ineligible</code> to exclude them as well.</p>
+<p>Effects from a character can be removed with <code>CleanupCharacter()</code>; this will cause their stat boosts, Special Logic, and other perks from their effects to be cleaned up as well. By default, this only happens when lua is reset (for debugging).</p>
+<p>When <code>InitializeCharacter()</code> is called, effects are rolled randomly based on their weight and <em>eligibility</em>. You may hook <code>IsEffectApplicable</code> to control which effects a character can receive. The <code>EpicEnemiesEffectTemplates</code> feature script does so to prevent keyword mutators from being granted to characters that do not possess an activator effect.</p>
+<p>The <code>EpicEnemiesEffectTemplates</code> feature script also implements multiple types of effects that power generic functionality:</p>
+<ul>
+<li>SpecialLogic</li>
+<li>Artifacts</li>
+<li>Summons</li>
+<li>Statuses</li>
+<li>ExtendedStats</li>
+<li>FlexStats</li>
+<li>RequiredSkills</li>
+</ul>
+<p>This is done by extending the the <code>EpicEnemiesEffect</code> class into <code>EpicEnemiesExtendedEffect</code> - you need only to add its extra fields to your effect definitions, and the event listeners from that script will take care of making them work.</p>
+<p>Of course, you may also add functionality yourself the same way, as detailed in the next section.</p>
+<h3 id="scripting-effects">Scripting Effects<a class="headerlink" href="#scripting-effects" title="Permanent link">&para;</a></h3>
+<p>Effects can be in 2 states: applied and activated. "Applied" means the character has the effect, but its benefits are dormant and not yet active. "Activated" effects grant their benefits (stats, Special Logic, etc.).</p>
+<p>The condition for effects is based on the <code>ActivationCondition</code> field. If unspecified, it defaults to the "EffectApplied" type, which causes the effect to be activated as soon as it is applied (during initialization). If you specify a custom <code>ActivationCondition</code>, you will have to activate the effect's perks manually.</p>
+<p>The <code>EpicEnemiesEffectConditions</code> feature script implements some custom ActivationConditions:</p>
+<ul>
+<li><code>TurnStart</code>: effect activates at the start of X turn, optionally repeating (effects support multiple activations).</li>
+<li><code>HealthThreshold</code>: effect activates when beneath a Vitality/Armor threshold.</li>
+<li><code>BatteredHarried</code>: effect activates upon reaching X B/H.</li>
+<li><code>StatusGained</code>: effect activates upon gaining a certain status.</li>
+</ul>
+<p>Activation attempts are done through the <code>ActivateEffects()</code> call, which takes an ActivationCondition type (the string ID) as well as some params (for example, activation attemps of <code>BatteredHarried</code> pass the B/H stack count). This call in turn invokes the <code>CanActivateEffect</code> hook where scripts must judge if the parameters of the activation attempt are correct to activate each of the effects with that ActivationCondition.</p>
+<p>Example of how <code>TurnStart</code> works:</p>
+<ol>
+<li>A <code>PROC_AMER_Combat_TurnStarted</code> listener calls <code>ActivateEffects(char, "TurnStart", {Round = round})</code></li>
+<li>The EpicEnemies main script invokes the <code>CanActivateEffect</code> hook for each effect with the corresponding ActivationCondition type, as well as the params from the <code>ActivateEffects()</code> call.</li>
+<li>A listener of said hook checks if the activation condition type is "TurnStart", and if it is, returns a boolean indicating if the params received match the conditions defined in the effect.</li>
+</ol>
+<p>For example, the following effect activates on turn 2, meaning the enemy only becomes hasted on turn 2, since the listeners that manage the <code>TurnStart</code> activation condition compare <code>Round</code> and <code>Repeat</code> with the parameters from the activation attempt. The effect is however always visible in the tooltip, along with its activation condition, so players can plan around it.</p>
+<pre><code class="language-lua">{
+    Name = &quot;TurnStart Activation Test&quot;,
+    ID = &quot;TestStatus2&quot;,
+    Description = &quot;Hasted on turn 2.&quot;,
+    Status = {
+        StatusID = &quot;HASTED&quot;,
+        Duration = 2,
+    },
+    ActivationCondition = {
+        Type = &quot;TurnStart&quot;,
+        Round = 2,
+        Repeat = false,
+    },
+},
+</code></pre>
+<h3 id="eventshooks">Events/Hooks<a class="headerlink" href="#eventshooks" title="Permanent link">&para;</a></h3>
+<p><epip class="EpicEnemies" symbols="Event,Hook"></p>
+<pre><code class="language-lua">---@hook GetActivationConditionDescription
+---@field RegisterHook fun(self, handler:fun(text:string, condition:EpicEnemiesActivationCondition, char:EclCharacter))
+---@field Return fun(self, text:string, condition:EpicEnemiesActivationCondition, char:EclCharacter)
+
+
+---@event EffectApplied
+---@field RegisterListener fun(self, listener:fun(char:EsvCharacter, effect:EpicEnemiesEffect))
+---@field Fire fun(self, char:EsvCharacter, effect:EpicEnemiesEffect)
+
+
+---@event EffectRemoved
+---@field RegisterListener fun(self, listener:fun(char:EsvCharacter, effect:EpicEnemiesEffect))
+---@field Fire fun(self, char:EsvCharacter, effect:EpicEnemiesEffect)
+
+
+---@hook IsEligible
+---@field RegisterHook fun(self, handler:fun(eligible:boolean, char:EsvCharacter))
+---@field Return fun(self, eligible:boolean, char:EsvCharacter)
+
+
+---@hook IsEffectApplicable
+---@field RegisterHook fun(self, handler:fun(applicable:boolean, effect:EpicEnemiesEffect, char:EsvCharacter, activeEffects:EpicEnemiesEffect[]))
+---@field Return fun(self, applicable:boolean, effect:EpicEnemiesEffect, char:EsvCharacter, activeEffects:EpicEnemiesEffect[])
+
+
+---@event EffectActivated
+---@field RegisterListener fun(self, listener:fun(char:EsvCharacter, effect:EpicEnemiesEffect))
+---@field Fire fun(self, char:EsvCharacter, effect:EpicEnemiesEffect)
+
+
+---@event EffectDeactivated
+---@field RegisterListener fun(self, listener:fun(char:EsvCharacter, effect:EpicEnemiesEffect))
+---@field Fire fun(self, char:EsvCharacter, effect:EpicEnemiesEffect)
+
+
+---@hook CanActivateEffect
+---@field RegisterHook fun(self, handler:fun(activate:boolean, char:EsvCharacter, effect:EpicEnemiesEffect, params:any))
+---@field Return fun(self, activate:boolean, char:EsvCharacter, effect:EpicEnemiesEffect, params:any)
+
+
+---@hook GetPointsForCharacter
+---@field RegisterHook fun(self, handler:fun(points:integer, char:EsvCharacter))
+---@field Return fun(self, points:integer, char:EsvCharacter)
+
+
+---@event CharacterInitialized
+---@field RegisterListener fun(self, listener:fun(char:EsvCharacter, effects:EpicEnemiesEffect[]))
+---@field Fire fun(self, char:EsvCharacter, effects:EpicEnemiesEffect[])
+
+
+---@event CharacterCleanedUp
+---@field RegisterListener fun(self, listener:fun(char:EsvCharacter))
+---@field Fire fun(self, char:EsvCharacter)
+
+
+</code></pre>
+<p></epip></p>
+<h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h3>
+<p><epip class="EpicEnemies" symbols="Function"></p>
+<pre><code class="language-lua">function EpicEnemies.IsInitialized(char)
+
+---@param char EsvCharacter
+function EpicEnemies.InitializeCharacter(char)
+
+---Remove all effects from a character.
+---@param char EsvCharacter
+function EpicEnemies.CleanupCharacter(char)
+
+---Returns true if the character is eligible to receive Epic Enemies effects.
+---@param char EsvCharacter
+function EpicEnemies.IsEligible(char)
+
+---@param char EsvCharacter
+---@param effect EpicEnemiesEffect
+function EpicEnemies.ApplyEffect(char, effect)
+
+---@param char EsvCharacter
+---@param effect EpicEnemiesEffect
+function EpicEnemies.ActivateEffect(char, effect)
+
+---@param char EsvCharacter
+---@param predicate fun(char:EsvCharacter, effect:EpicEnemiesEffect)?
+---@return table&lt;string, EpicEnemiesEffect&gt;
+function EpicEnemies.GetAppliedEffects(char, predicate)
+
+---@param char EsvCharacter
+---@param effect EpicEnemiesCharacter
+---@return boolean 
+function EpicEnemies.EffectIsActive(char, effect)
+
+---@param char EsvCharacter
+---@param effect EpicEnemiesCharacter
+---@return integer 
+function EpicEnemies.GetEffectActivationCount(char, effect)
+
+---@param char EsvCharacter
+---@param effectType string
+---@param params table?
+function EpicEnemies.ActivateEffects(char, effectType, params)
+
+---@param char EsvCharacter
+---@param effect EpicEnemiesEffect
+---@param charges integer? Defaults to 1.
+function EpicEnemies.DeactivateEffect(char, effect, charges)
+
+---Remove an effect from a character.
+---@param char EsvCharacter
+---@param effectID string
+function EpicEnemies.RemoveEffect(char, effectID)
+
+---@param char EsvCharacter
+---@param effectPool table&lt;string, EpicEnemiesEffect&gt;
+---@param activeEffects? EpicEnemiesEffect[]
+function EpicEnemies.GetRandomEffect(char, effectPool, activeEffects)
+
+---@param char EsvCharacter
+function EpicEnemies.GetPointsForCharacter(char)
+
+---Get the cost of an effect.
+function _EpicEnemiesEffect:GetCost()
+
+function _EpicEnemiesEffect:GetWeight()
+
+---@param char Character|GUID
+function EpicEnemies.IsInitialized(char)
+
+---@param id string
+---@return EpicEnemiesEffect 
+function EpicEnemies.GetEffectData(id)
+
+---@param category EpicEnemiesEffectsCategory
+function EpicEnemies.RegisterEffectCategory(category)
+
+---@param id string
+---@param effect EpicEnemiesEffect
+function EpicEnemies.RegisterEffect(id, effect)
+
+---@param effect EpicEnemiesEffect
+function EpicEnemies.GenerateOptionData(effect)
+
+</code></pre>
+<p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="EpicEnemies" symbols="Class"></p>
+<pre><code class="language-lua">---@class EpicEnemiesActivationCondition
+---@field Type string
+---@field MaxActivations integer
+
+
+---@class EpicEnemiesEffect
+---@field ID string
+---@field Name string
+---@field Description string
+---@field Cost integer
+---@field Weight integer
+---@field DefaultWeight integer
+---@field DefaultCost integer
+---@field ActivationCondition EpicEnemiesActivationCondition
+---@field Category string?
+---@field Visible boolean? Whether this effect appears in tooltips. Defaults to true.
+
+
+---@class EpicEnemiesKeywordData
+---@field Keyword Keyword
+---@field BoonType KeywordBoonType
+
+
+---@class EpicEnemiesEffectsCategory
+---@field Name string
+---@field ID string
+---@field Effects string[]|EpicEnemiesEffect[] Can be an array of EpicEnemiesEffect while calling the register method. Will be turned into an ID array afterwards.
+
+
+</code></pre>
+<p></epip></p>
+<p>The scripts that implement the basic effect functionality define the following objects:</p>
+<p><epip class="EpicEnemiesEffectTemplates" symbols="Class"></p>
+<pre><code class="language-lua">---@class EpicEnemiesExtendedEffect : EpicEnemiesEffect
+---@field SpecialLogic? string Special logic to grant when the effect is rolled.
+---@field Artifact? string Artifact power to grant when the effect is rolled.
+---@field Keyword? EpicEnemiesKeywordData Used for activation conditions; certain keyword mutators will not be granted if the target has no activators of the keyword.
+---@field Summon? GUID Template to summon.
+---@field Status? EpicEnemiesStatus[]
+---@field ExtendedStats? EpicEnemiesExtendedStat[]
+---@field FlexStats? EpicEnemiesFlexStat[]
+---@field RequiredSkills? string[] The effect is ineligible if the character does not have any of the required skills.
+
+
+---@class EpicEnemiesStatus
+---@field StatusID string
+---@field Duration integer
+
+
+---@class EpicEnemiesFlexStat
+---@field Type string
+---@field Stat string
+---@field Amount number
+
+
+---@class EpicEnemiesExtendedStat
+---@field StatID string The ID of the ExtendedStat.
+---@field Amount number
+---@field Property1 string?
+---@field Property2 string?
+---@field Property3 string?
+
+
+</code></pre>
+<p></epip></p>
+<p><epip class="EpicEnemiesEffectConditions" symbols="Class"></p>
+<pre><code class="language-lua">---@class EpicEnemiesCondition_TurnStart : EpicEnemiesActivationCondition
+---@field Round integer Which round to activate the effect on.
+---@field Repeat boolean Whether to re-activate the effect on subsequent rounds as well.
+---@field RepeatFrequency uint64? How many turns must pass between re-activations if Repeat is true. Defaults to 1.
+
+
+---@class EpicEnemiesCondition_HealthThreshold : EpicEnemiesActivationCondition
+---@field Vitality number From 0-1. Use 0 to ignore this health metric.
+---@field PhysicalArmor number From 0-1. Use 0 to ignore this health metric.
+---@field MagicArmor number From 0-1. Use 0 to ignore this health metric.
+---@field RequireAll boolean If true, all thresholds must be met for the activation.
+
+
+---@class EpicEnemiesCondition_BatteredHarried : EpicEnemiesActivationCondition
+---@field StackType StackType
+---@field Amount integer
+
+
+---@class EpicEnemiesCondition_StatusGained : EpicEnemiesActivationCondition
+---@field StatusID string
+
+
+</code></pre>
+<p></epip></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../StatsTab/" class="btn btn-neutral float-right" title="StatsTab">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Root"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../StatsTab/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

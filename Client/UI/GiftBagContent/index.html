@@ -113,6 +113,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
     <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Epip/EpicEnemies/">EpicEnemies</a>
+                </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../../Epip/StatsTab/">StatsTab</a>
                 </li>
     </ul>
@@ -193,10 +195,10 @@
 <pre><code class="language-lua">---Returns a giftbag mod by its numerical ID.
 ---@param id number
 ---@return GUID 
-function Client.UI.GiftBagContent.GetModGUID(id)
+function GB.GetModGUID(id)
 
 ---Renders the contents of the UI, based on the data arrays in flash.
-function Client.UI.GiftBagContent.RenderContent()
+function GB.RenderContent()
 
 </code></pre>
 <p></epip></p>
