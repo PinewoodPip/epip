@@ -2,8 +2,35 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
+## v1053 - 07/07/22
+
+[Download here](https://drive.google.com/file/d/1DQIAR0GKz_YvKioWwHGwX65Oi3lKCq8K/view?usp=sharing).
+
+- Added an option to show aggro effects on the top health bar: taunt source/target as well as AI preference tags
+- Centered the AP orbs on the bottom health bar, and added special dividers every 4 AP
+- Pipmode no longer gives infinite AP to non-player characters
+- Added a cheat to apply statuses
+- Reworded +elemental damage tooltips on weapons
+- Fixed offhand items not auto-transmogging properly
+- Fixed some summons still getting Epic Enemies perks, as well as party followers
+- Fixed skills that require shield not being greyed out while muted
+
+Hotbar:
+
+- Loadouts are now sorted alphabetically
+- Added a setting for disabling slots while casting
+- Fixed occasional flashing for slots on cooldown
+- Fixed hotkeys being blocked if any controlled char is in dialogue
+
+On the technical side of things:
+
+- Added better annotations for UI/Feature tables (works with inheritance now)
+- Added wrapper calls to get/set stats regardless of whether they're actual stat objects or the special types (DeltaMod, TreasureTable, etc.)
+- Moved `RemoveTrailingZeros()` to `Text`
+- Reduced some extender log spam from stats
+- Fixed warning spam when enemies were preparing skills
+
 ## v1052 - 05/07/22
-[Download here](https://drive.google.com/file/d/1t-Y4zycQJRb4HvTTzTmWOrObNtfVoy8x/view?usp=sharing).
 
 Epic Enemies:
 
