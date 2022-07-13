@@ -2,9 +2,27 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
-## v1053 - 07/07/22
+## v1054 - 13/07/22
 
-[Download here](https://drive.google.com/file/d/1DQIAR0GKz_YvKioWwHGwX65Oi3lKCq8K/view?usp=sharing).
+[Download here](https://drive.google.com/file/d/1plk3kjyEwtjTTL8R8wvK_5AQ96EmNzOq/view?usp=sharing).
+
+
+- Added a "Quick Examine" UI. Currently it only shows the Epic Enemies perks characters that have them. It is invoked by a keybind while hovering over a character; default is `v`.
+    - You may use the lock button to prevent its selected character from changing whenever you hover over a new one; if you do that, you will need to press the keybinding manually to change targets.
+	- You can drag the UI around by holding down left click on the upper part (the one with the character name)
+![Quick Examine UI.](img/quick_examine.png)
+
+- Artifact powers in Epic Enemies now have descriptions
+- Hotbar now greys out unusable item skills (ex. arrows)
+- Switching characters or clicking slots on the hotbar now attempts to fix desync issues (the one where your clicks go to the wrong rows)
+- Fixed a freeze when using a controller
+- Temporarily removed the Awesome Soccer minigame
+
+On the technical side of things:
+
+- Added a new lua-based UI system; currently supports backgrounds, text, buttons, state buttons, the common list types (vertical, horizontal, scrolling), dividers, and icons
+
+## v1053 - 07/07/22
 
 - Added an option to show aggro effects on the top health bar: taunt source/target as well as AI preference tags
 - Centered the AP orbs on the bottom health bar, and added special dividers every 4 AP
