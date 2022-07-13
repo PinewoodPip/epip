@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1054-130722">v1054 - 13/07/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1053-070722">v1053 - 07/07/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1052-050722">v1052 - 05/07/22</a>
@@ -216,8 +218,30 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
+<h2 id="v1054-130722">v1054 - 13/07/22<a class="headerlink" href="#v1054-130722" title="Permanent link">&para;</a></h2>
+<p><a href="https://drive.google.com/file/d/1plk3kjyEwtjTTL8R8wvK_5AQ96EmNzOq/view?usp=sharing">Download here</a>.</p>
+<ul>
+<li>
+<p>Added a "Quick Examine" UI. Currently it only shows the Epic Enemies perks characters that have them. It is invoked by a keybind while hovering over a character; default is <code>v</code>.</p>
+<ul>
+<li>You may use the lock button to prevent its selected character from changing whenever you hover over a new one; if you do that, you will need to press the keybinding manually to change targets.</li>
+<li>You can drag the UI around by holding down left click on the upper part (the one with the character name)
+<img alt="Quick Examine UI." src="../img/quick_examine.png" /></li>
+</ul>
+</li>
+<li>
+<p>Artifact powers in Epic Enemies now have descriptions</p>
+</li>
+<li>Hotbar now greys out unusable item skills (ex. arrows)</li>
+<li>Switching characters or clicking slots on the hotbar now attempts to fix desync issues (the one where your clicks go to the wrong rows)</li>
+<li>Fixed a freeze when using a controller</li>
+<li>Temporarily removed the Awesome Soccer minigame</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Added a new lua-based UI system; currently supports backgrounds, text, buttons, state buttons, the common list types (vertical, horizontal, scrolling), dividers, and icons</li>
+</ul>
 <h2 id="v1053-070722">v1053 - 07/07/22<a class="headerlink" href="#v1053-070722" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/1DQIAR0GKz_YvKioWwHGwX65Oi3lKCq8K/view?usp=sharing">Download here</a>.</p>
 <ul>
 <li>Added an option to show aggro effects on the top health bar: taunt source/target as well as AI preference tags</li>
 <li>Centered the AP orbs on the bottom health bar, and added special dividers every 4 AP</li>
