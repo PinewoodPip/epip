@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1055-200722">v1055 - 20/07/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1054-130722">v1054 - 13/07/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1053-070722">v1053 - 07/07/22</a>
@@ -218,8 +220,38 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
+<h2 id="v1055-200722">v1055 - 20/07/22<a class="headerlink" href="#v1055-200722" title="Permanent link">&para;</a></h2>
+<p><a href="https://drive.google.com/file/d/1EDgufwqUGQpU3c-WlHV57OBwQ4mQbD-_/view?usp=sharing">Download here</a>.</p>
+<ul>
+<li>Added an option to reduce the opacity of the player status bars while in combat</li>
+<li>Artifacts can no longer be transmogged (at least until that new bug with them is fixed)</li>
+<li>Vanity UI now closes when you go into combat</li>
+<li>Status tooltips now show source (if it's a character)</li>
+<li>Re-added the hotbar actions drawer (the one with force-attack / sheathe / sneak)</li>
+<li>Added a Vanity action to the hotbar</li>
+<li>Added new Combat Log filters: critical hits and dodge</li>
+<li>Status tooltips now show ID and Type while in developer mode</li>
+<li>Added embodiments to the stats tab</li>
+<li>Read books and used keys now show a label in their tooltip (not retroactive)</li>
+<li>Fixed Max SP check being inaccurate on the enemy health bar</li>
+<li>Added new divider sprites for the player health bar</li>
+<li>Player health bar now shows maximum SP, and the SP counters are centered</li>
+<li>Fix item use cost not being considered while greying out slots on the hotbar</li>
+<li>Temorarily removed the option to auto-unlock party inventories due to crashes in v56 from sync rewrites</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Removed more log spam from Hotbar/Input</li>
+<li>Moved a bunch of tables around, removed archaic scripts/global functions</li>
+<li>Added some Larian colors to the <code>Color</code> table</li>
+<li>Added an icons enum to <code>Hotbar</code></li>
+<li>More work on the new UI system: event listeners, Slot element</li>
+<li>Added <code>GetExtType()</code> for checking the type of an extender object</li>
+<li>Added <code>GameState</code> table</li>
+<li>Started transitioning to using a better event system, using a modification of the v56 SubscribableEvent table</li>
+<li>Updated IDE helper files</li>
+</ul>
 <h2 id="v1054-130722">v1054 - 13/07/22<a class="headerlink" href="#v1054-130722" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/1plk3kjyEwtjTTL8R8wvK_5AQ96EmNzOq/view?usp=sharing">Download here</a>.</p>
 <ul>
 <li>
 <p>Added a "Quick Examine" UI. Currently it only shows the Epic Enemies perks characters that have them. It is invoked by a keybind while hovering over a character; default is <code>v</code>.</p>
