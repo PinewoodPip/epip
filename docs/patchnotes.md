@@ -5,8 +5,8 @@ Older versions of the mod can be found [here](https://drive.google.com/drive/fol
 ## v1055 - 20/07/22
 [Download here](https://drive.google.com/file/d/1EDgufwqUGQpU3c-WlHV57OBwQ4mQbD-_/view?usp=sharing).
 
+
 - Added an option to reduce the opacity of the player status bars while in combat
-- Artifacts can no longer be transmogged (at least until that new bug with them is fixed)
 - Vanity UI now closes when you go into combat
 - Status tooltips now show source (if it's a character)
 - Re-added the hotbar actions drawer (the one with force-attack / sheathe / sneak)
@@ -19,6 +19,8 @@ Older versions of the mod can be found [here](https://drive.google.com/drive/fol
 - Added new divider sprites for the player health bar
 - Player health bar now shows maximum SP, and the SP counters are centered
 - Fix item use cost not being considered while greying out slots on the hotbar
+- Fixed consumable items not greying out properly in the hotbar
+- Fixed hotbar issues with Luminary, Musketeer mods
 - Temorarily removed the option to auto-unlock party inventories due to crashes in v56 from sync rewrites
 
 On the technical side of things:
