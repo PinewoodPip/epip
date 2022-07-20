@@ -2,10 +2,38 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
+## v1055 - 20/07/22
+[Download here](https://drive.google.com/file/d/1EDgufwqUGQpU3c-WlHV57OBwQ4mQbD-_/view?usp=sharing).
+
+- Added an option to reduce the opacity of the player status bars while in combat
+- Artifacts can no longer be transmogged (at least until that new bug with them is fixed)
+- Vanity UI now closes when you go into combat
+- Status tooltips now show source (if it's a character)
+- Re-added the hotbar actions drawer (the one with force-attack / sheathe / sneak)
+- Added a Vanity action to the hotbar
+- Added new Combat Log filters: critical hits and dodge
+- Status tooltips now show ID and Type while in developer mode
+- Added embodiments to the stats tab
+- Read books and used keys now show a label in their tooltip (not retroactive)
+- Fixed Max SP check being inaccurate on the enemy health bar
+- Added new divider sprites for the player health bar
+- Player health bar now shows maximum SP, and the SP counters are centered
+- Fix item use cost not being considered while greying out slots on the hotbar
+- Temorarily removed the option to auto-unlock party inventories due to crashes in v56 from sync rewrites
+
+On the technical side of things:
+
+- Removed more log spam from Hotbar/Input
+- Moved a bunch of tables around, removed archaic scripts/global functions
+- Added some Larian colors to the `Color` table
+- Added an icons enum to `Hotbar`
+- More work on the new UI system: event listeners, Slot element
+- Added `GetExtType()` for checking the type of an extender object
+- Added `GameState` table
+- Started transitioning to using a better event system, using a modification of the v56 SubscribableEvent table
+- Updated IDE helper files
+
 ## v1054 - 13/07/22
-
-[Download here](https://drive.google.com/file/d/1plk3kjyEwtjTTL8R8wvK_5AQ96EmNzOq/view?usp=sharing).
-
 
 - Added a "Quick Examine" UI. Currently it only shows the Epic Enemies perks characters that have them. It is invoked by a keybind while hovering over a character; default is `v`.
     - You may use the lock button to prevent its selected character from changing whenever you hover over a new one; if you do that, you will need to press the keybinding manually to change targets.
