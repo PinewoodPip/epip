@@ -2,9 +2,29 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
-## v1055 - 20/07/22
-[Download here](https://drive.google.com/file/d/1EDgufwqUGQpU3c-WlHV57OBwQ4mQbD-_/view?usp=sharing).
+## v1056 - 22/07/22
+[Download here](https://drive.google.com/file/d/1uKj-3_OaJE5gXveJrhTGNY3SZ4SeQJfy/view?usp=sharing).
 
+- Stats Tab:
+    - Added Voracity stats
+    - Added Artifacts
+- Quick Examine now shows Artifacts for your allies as well (useful in multiplayer)
+- Vanity: added support for "Visitors from Cyseal" mod, though the mod currently appears to have some issue with replacing some item icons
+- Fixed a freeze with Immersive Meditation
+- Fixed another grey out issue with the hotbar (skills with weapon damage but no weapon requirement)
+- Fixed the category weight sliders in Epic Enemies not being saved
+- Fixed the "Show Minimap" option appearing twice in the options menu
+- Fixed some issues with controllers
+- Skills show their IDs in tooltips in developer mode
+
+On the technical side of things:
+
+- Added `StopPropagation()` to the new event table
+- Added a wrapper for checking developer mode, with an option to use an additional check; WIP and testing features will be locked behind it, meaning the rest of the features (like the cheats menu) can be used without problems
+- Added a few new utility methods
+- Started work on further giga brain hotbar improvements
+
+## v1055 - 20/07/22
 
 - Added an option to reduce the opacity of the player status bars while in combat
 - Vanity UI now closes when you go into combat
