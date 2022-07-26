@@ -2,8 +2,21 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
+## v1057 - 26/07/22
+[Download here](https://drive.google.com/file/d/1oc07bR7WFCG2vV6mp7VzGnN_5Y7qj33z/view?usp=sharing).
+
+- Fixed the annoying issue of control being switched to new summons in combat while it's still your turn
+- Crafting UI now remembers your last tab (equipment/consumables etc.)
+- Added a setting to set the default tab for the crafting UI
+- The hotbar now shows a warning for unmemorized skills, as well as skills from items that have been unequipped
+- Fixed some changelogs ingame not showing up
+- Added an option to enable some improvements to the save/load menu: alphabetical sorting and search. The search bar supports lua patterns and is case-sensitive
+
+On the technical side of things:
+
+- The hotbar updates periodically again to fix some issues, and should no longer break completely when a single slot/action fails to render
+
 ## v1056 - 22/07/22
-[Download here](https://drive.google.com/file/d/1uKj-3_OaJE5gXveJrhTGNY3SZ4SeQJfy/view?usp=sharing).
 
 - Stats Tab:
     - Added Voracity stats

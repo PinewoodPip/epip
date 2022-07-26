@@ -13,7 +13,7 @@ To get it, create a file named `OsiUpdateChannel.txt` in the same directory wher
 Devel
 ```
 
-[Latest version, v1056](https://drive.google.com/file/d/1uKj-3_OaJE5gXveJrhTGNY3SZ4SeQJfy/view?usp=sharing). (22/07/22)
+[Latest version, v1057](https://drive.google.com/file/d/1oc07bR7WFCG2vV6mp7VzGnN_5Y7qj33z/view?usp=sharing). (26/07/22)
 
 Only English is supported. Text related to gameplay changes will not show up in other languages. Mods that also modify UI are largely incompatible. ["No More Dragging"](https://steamcommunity.com/sharedfiles/filedetails/?id=2546859598) and its expanded container version is compatible, for now.
 
