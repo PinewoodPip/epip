@@ -4,14 +4,7 @@ Epip Encounters is an add-on mod for [Epic Encounters 2](https://docs.google.com
 
 ## Download
 
-**[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/v52). Load after both EE Core and EE Origins.**
-
-**The latest versions of the mod require v56 of the extender. This version is NOT yet public.**
-
-To get it, create a file named `OsiUpdateChannel.txt` in the same directory where you installed the extender (where `DXGI.dll` is) with the contents:
-```json
-Devel
-```
+**[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v3). Load after both EE Core and EE Origins.**
 
 [Latest version, v1057](https://drive.google.com/file/d/1oc07bR7WFCG2vV6mp7VzGnN_5Y7qj33z/view?usp=sharing). (26/07/22)
 
