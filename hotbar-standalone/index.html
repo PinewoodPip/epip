@@ -153,65 +153,11 @@
             <div class="section">
               
                 <h1 id="standalone-hotbar-mod">Standalone Hotbar Mod<a class="headerlink" href="#standalone-hotbar-mod" title="Permanent link">&para;</a></h1>
-<p>The Improved Hotbar mod allows you to have multiple bars at once (up to 5), and adds new functionality to improve the hotbar experience further.</p>
-<p><strong>Requires v56 of the extender! This version of the extender is not public yet, you have to install it manually:</strong></p>
-<p>To get it, download the new extender updater: <a href="https://nb-stor.s3.eu-central-1.amazonaws.com/dos2-updater-2/Updater-v2.zip">https://nb-stor.s3.eu-central-1.amazonaws.com/dos2-updater-2/Updater-v2.zip</a></p>
-<p>Alternatively, create a file named <code>OsiUpdateChannel.txt</code> in the same directory where you installed the extender (where <code>DXGI.dll</code> is) with the contents:</p>
-<pre><code class="language-json">Devel
-</code></pre>
-<p>You'll know you did it right if "v56" shows up at the bottom of the main menu with all the buttons.</p>
+<p>The Improved Hotbar mod is a standalone version of Epip's hotbar features, requiring only the Script Extender v56+.</p>
 <blockquote>
-<p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297">Workshop page HERE</a></p>
+<p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297">Workshop page</a>
+<a href="https://drive.google.com/file/d/1al2p2m-4kIcBOc42d4E7e7d_8qFn3KFm/view?usp=sharing">Direct download</a></p>
 </blockquote>
-<p><strong>Please report any issues! Either through DM or a comment on the page/discussions section.</strong></p>
-<p><strong>Also consider enabling the extender console so you can see error messages while ingame. If something doesn't work or appears broken, chances are there is a useful red message in there for me!</strong></p>
-<p>To do so, create a <code>OsirisExtenderSettings.json</code> file in the <code>DefEd/bin</code> folder (same folder where you put the extender) with the contents:</p>
-<pre><code class="language-json">{
-    &quot;CreateConsole&quot;: true,
-    &quot;DeveloperMode&quot;: true
-}
-</code></pre>
-<p>After you're done using the mod you can delete both that file and the one for v56 of the extender (you should also do that once v56 releases publicly).</p>
-<h2 id="extra-bars">Extra Bars<a class="headerlink" href="#extra-bars" title="Permanent link">&para;</a></h2>
-<p><img alt="Extra bars." src="../img/hotbar/five_bars.png" /></p>
-<p>To add more bars, click the small +/- buttons between the buttons and the slots.</p>
-<p>You may cycle each bar independently. The original cycling hotkeys cycle the bottom bar; holding shift while doing so (the "Show sneak cones" key) will cycle the bar above it.</p>
-<h2 id="action-buttons">Action Buttons<a class="headerlink" href="#action-buttons" title="Permanent link">&para;</a></h2>
-<p>The buttons in the bottom left part of the hotbar have been revamped, and are now customizable. In addition to them being re-arrangable by drag-and-dropping <strong>(if the hotbar is unlocked)</strong>, mods can add their own "action buttons" there with custom functionality*.</p>
-<p><img alt="Custom hotkeys." src="../img/hotbar/hotkeys.png" /></p>
-<p>Right-click these buttons (or click the button with the ^ arrows) to open the "actions drawer", where you can see all the actions that you can <strong>drag-and-drop</strong> to assign them to the buttons at the bottom. You may also click them in the drawer to use them.</p>
-<p>These buttons are shared across all your characters; you only need to bind them once, and then can enjoy their convenience from any character.</p>
-<p>Several new "actions" are implemented:</p>
-<ul>
-<li><strong>Resting</strong>: uses a bedroll from the party inventory. No longer do you need to place one on your hotbar nor even have one per character!</li>
-<li><strong>Pyramids</strong>: opens the Teleporter Pyramid UI. Again, reduces hotbar clutter and saves time spent looking through your inventory to find out where the heck these are.</li>
-<li><strong>Chain/unchain</strong>: chains/unchains your active character with others nearby instantly.</li>
-<li><strong>Waypoints</strong>: opens the fast travel menu.</li>
-<li><strong>Ping</strong>: shortcut to the ping function.</li>
-<li><strong>Chat/Combat Log</strong>: toggle the respective UIs. The original chat button has been yeeted.</li>
-</ul>
-<p>Additionally, as a compatibility consideration for older mods, you can drag any skill or item from the hotbar to these buttons to bind them there. This is useful for mods that implement menus through skills or usable items (ex. LL's older mods). <strong>You can only do this from the hotbar slots at the moment! So drag an item to the hotbar, THEN drag it to these buttons.</strong></p>
-<p>*Documentation pending completion; if someone wants to start making custom buttons with these already let me know; the API won't change.</p>
-<h2 id="context-menu">Context Menu<a class="headerlink" href="#context-menu" title="Permanent link">&para;</a></h2>
-<p>Right click a row to open up a context menu where you can perform multiple handy operations, such as clearing it, moving a group of slots to the sides (great for inserting new spells inbetween!) or saving/loading a preset.</p>
-<p><img alt="Context menu." src="../img/hotbar/context_menu.png" /></p>
-<h2 id="compatibility">Compatibility<a class="headerlink" href="#compatibility" title="Permanent link">&para;</a></h2>
-<p>Incompatible with mods that modify <code>hotBar.swf</code>. This might be worked around in the future if it becomes a concern.</p>
-<p>Arena mode and GM mode are untested. Consider them unsupported!</p>
-<p>Compatibility considerations:</p>
-<ul>
-<li>Weapon Expansion: added an action to open the menu, shifted it slightly up (so the close button is accessible with 2 bars), repositioned the button when you have 2 rows of customizable buttons</li>
-<li>Portable Respec Mirror (Fort Joy Edition): added an action to use the mirror</li>
-<li>Epic Encounters 2: the original actions remain (Source Infuse, Meditate) but there's not much point in using this mod over Epip.</li>
-</ul>
-<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
-<ul>
-<li>On lower resolutions, a piece of art from the right-most edge might "clip" into the slots area</li>
-<li>Some art is ugly/unfinished</li>
-<li>Upon changing the resolution, you need to add/remove a bar in order for the HP bar to appear in the right place</li>
-<li>Items slotted into the customizable buttons don't display proper names</li>
-<li>Skills slotted into the customizable buttons don't grey out properly, ex. if you don't meet their requirements (doesn't affect their use)</li>
-</ul>
               
             </div>
           </div>
