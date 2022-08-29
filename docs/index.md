@@ -8,7 +8,16 @@ Epip Encounters is an add-on mod for [Epic Encounters 2](https://docs.google.com
 
 **REQUIRES V57 OF THE EXTENDER!**
 
-[Latest version, v1058](https://drive.google.com/file/d/15re6-YWUalUVo85H9l6aMKGU25Nl4ROi/view?usp=sharing). (29/08/22) 
+You can get v57 by creating a file named `ScriptExtenderUpdaterConfig.json` in the same folder where you've put the extender, with the contents:
+
+```json
+{
+	"UpdateChannel": "Devel",
+	"Debug": true
+}
+```
+
+[Latest version, v1059](https://drive.google.com/file/d/1QU6182bCASKaba96Q8kkVLWxLYBkRQ5D/view?usp=sharing). (29/08/22) 
 
 Only English is supported. Text related to gameplay changes will not show up in other languages. Mods that also modify UI are largely incompatible. ["No More Dragging"](https://steamcommunity.com/sharedfiles/filedetails/?id=2546859598) and its expanded container version is compatible, for now.
 
@@ -310,3 +319,4 @@ A few miscellaneous console commands are added:
 - `!soundtest`: client-side; plays all the sounds defined in the UI sounds lsx and shows their name. Useful for inspiration.
 - `!animtest`: server-side; plays all human female animations on the currently controlled character. Cannot be interrupted once started!
 - `!worryaboutsuchsmallthings`: tests the performance between `EsvCharacter:HasTag()` and `Osi.IsTagged()`
+- `!testactionhandles`: tests string handles for "actions" from the Stats library.

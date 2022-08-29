@@ -2,11 +2,32 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
-## v1058 - 29/08/22
+## v1059 - 29/08/22
 
 **REQUIRES V57 OF THE EXTENDER!**
 
-[Download here](https://drive.google.com/file/d/15re6-YWUalUVo85H9l6aMKGU25Nl4ROi/view?usp=sharing).
+You can get v57 by creating a file named `ScriptExtenderUpdaterConfig.json` in the same folder where you've put the extender, with the contents:
+
+```json
+{
+	"UpdateChannel": "Devel",
+	"Debug": true
+}
+```
+
+[Download here](https://drive.google.com/file/d/1QU6182bCASKaba96Q8kkVLWxLYBkRQ5D/view?usp=sharing).
+
+- Fixed an issue with using items in hotbar groups after reloading
+- Fixed item amounts displaying incorrectly in hotbar groups
+- Fixed an issue with the unlearn skills prompt appearing while the UI is closed
+
+On the technical side of things:
+
+- Added "Actions" (ground attack, sheathe/unsheathe, etc.) to the Stats library
+
+## v1058 - 29/08/22
+
+Versions from this one onwards require extender v57.
 
 New features:
 
