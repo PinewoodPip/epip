@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1058-290822">v1058 - 29/08/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1057-260722">v1057 - 26/07/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1056-220722">v1056 - 22/07/22</a>
@@ -125,65 +127,6 @@
     </ul>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Documentation</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../docs/">Introduction</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Global Tables</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Global%20Tables/Feature/">Feature</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Game</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Game/">Root</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Game/Character/">Character</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Game/Item/">Item</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Client/">Root</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">UI</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../Client/UI/ChatLog/">ChatLog</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../Client/UI/OptionsSettings/">OptionsSettings</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../Client/UI/OptionsInput/">OptionsInput</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../Client/UI/Examine/">Examine</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../Client/UI/MessageBox/">MessageBox</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../Client/UI/CharacterSheet/">CharacterSheet</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../Client/UI/GiftBagContent/">GiftBagContent</a>
-                </li>
-    </ul>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Epip</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Epip/">Root</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">Features</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../Epip/EpicEnemies/">EpicEnemies</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../Epip/StatsTab/">StatsTab</a>
-                </li>
-    </ul>
-                </li>
-    </ul>
-                    </li>
-                </ul>
                 <p class="caption"><span class="caption-text">Tutorials</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../Tutorials/testing/">Testing</a>
@@ -224,8 +167,112 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
+<h2 id="v1058-290822">v1058 - 29/08/22<a class="headerlink" href="#v1058-290822" title="Permanent link">&para;</a></h2>
+<p><strong>REQUIRES V57 OF THE EXTENDER!</strong></p>
+<p><a href="https://drive.google.com/file/d/15re6-YWUalUVo85H9l6aMKGU25Nl4ROi/view?usp=sharing">Download here</a>.</p>
+<p>New features:</p>
+<ul>
+<li>Consumables like food and mushrooms now show their effects by default; there's no need to eat them once for them to appear in the tooltip</li>
+<li>Added a setting to enable infinite carry weight</li>
+<li>You can now right-click skills in the skillbook while out of combat to unmemorize them</li>
+<li>Added a keybind to toggle world item tooltips (so you don't need to hold the alt key)</li>
+<li>Surface tooltips now show their owner (who the surface damage scales from and who owns its applied statuses)</li>
+<li>Added a setting to disable the "Item Received" notifications</li>
+<li>Added a setting to allow viewing the character sheet while in the quest rewards UI; this lets you compare your equipped items with the rewards.</li>
+<li>Vanity: transmog and dyes no longer require items to be re-equipped, making it overall faster to try on different looks</li>
+<li>Added an option to hide empty corpses/containers from the world item tooltips (the ones that appear from the alt key)</li>
+<li>Added a setting to allow you to walk <em>onto</em> corpses while in combat without looting them. You may still loot them while holding shift. This setting is enabled by default.</li>
+<li>The fix to character control being lost upon creating new summons now also applies to having your summons be killed</li>
+<li>Added an option to play a sound effect when a chat message is received, so they're easier to notice</li>
+<li>Empowering items now properly scales their armor values, but this will only take effect after a reload</li>
+<li>Fixed the vanilla bug that prevented you from using items in certain conditions if you had +AP Cost effects </li>
+<li>Added a keybind to scroll the fancy item/skill tooltips</li>
+<li>ACTIVE_DEFENSE statuses (ex. Empyrean Tears) now show max charges in the tooltip</li>
+<li>Holding shift while moving in combat now shows approximate decimal AP costs</li>
+<li>Status tooltips now show if they were applied by an equipped item</li>
+<li>Fixed the tooltip color for effects that alter AP costs. They now display in green if they reduce AP costs, and red if they increase them.</li>
+<li>The custom input menu has been reworked to use new extender tech; all keys supported by the game are now bindable, including modifier keys like alt/ctrl. Your previous bindings will be wiped upon updating.</li>
+<li>Added new modifier keys to cycle bars on the hotbar: ctrl cycles 3rd bar (from bottom), alt cycles 4th one, gui (Windows key) cycles 5th one</li>
+<li>Added an "Engrave" option to the Greatforge which lets you rename items. This is purely visual.<ul>
+<li>It does not currently have a custom graphic. It will appear as another "Drill Sockets" in the Greatforge wheel.</li>
+</ul>
+</li>
+<li>Minor visual adjustments to QuickExamine</li>
+<li>The Epip settings menu is slightly more organized now</li>
+<li>Added more mods to the incompatible mods warning: DU, Greed, Multihotbars</li>
+</ul>
+<p>Hotbar:</p>
+<ul>
+<li>Slots can no longer be used while holding modifier keys. This means you can use shift/ctrl/alt + number keys as a custom keybind without it interfering with the hotbar.</li>
+<li>Fixed loadouts not saving empty gaps inbetween slots</li>
+<li>You can't cycle hidden bars anymore</li>
+<li>Added custom slot groups. Right-click a row on the hotbar to create one. These are shared across all your characters. Right-click them to delete them. Known issues:<ul>
+<li>Items there do not display tooltips yet</li>
+</ul>
+</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Fixed tooltips for Vanity tabs</li>
+<li>Fixed negative status effects displaying wrong ever since GB5</li>
+<li>Epip's artifact tooltips (in Quick Examine, stats tab, etc.) now have a period at the end of them</li>
+<li>Hotkey to exit Meditate is now escape, instead of escape / right-click.</li>
+<li>Fixed action names on the hotbar buttons</li>
+<li>Fixed some character sheet tooltips appearing while in the Vanity menu</li>
+</ul>
+<p>Stuff for developer mode:</p>
+<ul>
+<li>Added a keybind to copy identifiers (GUID for chars/items, stat ID for skills) of the object over your mouse</li>
+<li>Added a settings menu to change Data.txt values ingame. Most of them apply instantly / upon character stat recalculation, but some may require a session reload.</li>
+<li>Talents show their IDs in tooltips</li>
+<li>The cheats context menu now lets you add talents</li>
+<li>Added an option to enable a widget that shows FPS, TPS, and relevant mod versions</li>
+<li>Added a keybind to open a debug menu from which you can toggle debug mode on features, disable them (or their logging), and run tests (a new feature of the Feature table)</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Osiris library now supports built-in symbols (calls and queries) and extender objects are converted to their GUID when being passed</li>
+<li>Added a Vector library (with some cool arithmetic operator overloads)</li>
+<li>Added a new tooltip library (WIP), advantage include preventing tooltips and manipulating surface tooltips, viewing source UI of a tooltip</li>
+<li>SubscribableEvent nodes can now be removed based on a predicate function, and preventable events are supported</li>
+<li>Fixed some log spam related to the hotbar</li>
+<li>Added groundwork for the Epip Housing(TM) feature</li>
+<li>Slight modernization to Net library: the payload is now passed as the first parameter, and IDE hints are available by defining the net msg as a class with the payload's table fields</li>
+<li>Timer lib is now available on the server, and a tick-based timer option has been added, as well as option to repeat / pause them</li>
+<li>Added a better coroutine table with sleeping (either for X seconds, or until a condition is met)</li>
+<li>Added a new Epip.RegisterFeature() call which can keep track of the source mod of a feature</li>
+<li>Added a new Input library using v57 RawInput</li>
+<li>Added more hooks to CharacterSheet UI in preparations for custom talents 2.0 (and other stats)</li>
+<li>Added ExtraData tables to Stats library</li>
+<li>Added PartyInventory hooks</li>
+<li>Removed numerous archaic/unused scripts, like the custom talents ones</li>
+<li>GenericUI:<ul>
+<li>Added more bg options for TiledBackground</li>
+<li>Added new elements: Slider, Grid</li>
+<li>Events now have proper IDE support, and no more issues with inheritance</li>
+<li>Element creation now has proper IDE support, if you instantiate elements using their class name</li>
+<li>Added more position-related calls</li>
+<li>Element visuals now use string IDs, and unused visuals are set off-stage (less possibility for jank)</li>
+<li>Fixed button size issues</li>
+<li>Removed minimum size for black background</li>
+<li>Fixed stack overflow issue with lists</li>
+<li>Added support for skill tooltips</li>
+<li>Fixed issues with MouseUp on the slot element</li>
+<li>Changed mouse events to use the roll ones</li>
+<li>Added proper support for prefabs, with the following implemented:<ul>
+<li>Spinner</li>
+<li>Text (offers simpler initialization of Text elements)</li>
+<li>HotbarSlot (with many improvements to bring it closer to hotbar behavior)</li>
+<li>FormHorizontalList</li>
+<li>LabelledCheckbox</li>
+<li>LabelledDropdown</li>
+<li>LabelledTextField</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="v1057-260722">v1057 - 26/07/22<a class="headerlink" href="#v1057-260722" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/1oc07bR7WFCG2vV6mp7VzGnN_5Y7qj33z/view?usp=sharing">Download here</a>.</p>
 <ul>
 <li>Fixed the annoying issue of control being switched to new summons in combat while it's still your turn</li>
 <li>Crafting UI now remembers your last tab (equipment/consumables etc.)</li>
@@ -954,7 +1001,7 @@ local value = Osiris.QRY_AMER_KeywordStat_VitalityVoid_GetRadius(char.MyGuid, 1)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../docs/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Tutorials/testing/" class="btn btn-neutral float-right" title="Testing">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -986,7 +1033,7 @@ local value = Osiris.QRY_AMER_KeywordStat_VitalityVoid_GetRadius(char.MyGuid, 1)
       <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../docs/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Tutorials/testing/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
