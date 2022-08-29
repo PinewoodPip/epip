@@ -16,30 +16,30 @@ extra_css:
 nav:
   - Home: index.md
   - Patch Notes: patchnotes.md
-  - Documentation: 
-    - "Introduction": "docs.md"
-    - "Global Tables":
-      - "Feature": "Global Tables/Feature.md"
-    - "Game":
-      - "Root": "Game/index.md"
-      - "Character": "Game/Character.md"
-      - "Item": "Game/Item.md"
-    - "Client":
-      - "Root": "Client/index.md"
-      # - "Input": "Client/input.md"
-      - "UI":
-        - "ChatLog" : "Client/UI/ChatLog.md"
-        - "OptionsSettings" : "Client/UI/OptionsSettings.md"
-        - "OptionsInput" : "Client/UI/OptionsInput.md"
-        - "Examine": "Client/UI/Examine.md"
-        - "MessageBox": "Client/UI/MessageBox.md"
-        - "CharacterSheet": "Client/UI/CharacterSheet.md"
-        - "GiftBagContent": "Client/UI/GiftBagContent.md"
-    - "Epip":
-      - "Root": "Epip/index.md"
-      - "Features":
-        - "EpicEnemies" : "Epip/EpicEnemies.md"
-        - "StatsTab": "Epip/StatsTab.md"
+  # - Documentation: 
+  #   - "Introduction": "docs.md"
+  #   - "Global Tables":
+  #     - "Feature": "Global Tables/Feature.md"
+  #   - "Game":
+  #     - "Root": "Game/index.md"
+  #     - "Character": "Game/Character.md"
+  #     - "Item": "Game/Item.md"
+  #   - "Client":
+  #     - "Root": "Client/index.md"
+  #     # - "Input": "Client/input.md"
+  #     - "UI":
+  #       - "ChatLog" : "Client/UI/ChatLog.md"
+  #       - "OptionsSettings" : "Client/UI/OptionsSettings.md"
+  #       - "OptionsInput" : "Client/UI/OptionsInput.md"
+  #       - "Examine": "Client/UI/Examine.md"
+  #       - "MessageBox": "Client/UI/MessageBox.md"
+  #       - "CharacterSheet": "Client/UI/CharacterSheet.md"
+  #       - "GiftBagContent": "Client/UI/GiftBagContent.md"
+  #   - "Epip":
+  #     - "Root": "Epip/index.md"
+  #     - "Features":
+  #       - "EpicEnemies" : "Epip/EpicEnemies.md"
+  #       - "StatsTab": "Epip/StatsTab.md"
   - Tutorials:
     # - "Lua": "Tutorials/Lua/index.md"
     - "Testing": "Tutorials/testing.md"
