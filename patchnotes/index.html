@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1059-290822">v1059 - 29/08/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1058-290822">v1058 - 29/08/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1057-260722">v1057 - 26/07/22</a>
@@ -167,9 +169,26 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
-<h2 id="v1058-290822">v1058 - 29/08/22<a class="headerlink" href="#v1058-290822" title="Permanent link">&para;</a></h2>
+<h2 id="v1059-290822">v1059 - 29/08/22<a class="headerlink" href="#v1059-290822" title="Permanent link">&para;</a></h2>
 <p><strong>REQUIRES V57 OF THE EXTENDER!</strong></p>
-<p><a href="https://drive.google.com/file/d/15re6-YWUalUVo85H9l6aMKGU25Nl4ROi/view?usp=sharing">Download here</a>.</p>
+<p>You can get v57 by creating a file named <code>ScriptExtenderUpdaterConfig.json</code> in the same folder where you've put the extender, with the contents:</p>
+<pre><code class="language-json">{
+    &quot;UpdateChannel&quot;: &quot;Devel&quot;,
+    &quot;Debug&quot;: true
+}
+</code></pre>
+<p><a href="https://drive.google.com/file/d/1QU6182bCASKaba96Q8kkVLWxLYBkRQ5D/view?usp=sharing">Download here</a>.</p>
+<ul>
+<li>Fixed an issue with using items in hotbar groups after reloading</li>
+<li>Fixed item amounts displaying incorrectly in hotbar groups</li>
+<li>Fixed an issue with the unlearn skills prompt appearing while the UI is closed</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Added "Actions" (ground attack, sheathe/unsheathe, etc.) to the Stats library</li>
+</ul>
+<h2 id="v1058-290822">v1058 - 29/08/22<a class="headerlink" href="#v1058-290822" title="Permanent link">&para;</a></h2>
+<p>Versions from this one onwards require extender v57.</p>
 <p>New features:</p>
 <ul>
 <li>Consumables like food and mushrooms now show their effects by default; there's no need to eat them once for them to appear in the tooltip</li>
