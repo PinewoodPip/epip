@@ -19,7 +19,7 @@ New features:
 - Added a setting to allow viewing the character sheet while in the quest rewards UI; this lets you compare your equipped items with the rewards.
 - Vanity: transmog and dyes no longer require items to be re-equipped, making it overall faster to try on different looks
 - Added an option to hide empty corpses/containers from the world item tooltips (the ones that appear from the alt key)
-- Added a setting to allow you to walk *onto* corpses while in combat without looting them. You may still loot them while holding shift. This settings is enabled by default.
+- Added a setting to allow you to walk *onto* corpses while in combat without looting them. You may still loot them while holding shift. This setting is enabled by default.
 - The fix to character control being lost upon creating new summons now also applies to having your summons be killed
 - Added an option to play a sound effect when a chat message is received, so they're easier to notice
 - Empowering items now properly scales their armor values, but this will only take effect after a reload
