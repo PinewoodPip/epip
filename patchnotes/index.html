@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1060-30922">v1060 - 3/09/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1059-290822">v1059 - 29/08/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1058-290822">v1058 - 29/08/22</a>
@@ -169,7 +171,7 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
-<h2 id="v1059-290822">v1059 - 29/08/22<a class="headerlink" href="#v1059-290822" title="Permanent link">&para;</a></h2>
+<h2 id="v1060-30922">v1060 - 3/09/22<a class="headerlink" href="#v1060-30922" title="Permanent link">&para;</a></h2>
 <p><strong>REQUIRES V57 OF THE EXTENDER!</strong></p>
 <p>You can get v57 by creating a file named <code>ScriptExtenderUpdaterConfig.json</code> in the same folder where you've put the extender, with the contents:</p>
 <pre><code class="language-json">{
@@ -177,7 +179,38 @@
     &quot;Debug&quot;: true
 }
 </code></pre>
-<p><a href="https://drive.google.com/file/d/1QU6182bCASKaba96Q8kkVLWxLYBkRQ5D/view?usp=sharing">Download here</a>.</p>
+<p><a href="https://drive.google.com/file/d/1h9PePNO_QY_cUqR-pIeQ0gdPdh-NJlLf/view?usp=sharing">Download here</a>.</p>
+<ul>
+<li>Added a better frame for the hotbar health bar, and shadows for the AP bar (thanks Elric)</li>
+<li>Added a keybind to bring up the examine UI (the real one)</li>
+<li>Added all engine actions (the ones you see in the controller UI) to the hotbar actions drawer (the vanilla one, bound to <code>X</code>), except for flee</li>
+<li>Reordered some keybindings</li>
+<li>Added "Let there be tooltips" to the list of EE-incompatible mods</li>
+<li>Fixed character-specific context menus appearing on items</li>
+<li>Fixed the save/load overlay not disappearing in multiplayer when the UI is closed</li>
+<li>Fixed a possible edge case with walking over corpses in combat that would result in the corpse not being lootable after combat</li>
+<li>Fixed the dragging area for the debug display being too large</li>
+<li>Fixed an issue with character control switching rapidly</li>
+<li>Fixed hotbar tooltips not showing keybinds</li>
+<li>Removed the "Special Binding 1 &amp; 2" keys since they are no longer used</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Added data for all InputEvents to <code>Input</code> as well as possibly the world's biggest alias</li>
+<li>Added an <code>IO</code> table</li>
+<li>Began modernizing the context menu APIs</li>
+<li>Added a Pointer library, currently deals only with <code>Ext.UI.GetPickingState()</code>-related matters</li>
+<li>Added <code>table.lua</code> and <code>math.lua</code> containing the extensions to the respective built-in tables</li>
+<li>RGBColor creation now clamps the color values</li>
+<li>Implemented __eq, __add and __sub for RGBColor</li>
+<li>Various fixes for outdated/clashing IDE class names</li>
+<li>Fixed an infinite loop when using the default buttons for <code>MessageBox</code></li>
+<li>Added a table for <code>combatTurn</code> UI<ul>
+<li>Unfortunately this UI does not appear to hold any character handles, making it not very useful.</li>
+</ul>
+</li>
+</ul>
+<h2 id="v1059-290822">v1059 - 29/08/22<a class="headerlink" href="#v1059-290822" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Fixed an issue with using items in hotbar groups after reloading</li>
 <li>Fixed item amounts displaying incorrectly in hotbar groups</li>
@@ -193,7 +226,7 @@
 <ul>
 <li>Consumables like food and mushrooms now show their effects by default; there's no need to eat them once for them to appear in the tooltip</li>
 <li>Added a setting to enable infinite carry weight</li>
-<li>You can now right-click skills in the skillbook while out of combat to unmemorize them</li>
+<li>You can now right-click skills in the skillbook while out of combat to unlearn them</li>
 <li>Added a keybind to toggle world item tooltips (so you don't need to hold the alt key)</li>
 <li>Surface tooltips now show their owner (who the surface damage scales from and who owns its applied statuses)</li>
 <li>Added a setting to disable the "Item Received" notifications</li>
