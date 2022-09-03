@@ -17,7 +17,7 @@ You can get v57 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 }
 ```
 
-[Latest version, v1059](https://drive.google.com/file/d/1QU6182bCASKaba96Q8kkVLWxLYBkRQ5D/view?usp=sharing). (29/08/22) 
+[Latest version, v1060](https://drive.google.com/file/d/1h9PePNO_QY_cUqR-pIeQ0gdPdh-NJlLf/view?usp=sharing). (03/09/22) 
 
 Only English is supported. Text related to gameplay changes will not show up in other languages. Mods that also modify UI are largely incompatible. ["No More Dragging"](https://steamcommunity.com/sharedfiles/filedetails/?id=2546859598) and its expanded container version is compatible, for now.
 
@@ -44,7 +44,7 @@ Holding the "show sneak cones" button (shift by default) will replace the resist
 
 ![New enemy health bar, alt mode.](img/showcase/health_bar_shift.png)
 
-The health bar above the hotbar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text is removed to improve readability. Additionally, it now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. It now also shows your maximum SP, and the AP/SP indicators are properly centered.
+The health bar above the hotbar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text is removed to improve readability. Additionally, it now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. It now also shows your maximum SP, and the AP/SP indicators are properly centered. Its graphics have also been improved, with the AP bar being easier to read thanks to a dropshadow.
 
 ![Improved status console.](img/showcase/status_console.png)
 
@@ -84,6 +84,8 @@ The purpose of the action bar is to provide a centralized place for modders to a
 Right-click a row on the hotbar to bring up a context menu where you can "push" groups of slots around (great for inserting spells inbetween!), clear unmemorized spells, or save "loadouts" to restore your hotbars in later playthroughs.
 
 ![Hotbar context menu.](img/showcase/hotbar_contextmenu.png)
+
+Additionally, all "engine actions" (except for flee) are available from the vanilla actions drawer.
 
 [The hotbar improvements are also available as a standalone mod with no EE dependency.](https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297)
 
@@ -188,6 +190,8 @@ A "Quick Examine" panel can be opened with a custom hotkey (defaults to `V`). Th
 ### Examine
 The Examine UI now shows Critical Chance, and can be configured to open on the sides of the screen instead of the center.
 
+Additionally, there is now a keybind to open the examine menu.
+
 ### Ingame Patchnotes
 A new journal UI can be accessed from the Hotbar actions, or after updating the mod. It lists the patchnotes of Epip, and other mods can add information/patchnotes there freely as well. Updating the mod will also show a prompt to open the UI.
 
@@ -250,7 +254,7 @@ The third tab allows you to dye items with a custom color. Items may support up 
 
 ![Vanity dyes.](img/showcase/vanity_dyes.png)
 
-## Miscellaneous Bug Fixes
+## Miscellaneous Bug Fixes and Adjustments
 Certain vanilla issues have been fixed:
 
 - Summons dying in combat (or being newly spawned) no longer causes your current character to be deselected

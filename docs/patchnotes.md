@@ -2,7 +2,7 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
-## v1059 - 29/08/22
+## v1060 - 3/09/22
 
 **REQUIRES V57 OF THE EXTENDER!**
 
@@ -15,7 +15,36 @@ You can get v57 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 }
 ```
 
-[Download here](https://drive.google.com/file/d/1QU6182bCASKaba96Q8kkVLWxLYBkRQ5D/view?usp=sharing).
+[Download here](https://drive.google.com/file/d/1h9PePNO_QY_cUqR-pIeQ0gdPdh-NJlLf/view?usp=sharing).
+
+- Added a better frame for the hotbar health bar, and shadows for the AP bar (thanks Elric)
+- Added a keybind to bring up the examine UI (the real one)
+- Added all engine actions (the ones you see in the controller UI) to the hotbar actions drawer (the vanilla one, bound to `X`), except for flee
+- Reordered some keybindings
+- Added "Let there be tooltips" to the list of EE-incompatible mods
+- Fixed character-specific context menus appearing on items
+- Fixed the save/load overlay not disappearing in multiplayer when the UI is closed
+- Fixed a possible edge case with walking over corpses in combat that would result in the corpse not being lootable after combat
+- Fixed the dragging area for the debug display being too large
+- Fixed an issue with character control switching rapidly
+- Fixed hotbar tooltips not showing keybinds
+- Removed the "Special Binding 1 & 2" keys since they are no longer used
+
+On the technical side of things:
+
+- Added data for all InputEvents to `Input` as well as possibly the world's biggest alias
+- Added an `IO` table
+- Began modernizing the context menu APIs
+- Added a Pointer library, currently deals only with `Ext.UI.GetPickingState()`-related matters
+- Added `table.lua` and `math.lua` containing the extensions to the respective built-in tables
+- RGBColor creation now clamps the color values
+- Implemented __eq, __add and __sub for RGBColor
+- Various fixes for outdated/clashing IDE class names
+- Fixed an infinite loop when using the default buttons for `MessageBox`
+- Added a table for `combatTurn` UI
+    - Unfortunately this UI does not appear to hold any character handles, making it not very useful.
+
+## v1059 - 29/08/22
 
 - Fixed an issue with using items in hotbar groups after reloading
 - Fixed item amounts displaying incorrectly in hotbar groups
@@ -33,7 +62,7 @@ New features:
 
 - Consumables like food and mushrooms now show their effects by default; there's no need to eat them once for them to appear in the tooltip
 - Added a setting to enable infinite carry weight
-- You can now right-click skills in the skillbook while out of combat to unmemorize them
+- You can now right-click skills in the skillbook while out of combat to unlearn them
 - Added a keybind to toggle world item tooltips (so you don't need to hold the alt key)
 - Surface tooltips now show their owner (who the surface damage scales from and who owns its applied statuses)
 - Added a setting to disable the "Item Received" notifications
