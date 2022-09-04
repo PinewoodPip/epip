@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1061-40922">v1061 - 4/09/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1060-30922">v1060 - 3/09/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1059-290822">v1059 - 29/08/22</a>
@@ -171,7 +173,7 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
-<h2 id="v1060-30922">v1060 - 3/09/22<a class="headerlink" href="#v1060-30922" title="Permanent link">&para;</a></h2>
+<h2 id="v1061-40922">v1061 - 4/09/22<a class="headerlink" href="#v1061-40922" title="Permanent link">&para;</a></h2>
 <p><strong>REQUIRES V57 OF THE EXTENDER!</strong></p>
 <p>You can get v57 by creating a file named <code>ScriptExtenderUpdaterConfig.json</code> in the same folder where you've put the extender, with the contents:</p>
 <pre><code class="language-json">{
@@ -179,7 +181,43 @@
     &quot;Debug&quot;: true
 }
 </code></pre>
-<p><a href="https://drive.google.com/file/d/1h9PePNO_QY_cUqR-pIeQ0gdPdh-NJlLf/view?usp=sharing">Download here</a>.</p>
+<p><a href="https://drive.google.com/file/d/1BoreuHCluGMXXLEkSwxiE1CAd1oq_CoZ/view?usp=sharing">Download here</a>.</p>
+<ul>
+<li>
+<p>Added new settings for world item tooltips:</p>
+<ul>
+<li>Emphasizing containers, consumables and/or equipment by changing their color<ul>
+<li>This setting will not work for items that would result in a crime upon interaction; they will remain red.</li>
+</ul>
+</li>
+<li>Enabling world tooltips for all items (similar to the "Let there be tooltips" mod)</li>
+<li>Filtering out clutter (particularly the one added by the setting above): chairs, doors, non-interactable items</li>
+<li>Option to open containers upon clicking their tooltip, rather than picking them up</li>
+</ul>
+</li>
+<li>
+<p>Added an option to exit the chat UI after sending a message (so you don't need to press escape manually)</p>
+</li>
+<li>Added an option to disable notifications for sharing civils ("X shares Loremaster/LC with Z")</li>
+<li>Searching saves is now case-insensitive</li>
+<li>
+<p>Added a ping counter to the debug display</p>
+<ul>
+<li>Since the server only responds to net messages once per game tick, the counter will basically always show around 33ms in singleplayer</li>
+</ul>
+</li>
+<li>
+<p>Fixed "Show empty containers/bodies" not actually working on items</p>
+</li>
+<li>Fixed another case of an infinite loop of switching characters</li>
+<li>Fixed the "toggle world tooltips" keybind not working (+ crashing the game)</li>
+<li>Fixed some character sheet tooltips appearing in the vanity UI</li>
+</ul>
+<p>On the technical side of things:
+- Osiris library now converts boolean values to integer in calls
+- Added <code>HasFlag()</code>, <code>IsContainer()</code> to Item library
+- Added initial groundwork for an inventory expansion</p>
+<h2 id="v1060-30922">v1060 - 3/09/22<a class="headerlink" href="#v1060-30922" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Added a better frame for the hotbar health bar, and shadows for the AP bar (thanks Elric)</li>
 <li>Added a keybind to bring up the examine UI (the real one)</li>
