@@ -2,7 +2,7 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
-## v1060 - 3/09/22
+## v1061 - 4/09/22
 
 **REQUIRES V57 OF THE EXTENDER!**
 
@@ -15,7 +15,32 @@ You can get v57 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 }
 ```
 
-[Download here](https://drive.google.com/file/d/1h9PePNO_QY_cUqR-pIeQ0gdPdh-NJlLf/view?usp=sharing).
+[Download here](https://drive.google.com/file/d/1BoreuHCluGMXXLEkSwxiE1CAd1oq_CoZ/view?usp=sharing).
+
+- Added new settings for world item tooltips:
+    - Emphasizing containers, consumables and/or equipment by changing their color
+        - This setting will not work for items that would result in a crime upon interaction; they will remain red.
+    - Enabling world tooltips for all items (similar to the "Let there be tooltips" mod)
+    - Filtering out clutter (particularly the one added by the setting above): chairs, doors, non-interactable items
+    - Option to open containers upon clicking their tooltip, rather than picking them up
+
+- Added an option to exit the chat UI after sending a message (so you don't need to press escape manually)
+- Added an option to disable notifications for sharing civils ("X shares Loremaster/LC with Z")
+- Searching saves is now case-insensitive
+- Added a ping counter to the debug display
+    - Since the server only responds to net messages once per game tick, the counter will basically always show around 33ms in singleplayer
+
+- Fixed "Show empty containers/bodies" not actually working on items
+- Fixed another case of an infinite loop of switching characters
+- Fixed the "toggle world tooltips" keybind not working (+ crashing the game)
+- Fixed some character sheet tooltips appearing in the vanity UI
+
+On the technical side of things:
+- Osiris library now converts boolean values to integer in calls
+- Added `HasFlag()`, `IsContainer()` to Item library
+- Added initial groundwork for an inventory expansion
+
+## v1060 - 3/09/22
 
 - Added a better frame for the hotbar health bar, and shadows for the AP bar (thanks Elric)
 - Added a keybind to bring up the examine UI (the real one)
