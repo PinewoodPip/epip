@@ -36,6 +36,7 @@ You can get v57 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 - Fixed some character sheet tooltips appearing in the vanity UI
 
 On the technical side of things:
+
 - Osiris library now converts boolean values to integer in calls
 - Added `HasFlag()`, `IsContainer()` to Item library
 - Added initial groundwork for an inventory expansion
