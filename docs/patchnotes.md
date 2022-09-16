@@ -2,7 +2,7 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
-## v1061 - 4/09/22
+## v1062 - 16/09/22
 
 **REQUIRES V57 OF THE EXTENDER!**
 
@@ -15,7 +15,37 @@ You can get v57 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 }
 ```
 
-[Download here](https://drive.google.com/file/d/1BoreuHCluGMXXLEkSwxiE1CAd1oq_CoZ/view?usp=sharing).
+[Download here](https://drive.google.com/file/d/1OJNDz7Xp3bFsMMjDtySUSG8QgGH5iUMt/view?usp=sharing).
+
+
+- Surface tooltips with an owner now show a hint regarding how the damage scales
+- "Active Defense" statuses (ex. Empyrean Tears) now show remaining charges
+- EE rune materials now show how to use them to craft runes
+- Added a setting to configure the delay of simple tooltips appearing
+    - This affects tooltips of items in the world, as well as label tooltips in UIs (these 2 types are individually configurable)
+- Added a settings tab for camera settings
+    - You can change the maximum zoom out distance, as well as the view angles
+- Items in the quest reward screen now show a hint regarding modifier generation
+- Added new Greatforge graphics for Engrave - special thanks to Cathe and Elric!
+- Fixed a vanilla bug with the character sheet that caused the second ring slot to not play equip animations
+    - Additionally, the graphics involved should now be better centered
+- Re-added the option to auto-unlock inventories
+    - Changing the lock status should also be synched better now - the vanilla game seems to struggle with this leading to the changes often not being properly reflected in other player's UIs
+- Fixed weapon range deltamods only considering the first deltamod of that kind found
+    - This same fix is applied for weapon elemental damage mods as well
+
+On the technical side of things:
+
+- Replaced `Client.GetCharacter()` implementation with a new one from v57 that doesn't rely on any UIs. **Let me know if something character-involved breaks as a result** (though I haven't experienced any difference).
+- Added a Camera library
+- Added an Entity library, with shorthands for GetGameObject() and functions to get all characters/items on a level
+- Added limited alpha support to RGBColor (I don't think alpha is used anywhere in scripting though)
+- `Item.GetIcon()` is now fully reimplemented following engine code
+- Stats library now also holds dynamically generated data of runes, except framed ones
+- Tooltip library now supports item tooltips and simple tooltips (the usual `showTooltip` call), and offers additional contextual data (ex. skill ID for skill tooltips)
+- Started work on a new UI-independent settings library with per-profile settings support; not yet used
+
+## v1061 - 4/09/22
 
 - Added new settings for world item tooltips:
     - Emphasizing containers, consumables and/or equipment by changing their color

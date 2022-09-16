@@ -17,7 +17,7 @@ You can get v57 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 }
 ```
 
-[Latest version, v1061](https://drive.google.com/file/d/1BoreuHCluGMXXLEkSwxiE1CAd1oq_CoZ/view?usp=sharing). (04/09/22) 
+[Latest version, v1062](https://drive.google.com/file/d/1OJNDz7Xp3bFsMMjDtySUSG8QgGH5iUMt/view?usp=sharing). (16/09/22) 
 
 Only English is supported. Text related to gameplay changes will not show up in other languages. Mods that also modify UI are largely incompatible. ["No More Dragging"](https://steamcommunity.com/sharedfiles/filedetails/?id=2546859598) and its expanded container version is compatible, for now.
 
