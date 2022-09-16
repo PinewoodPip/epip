@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1062-160922">v1062 - 16/09/22</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1061-40922">v1061 - 4/09/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1060-30922">v1060 - 3/09/22</a>
@@ -173,7 +175,7 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
-<h2 id="v1061-40922">v1061 - 4/09/22<a class="headerlink" href="#v1061-40922" title="Permanent link">&para;</a></h2>
+<h2 id="v1062-160922">v1062 - 16/09/22<a class="headerlink" href="#v1062-160922" title="Permanent link">&para;</a></h2>
 <p><strong>REQUIRES V57 OF THE EXTENDER!</strong></p>
 <p>You can get v57 by creating a file named <code>ScriptExtenderUpdaterConfig.json</code> in the same folder where you've put the extender, with the contents:</p>
 <pre><code class="language-json">{
@@ -181,7 +183,46 @@
     &quot;Debug&quot;: true
 }
 </code></pre>
-<p><a href="https://drive.google.com/file/d/1BoreuHCluGMXXLEkSwxiE1CAd1oq_CoZ/view?usp=sharing">Download here</a>.</p>
+<p><a href="https://drive.google.com/file/d/1OJNDz7Xp3bFsMMjDtySUSG8QgGH5iUMt/view?usp=sharing">Download here</a>.</p>
+<ul>
+<li>Surface tooltips with an owner now show a hint regarding how the damage scales</li>
+<li>"Active Defense" statuses (ex. Empyrean Tears) now show remaining charges</li>
+<li>EE rune materials now show how to use them to craft runes</li>
+<li>Added a setting to configure the delay of simple tooltips appearing<ul>
+<li>This affects tooltips of items in the world, as well as label tooltips in UIs (these 2 types are individually configurable)</li>
+</ul>
+</li>
+<li>Added a settings tab for camera settings<ul>
+<li>You can change the maximum zoom out distance, as well as the view angles</li>
+</ul>
+</li>
+<li>Items in the quest reward screen now show a hint regarding modifier generation</li>
+<li>Added new Greatforge graphics for Engrave - special thanks to Cathe and Elric!</li>
+<li>Fixed a vanilla bug with the character sheet that caused the second ring slot to not play equip animations<ul>
+<li>Additionally, the graphics involved should now be better centered</li>
+</ul>
+</li>
+<li>Re-added the option to auto-unlock inventories<ul>
+<li>Changing the lock status should also be synched better now - the vanilla game seems to struggle with this leading to the changes often not being properly reflected in other player's UIs</li>
+</ul>
+</li>
+<li>Fixed weapon range deltamods only considering the first deltamod of that kind found<ul>
+<li>This same fix is applied for weapon elemental damage mods as well</li>
+</ul>
+</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Replaced <code>Client.GetCharacter()</code> implementation with a new one from v57 that doesn't rely on any UIs. <strong>Let me know if something character-involved breaks as a result</strong> (though I haven't experienced any difference).</li>
+<li>Added a Camera library</li>
+<li>Added an Entity library, with shorthands for GetGameObject() and functions to get all characters/items on a level</li>
+<li>Added limited alpha support to RGBColor (I don't think alpha is used anywhere in scripting though)</li>
+<li><code>Item.GetIcon()</code> is now fully reimplemented following engine code</li>
+<li>Stats library now also holds dynamically generated data of runes, except framed ones</li>
+<li>Tooltip library now supports item tooltips and simple tooltips (the usual <code>showTooltip</code> call), and offers additional contextual data (ex. skill ID for skill tooltips)</li>
+<li>Started work on a new UI-independent settings library with per-profile settings support; not yet used</li>
+</ul>
+<h2 id="v1061-40922">v1061 - 4/09/22<a class="headerlink" href="#v1061-40922" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Added new settings for world item tooltips:</p>
