@@ -2,21 +2,24 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
+## v1063 - 19/09/22
+
+[Download here](https://drive.google.com/file/d/1QygJ1P9ynUQ2Fl2h7lL6zifeeT_jEtke/view?usp=sharing).
+
+- If "Unfocus after sending messages" is enabled, holding shift while sending a chat message will keep the chat focused
+- The mods menu will try to re-check mods disabled by a version change
+- Fixed settings not saving if you didn't visit the camera settings tab
+
+On the technical side of things:
+
+- Added operator overload annotations for `RGBColor`, `Vector`
+- `Vector.Create()` accepts an existing array as a parameter (only one)
+- Added TSK-related methods to `Text`
+    - This includes a localization system for strings in scripts; you can generate templates for localizing with `Text.GenerateLocalizationTemplate()` and they will be loaded from `Mods/MyMod_MyGuid/Localization/Epip/MyTargetLanguage/ModTable.json`, where `ModTable` is the mod table whose strings you've localized using the template
+        - Support for this within Epip will be added throughout future updates; currently only some camera settings support this
+    - You can generate fresh GUIDs or TSK handles with `!guid` and `!tskhandle` commands (on client context); they'll be copied to the clipboard
+
 ## v1062 - 16/09/22
-
-**REQUIRES V57 OF THE EXTENDER!**
-
-You can get v57 by creating a file named `ScriptExtenderUpdaterConfig.json` in the same folder where you've put the extender, with the contents:
-
-```json
-{
-	"UpdateChannel": "Devel",
-	"Debug": true
-}
-```
-
-[Download here](https://drive.google.com/file/d/1OJNDz7Xp3bFsMMjDtySUSG8QgGH5iUMt/view?usp=sharing).
-
 
 - Surface tooltips with an owner now show a hint regarding how the damage scales
 - "Active Defense" statuses (ex. Empyrean Tears) now show remaining charges
