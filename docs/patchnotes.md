@@ -7,7 +7,6 @@ Older versions of the mod can be found [here](https://drive.google.com/drive/fol
 [Download here](https://drive.google.com/file/d/1QygJ1P9ynUQ2Fl2h7lL6zifeeT_jEtke/view?usp=sharing).
 
 - If "Unfocus after sending messages" is enabled, holding shift while sending a chat message will keep the chat focused
-- The mods menu will try to re-check mods disabled by a version change
 - Fixed settings not saving if you didn't visit the camera settings tab
 
 On the technical side of things:
