@@ -8,6 +8,7 @@ markdown_extensions:
         permalink: True
     # - pymdownx.inlinehilite
     - pymdownx.snippets
+    - admonition
     # - pymdownx.superfences
 
 extra_css:
