@@ -72,7 +72,7 @@ The purpose of the action bar is to provide a centralized place for modders to a
 
 Right-click a row on the hotbar to bring up a context menu where you can "push" groups of slots around (great for inserting spells inbetween!), clear unmemorized spells, or save "loadouts" to restore your hotbars in later playthroughs.
 
-![Hotbar context menu.](img/showcase/hotbar_contextmenu.png)
+![Hotbar context menu.](img/showcase/hotbar_context_menu.png)
 
 Additionally, all "engine actions" (except for flee) are available from the vanilla actions drawer.
 
@@ -97,13 +97,13 @@ In the settings, you may also enable a Battered/Harried display on these portrai
 ### Settings Menu
 The settings menu has been expanded to allow mods to add their own settings. Epip includes its own tab full of options to customize its features.
 
-![Options menu.](img/showcase/optionssettings.png)
+![Options menu.](img/showcase/options_settings.png)
 
 The input menu has received similar treatment, with custom keybindings becoming possible. You must first click the "Controls" tab before you can access custom keybinds added by Epip.
 
 Custom hotkeys include Meditate, Source Infuse, as well as binding the 12 "action buttons" from the Hotbar UI.
 
-![OptionsInput menu.](img/showcase/optionsinput.png)
+![Input menu.](img/showcase/options_input.png)
 
 Additionally, the difficulty can now be changed to/from tactician freely at any time. The side effects of this have not been studied well, but everything appears to work fine with the exception of already-initialized enemies having missing HP and consumables(?).
 
@@ -167,7 +167,7 @@ The crafting UI now remembers your previous tab, instead of always defaulting to
 ### Gift Bags and mod incompatibilities
 Gift bag mods incompatible with EE are no longer selectable, to prevent regrets. Gift bags that work but for one reason or another are undesirable show a warning upon attempting to enable them.
 
-![Giftbag warning.](img/showcase/giftbags.png)
+![Giftbag warning.](img/showcase/giftbags_warning.png)
 
 Common mods incompatible with EE now show a warning when you load into the game with them enabled, once per playthrough.
 
