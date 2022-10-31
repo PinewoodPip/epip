@@ -22,10 +22,12 @@ Hotbar:
 - Layouts should now be synchronized better in multiplayer, and survive a lua reset
 - Layouts now save when the pause menu is opened, rather than when the game is paused (which basically never happens in multiplayer)
 	- There's probably a dozen other features that made this mistake; they will be fixed in the future
+
 - Reworked the settings menu and underlying system
 	- The settings menu is now separate from the vanilla UI, prevent conflicts with mods that may overwrite the vanilla one
 	- Settings have been reorganized into separate tabs
 	- Settings are now saved per-profile, in `Osiris Data/Epip/{profile GUID}/`
+
 - Vanity internals have been reworked, with multiple changes as a result:
 	- Dyes no longer require deltamods and thus should no longer be lost to shenanigans or bloat the savefile
 	- Transmogrifying no longer requires the item to be transformed and therefore should no longer have any gameplay side effects
