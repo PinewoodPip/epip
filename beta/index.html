@@ -55,6 +55,19 @@
                     <li class="toctree-l1"><a class="reference internal" href="../patchnotes/">Patch Notes</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../docs/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Documentation/Utilities/Artifact/">Artifact</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Documentation/Utilities/Character/">Character</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
                 <p class="caption"><span class="caption-text">Tutorials</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../Tutorials/testing/">Testing</a>
@@ -103,7 +116,40 @@
 }
 </code></pre>
 <h2 id="v1064">v1064<a class="headerlink" href="#v1064" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 31/10/22</a>.</p>
+<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 22/11/22</a>.</p>
+<p>22/11 upload:</p>
+<ul>
+<li>Added an "Auras" tab to Vanity, where you can apply visual effects to your character, onto various bones</li>
+<li>Removed the meme loading screen option</li>
+<li>Fixed the draggable area of Quick Examine being smaller than intended</li>
+<li>Skill tooltips for zone-type skills no longer erroneously say their range is increased by Astrologer's Gaze</li>
+<li>Quick Examine now shows your ally's skills and their cooldowns<ul>
+<li>Tooltips will show the damage as if they were used by them, but Epip features (like viewing which source infusions are available) likely do not work properly currently</li>
+</ul>
+</li>
+<li>Fixed the "points available" blip in the character sheet not being hidden when within vanity, if you had a lot of tabs registered</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Added IDE annotations for the global Ext functions (like <code>_C()</code>)</li>
+<li>Added a "DefaultTable" data structure (inspired by python's defaultdict; a table with a default value when indexing)</li>
+<li>Removed UI override for the settings menu (LeaderLib menu might work now? no promises)</li>
+<li>Debug menu now supports fiddling with the UI scripts to an extent</li>
+<li>Osiris table now parses parameters for DB set/delete operations</li>
+<li>InputLib: added methods to fetch game input event definitions and bindings<ul>
+<li>The ancient script previously used to do this has been removed, along with some other redundant ones</li>
+</ul>
+</li>
+<li>Improvements to the doc generation script (which shall debut here soon); it can now export "subclasses" of a class (the auxiliary data structs)</li>
+<li>Added a generic developer input binding for hooking quick tests onto it</li>
+<li>TooltipLib: added a way to render custom formatted tooltips</li>
+<li>TooltipLib: added a method to render skill tooltips, as if the engine were doing it</li>
+<li>Minor cleanups of some scripts</li>
+<li>Fixed iggy icons in Slot elements being culled out for Generic UIs</li>
+<li>Added methods to check if a component is an item/char to EntityLib</li>
+<li>You can now specify a player index when using methods in PointerLib (though I do not know in which scenario multiple pointers can exist; splitscreen co-op perhaps?)</li>
+</ul>
+<p>31/10 upload:</p>
 <ul>
 <li>The "infinite carry weight setting" should now work properly for clients that join mid-session<ul>
 <li>Other features that face problems in multiplayer are possibly suffering from the same bug and will be fixed in the future</li>

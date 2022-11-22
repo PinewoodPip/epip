@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://pinewood.team/epip/Client/UI/ChatLog/">
+  <link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Color/">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>ChatLog - Epip Encounters</title>
+  <title>Color - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "ChatLog";
-    var mkdocs_page_input_path = "Client\\UI\\ChatLog.md";
-    var mkdocs_page_url = "/epip/Client/UI/ChatLog/";
+    var mkdocs_page_name = "Color";
+    var mkdocs_page_input_path = "Documentation\\Utilities\\Color.md";
+    var mkdocs_page_url = "/epip/Documentation/Utilities/Color/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
@@ -61,9 +61,9 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Artifact/">Artifact</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Artifact/">Artifact</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Character/">Character</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Character/">Character</a>
                 </li>
     </ul>
                     </li>
@@ -94,7 +94,7 @@
     
       
     
-    <li>ChatLog</li>
+    <li>Color</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -106,60 +106,117 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="chatlog">ChatLog<a class="headerlink" href="#chatlog" title="Permanent link">&para;</a></h1>
-<p>The ChatLog UI displays and manages the chat log. Epip's script allows you to add custom tabs to it (like the Party/All Players tabs by default).</p>
-<p>Examples of its use are the chat commands features, which intercept sent messages to execute terminal-style commands.</p>
-<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
-<p><epip class="ChatLogUI" symbols="Event,Hook"></p>
-<pre><code class="language-lua">---Fired when the client sends a message in chat. TODO pass tab
----@event MessageSent
----@field RegisterListener fun(self, listener:fun(text:string, clientChar:EclCharacter))
----@field Fire fun(self, text:string, clientChar:EclCharacter)
+                <h1 id="color">Color<a class="headerlink" href="#color" title="Permanent link">&para;</a></h1>
+<p>The <code>Color</code> table offers utilities for working with colors, either through RGB, decimal, or hex.</p>
+<p>The constructor methods create an <code>RGBColor</code> table:</p>
+<p><doc class="RGBColor" symbols="Function"></p>
+<pre><code class="language-lua">---Returns the decimal representation of the color.
+---Actionscript expects colors to be represented in this way.
+---@param addAlpha boolean? Defaults to false.
+---@return integer 
+function RGBColor:ToDecimal(addAlpha)
 
+---Unpacks the color's RGB values, alpha included.
+---@return integer ...
+function RGBColor:Unpack()
 
----Fired when a message is rendered onto the UI.
----@event MessageAdded
----@field RegisterListener fun(self, listener:fun(tab:integer|string, text:string))
----@field Fire fun(self, tab:integer|string, text:string)
+---Returns the hexadecimal representation of the color.
+---@param prefix boolean? Prefix the string with #. Defaults to false.
+---@param addAlpha boolean? Defaults to false. If enabled, resulting color will be in the format `#RRGGBBAA`
+---@return string 
+function RGBColor:ToHex(prefix, addAlpha)
 
+---Returns the RGBA values as floats in the range[0.0 - 1.0]
+---@return number, number, number, number
+function RGBColor:ToFloats()
 
----Fired when the client attempts to send a message.
----@hook CanSendMessage
----@field RegisterHook fun(self, handler:fun(canSend:boolean, text:string, char:EclCharacter))
----@field Return fun(self, canSend:boolean, text:string, char:EclCharacter)
+---Returns a new instance of RGBColor with the same values.
+---@return RGBColor 
+function RGBColor:Clone()
 
+---Creates a color from a decimal value.
+---Does not support alpha.
+---@param num integer
+---@return RGBColor 
+function RGBColor.CreateFromDecimal(num)
+
+---Creates a color from RGBA values.
+---Expected range is [0-255] and will be clamped.
+---@param r integer?
+---@param g integer?
+---@param b integer?
+---@param a integer? Defaults to 255.
+---@return RGBColor 
+function RGBColor.Create(r, g, b, a)
+
+---Creates a color from a hexadecimal value.
+---Does not support alpha.
+---@param hex string
+---@return RGBColor 
+function RGBColor.CreateFromHex(hex)
+
+---Returns whether 2 colors have the same RGBA values.
+---@param color RGBColor
+---@return boolean 
+function RGBColor:Equals(color)
+
+---__eq overload. Equivalent to calling RGBColor.Equals()
+---@param color1 RGBColor
+---@param color2 RGBColor
+---@return boolean 
+function RGBColor.__eq(color1, color2)
+
+---__add overload. Adds the RGB values of both colors.
+---@param color1 RGBColor
+---@param color2 RGBColor
+---@return RGBColor 
+function RGBColor.__add(color1, color2)
+
+---__sub overload. Subtracts the RGB values.
+---@param color1 RGBColor
+---@param color2 RGBColor
+---@return RGBColor 
+function RGBColor.__sub(color1, color2)
 
 </code></pre>
-<p></epip></p>
+<p></doc></p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><epip class="ChatLogUI" symbols="Function"></p>
-<pre><code class="language-lua">---Sends text onto the chatbox, using the vanilla colors and font sizes.
----@param tab integer|string Tab ID. See ChatLog.TABS enum. For custom tabs, use your string ID.
----@param userName string
----@param message string
-function Chat.AddFormattedMessage(tab, userName, message)
+<p><doc class="ColorLib" symbols="Function"></p>
+<pre><code class="language-lua">---Alias for creating an RGBColor from RGBA values.
+---@param red integer?
+---@param green integer?
+---@param blue integer?
+---@param alpha integer?
+---@return RGBColor 
+function Color.Create(red, green, blue, alpha)
 
----Clear a chat tab's messages.
----Render raw text onto the chatbox.
----@param tab integer|string
----@param tab? integer|string Tab ID. See ChatLog.TABS enum. For custom tabs, use your string ID. Defaults to current tab.
----@param text string
-function Chat.AddMessage(tab, text)
+---Creates a color from RGBA values. Expected range of values is [0-255].
+---@param red integer?
+---@param green integer?
+---@param blue integer?
+---@param alpha integer?
+---@return RGBColor 
+function Color.CreateFromRGB(red, green, blue, alpha)
 
----Adds a tab to the chat log.
----@param tabID string
----@param label string
-function Chat.AddTab(tabID, label)
+---Creates a color from a decimal value.
+---Does not support alpha.
+---@param num integer
+---@return RGBColor 
+function Color.CreateFromDecimal(num)
+
+---Creates a color from an html-format hex color code.
+---Does not support alpha.
+---@param hex string
+---@return RGBColor 
+function Color.CreateFromHex(hex)
+
+---Clones a color instance.
+---@param color RGBColor
+---@return RGBColor New instance with same values.
+function Color.Clone(color)
 
 </code></pre>
-<p></epip></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<p><epip class="ChatLogUI" symbols="Class"></p>
-<pre><code class="language-lua">---@class ChatLogUI : UI
-
-
-</code></pre>
-<p></epip></p>
+<p></doc></p>
               
             </div>
           </div>

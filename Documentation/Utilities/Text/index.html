@@ -55,6 +55,19 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../../patchnotes/">Patch Notes</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Artifact/">Artifact</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Character/">Character</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
                 <p class="caption"><span class="caption-text">Tutorials</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/testing/">Testing</a>
@@ -96,54 +109,110 @@
                 <h1 id="text">Text<a class="headerlink" href="#text" title="Permanent link">&para;</a></h1>
 <p>The <code>Text</code> table offers utility methods for working with text and formatting tags.</p>
 <p><doc class="TextLib" symbols="Function"></p>
-<pre><code class="language-lua">---@param value number
+<pre><code class="language-lua">---Returns a string representation of a number, rounded.
+---@param value number
 ---@param decimals? integer Defaults to 0.
 ---@return string 
 function Text.Round(value, decimals)
 
+---Concatenates 2 strings and adds enough whitespace padding inbetween them to ensure a specific length.
 ---@param str1 string
 ---@param str2 string
 ---@param space integer
 ---@return string 
 function Text.EqualizeSpace(str1, str2, space)
 
+---Generate a random GUID.
 ---Source: https://gist.github.com/jrus/3197011
+---@param pattern pattern? Defaults to GUID4 pattern.
 ---@return GUID 
-function Text.GenerateGUID()
+function Text.GenerateGUID(pattern)
 
+---Generates a random handle in the format that Larian uses for TranslatedStringHandle.
+---@return TranslatedStringHandle 
+function Text.GenerateTranslatedStringHandle()
+
+---Joins two strings together.
+---@param str1 string
+---@param str2 string
+---@param separator string? Defaults to ` `
+function Text.Join(str1, str2, separator)
+
+function Text.AppendLine(str1, str2)
+
+---Returns a string with spaces inserted inbetween PascalCase words.
 ---@param str string
 ---@return string 
 function Text.SeparatePascalCase(str)
 
+---Removes trailing zeros from a number and returns it as string.
 ---@param num number
 ---@return string 
 function Text.RemoveTrailingZeros(num)
 
+---Escapes characters that have a special meaning in lua patterns.
 ---Source: https://github.com/lua-nucleo/lua-nucleo/blob/v0.1.0/lua-nucleo/string.lua#L245-L267
 ---@param str string
 ---@return string 
 function Text.EscapePatternCharacters(str)
 
+---@param str string
 ---@param pattern pattern
 function Text.Contains(str, pattern)
 
----Capitalizes the first letter of the string.
----https://stackoverflow.com/a/2421746
+---Split a string by delimiter. Source: https://stackoverflow.com/questions/1426954/split-string-in-lua
 ---@param inputstr string
 ---@param sep string
+---@return string[] 
+function Text.Split_2(str, sep)
+
+---Capitalizes the first letter of the string.
+---https://stackoverflow.com/a/2421746
 ---@param str string
 ---@return string 
 function Text.Capitalize(str)
 
+---Format a string.
 ---@param str string | TextFormatData
 ---@param formatData TextFormatData
 ---@return string 
 function Text.Format(str, formatData)
 
+---Removes all &lt;font&gt; tags from a string. WIP!
+---@param str string
+---@return string 
+function Text.StripFontTags(str)
+
+---Shorthand for Ext.DumpExport() which does not require you to explicitly define the default options (Beautify, StringifyInternalTypes, etc.)
 ---@param obj any
 ---@param opts unknown? TODO specify type
 ---@return string 
 function Text.Dump(obj, opts)
+
+---Returns the string bound to a TranslatedStringHandle, or a key.
+---@param handle TranslatedStringHandle|string Accepts handles or keys.
+---@param fallBack string?
+---@return string Defaults to the handle, of fallBack if specified.
+function Text.GetTranslatedString(handle, fallBack)
+
+---Registers a translated string, optionally binding a key to it.
+---@param text string
+---@param handle TranslatedStringHandle
+---@param key string?
+---@param modTable ModTableID? Used to keep track of where translated strings come from. Optional.
+---@param replaceExisting boolean? Defaults to false.
+---@return string, TextLib_TranslatedString -- First return value will be the text passed as parameter, or the text the handle already pointed to, if already registered/localized.
+function Text.RegisterTranslatedString(text, handle, key, modTable, replaceExisting)
+
+---Generates a template file for localizing strings registered through this library.
+---@param modTable string? Defaults to &quot;EpipEncounters&quot;
+---@param existingTemplate TextLib_LocalizationTemplate? If present, translated strings from this template will be patched into the new one, if the reference text is still up-to-date.
+---@return TextLib_LocalizationTemplate, integer?, integer? -- Second param is amount of new strings, third is amount of outdated strings. Second param onwards is only returned while patching.
+function Text.GenerateLocalizationTemplate(modTable, existingTemplate)
+
+---Loads a localization file. Must be in the format generated by GenerateLocalizationTemplate()
+---@param filePath string
+function Text.LoadLocalization(filePath)
 
 </code></pre>
 <p></doc></p>
