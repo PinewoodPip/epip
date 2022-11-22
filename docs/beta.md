@@ -11,7 +11,37 @@ You can get v58 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 ```
 
 ## v1064
-[Latest upload, 31/10/22](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+[Latest upload, 22/11/22](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+
+22/11 upload:
+
+- Added an "Auras" tab to Vanity, where you can apply visual effects to your character, onto various bones
+- Removed the meme loading screen option
+- Fixed the draggable area of Quick Examine being smaller than intended
+- Skill tooltips for zone-type skills no longer erroneously say their range is increased by Astrologer's Gaze
+- Quick Examine now shows your ally's skills and their cooldowns
+	- Tooltips will show the damage as if they were used by them, but Epip features (like viewing which source infusions are available) likely do not work properly currently
+- Fixed the "points available" blip in the character sheet not being hidden when within vanity, if you had a lot of tabs registered
+
+On the technical side of things:
+
+- Added IDE annotations for the global Ext functions (like `_C()`)
+- Added a "DefaultTable" data structure (inspired by python's defaultdict; a table with a default value when indexing)
+- Removed UI override for the settings menu (LeaderLib menu might work now? no promises)
+- Debug menu now supports fiddling with the UI scripts to an extent
+- Osiris table now parses parameters for DB set/delete operations
+- InputLib: added methods to fetch game input event definitions and bindings
+	- The ancient script previously used to do this has been removed, along with some other redundant ones
+- Improvements to the doc generation script (which shall debut here soon); it can now export "subclasses" of a class (the auxiliary data structs)
+- Added a generic developer input binding for hooking quick tests onto it
+- TooltipLib: added a way to render custom formatted tooltips
+- TooltipLib: added a method to render skill tooltips, as if the engine were doing it
+- Minor cleanups of some scripts
+- Fixed iggy icons in Slot elements being culled out for Generic UIs
+- Added methods to check if a component is an item/char to EntityLib
+- You can now specify a player index when using methods in PointerLib (though I do not know in which scenario multiple pointers can exist; splitscreen co-op perhaps?)
+
+31/10 upload:
 
 - The "infinite carry weight setting" should now work properly for clients that join mid-session
 	- Other features that face problems in multiplayer are possibly suffering from the same bug and will be fixed in the future
