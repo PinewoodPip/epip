@@ -17,8 +17,14 @@ extra_css:
 nav:
   - Home: index.md
   - Patch Notes: patchnotes.md
-  # - Documentation: 
-  #   - "Introduction": "docs.md"
+  - Documentation: 
+    - "Introduction": "docs.md"
+    - "Client":
+      - "Pointer": "Documentation/Client/Pointer.md"
+    - "Utilities":
+      - "Artifact": "Documentation/Utilities/Artifact.md"
+      - "Character": "Documentation/Utilities/Character.md"
+      - "Combat": "Documentation/Utilities/Combat.md"
   #   - "Global Tables":
   #     - "Feature": "Global Tables/Feature.md"
   #   - "Game":

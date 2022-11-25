@@ -54,6 +54,7 @@ Hotbar:
 	- There's probably a dozen other features that made this mistake; they will be fixed in the future
 
 - Reworked the settings menu and underlying system
+	- Your previous setting values will be lost
 	- The settings menu is now separate from the vanilla UI, prevent conflicts with mods that may overwrite the vanilla one
 	- Settings have been reorganized into separate tabs
 	- Settings are now saved per-profile, in `Osiris Data/Epip/{profile GUID}/`
