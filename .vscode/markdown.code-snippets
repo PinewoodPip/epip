@@ -21,6 +21,7 @@
 		"body": [
 			"# $1",
 			"",
+			"",
 			"## Classes",
 			"",
 			"<doc class=\"$2\" symbols=\"_SubClasses\">",

@@ -25,7 +25,6 @@ The data is not generated automatically. You must add your own artifacts by call
 ---@field GetDescription fun(self):string
 ---@field GetPowerTooltip fun(self):TooltipElement[]
 
-
 ---Returns the artifact's name.
 ---@return string 
 function _ArtifactDef:GetName()
@@ -46,28 +45,6 @@ function _ArtifactDef:GetPowerTooltip()
 <doc class="ArtifactLib" symbols="Function">
 
 ```lua
----Returns whether char has the artifact power active.
----@param char EclCharacter
----@param artifact ArtifactLib_ArtifactDefinition|string
----@return boolean 
-function Artifact.IsEquipped(char, artifact)
-
----Returns a list of artifact powers active on char.
----@param char EclCharacter
----@return ArtifactLib_ArtifactDefinition[] 
-function Artifact.GetEquippedPowers(char)
-
----Returns whether char has the artifact power active.
----@param char EsvCharacter
----@param artifact ArtifactLib_ArtifactDefinition|string
----@return boolean 
-function Artifact.IsEquipped(char, artifact)
-
----Returns a list of artifact powers active on char.
----@param char EsvCharacter
----@return ArtifactLib_ArtifactDefinition[] 
-function Artifact.GetEquippedPowers(char)
-
 ---Returns the definition for an artifact.
 ---@param artifactID string
 ---@return ArtifactLib_ArtifactDefinition? 
@@ -77,6 +54,28 @@ function Artifact.GetData(artifactID)
 ---@param data ArtifactLib_ArtifactDefinition
 ---@return ArtifactLib_ArtifactDefinition 
 function Artifact.RegisterArtifact(data)
+
+---Returns whether char has the artifact power active.
+---@param char EclCharacter
+---@param artifact ArtifactLib_ArtifactDefinition|string
+---@return boolean 
+function Artifact.IsEquipped(char, artifact)
+
+---Returns a list of artifact powers active on char.
+---@param char EclCharacter
+---@return ArtifactLib_ArtifactDefinition[] 
+function Artifact.GetEquippedPowers(char)
+
+---Returns whether char has the artifact power active.
+---@param char EsvCharacter
+---@param artifact ArtifactLib_ArtifactDefinition|string
+---@return boolean 
+function Artifact.IsEquipped(char, artifact)
+
+---Returns a list of artifact powers active on char.
+---@param char EsvCharacter
+---@return ArtifactLib_ArtifactDefinition[] 
+function Artifact.GetEquippedPowers(char)
 
 ```
 </doc>

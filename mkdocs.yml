@@ -24,7 +24,12 @@ nav:
     - "Utilities":
       - "Artifact": "Documentation/Utilities/Artifact.md"
       - "Character": "Documentation/Utilities/Character.md"
+      - "Color": "Documentation/Utilities/Color.md"
       - "Combat": "Documentation/Utilities/Combat.md"
+      - "GameState": "Documentation/Utilities/GameState.md"
+      - "Item": "Documentation/Utilities/Item.md"
+      - "Net": "Documentation/Utilities/Net.md"
+      - "Vector": "Documentation/Utilities/Vector.md"
   #   - "Global Tables":
   #     - "Feature": "Global Tables/Feature.md"
   #   - "Game":

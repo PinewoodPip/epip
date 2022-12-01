@@ -6,12 +6,12 @@ The `Character` library contains utility methods relating to characters. The vas
 <doc class="CharacterLib" symbols="Listenable">
 
 ```lua
+---Wrapper for Ext.Events.CreateEquipmentVisualsRequest.
 ---@hook CreateEquipmentVisuals
 ---@field Character EclCharacter
 ---@field Item EclItem
----@field Request EclEquipmentVisualSystemSetParam
+---@field Request EclEquipmentVisualSystemSetParam Hookable.
 ---@field RawEvent EclLuaCreateEquipmentVisualsRequestEvent
-
 
 ```
 </doc>
@@ -21,21 +21,11 @@ The `Character` library contains utility methods relating to characters. The vas
 <doc class="CharacterLib" symbols="Function">
 
 ```lua
----Returns a list of party members of char's party. Char must be a player.
----Depends on PlayerInfo.
----@param char EclCharacter
----@return EclCharacter[] Includes the char passed per param.
-function Character.GetPartyMembers(char)
-
----@param char Character
----@return CharacterLib_StatusFromItem[] 
-function Character.GetStatusesFromItems(char)
-
 ---Returns the current stacks on char, as well as lifetime. Queries the related status effects.
 ---@param char Character
 ---@param type StackType
 ---@return number,number Stack count, duration left (as seconds)
-function Character.GetStacks(char, type) --EE
+function Character.GetStacks(char, type) -- EE
 
 ---Returns whether char has a skill memorized. Returns true for innate skills.
 ---@param char Character
@@ -101,7 +91,7 @@ function Character.IsPreferredByAI(char)
 ---@return boolean 
 function Character.IsUnpreferredByAI(char)
 
----Returns whether char is ignroed by AI.
+---Returns whether char is ignored by AI.
 ---@param char Character
 ---@return boolean 
 function Character.IsIgnoredByAI(char)
@@ -109,18 +99,18 @@ function Character.IsIgnoredByAI(char)
 ---Get the infusion level that char is currently preparing (how many times they've cast Source Infuse).
 ---@param char Character
 ---@return number Infusion count.
-function Character.GetPreparedInfusionLevel(char) --EE
+function Character.GetPreparedInfusionLevel(char) -- EE
 
 ---Returns true if char is preparing a Source Infusion.
 ---@param char Character
 ---@return boolean 
-function Character.IsPreparingInfusion(char) --EE
+function Character.IsPreparingInfusion(char) -- EE
 
 ---Get the stack amount this character needs to apply a T3 to someone else.
 ---**This only takes into account the bonus from infusing!**
 ---@param char Character
 ---@return number Stacks needed
-function Character.GetStacksNeededToInflictTier3(char) --EE
+function Character.GetStacksNeededToInflictTier3(char) -- EE
 
 ---Returns true if char is a summon.
 ---@param char Character
@@ -214,6 +204,17 @@ function Character.IsDisarmed(char)
 ---@param ability string Needs to be a property indexable in char.Stats
 ---@return integer 
 function Character.GetHighestPartyAbility(char, ability)
+
+---Returns a list of party members of char's party. Char must be a player.
+---Depends on PlayerInfo.
+---@param char EclCharacter
+---@return EclCharacter[] Includes the char passed per param.
+function Character.GetPartyMembers(char)
+
+---Returns a list of statuses the character has from its equipped items.
+---@param char Character
+---@return CharacterLib_StatusFromItem[] 
+function Character.GetStatusesFromItems(char)
 
 ---Returns a list of party members of char's party. Char must be a player.
 ---@param char EsvCharacter

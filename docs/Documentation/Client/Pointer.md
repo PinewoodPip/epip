@@ -19,31 +19,26 @@ It's primarily a wrapper around `Ext.UI.GetPickingState()`. In addition to metho
 ---@field PlaceableEntity EntityHandle?
 ---@field PlaceablePosition Vector3D?
 
-
 ```
 </doc>
 
 ## Events
 
-<doc class="PointerLib" symbols="Event">
+<doc class="PointerLib" symbols="Listenable">
 
 ```lua
 ---@event HoverCharacterChanged
 ---@field Character EclCharacter?
 
-
 ---Fired when the corpse character over the pointer changes.
 ---@event HoverCharacter2Changed
 ---@field Character EclCharacter?
 
-
 ---@event HoverItemChanged
 ---@field Item EclItem?
 
-
 ---@event HoverEntityChanged
 ---@field Entity Entity?
-
 
 ```
 </doc>
@@ -53,6 +48,9 @@ It's primarily a wrapper around `Ext.UI.GetPickingState()`. In addition to metho
 <doc class="PointerLib" symbols="Function">
 
 ```lua
+---@param playerIndex integer? Defaults to 1.
+---@param includeDead boolean? Defaults to false.
+---@return EclCharacter? 
 function Pointer.GetCurrentCharacter(playerIndex, includeDead)
 
 ---@param playerIndex integer? Defaults to 1.
@@ -66,11 +64,6 @@ function Pointer.GetCurrentEntity(playerIndex)
 ---@param playerIndex integer? Defaults to 1.
 ---@return Vector3D 
 function Pointer.GetWalkablePosition(playerIndex)
-
----@param playerIndex integer? Defaults to 1.
----@param fieldName string
----@return Entity 
-function Pointer._GetCurrentEntity(playerIndex, fieldName)
 
 ```
 </doc>
