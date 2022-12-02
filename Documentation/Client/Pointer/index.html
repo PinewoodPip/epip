@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/epip/Documentation/Client/Pointer/">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Pointer - Epip Encounters</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Pointer";
+    var mkdocs_page_input_path = "Documentation\\Client\\Pointer.md";
+    var mkdocs_page_url = "/epip/Documentation/Client/Pointer/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Epip Encounters</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../patchnotes/">Patch Notes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Client</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Pointer</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#events">Events</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Artifact/">Artifact</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Character/">Character</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Color/">Color</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Combat/">Combat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/GameState/">GameState</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Item/">Item</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Mod/">Mod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Net/">Net</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Timer/">Timer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Vector/">Vector</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/testing/">Testing</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Epip Encounters</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+        
+          <li>Client &raquo;</li>
+        
+      
+    
+    <li>Pointer</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="pointer">Pointer<a class="headerlink" href="#pointer" title="Permanent link">&para;</a></h1>
+<p>The <code>Pointer</code> library contains methods related to the pointer for the game world; used to interact with game objects and move around.</p>
+<p>It's primarily a wrapper around <code>Ext.UI.GetPickingState()</code>. In addition to methods to quickly fetch its entities, it offers events for when they change (when the user starts/stops hovering over a new entity).</p>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<p><doc class="PointerLib" symbols="_SubClasses"></p>
+<pre><code class="language-lua">---@class PointerLib_PickingState
+---@field WorldPosition Vector3D?
+---@field WalkablePosition Vector3D
+---@field HoverCharacter EntityHandle?
+---@field HoverCharacter2 EntityHandle? Used for corpses.
+---@field HoverCharacterPosition Vector3D? Corresponds to HoverCharacter's position.
+---@field HoverItem EntityHandle?
+---@field HoverItemPosition Vector3D?
+---@field PlaceableEntity EntityHandle?
+---@field PlaceablePosition Vector3D?
+
+</code></pre>
+<p></doc></p>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p><doc class="PointerLib" symbols="Listenable"></p>
+<pre><code class="language-lua">---@event HoverCharacterChanged
+---@field Character EclCharacter?
+
+---Fired when the corpse character over the pointer changes.
+---@event HoverCharacter2Changed
+---@field Character EclCharacter?
+
+---@event HoverItemChanged
+---@field Item EclItem?
+
+---@event HoverEntityChanged
+---@field Entity Entity?
+
+</code></pre>
+<p></doc></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><doc class="PointerLib" symbols="Function"></p>
+<pre><code class="language-lua">---@param playerIndex integer? Defaults to 1.
+---@param includeDead boolean? Defaults to false.
+---@return EclCharacter? 
+function Pointer.GetCurrentCharacter(playerIndex, includeDead)
+
+---@param playerIndex integer? Defaults to 1.
+---@return EclItem? 
+function Pointer.GetCurrentItem(playerIndex)
+
+---@param playerIndex integer? Defaults to 1.
+---@return Entity? 
+function Pointer.GetCurrentEntity(playerIndex)
+
+---@param playerIndex integer? Defaults to 1.
+---@return Vector3D 
+function Pointer.GetWalkablePosition(playerIndex)
+
+</code></pre>
+<p></doc></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Utilities/Artifact/" class="btn btn-neutral float-right" title="Artifact">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../docs/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../../docs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Utilities/Artifact/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

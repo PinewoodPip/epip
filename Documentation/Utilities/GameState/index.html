@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://pinewood.team/epip/Client/UI/GiftBagContent/">
+  <link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/GameState/">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>GiftBagContent - Epip Encounters</title>
+  <title>GameState - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "GiftBagContent";
-    var mkdocs_page_input_path = "Client\\UI\\GiftBagContent.md";
-    var mkdocs_page_url = "/epip/Client/UI/GiftBagContent/";
+    var mkdocs_page_name = "GameState";
+    var mkdocs_page_input_path = "Documentation\\Utilities\\GameState.md";
+    var mkdocs_page_url = "/epip/Documentation/Utilities/GameState/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
@@ -56,36 +56,40 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Documentation</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Client/Pointer/">Pointer</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Artifact/">Artifact</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Utilities</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Artifact/">Artifact</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Character/">Character</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Character/">Character</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Color/">Color</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Color/">Color</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Combat/">Combat</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Combat/">Combat</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/GameState/">GameState</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">GameState</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#events">Events</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Item/">Item</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Item/">Item</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Mod/">Mod</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Mod/">Mod</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Net/">Net</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Net/">Net</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Timer/">Timer</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Timer/">Timer</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Vector/">Vector</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Vector/">Vector</a>
                 </li>
     </ul>
                     </li>
@@ -115,8 +119,16 @@
     <li><a href="../../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Documentation &raquo;</li>
+        
+      
+        
+          <li>Utilities &raquo;</li>
+        
+      
     
-    <li>GiftBagContent</li>
+    <li>GameState</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -128,57 +140,78 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="giftbagcontent">GiftBagContent<a class="headerlink" href="#giftbagcontent" title="Permanent link">&para;</a></h1>
-<p>The GiftBagContent UI is the ingame giftbags menu.</p>
-<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
-<p><epip class="GiftBagContentUI" symbols="Event,Hook"></p>
-<pre><code class="language-lua">---Fired after the UI's content is updated, upon opening the UI.
----@event ContentUpdated
----@field RegisterListener fun(self, listener:fun(content:GiftBagContentUIEntry[]))
----@field Fire fun(self, content:GiftBagContentUIEntry[])
+                <h1 id="gamestate">GameState<a class="headerlink" href="#gamestate" title="Permanent link">&para;</a></h1>
+<p>The <code>GameState</code> library contains methods and events related to the global game state - that is, whether it's in a session, loading, paused, etc.</p>
+<p>Its events are helpful for initialization purposes. <code>ClientReady</code>, for example, fires when the client transitions from <code>PrepareRunning</code> to <code>Running</code> and is a great moment to initialize anything that could need the client character to be present and/or send messages to the server (both of which are not reliable to do before that point).</p>
+<!-- ## Classes
 
+<doc class="GameStateLib" symbols="_SubClasses">
 
----Fired when the content of the UI needs to be updated.
----@hook GetContent
----@field RegisterHook fun(self, handler:fun(content:GiftBagContentUIEntry[]))
----@field Return fun(self, content:GiftBagContentUIEntry[])
+</doc> -->
 
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p><doc class="GameStateLib" symbols="Listenable"></p>
+<pre><code class="language-lua">---@netmsg EPIPENCOUNTERS_GameStateLib_ClientReady : NetMessage, GameStateLib_Event_ClientReady
 
-</code></pre>
-<p></epip></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><epip class="GiftBagContentUI" symbols="Function"></p>
-<pre><code class="language-lua">---Returns a giftbag mod by its numerical ID.
----@param id number
----@return GUID 
-function GB.GetModGUID(id)
+---@event GamePaused
 
----Renders the contents of the UI, based on the data arrays in flash.
-function GB.RenderContent()
+---@event GameUnpaused
 
-</code></pre>
-<p></epip></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<p><epip class="GiftBagContentUI" symbols="Class"></p>
-<pre><code class="language-lua">---@class GiftBagContentUI : Feature
+---Fires when the game transitions from PrepareRunning to Running (on the client)
+---or when transitioning from Sync to Running (on the server)
+---@event GameReady
 
+---Fired every tick while the game is not paused.
+---@event RunningTick
+---@field DeltaTime integer Milliseconds elapsed since last tick (NOT the last running tick)
 
----Represents a mod entry in the UI.
----@class GiftBagContentUIEntry
----@field ID number ID in UI.
----@field Name string
----@field Description string
----@field Enabled boolean
----@field Locked boolean Locked giftbags cannot be toggled.
----@field Mod string GUID of giftbag mod.
+---@event StateChanged
+---@field From GameState
+---@field To GameState
 
+---Fired when the client transitions from PrepareRunning to Running,
+---as well as when lua is reset.
+---@event ClientReady
+---@field CharacterNetID NetId
+---@field ProfileGUID GUID
 
 </code></pre>
-<p></epip></p>
+<p><doc class="GameStateLib" symbols="Function"></p>
+<pre><code class="language-lua">---Returns whether the game state is currently in a session.
+---@return boolean 
+function GameState.IsInSession()
+
+function GameState.IsLoading()
+
+---@return boolean 
+function GameState.IsPaused()
+
+---@return GameState 
+function GameState.GetState()
+
+---@return boolean 
+function GameState.IsPaused()
+
+---@return GameState 
+function GameState.GetState()
+
+---@return boolean 
+function GameState.IsSessionLoaded()
+
+</code></pre>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Item/" class="btn btn-neutral float-right" title="Item">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Combat/" class="btn btn-neutral" title="Combat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -202,6 +235,10 @@ function GB.RenderContent()
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../Combat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Item/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

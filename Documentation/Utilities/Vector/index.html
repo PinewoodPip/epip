@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Artifact/">
+  <link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Vector/">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Artifact - Epip Encounters</title>
+  <title>Vector - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Artifact";
-    var mkdocs_page_input_path = "Documentation\\Utilities\\Artifact.md";
-    var mkdocs_page_url = "/epip/Documentation/Utilities/Artifact/";
+    var mkdocs_page_name = "Vector";
+    var mkdocs_page_input_path = "Documentation\\Utilities\\Vector.md";
+    var mkdocs_page_url = "/epip/Documentation/Utilities/Vector/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
@@ -67,15 +67,7 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="#">Utilities</a>
     <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Artifact</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#usage-examples">Usage examples</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Artifact/">Artifact</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Character/">Character</a>
                 </li>
@@ -93,7 +85,13 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Timer/">Timer</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Vector/">Vector</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Vector</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#vector-class">Vector Class</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                     </li>
@@ -132,7 +130,7 @@
         
       
     
-    <li>Artifact</li>
+    <li>Vector</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -144,79 +142,85 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="artifact">Artifact<a class="headerlink" href="#artifact" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">This library is relevant for Epic Encounters only.</p>
-</div>
-<p>The <code>Artifact</code> library contains data and methods related to <a href="https://docs.google.com/document/d/1aKyZLz4ix9FYj0enKIfRv4r5IKL7cjdLlP1mcJ3Ifc0/edit">Epic Encounters Artifacts</a>.</p>
-<p>The <code>ArtifactLib_ArtifactDefiniton</code> class holds information for each of the artifacts, including slot, item/rune templates, as well as the related keyword activators and mutators (defined manually).</p>
-<p>The data is not generated automatically. You must add your own artifacts by calling <code>RegisterArtifact()</code> with the data table filled out. Ideally, this should be done on both contexts, so client scripting can also query the information.</p>
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
-<p><doc class="ArtifactLib" symbols="_SubClasses"></p>
-<pre><code class="language-lua">---@class ArtifactLib_ArtifactDefinition
----@field ID string
----@field Slot StatsItemSlot
----@field ItemTemplate GUID
----@field RuneTemplate GUID
----@field DescriptionHandle TranslatedStringHandle
----@field KeywordActivators Keyword[]
----@field KeywordMutators Keyword[]
----@field GetName fun(self):string
----@field GetDescription fun(self):string
----@field GetPowerTooltip fun(self):TooltipElement[]
-
----Returns the artifact's name.
----@return string 
-function _ArtifactDef:GetName()
-
----Returns the artifact power's description.
----@return string 
-function _ArtifactDef:GetDescription()
-
----Returns a full tooltip showing the artifact's name and power.
----@return string 
-function _ArtifactDef:GetPowerTooltip()
+                <h1 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h1>
+<p>The <code>Vector</code> library offers a vector data structure and methods to work with them.</p>
+<p>They are intended to be used as immutables. All methods and operators return a new instance of the output vector.</p>
+<p>Vector objects implement various operators; the binary ones only usable for vectors of the same arity:</p>
+<ul>
+<li><code>+</code>: sum of components.</li>
+<li><code>-</code>: subtraction of components.</li>
+<li><code>*</code>: dot product.</li>
+<li><code>^</code>: negation; inverts the sign of all components.</li>
+</ul>
+<p>Additionally, <code>vector.Arity</code> or <code>vector.Length</code> will return the amount of elements in the vector.</p>
+<p>In Epip, their primary use is semantic clarity for functions that require 2D coordinates as parameters.</p>
+<h2 id="vector-class">Vector Class<a class="headerlink" href="#vector-class" title="Permanent link">&para;</a></h2>
+<p><doc class="Vector" symbols="Class"></p>
+<pre><code class="language-lua">---@class Vector
+---@field Arity integer Getter. Equivalent to #self.
+---@field Length number Getter. Equivalent to Vector.GetLength()
+---@field unpack fun(self:Vector):... Equivalent to table.unpack(self)
 
 </code></pre>
 <p></doc></p>
+<!-- ## Events
+
+<doc class="VectorLib" symbols="Listenable">
+
+
+<pre><code class="language-lua"></code></pre>
+
+</doc>
+-->
+
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><doc class="ArtifactLib" symbols="Function"></p>
-<pre><code class="language-lua">---Returns the definition for an artifact.
----@param artifactID string
----@return ArtifactLib_ArtifactDefinition? 
-function Artifact.GetData(artifactID)
+<p><doc class="VectorLib" symbols="Function"></p>
+<pre><code class="language-lua">---Creates a vector of variable length.
+---@return Vector 
+function Vector.Create(...)
 
----Registers the data for an artifact.
----@param data ArtifactLib_ArtifactDefinition
----@return ArtifactLib_ArtifactDefinition 
-function Artifact.RegisterArtifact(data)
+---Performs a dot product between two vectors of the same dimensions.
+---@param v1 Vector
+---@param v2 Vector
+---@return number 
+function Vector.DotProduct(v1, v2)
 
----Returns whether char has the artifact power active.
----@param char EclCharacter
----@param artifact ArtifactLib_ArtifactDefinition|string
----@return boolean 
-function Artifact.IsEquipped(char, artifact)
+---Performs a scalar product of a vector, multiplying each of its components.
+---@param v Vector
+---@param scalar number
+---@return Vector 
+function Vector.ScalarProduct(v, scalar)
 
----Returns a list of artifact powers active on char.
----@param char EclCharacter
----@return ArtifactLib_ArtifactDefinition[] 
-function Artifact.GetEquippedPowers(char)
+---Sums the components of two vectors of the same dimensions.
+---@param v1 Vector
+---@param v2 Vector
+---@return Vector 
+function Vector.Sum(v1, v2)
 
----Returns whether char has the artifact power active.
----@param char EsvCharacter
----@param artifact ArtifactLib_ArtifactDefinition|string
----@return boolean 
-function Artifact.IsEquipped(char, artifact)
+---Subtracts the components of two vectors of the same dimension.
+---@param v1 Vector
+---@param v2 Vector
+---@return Vector 
+function Vector.Subtract(v1, v2)
 
----Returns a list of artifact powers active on char.
----@param char EsvCharacter
----@return ArtifactLib_ArtifactDefinition[] 
-function Artifact.GetEquippedPowers(char)
+---@param v Vector
+---@return Vector 
+function Vector.Negate(v)
+
+---@param vector Vector
+---@return Vector 
+function Vector.Clone(vector)
+
+---@param vector Vector
+---@return Vector New instance; does not mutate.
+function Vector.GetNormalized(vector)
+
+---@param vector Vector
+---@return number 
+function Vector.GetLength(vector)
 
 </code></pre>
 <p></doc></p>
-<h2 id="usage-examples">Usage examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h2>
-<p>This library is used in the Quick Examine UI to display tooltips for artifacts. It is additionally used in the stats tab to check the equipped artifacts of a character.</p>
               
             </div>
           </div>
@@ -224,10 +228,10 @@ function Artifact.GetEquippedPowers(char)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Character/" class="btn btn-neutral float-right" title="Character">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../../Tutorials/testing/" class="btn btn-neutral float-right" title="Testing">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../Client/Pointer/" class="btn btn-neutral" title="Pointer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Timer/" class="btn btn-neutral" title="Timer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -253,10 +257,10 @@ function Artifact.GetEquippedPowers(char)
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../Client/Pointer/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Timer/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Character/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../../Tutorials/testing/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
