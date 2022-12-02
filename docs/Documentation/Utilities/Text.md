@@ -98,6 +98,7 @@ function Text.Dump(obj, opts)
 function Text.GetTranslatedString(handle, fallBack)
 
 ---Registers a translated string, optionally binding a key to it.
+---@overload fun(data:TextLib_TranslatedString, replaceExisting:boolean?):string,TextLib_TranslatedString 
 ---@param text string
 ---@param handle TranslatedStringHandle
 ---@param key string?

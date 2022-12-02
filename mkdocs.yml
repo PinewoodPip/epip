@@ -28,7 +28,9 @@ nav:
       - "Combat": "Documentation/Utilities/Combat.md"
       - "GameState": "Documentation/Utilities/GameState.md"
       - "Item": "Documentation/Utilities/Item.md"
+      - "Mod": "Documentation/Utilities/Mod.md"
       - "Net": "Documentation/Utilities/Net.md"
+      - "Timer": "Documentation/Utilities/Timer.md"
       - "Vector": "Documentation/Utilities/Vector.md"
   #   - "Global Tables":
   #     - "Feature": "Global Tables/Feature.md"

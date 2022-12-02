@@ -76,6 +76,7 @@ function RGBColor:Equals(color)
 
 ```lua
 ---Alias for creating an RGBColor from RGBA values.
+---@overload fun(color:RGBColor):RGBColor 
 ---@param red integer?
 ---@param green integer?
 ---@param blue integer?
