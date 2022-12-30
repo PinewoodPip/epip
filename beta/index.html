@@ -9,7 +9,7 @@
   
   <link rel="canonical" href="https://pinewood.team/epip/beta/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Beta - Epip Encounters</title>
+  <title>Beta Versions - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -19,7 +19,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Beta";
+    var mkdocs_page_name = "Beta Versions";
     var mkdocs_page_input_path = "beta.md";
     var mkdocs_page_url = "/epip/beta/";
   </script>
@@ -53,6 +53,12 @@
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../patchnotes/">Patch Notes</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Documentation</span></p>
@@ -116,7 +122,7 @@
     
       
     
-    <li>Beta</li>
+    <li>Beta Versions</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -134,11 +140,50 @@
 <p>You can get v58 by creating a file named <code>ScriptExtenderUpdaterConfig.json</code> in the same folder where you've put the extender, with the contents:</p>
 <pre><code class="language-json">{
     &quot;UpdateChannel&quot;: &quot;Devel&quot;,
+    &quot;TargetVersion&quot;: &quot;58.0.0.0&quot;,
+    &quot;TargetResourceDigest&quot;: &quot;b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a&quot;,
     &quot;Debug&quot;: true
 }
 </code></pre>
 <h2 id="v1064">v1064<a class="headerlink" href="#v1064" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 22/11/22</a>.</p>
+<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 30/12/22</a>.</p>
+<p>30/12 upload:</p>
+<p>Intended extender version: <code>b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a</code> (see warning above)</p>
+<ul>
+<li>In the settings menu, the current tab's button is now highlighted (replicating vanilla behaviour)</li>
+<li>
+<p>Added an option for animation-cancelling for player characters</p>
+</li>
+<li>
+<p>Fixed QuickExamine not being draggable all the way to the right of the screen</p>
+</li>
+<li>Fixed the "Epip Settings" button not appearing on all tabs of the vanilla settings menu</li>
+<li>Fixed Trickster's Repertoire unsneaking characters that do not have the talent</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Added an <code>Image</code> library with PNG decoding</li>
+<li>Added ImageViewer feature, intended for displaying results of images decoded with <code>Image</code></li>
+<li>Improved reliability of <code>Client.GetMousePosition()</code> (replaced with Ext implementation)</li>
+<li>Added a Set data structure</li>
+<li>Added <code>Vector.ScalarProduct()</code></li>
+<li>Added a <code>Color</code> element to Generic</li>
+<li>Added <code>ClearElements()</code> to Generic's Grid</li>
+<li>Added <code>SetVisible()</code> to Generic elements</li>
+<li>Added <code>Set</code> and <code>Map</code> settings types</li>
+<li>Added a debug hotkey for copying the pointer's world position</li>
+<li>Added a <code>Interfaces</code> library for common interfaces</li>
+<li>Added <code>setTexture()</code> to movieclips in Generic (temporary, will likely become its own element type)</li>
+</ul>
+<p>Improvements to doc generator script:</p>
+<ul>
+<li>Added support for net messages</li>
+<li>Better support for hooks/events</li>
+<li>Private methods are now hidden</li>
+<li>Symbols are now sorted by context (first Shared, then Client, then Server)</li>
+<li>Can now be used externally (importable)</li>
+<li>Added support for overloads</li>
+</ul>
 <p>22/11 upload:</p>
 <ul>
 <li>Added an "Auras" tab to Vanity, where you can apply visual effects to your character, onto various bones</li>
@@ -232,6 +277,15 @@
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../docs/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../patchnotes/" class="btn btn-neutral" title="Patch Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -254,6 +308,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../patchnotes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../docs/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
