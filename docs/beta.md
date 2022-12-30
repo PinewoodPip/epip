@@ -6,12 +6,50 @@ You can get v58 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 ```json
 {
 	"UpdateChannel": "Devel",
+	"TargetVersion": "58.0.0.0",
+	"TargetResourceDigest": "b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a",
 	"Debug": true
 }
 ```
 
 ## v1064
-[Latest upload, 22/11/22](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+[Latest upload, 30/12/22](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+
+30/12 upload:
+
+Intended extender version: `b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a` (see warning above)
+
+
+- In the settings menu, the current tab's button is now highlighted (replicating vanilla behaviour)
+- Added an option for animation-cancelling for player characters
+
+- Fixed QuickExamine not being draggable all the way to the right of the screen
+- Fixed the "Epip Settings" button not appearing on all tabs of the vanilla settings menu
+- Fixed Trickster's Repertoire unsneaking characters that do not have the talent
+
+On the technical side of things:
+
+- Added an `Image` library with PNG decoding
+- Added ImageViewer feature, intended for displaying results of images decoded with `Image`
+- Improved reliability of `Client.GetMousePosition()` (replaced with Ext implementation)
+- Added a Set data structure
+- Added `Vector.ScalarProduct()`
+- Added a `Color` element to Generic
+- Added `ClearElements()` to Generic's Grid
+- Added `SetVisible()` to Generic elements
+- Added `Set` and `Map` settings types
+- Added a debug hotkey for copying the pointer's world position
+- Added a `Interfaces` library for common interfaces
+- Added `setTexture()` to movieclips in Generic (temporary, will likely become its own element type)
+
+Improvements to doc generator script:
+
+- Added support for net messages
+- Better support for hooks/events
+- Private methods are now hidden
+- Symbols are now sorted by context (first Shared, then Client, then Server)
+- Can now be used externally (importable)
+- Added support for overloads
 
 22/11 upload:
 
