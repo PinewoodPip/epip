@@ -58,6 +58,14 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1123-upload">1/1/23 upload:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#301222-upload">30/12/22 upload:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2211-upload">22/11 upload:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3110-upload">31/10 upload:</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -146,9 +154,31 @@
 }
 </code></pre>
 <h2 id="v1064">v1064<a class="headerlink" href="#v1064" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 30/12/22</a>.</p>
-<p>30/12 upload:</p>
+<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 1/1/23</a>.</p>
+<h3 id="1123-upload">1/1/23 upload:<a class="headerlink" href="#1123-upload" title="Permanent link">&para;</a></h3>
 <p>Intended extender version: <code>b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a</code> (see warning above)</p>
+<ul>
+<li>Hotbar: fixed hotkeys settings being deleted in some cases</li>
+</ul>
+<p>Quick Examine:</p>
+<ul>
+<li>Added display for AP, SP, and initiative</li>
+<li>Added resistances display</li>
+<li>Added numerous settings: opacity, width/height, hiding certain widgets. You can find them in a new tab in the settings menu</li>
+<li>Minor graphical touch-ups</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Generic: fixed ScrollList not supporting centering of elements</li>
+<li>Generic: added LabelledIcon prefab</li>
+<li>QuickExamine: added Widget interface</li>
+<li>StatsLib: added data of immunites</li>
+<li>TooltipLib: added support for status tooltips<ul>
+<li>No way to create your own currently (technical limitation).</li>
+</ul>
+</li>
+</ul>
+<h3 id="301222-upload">30/12/22 upload:<a class="headerlink" href="#301222-upload" title="Permanent link">&para;</a></h3>
 <ul>
 <li>In the settings menu, the current tab's button is now highlighted (replicating vanilla behaviour)</li>
 <li>
@@ -184,7 +214,7 @@
 <li>Can now be used externally (importable)</li>
 <li>Added support for overloads</li>
 </ul>
-<p>22/11 upload:</p>
+<h3 id="2211-upload">22/11 upload:<a class="headerlink" href="#2211-upload" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Added an "Auras" tab to Vanity, where you can apply visual effects to your character, onto various bones</li>
 <li>Removed the meme loading screen option</li>
@@ -216,7 +246,7 @@
 <li>Added methods to check if a component is an item/char to EntityLib</li>
 <li>You can now specify a player index when using methods in PointerLib (though I do not know in which scenario multiple pointers can exist; splitscreen co-op perhaps?)</li>
 </ul>
-<p>31/10 upload:</p>
+<h3 id="3110-upload">31/10 upload:<a class="headerlink" href="#3110-upload" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The "infinite carry weight setting" should now work properly for clients that join mid-session<ul>
 <li>Other features that face problems in multiplayer are possibly suffering from the same bug and will be fixed in the future</li>
