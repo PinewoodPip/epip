@@ -13,12 +13,31 @@ You can get v58 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 ```
 
 ## v1064
-[Latest upload, 30/12/22](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+[Latest upload, 1/1/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
 
-30/12 upload:
+### 1/1/23 upload:
 
 Intended extender version: `b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a` (see warning above)
 
+- Hotbar: fixed hotkeys settings being deleted in some cases
+
+Quick Examine:
+
+- Added display for AP, SP, and initiative
+- Added resistances display
+- Added numerous settings: opacity, width/height, hiding certain widgets. You can find them in a new tab in the settings menu
+- Minor graphical touch-ups
+
+On the technical side of things:
+
+- Generic: fixed ScrollList not supporting centering of elements
+- Generic: added LabelledIcon prefab
+- QuickExamine: added Widget interface
+- StatsLib: added data of immunites
+- TooltipLib: added support for status tooltips
+	- No way to create your own currently (technical limitation).
+
+### 30/12/22 upload:
 
 - In the settings menu, the current tab's button is now highlighted (replicating vanilla behaviour)
 - Added an option for animation-cancelling for player characters
@@ -51,7 +70,7 @@ Improvements to doc generator script:
 - Can now be used externally (importable)
 - Added support for overloads
 
-22/11 upload:
+### 22/11 upload:
 
 - Added an "Auras" tab to Vanity, where you can apply visual effects to your character, onto various bones
 - Removed the meme loading screen option
@@ -79,7 +98,7 @@ On the technical side of things:
 - Added methods to check if a component is an item/char to EntityLib
 - You can now specify a player index when using methods in PointerLib (though I do not know in which scenario multiple pointers can exist; splitscreen co-op perhaps?)
 
-31/10 upload:
+### 31/10 upload:
 
 - The "infinite carry weight setting" should now work properly for clients that join mid-session
 	- Other features that face problems in multiplayer are possibly suffering from the same bug and will be fixed in the future
