@@ -58,6 +58,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#4123-upload">4/1/23 upload:</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#1123-upload">1/1/23 upload:</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#301222-upload">30/12/22 upload:</a>
@@ -149,14 +151,34 @@
 <pre><code class="language-json">{
     &quot;UpdateChannel&quot;: &quot;Devel&quot;,
     &quot;TargetVersion&quot;: &quot;58.0.0.0&quot;,
-    &quot;TargetResourceDigest&quot;: &quot;b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a&quot;,
+    &quot;TargetResourceDigest&quot;: &quot;2e0bed670d2e172e14af13b4a6265dd341ef2fbe276f6bee8f8392de95e9fc8f&quot;,
     &quot;Debug&quot;: true
 }
 </code></pre>
-<h2 id="v1064">v1064<a class="headerlink" href="#v1064" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 1/1/23</a>.</p>
+<h1 id="v1064-beta">v1064 Beta<a class="headerlink" href="#v1064-beta" title="Permanent link">&para;</a></h1>
+<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 4/1/23</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Intended extender version: <code>2e0bed670d2e172e14af13b4a6265dd341ef2fbe276f6bee8f8392de95e9fc8f</code> (see instructions above)</p>
+</div>
+<h3 id="4123-upload">4/1/23 upload:<a class="headerlink" href="#4123-upload" title="Permanent link">&para;</a></h3>
+<p>Quick Examine improvements:</p>
+<ul>
+<li>Added a setting to set the default position of the UI; this position will be used after reloading</li>
+<li>Added a statuses bar (toggleable)</li>
+<li>Added a light stroke to the resistances text</li>
+<li>Added a B/H display<ul>
+<li>This will become more fleshed out in the future, with a display of the "progress" towards the next stack as well.</li>
+</ul>
+</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>QuickExamine: split up some parts of BasicInfo into separate widgets</li>
+<li>Generic: fix downsizing IggyIcon</li>
+<li>Generic: added a Status prefab, for disaplying status effects</li>
+<li>TooltipLib: added <code>ShowStatusTooltip()</code></li>
+</ul>
 <h3 id="1123-upload">1/1/23 upload:<a class="headerlink" href="#1123-upload" title="Permanent link">&para;</a></h3>
-<p>Intended extender version: <code>b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a</code> (see warning above)</p>
 <ul>
 <li>Hotbar: fixed hotkeys settings being deleted in some cases</li>
 </ul>
