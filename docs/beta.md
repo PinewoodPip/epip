@@ -7,17 +7,34 @@ You can get v58 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 {
 	"UpdateChannel": "Devel",
 	"TargetVersion": "58.0.0.0",
-	"TargetResourceDigest": "b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a",
+	"TargetResourceDigest": "2e0bed670d2e172e14af13b4a6265dd341ef2fbe276f6bee8f8392de95e9fc8f",
 	"Debug": true
 }
 ```
 
-## v1064
-[Latest upload, 1/1/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+# v1064 Beta
+[Latest upload, 4/1/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+
+!!! Warning "Intended extender version: `2e0bed670d2e172e14af13b4a6265dd341ef2fbe276f6bee8f8392de95e9fc8f` (see instructions above)"
+
+### 4/1/23 upload:
+
+Quick Examine improvements:
+
+- Added a setting to set the default position of the UI; this position will be used after reloading
+- Added a statuses bar (toggleable)
+- Added a light stroke to the resistances text
+- Added a B/H display
+	- This will become more fleshed out in the future, with a display of the "progress" towards the next stack as well.
+
+On the technical side of things:
+
+- QuickExamine: split up some parts of BasicInfo into separate widgets
+- Generic: fix downsizing IggyIcon
+- Generic: added a Status prefab, for disaplying status effects
+- TooltipLib: added `ShowStatusTooltip()`
 
 ### 1/1/23 upload:
-
-Intended extender version: `b31b208b6a6f2e6bbd31907f22b7fc86f2055954e0614c365b322a988debb37a` (see warning above)
 
 - Hotbar: fixed hotkeys settings being deleted in some cases
 
