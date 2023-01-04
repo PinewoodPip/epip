@@ -31,7 +31,7 @@ On the technical side of things:
 
 - QuickExamine: split up some parts of BasicInfo into separate widgets
 - Generic: fix downsizing IggyIcon
-- Generic: added a Status prefab, for disaplying status effects
+- Generic: added a Status prefab, for displaying status effects
 - TooltipLib: added `ShowStatusTooltip()`
 
 ### 1/1/23 upload:
