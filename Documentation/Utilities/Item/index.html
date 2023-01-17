@@ -67,6 +67,24 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Generic UI</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/Generic/Introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Elements</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Element/">Element</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Button/">Button</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Color/">Color</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="#">Utilities</a>
@@ -299,6 +317,11 @@ function Item.IsDyeable(item)
 ---@param item Item
 ---@return ItemSlot 
 function Item.GetItemSlot(item)
+
+---@param char Character
+---@param slot ItemSlot
+---@return Item? 
+function Item.GetEquippedItem(char, slot)
 
 --- Like ItemSlot, but distinguishes armor subtypes  
 --- Get subtype of item (ex. &quot;Dagger&quot; or &quot;Platemail&quot;).  

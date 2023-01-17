@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/epip/Documentation/Client/UI/Generic/Elements/Button/">
+  <link rel="shortcut icon" href="../../../../../../img/favicon.ico">
+  <title>Button - Epip Encounters</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../../../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Button";
+    var mkdocs_page_input_path = "Documentation\\Client\\UI\\Generic\\Elements\\Button.md";
+    var mkdocs_page_url = "/epip/Documentation/Client/UI/Generic/Elements/Button/";
+  </script>
+  
+  <script src="../../../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../../../../.." class="icon icon-home"> Epip Encounters</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../../patchnotes/">Patch Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../../beta/">Beta Versions</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../../docs/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Client</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Pointer/">Pointer</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Generic UI</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../../Introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Elements</a>
+    <ul class="current">
+                <li class="toctree-l4"><a class="reference internal" href="../Element/">Element</a>
+                </li>
+                <li class="toctree-l4 current"><a class="reference internal current" href="./">Button</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../Color/">Color</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../ComboBox/">ComboBox</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Artifact/">Artifact</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Character/">Character</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Color/">Color</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Combat/">Combat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/GameState/">GameState</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Item/">Item</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Mod/">Mod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Net/">Net</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Timer/">Timer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Vector/">Vector</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../../Tutorials/testing/">Testing</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../../..">Epip Encounters</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+        
+          <li>Client &raquo;</li>
+        
+      
+        
+          <li>Generic UI &raquo;</li>
+        
+      
+        
+          <li>Elements &raquo;</li>
+        
+      
+    
+    <li>Button</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="button">Button<a class="headerlink" href="#button" title="Permanent link">&para;</a></h1>
+<p>The <code>GenericUI_Element_Button</code> button element implements a typical button form element. It may be disabled (preventing user interaction) and will fire a contextual event if it is activated while not disabled.</p>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<p><doc class="GenericUI_Element_Button" symbols="_SubClasses"></p>
+<p></doc></p>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p><doc class="GenericUI_Element_Button" symbols="Listenable"></p>
+<pre><code class="language-lua">---@event Pressed
+
+</code></pre>
+<p></doc></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><doc class="GenericUI_Element_Button" symbols="Function"></p>
+<pre><code class="language-lua">---Sets the button's text.
+---@param text string
+---@param textY number? Vertical offset for the text. Use for centering.
+function Button:SetText(text, textY)
+
+---Sets the button's visuals.
+---@param buttonType GenericUI_Element_Button_Type
+function Button:SetType(buttonType)
+
+---Sets the button's enabled state. Enabled buttons are interactable.
+---@param enabled boolean
+function Button:SetEnabled(enabled)
+
+---Returns whether the button is enabled.
+---@return boolean 
+function Button:IsEnabled()
+
+</code></pre>
+<p></doc></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Color/" class="btn btn-neutral float-right" title="Color">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Element/" class="btn btn-neutral" title="Element"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Element/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Color/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../../../../..';</script>
+    <script src="../../../../../../js/theme_extra.js" defer></script>
+    <script src="../../../../../../js/theme.js" defer></script>
+      <script src="../../../../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

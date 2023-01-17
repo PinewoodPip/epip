@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/epip/Documentation/Client/UI/Generic/Introduction/">
+  <link rel="shortcut icon" href="../../../../../img/favicon.ico">
+  <title>Introduction - Epip Encounters</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Introduction";
+    var mkdocs_page_input_path = "Documentation\\Client\\UI\\Generic\\Introduction.md";
+    var mkdocs_page_url = "/epip/Documentation/Client/UI/Generic/Introduction/";
+  </script>
+  
+  <script src="../../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../../../.." class="icon icon-home"> Epip Encounters</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../patchnotes/">Patch Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../beta/">Beta Versions</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../docs/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Client</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../Pointer/">Pointer</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Generic UI</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">Introduction</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#getting-started">Getting started</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#prefabs">Prefabs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#events">Events</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Elements</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../Elements/Element/">Element</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../Elements/Button/">Button</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../Elements/Color/">Color</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../Elements/ComboBox/">ComboBox</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/Artifact/">Artifact</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/Character/">Character</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/Color/">Color</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/Combat/">Combat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/GameState/">GameState</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/Item/">Item</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/Mod/">Mod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/Net/">Net</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/Timer/">Timer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Utilities/Vector/">Vector</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../Tutorials/testing/">Testing</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../..">Epip Encounters</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+        
+          <li>Client &raquo;</li>
+        
+      
+        
+          <li>Generic UI &raquo;</li>
+        
+      
+    
+    <li>Introduction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="generic">Generic<a class="headerlink" href="#generic" title="Permanent link">&para;</a></h1>
+<p>Generic is a framework for creating UIs using just lua scripting. It functions by instancing a special .swf with various types of <em>elements</em> implemented that you can then interface with from lua.</p>
+<p>It offers various advantages over traditional UI creation:</p>
+<ul>
+<li><strong>No fiddling with flash</strong>: UI creation with Generic uses purely lua. You do not need to touch or know anything about flash files.</li>
+<li><strong>Extendability and moddability</strong>: UIs made with Generic, along with their elements, are exposed to all mods; any script can hook these UIs to add elements to them or modify them, something not possible with .swf UIs.</li>
+<li><strong>Fast prototyping</strong>: all you need to do to test your changes to the UI is to reload lua. There is no requirement for external tools nor any exporting process.</li>
+</ul>
+<p>Generic powers every UI in Epip made after its inception, including:</p>
+<ul>
+<li>Quick Examine</li>
+<li>Hotbar Groups</li>
+<li>Save/Load Overlay</li>
+<li>Debug Display</li>
+<li>Debug Menu / Control Panel</li>
+<li>Fishing minigame</li>
+</ul>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<p>TODO</p>
+<h2 id="prefabs">Prefabs<a class="headerlink" href="#prefabs" title="Permanent link">&para;</a></h2>
+<p>TODO</p>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<p><doc class="GenericUI" symbols="_SubClasses"></p>
+<pre><code class="language-lua">---@class GenericUI_Instance
+
+---@param id string
+---@return GenericUI_Element? 
+function _Instance:GetElementByID(id)
+
+---@param id string
+---@return FlashMovieClip? 
+function _Instance:GetMovieClipByID(id)
+
+---@param id string
+---@param elementType `T`|GenericUI_ElementType
+---@param parentID string|GenericUI_Element? Defaults to root of the MainTimeline.
+---@return `T` 
+function _Instance:CreateElement(id, elementType, parentID)
+
+---@return number, number
+function _Instance:GetMousePosition()
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab
+
+---@param id string Automatically prefixed.
+---@param elementType `T`|GenericUI_ElementType
+---@param parent (GenericUI_Element|string)?
+---@return T 
+function Prefab:CreateElement(id, elementType, parent)
+
+function Prefab:PrefixID(id)
+
+function Prefab:GetMainElement()
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_ContainerElement
+---@field ClearElements fun(self) Removes all elements from the container.
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element
+---@field UI GenericUI_Instance
+---@field ID string
+---@field ParentID string Empty string for elements in the root.
+---@field Type string
+---@field Tooltip (GenericUI_ElementTooltip|string)? Will be rendered upon the element being hovered. Strings are rendered as unformatted tooltips.
+---@field SetPositionRelativeToParent fun(self:GenericUI_Element, position:&quot;Center&quot;|&quot;TopLeft&quot;|&quot;TopRight&quot;|&quot;Top&quot;|&quot;Left&quot;|&quot;Right&quot;|&quot;BottomLeft&quot;|&quot;Bottom&quot;|&quot;BottomRight&quot;, horizontalOffset:number?, verticalOffset:number?)
+---@field Move fun(self:GenericUI_Element, x:number, y:number) Moves the element a certain amount of pixels from its current position.
+---@field Events GenericUI_Element_Events
+---@field _Tooltip GenericUI_ElementTooltip
+
+---Get the movie clip of this element.
+---@return FlashMovieClip 
+function _Element:GetMovieClip()
+
+---@param id string
+---@param elementType `T`|GenericUI_ElementType
+---@return `T` 
+function _Element:AddChild(id, elementType)
+
+---Sets whether the element should be horizontally centered in VerticalList and ScrollList.
+---@param center boolean
+function _Element:SetCenterInLists(center)
+
+---Sets this element as the area for dragging the *entire* UI.
+function _Element:SetAsDraggableArea()
+
+---@param x number
+---@param y number
+function _Element:SetPosition(x, y)
+
+---@param width number
+---@param height number
+function _Element:SetSize(width, height)
+
+---@param enabled boolean
+function _Element:SetMouseEnabled(enabled)
+
+---@param enabled boolean
+function _Element:SetMouseChildren(enabled)
+
+---@param alpha number
+---@param affectChildren boolean? Defaults to not affecting children alpha.
+function _Element:SetAlpha(alpha, affectChildren)
+
+---@param degrees number
+function _Element:SetRotation(degrees)
+
+---@param eventType string
+---@param handler function
+function _Element:RegisterListener(eventType, handler)
+
+---@return number, number -- X and Y coordinates in local space.
+function _Element:GetPosition()
+
+---@param visible boolean
+function _Element:SetVisible(visible)
+
+---Sets the size override, used to override the element size within list-like elements.
+---@overload fun(self:GenericUI_Element, size:Vector2) 
+---@param width number
+---@param height number
+function _Element:SetSizeOverride(width, height)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_ElementTooltip
+---@field Type TooltipLib_TooltipType
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_Empty
+
+---@class GenericUI_Element_Empty
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_TiledBackground
+
+---Sets the background's visuals and size.
+---@param bg GenericUI_Element_TiledBackground_Type
+---@param width number
+---@param height number
+function Background:SetBackground(bg, width, height)
+
+---@class GenericUI_Element_TiledBackground
+---@field Events GenericUI_Element_Events
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_Text
+
+---Sets the element's text.
+---Note that the text will be culled if it doesn't fit the dimensions of the element.
+---@param text string
+---@param setSize boolean? Defaults to `false`. If `true`, the element will be automatically resized to fit the new text.
+function Text:SetText(text, setSize)
+
+---Sets the alignment of the text.
+---@param textType GenericUI_Element_Text_Align
+function Text:SetType(textType)
+
+---Sets whether the text is editable by the user.
+---@param editable boolean
+function Text:SetEditable(editable)
+
+---Sets the restriction for characters that the user can enter onto the text field.
+---Has no effect on setting the text from scripting.
+---@param restriction string
+function Text:SetRestrictedCharacters(restriction)
+
+---@class GenericUI_Element_Text
+---@field Events GenericUI_Element_Text_Events
+
+---Sets the stroke style and color of the text element.
+---@param color uint64|RGBColor
+---@param size number
+---@param alpha number
+---@param strength uint64
+---@param unknown uint64
+function Text:SetStroke(color, size, alpha, strength, unknown)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_IggyIcon
+
+---@class GenericUI_Element_IggyIcon
+---@field SetIcon fun(self, icon:string, width:number, height:number, materialGUID:GUID?)
+
+---Sets the icon displayed by the element.
+---@param icon string
+---@param width number
+---@param height number
+---@param materialGUID GUID?
+function IggyIcon:SetIcon(icon, width, height, materialGUID)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_Button
+
+---Sets the button's text.
+---@param text string
+---@param textY number? Vertical offset for the text. Use for centering.
+function Button:SetText(text, textY)
+
+---Sets the button's visuals.
+---@param buttonType GenericUI_Element_Button_Type
+function Button:SetType(buttonType)
+
+---Sets the button's enabled state. Enabled buttons are interactable.
+---@param enabled boolean
+function Button:SetEnabled(enabled)
+
+---Returns whether the button is enabled.
+---@return boolean 
+function Button:IsEnabled()
+
+---@class GenericUI_Element_Button
+---@field Events GenericUI_Element_Button_Events
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_VerticalList
+
+---Removes all elements from the container.
+function VerticalList:Clear()
+
+---Repositions all the elements within the container.
+---Does not recursively reposition parented containers. TODO
+function VerticalList:RepositionElements()
+
+---Sets a padding to be placed before the first element of the container.
+---@param spacing number
+function VerticalList:SetTopSpacing(spacing)
+
+---Sets the spacing between positioned elements.
+---@param spacing number
+function VerticalList:SetElementSpacing(spacing)
+
+---Sets a padding for the left side of the container.
+---@param spacing number
+function VerticalList:SetSideSpacing(spacing)
+
+---@class GenericUI_Element_VerticalList
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_HorizontalList
+
+---@class GenericUI_Element_HorizontalList
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_ScrollList
+
+---Sets the size of the scroll list. Contents outside the rect will be culled.
+---@param width number
+---@param height number
+function ScrollList:SetFrame(width, height)
+
+---Sets whether the scroll list can be scrolled with the mouse wheel.
+---@param enabled boolean
+function ScrollList:SetMouseWheelEnabled(enabled)
+
+---Sets the horizontal spacing for the scroll bar, relative to the right edge of the frame.
+---Must be called after SetFrame. TODO remove restriction
+---@param spacing number
+function ScrollList:SetScrollbarSpacing(spacing)
+
+---@class GenericUI_Element_ScrollList
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_StateButton
+
+---Sets the button's visuals.
+---@param buttonType GenericUI_Element_StateButton_Type
+function StateButton:SetType(buttonType)
+
+---Sets whether the button is active.&lt;br&gt;
+---This has no intrinsic meaning, other than altering the button's graphics.
+---@param active boolean
+function StateButton:SetActive(active)
+
+---Sets whether the button is enabled.&lt;br&gt;
+---Enabled buttons are interactable and their active state can be changed by the user.
+---@param enabled boolean
+function StateButton:SetEnabled(enabled)
+
+---@class GenericUI_Element_StateButton
+---@field Events GenericUI_Element_StateButton_Events
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_Divider
+---@meta 
+
+---Sets the visual for the divider.
+---@param dividerType GenericUI_Element_Divider_Type
+function Divider:SetType(dividerType)
+
+---Sets the size of the divider.
+---Custom height not currently supported. TODO
+---@param width number
+function Divider:SetSize(width)
+
+---@class GenericUI_Element_Divider
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_Slot
+
+---Sets the cooldown displayed by the slot.
+---@param cooldown number In turns.
+---@param playRefreshAnimation boolean? Defaults to false. If set to true and the cooldown is &lt;= 0, a blink animation will be played.
+function Slot:SetCooldown(cooldown, playRefreshAnimation)
+
+---Sets whether the slot is enabled. Disabled slots are greyed out.
+---@param enabled boolean
+function Slot:SetEnabled(enabled)
+
+---Sets the label shown on the bottom right of the slot.
+---@param label string
+function Slot:SetLabel(label)
+
+---Sets whether the slot should display a blue border.
+---@param enabled boolean
+function Slot:SetSourceBorder(enabled)
+
+---Sets whether the slot should display a warning graphic.
+---@param enabled boolean
+function Slot:SetWarning(enabled)
+
+---Sets whether the slot is active. Active slots play a looping ripple animation.
+---@param active boolean
+function Slot:SetActive(active)
+
+---Sets whether the slot is highlighted.
+---@param highlighted boolean
+function Slot:SetHighlighted(highlighted)
+
+---@class GenericUI_Element_Slot
+---@field Events GenericUI_Element_Slot_Events
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_Slider
+
+---@class GenericUI_Element_Slider
+---@field Events GenericUI_Element_Slider_Events
+
+---Returns the current value selected in the slider.
+---@return number 
+function Slider:GetValue()
+
+---Sets the minimum value accepted by the slider.
+---@param min number
+function Slider:SetMin(min)
+
+---Sets the maximum value accepted by the slider.
+---@param max number
+function Slider:SetMax(max)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_ComboBox
+
+---Adds an option to the combobox.
+---@param id string
+---@param label string
+function ComboBox:AddOption(id, label)
+
+---Sets the currently selected option.
+---@param id string
+function ComboBox:SelectOption(id)
+
+---Removes all options from the combobox.
+function ComboBox:ClearOptions()
+
+---Sets whether the combobox should open upwards, or downwards (default)
+---Use to determine the orientation of the options selector when opened.
+---@param openUpwards boolean
+function ComboBox:SetOpenUpwards(openUpwards)
+
+---@class GenericUI_Element_ComboBox
+---@field Events GenericUI_Element_ComboBox_Events
+
+---Sets the options for the combobox. Equivalent to calling `ClearOptions()` then `AddOption()` for each option in the list passed.
+---@param options GenericUI_Element_ComboBox_Option[]
+function ComboBox:SetOptions(options)
+
+</code></pre>
+<pre><code class="language-lua">---Represents an option in the combobox.
+---@class GenericUI_Element_ComboBox_Option
+---@field Label string
+---@field ID string
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_Grid
+
+---Sets the size of the grid, in elements.
+---@param columns integer Set to -1 for infinite.
+---@param rows integer Set to -1 for infinite.
+function Grid:SetGridSize(columns, rows)
+
+---@class GenericUI_Element_Grid
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_Color
+
+---@class GenericUI_Element_Color
+
+---Sets the color shown by the element.
+---@param color RGBColor
+function Color:SetColor(color)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_HotbarSlot
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent GenericUI_Element
+---@return GenericUI_Prefab_HotbarSlot 
+function Slot.Create(ui, id, parent)
+
+---@param obj GenericUI_Prefab_HotbarSlot_Object
+function Slot:SetObject(obj)
+
+---@param skillID string
+function Slot:SetSkill(skillID)
+
+---@param item EclItem
+function Slot:SetItem(item)
+
+---@param templateID GUID
+function Slot:SetTemplate(templateID)
+
+function Slot:Clear()
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_HotbarSlot_Object
+---@field Type GenericUI_Prefab_HotbarSlot_Object_Type
+---@field StatsID string? Only for skills/actions.
+---@field ItemHandle EntityHandle? Only for items.
+---@field TemplateID GUID? Only for templates.
+
+---@param type GenericUI_Prefab_HotbarSlot_Object_Type
+---@param data GenericUI_Prefab_HotbarSlot_Object?
+---@return GenericUI_Prefab_HotbarSlot_Object 
+function _SlotObject.Create(type, data)
+
+---@return EclItem|StatsSkillPrototype|StatsLib_Action 
+function _SlotObject:GetEntity()
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_Spinner
+
+---Creates a Spinner element.
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@param min number? Defaults to 0.
+---@param max number? Defaults to math.maxinteger.
+---@param step number? Defaults to 1.
+---@return GenericUI_Prefab_Spinner 
+function Spinner.Create(ui, id, parent, label, min, max, step)
+
+---@return number 
+function Spinner:GetValue()
+
+---Sets the value of the spinner. Ignores min/max bounds or step.
+---@param value number
+function Spinner:SetValue(value)
+
+---@return number 
+function Spinner:Decrement()
+
+---Adds to the current value. **Throws the ValueChanged event!**
+---@param val number
+---@return number New value.
+function Spinner:AddValue(val)
+
+---@return number 
+function Spinner:Increment()
+
+function Spinner:UpdateCounter()
+
+---Sets the bounds of the allowed values on the spinner and clamps the current value to the new valid range.
+---@param min number? Defaults to current.
+---@param max number? Defaults to current.
+---@param step number? Defaults to current.
+function Spinner:SetBounds(min, max, step)
+
+---@param width number
+---@param height number
+function Spinner:SetSize(width, height)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_Text
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param text string
+---@param alignType GenericUI_Element_Text_Align
+---@param size Vector2
+---@return GenericUI_Prefab_Text 
+function Text.Create(ui, id, parent, text, alignType, size)
+
+---@param text string
+function Text:SetText(text)
+
+function Text:GetMainElement()
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledDropdown
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@param opts GenericUI_Element_ComboBox_Option[]?
+---@return GenericUI_Prefab_LabelledDropdown 
+function Dropdown.Create(ui, id, parent, label, opts)
+
+---@param width number
+---@param height number
+function Dropdown:SetSize(width, height)
+
+---@param id string
+function Dropdown:SelectOption(id)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledCheckbox
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@return GenericUI_Prefab_LabelledCheckbox 
+function Checkbox.Create(ui, id, parent, label)
+
+---@param active boolean
+function Checkbox:SetState(active)
+
+---@param width number
+---@param height number
+function Checkbox:SetSize(width, height)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledTextField
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@return GenericUI_Prefab_LabelledTextField 
+function Text.Create(ui, id, parent, label)
+
+---@param width number
+---@param height number
+function Text:SetSize(width, height)
+
+---@param text string
+function Text:SetText(text)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_FormHorizontalList
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@param size Vector2
+---@param labelSize Vector2
+---@return GenericUI_Prefab_FormHorizontalList 
+function Form.Create(ui, id, parent, label, size, labelSize)
+
+---@param id string
+---@param type `T`|GenericUI_ElementType
+---@return `T` 
+function Form:AddChild(id, type)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledIcon
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param icon string
+---@param text string
+---@param iconSize Vector2
+---@param textSize Vector2
+---@return GenericUI_Prefab_LabelledIcon 
+function Icon.Create(ui, id, parent, icon, text, iconSize, textSize)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_Status
+---@field EntityHandle EntityHandle
+---@field StatusHandle EntityHandle
+---@field Background GenericUI_Element_TiledBackground
+---@field Icon GenericUI_Element_IggyIcon
+---@field DurationText GenericUI_Prefab_Text
+---@field BorderDummy GenericUI_Element_Empty
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param entity EclCharacter|EclItem
+---@param status EclStatus
+---@return GenericUI_Prefab_Status 
+function Status.Create(ui, id, parent, entity, status)
+
+---@param entity EclCharacter|EclItem
+---@param status EclStatus
+function Status:SetStatus(entity, status)
+
+</code></pre>
+<p></doc></p>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p><doc class="GenericUI" symbols="Listenable"></p>
+<pre><code class="language-lua">---@event Button_Pressed
+---@field RegisterListener fun(self, listener:fun(stringID:string))
+---@field Fire fun(self, stringID:string)
+
+---@event StateButton_StateChanged
+---@field RegisterListener fun(self, listener:fun(stringID:string, active:boolean))
+---@field Fire fun(self, stringID:string, active:boolean)
+
+---@event ViewportChanged
+---@field Width integer
+---@field Height integer
+
+</code></pre>
+<p></doc></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><doc class="GenericUI" symbols="Function"></p>
+<pre><code class="language-lua"></code></pre>
+<p></doc></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Elements/Element/" class="btn btn-neutral float-right" title="Element">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../Pointer/" class="btn btn-neutral" title="Pointer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../../Pointer/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Elements/Element/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../../../..';</script>
+    <script src="../../../../../js/theme_extra.js" defer></script>
+    <script src="../../../../../js/theme.js" defer></script>
+      <script src="../../../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

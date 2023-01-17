@@ -67,6 +67,24 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Generic UI</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/Generic/Introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Elements</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Element/">Element</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Button/">Button</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Color/">Color</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="#">Utilities</a>
@@ -202,12 +220,12 @@ function _TickTimer:TickDown(_)
 ---@return TimerLib_Entry|TimerLib_TickTimerEntry 
 function Timer.Start(id, seconds, handler, timerType)
 
----@overload fun(seconds:number, handler?:fun(ev:TimerLib_Event_TimerCompleted), id?:string):TimerLib_TickTimerEntry 
+---@overload fun(ticks:number, handler?:fun(ev:TimerLib_Event_TimerCompleted), id?:string):TimerLib_TickTimerEntry 
 ---@param id string?
----@param seconds number
+---@param ticks number
 ---@param handler fun(ev:TimerLib_Event_TimerCompleted)
 ---@return TimerLib_TickTimerEntry 
-function Timer.StartTickTimer(id, seconds, handler)
+function Timer.StartTickTimer(id, ticks, handler)
 
 ---Returns the timer with the passed string ID.
 ---@param stringID string

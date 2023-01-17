@@ -67,6 +67,24 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Generic UI</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/Generic/Introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Elements</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Element/">Element</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Button/">Button</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Color/">Color</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
@@ -135,14 +153,7 @@
                 <h1 id="text">Text<a class="headerlink" href="#text" title="Permanent link">&para;</a></h1>
 <p>The <code>Text</code> table offers utility methods for working with text and formatting tags.</p>
 <p><doc class="TextLib" symbols="Function"></p>
-<pre><code class="language-lua">---@param color uint64|RGBColor
----@param size number
----@param alpha number
----@param strength uint64
----@param unknown uint64
-function Text:SetStroke(color, size, alpha, strength, unknown)
-
----Returns a string representation of a number, rounded.
+<pre><code class="language-lua">---Returns a string representation of a number, rounded.
 ---@param value number
 ---@param decimals? integer Defaults to 0.
 ---@return string 
@@ -166,6 +177,7 @@ function Text.GenerateGUID(pattern)
 function Text.GenerateTranslatedStringHandle()
 
 ---Joins two strings together.
+---@overload fun(str:string[], separator:string?) 
 ---@param str1 string
 ---@param str2 string
 ---@param separator string? Defaults to ` `
@@ -206,7 +218,8 @@ function Text.Split_2(str, sep)
 function Text.Capitalize(str)
 
 ---Format a string.
----@param str string | TextFormatData
+---@overload fun(str:TextFormatData) 
+---@param str string
 ---@param formatData TextFormatData
 ---@return string 
 function Text.Format(str, formatData)
@@ -225,7 +238,7 @@ function Text.Dump(obj, opts)
 ---Returns the string bound to a TranslatedStringHandle, or a key.
 ---@param handle TranslatedStringHandle|string Accepts handles or keys.
 ---@param fallBack string?
----@return string Defaults to the handle, of fallBack if specified.
+---@return string -- Defaults to the handle, of fallBack if specified.
 function Text.GetTranslatedString(handle, fallBack)
 
 ---Registers a translated string, optionally binding a key to it.

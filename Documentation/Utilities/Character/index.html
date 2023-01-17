@@ -67,6 +67,24 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Generic UI</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/Generic/Introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Elements</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Element/">Element</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Button/">Button</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Color/">Color</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="#">Utilities</a>
@@ -183,6 +201,9 @@ function Character.GetCombatID(char)
 ---@return boolean 
 function Character.IsUnsheathed(char)
 
+---Returns whether char is currently the active character of any player.
+function Character.IsActive(char)
+
 ---Returns whether char has an owner.
 ---@param char Character
 ---@return boolean 
@@ -200,6 +221,12 @@ function Character.GetOwner(char)
 ---@return boolean 
 function Character.IsSkillInnate(char, skillID)
 
+---Returns wether char has a certain immunity.
+---@param char Character
+---@param immunityName StatsLib_ImmunityID
+function Character.HasImmunity(char, immunityName)
+
+---Returns the equipped items of char, per slot.
 ---@param char Character
 ---@return table&lt;ItemSlot, EclItem&gt;
 function Character.GetEquippedItems(char)
@@ -261,6 +288,12 @@ function Character.IsSummon(char)
 ---@param char Character
 ---@return boolean 
 function Character.IsDead(char)
+
+---Returns a status by handle.
+---@param char Character
+---@param handle EntityHandle
+---@return EclStatus|EsvStatus 
+function Character.GetStatusByHandle(char, handle)
 
 ---Returns the gender of char.
 ---@param char Character

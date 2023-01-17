@@ -75,6 +75,24 @@
     </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Generic UI</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../UI/Generic/Introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Elements</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../UI/Generic/Elements/Element/">Element</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../UI/Generic/Elements/Button/">Button</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../UI/Generic/Elements/Color/">Color</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../UI/Generic/Elements/ComboBox/">ComboBox</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
@@ -202,6 +220,10 @@ function Pointer.GetCurrentEntity(playerIndex)
 ---@return Vector3D 
 function Pointer.GetWalkablePosition(playerIndex)
 
+---@param playerIndex integer? Defaults to 1.
+---@return Vector3D 
+function Pointer.GetWorldPosition(playerIndex)
+
 </code></pre>
 <p></doc></p>
               
@@ -211,7 +233,7 @@ function Pointer.GetWalkablePosition(playerIndex)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../Utilities/Artifact/" class="btn btn-neutral float-right" title="Artifact">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../UI/Generic/Introduction/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../../../docs/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -243,7 +265,7 @@ function Pointer.GetWalkablePosition(playerIndex)
       <span><a href="../../../docs/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../Utilities/Artifact/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../UI/Generic/Introduction/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
