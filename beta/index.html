@@ -28,6 +28,16 @@
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'G-K2XG4QX6F3', 'pinewood.team/epip');
+      ga('send', 'pageview');
+  </script>
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -58,16 +68,6 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#4123-upload">4/1/23 upload:</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#1123-upload">1/1/23 upload:</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#301222-upload">30/12/22 upload:</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2211-upload">22/11 upload:</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3110-upload">31/10 upload:</a>
-    </li>
     </ul>
                     </li>
                 </ul>
@@ -169,15 +169,84 @@
 <pre><code class="language-json">{
     &quot;UpdateChannel&quot;: &quot;Devel&quot;,
     &quot;TargetVersion&quot;: &quot;58.0.0.0&quot;,
-    &quot;TargetResourceDigest&quot;: &quot;2e0bed670d2e172e14af13b4a6265dd341ef2fbe276f6bee8f8392de95e9fc8f&quot;,
+    &quot;TargetResourceDigest&quot;: &quot;a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f&quot;,
     &quot;Debug&quot;: true
 }
 </code></pre>
 <h1 id="v1064-beta">v1064 Beta<a class="headerlink" href="#v1064-beta" title="Permanent link">&para;</a></h1>
-<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 4/1/23</a>.</p>
+<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 1/2/23</a>.</p>
 <div class="admonition warning">
-<p class="admonition-title">Intended extender version: <code>2e0bed670d2e172e14af13b4a6265dd341ef2fbe276f6bee8f8392de95e9fc8f</code> (see instructions above)</p>
+<p class="admonition-title">Intended extender version: <code>a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f</code> (see instructions above)</p>
 </div>
+<h1 id="1223-upload">1/2/23 upload:<a class="headerlink" href="#1223-upload" title="Permanent link">&para;</a></h1>
+<ul>
+<li>
+<p>Added Russian translation by Cathe &amp; JoienReid</p>
+<ul>
+<li>Currently only spans the settings menu and some vanity features</li>
+<li>Since playing in non-English currently has certain issues with add-ons, a new setting has been added to display text from Epip in a language different than the game's.</li>
+</ul>
+</li>
+<li>
+<p>Added a B/H progress display to Quick Examine, showing health % accumulated towards the next stack</p>
+</li>
+<li>Enemy health bar now shows character level by the character name</li>
+<li>Level-up progress in character sheet is now shown with a percentage</li>
+<li>Added settings for disabling most of the tooltip adjustments Epip offers</li>
+<li>Surface tooltips should be more reliable</li>
+<li>Combat log improvements are now enabled by default</li>
+<li>Enemy health bar now uses a vanilla-ish appearance if EE is disabled (no fancy gargoyle boss frame)</li>
+<li>B/H indicators in player portraits are now only shown in combat (instead of when unsheathed) and are disabled if EE is disabled</li>
+<li>Disabled the save/load improvements during game over to fix a softlock (no known workaround)</li>
+<li>Removed support for vanity dyes from before v1063; items still using them will appear purple</li>
+<li>Fixed tooltips of player portraits and XP bar not working properly<ul>
+<li>Due to engine jank, these will not be affected by the delay settings</li>
+</ul>
+</li>
+<li>Fixed engine actions (attack, flee, etc.) being draggable to hotbar hotkeys</li>
+<li>Fixed some small visual bugs with the enemy health bar</li>
+</ul>
+<p>On the technical side:</p>
+<ul>
+<li>Moved various functionality from EnemyHealthBar to a feature (EnemyHealthBarExtraInfo)</li>
+<li>Fixed TextLib's Format() not accepting decimal text sizes</li>
+<li>Added a setting to simulate EE being disabled (applies to Epip scripts only)</li>
+<li>Removed checks for Improved Hotbar mod</li>
+<li>Added an event for statuses being applied to CharacterLib</li>
+<li>Added a feature to generate Osiris event annotations for lua<ul>
+<li>The IDE annotations folder in Epip has been updated to include them</li>
+<li>This might be expanded to support PROCs and QRYs later</li>
+</ul>
+</li>
+<li>Added an OOP library for working with classes<ul>
+<li>Feature now supports registering and fetching class tables in an elegant manner</li>
+</ul>
+</li>
+<li>Started splitting up Feature into 2 classes to fix interface segregation violation</li>
+<li>Fixed OsirisLib calls not working with 0 parameters</li>
+<li>Various script cleanups (mostly for Hotbar and EnemyHealthBar)</li>
+<li>Added TSKs for older settings</li>
+<li>Changed TSK integration in Feature: the keys are no longer required to be a handle; they can be any string, letting you index the TranslatedStrings table with auto-completion<ul>
+<li>TSK objects now have a GetString() method to resolve them</li>
+<li><code>TSK</code> table within Feature will be deprecated soon</li>
+</ul>
+</li>
+<li>Added a feature to play client-side effects upon hovering over entities</li>
+<li>Added libraries for EE-related mechanics (BatteredHarried, SourceInfusion), and moved relevant methods to them</li>
+<li>Fixed <code>Character.GetEquippedItems()</code> not returning the advertised type</li>
+<li>Added a DatabaseSync feature for synchronizing database contents to the client<ul>
+<li>Might be merged into the osiris library in the future</li>
+</ul>
+</li>
+<li>Added a UserVars library, with Feature integration</li>
+<li>Added support for function signatures without bodies to the doc generator, fixed subclasses not being detected properly</li>
+<li>Added methods related to drag-drop to PointerLib</li>
+<li>Generic:<ul>
+<li>Moved annotations to separate file, solving various IDE warnings</li>
+<li>Added support for tweening</li>
+</ul>
+</li>
+</ul>
 <h3 id="4123-upload">4/1/23 upload:<a class="headerlink" href="#4123-upload" title="Permanent link">&para;</a></h3>
 <p>Quick Examine improvements:</p>
 <ul>
@@ -388,6 +457,7 @@
     <script>var base_url = '..';</script>
     <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
+      <script src="../js/analytics.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
