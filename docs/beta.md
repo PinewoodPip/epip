@@ -7,15 +7,67 @@ You can get v58 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 {
 	"UpdateChannel": "Devel",
 	"TargetVersion": "58.0.0.0",
-	"TargetResourceDigest": "2e0bed670d2e172e14af13b4a6265dd341ef2fbe276f6bee8f8392de95e9fc8f",
+	"TargetResourceDigest": "a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f",
 	"Debug": true
 }
 ```
 
 # v1064 Beta
-[Latest upload, 4/1/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+[Latest upload, 1/2/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
 
-!!! Warning "Intended extender version: `2e0bed670d2e172e14af13b4a6265dd341ef2fbe276f6bee8f8392de95e9fc8f` (see instructions above)"
+!!! Warning "Intended extender version: `a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f` (see instructions above)"
+
+# 1/2/23 upload:
+
+- Added Russian translation by Cathe & JoienReid
+	- Currently only spans the settings menu and some vanity features
+	- Since playing in non-English currently has certain issues with add-ons, a new setting has been added to display text from Epip in a language different than the game's.
+
+- Added a B/H progress display to Quick Examine, showing health % accumulated towards the next stack
+- Enemy health bar now shows character level by the character name
+- Level-up progress in character sheet is now shown with a percentage
+- Added settings for disabling most of the tooltip adjustments Epip offers
+- Surface tooltips should be more reliable
+- Combat log improvements are now enabled by default
+- Enemy health bar now uses a vanilla-ish appearance if EE is disabled (no fancy gargoyle boss frame)
+- B/H indicators in player portraits are now only shown in combat (instead of when unsheathed) and are disabled if EE is disabled
+- Disabled the save/load improvements during game over to fix a softlock (no known workaround)
+- Removed support for vanity dyes from before v1063; items still using them will appear purple
+- Fixed tooltips of player portraits and XP bar not working properly
+	- Due to engine jank, these will not be affected by the delay settings
+- Fixed engine actions (attack, flee, etc.) being draggable to hotbar hotkeys
+- Fixed some small visual bugs with the enemy health bar
+
+On the technical side:
+
+- Moved various functionality from EnemyHealthBar to a feature (EnemyHealthBarExtraInfo)
+- Fixed TextLib's Format() not accepting decimal text sizes
+- Added a setting to simulate EE being disabled (applies to Epip scripts only)
+- Removed checks for Improved Hotbar mod
+- Added an event for statuses being applied to CharacterLib
+- Added a feature to generate Osiris event annotations for lua
+	- The IDE annotations folder in Epip has been updated to include them
+	- This might be expanded to support PROCs and QRYs later
+- Added an OOP library for working with classes
+	- Feature now supports registering and fetching class tables in an elegant manner
+- Started splitting up Feature into 2 classes to fix interface segregation violation
+- Fixed OsirisLib calls not working with 0 parameters
+- Various script cleanups (mostly for Hotbar and EnemyHealthBar)
+- Added TSKs for older settings
+- Changed TSK integration in Feature: the keys are no longer required to be a handle; they can be any string, letting you index the TranslatedStrings table with auto-completion
+	- TSK objects now have a GetString() method to resolve them
+	- `TSK` table within Feature will be deprecated soon
+- Added a feature to play client-side effects upon hovering over entities
+- Added libraries for EE-related mechanics (BatteredHarried, SourceInfusion), and moved relevant methods to them
+- Fixed `Character.GetEquippedItems()` not returning the advertised type
+- Added a DatabaseSync feature for synchronizing database contents to the client
+	- Might be merged into the osiris library in the future
+- Added a UserVars library, with Feature integration
+- Added support for function signatures without bodies to the doc generator, fixed subclasses not being detected properly
+- Added methods related to drag-drop to PointerLib
+- Generic:
+	- Moved annotations to separate file, solving various IDE warnings
+	- Added support for tweening
 
 ### 4/1/23 upload:
 
