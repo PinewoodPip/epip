@@ -174,10 +174,39 @@
 }
 </code></pre>
 <h1 id="v1064-beta">v1064 Beta<a class="headerlink" href="#v1064-beta" title="Permanent link">&para;</a></h1>
-<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 1/2/23</a>.</p>
+<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 5/2/23</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Intended extender version: <code>a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f</code> (see instructions above)</p>
 </div>
+<h1 id="5223-upload">5/2/23 upload:<a class="headerlink" href="#5223-upload" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Added a new UI that shows a filtered view of the party inventory<ul>
+<li>Opened with Ctrl+F by default (configurable in input menu)</li>
+<li>Can filter equipment by slot, consumables by scrolls/grenades/potions, and skillbooks by school</li>
+<li>Equipment can be searched by their stat boosts (supports only vanilla modifiers for now)</li>
+<li>Right-click an equipped item to open the UI with filters set to that item's slot, to quickly replace gear</li>
+</ul>
+</li>
+<li>Clicking a status on a player portrait or Quick Examine will now center the camera on the status's source (if any)</li>
+<li>Added more strings to translate, many of them already translated to Russian</li>
+<li>"Copy identifier" keybind no longer copies template GUID</li>
+<li>Fixed "Extract Runes" not working in Extender v58</li>
+<li>Fixed some small visual issues with custom item slots in UIs</li>
+<li>Fixed some console log spam</li>
+</ul>
+<p>On the technical side:</p>
+<ul>
+<li>Fixed Stats.MeetsRequirements() not working with attribute requirements</li>
+<li>Added <code>ShowItemTooltip()</code> to Tooltip lib</li>
+<li>Generic:<ul>
+<li>The HotbarSlot prefab is a now more general-purpose inventory-like slot, showing rarity, rune slots, and with options to block drag-and-drop</li>
+<li>Fixed culling issues with IggyIcon</li>
+<li>Added support for scrollRects</li>
+<li>ComboBox events now throw their option ID instead of just index</li>
+<li>Added SetChildIndex()</li>
+</ul>
+</li>
+</ul>
 <h1 id="1223-upload">1/2/23 upload:<a class="headerlink" href="#1223-upload" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
