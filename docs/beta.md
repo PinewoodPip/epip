@@ -13,9 +13,34 @@ You can get v58 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 ```
 
 # v1064 Beta
-[Latest upload, 1/2/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+[Latest upload, 5/2/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
 
 !!! Warning "Intended extender version: `a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f` (see instructions above)"
+
+# 5/2/23 upload:
+
+- Added a new UI that shows a filtered view of the party inventory
+	- Opened with Ctrl+F by default (configurable in input menu)
+	- Can filter equipment by slot, consumables by scrolls/grenades/potions, and skillbooks by school
+	- Equipment can be searched by their stat boosts (supports only vanilla modifiers for now)
+	- Right-click an equipped item to open the UI with filters set to that item's slot, to quickly replace gear
+- Clicking a status on a player portrait or Quick Examine will now center the camera on the status's source (if any)
+- Added more strings to translate, many of them already translated to Russian
+- "Copy identifier" keybind no longer copies template GUID
+- Fixed "Extract Runes" not working in Extender v58
+- Fixed some small visual issues with custom item slots in UIs
+- Fixed some console log spam
+
+On the technical side:
+
+- Fixed Stats.MeetsRequirements() not working with attribute requirements
+- Added `ShowItemTooltip()` to Tooltip lib
+- Generic:
+	- The HotbarSlot prefab is a now more general-purpose inventory-like slot, showing rarity, rune slots, and with options to block drag-and-drop
+	- Fixed culling issues with IggyIcon
+	- Added support for scrollRects
+	- ComboBox events now throw their option ID instead of just index
+	- Added SetChildIndex()
 
 # 1/2/23 upload:
 
