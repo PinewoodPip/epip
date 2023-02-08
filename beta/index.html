@@ -174,10 +174,37 @@
 }
 </code></pre>
 <h1 id="v1064-beta">v1064 Beta<a class="headerlink" href="#v1064-beta" title="Permanent link">&para;</a></h1>
-<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 5/2/23</a>.</p>
+<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing">Latest upload, 8/2/23</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Intended extender version: <code>a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f</code> (see instructions above)</p>
 </div>
+<h1 id="8223-upload">8/2/23 upload:<a class="headerlink" href="#8223-upload" title="Permanent link">&para;</a></h1>
+<ul>
+<li>You can now drag + drop items onto the Greatforge socket</li>
+<li>
+<p>"Status effects" in the vanilla examine UI is now capitalized, for consistency with the rest of the headers</p>
+</li>
+<li>
+<p>Began removing gameplay changes from original versions of Epip. Since the focus of the mod has changed over to UI and QoL, gameplay changes no longer make sense within the project, and impede it from being used without EE.</p>
+<ul>
+<li>Removed changes to Battle Stomp, Bless, Circle of Protection, Escapist, Siphon Poison, Summon Soul Wolf, Wolf Howl, Break the Shackles</li>
+<li>Removed changes to Elementalist damage</li>
+<li>Removed changes to Leper</li>
+<li>Reverted stat changes to Boneshaped Crusher and Soul Wolf</li>
+<li>Removed Sight and Hearing FlexStat entries</li>
+</ul>
+</li>
+<li>
+<p>Fixed hit chance not displaying when hovering over characters in combat</p>
+</li>
+<li>Fixed some items being grayed out in hotbar groups</li>
+</ul>
+<p>On the technical side:</p>
+<ul>
+<li>Removed swf overrides for <code>textDisplay</code> and <code>notification</code> UIs, as well as cleaned up their respective lua scripts</li>
+<li>Fixed error messages from using keys the game doesn't support (ex. media keys)</li>
+<li>Added annotations for basic stats objects</li>
+</ul>
 <h1 id="5223-upload">5/2/23 upload:<a class="headerlink" href="#5223-upload" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Added a new UI that shows a filtered view of the party inventory<ul>
