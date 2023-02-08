@@ -13,9 +13,30 @@ You can get v58 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 ```
 
 # v1064 Beta
-[Latest upload, 5/2/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+[Latest upload, 8/2/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
 
 !!! Warning "Intended extender version: `a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f` (see instructions above)"
+
+# 8/2/23 upload:
+
+- You can now drag + drop items onto the Greatforge socket
+- "Status effects" in the vanilla examine UI is now capitalized, for consistency with the rest of the headers
+
+- Began removing gameplay changes from original versions of Epip. Since the focus of the mod has changed over to UI and QoL, gameplay changes no longer make sense within the project, and impede it from being used without EE.
+	- Removed changes to Battle Stomp, Bless, Circle of Protection, Escapist, Siphon Poison, Summon Soul Wolf, Wolf Howl, Break the Shackles
+	- Removed changes to Elementalist damage
+	- Removed changes to Leper
+	- Reverted stat changes to Boneshaped Crusher and Soul Wolf
+	- Removed Sight and Hearing FlexStat entries
+
+- Fixed hit chance not displaying when hovering over characters in combat
+- Fixed some items being grayed out in hotbar groups
+
+On the technical side:
+
+- Removed swf overrides for `textDisplay` and `notification` UIs, as well as cleaned up their respective lua scripts
+- Fixed error messages from using keys the game doesn't support (ex. media keys)
+- Added annotations for basic stats objects
 
 # 5/2/23 upload:
 
