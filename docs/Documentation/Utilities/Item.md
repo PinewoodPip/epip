@@ -46,6 +46,12 @@ function _Rune:GetStatsObject()
 ---@return boolean 
 function Item.IsArtifact(item)
 
+---Returns whether an item is of Unique rarity.
+---Returns `true` for Artifact items.
+---@param item Item
+---@return boolean 
+function Item.IsUnique(item)
+
 ---Returns whether the item is a rune.
 ---@param item Item
 ---@return boolean 
@@ -83,6 +89,12 @@ function Item.HasUseAction(item, useActionID)
 ---@param item Item
 ---@return boolean 
 function Item.HasUseActions(item)
+
+---Returns the use actions of an item, optionally filtered by type.
+---@param item Item
+---@param actionType ActionDataType
+---@return IActionData[] 
+function Item.GetUseActions(item, actionType)
 
 ---Returns the current owner of the item.
 ---The owner will be nil if the character who owned the item died.
@@ -155,11 +167,15 @@ function Item.IsDyeable(item)
 ---@return ItemSlot 
 function Item.GetItemSlot(item)
 
---- Like ItemSlot, but distinguishes armor subtypes  
---- Get subtype of item (ex. "Dagger" or "Platemail").  
---- Returns ItemSlot for items with no subtypes
+---@param char Character
+---@param slot ItemSlot
+---@return Item? 
+function Item.GetEquippedItem(char, slot)
+
+---Returns the subtype of item (ex. "Knife" or "Platemail").  
+---Returns ItemSlot for items with no subtypes.
 ---@param item Item
----@return EquipmentSubType 
+---@return ItemLib_EquipmentType|ItemSlot 
 function Item.GetEquipmentSubtype(item)
 
 --- Applies a dye to the item.
@@ -197,21 +213,52 @@ function Item.GetEquippedSlot(item, char)
 ---@return number 
 function Item.CountItemsInInventory(entity, predicate)
 
+---Returns the items contained within a container item, optionally filtered by predicate.
+---@param container Item
+---@param predicate (fun(item:Item):boolean)? The predicate should return `true` for items to be included. If `nil`, all items will be included.
+---@return Item[] 
+function Item.GetContainedItems(container, predicate)
+
 --- Gets the stats object of the rune inserted at rune index ``index`` on item.
 ---@param item Item
----@param index number
+---@param index integer **0-based.**
 ---@return StatItem 
 function Item.GetRune(item, index)
 
 --- Returns a list of runes on the item.
 ---@param item Item
----@return table<number, StatItem> Empty slots are nil.
+---@return table<number, StatItem> --Empty slots are nil.
 function Item.GetRunes(item)
+
+---Returns the amount of rune slots an item has.
+---@param item Item
+---@return integer 
+function Item.GetRuneSlots(item)
+
+---Returns the icon displaying the state of item's rune slots.
+---@param item Item
+---@return icon 
+function Item.GetRuneSlotsIcon(item)
 
 --- Returns true if item has any runes slotted.
 ---@param item Item
 ---@return boolean 
 function Item.HasRunes(item)
+
+---Returns the level of an item.
+---@param item Item
+---@return integer? --`nil` if the item has no stats.
+function Item.GetLevel(item)
+
+---Returns the icon frame for a rarity, if any.
+---@param rarity ItemLib_Rarity|EclItem
+---@return icon? --Not all rarities have icons.
+function Item.GetRarityIcon(rarity)
+
+---Returns whether an item is marked as wares.
+---@param item Item
+---@return boolean 
+function Item.IsMarkedAsWares(item)
 
 --- Returns a list of the items in the entity's inventory that match an optional predicate function.  
 --- Predicate is passed the EclItem/EsvItem and should return true for items to be included.

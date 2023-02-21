@@ -65,12 +65,12 @@ function _TickTimer:TickDown(_)
 ---@return TimerLib_Entry|TimerLib_TickTimerEntry 
 function Timer.Start(id, seconds, handler, timerType)
 
----@overload fun(seconds:number, handler?:fun(ev:TimerLib_Event_TimerCompleted), id?:string):TimerLib_TickTimerEntry 
+---@overload fun(ticks:number, handler?:fun(ev:TimerLib_Event_TimerCompleted), id?:string):TimerLib_TickTimerEntry 
 ---@param id string?
----@param seconds number
+---@param ticks number
 ---@param handler fun(ev:TimerLib_Event_TimerCompleted)
 ---@return TimerLib_TickTimerEntry 
-function Timer.StartTickTimer(id, seconds, handler)
+function Timer.StartTickTimer(id, ticks, handler)
 
 ---Returns the timer with the passed string ID.
 ---@param stringID string

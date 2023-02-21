@@ -106,7 +106,7 @@ function Color.CreateFromHex(hex)
 
 ---Clones a color instance.
 ---@param color RGBColor
----@return RGBColor New instance with same values.
+---@return RGBColor -- New instance with same values.
 function Color.Clone(color)
 
 ```

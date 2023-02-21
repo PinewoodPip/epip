@@ -39,5 +39,9 @@ function Mod.GetLoadOrder()
 ---@return integer?, integer?, integer?, integer? --Major, minor, revision, build version. Fails if the mod is not loaded.
 function Mod.GetStoryVersion(guid)
 
+---Returns the context the caller script is running in.
+---@return "Client"|"Server" 
+function Mod.GetCurrentContext()
+
 ```
 </doc>

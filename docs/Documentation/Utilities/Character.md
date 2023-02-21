@@ -6,6 +6,12 @@ The `Character` library contains utility methods relating to characters. The vas
 <doc class="CharacterLib" symbols="Listenable">
 
 ```lua
+---TODO move somewhere else, since victim could be an item
+---@event StatusApplied
+---@field SourceHandle EntityHandle
+---@field Victim Character|Item
+---@field Status EclStatus|EsvStatus
+
 ---Wrapper for Ext.Events.CreateEquipmentVisualsRequest.
 ---@hook CreateEquipmentVisuals
 ---@field Character EclCharacter
@@ -21,17 +27,17 @@ The `Character` library contains utility methods relating to characters. The vas
 <doc class="CharacterLib" symbols="Function">
 
 ```lua
----Returns the current stacks on char, as well as lifetime. Queries the related status effects.
----@param char Character
----@param type StackType
----@return number,number Stack count, duration left (as seconds)
-function Character.GetStacks(char, type) -- EE
-
 ---Returns whether char has a skill memorized. Returns true for innate skills.
 ---@param char Character
 ---@param skillID string
 ---@return boolean 
 function Character.IsSkillMemorized(char, skillID)
+
+---Returns whether char has a skill learnt. Returns true for innate skills.
+---@param char Character
+---@param skillID string
+---@return boolean 
+function Character.IsSkillLearnt(char, skillID)
 
 ---Returns the combat ID and team ID of char, if any.
 ---@param char Character
@@ -42,6 +48,9 @@ function Character.GetCombatID(char)
 ---@param char Character
 ---@return boolean 
 function Character.IsUnsheathed(char)
+
+---Returns whether char is currently the active character of any player.
+function Character.IsActive(char)
 
 ---Returns whether char has an owner.
 ---@param char Character
@@ -60,6 +69,12 @@ function Character.GetOwner(char)
 ---@return boolean 
 function Character.IsSkillInnate(char, skillID)
 
+---Returns wether char has a certain immunity.
+---@param char Character
+---@param immunityName StatsLib_ImmunityID
+function Character.HasImmunity(char, immunityName)
+
+---Returns the equipped items of char, per slot.
 ---@param char Character
 ---@return table<ItemSlot, EclItem>
 function Character.GetEquippedItems(char)
@@ -76,6 +91,18 @@ function Character.GetMaxCarryWeight(char)
 ---@param char Character
 ---@return integer, integer --Current, maximum
 function Character.GetActionPoints(char)
+
+---Returns the initiative of char.
+---@param char Character
+---@return integer 
+function Character.GetInitiative(char)
+
+---Returns the computed resistance value of char.
+---@param char Character
+---@param damageType StatsDamageType
+---@param baseValuesOnly boolean? If `true`, base value will be returned. Defaults to `false`.
+---@return integer 
+function Character.GetResistance(char, damageType, baseValuesOnly)
 
 ---@param identifier GUID|PrefixedGUID|NetId|EntityHandle
 ---@param isFlashHandle boolean? If true, the identifier will be passed through DoubleToHandle() first.
@@ -96,22 +123,6 @@ function Character.IsUnpreferredByAI(char)
 ---@return boolean 
 function Character.IsIgnoredByAI(char)
 
----Get the infusion level that char is currently preparing (how many times they've cast Source Infuse).
----@param char Character
----@return number Infusion count.
-function Character.GetPreparedInfusionLevel(char) -- EE
-
----Returns true if char is preparing a Source Infusion.
----@param char Character
----@return boolean 
-function Character.IsPreparingInfusion(char) -- EE
-
----Get the stack amount this character needs to apply a T3 to someone else.
----**This only takes into account the bonus from infusing!**
----@param char Character
----@return number Stacks needed
-function Character.GetStacksNeededToInflictTier3(char) -- EE
-
 ---Returns true if char is a summon.
 ---@param char Character
 ---@return boolean 
@@ -121,6 +132,12 @@ function Character.IsSummon(char)
 ---@param char Character
 ---@return boolean 
 function Character.IsDead(char)
+
+---Returns a status by handle.
+---@param char Character
+---@param handle EntityHandle
+---@return EclStatus|EsvStatus 
+function Character.GetStatusByHandle(char, handle)
 
 ---Returns the gender of char.
 ---@param char Character
@@ -204,6 +221,34 @@ function Character.IsDisarmed(char)
 ---@param ability string Needs to be a property indexable in char.Stats
 ---@return integer 
 function Character.GetHighestPartyAbility(char, ability)
+
+---Returns the level of char.
+---@param char Character
+---@return integer 
+function Character.GetLevel(char)
+
+---Returns the current experience points of char.
+---@param char Character
+---@return integer 
+function Character.GetExperience(char)
+
+---Returns the **cumulative** experience required to reach a level.
+---@param targetLevel integer
+---@return integer --Experience points.
+function Character.GetExperienceRequiredForLevel(targetLevel)
+
+---Returns the contents of a character's skillbar row's.
+---@param char Character Must be a player.
+---@param row integer
+---@param slotsPerRow integer? Defaults to 29.
+---@return EocSkillBarItem[] 
+function Character.GetSkillBarRowContents(char, row, slotsPerRow)
+
+---Returns a status on char by its net ID.
+---@param char Character
+---@param netID NetId
+---@return EclStatus|EsvStatus 
+function Character.GetStatusByNetID(char, netID)
 
 ---Returns a list of party members of char's party. Char must be a player.
 ---Depends on PlayerInfo.

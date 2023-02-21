@@ -38,6 +38,9 @@ Its events are helpful for initialization purposes. `ClientReady`, for example, 
 ---@field CharacterNetID NetId
 ---@field ProfileGUID GUID
 
+---@event RegionStarted
+---@field LevelID string
+
 ```
 <doc class="GameStateLib" symbols="Function">
 
@@ -46,7 +49,17 @@ Its events are helpful for initialization purposes. `ClientReady`, for example, 
 ---@return boolean 
 function GameState.IsInSession()
 
+---Returns whether the game is within a loading-related state.
+---@return boolean 
 function GameState.IsLoading()
+
+---Returns whether the game is in a main menu-related state.
+---@return boolean 
+function GameState.IsInMainMenu()
+
+---Returns whether the game state is within a running session (not paused)
+---@return boolean 
+function GameState.IsInRunningSession()
 
 ---@return boolean 
 function GameState.IsPaused()

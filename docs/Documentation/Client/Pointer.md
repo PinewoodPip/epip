@@ -65,5 +65,29 @@ function Pointer.GetCurrentEntity(playerIndex)
 ---@return Vector3D 
 function Pointer.GetWalkablePosition(playerIndex)
 
+---@param playerIndex integer? Defaults to 1.
+---@return Vector3D 
+function Pointer.GetWorldPosition(playerIndex)
+
+---Returns the drag-drop system state for a player.
+---@param playerIndex integer? Defaults to 1.
+---@return DragDropManagerPlayerDragInfo 
+function Pointer.GetDragDropState(playerIndex)
+
+---Returns the skill being dragged by a player.
+---@param playerIndex integer? Defaults to 1.
+---@return string? --Can be an action as well.
+function Pointer.GetDraggedSkill(playerIndex)
+
+---Returns the item being dragged by a player.
+---@param playerIndex integer? Defaults to 1.
+---@return EclItem? 
+function Pointer.GetDraggedItem(playerIndex)
+
+---Returns whether the player's cursor is dragging anything.
+---@param playerIndex integer? Defaults to 1.
+---@return boolean 
+function Pointer.IsDragging(playerIndex)
+
 ```
 </doc>

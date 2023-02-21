@@ -23,7 +23,7 @@ In Epip, their primary use is semantic clarity for functions that require 2D coo
 ---@class Vector
 ---@field Arity integer Getter. Equivalent to #self.
 ---@field Length number Getter. Equivalent to Vector.GetLength()
----@field unpack fun(self:Vector):... Equivalent to table.unpack(self)
+---@field unpack fun(self:Vector):...number Equivalent to table.unpack(self)
 
 ```
 </doc>
@@ -73,6 +73,12 @@ function Vector.Subtract(v1, v2)
 ---@param v Vector
 ---@return Vector 
 function Vector.Negate(v)
+
+---Returns whether 2 vectors are equal.
+---Vectors are equal if they have the same arity and components.
+---@param v1 Vector
+---@param v2 Vector
+function Vector.AreEqual(v1, v2)
 
 ---@param vector Vector
 ---@return Vector 

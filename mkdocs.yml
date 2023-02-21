@@ -22,6 +22,13 @@ nav:
     - "Introduction": "docs.md"
     - "Client":
       - "Pointer": "Documentation/Client/Pointer.md"
+      - Generic UI:
+        - Introduction: "Documentation/Client/UI/Generic/Introduction.md"
+        - Elements:
+          - Element: "Documentation/Client/UI/Generic/Elements/Element.md"
+          - Button: "Documentation/Client/UI/Generic/Elements/Button.md"
+          - Color: "Documentation/Client/UI/Generic/Elements/Color.md"
+          - ComboBox: "Documentation/Client/UI/Generic/Elements/ComboBox.md"
     - "Utilities":
       - "Artifact": "Documentation/Utilities/Artifact.md"
       - "Character": "Documentation/Utilities/Character.md"

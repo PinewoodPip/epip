@@ -16,29 +16,9 @@ Additionally, for purposes of semantic clarity, a `NetMessage` class exists for 
 
 ## Classes
 
+TODO
+<doc class="NetLib" symbols="_SubClasses">
 
-<doc class="Net" symbols="_SubClasses">
-
-```lua
----@class Net_SimpleMessage_Character
----@field CharacterNetID NetId
-
-```
-```lua
----@class Net_SimpleMessage_Item
----@field ItemNetID NetId
-
-```
-```lua
----@class Net_SimpleMessage_NetID
----@field NetID NetId
-
-```
-```lua
----@class Net_SimpleMessage_State
----@field State boolean
-
-```
 </doc>
 
 ## Events
@@ -71,7 +51,7 @@ function Net.PostToServer(channel, message)
 function Net.Broadcast(channel, message, excludedChar)
 
 ---Sends a message to the user that currently controls char. Fails if char is a summon.
----@param char Character
+---@param char Character|GUID|NetId
 ---@param channel `T`
 ---@param message T?
 function Net.PostToCharacter(char, channel, message)
