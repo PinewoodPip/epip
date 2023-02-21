@@ -58,3 +58,7 @@ nav:
   - Tutorials:
     # - "Lua": "Tutorials/Lua/index.md"
     - "Testing": "Tutorials/testing.md"
+  - Maintenance:
+    - "Index": "Maintenance/index.md"
+    - "Localization": "Maintenance/localization.md"
+    - "Documentation": "Maintenance/documentation.md"
