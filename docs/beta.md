@@ -7,15 +7,50 @@ You can get v58 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 {
 	"UpdateChannel": "Devel",
 	"TargetVersion": "58.0.0.0",
-	"TargetResourceDigest": "a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f",
+	"TargetResourceDigest": "865944034be3219ff36f1632fc0ae610234be8519cb17c88a9c7f8c2e5d7a62c",
 	"Debug": true
 }
 ```
 
 # v1064 Beta
-[Latest upload, 8/2/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
+[Latest upload, 26/2/23](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=sharing).
 
-!!! Warning "Intended extender version: `a52bd85bbed270ea7fb6cc039ae4b2d6e7859e2ded88f254381995af462a069f` (see instructions above)"
+!!! Warning "Intended extender version: `865944034be3219ff36f1632fc0ae610234be8519cb17c88a9c7f8c2e5d7a62c` (see instructions above)"
+
+# 26/2/23 upload:
+
+- Reworked the settings menu to be more easily expandable and changed the appearance of settings
+	- Tabs with a large amount of options (ex. Epic Enemies) might suffer stutters while opening them, similar to Quick Inventory. This is an issue with the UI framework that will be investigated later.
+- Added an armor type filter to Quick Inventory (for filtering robes/leather/plate armor)
+- Added a setting that controls how character level is displayed in the health bar; defaults to the old behaviour (below bar, when holding shift). Includes the option to hide the level entirely.
+- Reworked the "show minimap" setting; should be more reliable now
+- Added a setting to blacklist skills from being cancelled when using the "animation cancelling" feature
+	- A more user-friendly way of adding entries will be added in a future version
+
+Fixes:
+
+- Fixed custom hotbar/skill slots not showing cooldown
+- Fixed a bug that affected numerous features that used Osiris databases
+- Fixed "immersive meditation" and other EE UI features not working for characters that have been transformed
+- Fixed "release mouse to greatforge" text not disappearing when moving an item from the world onto a UI while within the socket screen
+- Fixed "quick swap" context menu option appearing on items that are not equipped
+- Fixed unique items being dismantle-able with "mass dismantle"
+- Fixed item context menus being misreported as character menus if you hovered over a character recently
+	- Possibly fixes the issue of options like "mass dismantle" not appearing
+- Fixed developer-only settings being visible outside of developer mode
+
+On the technical side:
+
+- Added `AMER_Loot_CallistoAnomaly` icon - special thanks to Elric
+- Fixed UserVars not synchronizing
+- Fixed `GameState.IsLoading()` not working
+- Various changes to annotations
+- Features can now declare which game states they should be enabled with, which will cause `:IsEnabled()` to return `false` under unsupported states
+- Rewrote `Osiris` table. Tuples returned from DB queries are now an object and it's possible to distinguish DBs/QRYs with the same name but different arity
+- Rewrote `Item.GetEquipmentSubtype()` to be a lot more reliable, and fixed it failing to identify clubs
+- Generic: added the Texture element
+- Generic: added more prefabs for "form elements", and added inheritance to them
+- Unsubscribing event listeners with an ID that is not subscribed no longer triggers a warning
 
 # 8/2/23 upload:
 
