@@ -28,16 +28,6 @@
   <script src="../../../../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'G-K2XG4QX6F3', 'pinewood.team/epip');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -139,6 +129,15 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../../../../Tutorials/testing/">Testing</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Maintenance</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../Maintenance/">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../Maintenance/localization/">Localization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../../../Maintenance/documentation/">Documentation</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -213,6 +212,9 @@
 ---@return GenericUI_Element? 
 function _Instance:GetElementByID(id)
 
+---@param element GenericUI_Element
+function _Instance:DestroyElement(element)
+
 ---@param id string
 ---@return FlashMovieClip? 
 function _Instance:GetMovieClipByID(id)
@@ -238,6 +240,8 @@ function Prefab:CreateElement(id, elementType, parent)
 function Prefab:PrefixID(id)
 
 function Prefab:GetMainElement()
+
+function Prefab:Destroy()
 
 </code></pre>
 <pre><code class="language-lua">---@class GenericUI_ContainerElement
@@ -292,6 +296,8 @@ function _Element:SetAlpha(alpha, affectChildren)
 ---@param degrees number
 function _Element:SetRotation(degrees)
 
+function _Element:Destroy()
+
 ---@param eventType string
 ---@param handler function
 function _Element:RegisterListener(eventType, handler)
@@ -302,15 +308,65 @@ function _Element:GetPosition()
 ---@param visible boolean
 function _Element:SetVisible(visible)
 
+---@param tween GenericUI_ElementTween
+function _Element:Tween(tween)
+
 ---Sets the size override, used to override the element size within list-like elements.
 ---@overload fun(self:GenericUI_Element, size:Vector2) 
 ---@param width number
 ---@param height number
 function _Element:SetSizeOverride(width, height)
 
+---Sets the scroll rect of the element.
+---@param position Vector2
+---@param size Vector2
+function _Element:SetScrollRect(position, size)
+
+---Removes the scroll rect from the element, if any.
+function _Element:RemoveScrollRect()
+
+---Sets the Z-order index of a child element.
+---@param child string|GenericUI_Element
+---@param index integer
+function _Element:SetChildIndex(child, index)
+
+---Returns the calculated width of the element.
+---@return number 
+function _Element:GetWidth()
+
+---Returns the calculated height of the element.
+---@return number 
+function _Element:GetHeight()
+
+---Sets the scale of the element.
+---@param scale Vector2
+function _Element:SetScale(scale)
+
+---Returns the scale of the element.
+---@return Vector2 
+function _Element:GetScale()
+
+---Sets the tooltip of the element.
+---@param tooltipType TooltipLib_TooltipType
+---@param tooltip any TODO document
+function _Element:SetTooltip(tooltipType, tooltip)
+
 </code></pre>
-<pre><code class="language-lua">---@class GenericUI_ElementTooltip
+<pre><code class="language-lua">---TODO!
+---@class GenericUI_ElementTooltip
 ---@field Type TooltipLib_TooltipType
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_ElementTween
+---@field EventID string
+---@field Duration number
+---@field Type &quot;To&quot;
+---@field StartingValues table&lt;string, any&gt; Maps property to starting value.
+---@field FinalValues table&lt;string, any&gt; Maps property to final value.
+---@field Function &quot;Linear&quot;|&quot;Quadratic&quot;|&quot;Cubic&quot;|&quot;Quartic&quot;|&quot;Sine&quot;|&quot;Elastic&quot;
+---@field Ease &quot;EaseNone&quot;|&quot;EaseIn&quot;|&quot;EaseOut&quot;|&quot;EaseInOut&quot;
+---@field Delay number? Defaults to 0 seconds.
+---@field OnComplete fun(ev:GenericUI_Element_Event_TweenCompleted)? Shorthand for registering a TweenCompleted listener. Will run only once, then be unsubscribed.
 
 </code></pre>
 <pre><code class="language-lua">---@class GenericUI_Element_Empty
@@ -361,6 +417,14 @@ function Text:SetRestrictedCharacters(restriction)
 ---@param strength uint64
 ---@param unknown uint64
 function Text:SetStroke(color, size, alpha, strength, unknown)
+
+---Returns the size of the text itself.
+---@return Vector2 
+function Text:GetTextSize()
+
+---Sets whether text should wrap once it reaches the edge of the element's size.
+---@param wrap boolean
+function Text:SetWordWrap(wrap)
 
 </code></pre>
 <pre><code class="language-lua">---@class GenericUI_Element_IggyIcon
@@ -419,6 +483,11 @@ function VerticalList:SetElementSpacing(spacing)
 ---Sets a padding for the left side of the container.
 ---@param spacing number
 function VerticalList:SetSideSpacing(spacing)
+
+---Sets whether all elements within the list should be repositioned after adding a new one.
+---Default behaviour is to do so; disabling it offers far better performance when bulk-adding elements.
+---@param reposition boolean
+function VerticalList:SetRepositionAfterAdding(reposition)
 
 ---@class GenericUI_Element_VerticalList
 
@@ -526,6 +595,14 @@ function Slot:SetHighlighted(highlighted)
 ---@return number 
 function Slider:GetValue()
 
+---Sets the value of the slider.
+---@param value number
+function Slider:SetValue(value)
+
+---Sets whether the slider should use notches and snap to them.
+---@param useNotches boolean Default behaviour is `false`.
+function Slider:SetUseNotches(useNotches)
+
 ---Sets the minimum value accepted by the slider.
 ---@param min number
 function Slider:SetMin(min)
@@ -534,13 +611,12 @@ function Slider:SetMin(min)
 ---@param max number
 function Slider:SetMax(max)
 
+---Sets the step interval of the slider.
+---@param step number
+function Slider:SetStep(step)
+
 </code></pre>
 <pre><code class="language-lua">---@class GenericUI_Element_ComboBox
-
----Adds an option to the combobox.
----@param id string
----@param label string
-function ComboBox:AddOption(id, label)
 
 ---Sets the currently selected option.
 ---@param id string
@@ -555,11 +631,17 @@ function ComboBox:ClearOptions()
 function ComboBox:SetOpenUpwards(openUpwards)
 
 ---@class GenericUI_Element_ComboBox
+---@field _Options GenericUI_Element_ComboBox_Option[]
 ---@field Events GenericUI_Element_ComboBox_Events
 
 ---Sets the options for the combobox. Equivalent to calling `ClearOptions()` then `AddOption()` for each option in the list passed.
 ---@param options GenericUI_Element_ComboBox_Option[]
 function ComboBox:SetOptions(options)
+
+---Adds an option to the combobox.
+---@param id string
+---@param label string
+function ComboBox:AddOption(id, label)
 
 </code></pre>
 <pre><code class="language-lua">---Represents an option in the combobox.
@@ -575,7 +657,17 @@ function ComboBox:SetOptions(options)
 ---@param rows integer Set to -1 for infinite.
 function Grid:SetGridSize(columns, rows)
 
+---Sets whether all elements within the list should be repositioned after adding a new one.
+---Default behaviour is to do so; disabling it offers far better performance when bulk-adding elements.
+---@param reposition boolean
+function Grid:SetRepositionAfterAdding(reposition)
+
 ---@class GenericUI_Element_Grid
+
+---Sets the spacing between elements.
+---@param row number
+---@param column number
+function Grid:SetElementSpacing(row, column)
 
 </code></pre>
 <pre><code class="language-lua">---@class GenericUI_Element_Color
@@ -587,7 +679,25 @@ function Grid:SetGridSize(columns, rows)
 function Color:SetColor(color)
 
 </code></pre>
+<pre><code class="language-lua">---@class GenericUI_Element_Texture
+
+---@class GenericUI_Element_Texture
+
+---Sets the texture resource used.
+---@param guid GUID
+---@param size Vector2? Defaults to native size of the texture resource.
+function Texture:SetTexture(guid, size)
+
+</code></pre>
 <pre><code class="language-lua">---@class GenericUI_Prefab_HotbarSlot
+---@field SlotIcon GenericUI_Element_IggyIcon
+---@field RarityIcon GenericUI_Element_IggyIcon
+---@field RuneSlotsIcon GenericUI_Element_IggyIcon
+---@field _CanDrag boolean
+---@field _CanDrop boolean
+---@field _ClearAfterDrag boolean
+---@field _AutoUpdateDelay number In seconds.
+---@field _AutoUpdateRemainingDelay number In seconds.
 
 ---@param ui GenericUI_Instance
 ---@param id string
@@ -604,10 +714,60 @@ function Slot:SetSkill(skillID)
 ---@param item EclItem
 function Slot:SetItem(item)
 
+---Sets the label of the slot, displayed in the bottom right corner.
+---@param label string
+function Slot:SetLabel(label)
+
+---Sets the icon of the slot.
+---@param icon icon
+---@param size Vector2?
+function Slot:SetIcon(icon, size)
+
+---Sets the rarity frame.
+---@param rarity ItemLib_Rarity|EclItem
+function Slot:SetRarityIcon(rarity)
+
+---Sets the slot to contain an item template.
+---Does not set rarity icon by design (since the player could have multiple items of the same template with varying rarities).
 ---@param templateID GUID
 function Slot:SetTemplate(templateID)
 
+---Sets the enabled state of the slot.
+---@param enabled boolean
+function Slot:SetEnabled(enabled)
+
+---Sets the cooldown displayed on the slot.
+---@param cooldown number In turns.
+---@param playRefreshAnimation boolean? Defaults to `false`.
+function Slot:SetCooldown(cooldown, playRefreshAnimation)
+
+---Sets whether the slot can be interacted with to use its object.
+---Default behaviour is to allow usage.
+---@param usable boolean
+function Slot:SetUsable(usable)
+
 function Slot:Clear()
+
+---Sets whether objects can be dragged out of the slot.
+---@param canDrag boolean
+---@param clearSlotAfterwards boolean? Whether to clear the slot when dragging out. Defaults to same value as `canDrag`.
+function Slot:SetCanDrag(canDrag, clearSlotAfterwards)
+
+---Sets whether objects can be dragged onto the slot to assign them.
+---@param canDrop boolean
+function Slot:SetCanDrop(canDrop)
+
+---Sets whether entities can be dragged in and out of the slot.
+---@param canDragDrop boolean
+function Slot:SetCanDragDrop(canDragDrop)
+
+---Sets the time between the element being automatically updated with data of its set entity.
+---@param delay number In seconds. Set to `-1` to disable.
+function Slot:SetUpdateDelay(delay)
+
+---Returns whether the slot currently holds no object.
+---@return boolean 
+function Slot:IsEmpty()
 
 </code></pre>
 <pre><code class="language-lua">---@class GenericUI_Prefab_HotbarSlot_Object
@@ -621,7 +781,8 @@ function Slot:Clear()
 ---@return GenericUI_Prefab_HotbarSlot_Object 
 function _SlotObject.Create(type, data)
 
----@return EclItem|StatsSkillPrototype|StatsLib_Action 
+---Returns the entity assigned to the slot.
+---@return EclItem|StatsLib_SkillData|StatsLib_Action 
 function _SlotObject:GetEntity()
 
 </code></pre>
@@ -686,58 +847,6 @@ function Text:SetText(text)
 function Text:GetMainElement()
 
 </code></pre>
-<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledDropdown
-
----@param ui GenericUI_Instance
----@param id string
----@param parent (GenericUI_Element|string)?
----@param label string
----@param opts GenericUI_Element_ComboBox_Option[]?
----@return GenericUI_Prefab_LabelledDropdown 
-function Dropdown.Create(ui, id, parent, label, opts)
-
----@param width number
----@param height number
-function Dropdown:SetSize(width, height)
-
----@param id string
-function Dropdown:SelectOption(id)
-
-</code></pre>
-<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledCheckbox
-
----@param ui GenericUI_Instance
----@param id string
----@param parent (GenericUI_Element|string)?
----@param label string
----@return GenericUI_Prefab_LabelledCheckbox 
-function Checkbox.Create(ui, id, parent, label)
-
----@param active boolean
-function Checkbox:SetState(active)
-
----@param width number
----@param height number
-function Checkbox:SetSize(width, height)
-
-</code></pre>
-<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledTextField
-
----@param ui GenericUI_Instance
----@param id string
----@param parent (GenericUI_Element|string)?
----@param label string
----@return GenericUI_Prefab_LabelledTextField 
-function Text.Create(ui, id, parent, label)
-
----@param width number
----@param height number
-function Text:SetSize(width, height)
-
----@param text string
-function Text:SetText(text)
-
-</code></pre>
 <pre><code class="language-lua">---@class GenericUI_Prefab_FormHorizontalList
 
 ---@param ui GenericUI_Instance
@@ -787,6 +896,266 @@ function Status.Create(ui, id, parent, entity, status)
 ---@param entity EclCharacter|EclItem
 ---@param status EclStatus
 function Status:SetStatus(entity, status)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_TooltipPanel
+---@field Background GenericUI_Element_TiledBackground
+---@field HeaderText GenericUI_Element_Text
+
+---Creates a tooltip panel.
+---@param ui GenericUI_Instance
+---@param id string
+---@param size Vector2
+---@param parent (GenericUI_Element|string)?
+---@param header string
+---@param headerSize Vector2
+---@return GenericUI_Prefab_TooltipPanel 
+function TooltipPanelPrefab.Create(ui, id, parent, size, header, headerSize)
+
+---@param id string
+---@param elementType `T`|GenericUI_ElementType
+---@return `T` 
+function TooltipPanelPrefab:AddChild(id, elementType)
+
+function TooltipPanelPrefab:Destroy()
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_FormElementBackground
+---@field Background GenericUI_Element_TiledBackground
+---@field HorizontalList GenericUI_Element_HorizontalList
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param size Vector2
+---@return GenericUI_Prefab_FormElementBackground 
+function BG.Create(ui, id, parent, size)
+
+</code></pre>
+<pre><code class="language-lua">---Base class for prefabs styled as a form element.
+---@class GenericUI_Prefab_FormElement
+---@field Background GenericUI_Element_TiledBackground
+---@field Label GenericUI_Prefab_Text
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param size Vector2
+---@return GenericUI_Prefab_FormElement 
+function Prefab.Create(ui, id, parent, size)
+
+---@return GenericUI_Element_TiledBackground 
+function Prefab:GetRootElement()
+
+---Sets the size of the background.
+---@param size Vector2
+function Prefab:SetBackgroundSize(size)
+
+---Returns the label of the element.
+---@return string 
+function Prefab:GetLabel()
+
+---Sets the label.
+---@param label string
+function Prefab:SetLabel(label)
+
+---Sets whether the element should be centered in lists.
+---@param center boolean
+function Prefab:SetCenterInLists(center)
+
+---Sets the tooltip of the element.
+---@param type TooltipLib_TooltipType
+---@param tooltip any TODO document
+function Prefab:SetTooltip(type, tooltip)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledCheckbox
+---@field Checkbox GenericUI_Element_StateButton
+---@field _Style &quot;Right-aligned&quot;|&quot;Left-aligned&quot;
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@param size Vector2? Defaults to `DEFAULT_SIZE`
+---@return GenericUI_Prefab_LabelledCheckbox 
+function Checkbox.Create(ui, id, parent, label, size)
+
+---@param active boolean
+function Checkbox:SetState(active)
+
+---@param width number
+---@param height number
+function Checkbox:SetSize(width, height)
+
+---Changes the layout of the element.
+---@param style &quot;Right-aligned&quot;|&quot;Left-aligned&quot; Default style is `&quot;Right-aligned&quot;`
+function Checkbox:SetStyle(style)
+
+---Re-renders the element with the current style.
+function Checkbox:Render()
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledSlider
+---@field Slider GenericUI_Element_Slider
+---@field LeftValueLabel GenericUI_Prefab_Text
+---@field RightValueLabel GenericUI_Prefab_Text
+---@field CurrentValueLabel GenericUI_Prefab_Text
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param size Vector2
+---@param label string
+---@param min number
+---@param max number
+---@param step number
+---@return GenericUI_Prefab_LabelledSlider 
+function Slider.Create(ui, id, parent, size, label, min, max, step)
+
+---Sets the minimum value allowed on the slider.
+---@param min number
+function Slider:SetMin(min)
+
+---Sets the maximum value allowed on the slider.
+---@param max number
+function Slider:SetMax(max)
+
+---Sets the value of the slider.
+---@param value number
+function Slider:SetValue(value)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledDropdown
+---@field ComboBox GenericUI_Element_ComboBox
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@param opts GenericUI_Element_ComboBox_Option[]?
+---@param size Vector2? Defaults to `DEFAULT_SIZE`
+---@return GenericUI_Prefab_LabelledDropdown 
+function Dropdown.Create(ui, id, parent, label, opts, size)
+
+---@param width number
+---@param height number
+function Dropdown:SetSize(width, height)
+
+---@param id string
+function Dropdown:SelectOption(id)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_LabelledTextField
+---@field Text GenericUI_Prefab_Text
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@param size Vector2? Defaults to `DEFAULT_SIZE`
+---@return GenericUI_Prefab_LabelledTextField 
+function Text.Create(ui, id, parent, label, size)
+
+---@param width number
+---@param height number
+function Text:SetSize(width, height)
+
+---@param text string
+function Text:SetText(text)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_FormSetEntry
+---@field RemoveButton GenericUI_Element_Button
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@param minimumSize Vector2
+---@return GenericUI_Prefab_FormSetEntry 
+function Prefab.Create(ui, id, parent, label, minimumSize)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_FormSet
+---@field HorizontalList GenericUI_Element_HorizontalList
+---@field AddButton GenericUI_Element_Button
+---@field _MinimumSize Vector2
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@param minimumSize Vector2
+---@return GenericUI_Prefab_FormSet 
+function Prefab.Create(ui, id, parent, label, minimumSize)
+
+---@param setting SettingsLib_Setting_Set
+function Prefab:RenderFromSetting(setting)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_Selector
+---@field ScrollLeftButton GenericUI_Element_Button
+---@field ScrollRightButton GenericUI_Element_Button
+---@field SubElementsLists GenericUI_Element_VerticalList[]
+---@field Options string[]
+---@field _CurrentOptionIndex integer
+---@field _SelectorLabel string
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param label string
+---@param size Vector2? Defaults to `DEFAULT_SIZE`
+---@param options string[]
+---@return GenericUI_Prefab_Selector 
+function Selector.Create(ui, id, parent, label, size, options)
+
+---Returns the container for subelements of an option's index.
+---@param index integer
+---@return GenericUI_Element_VerticalList 
+function Selector:GetSubElementContainer(index)
+
+---Changes the selector's value to the previous or next one.
+---@param direction &quot;Left&quot;|&quot;Right&quot;
+function Selector:Scroll(direction)
+
+---Sets the selected option.
+---@param index integer
+function Selector:SetSelectedOption(index)
+
+function Selector:SetBackgroundSize(size)
+
+</code></pre>
+<pre><code class="language-lua">---@class GenericUI_Prefab_Bedazzled_Gem
+---@field Gem Feature_Bedazzled_Board_Gem
+---@field Root GenericUI_Element_Empty
+---@field Icon GenericUI_Element_IggyIcon
+
+---@param ui GenericUI_Instance
+---@param id string
+---@param parent (GenericUI_Element|string)?
+---@param gem Feature_Bedazzled_Board_Gem
+---@return GenericUI_Prefab_Bedazzled_Gem 
+function GemPrefab.Create(ui, id, parent, gem)
+
+---@param tween GenericUI_ElementTween
+function GemPrefab:Tween(tween)
+
+function GemPrefab:Update()
+
+---Gets the icon for a modified gem.
+---@param gemType string
+---@param modifier string
+---@return icon 
+function GemPrefab.GetIconForModifier(gemType, modifier)
+
+function GemPrefab:UpdateIcon()
+
+---Returns the gem's position on the UI grid, in pixels.
+function GemPrefab:GetGridPosition()
+
+function GemPrefab:Destroy()
 
 </code></pre>
 <p></doc></p>
@@ -856,7 +1225,6 @@ function Status:SetStatus(entity, status)
     <script>var base_url = '../../../../..';</script>
     <script src="../../../../../js/theme_extra.js" defer></script>
     <script src="../../../../../js/theme.js" defer></script>
-      <script src="../../../../../js/analytics.js" defer></script>
       <script src="../../../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {

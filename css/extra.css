@@ -22,3 +22,14 @@ body {
 .hljs-title {
   color: #032982;
 }
+
+p {
+  line-height: 24px;
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+h5, h4, h3, h2 {
+    margin: 18px 0 8px 0;
+}

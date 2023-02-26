@@ -28,16 +28,6 @@
   <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'G-K2XG4QX6F3', 'pinewood.team/epip');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -125,6 +115,15 @@
                 <p class="caption"><span class="caption-text">Tutorials</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/testing/">Testing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Maintenance</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/localization/">Localization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/documentation/">Documentation</a>
                     </li>
                 </ul>
       </div>
@@ -215,6 +214,13 @@ function Text.EscapePatternCharacters(str)
 ---@param pattern pattern
 function Text.Contains(str, pattern)
 
+---Adds padding characters to the front of a string to meet a minimum length.
+---@param str string
+---@param minLength integer
+---@param paddingCharacter string? Defaults to `&quot;&quot;`
+---@return string 
+function Text.AddPadding(str, minLength, paddingCharacter)
+
 ---Split a string by delimiter. Source: https://stackoverflow.com/questions/1426954/split-string-in-lua
 ---@param inputstr string
 ---@param sep string
@@ -246,30 +252,60 @@ function Text.StripFontTags(str)
 function Text.Dump(obj, opts)
 
 ---Returns the string bound to a TranslatedStringHandle, or a key.
----@param handle TranslatedStringHandle|string Accepts handles or keys.
+---@param handle TranslatedStringHandle|string|TextLib_TranslatedString Accepts handles or keys.
 ---@param fallBack string?
----@return string -- Defaults to the handle, of fallBack if specified.
+---@return string -- Defaults to the handle, or fallBack if specified.
 function Text.GetTranslatedString(handle, fallBack)
 
----Registers a translated string, optionally binding a key to it.
----@overload fun(data:TextLib_TranslatedString, replaceExisting:boolean?):string,TextLib_TranslatedString 
----@param text string
+---Registers a translated string.
+---@overload fun(data:TextLib_TranslatedString):TextLib_TranslatedString 
 ---@param handle TranslatedStringHandle
----@param key string?
----@param modTable ModTableID? Used to keep track of where translated strings come from. Optional.
----@param replaceExisting boolean? Defaults to false.
----@return string, TextLib_TranslatedString -- First return value will be the text passed as parameter, or the text the handle already pointed to, if already registered/localized.
-function Text.RegisterTranslatedString(text, handle, key, modTable, replaceExisting)
+---@param text string
+---@return TextLib_TranslatedString 
+function Text.RegisterTranslatedString(handle, text)
+
+---Sets the text of a translated string.
+---@param handle TranslatedStringHandle
+---@param text string
+function Text.SetTranslatedString(handle, text)
+
+---Binds a TSK to a string key.
+---@param key string
+---@param handle TranslatedStringHandle
+function Text.SetStringKey(key, handle)
 
 ---Generates a template file for localizing strings registered through this library.
 ---@param modTable string? Defaults to &quot;EpipEncounters&quot;
 ---@param existingTemplate TextLib_LocalizationTemplate? If present, translated strings from this template will be patched into the new one, if the reference text is still up-to-date.
----@return TextLib_LocalizationTemplate, integer?, integer? -- Second param is amount of new strings, third is amount of outdated strings. Second param onwards is only returned while patching.
+---@return TextLib_LocalizationTemplate, integer[]?, integer[]? -- Second param is new strings, third is outdated strings. Second param onwards is only returned while patching.
 function Text.GenerateLocalizationTemplate(modTable, existingTemplate)
 
+---Returns the language the game is set to.
+---@return string 
+function Text.GetCurrentLanguage()
+
+---Sets the translation of a TSK.
+---The handle's bound text will be updated if the game's language matches.
+---@param handle TranslatedStringHandle
+---@param language string
+---@param text string
+function Text.SetTranslatedStringTranslation(handle, language, text)
+
+---Returns the translation for a handle.
+---@param handle TranslatedStringHandle
+---@param language string? Defaults to current language.
+---@return string? --`nil` if the handle is not translated
+function Text.GetTranslatedStringTranslation(handle, language)
+
 ---Loads a localization file. Must be in the format generated by GenerateLocalizationTemplate()
+---@param language string
 ---@param filePath string
-function Text.LoadLocalization(filePath)
+function Text.LoadLocalization(language, filePath)
+
+---Returns the GUID passed by parameter with any prefixes removed.
+---@param guid PrefixedGUID
+---@return GUID 
+function Text.RemoveGUIDPrefix(guid)
 
 </code></pre>
               
@@ -305,7 +341,6 @@ function Text.LoadLocalization(filePath)
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
-      <script src="../../../js/analytics.js" defer></script>
       <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {

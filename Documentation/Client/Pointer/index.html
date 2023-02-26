@@ -28,16 +28,6 @@
   <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'G-K2XG4QX6F3', 'pinewood.team/epip');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -133,6 +123,15 @@
                 <p class="caption"><span class="caption-text">Tutorials</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/testing/">Testing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Maintenance</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/localization/">Localization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/documentation/">Documentation</a>
                     </li>
                 </ul>
       </div>
@@ -234,6 +233,26 @@ function Pointer.GetWalkablePosition(playerIndex)
 ---@return Vector3D 
 function Pointer.GetWorldPosition(playerIndex)
 
+---Returns the drag-drop system state for a player.
+---@param playerIndex integer? Defaults to 1.
+---@return DragDropManagerPlayerDragInfo 
+function Pointer.GetDragDropState(playerIndex)
+
+---Returns the skill being dragged by a player.
+---@param playerIndex integer? Defaults to 1.
+---@return string? --Can be an action as well.
+function Pointer.GetDraggedSkill(playerIndex)
+
+---Returns the item being dragged by a player.
+---@param playerIndex integer? Defaults to 1.
+---@return EclItem? 
+function Pointer.GetDraggedItem(playerIndex)
+
+---Returns whether the player's cursor is dragging anything.
+---@param playerIndex integer? Defaults to 1.
+---@return boolean 
+function Pointer.IsDragging(playerIndex)
+
 </code></pre>
 <p></doc></p>
               
@@ -282,7 +301,6 @@ function Pointer.GetWorldPosition(playerIndex)
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
-      <script src="../../../js/analytics.js" defer></script>
       <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {

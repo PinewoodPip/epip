@@ -28,16 +28,6 @@
   <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'G-K2XG4QX6F3', 'pinewood.team/epip');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -131,6 +121,15 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/testing/">Testing</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Maintenance</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/localization/">Localization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/documentation/">Documentation</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -209,6 +208,10 @@ function Mod.GetLoadOrder()
 ---@return integer?, integer?, integer?, integer? --Major, minor, revision, build version. Fails if the mod is not loaded.
 function Mod.GetStoryVersion(guid)
 
+---Returns the context the caller script is running in.
+---@return &quot;Client&quot;|&quot;Server&quot; 
+function Mod.GetCurrentContext()
+
 </code></pre>
 <p></doc></p>
               
@@ -257,7 +260,6 @@ function Mod.GetStoryVersion(guid)
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
-      <script src="../../../js/analytics.js" defer></script>
       <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {

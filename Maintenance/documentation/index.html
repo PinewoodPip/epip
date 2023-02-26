@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://pinewood.team/epip/Global%20Tables/Feature/">
+  <link rel="canonical" href="https://pinewood.team/epip/Maintenance/documentation/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Feature - Epip Encounters</title>
+  <title>Documentation - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Feature";
-    var mkdocs_page_input_path = "Global Tables\\Feature.md";
-    var mkdocs_page_url = "/epip/Global%20Tables/Feature/";
+    var mkdocs_page_name = "Documentation";
+    var mkdocs_page_input_path = "Maintenance\\documentation.md";
+    var mkdocs_page_url = "/epip/Maintenance/documentation/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -118,12 +118,14 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Maintenance</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/">Index</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../">Index</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/localization/">Localization</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/documentation/">Documentation</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Documentation</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -146,8 +148,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Maintenance &raquo;</li>
+        
+      
     
-    <li>Feature</li>
+    <li>Documentation</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -159,117 +165,28 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h1>
-<p>The <code>_Feature</code> table is the table that most libraries and actual mod features inherit from; it provides a plethora of generic utilities useful for any sort of script.</p>
-<p>Included are logging methods, shorthands for applying path overrides, event &amp; hook creation and dispatching, and more.</p>
-<p>To use this table, you should call <code>Epip.AddFeature()</code>. This will register your script's table to the <code>Epip.Features</code> table and initialize the <code>_Feature</code> metatable.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><epip class="Feature" symbols="Function"></p>
-<pre><code class="language-lua">---Add an event to the Events field.
----@param name string
----@param data? Event
----@return Event 
-function _Feature:AddEvent(name, data)
+                <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+<p>The documentation of functions, classes and other symbols in this site is automatically generated from LuaDoc annotations within the mod, using the <code>update_docs.py</code> script.</p>
+<p>The script parses the lua files in the Bootstrap scripts and searches line-by-line for annotations. Once these are gathered, the markdown files of the documentation site are searched for special html tags and the output of the doc script is inserted between them accordingly.</p>
+<p>For example, this tag inserts the functions of MyLib between the doc opening and closing tags. <strong>If there was already content inbetween these tags, it is replaced; you should thus not modify the output.</strong></p>
+<pre><code>&lt;doc class=&quot;MyLib&quot; symbols=&quot;Function&quot;&gt;
 
----Add a hook to the Hooks field.
----@param name string
----@param data? Hook
----@return Hook 
-function _Feature:AddHook(name, data)
-
----Returns whether the feature has *not* been disabled. Use to condition your feature's logic.
----@return boolean 
-function _Feature:IsEnabled()
-
----Invoked on SessionLoaded if the feature is not disabled.
----Override to run initialization routines.
----Sets the Disabled flag.
-function _Feature:Disable()
-
----Called after a feature is initialized with Epip.AddFeature(),
----if it is not disabled.
----Override to run initialization routines.
----Register an event listener.
----To define events with multiple variables, you can easily create a wrapper function for this (and FireEvent)
----that registers an event listener with a prefix(es).
----@param event string
----@param handler function
-function _Feature:RegisterListener(event, handler)
-
----Fire an event.
----@param event string
-function _Feature:FireEvent(event, ...)
-
----Register a hook.
----@param event string
----@param handler function
-function _Feature:RegisterHook(event, handler)
-
----Get a value from registered hook listeners.
----@param event string
----@param defaultValue any Default value, will be passed to the first listener.
-function _Feature:ReturnFromHooks(event, defaultValue, ...)
-
----Fire an event to all contexts and peers.
----@param event string
-function _Feature:FireGlobalEvent(event, ...)
-
----Show debug-level logging from this feature.
----Only work in Developer mode.
-function _Feature:Debug()
-
----Returns whether :Debug() has been ran successfully.
-function _Feature:IsDebug()
-
----Stop all non-error, non-warning logging from this feature.
-function _Feature:Mute()
-
----Stop all non-error logging.
-function _Feature:ShutUp()
-
----Log a value in Debug mode.
-function _Feature:DebugLog(...)
-
----Dump a value to the console, in Debug mode.
----@param msg any
-function _Feature:Dump(msg)
-
----Log a value.
----@param msg any
-function _Feature:Log(msg)
-
----Log values without any prefixing.
-function _Feature:RawLog(...)
-
----Log a warning.
----@param msg any
-function _Feature:LogWarning(msg)
-
----Log an error.
----@param msg any
-function _Feature:LogError(msg)
-
+&lt;/doc&gt;
 </code></pre>
-<p></epip></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<p><epip class="Feature" symbols="Class"></p>
-<pre><code class="language-lua">---@class Feature
----@field Name string Used for logging, event handling. Do not set!
----@field CONTEXT Context Set automatically.
----@field Disabled boolean
----@field Logging integer Logging level.
----@field Events table&lt;string, Event&gt; Metatables initialized automatically.
----@field Hooks table&lt;string, Hook&gt; Metatables initialized automatically.
----@field LOGGING_LEVEL table&lt;string, integer&gt; Valid logging levels.
----@field REQUIRED_MODS table&lt;GUID, string&gt; The feature will be automatically disabled if any required mods are missing.
----@field FILEPATH_OVERRIDES table&lt;string, string&gt;
-
-
-</code></pre>
+<p>The scripts gathers annotations using two structures: "Symbols" and "Metadata".
+A symbol represents an actual symbol within the code, for example a function or a class. Each symbol may be composed of various metadata. As an example, function symbols capture comments and parameter annotations (<code>---@param</code>) as their metadata.</p>
+<p>The <code>Library</code> class in the script represents a library within the mod, and aggregates its symbols. When you use the html tags in markdown, the script looks for the corresponding Library and calls the <code>export()</code> method to generate the documentation to be inserted.</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../localization/" class="btn btn-neutral" title="Localization"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -292,6 +209,8 @@ function _Feature:LogError(msg)
   <div class="rst-versions" role="note" aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+    
+      <span><a href="../localization/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://pinewood.team/epip/Maintenance/Localization/">
+  <link rel="canonical" href="https://pinewood.team/epip/Maintenance/localization/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Updating localization - Epip Encounters</title>
+  <title>Localization - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -19,25 +19,15 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Updating localization";
-    var mkdocs_page_input_path = "Maintenance\\Localization.md";
-    var mkdocs_page_url = "/epip/Maintenance/Localization/";
+    var mkdocs_page_name = "Localization";
+    var mkdocs_page_input_path = "Maintenance\\localization.md";
+    var mkdocs_page_url = "/epip/Maintenance/localization/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'G-K2XG4QX6F3', 'pinewood.team/epip');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -127,6 +117,17 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../Tutorials/testing/">Testing</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Maintenance</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../">Index</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Localization</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -147,8 +148,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Maintenance &raquo;</li>
+        
+      
     
-    <li>Updating localization</li>
+    <li>Localization</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -161,6 +166,8 @@
             <div class="section">
               
                 <h1 id="updating-localization">Updating localization<a class="headerlink" href="#updating-localization" title="Permanent link">&para;</a></h1>
+<p>Localization is done through the system provided by the Text library. However, python scripts are used to convert to and from the json format to a spreadsheet.</p>
+<p>To update localization:</p>
 <ol>
 <li>Download the google sheet</li>
 <li>Run generate_epip_localization_json.py to update the current localization with data from the sheet</li>
@@ -168,10 +175,20 @@
 <li>Run generate_epip_localization_sheets.py to update the sheet</li>
 <li>Update the google sheet</li>
 </ol>
+<p>The repository only contains the core scripts to do this, the particular ones mentioned before (which run the core script for each language in Epip) can be obtained from unpacking (or asking Pip if they're still alive).</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../documentation/" class="btn btn-neutral float-right" title="Documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -195,13 +212,16 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../documentation/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
     <script>var base_url = '../..';</script>
     <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
-      <script src="../../js/analytics.js" defer></script>
       <script src="../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
