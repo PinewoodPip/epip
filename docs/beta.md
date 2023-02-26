@@ -20,8 +20,8 @@ You can get v58 by creating a file named `ScriptExtenderUpdaterConfig.json` in t
 # 26/2/23 upload:
 
 - Reworked the settings menu to be more easily expandable and changed the appearance of settings
-	- Tabs with a large amount of options (ex. Epic Enemies) might suffer stutters while opening them, similar to Quick Inventory. This is an issue with the UI framework that will be investigated later.
-- Added an armor type filter to Quick Inventory (for filtering robes/leather/plate armor)
+	- Tabs with a large amount of options (ex. Epic Enemies) might suffer stutters while opening them, similar to Quick Find. This is an issue with the UI framework that will be investigated later.
+- Added an armor type filter to Quick Find (for filtering robes/leather/plate armor)
 - Added a setting that controls how character level is displayed in the health bar; defaults to the old behaviour (below bar, when holding shift). Includes the option to hide the level entirely.
 - Reworked the "show minimap" setting; should be more reliable now
 - Added a setting to blacklist skills from being cancelled when using the "animation cancelling" feature
