@@ -54,6 +54,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Patch Notes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#v1064-050323">v1064 - 05/03/23</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1063-190922">v1063 - 19/09/22</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1062-160922">v1062 - 16/09/22</a>
@@ -135,10 +137,6 @@
     <li class="toctree-l2"><a class="reference internal" href="#v1027-v1028-300721-and-310721">v1027, v1028 (30/07/21 and 31/07/21)</a>
     </li>
     </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../beta/">Beta Versions</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Documentation</span></p>
@@ -243,8 +241,264 @@
               
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>Older versions of the mod can be found <a href="https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing">here</a>.</p>
+<h2 id="v1064-050323">v1064 - 05/03/23<a class="headerlink" href="#v1064-050323" title="Permanent link">&para;</a></h2>
+<p><a href="https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=share_link">Download here</a>.</p>
+<p>Requires extender v58+.</p>
+<p>Quick Examine improvements:</p>
+<ul>
+<li>Added display for AP, SP, and initiative</li>
+<li>Added resistances display</li>
+<li>Added numerous settings: opacity, width/height, hiding certain widgets. You can find them in a new tab in the settings menu</li>
+<li>Minor graphical touch-ups</li>
+<li>Added a setting to set the default position of the UI; this position will be used after reloading</li>
+<li>Added a statuses bar (toggleable)</li>
+<li>Added a light stroke to the resistances text</li>
+<li>Added a B/H display, with buffered damage towards the next stack</li>
+<li>Now shows your ally's skills and their cooldowns<ul>
+<li>Tooltips will show the damage as if they were used by them, but Epip features (like viewing which source infusions are available) likely do not work properly currently</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Quick Examine UI." src="../img/showcase/quick_examine.png" /></p>
+<ul>
+<li>Reworked the settings menu and underlying system<ul>
+<li>Your previous setting values will be lost</li>
+<li>The settings menu is now separate from the vanilla UI, prevent conflicts with mods that may overwrite the vanilla one</li>
+<li>Settings have been reorganized into separate tabs</li>
+<li>Settings are now saved per-profile, in <code>Osiris Data/Epip/{profile GUID}/</code></li>
+<li>In the settings menu, the current tab's button is now highlighted (replicating vanilla behaviour)</li>
+<li>Reworked the settings menu to be more easily expandable and changed the appearance of settings<ul>
+<li>Tabs with a large amount of options (ex. Epic Enemies) might suffer stutters while opening them, similar to Quick Find. This is an issue with the UI framework that will be investigated later.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="New settings UI." src="../img/showcase/settings.png" /></p>
+<ul>
+<li>Added a new UI that shows a filtered view of the party inventory<ul>
+<li>Opened with Ctrl+F by default (configurable in input menu)</li>
+<li>Can filter equipment by slot, consumables by scrolls/grenades/potions, and skillbooks by school</li>
+<li>Weapons and armor can be filtered by type (ex. sword, leather armor...)</li>
+<li>Equipment can be searched by their stat boosts (supports only vanilla modifiers for now)</li>
+<li>Right-click an equipped item to open the UI with filters set to that item's slot, to quickly replace gear</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Quick Find UI." src="../img/showcase/quick_find.png" /></p>
+<ul>
+<li>
+<p>Vanity internals have been reworked, with multiple changes as a result:</p>
+<ul>
+<li>Dyes no longer require deltamods and thus should no longer be lost to shenanigans or bloat the savefile</li>
+<li>Transmogrifying no longer requires the item to be transformed and therefore should no longer have any gameplay side effects<ul>
+<li>As a result, you are no longer prevented from transmogrifying GB5 sets</li>
+</ul>
+</li>
+<li>Transmogrifying weapons into another type (ex. dagger -&gt; bow) will have them show in the proper location while sheathed</li>
+<li>Added an option to keep the icon while transmogrifying</li>
+<li>Fixed an issue with dyes not being loaded properly from oufits</li>
+<li>Added an option to hide any armor slot's visuals<ul>
+<li>Due to an engine quirk, changing visibility is not properly reflected in the character sheet until you switch characters</li>
+</ul>
+</li>
+<li>Removed support for vanity dyes from before v1063; items still using them will appear purple</li>
+<li>Added an "Auras" tab to Vanity, where you can apply visual effects to your character, onto various bones</li>
+</ul>
+</li>
+<li>
+<p>Added an option for animation-cancelling for player characters</p>
+<ul>
+<li>A new setting exists to blacklist skills from being affected. A more user-friendly way of adding entries will be added in a future version</li>
+</ul>
+</li>
+<li>Added a setting that controls how character level is displayed in the health bar; defaults to current behaviour (below bar, when holding shift). Includes the option to hide the level entirely.</li>
+<li>Reworked the "show minimap" setting; should be more reliable now</li>
+<li>You can now drag + drop items onto the Greatforge socket</li>
+<li>"Status effects" in the vanilla examine UI is now capitalized, for consistency with the rest of the headers</li>
+<li>Began removing gameplay changes from original versions of Epip. Since the focus of the mod has changed over to UI and QoL, gameplay changes no longer make sense within the project, and impede it from being used without EE.<ul>
+<li>Removed changes to Battle Stomp, Bless, Circle of Protection, Escapist, Siphon Poison, Summon Soul Wolf, Wolf Howl, Break the Shackles</li>
+<li>Removed changes to Elementalist damage</li>
+<li>Removed changes to Leper</li>
+<li>Reverted stat changes to Boneshaped Crusher and Soul Wolf</li>
+<li>Removed Sight and Hearing FlexStat entries</li>
+</ul>
+</li>
+<li>Clicking a status on a player portrait or Quick Examine will now center the camera on the status's source (if any)</li>
+<li>"Copy identifier" keybind no longer copies template GUID</li>
+<li>Added Russian translation by Cathe &amp; JoienReid<ul>
+<li>Currently only spans the settings menu and some vanity features</li>
+<li>Since playing in non-English currently has certain issues with add-ons, a new setting has been added to display text from Epip in a language different than the game's.</li>
+</ul>
+</li>
+<li>Level-up progress in character sheet is now shown with a percentage</li>
+<li>Added settings for disabling most of the tooltip adjustments Epip offers</li>
+<li>Surface tooltips should be more reliable</li>
+<li>Combat log improvements are now enabled by default</li>
+<li>Enemy health bar now uses a vanilla-ish appearance if EE is disabled (no fancy gargoyle boss frame)</li>
+<li>B/H indicators in player portraits are now only shown in combat (instead of when unsheathed) and are disabled if EE is disabled</li>
+<li>Removed the meme loading screen option</li>
+<li>Skill tooltips for zone-type skills no longer erroneously say their range is increased by Astrologer's Gaze</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Fixed icons on the minimap flickering</li>
+<li>Fixed layouts being saved for summons and party followers</li>
+<li>Layouts should now be synchronized better in multiplayer, and survive a lua reset</li>
+<li>Layouts now save when the pause menu is opened, rather than when the game is paused (which basically never happens in multiplayer)<ul>
+<li>There's probably a dozen other features that made this mistake; they will be fixed in the future</li>
+</ul>
+</li>
+<li>Fixed the "points available" blip in the character sheet not being hidden when within vanity, if you had a lot of tabs registered</li>
+<li>Fixed the draggable area of Quick Examine being smaller than intended</li>
+<li>Fixed QuickExamine not being draggable all the way to the right of the screen</li>
+<li>Fixed the "Epip Settings" button not appearing on all tabs of the vanilla settings menu</li>
+<li>Fixed Trickster's Repertoire unsneaking characters that do not have the talent</li>
+<li>Fixed developer-only settings being visible outside of developer mode</li>
+<li>Hotbar: fixed hotkeys settings being deleted in some cases</li>
+<li>Disabled the save/load improvements during game over to fix a softlock (no known workaround)</li>
+<li>Fixed tooltips of player portraits and XP bar not working properly<ul>
+<li>Due to engine jank, these will not be affected by the delay settings</li>
+</ul>
+</li>
+<li>Fixed engine actions (attack, flee, etc.) being draggable to hotbar hotkeys</li>
+<li>Fixed some small visual bugs with the enemy health bar</li>
+<li>Fixed some small visual issues with custom item slots in UIs</li>
+<li>Fixed some console log spam</li>
+<li>Fixed hit chance not displaying when hovering over characters in combat</li>
+<li>Fixed some items being grayed out in hotbar groups</li>
+<li>Fixed "immersive meditation" and other EE UI features not working for characters that have been transformed</li>
+<li>Fixed unique items being dismantle-able with "mass dismantle"</li>
+<li>Fixed item context menus being misreported as character menus if you hovered over a character recently<ul>
+<li>Possibly fixes the issue of options like "mass dismantle" not appearing</li>
+</ul>
+</li>
+<li>The "infinite carry weight setting" should now work properly for clients that join mid-session<ul>
+<li>Other features that face problems in multiplayer are possibly suffering from the same bug and will be fixed in the future</li>
+</ul>
+</li>
+<li>Fixed transmogged helmets not being toggleable from the character sheet UI</li>
+<li>Fixed "revert appearance" in vanity not working properly</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Added an <code>Image</code> library with PNG decoding</li>
+<li>Added ImageViewer feature, intended for displaying results of images decoded with <code>Image</code></li>
+<li>Improved reliability of <code>Client.GetMousePosition()</code> (replaced with Ext implementation)</li>
+<li>Added a Set data structure</li>
+<li>Added <code>Vector.ScalarProduct()</code></li>
+<li>Added a <code>Color</code> element to Generic</li>
+<li>Added <code>ClearElements()</code> to Generic's Grid</li>
+<li>Added <code>SetVisible()</code> to Generic elements</li>
+<li>Added <code>Set</code> and <code>Map</code> settings types</li>
+<li>Added a debug hotkey for copying the pointer's world position</li>
+<li>Added a <code>Interfaces</code> library for common interfaces</li>
+<li>Generic: fixed ScrollList not supporting centering of elements</li>
+<li>Generic: added LabelledIcon prefab</li>
+<li>QuickExamine: added Widget interface</li>
+<li>StatsLib: added data of immunites</li>
+<li>TooltipLib: added support for status tooltips</li>
+<li>QuickExamine: split up some parts of BasicInfo into separate widgets</li>
+<li>Generic: fix downsizing IggyIcon</li>
+<li>Generic: added a Status prefab, for displaying status effects</li>
+<li>TooltipLib: added <code>ShowStatusTooltip()</code></li>
+<li>Moved various functionality from EnemyHealthBar to a feature (EnemyHealthBarExtraInfo)</li>
+<li>Fixed TextLib's Format() not accepting decimal text sizes</li>
+<li>Added a setting to simulate EE being disabled (applies to Epip scripts only)</li>
+<li>Removed checks for Improved Hotbar mod</li>
+<li>Added an event for statuses being applied to CharacterLib</li>
+<li>Added a feature to generate Osiris event annotations for lua<ul>
+<li>The IDE annotations folder in Epip has been updated to include them</li>
+<li>This might be expanded to support PROCs and QRYs later</li>
+</ul>
+</li>
+<li>Added an OOP library for working with classes<ul>
+<li>Feature now supports registering and fetching class tables in an elegant manner</li>
+</ul>
+</li>
+<li>Started splitting up Feature into 2 classes to fix interface segregation violation</li>
+<li>Fixed OsirisLib calls not working with 0 parameters</li>
+<li>Various script cleanups (mostly for Hotbar and EnemyHealthBar)</li>
+<li>Added TSKs for older settings</li>
+<li>Changed TSK integration in Feature: the keys are no longer required to be a handle; they can be any string, letting you index the TranslatedStrings table with auto-completion<ul>
+<li>TSK objects now have a GetString() method to resolve them</li>
+<li><code>TSK</code> table within Feature will be deprecated soon</li>
+</ul>
+</li>
+<li>Added a feature to play client-side effects upon hovering over entities</li>
+<li>Added libraries for EE-related mechanics (BatteredHarried, SourceInfusion), and moved relevant methods to them</li>
+<li>Fixed <code>Character.GetEquippedItems()</code> not returning the advertised type</li>
+<li>Added a DatabaseSync feature for synchronizing database contents to the client<ul>
+<li>Might be merged into the osiris library in the future</li>
+</ul>
+</li>
+<li>Added a UserVars library, with Feature integration</li>
+<li>Added support for function signatures without bodies to the doc generator, fixed subclasses not being detected properly</li>
+<li>Added methods related to drag-drop to PointerLib</li>
+<li>Generic:<ul>
+<li>Moved annotations to separate file, solving various IDE warnings</li>
+<li>Added support for tweening</li>
+</ul>
+</li>
+<li>Fixed Stats.MeetsRequirements() not working with attribute requirements</li>
+<li>Added <code>ShowItemTooltip()</code> to Tooltip lib</li>
+<li>Generic:<ul>
+<li>The HotbarSlot prefab is a now more general-purpose inventory-like slot, showing rarity, rune slots, and with options to block drag-and-drop</li>
+<li>Fixed culling issues with IggyIcon</li>
+<li>Added support for scrollRects</li>
+<li>ComboBox events now throw their option ID instead of just index</li>
+<li>Added SetChildIndex()</li>
+</ul>
+</li>
+<li>Removed swf overrides for <code>textDisplay</code> and <code>notification</code> UIs, as well as cleaned up their respective lua scripts</li>
+<li>Fixed error messages from using keys the game doesn't support (ex. media keys)</li>
+<li>Added annotations for basic stats objects</li>
+<li>Added <code>AMER_Loot_CallistoAnomaly</code> icon - special thanks to Elric</li>
+<li>Fixed UserVars not synchronizing</li>
+<li>Fixed <code>GameState.IsLoading()</code> not working</li>
+<li>Various changes to annotations</li>
+<li>Features can now declare which game states they should be enabled with, which will cause <code>:IsEnabled()</code> to return <code>false</code> under unsupported states</li>
+<li>Rewrote <code>Osiris</code> table. Tuples returned from DB queries are now an object and it's possible to distinguish DBs/QRYs with the same name but different arity</li>
+<li>Rewrote <code>Item.GetEquipmentSubtype()</code> to be a lot more reliable, and fixed it failing to identify clubs</li>
+<li>Generic: added the Texture element</li>
+<li>Generic: added more prefabs for "form elements", and added inheritance to them</li>
+<li>Unsubscribing event listeners with an ID that is not subscribed no longer triggers a warning</li>
+<li>Added IDE annotations for the global Ext functions (like <code>_C()</code>)</li>
+<li>Added a "DefaultTable" data structure (inspired by python's defaultdict; a table with a default value when indexing)</li>
+<li>Removed UI override for the settings menu (LeaderLib menu might work now? no promises)</li>
+<li>Debug menu now supports fiddling with the UI scripts to an extent</li>
+<li>Osiris table now parses parameters for DB set/delete operations</li>
+<li>InputLib: added methods to fetch game input event definitions and bindings<ul>
+<li>The ancient script previously used to do this has been removed, along with some other redundant ones</li>
+</ul>
+</li>
+<li>Improvements to the doc generation script (which shall debut here soon); it can now export "subclasses" of a class (the auxiliary data structs)</li>
+<li>Added a generic developer input binding for hooking quick tests onto it</li>
+<li>TooltipLib: added a way to render custom formatted tooltips</li>
+<li>TooltipLib: added a method to render skill tooltips, as if the engine were doing it</li>
+<li>Minor cleanups of some scripts</li>
+<li>Fixed iggy icons in Slot elements being culled out for Generic UIs</li>
+<li>Added methods to check if a component is an item/char to EntityLib</li>
+<li>You can now specify a player index when using methods in PointerLib (though I do not know in which scenario multiple pointers can exist; splitscreen co-op perhaps?)</li>
+<li>The localization system now supports contextual metadata for ease of translation, and integration for it has been added to the Feature table<ul>
+<li>You can define TSKs in <code>TranslatedStrings</code> and query them by indexing <code>TSK</code> within the feature</li>
+<li>TSKs defined this way support aliases that are valid only within the context of the feature, preventing collisions</li>
+</ul>
+</li>
+<li>Added a python script to import/export Epip translation files in <code>Mods\EpipEncounters_7d32cb52-1cfd-4526-9b84-db4867bf9356\Story\RawFiles\Python\localization.py</code></li>
+<li>Added <code>GetTurnOrder()</code> to Combat library</li>
+<li>Added <code>Client.WorldPositionToScreen()</code></li>
+</ul>
+<p>Improvements to doc generator script:</p>
+<ul>
+<li>Added support for net messages</li>
+<li>Better support for hooks/events</li>
+<li>Private methods are now hidden</li>
+<li>Symbols are now sorted by context (first Shared, then Client, then Server)</li>
+<li>Can now be used externally (importable)</li>
+<li>Added support for overloads</li>
+</ul>
 <h2 id="v1063-190922">v1063 - 19/09/22<a class="headerlink" href="#v1063-190922" title="Permanent link">&para;</a></h2>
-<p><a href="https://drive.google.com/file/d/1QygJ1P9ynUQ2Fl2h7lL6zifeeT_jEtke/view?usp=sharing">Download here</a>.</p>
 <ul>
 <li>If "Unfocus after sending messages" is enabled, holding shift while sending a chat message will keep the chat focused</li>
 <li>Fixed settings not saving if you didn't visit the camera settings tab</li>
@@ -1213,7 +1467,7 @@ local value = Osiris.QRY_AMER_KeywordStat_VitalityVoid_GetRadius(char.MyGuid, 1)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../beta/" class="btn btn-neutral float-right" title="Beta Versions">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../docs/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -1245,7 +1499,7 @@ local value = Osiris.QRY_AMER_KeywordStat_VitalityVoid_GetRadius(char.MyGuid, 1)
       <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../beta/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../docs/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
