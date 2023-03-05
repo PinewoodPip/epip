@@ -4,9 +4,9 @@ Epip Encounters is an add-on mod for [Epic Encounters 2](https://docs.google.com
 
 ## Download
 
-!!! warning "**[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v3). Load after both EE Core and EE Origins.**"
+!!! warning "**[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5). Load after both EE Core and EE Origins.**"
 
-[Latest version, v1063](https://drive.google.com/file/d/1QygJ1P9ynUQ2Fl2h7lL6zifeeT_jEtke/view?usp=sharing). (19/09/22) 
+[Latest version, v1064](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=share_link). (05/03/23) 
 
 !!! info "Only English is supported. Text related to gameplay changes will not show up in other languages. Mods that also modify UI are largely incompatible. ["No More Dragging"](https://steamcommunity.com/sharedfiles/filedetails/?id=2546859598) and its expanded container version is compatible, for now."
 
