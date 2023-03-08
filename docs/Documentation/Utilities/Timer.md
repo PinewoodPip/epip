@@ -1,84 +1,118 @@
 # Timer
 The `Timer` library implements timers, for running scripting with a delay. Since listeners for the timers ending can be registered in-line, it's usually cleaner to use than the Osiris timers. Additionally, they are available on the client.
 
-## Classes
+<doc package="TimerLib">
 
-<doc class="TimerLib" symbols="_SubClasses">
 
-```lua
----@class TimerLib_Entry
----@field ID string?
----@field DurationLeft number
----@field InitialDuration number
----@field RepeatCount integer How many times the timer has repeated.
----@field Paused boolean
 
-function _TimerEntry:Pause()
+## Events and Hooks
 
-function _TimerEntry:Resume()
+##### TimerCompleted (event)
 
-function _TimerEntry:Cancel()
 
----@param repeats integer
-function _TimerEntry:SetRepeatCount(repeats)
 
----@param deltaTime number
----@return boolean Whether the timer has finished one iteration due to this call.
-function _TimerEntry:TickDown(deltaTime)
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Timer</b> <code>TimerLib_Entry</code> </p>
 
----@return boolean 
-function _TimerEntry:IsFinished()
 
----@param fun fun(ev:TimerLib_Event_TimerCompleted)
-function _TimerEntry:Subscribe(fun)
-
-```
-```lua
----@class TimerLib_TickTimerEntry
-
-function _TickTimer:TickDown(_)
-
-```
-</doc>
-
-## Events
-
-<doc class="TimerLib" symbols="Listenable">
-
-```lua
----@event TimerCompleted
----@field Timer TimerLib_Entry
-
-```
-</doc>
 
 ## Methods
 
-<doc class="TimerLib" symbols="Function">
+#### Start
+
+
 
 ```lua
----@overload fun(seconds:number, handler?:fun(ev:TimerLib_Event_TimerCompleted), id?:string):TimerLib_Entry|TimerLib_TickTimerEntry 
----@param id string?
----@param seconds number
----@param handler fun(ev:TimerLib_Event_TimerCompleted)
----@param timerType "Normal"|"Tick"
----@return TimerLib_Entry|TimerLib_TickTimerEntry 
 function Timer.Start(id, seconds, handler, timerType)
-
----@overload fun(ticks:number, handler?:fun(ev:TimerLib_Event_TimerCompleted), id?:string):TimerLib_TickTimerEntry 
----@param id string?
----@param ticks number
----@param handler fun(ev:TimerLib_Event_TimerCompleted)
----@return TimerLib_TickTimerEntry 
-function Timer.StartTickTimer(id, ticks, handler)
-
----Returns the timer with the passed string ID.
----@param stringID string
----@return TimerLib_Entry 
-function Timer.GetTimer(stringID)
-
----@param timer TimerLib_Entry
-function Timer.Remove(timer)
-
+   -> TimerLib_Entry|TimerLib_TickTimerEntry
 ```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string?</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>seconds</b> <code>number</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handler</b> <code>fun(ev:TimerLib_Event_TimerCompleted)</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>timerType</b> <code>("Normal"|"Tick")?</code> Defaults to `"Normal"`</p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>TimerLib_Entry|TimerLib_TickTimerEntry</code> </p>
+
+#### StartTickTimer
+
+
+
+```lua
+function Timer.StartTickTimer(id, ticks, handler)
+   -> TimerLib_TickTimerEntry
+```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string?</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>ticks</b> <code>number</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handler</b> <code>fun(ev:TimerLib_Event_TimerCompleted)</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>TimerLib_TickTimerEntry</code> </p>
+
+#### GetTimer
+
+
+
+```lua
+function Timer.GetTimer(stringID)
+   -> TimerLib_Entry
+```
+
+
+
+Returns the timer with the passed string ID.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>stringID</b> <code>string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>TimerLib_Entry</code> </p>
+
+#### Remove
+
+
+
+```lua
+function Timer.Remove(timer)
+```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>timer</b> <code>TimerLib_Entry</code> </p>
 </doc>

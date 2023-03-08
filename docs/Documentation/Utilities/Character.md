@@ -1,270 +1,1068 @@
 # Character
 The `Character` library contains utility methods relating to characters. The vast majority of them are available on both contexts.
 
-## Events
+<doc package="CharacterLib">
 
-<doc class="CharacterLib" symbols="Listenable">
 
-```lua
----TODO move somewhere else, since victim could be an item
----@event StatusApplied
----@field SourceHandle EntityHandle
----@field Victim Character|Item
----@field Status EclStatus|EsvStatus
 
----Wrapper for Ext.Events.CreateEquipmentVisualsRequest.
----@hook CreateEquipmentVisuals
----@field Character EclCharacter
----@field Item EclItem
----@field Request EclEquipmentVisualSystemSetParam Hookable.
----@field RawEvent EclLuaCreateEquipmentVisualsRequestEvent
+## Events and Hooks
 
-```
-</doc>
+##### StatusApplied (event)
+
+TODO move somewhere else, since victim could be an item
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>SourceHandle</b> <code>EntityHandle</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Victim</b> <code>Character|Item</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Status</b> <code>EclStatus|EsvStatus</code> </p>
+
+##### CreateEquipmentVisuals (hook)
+
+Wrapper for Ext.Events.CreateEquipmentVisualsRequest.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Item</b> <code>EclItem</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Request</b> <code>EclEquipmentVisualSystemSetParam</code> Hookable.</p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>RawEvent</b> <code>EclLuaCreateEquipmentVisualsRequestEvent</code> </p>
+
+
 
 ## Methods
 
-<doc class="CharacterLib" symbols="Function">
+#### IsSkillMemorized
+
+
 
 ```lua
----Returns whether char has a skill memorized. Returns true for innate skills.
----@param char Character
----@param skillID string
----@return boolean 
 function Character.IsSkillMemorized(char, skillID)
-
----Returns whether char has a skill learnt. Returns true for innate skills.
----@param char Character
----@param skillID string
----@return boolean 
-function Character.IsSkillLearnt(char, skillID)
-
----Returns the combat ID and team ID of char, if any.
----@param char Character
----@return integer?, integer? -- The combat ID and team ID. Nil if the character is not in combat. This is different from the osi query, which returns a reserved value.
-function Character.GetCombatID(char)
-
----Returns whether char has their weapon(s) unsheathed.
----@param char Character
----@return boolean 
-function Character.IsUnsheathed(char)
-
----Returns whether char is currently the active character of any player.
-function Character.IsActive(char)
-
----Returns whether char has an owner.
----@param char Character
----@return boolean 
-function Character.HasOwner(char)
-
----Returns the character's owner, if it is a summon or party follower(?).
----@param char Character
----@return Character? 
-function Character.GetOwner(char)
-
----Returns whether a skill is innate to a character.
----Returns false if the character doesn't have the skill in any way.
----@param char Character
----@param skillID string
----@return boolean 
-function Character.IsSkillInnate(char, skillID)
-
----Returns wether char has a certain immunity.
----@param char Character
----@param immunityName StatsLib_ImmunityID
-function Character.HasImmunity(char, immunityName)
-
----Returns the equipped items of char, per slot.
----@param char Character
----@return table<ItemSlot, EclItem>
-function Character.GetEquippedItems(char)
-
----@param char Character
----@param statName string
-function Character.GetDynamicStat(char, statName)
-
----Returns the maximum carry weight of char.
----@param char Character
----@return integer In "grams"
-function Character.GetMaxCarryWeight(char)
-
----@param char Character
----@return integer, integer --Current, maximum
-function Character.GetActionPoints(char)
-
----Returns the initiative of char.
----@param char Character
----@return integer 
-function Character.GetInitiative(char)
-
----Returns the computed resistance value of char.
----@param char Character
----@param damageType StatsDamageType
----@param baseValuesOnly boolean? If `true`, base value will be returned. Defaults to `false`.
----@return integer 
-function Character.GetResistance(char, damageType, baseValuesOnly)
-
----@param identifier GUID|PrefixedGUID|NetId|EntityHandle
----@param isFlashHandle boolean? If true, the identifier will be passed through DoubleToHandle() first.
----@return Character 
-function Character.Get(identifier, isFlashHandle)
-
----@param char Character
----@return boolean 
-function Character.IsPreferredByAI(char)
-
----Returns whether char is unpreferred by AI.
----@param char Character
----@return boolean 
-function Character.IsUnpreferredByAI(char)
-
----Returns whether char is ignored by AI.
----@param char Character
----@return boolean 
-function Character.IsIgnoredByAI(char)
-
----Returns true if char is a summon.
----@param char Character
----@return boolean 
-function Character.IsSummon(char)
-
----Returns true if the character is dead.
----@param char Character
----@return boolean 
-function Character.IsDead(char)
-
----Returns a status by handle.
----@param char Character
----@param handle EntityHandle
----@return EclStatus|EsvStatus 
-function Character.GetStatusByHandle(char, handle)
-
----Returns the gender of char.
----@param char Character
----@return Gender 
-function Character.GetGender(char)
-
----Returns true if char is male.
----@param char Character
----@return boolean 
-function Character.IsMale(char)
-
----Returns true if char is undead.
----@param char Character
----@return boolean 
-function Character.IsUndead(char)
-
----Returns the current race of char.
----@param char Character
----@return Race 
-function Character.GetRace(char)
-
----Returns the original race of a player char, before any transforms.
----@param char Character Must be tagged with "REALLY_{Race}"
----@return Race 
-function Character.GetRealRace(char)
-
----Returns whether the character is in a combat.
----@param char EclCharacter
----@return boolean 
-function Character.IsInCombat(char)
-
----Returns the calculated movement stat of a character.
----@param char Character
----@return number -- In centimeters.
-function Character.GetMovement(char)
-
----Returns whether char can enter preparation state for a skill.
----@param char Character
----@param skillID string
----@param itemSource Item?
----@return boolean 
-function Character.CanUseSkill(char, skillID, itemSource)
-
----Returns whether char has a melee weapon equipped in either slot.
----@param char Character
----@return boolean 
-function Character.HasMeleeWeapon(char)
-
----Returns whether char has a bow or crossbow equipped.
----@param char Character
----@return boolean 
-function Character.HasRangedWeapon(char)
-
----Returns the current and maximum source points of char.
----@param char Character
----@return integer, integer Current and maximum points.
-function Character.GetSourcePoints(char)
-
----Returns whether char has a shield equipped.
----@param char Character
----@return boolean 
-function Character.HasShield(char)
-
----Returns whether char has a dagger equipped in either slot.
----@param char Character
----@return boolean 
-function Character.HasDagger(char)
-
----Returns whether char is muted.
----@param char Character
----@return boolean 
-function Character.IsMuted(char)
-
----Returns whether char is disarmed.
----@param char Character
----@return boolean 
-function Character.IsDisarmed(char)
-
----Gets the highest stat score of all characters in char's party.
----@param char Character
----@param ability string Needs to be a property indexable in char.Stats
----@return integer 
-function Character.GetHighestPartyAbility(char, ability)
-
----Returns the level of char.
----@param char Character
----@return integer 
-function Character.GetLevel(char)
-
----Returns the current experience points of char.
----@param char Character
----@return integer 
-function Character.GetExperience(char)
-
----Returns the **cumulative** experience required to reach a level.
----@param targetLevel integer
----@return integer --Experience points.
-function Character.GetExperienceRequiredForLevel(targetLevel)
-
----Returns the contents of a character's skillbar row's.
----@param char Character Must be a player.
----@param row integer
----@param slotsPerRow integer? Defaults to 29.
----@return EocSkillBarItem[] 
-function Character.GetSkillBarRowContents(char, row, slotsPerRow)
-
----Returns a status on char by its net ID.
----@param char Character
----@param netID NetId
----@return EclStatus|EsvStatus 
-function Character.GetStatusByNetID(char, netID)
-
----Returns a list of party members of char's party. Char must be a player.
----Depends on PlayerInfo.
----@param char EclCharacter
----@return EclCharacter[] Includes the char passed per param.
-function Character.GetPartyMembers(char)
-
----Returns a list of statuses the character has from its equipped items.
----@param char Character
----@return CharacterLib_StatusFromItem[] 
-function Character.GetStatusesFromItems(char)
-
----Returns a list of party members of char's party. Char must be a player.
----@param char EsvCharacter
----@return EsvCharacter[] Includes the char passed per param.
-function Character.GetPartyMembers(char)
-
+   -> boolean
 ```
+
+
+
+Returns whether char has a skill memorized. Returns true for innate skills.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsSkillLearnt
+
+
+
+```lua
+function Character.IsSkillLearnt(char, skillID)
+   -> boolean
+```
+
+
+
+Returns whether char has a skill learnt. Returns true for innate skills.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetCombatID
+
+
+
+```lua
+function Character.GetCombatID(char)
+   -> integer?, integer? 
+```
+
+
+
+Returns the combat ID and team ID of char, if any.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer?, integer? </code> The combat ID and team ID. Nil if the character is not in combat. This is different from the osi query, which returns a reserved value.</p>
+
+#### IsUnsheathed
+
+
+
+```lua
+function Character.IsUnsheathed(char)
+   -> boolean
+```
+
+
+
+Returns whether char has their weapon(s) unsheathed.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsActive
+
+
+
+```lua
+function Character.IsActive(char)
+   -> boolean
+```
+
+
+
+Returns whether char is currently the active character of any player.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### HasOwner
+
+
+
+```lua
+function Character.HasOwner(char)
+   -> boolean
+```
+
+
+
+Returns whether char has an owner.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetOwner
+
+
+
+```lua
+function Character.GetOwner(char)
+   -> Character?
+```
+
+
+
+Returns the character's owner, if it is a summon or party follower(?).
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Character?</code> </p>
+
+#### IsSkillInnate
+
+
+
+```lua
+function Character.IsSkillInnate(char, skillID)
+   -> boolean
+```
+
+
+
+Returns whether a skill is innate to a character.
+Returns false if the character doesn't have the skill in any way.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### HasImmunity
+
+
+
+```lua
+function Character.HasImmunity(char, immunityName)
+   -> boolean
+```
+
+
+
+Returns wether char has a certain immunity.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>immunityName</b> <code>StatsLib_ImmunityID</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetEquippedItems
+
+
+
+```lua
+function Character.GetEquippedItems(char)
+   -> table<ItemSlot, EclItem>
+```
+
+
+
+Returns the equipped items of char, per slot.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>table<ItemSlot, EclItem></code> </p>
+
+#### GetDynamicStat
+
+
+
+```lua
+function Character.GetDynamicStat(char, statName)
+```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>statName</b> <code>string</code> </p>
+
+#### GetMaxCarryWeight
+
+
+
+```lua
+function Character.GetMaxCarryWeight(char)
+   -> integer 
+```
+
+
+
+Returns the maximum carry weight of char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer </code> In "grams"</p>
+
+#### GetActionPoints
+
+
+
+```lua
+function Character.GetActionPoints(char)
+   -> integer, integer 
+```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer, integer </code> Current, maximum</p>
+
+#### GetInitiative
+
+
+
+```lua
+function Character.GetInitiative(char)
+   -> integer
+```
+
+
+
+Returns the initiative of char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
+#### GetResistance
+
+
+
+```lua
+function Character.GetResistance(char, damageType, baseValuesOnly)
+   -> integer
+```
+
+
+
+Returns the computed resistance value of char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>damageType</b> <code>StatsDamageType</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>baseValuesOnly</b> <code>boolean?</code> If `true`, base value will be returned. Defaults to `false`.</p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
+#### Get
+
+
+
+```lua
+function Character.Get(identifier, isFlashHandle)
+   -> Character
+```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>identifier</b> <code>GUID|PrefixedGUID|NetId|EntityHandle</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>isFlashHandle</b> <code>boolean?</code> If true, the identifier will be passed through DoubleToHandle() first.</p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Character</code> </p>
+
+#### IsPreferredByAI
+
+
+
+```lua
+function Character.IsPreferredByAI(char)
+   -> boolean
+```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsUnpreferredByAI
+
+
+
+```lua
+function Character.IsUnpreferredByAI(char)
+   -> boolean
+```
+
+
+
+Returns whether char is unpreferred by AI.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsIgnoredByAI
+
+
+
+```lua
+function Character.IsIgnoredByAI(char)
+   -> boolean
+```
+
+
+
+Returns whether char is ignored by AI.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsSummon
+
+
+
+```lua
+function Character.IsSummon(char)
+   -> boolean
+```
+
+
+
+Returns true if char is a summon.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsDead
+
+
+
+```lua
+function Character.IsDead(char)
+   -> boolean
+```
+
+
+
+Returns true if the character is dead.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetStatusByHandle
+
+
+
+```lua
+function Character.GetStatusByHandle(char, handle)
+   -> EclStatus|EsvStatus
+```
+
+
+
+Returns a status by handle.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>EntityHandle</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclStatus|EsvStatus</code> </p>
+
+#### GetGender
+
+
+
+```lua
+function Character.GetGender(char)
+   -> Gender
+```
+
+
+
+Returns the gender of char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Gender</code> </p>
+
+#### IsMale
+
+
+
+```lua
+function Character.IsMale(char)
+   -> boolean
+```
+
+
+
+Returns true if char is male.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsUndead
+
+
+
+```lua
+function Character.IsUndead(char)
+   -> boolean
+```
+
+
+
+Returns true if char is undead.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetRace
+
+
+
+```lua
+function Character.GetRace(char)
+   -> Race
+```
+
+
+
+Returns the current race of char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Race</code> </p>
+
+#### GetRealRace
+
+
+
+```lua
+function Character.GetRealRace(char)
+   -> Race
+```
+
+
+
+Returns the original race of a player char, before any transforms.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> Must be tagged with "REALLY_{Race}"</p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Race</code> </p>
+
+#### IsInCombat
+
+
+
+```lua
+function Character.IsInCombat(char)
+   -> boolean
+```
+
+
+
+Returns whether the character is in a combat.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetMovement
+
+
+
+```lua
+function Character.GetMovement(char)
+   -> number 
+```
+
+
+
+Returns the calculated movement stat of a character.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number </code> In centimeters.</p>
+
+#### CanUseSkill
+
+
+
+```lua
+function Character.CanUseSkill(char, skillID, itemSource)
+   -> boolean
+```
+
+
+
+Returns whether char can enter preparation state for a skill.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>itemSource</b> <code>Item?</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### HasMeleeWeapon
+
+
+
+```lua
+function Character.HasMeleeWeapon(char)
+   -> boolean
+```
+
+
+
+Returns whether char has a melee weapon equipped in either slot.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### HasRangedWeapon
+
+
+
+```lua
+function Character.HasRangedWeapon(char)
+   -> boolean
+```
+
+
+
+Returns whether char has a bow or crossbow equipped.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetSourcePoints
+
+
+
+```lua
+function Character.GetSourcePoints(char)
+   -> integer, integer 
+```
+
+
+
+Returns the current and maximum source points of char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer, integer </code> Current and maximum points.</p>
+
+#### HasShield
+
+
+
+```lua
+function Character.HasShield(char)
+   -> boolean
+```
+
+
+
+Returns whether char has a shield equipped.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### HasDagger
+
+
+
+```lua
+function Character.HasDagger(char)
+   -> boolean
+```
+
+
+
+Returns whether char has a dagger equipped in either slot.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsMuted
+
+
+
+```lua
+function Character.IsMuted(char)
+   -> boolean
+```
+
+
+
+Returns whether char is muted.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsDisarmed
+
+
+
+```lua
+function Character.IsDisarmed(char)
+   -> boolean
+```
+
+
+
+Returns whether char is disarmed.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetHighestPartyAbility
+
+
+
+```lua
+function Character.GetHighestPartyAbility(char, ability)
+   -> integer
+```
+
+
+
+Gets the highest stat score of all characters in char's party.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>ability</b> <code>string</code> Needs to be a property indexable in char.Stats</p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
+#### GetLevel
+
+
+
+```lua
+function Character.GetLevel(char)
+   -> integer
+```
+
+
+
+Returns the level of char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
+#### GetExperience
+
+
+
+```lua
+function Character.GetExperience(char)
+   -> integer
+```
+
+
+
+Returns the current experience points of char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
+#### GetExperienceRequiredForLevel
+
+
+
+```lua
+function Character.GetExperienceRequiredForLevel(targetLevel)
+   -> integer 
+```
+
+
+
+Returns the **cumulative** experience required to reach a level.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>targetLevel</b> <code>integer</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer </code> Experience points.</p>
+
+#### GetSkillBarRowContents
+
+
+
+```lua
+function Character.GetSkillBarRowContents(char, row, slotsPerRow)
+   -> EocSkillBarItem[]
+```
+
+
+
+Returns the contents of a character's skillbar row.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> Must be a player.</p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>row</b> <code>integer</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>slotsPerRow</b> <code>integer?</code> Defaults to 29.</p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EocSkillBarItem[]</code> </p>
+
+#### GetStatusByNetID
+
+
+
+```lua
+function Character.GetStatusByNetID(char, netID)
+   -> EclStatus|EsvStatus
+```
+
+
+
+Returns a status on char by its net ID.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>netID</b> <code>NetId</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclStatus|EsvStatus</code> </p>
+
+#### GetPartyMembers
+
+
+
+```lua
+function Character.GetPartyMembers(char)
+   -> EclCharacter[] Includes the char passed per param.
+```
+
+
+
+Returns a list of party members of char's party. Char must be a player.
+Depends on PlayerInfo.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclCharacter[] Includes the char passed per param.</code> </p>
+
+#### GetStatusesFromItems
+
+
+
+```lua
+function Character.GetStatusesFromItems(char)
+   -> CharacterLib_StatusFromItem[]
+```
+
+
+
+Returns a list of statuses the character has from its equipped items.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>CharacterLib_StatusFromItem[]</code> </p>
+
+#### GetPartyMembers
+
+
+
+```lua
+function Character.GetPartyMembers(char)
+   -> EsvCharacter[] Includes the char passed per param.
+```
+
+
+
+Returns a list of party members of char's party. Char must be a player.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EsvCharacter[] Includes the char passed per param.</code> </p>
 </doc>

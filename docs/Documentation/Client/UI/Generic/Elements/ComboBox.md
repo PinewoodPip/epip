@@ -3,57 +3,106 @@ The `GenericUI_Element_ComboBox` element implements a combobox form element. The
 
 You can set its options with `SetOptions()` or `AddOption()`. Comboboxes contain no options by default.
 
-## Classes
+<doc package="GenericUI_Element_ComboBox">
 
-<doc class="GenericUI_Element_ComboBox" symbols="_SubClasses">
 
-```lua
----Represents an option in the combobox.
----@class GenericUI_Element_ComboBox_Option
----@field Label string
----@field ID string
 
-```
-</doc>
+## Events and Hooks
 
-## Events
+##### OptionSelected (event)
 
-<doc class="GenericUI_Element_ComboBox" symbols="Listenable">
+Fired when the user selects an option.
 
-```lua
----Fired when the user selects an option.
----@event OptionSelected
----@field Option GenericUI_Element_ComboBox_Option
----@field Index integer
 
-```
-</doc>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Option</b> <code>GenericUI_Element_ComboBox_Option</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Index</b> <code>integer</code> </p>
+
+
 
 ## Methods
 
-<doc class="GenericUI_Element_ComboBox" symbols="Function">
+#### SetOptions
+
+
 
 ```lua
----Sets the currently selected option.
----@param id string
-function ComboBox:SelectOption(id)
-
----Removes all options from the combobox.
-function ComboBox:ClearOptions()
-
----Sets whether the combobox should open upwards, or downwards (default)
----Use to determine the orientation of the options selector when opened.
----@param openUpwards boolean
-function ComboBox:SetOpenUpwards(openUpwards)
-
----Sets the options for the combobox. Equivalent to calling `ClearOptions()` then `AddOption()` for each option in the list passed.
----@param options GenericUI_Element_ComboBox_Option[]
 function ComboBox:SetOptions(options)
-
----Adds an option to the combobox.
----@param id string
----@param label string
-function ComboBox:AddOption(id, label)
-
 ```
+
+
+
+Sets the options for the combobox. Equivalent to calling `ClearOptions()` then `AddOption()` for each option in the list passed.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>options</b> <code>GenericUI_Element_ComboBox_Option[]</code> </p>
+
+#### AddOption
+
+
+
+```lua
+function ComboBox:AddOption(id, label)
+```
+
+
+
+Adds an option to the combobox.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>label</b> <code>string</code> </p>
+
+#### SelectOption
+
+
+
+```lua
+function ComboBox:SelectOption(id)
+```
+
+
+
+Sets the currently selected option.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
+
+#### ClearOptions
+
+
+
+```lua
+function ComboBox:ClearOptions()
+```
+
+
+
+Removes all options from the combobox.
+
+#### SetOpenUpwards
+
+
+
+```lua
+function ComboBox:SetOpenUpwards(openUpwards)
+```
+
+
+
+Sets whether the combobox should open upwards, or downwards (default)
+Use to determine the orientation of the options selector when opened.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>openUpwards</b> <code>boolean</code> </p>
 </doc>

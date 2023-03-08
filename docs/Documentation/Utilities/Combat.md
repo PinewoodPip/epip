@@ -1,47 +1,64 @@
 # Combat
 The `Combat` library contains methods for querying information about ongoing combats.
 
-## Classes
+<doc package="CombatLib">
 
-<doc class="CombatLib" symbols="_SubClasses">
 
-```lua
----@class CombatLib_RoundInfo
----@field Participants (Character|Item)[]
-
-```
-```lua
----@class CombatLib_TurnOrder
----@field CurrentRound CombatLib_RoundInfo
----@field NextRound CombatLib_RoundInfo
----@field CombatID uint8
-
-```
-</doc>
-
-<!-- ## Events
-
-<doc class="CombatLib" symbols="Listenable">
-
-```lua
-```
-</doc> -->
 
 ## Methods
 
-<doc class="CombatLib" symbols="Function">
+#### GetTurnManager
+
+
 
 ```lua
----@return EclTurnManager|EsvTurnManager 
 function Combat.GetTurnManager()
-
----@param combatID integer
----@return EclTurnManagerCombat|EsvTurnManagerCombat 
-function Combat.GetCombat(combatID)
-
----Returns the character participants of a combat.
----@return CombatLib_TurnOrder 
-function Combat.GetTurnOrder(combatID)
-
+   -> EclTurnManager|EsvTurnManager
 ```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclTurnManager|EsvTurnManager</code> </p>
+
+#### GetCombat
+
+
+
+```lua
+function Combat.GetCombat(combatID)
+   -> EclTurnManagerCombat|EsvTurnManagerCombat
+```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>combatID</b> <code>integer</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclTurnManagerCombat|EsvTurnManagerCombat</code> </p>
+
+#### GetTurnOrder
+
+
+
+```lua
+function Combat.GetTurnOrder(combatID)
+   -> CombatLib_TurnOrder
+```
+
+
+
+Returns the character participants of a combat.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>CombatLib_TurnOrder</code> </p>
 </doc>

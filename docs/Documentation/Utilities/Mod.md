@@ -3,45 +3,97 @@ The `Mod` library contains wrapper methods for querying mod-related information.
 
 The `GUIDS` table contains the GUIDs of various notable mods.
 
-<!-- ## Classes
+<doc package="ModLib">
 
-<doc class="ModLib" symbols="_SubClasses">
 
-</doc>
--->
-
-<!-- ## Events
-
-<doc class="ModLib" symbols="Listenable">
-
-```lua
-```
-</doc>
--->
 
 ## Methods
 
-<doc class="ModLib" symbols="Function">
+#### IsLoaded
+
+
 
 ```lua
----@param guid GUID
 function Mod.IsLoaded(guid)
-
----Returns a mod by its guid.
----@return Module 
-function Mod.Get(guid)
-
----Returns a list of the currently loaded mods.
----@return Module[] 
-function Mod.GetLoadOrder()
-
----@param guid GUID
----@return integer?, integer?, integer?, integer? --Major, minor, revision, build version. Fails if the mod is not loaded.
-function Mod.GetStoryVersion(guid)
-
----Returns the context the caller script is running in.
----@return "Client"|"Server" 
-function Mod.GetCurrentContext()
-
 ```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code> </p>
+
+#### Get
+
+
+
+```lua
+function Mod.Get(guid)
+   -> Module
+```
+
+
+
+Returns a mod by its guid.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Module</code> </p>
+
+#### GetLoadOrder
+
+
+
+```lua
+function Mod.GetLoadOrder()
+   -> Module[]
+```
+
+
+
+Returns a list of the currently loaded mods.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Module[]</code> </p>
+
+#### GetStoryVersion
+
+
+
+```lua
+function Mod.GetStoryVersion(guid)
+   -> integer?, integer?, integer?, integer? 
+```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer?, integer?, integer?, integer? </code> Major, minor, revision, build version. Fails if the mod is not loaded.</p>
+
+#### GetCurrentContext
+
+
+
+```lua
+function Mod.GetCurrentContext()
+   -> "Client"|"Server"
+```
+
+
+
+Returns the context the caller script is running in.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>"Client"|"Server"</code> </p>
 </doc>

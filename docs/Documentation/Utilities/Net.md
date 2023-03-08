@@ -14,65 +14,149 @@ end)
 
 Additionally, for purposes of semantic clarity, a `NetMessage` class exists for denoting net events. Several other net message classes are defined with commonly used fields like `CharacterNetID`. You may have your net message classes inherit from these to reduce annotation duplication and to clarify the class's purpose as a net message.
 
-## Classes
+<doc package="NetLib">
 
-TODO
-<doc class="NetLib" symbols="_SubClasses">
 
-</doc>
-
-## Events
-
-<doc class="Net" symbols="Listenable">
-
-```lua
----@event MessageReceived<T>
----@field Channel string
----@field Message `T`
----@field UserID UserId
-
-```
-</doc>
 
 ## Methods
 
-<doc class="Net" symbols="Function">
+#### Broadcast
+
+
 
 ```lua
----Sends a message to the server.
----@param channel `T`
----@param message T?
-function Net.PostToServer(channel, message)
-
----Sends a message to all peers.
----@param channel `T`
----@param message T?
----@param excludedChar GUID?
 function Net.Broadcast(channel, message, excludedChar)
-
----Sends a message to the user that currently controls char. Fails if char is a summon.
----@param char Character|GUID|NetId
----@param channel `T`
----@param message T?
-function Net.PostToCharacter(char, channel, message)
-
----Sends a message to a user.
----@param user UserId
----@param channel `T`
----@param message T
----@param excludedChar GUID?
-function Net.PostToUser(user, channel, message, excludedChar)
-
----Sends a message to the owner of char. Use if you suspect the char might be a summon.
----@param char Character
----@param channel string
----@param message any
-function Net.PostToOwner(char, channel, message)
-
----Wrapper for Ext.RegisterNetListener that parses json payloads and fires an event afterwards.
----@param channel `T`
----@param func fun(payload:`T`)
-function Net.RegisterListener(channel, func)
-
 ```
+
+
+
+Sends a message to all peers.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>excludedChar</b> <code>GUID?</code> </p>
+
+#### PostToCharacter
+
+
+
+```lua
+function Net.PostToCharacter(char, channel, message)
+```
+
+
+
+Sends a message to the user that currently controls char. Fails if char is a summon.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character|GUID|NetId</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code> </p>
+
+#### PostToUser
+
+
+
+```lua
+function Net.PostToUser(user, channel, message, excludedChar)
+```
+
+
+
+Sends a message to a user.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>user</b> <code>UserId</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>excludedChar</b> <code>GUID?</code> </p>
+
+#### PostToOwner
+
+
+
+```lua
+function Net.PostToOwner(char, channel, message)
+```
+
+
+
+Sends a message to the owner of char. Use if you suspect the char might be a summon.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>any</code> </p>
+
+#### RegisterListener
+
+
+
+```lua
+function Net.RegisterListener(channel, func)
+```
+
+
+
+Wrapper for Ext.RegisterNetListener that parses json payloads and fires an event afterwards.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>func</b> <code>fun(payload:`T`)</code> </p>
+
+#### PostToServer
+
+
+
+```lua
+function Net.PostToServer(channel, message)
+```
+
+
+
+Sends a message to the server.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code> </p>
 </doc>

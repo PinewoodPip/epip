@@ -8,76 +8,145 @@ The `ArtifactLib_ArtifactDefiniton` class holds information for each of the arti
 
 The data is not generated automatically. You must add your own artifacts by calling `RegisterArtifact()` with the data table filled out. Ideally, this should be done on both contexts, so client scripting can also query the information.
 
-## Classes
+<doc package="ArtifactLib">
 
-<doc class="ArtifactLib" symbols="_SubClasses">
 
-```lua
----@class ArtifactLib_ArtifactDefinition
----@field ID string
----@field Slot StatsItemSlot
----@field ItemTemplate GUID
----@field RuneTemplate GUID
----@field DescriptionHandle TranslatedStringHandle
----@field KeywordActivators Keyword[]
----@field KeywordMutators Keyword[]
----@field GetName fun(self):string
----@field GetDescription fun(self):string
----@field GetPowerTooltip fun(self):TooltipElement[]
-
----Returns the artifact's name.
----@return string 
-function _ArtifactDef:GetName()
-
----Returns the artifact power's description.
----@return string 
-function _ArtifactDef:GetDescription()
-
----Returns a full tooltip showing the artifact's name and power.
----@return string 
-function _ArtifactDef:GetPowerTooltip()
-
-```
-</doc>
 
 ## Methods
 
-<doc class="ArtifactLib" symbols="Function">
+#### GetData
+
+
 
 ```lua
----Returns the definition for an artifact.
----@param artifactID string
----@return ArtifactLib_ArtifactDefinition? 
 function Artifact.GetData(artifactID)
-
----Registers the data for an artifact.
----@param data ArtifactLib_ArtifactDefinition
----@return ArtifactLib_ArtifactDefinition 
-function Artifact.RegisterArtifact(data)
-
----Returns whether char has the artifact power active.
----@param char EclCharacter
----@param artifact ArtifactLib_ArtifactDefinition|string
----@return boolean 
-function Artifact.IsEquipped(char, artifact)
-
----Returns a list of artifact powers active on char.
----@param char EclCharacter
----@return ArtifactLib_ArtifactDefinition[] 
-function Artifact.GetEquippedPowers(char)
-
----Returns whether char has the artifact power active.
----@param char EsvCharacter
----@param artifact ArtifactLib_ArtifactDefinition|string
----@return boolean 
-function Artifact.IsEquipped(char, artifact)
-
----Returns a list of artifact powers active on char.
----@param char EsvCharacter
----@return ArtifactLib_ArtifactDefinition[] 
-function Artifact.GetEquippedPowers(char)
-
+   -> ArtifactLib_ArtifactDefinition?
 ```
+
+
+
+Returns the definition for an artifact.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>artifactID</b> <code>string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition?</code> </p>
+
+#### RegisterArtifact
+
+
+
+```lua
+function Artifact.RegisterArtifact(data)
+   -> ArtifactLib_ArtifactDefinition
+```
+
+
+
+Registers the data for an artifact.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>data</b> <code>ArtifactLib_ArtifactDefinition</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition</code> </p>
+
+#### IsEquipped
+
+
+
+```lua
+function Artifact.IsEquipped(char, artifact)
+   -> boolean
+```
+
+
+
+Returns whether char has the artifact power active.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>artifact</b> <code>ArtifactLib_ArtifactDefinition|string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetEquippedPowers
+
+
+
+```lua
+function Artifact.GetEquippedPowers(char)
+   -> ArtifactLib_ArtifactDefinition[]
+```
+
+
+
+Returns a list of artifact powers active on char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition[]</code> </p>
+
+#### IsEquipped
+
+
+
+```lua
+function Artifact.IsEquipped(char, artifact)
+   -> boolean
+```
+
+
+
+Returns whether char has the artifact power active.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>artifact</b> <code>ArtifactLib_ArtifactDefinition|string</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### GetEquippedPowers
+
+
+
+```lua
+function Artifact.GetEquippedPowers(char)
+   -> ArtifactLib_ArtifactDefinition[]
+```
+
+
+
+Returns a list of artifact powers active on char.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition[]</code> </p>
 </doc>
 
 ## Usage examples

@@ -5,22 +5,25 @@ It's intended for displaying single colors, useful for solid-color backgrounds o
 
 Its performance for "painting" textures dynamically is untested.
 
-## Events
+<doc package="GenericUI_Element_Color">
 
-<doc class="GenericUI_Element_Color" symbols="Listenable">
 
-```lua
-```
-</doc>
 
 ## Methods
 
-<doc class="GenericUI_Element_Color" symbols="Function">
+#### SetColor
+
+
 
 ```lua
----Sets the color shown by the element.
----@param color RGBColor
 function Color:SetColor(color)
-
 ```
+
+
+
+Sets the color shown by the element.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>color</b> <code>RGBColor</code> </p>
 </doc>
