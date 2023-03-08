@@ -173,120 +173,169 @@
               
                 <h1 id="element">Element<a class="headerlink" href="#element" title="Permanent link">&para;</a></h1>
 <p><code>GenericUI_Element</code> is the base class that all built-in elements inherit from.</p>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
-<p><doc class="GenericUI_Element" symbols="Listenable"></p>
-<pre><code class="language-lua">---@event MouseOver
+<p><doc package="GenericUI_Element"></p>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
+<h5 id="mouseover-event">MouseOver (event)<a class="headerlink" href="#mouseover-event" title="Permanent link">&para;</a></h5>
+<h5 id="mouseout-event">MouseOut (event)<a class="headerlink" href="#mouseout-event" title="Permanent link">&para;</a></h5>
+<h5 id="mouseup-event">MouseUp (event)<a class="headerlink" href="#mouseup-event" title="Permanent link">&para;</a></h5>
+<h5 id="mousedown-event">MouseDown (event)<a class="headerlink" href="#mousedown-event" title="Permanent link">&para;</a></h5>
+<h5 id="rightclick-event">RightClick (event)<a class="headerlink" href="#rightclick-event" title="Permanent link">&para;</a></h5>
+<h5 id="tweencompleted-event">TweenCompleted (event)<a class="headerlink" href="#tweencompleted-event" title="Permanent link">&para;</a></h5>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>EventID</b> <code>string</code> </p>
 
----@event MouseOut
-
----@event MouseUp
-
----@event MouseDown
-
----@event RightClick
-
----@event TweenCompleted
----@field EventID string
-
----@event Clicked
-
-</code></pre>
-<p></doc></p>
+<h5 id="clicked-event">Clicked (event)<a class="headerlink" href="#clicked-event" title="Permanent link">&para;</a></h5>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><doc class="GenericUI_Element" symbols="Function"></p>
-<pre><code class="language-lua">---Get the movie clip of this element.
----@return FlashMovieClip 
-function _Element:GetMovieClip()
-
----@param id string
----@param elementType `T`|GenericUI_ElementType
----@return `T` 
-function _Element:AddChild(id, elementType)
-
----Sets whether the element should be horizontally centered in VerticalList and ScrollList.
----@param center boolean
-function _Element:SetCenterInLists(center)
-
----Sets this element as the area for dragging the *entire* UI.
-function _Element:SetAsDraggableArea()
-
----@param x number
----@param y number
-function _Element:SetPosition(x, y)
-
----@param width number
----@param height number
-function _Element:SetSize(width, height)
-
----@param enabled boolean
-function _Element:SetMouseEnabled(enabled)
-
----@param enabled boolean
-function _Element:SetMouseChildren(enabled)
-
----@param alpha number
----@param affectChildren boolean? Defaults to not affecting children alpha.
-function _Element:SetAlpha(alpha, affectChildren)
-
----@param degrees number
-function _Element:SetRotation(degrees)
-
-function _Element:Destroy()
-
----@param eventType string
----@param handler function
-function _Element:RegisterListener(eventType, handler)
-
----@return number, number -- X and Y coordinates in local space.
-function _Element:GetPosition()
-
----@param visible boolean
-function _Element:SetVisible(visible)
-
----@param tween GenericUI_ElementTween
-function _Element:Tween(tween)
-
----Sets the size override, used to override the element size within list-like elements.
----@overload fun(self:GenericUI_Element, size:Vector2) 
----@param width number
----@param height number
-function _Element:SetSizeOverride(width, height)
-
----Sets the scroll rect of the element.
----@param position Vector2
----@param size Vector2
-function _Element:SetScrollRect(position, size)
-
----Removes the scroll rect from the element, if any.
-function _Element:RemoveScrollRect()
-
----Sets the Z-order index of a child element.
----@param child string|GenericUI_Element
----@param index integer
-function _Element:SetChildIndex(child, index)
-
----Returns the calculated width of the element.
----@return number 
-function _Element:GetWidth()
-
----Returns the calculated height of the element.
----@return number 
-function _Element:GetHeight()
-
----Sets the scale of the element.
----@param scale Vector2
-function _Element:SetScale(scale)
-
----Returns the scale of the element.
----@return Vector2 
-function _Element:GetScale()
-
----Sets the tooltip of the element.
----@param tooltipType TooltipLib_TooltipType
----@param tooltip any TODO document
-function _Element:SetTooltip(tooltipType, tooltip)
-
+<h4 id="getmovieclip">GetMovieClip<a class="headerlink" href="#getmovieclip" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:GetMovieClip()
+   -&gt; FlashMovieClip
 </code></pre>
+<p>Get the movie clip of this element.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>FlashMovieClip</code> </p>
+
+<h4 id="addchild">AddChild<a class="headerlink" href="#addchild" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:AddChild(id, elementType)
+   -&gt; `T`
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>elementType</b> <code>`T`|GenericUI_ElementType</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>`T`</code> </p>
+
+<h4 id="setcenterinlists">SetCenterInLists<a class="headerlink" href="#setcenterinlists" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetCenterInLists(center)
+</code></pre>
+<p>Sets whether the element should be horizontally centered in VerticalList and ScrollList.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>center</b> <code>boolean</code> </p>
+
+<h4 id="setasdraggablearea">SetAsDraggableArea<a class="headerlink" href="#setasdraggablearea" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetAsDraggableArea()
+</code></pre>
+<p>Sets this element as the area for dragging the <em>entire</em> UI.</p>
+<h4 id="setposition">SetPosition<a class="headerlink" href="#setposition" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetPosition(x, y)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>x</b> <code>number</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>y</b> <code>number</code> </p>
+
+<h4 id="setsize">SetSize<a class="headerlink" href="#setsize" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetSize(width, height)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>width</b> <code>number</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>height</b> <code>number</code> </p>
+
+<h4 id="setmouseenabled">SetMouseEnabled<a class="headerlink" href="#setmouseenabled" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetMouseEnabled(enabled)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>enabled</b> <code>boolean</code> </p>
+
+<h4 id="setmousechildren">SetMouseChildren<a class="headerlink" href="#setmousechildren" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetMouseChildren(enabled)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>enabled</b> <code>boolean</code> </p>
+
+<h4 id="setalpha">SetAlpha<a class="headerlink" href="#setalpha" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetAlpha(alpha, affectChildren)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>alpha</b> <code>number</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>affectChildren</b> <code>boolean?</code> Defaults to not affecting children alpha.</p>
+
+<h4 id="setrotation">SetRotation<a class="headerlink" href="#setrotation" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetRotation(degrees)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>degrees</b> <code>number</code> </p>
+
+<h4 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:Destroy()
+</code></pre>
+<h4 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:RegisterListener(eventType, handler)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>eventType</b> <code>string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handler</b> <code>function</code> </p>
+
+<h4 id="getposition">GetPosition<a class="headerlink" href="#getposition" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:GetPosition()
+   -&gt; number, number 
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number, number </code> X and Y coordinates in local space.</p>
+
+<h4 id="setvisible">SetVisible<a class="headerlink" href="#setvisible" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetVisible(visible)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>visible</b> <code>boolean</code> </p>
+
+<h4 id="tween">Tween<a class="headerlink" href="#tween" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:Tween(tween)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>tween</b> <code>GenericUI_ElementTween</code> </p>
+
+<h4 id="setsizeoverride">SetSizeOverride<a class="headerlink" href="#setsizeoverride" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetSizeOverride(width, height)
+</code></pre>
+<p>Sets the size override, used to override the element size within list-like elements.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>width</b> <code>number</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>height</b> <code>number</code> </p>
+
+<h4 id="setscrollrect">SetScrollRect<a class="headerlink" href="#setscrollrect" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetScrollRect(position, size)
+</code></pre>
+<p>Sets the scroll rect of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>position</b> <code>Vector2</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>size</b> <code>Vector2</code> </p>
+
+<h4 id="removescrollrect">RemoveScrollRect<a class="headerlink" href="#removescrollrect" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:RemoveScrollRect()
+</code></pre>
+<p>Removes the scroll rect from the element, if any.</p>
+<h4 id="setchildindex">SetChildIndex<a class="headerlink" href="#setchildindex" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetChildIndex(child, index)
+</code></pre>
+<p>Sets the Z-order index of a child element.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>child</b> <code>string|GenericUI_Element</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>index</b> <code>integer</code> </p>
+
+<h4 id="getwidth">GetWidth<a class="headerlink" href="#getwidth" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:GetWidth()
+   -&gt; number
+</code></pre>
+<p>Returns the calculated width of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number</code> </p>
+
+<h4 id="getheight">GetHeight<a class="headerlink" href="#getheight" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:GetHeight()
+   -&gt; number
+</code></pre>
+<p>Returns the calculated height of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number</code> </p>
+
+<h4 id="setscale">SetScale<a class="headerlink" href="#setscale" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetScale(scale)
+</code></pre>
+<p>Sets the scale of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>scale</b> <code>Vector2</code> </p>
+
+<h4 id="getscale">GetScale<a class="headerlink" href="#getscale" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:GetScale()
+   -&gt; Vector2
+</code></pre>
+<p>Returns the scale of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector2</code> </p>
+
+<h4 id="settooltip">SetTooltip<a class="headerlink" href="#settooltip" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:SetTooltip(tooltipType, tooltip)
+</code></pre>
+<p>Sets the tooltip of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>tooltipType</b> <code>TooltipLib_TooltipType</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>tooltip</b> <code>any</code> TODO document</p>
 <p></doc></p>
               
             </div>

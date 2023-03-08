@@ -189,10 +189,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#events">Events</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#methods_1">Methods</a>
-    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Mod/">Mod</a>
@@ -266,632 +262,426 @@
 <p><doc package="ItemLib"></p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h4 id="isartifact">IsArtifact<a class="headerlink" href="#isartifact" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsArtifact(item)
+<pre><code class="language-lua">function Item.IsArtifact(item)
    -&gt; boolean
 </code></pre>
 <p>Returns true if the item is an Artifact by checking the AMER_UNI tag.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isunique">IsUnique<a class="headerlink" href="#isunique" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsUnique(item)
+<pre><code class="language-lua">function Item.IsUnique(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether an item is of Unique rarity.
 Returns <code>true</code> for Artifact items.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isrune">IsRune<a class="headerlink" href="#isrune" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsRune(item)
+<pre><code class="language-lua">function Item.IsRune(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether the item is a rune.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="ismeleeweapon">IsMeleeWeapon<a class="headerlink" href="#ismeleeweapon" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsMeleeWeapon(item)
+<pre><code class="language-lua">function Item.IsMeleeWeapon(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether item is a melee weapon (satisfying a MeleeWeapon requirement)
 Returns true for None-type weaponry.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="geticon">GetIcon<a class="headerlink" href="#geticon" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetIcon(item)
+<pre><code class="language-lua">function Item.GetIcon(item)
    -&gt; string
 </code></pre>
 <p>Returns the icon of the item.
 Fetching the icon is technically different per context; the server only cares about root template icon (except for the gold template). This function uses the client logic (which also checks icon override and icon from stats).</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
+
 <h4 id="hasflag">HasFlag<a class="headerlink" href="#hasflag" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.HasFlag(item, flag)
+<pre><code class="language-lua">function Item.HasFlag(item, flag)
 </code></pre>
 <p>Returns whether the item has a flag.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>flag</b> <code>EclItemFlags|EsvItemFlags|EclItemFlags2|EsvItemFlags2</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>flag</b> <code>EclItemFlags|EsvItemFlags|EclItemFlags2|EsvItemFlags2</code> </p>
 
 <h4 id="iscontainer">IsContainer<a class="headerlink" href="#iscontainer" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsContainer(item)
+<pre><code class="language-lua">function Item.IsContainer(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether an item is a container.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="hasuseaction">HasUseAction<a class="headerlink" href="#hasuseaction" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.HasUseAction(item, useActionID)
+<pre><code class="language-lua">function Item.HasUseAction(item, useActionID)
    -&gt; boolean
 </code></pre>
 <p>Returns whether the item has a OnUsePeaceAction of the passed type.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>useActionID</b> <code>ActionDataType</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>useActionID</b> <code>ActionDataType</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="hasuseactions">HasUseActions<a class="headerlink" href="#hasuseactions" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.HasUseActions(item)
+<pre><code class="language-lua">function Item.HasUseActions(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether an item has any use actions.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getuseactions">GetUseActions<a class="headerlink" href="#getuseactions" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetUseActions(item, actionType)
+<pre><code class="language-lua">function Item.GetUseActions(item, actionType)
    -&gt; IActionData[]
 </code></pre>
 <p>Returns the use actions of an item, optionally filtered by type.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>actionType</b> <code>ActionDataType</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>actionType</b> <code>ActionDataType</code> </p>
 
-<p><em>@return</em> <code>IActionData[]</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>IActionData[]</code> </p>
+
 <h4 id="getowner">GetOwner<a class="headerlink" href="#getowner" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetOwner(item)
+<pre><code class="language-lua">function Item.GetOwner(item)
    -&gt; Character?
 </code></pre>
 <p>Returns the current owner of the item.
 The owner will be nil if the character who owned the item died.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>Character?</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Character?</code> </p>
+
 <h4 id="islegal">IsLegal<a class="headerlink" href="#islegal" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsLegal(item)
+<pre><code class="language-lua">function Item.IsLegal(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether interacting with an item is legal.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isweapon">IsWeapon<a class="headerlink" href="#isweapon" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsWeapon(item)
+<pre><code class="language-lua">function Item.IsWeapon(item)
    -&gt; boolean
 </code></pre>
 <p>Returns true if the item is a weapon (shields don't count!)</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isshield">IsShield<a class="headerlink" href="#isshield" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsShield(item)
+<pre><code class="language-lua">function Item.IsShield(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether item is a shield (satisfying a ShieldWeapon requirement)</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isdagger">IsDagger<a class="headerlink" href="#isdagger" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsDagger(item)
+<pre><code class="language-lua">function Item.IsDagger(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether item is a dagger (satisfying a DaggerWeapon requirement)</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="israngedweapon">IsRangedWeapon<a class="headerlink" href="#israngedweapon" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsRangedWeapon(item)
+<pre><code class="language-lua">function Item.IsRangedWeapon(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether item is a ranged weapon; bow or crossbow only!</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getuseapcost">GetUseAPCost<a class="headerlink" href="#getuseapcost" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetUseAPCost(item)
+<pre><code class="language-lua">function Item.GetUseAPCost(item)
    -&gt; integer
 </code></pre>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
 <h4 id="canuse">CanUse<a class="headerlink" href="#canuse" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.CanUse(char, item)
+<pre><code class="language-lua">function Item.CanUse(char, item)
    -&gt; boolean
 </code></pre>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getitemsinpartyinventory">GetItemsInPartyInventory<a class="headerlink" href="#getitemsinpartyinventory" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetItemsInPartyInventory(char, predicate)
+<pre><code class="language-lua">function Item.GetItemsInPartyInventory(char, predicate)
 </code></pre>
 <p>Returns all items in the party inventory of char matching the predicate, or all if no predicate is passed.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>predicate?</b> <code>fun(item:Item):boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>predicate?</b> <code>fun(item:Item):boolean</code> </p>
 
 <h4 id="getidentifyrequirement">GetIdentifyRequirement<a class="headerlink" href="#getidentifyrequirement" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetIdentifyRequirement(item)
+<pre><code class="language-lua">function Item.GetIdentifyRequirement(item)
    -&gt; number
 </code></pre>
 <p>Gets the amount of Loremaster necessary to identify an item.<br />
  Ignores whether the item is already identified.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>number</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number</code> </p>
+
 <h4 id="get">Get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.Get(identifier, isFlashHandle)
+<pre><code class="language-lua">function Item.Get(identifier, isFlashHandle)
    -&gt; Item
 </code></pre>
-<p style='margin-bottom: 0px'><i>@param</i> <b>identifier</b> <code>GUID|NetId|EntityHandle</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>identifier</b> <code>GUID|NetId|EntityHandle</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>isFlashHandle</b> <code>boolean?</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>isFlashHandle</b> <code>boolean?</code> </p>
 
-<p><em>@return</em> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Item</code> </p>
+
 <h4 id="isequipment">IsEquipment<a class="headerlink" href="#isequipment" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsEquipment(item)
+<pre><code class="language-lua">function Item.IsEquipment(item)
    -&gt; boolean
 </code></pre>
 <p>Returns true if the item is an armor piece or a weapon.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isdyeable">IsDyeable<a class="headerlink" href="#isdyeable" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsDyeable(item)
+<pre><code class="language-lua">function Item.IsDyeable(item)
    -&gt; boolean
 </code></pre>
 <p>Returns true for dyeable items (equipment, except rings/amulet/belt).</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getitemslot">GetItemSlot<a class="headerlink" href="#getitemslot" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetItemSlot(item)
+<pre><code class="language-lua">function Item.GetItemSlot(item)
    -&gt; ItemSlot
 </code></pre>
 <p>Alias for Item.Stats.ItemSlot</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>ItemSlot</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ItemSlot</code> </p>
+
 <h4 id="getequippeditem">GetEquippedItem<a class="headerlink" href="#getequippeditem" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetEquippedItem(char, slot)
+<pre><code class="language-lua">function Item.GetEquippedItem(char, slot)
    -&gt; Item?
 </code></pre>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>slot</b> <code>ItemSlot</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>slot</b> <code>ItemSlot</code> </p>
 
-<p><em>@return</em> <code>Item?</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Item?</code> </p>
+
 <h4 id="getequipmentsubtype">GetEquipmentSubtype<a class="headerlink" href="#getequipmentsubtype" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetEquipmentSubtype(item)
+<pre><code class="language-lua">function Item.GetEquipmentSubtype(item)
    -&gt; ItemLib_EquipmentType|ItemSlot
 </code></pre>
 <p>Returns the subtype of item (ex. "Knife" or "Platemail").<br />
 Returns ItemSlot for items with no subtypes.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>ItemLib_EquipmentType|ItemSlot</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ItemLib_EquipmentType|ItemSlot</code> </p>
+
 <h4 id="applydye">ApplyDye<a class="headerlink" href="#applydye" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.ApplyDye(item, dye)
+<pre><code class="language-lua">function Item.ApplyDye(item, dye)
    -&gt; boolean False if item is already dyed with the same dye, or if dye is ``nil``.
 </code></pre>
 <p>Applies a dye to the item.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>dye</b> <code>Dye</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>dye</b> <code>Dye</code> </p>
 
-<p><em>@return</em> <code>boolean False if item is already dyed with the same dye, or if dye is ``nil``.</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean False if item is already dyed with the same dye, or if dye is ``nil``.</code> </p>
+
 <h4 id="getcurrentdye">GetCurrentDye<a class="headerlink" href="#getcurrentdye" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetCurrentDye(item)
+<pre><code class="language-lua">function Item.GetCurrentDye(item)
    -&gt; string,Dye The dye ID and data table.
 </code></pre>
 <p>Returns the ID and data for the most recently-applied dye deltamod on the item.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>string,Dye The dye ID and data table.</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string,Dye The dye ID and data table.</code> </p>
+
 <h4 id="getnamedboosts">GetNamedBoosts<a class="headerlink" href="#getnamedboosts" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetNamedBoosts(item)
+<pre><code class="language-lua">function Item.GetNamedBoosts(item)
    -&gt; string[]
 </code></pre>
 <p>Returns a list of the named boosts on the item.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>string[]</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string[]</code> </p>
+
 <h4 id="isequipped">IsEquipped<a class="headerlink" href="#isequipped" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsEquipped(char, item)
+<pre><code class="language-lua">function Item.IsEquipped(char, item)
    -&gt; boolean
 </code></pre>
 <p>Returns true if item is equipped by char. Assumes the item cannot be equipped into an unintended slot. Rings and weapons are checked for both slots.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getequippedslot">GetEquippedSlot<a class="headerlink" href="#getequippedslot" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetEquippedSlot(item, char)
+<pre><code class="language-lua">function Item.GetEquippedSlot(item, char)
    -&gt; EquipSlot?
 </code></pre>
 <p>Returns the slot that an item is equipped in, or nil if it is not.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character?</code> Defaults to item's owner.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character?</code> Defaults to item's owner.</p>
 
-<p><em>@return</em> <code>EquipSlot?</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EquipSlot?</code> </p>
+
 <h4 id="countitemsininventory">CountItemsInInventory<a class="headerlink" href="#countitemsininventory" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.CountItemsInInventory(entity, predicate)
+<pre><code class="language-lua">function Item.CountItemsInInventory(entity, predicate)
    -&gt; number
 </code></pre>
 <p>Count the items in an entity's inventory that match a predicate function.<br />
  Predicate is passed <code>Item</code> and should return true for items to be counted.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>entity</b> <code>Entity</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>entity</b> <code>Entity</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>predicate</b> <code>fun(item:</code> EsvItem)</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>predicate</b> <code>fun(item:</code> EsvItem)</p>
 
-<p><em>@return</em> <code>number</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number</code> </p>
+
 <h4 id="getcontaineditems">GetContainedItems<a class="headerlink" href="#getcontaineditems" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetContainedItems(container, predicate)
+<pre><code class="language-lua">function Item.GetContainedItems(container, predicate)
    -&gt; Item[]
 </code></pre>
 <p>Returns the items contained within a container item, optionally filtered by predicate.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>container</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>container</b> <code>Item</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>predicate</b> <code>(fun(item:Item):boolean)?</code> The predicate should return `true` for items to be included. If `nil`, all items will be included.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>predicate</b> <code>(fun(item:Item):boolean)?</code> The predicate should return `true` for items to be included. If `nil`, all items will be included.</p>
 
-<p><em>@return</em> <code>Item[]</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Item[]</code> </p>
+
 <h4 id="getrune">GetRune<a class="headerlink" href="#getrune" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetRune(item, index)
+<pre><code class="language-lua">function Item.GetRune(item, index)
    -&gt; StatItem
 </code></pre>
 <p>Gets the stats object of the rune inserted at rune index <code>index</code> on item.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>index</b> <code>integer</code> **0-based.**</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>index</b> <code>integer</code> **0-based.**</p>
 
-<p><em>@return</em> <code>StatItem</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>StatItem</code> </p>
+
 <h4 id="getrunes">GetRunes<a class="headerlink" href="#getrunes" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetRunes(item)
+<pre><code class="language-lua">function Item.GetRunes(item)
    -&gt; table&lt;number, StatItem&gt; 
 </code></pre>
 <p>Returns a list of runes on the item.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>table&lt;number, StatItem&gt;</code> Empty slots are nil.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>table<number, StatItem> </code> Empty slots are nil.</p>
+
 <h4 id="getruneslots">GetRuneSlots<a class="headerlink" href="#getruneslots" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetRuneSlots(item)
+<pre><code class="language-lua">function Item.GetRuneSlots(item)
    -&gt; integer
 </code></pre>
 <p>Returns the amount of rune slots an item has.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
 <h4 id="getruneslotsicon">GetRuneSlotsIcon<a class="headerlink" href="#getruneslotsicon" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetRuneSlotsIcon(item)
+<pre><code class="language-lua">function Item.GetRuneSlotsIcon(item)
    -&gt; icon
 </code></pre>
 <p>Returns the icon displaying the state of item's rune slots.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>icon</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>icon</code> </p>
+
 <h4 id="hasrunes">HasRunes<a class="headerlink" href="#hasrunes" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.HasRunes(item)
+<pre><code class="language-lua">function Item.HasRunes(item)
    -&gt; boolean
 </code></pre>
 <p>Returns true if item has any runes slotted.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getlevel">GetLevel<a class="headerlink" href="#getlevel" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetLevel(item)
+<pre><code class="language-lua">function Item.GetLevel(item)
    -&gt; integer? 
 </code></pre>
 <p>Returns the level of an item.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>integer?</code> <code>nil</code> if the item has no stats.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer? </code> `nil` if the item has no stats.</p>
+
 <h4 id="getrarityicon">GetRarityIcon<a class="headerlink" href="#getrarityicon" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetRarityIcon(rarity)
+<pre><code class="language-lua">function Item.GetRarityIcon(rarity)
    -&gt; icon? 
 </code></pre>
 <p>Returns the icon frame for a rarity, if any.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>rarity</b> <code>ItemLib_Rarity|EclItem</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>rarity</b> <code>ItemLib_Rarity|EclItem</code> </p>
 
-<p><em>@return</em> <code>icon?</code> Not all rarities have icons.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>icon? </code> Not all rarities have icons.</p>
+
 <h4 id="ismarkedaswares">IsMarkedAsWares<a class="headerlink" href="#ismarkedaswares" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.IsMarkedAsWares(item)
+<pre><code class="language-lua">function Item.IsMarkedAsWares(item)
    -&gt; boolean
 </code></pre>
 <p>Returns whether an item is marked as wares.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getitemsininventory">GetItemsInInventory<a class="headerlink" href="#getitemsininventory" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetItemsInInventory(entity, predicate)
+<pre><code class="language-lua">function Item.GetItemsInInventory(entity, predicate)
    -&gt; Item[]
 </code></pre>
 <p>Returns a list of the items in the entity's inventory that match an optional predicate function.<br />
  Predicate is passed the EclItem/EsvItem and should return true for items to be included.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>entity</b> <code>Entity</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>entity</b> <code>Entity</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>predicate</b> <code>fun(item:</code> Item)</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>predicate</b> <code>fun(item:</code> Item)</p>
 
-<p><em>@return</em> <code>Item[]</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Item[]</code> </p>
+
 <h4 id="seticonoverride">SetIconOverride<a class="headerlink" href="#seticonoverride" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.SetIconOverride(item, icon)
+<pre><code class="language-lua">function Item.SetIconOverride(item, icon)
 </code></pre>
 <p>Sets a custom icon for an item.
 Not persistent!</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>item</b> <code>Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>icon</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>icon</b> <code>string</code> </p>
 
 <h4 id="getpartytemplatecount">GetPartyTemplateCount<a class="headerlink" href="#getpartytemplatecount" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function ItemLib.GetPartyTemplateCount(template)
+<pre><code class="language-lua">function Item.GetPartyTemplateCount(template)
    -&gt; number
 </code></pre>
 <p>Count the amount of template instances (prefix + guid) in the client party's inventory.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>template</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>template</b> <code>string</code> </p>
 
-<p><em>@return</em> <code>number</code> 
-</doc></p>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
-<p><doc class="ItemLib" symbols="Listenable"></p>
-<pre><code class="language-lua"></code></pre>
-<p></doc>
---&gt;</p>
-<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
-<p><doc class="ItemLib" symbols="Function"></p>
-<pre><code class="language-lua">---Returns true if the item is an Artifact by checking the AMER_UNI tag.
----@param item Item
----@return boolean 
-function Item.IsArtifact(item)
-
----Returns whether an item is of Unique rarity.
----Returns `true` for Artifact items.
----@param item Item
----@return boolean 
-function Item.IsUnique(item)
-
----Returns whether the item is a rune.
----@param item Item
----@return boolean 
-function Item.IsRune(item)
-
----Returns whether item is a melee weapon (satisfying a MeleeWeapon requirement)
----Returns true for None-type weaponry.
----@param item Item
----@return boolean 
-function Item.IsMeleeWeapon(item)
-
----Returns the icon of the item.
----Fetching the icon is technically different per context; the server only cares about root template icon (except for the gold template). This function uses the client logic (which also checks icon override and icon from stats).
----@param item Item
----@return string 
-function Item.GetIcon(item)
-
----Returns whether the item has a flag.
----@param item Item
----@param flag EclItemFlags|EsvItemFlags|EclItemFlags2|EsvItemFlags2
-function Item.HasFlag(item, flag)
-
----Returns whether an item is a container.
----@param item Item
----@return boolean 
-function Item.IsContainer(item)
-
----Returns whether the item has a OnUsePeaceAction of the passed type.
----@param item Item
----@param useActionID ActionDataType
----@return boolean 
-function Item.HasUseAction(item, useActionID)
-
----Returns whether an item has any use actions.
----@param item Item
----@return boolean 
-function Item.HasUseActions(item)
-
----Returns the use actions of an item, optionally filtered by type.
----@param item Item
----@param actionType ActionDataType
----@return IActionData[] 
-function Item.GetUseActions(item, actionType)
-
----Returns the current owner of the item.
----The owner will be nil if the character who owned the item died.
----@param item Item
----@return Character? 
-function Item.GetOwner(item)
-
----Returns whether interacting with an item is legal.
----@param item Item
----@return boolean 
-function Item.IsLegal(item)
-
----Returns true if the item is a weapon (shields don't count!)
----@param item Item
----@return boolean 
-function Item.IsWeapon(item)
-
----Returns whether item is a shield (satisfying a ShieldWeapon requirement)
----@param item Item
----@return boolean 
-function Item.IsShield(item)
-
----Returns whether item is a dagger (satisfying a DaggerWeapon requirement)
----@param item Item
----@return boolean 
-function Item.IsDagger(item)
-
----Returns whether item is a ranged weapon; bow or crossbow only!
----@param item Item
----@return boolean 
-function Item.IsRangedWeapon(item)
-
----@param item Item
----@return integer 
-function Item.GetUseAPCost(item)
-
----@param char Character
----@param item Item
----@return boolean 
-function Item.CanUse(char, item)
-
----Returns all items in the party inventory of char matching the predicate, or all if no predicate is passed.
----@param char Character
----@param predicate? fun(item:Item):boolean
-function Item.GetItemsInPartyInventory(char, predicate)
-
---- Gets the amount of Loremaster necessary to identify an item.  
---- Ignores whether the item is already identified.
----@param item Item
----@return number 
-function Item.GetIdentifyRequirement(item)
-
----@param identifier GUID|NetId|EntityHandle
----@param isFlashHandle boolean?
----@return Item 
-function Item.Get(identifier, isFlashHandle)
-
---- Returns true if the item is an armor piece or a weapon.
----@param item Item
----@return boolean 
-function Item.IsEquipment(item)
-
---- Returns true for dyeable items (equipment, except rings/amulet/belt).
----@param item Item
----@return boolean 
-function Item.IsDyeable(item)
-
---- Alias for Item.Stats.ItemSlot
----@param item Item
----@return ItemSlot 
-function Item.GetItemSlot(item)
-
----@param char Character
----@param slot ItemSlot
----@return Item? 
-function Item.GetEquippedItem(char, slot)
-
----Returns the subtype of item (ex. &quot;Knife&quot; or &quot;Platemail&quot;).  
----Returns ItemSlot for items with no subtypes.
----@param item Item
----@return ItemLib_EquipmentType|ItemSlot 
-function Item.GetEquipmentSubtype(item)
-
---- Applies a dye to the item.
----@param item Item
----@param dye Dye
----@return boolean False if item is already dyed with the same dye, or if dye is ``nil``.
-function Item.ApplyDye(item, dye)
-
---- Returns the ID and data for the most recently-applied dye deltamod on the item.
----@param item Item
----@return string,Dye The dye ID and data table.
-function Item.GetCurrentDye(item)
-
----Returns a list of the named boosts on the item.
----@param item Item
----@return string[] 
-function Item.GetNamedBoosts(item)
-
---- Returns true if item is equipped by char. Assumes the item cannot be equipped into an unintended slot. Rings and weapons are checked for both slots.
----@param char Character
----@param item Item
----@return boolean 
-function Item.IsEquipped(char, item)
-
----Returns the slot that an item is equipped in, or nil if it is not.
----@param item Item
----@param char Character? Defaults to item's owner.
----@return EquipSlot? 
-function Item.GetEquippedSlot(item, char)
-
---- Count the items in an entity's inventory that match a predicate function.  
---- Predicate is passed ``Item`` and should return true for items to be counted.
----@param entity Entity
----@param predicate fun(item: EsvItem)
----@return number 
-function Item.CountItemsInInventory(entity, predicate)
-
----Returns the items contained within a container item, optionally filtered by predicate.
----@param container Item
----@param predicate (fun(item:Item):boolean)? The predicate should return `true` for items to be included. If `nil`, all items will be included.
----@return Item[] 
-function Item.GetContainedItems(container, predicate)
-
---- Gets the stats object of the rune inserted at rune index ``index`` on item.
----@param item Item
----@param index integer **0-based.**
----@return StatItem 
-function Item.GetRune(item, index)
-
---- Returns a list of runes on the item.
----@param item Item
----@return table&lt;number, StatItem&gt; --Empty slots are nil.
-function Item.GetRunes(item)
-
----Returns the amount of rune slots an item has.
----@param item Item
----@return integer 
-function Item.GetRuneSlots(item)
-
----Returns the icon displaying the state of item's rune slots.
----@param item Item
----@return icon 
-function Item.GetRuneSlotsIcon(item)
-
---- Returns true if item has any runes slotted.
----@param item Item
----@return boolean 
-function Item.HasRunes(item)
-
----Returns the level of an item.
----@param item Item
----@return integer? --`nil` if the item has no stats.
-function Item.GetLevel(item)
-
----Returns the icon frame for a rarity, if any.
----@param rarity ItemLib_Rarity|EclItem
----@return icon? --Not all rarities have icons.
-function Item.GetRarityIcon(rarity)
-
----Returns whether an item is marked as wares.
----@param item Item
----@return boolean 
-function Item.IsMarkedAsWares(item)
-
---- Returns a list of the items in the entity's inventory that match an optional predicate function.  
---- Predicate is passed the EclItem/EsvItem and should return true for items to be included.
----@param entity Entity
----@param predicate fun(item: Item)
----@return Item[] 
-function Item.GetItemsInInventory(entity, predicate)
-
----Sets a custom icon for an item.
----Not persistent!
----@param item Item
----@param icon string
-function Item.SetIconOverride(item, icon)
-
----Count the amount of template instances (prefix + guid) in the client party's inventory.
----@param template string
----@return number 
-function Item.GetPartyTemplateCount(template)
-
-</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number</code> </p>
 <p></doc></p>
               
             </div>

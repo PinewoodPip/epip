@@ -91,9 +91,9 @@
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#events-and-hooks">Events and Hooks</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#statusapplied">StatusApplied</a>
+    <li class="toctree-l4"><a class="reference internal" href="#statusapplied-event">StatusApplied (event)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#createequipmentvisuals">CreateEquipmentVisuals</a>
+    <li class="toctree-l4"><a class="reference internal" href="#createequipmentvisuals-hook">CreateEquipmentVisuals (hook)</a>
     </li>
         </ul>
     </li>
@@ -193,10 +193,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#events">Events</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#methods_1">Methods</a>
-    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Color/">Color</a>
@@ -277,677 +273,461 @@
 <p>The <code>Character</code> library contains utility methods relating to characters. The vast majority of them are available on both contexts.</p>
 <p><doc package="CharacterLib"></p>
 <h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h5 id="statusapplied">StatusApplied<a class="headerlink" href="#statusapplied" title="Permanent link">&para;</a></h5>
+<h5 id="statusapplied-event">StatusApplied (event)<a class="headerlink" href="#statusapplied-event" title="Permanent link">&para;</a></h5>
 <p>TODO move somewhere else, since victim could be an item</p>
-<p style='margin-bottom: 0px'><i>@field</i> <b>SourceHandle</b> <code>EntityHandle</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>SourceHandle</b> <code>EntityHandle</code> </p>
 
-<p style='margin-bottom: 0px'><i>@field</i> <b>Victim</b> <code>Character|Item</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Victim</b> <code>Character|Item</code> </p>
 
-<p style='margin-bottom: 0px'><i>@field</i> <b>Status</b> <code>EclStatus|EsvStatus</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Status</b> <code>EclStatus|EsvStatus</code> </p>
 
-<h5 id="createequipmentvisuals">CreateEquipmentVisuals<a class="headerlink" href="#createequipmentvisuals" title="Permanent link">&para;</a></h5>
+<h5 id="createequipmentvisuals-hook">CreateEquipmentVisuals (hook)<a class="headerlink" href="#createequipmentvisuals-hook" title="Permanent link">&para;</a></h5>
 <p>Wrapper for Ext.Events.CreateEquipmentVisualsRequest.</p>
-<p style='margin-bottom: 0px'><i>@field</i> <b>Character</b> <code>EclCharacter</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter</code> </p>
 
-<p style='margin-bottom: 0px'><i>@field</i> <b>Item</b> <code>EclItem</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Item</b> <code>EclItem</code> </p>
 
-<p style='margin-bottom: 0px'><i>@field</i> <b>Request</b> <code>EclEquipmentVisualSystemSetParam</code> Hookable.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Request</b> <code>EclEquipmentVisualSystemSetParam</code> Hookable.</p>
 
-<p style='margin-bottom: 0px'><i>@field</i> <b>RawEvent</b> <code>EclLuaCreateEquipmentVisualsRequestEvent</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>RawEvent</b> <code>EclLuaCreateEquipmentVisualsRequestEvent</code> </p>
 
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h4 id="isskillmemorized">IsSkillMemorized<a class="headerlink" href="#isskillmemorized" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsSkillMemorized(char, skillID)
+<pre><code class="language-lua">function Character.IsSkillMemorized(char, skillID)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char has a skill memorized. Returns true for innate skills.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>skillID</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isskilllearnt">IsSkillLearnt<a class="headerlink" href="#isskilllearnt" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsSkillLearnt(char, skillID)
+<pre><code class="language-lua">function Character.IsSkillLearnt(char, skillID)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char has a skill learnt. Returns true for innate skills.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>skillID</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getcombatid">GetCombatID<a class="headerlink" href="#getcombatid" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetCombatID(char)
+<pre><code class="language-lua">function Character.GetCombatID(char)
    -&gt; integer?, integer? 
 </code></pre>
 <p>Returns the combat ID and team ID of char, if any.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>integer?, integer?</code> The combat ID and team ID. Nil if the character is not in combat. This is different from the osi query, which returns a reserved value.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer?, integer? </code> The combat ID and team ID. Nil if the character is not in combat. This is different from the osi query, which returns a reserved value.</p>
+
 <h4 id="isunsheathed">IsUnsheathed<a class="headerlink" href="#isunsheathed" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsUnsheathed(char)
+<pre><code class="language-lua">function Character.IsUnsheathed(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char has their weapon(s) unsheathed.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isactive">IsActive<a class="headerlink" href="#isactive" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsActive(char)
+<pre><code class="language-lua">function Character.IsActive(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char is currently the active character of any player.</p>
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="hasowner">HasOwner<a class="headerlink" href="#hasowner" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.HasOwner(char)
+<pre><code class="language-lua">function Character.HasOwner(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char has an owner.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getowner">GetOwner<a class="headerlink" href="#getowner" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetOwner(char)
+<pre><code class="language-lua">function Character.GetOwner(char)
    -&gt; Character?
 </code></pre>
 <p>Returns the character's owner, if it is a summon or party follower(?).</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>Character?</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Character?</code> </p>
+
 <h4 id="isskillinnate">IsSkillInnate<a class="headerlink" href="#isskillinnate" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsSkillInnate(char, skillID)
+<pre><code class="language-lua">function Character.IsSkillInnate(char, skillID)
    -&gt; boolean
 </code></pre>
 <p>Returns whether a skill is innate to a character.
 Returns false if the character doesn't have the skill in any way.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>skillID</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="hasimmunity">HasImmunity<a class="headerlink" href="#hasimmunity" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.HasImmunity(char, immunityName)
+<pre><code class="language-lua">function Character.HasImmunity(char, immunityName)
    -&gt; boolean
 </code></pre>
 <p>Returns wether char has a certain immunity.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>immunityName</b> <code>StatsLib_ImmunityID</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>immunityName</b> <code>StatsLib_ImmunityID</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getequippeditems">GetEquippedItems<a class="headerlink" href="#getequippeditems" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetEquippedItems(char)
+<pre><code class="language-lua">function Character.GetEquippedItems(char)
    -&gt; table&lt;ItemSlot, EclItem&gt;
 </code></pre>
 <p>Returns the equipped items of char, per slot.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>table&lt;ItemSlot, EclItem&gt;</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>table<ItemSlot, EclItem></code> </p>
+
 <h4 id="getdynamicstat">GetDynamicStat<a class="headerlink" href="#getdynamicstat" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetDynamicStat(char, statName)
+<pre><code class="language-lua">function Character.GetDynamicStat(char, statName)
 </code></pre>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>statName</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>statName</b> <code>string</code> </p>
 
 <h4 id="getmaxcarryweight">GetMaxCarryWeight<a class="headerlink" href="#getmaxcarryweight" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetMaxCarryWeight(char)
+<pre><code class="language-lua">function Character.GetMaxCarryWeight(char)
    -&gt; integer 
 </code></pre>
 <p>Returns the maximum carry weight of char.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>integer</code> In "grams"</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer </code> In "grams"</p>
+
 <h4 id="getactionpoints">GetActionPoints<a class="headerlink" href="#getactionpoints" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetActionPoints(char)
+<pre><code class="language-lua">function Character.GetActionPoints(char)
    -&gt; integer, integer 
 </code></pre>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>integer, integer</code> Current, maximum</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer, integer </code> Current, maximum</p>
+
 <h4 id="getinitiative">GetInitiative<a class="headerlink" href="#getinitiative" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetInitiative(char)
+<pre><code class="language-lua">function Character.GetInitiative(char)
    -&gt; integer
 </code></pre>
 <p>Returns the initiative of char.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
 <h4 id="getresistance">GetResistance<a class="headerlink" href="#getresistance" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetResistance(char, damageType, baseValuesOnly)
+<pre><code class="language-lua">function Character.GetResistance(char, damageType, baseValuesOnly)
    -&gt; integer
 </code></pre>
 <p>Returns the computed resistance value of char.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>damageType</b> <code>StatsDamageType</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>damageType</b> <code>StatsDamageType</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>baseValuesOnly</b> <code>boolean?</code> If `true`, base value will be returned. Defaults to `false`.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>baseValuesOnly</b> <code>boolean?</code> If `true`, base value will be returned. Defaults to `false`.</p>
 
-<p><em>@return</em> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
 <h4 id="get">Get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.Get(identifier, isFlashHandle)
+<pre><code class="language-lua">function Character.Get(identifier, isFlashHandle)
    -&gt; Character
 </code></pre>
-<p style='margin-bottom: 0px'><i>@param</i> <b>identifier</b> <code>GUID|PrefixedGUID|NetId|EntityHandle</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>identifier</b> <code>GUID|PrefixedGUID|NetId|EntityHandle</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>isFlashHandle</b> <code>boolean?</code> If true, the identifier will be passed through DoubleToHandle() first.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>isFlashHandle</b> <code>boolean?</code> If true, the identifier will be passed through DoubleToHandle() first.</p>
 
-<p><em>@return</em> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Character</code> </p>
+
 <h4 id="ispreferredbyai">IsPreferredByAI<a class="headerlink" href="#ispreferredbyai" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsPreferredByAI(char)
+<pre><code class="language-lua">function Character.IsPreferredByAI(char)
    -&gt; boolean
 </code></pre>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isunpreferredbyai">IsUnpreferredByAI<a class="headerlink" href="#isunpreferredbyai" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsUnpreferredByAI(char)
+<pre><code class="language-lua">function Character.IsUnpreferredByAI(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char is unpreferred by AI.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isignoredbyai">IsIgnoredByAI<a class="headerlink" href="#isignoredbyai" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsIgnoredByAI(char)
+<pre><code class="language-lua">function Character.IsIgnoredByAI(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char is ignored by AI.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="issummon">IsSummon<a class="headerlink" href="#issummon" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsSummon(char)
+<pre><code class="language-lua">function Character.IsSummon(char)
    -&gt; boolean
 </code></pre>
 <p>Returns true if char is a summon.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isdead">IsDead<a class="headerlink" href="#isdead" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsDead(char)
+<pre><code class="language-lua">function Character.IsDead(char)
    -&gt; boolean
 </code></pre>
 <p>Returns true if the character is dead.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getstatusbyhandle">GetStatusByHandle<a class="headerlink" href="#getstatusbyhandle" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetStatusByHandle(char, handle)
+<pre><code class="language-lua">function Character.GetStatusByHandle(char, handle)
    -&gt; EclStatus|EsvStatus
 </code></pre>
 <p>Returns a status by handle.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>handle</b> <code>EntityHandle</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>EntityHandle</code> </p>
 
-<p><em>@return</em> <code>EclStatus|EsvStatus</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclStatus|EsvStatus</code> </p>
+
 <h4 id="getgender">GetGender<a class="headerlink" href="#getgender" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetGender(char)
+<pre><code class="language-lua">function Character.GetGender(char)
    -&gt; Gender
 </code></pre>
 <p>Returns the gender of char.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>Gender</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Gender</code> </p>
+
 <h4 id="ismale">IsMale<a class="headerlink" href="#ismale" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsMale(char)
+<pre><code class="language-lua">function Character.IsMale(char)
    -&gt; boolean
 </code></pre>
 <p>Returns true if char is male.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isundead">IsUndead<a class="headerlink" href="#isundead" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsUndead(char)
+<pre><code class="language-lua">function Character.IsUndead(char)
    -&gt; boolean
 </code></pre>
 <p>Returns true if char is undead.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getrace">GetRace<a class="headerlink" href="#getrace" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetRace(char)
+<pre><code class="language-lua">function Character.GetRace(char)
    -&gt; Race
 </code></pre>
 <p>Returns the current race of char.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>Race</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Race</code> </p>
+
 <h4 id="getrealrace">GetRealRace<a class="headerlink" href="#getrealrace" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetRealRace(char)
+<pre><code class="language-lua">function Character.GetRealRace(char)
    -&gt; Race
 </code></pre>
 <p>Returns the original race of a player char, before any transforms.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> Must be tagged with "REALLY_{Race}"</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> Must be tagged with "REALLY_{Race}"</p>
 
-<p><em>@return</em> <code>Race</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Race</code> </p>
+
 <h4 id="isincombat">IsInCombat<a class="headerlink" href="#isincombat" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsInCombat(char)
+<pre><code class="language-lua">function Character.IsInCombat(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether the character is in a combat.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>EclCharacter</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getmovement">GetMovement<a class="headerlink" href="#getmovement" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetMovement(char)
+<pre><code class="language-lua">function Character.GetMovement(char)
    -&gt; number 
 </code></pre>
 <p>Returns the calculated movement stat of a character.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>number</code> In centimeters.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number </code> In centimeters.</p>
+
 <h4 id="canuseskill">CanUseSkill<a class="headerlink" href="#canuseskill" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.CanUseSkill(char, skillID, itemSource)
+<pre><code class="language-lua">function Character.CanUseSkill(char, skillID, itemSource)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char can enter preparation state for a skill.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>skillID</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>itemSource</b> <code>Item?</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>itemSource</b> <code>Item?</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="hasmeleeweapon">HasMeleeWeapon<a class="headerlink" href="#hasmeleeweapon" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.HasMeleeWeapon(char)
+<pre><code class="language-lua">function Character.HasMeleeWeapon(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char has a melee weapon equipped in either slot.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="hasrangedweapon">HasRangedWeapon<a class="headerlink" href="#hasrangedweapon" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.HasRangedWeapon(char)
+<pre><code class="language-lua">function Character.HasRangedWeapon(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char has a bow or crossbow equipped.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="getsourcepoints">GetSourcePoints<a class="headerlink" href="#getsourcepoints" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetSourcePoints(char)
+<pre><code class="language-lua">function Character.GetSourcePoints(char)
    -&gt; integer, integer 
 </code></pre>
 <p>Returns the current and maximum source points of char.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>integer, integer</code> Current and maximum points.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer, integer </code> Current and maximum points.</p>
+
 <h4 id="hasshield">HasShield<a class="headerlink" href="#hasshield" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.HasShield(char)
+<pre><code class="language-lua">function Character.HasShield(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char has a shield equipped.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="hasdagger">HasDagger<a class="headerlink" href="#hasdagger" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.HasDagger(char)
+<pre><code class="language-lua">function Character.HasDagger(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char has a dagger equipped in either slot.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="ismuted">IsMuted<a class="headerlink" href="#ismuted" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsMuted(char)
+<pre><code class="language-lua">function Character.IsMuted(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char is muted.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="isdisarmed">IsDisarmed<a class="headerlink" href="#isdisarmed" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.IsDisarmed(char)
+<pre><code class="language-lua">function Character.IsDisarmed(char)
    -&gt; boolean
 </code></pre>
 <p>Returns whether char is disarmed.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 <h4 id="gethighestpartyability">GetHighestPartyAbility<a class="headerlink" href="#gethighestpartyability" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetHighestPartyAbility(char, ability)
+<pre><code class="language-lua">function Character.GetHighestPartyAbility(char, ability)
    -&gt; integer
 </code></pre>
 <p>Gets the highest stat score of all characters in char's party.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>ability</b> <code>string</code> Needs to be a property indexable in char.Stats</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>ability</b> <code>string</code> Needs to be a property indexable in char.Stats</p>
 
-<p><em>@return</em> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
 <h4 id="getlevel">GetLevel<a class="headerlink" href="#getlevel" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetLevel(char)
+<pre><code class="language-lua">function Character.GetLevel(char)
    -&gt; integer
 </code></pre>
 <p>Returns the level of char.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
 <h4 id="getexperience">GetExperience<a class="headerlink" href="#getexperience" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetExperience(char)
+<pre><code class="language-lua">function Character.GetExperience(char)
    -&gt; integer
 </code></pre>
 <p>Returns the current experience points of char.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
 <h4 id="getexperiencerequiredforlevel">GetExperienceRequiredForLevel<a class="headerlink" href="#getexperiencerequiredforlevel" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetExperienceRequiredForLevel(targetLevel)
+<pre><code class="language-lua">function Character.GetExperienceRequiredForLevel(targetLevel)
    -&gt; integer 
 </code></pre>
 <p>Returns the <strong>cumulative</strong> experience required to reach a level.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>targetLevel</b> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>targetLevel</b> <code>integer</code> </p>
 
-<p><em>@return</em> <code>integer</code> Experience points.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer </code> Experience points.</p>
+
 <h4 id="getskillbarrowcontents">GetSkillBarRowContents<a class="headerlink" href="#getskillbarrowcontents" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetSkillBarRowContents(char, row, slotsPerRow)
+<pre><code class="language-lua">function Character.GetSkillBarRowContents(char, row, slotsPerRow)
    -&gt; EocSkillBarItem[]
 </code></pre>
 <p>Returns the contents of a character's skillbar row.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> Must be a player.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> Must be a player.</p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>row</b> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>row</b> <code>integer</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>slotsPerRow</b> <code>integer?</code> Defaults to 29.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>slotsPerRow</b> <code>integer?</code> Defaults to 29.</p>
 
-<p><em>@return</em> <code>EocSkillBarItem[]</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EocSkillBarItem[]</code> </p>
+
 <h4 id="getstatusbynetid">GetStatusByNetID<a class="headerlink" href="#getstatusbynetid" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetStatusByNetID(char, netID)
+<pre><code class="language-lua">function Character.GetStatusByNetID(char, netID)
    -&gt; EclStatus|EsvStatus
 </code></pre>
 <p>Returns a status on char by its net ID.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style='margin-bottom: 0px'><i>@param</i> <b>netID</b> <code>NetId</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>netID</b> <code>NetId</code> </p>
 
-<p><em>@return</em> <code>EclStatus|EsvStatus</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclStatus|EsvStatus</code> </p>
+
 <h4 id="getpartymembers">GetPartyMembers<a class="headerlink" href="#getpartymembers" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetPartyMembers(char)
+<pre><code class="language-lua">function Character.GetPartyMembers(char)
    -&gt; EclCharacter[] Includes the char passed per param.
 </code></pre>
 <p>Returns a list of party members of char's party. Char must be a player.
 Depends on PlayerInfo.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>EclCharacter</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
 
-<p><em>@return</em> <code>EclCharacter[] Includes the char passed per param.</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclCharacter[] Includes the char passed per param.</code> </p>
+
 <h4 id="getstatusesfromitems">GetStatusesFromItems<a class="headerlink" href="#getstatusesfromitems" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetStatusesFromItems(char)
+<pre><code class="language-lua">function Character.GetStatusesFromItems(char)
    -&gt; CharacterLib_StatusFromItem[]
 </code></pre>
 <p>Returns a list of statuses the character has from its equipped items.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>Character</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p><em>@return</em> <code>CharacterLib_StatusFromItem[]</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>CharacterLib_StatusFromItem[]</code> </p>
+
 <h4 id="getpartymembers_1">GetPartyMembers<a class="headerlink" href="#getpartymembers_1" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function CharacterLib.GetPartyMembers(char)
+<pre><code class="language-lua">function Character.GetPartyMembers(char)
    -&gt; EsvCharacter[] Includes the char passed per param.
 </code></pre>
 <p>Returns a list of party members of char's party. Char must be a player.</p>
-<p style='margin-bottom: 0px'><i>@param</i> <b>char</b> <code>EsvCharacter</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code> </p>
 
-<p><em>@return</em> <code>EsvCharacter[] Includes the char passed per param.</code> 
-</doc></p>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
-<p><doc class="CharacterLib" symbols="Listenable"></p>
-<pre><code class="language-lua">---TODO move somewhere else, since victim could be an item
----@event StatusApplied
----@field SourceHandle EntityHandle
----@field Victim Character|Item
----@field Status EclStatus|EsvStatus
-
----Wrapper for Ext.Events.CreateEquipmentVisualsRequest.
----@hook CreateEquipmentVisuals
----@field Character EclCharacter
----@field Item EclItem
----@field Request EclEquipmentVisualSystemSetParam Hookable.
----@field RawEvent EclLuaCreateEquipmentVisualsRequestEvent
-
-</code></pre>
-<p></doc></p>
-<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
-<p><doc class="CharacterLib" symbols="Function"></p>
-<pre><code class="language-lua">---Returns whether char has a skill memorized. Returns true for innate skills.
----@param char Character
----@param skillID string
----@return boolean 
-function Character.IsSkillMemorized(char, skillID)
-
----Returns whether char has a skill learnt. Returns true for innate skills.
----@param char Character
----@param skillID string
----@return boolean 
-function Character.IsSkillLearnt(char, skillID)
-
----Returns the combat ID and team ID of char, if any.
----@param char Character
----@return integer?, integer? -- The combat ID and team ID. Nil if the character is not in combat. This is different from the osi query, which returns a reserved value.
-function Character.GetCombatID(char)
-
----Returns whether char has their weapon(s) unsheathed.
----@param char Character
----@return boolean 
-function Character.IsUnsheathed(char)
-
----Returns whether char is currently the active character of any player.
-function Character.IsActive(char)
-
----Returns whether char has an owner.
----@param char Character
----@return boolean 
-function Character.HasOwner(char)
-
----Returns the character's owner, if it is a summon or party follower(?).
----@param char Character
----@return Character? 
-function Character.GetOwner(char)
-
----Returns whether a skill is innate to a character.
----Returns false if the character doesn't have the skill in any way.
----@param char Character
----@param skillID string
----@return boolean 
-function Character.IsSkillInnate(char, skillID)
-
----Returns wether char has a certain immunity.
----@param char Character
----@param immunityName StatsLib_ImmunityID
-function Character.HasImmunity(char, immunityName)
-
----Returns the equipped items of char, per slot.
----@param char Character
----@return table&lt;ItemSlot, EclItem&gt;
-function Character.GetEquippedItems(char)
-
----@param char Character
----@param statName string
-function Character.GetDynamicStat(char, statName)
-
----Returns the maximum carry weight of char.
----@param char Character
----@return integer In &quot;grams&quot;
-function Character.GetMaxCarryWeight(char)
-
----@param char Character
----@return integer, integer --Current, maximum
-function Character.GetActionPoints(char)
-
----Returns the initiative of char.
----@param char Character
----@return integer 
-function Character.GetInitiative(char)
-
----Returns the computed resistance value of char.
----@param char Character
----@param damageType StatsDamageType
----@param baseValuesOnly boolean? If `true`, base value will be returned. Defaults to `false`.
----@return integer 
-function Character.GetResistance(char, damageType, baseValuesOnly)
-
----@param identifier GUID|PrefixedGUID|NetId|EntityHandle
----@param isFlashHandle boolean? If true, the identifier will be passed through DoubleToHandle() first.
----@return Character 
-function Character.Get(identifier, isFlashHandle)
-
----@param char Character
----@return boolean 
-function Character.IsPreferredByAI(char)
-
----Returns whether char is unpreferred by AI.
----@param char Character
----@return boolean 
-function Character.IsUnpreferredByAI(char)
-
----Returns whether char is ignored by AI.
----@param char Character
----@return boolean 
-function Character.IsIgnoredByAI(char)
-
----Returns true if char is a summon.
----@param char Character
----@return boolean 
-function Character.IsSummon(char)
-
----Returns true if the character is dead.
----@param char Character
----@return boolean 
-function Character.IsDead(char)
-
----Returns a status by handle.
----@param char Character
----@param handle EntityHandle
----@return EclStatus|EsvStatus 
-function Character.GetStatusByHandle(char, handle)
-
----Returns the gender of char.
----@param char Character
----@return Gender 
-function Character.GetGender(char)
-
----Returns true if char is male.
----@param char Character
----@return boolean 
-function Character.IsMale(char)
-
----Returns true if char is undead.
----@param char Character
----@return boolean 
-function Character.IsUndead(char)
-
----Returns the current race of char.
----@param char Character
----@return Race 
-function Character.GetRace(char)
-
----Returns the original race of a player char, before any transforms.
----@param char Character Must be tagged with &quot;REALLY_{Race}&quot;
----@return Race 
-function Character.GetRealRace(char)
-
----Returns whether the character is in a combat.
----@param char EclCharacter
----@return boolean 
-function Character.IsInCombat(char)
-
----Returns the calculated movement stat of a character.
----@param char Character
----@return number -- In centimeters.
-function Character.GetMovement(char)
-
----Returns whether char can enter preparation state for a skill.
----@param char Character
----@param skillID string
----@param itemSource Item?
----@return boolean 
-function Character.CanUseSkill(char, skillID, itemSource)
-
----Returns whether char has a melee weapon equipped in either slot.
----@param char Character
----@return boolean 
-function Character.HasMeleeWeapon(char)
-
----Returns whether char has a bow or crossbow equipped.
----@param char Character
----@return boolean 
-function Character.HasRangedWeapon(char)
-
----Returns the current and maximum source points of char.
----@param char Character
----@return integer, integer Current and maximum points.
-function Character.GetSourcePoints(char)
-
----Returns whether char has a shield equipped.
----@param char Character
----@return boolean 
-function Character.HasShield(char)
-
----Returns whether char has a dagger equipped in either slot.
----@param char Character
----@return boolean 
-function Character.HasDagger(char)
-
----Returns whether char is muted.
----@param char Character
----@return boolean 
-function Character.IsMuted(char)
-
----Returns whether char is disarmed.
----@param char Character
----@return boolean 
-function Character.IsDisarmed(char)
-
----Gets the highest stat score of all characters in char's party.
----@param char Character
----@param ability string Needs to be a property indexable in char.Stats
----@return integer 
-function Character.GetHighestPartyAbility(char, ability)
-
----Returns the level of char.
----@param char Character
----@return integer 
-function Character.GetLevel(char)
-
----Returns the current experience points of char.
----@param char Character
----@return integer 
-function Character.GetExperience(char)
-
----Returns the **cumulative** experience required to reach a level.
----@param targetLevel integer
----@return integer --Experience points.
-function Character.GetExperienceRequiredForLevel(targetLevel)
-
----Returns the contents of a character's skillbar row's.
----@param char Character Must be a player.
----@param row integer
----@param slotsPerRow integer? Defaults to 29.
----@return EocSkillBarItem[] 
-function Character.GetSkillBarRowContents(char, row, slotsPerRow)
-
----Returns a status on char by its net ID.
----@param char Character
----@param netID NetId
----@return EclStatus|EsvStatus 
-function Character.GetStatusByNetID(char, netID)
-
----Returns a list of party members of char's party. Char must be a player.
----Depends on PlayerInfo.
----@param char EclCharacter
----@return EclCharacter[] Includes the char passed per param.
-function Character.GetPartyMembers(char)
-
----Returns a list of statuses the character has from its equipped items.
----@param char Character
----@return CharacterLib_StatusFromItem[] 
-function Character.GetStatusesFromItems(char)
-
----Returns a list of party members of char's party. Char must be a player.
----@param char EsvCharacter
----@return EsvCharacter[] Includes the char passed per param.
-function Character.GetPartyMembers(char)
-
-</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EsvCharacter[] Includes the char passed per param.</code> </p>
 <p></doc></p>
               
             </div>

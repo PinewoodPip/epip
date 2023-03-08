@@ -101,11 +101,21 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Net</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#events">Events</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#broadcast">Broadcast</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#posttocharacter">PostToCharacter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#posttouser">PostToUser</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#posttoowner">PostToOwner</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#registerlistener">RegisterListener</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#posttoserver">PostToServer</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -183,57 +193,65 @@ Net.RegisterListener(&quot;EPIPENCOUNTERS_Vanity_ApplyAura&quot;, function(paylo
 end)
 </code></pre>
 <p>Additionally, for purposes of semantic clarity, a <code>NetMessage</code> class exists for denoting net events. Several other net message classes are defined with commonly used fields like <code>CharacterNetID</code>. You may have your net message classes inherit from these to reduce annotation duplication and to clarify the class's purpose as a net message.</p>
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
-<p>TODO
-<doc class="NetLib" symbols="_SubClasses"></p>
-<p></doc></p>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
-<p><doc class="Net" symbols="Listenable"></p>
-<pre><code class="language-lua">---@event MessageReceived&lt;T&gt;
----@field Channel string
----@field Message `T`
----@field UserID UserId
-
-</code></pre>
-<p></doc></p>
+<p><doc package="NetLib"></p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><doc class="Net" symbols="Function"></p>
-<pre><code class="language-lua">---Sends a message to the server.
----@param channel `T`
----@param message T?
-function Net.PostToServer(channel, message)
-
----Sends a message to all peers.
----@param channel `T`
----@param message T?
----@param excludedChar GUID?
-function Net.Broadcast(channel, message, excludedChar)
-
----Sends a message to the user that currently controls char. Fails if char is a summon.
----@param char Character|GUID|NetId
----@param channel `T`
----@param message T?
-function Net.PostToCharacter(char, channel, message)
-
----Sends a message to a user.
----@param user UserId
----@param channel `T`
----@param message T
----@param excludedChar GUID?
-function Net.PostToUser(user, channel, message, excludedChar)
-
----Sends a message to the owner of char. Use if you suspect the char might be a summon.
----@param char Character
----@param channel string
----@param message any
-function Net.PostToOwner(char, channel, message)
-
----Wrapper for Ext.RegisterNetListener that parses json payloads and fires an event afterwards.
----@param channel `T`
----@param func fun(payload:`T`)
-function Net.RegisterListener(channel, func)
-
+<h4 id="broadcast">Broadcast<a class="headerlink" href="#broadcast" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Net.Broadcast(channel, message, excludedChar)
 </code></pre>
+<p>Sends a message to all peers.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>excludedChar</b> <code>GUID?</code> </p>
+
+<h4 id="posttocharacter">PostToCharacter<a class="headerlink" href="#posttocharacter" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Net.PostToCharacter(char, channel, message)
+</code></pre>
+<p>Sends a message to the user that currently controls char. Fails if char is a summon.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character|GUID|NetId</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code> </p>
+
+<h4 id="posttouser">PostToUser<a class="headerlink" href="#posttouser" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Net.PostToUser(user, channel, message, excludedChar)
+</code></pre>
+<p>Sends a message to a user.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>user</b> <code>UserId</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>excludedChar</b> <code>GUID?</code> </p>
+
+<h4 id="posttoowner">PostToOwner<a class="headerlink" href="#posttoowner" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Net.PostToOwner(char, channel, message)
+</code></pre>
+<p>Sends a message to the owner of char. Use if you suspect the char might be a summon.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>any</code> </p>
+
+<h4 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Net.RegisterListener(channel, func)
+</code></pre>
+<p>Wrapper for Ext.RegisterNetListener that parses json payloads and fires an event afterwards.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>func</b> <code>fun(payload:`T`)</code> </p>
+
+<h4 id="posttoserver">PostToServer<a class="headerlink" href="#posttoserver" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Net.PostToServer(channel, message)
+</code></pre>
+<p>Sends a message to the server.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code> </p>
 <p></doc></p>
               
             </div>

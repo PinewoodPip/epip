@@ -87,9 +87,21 @@
     <ul class="current">
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Artifact</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#getdata">GetData</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#registerartifact">RegisterArtifact</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isequipped">IsEquipped</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getequippedpowers">GetEquippedPowers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isequipped_1">IsEquipped</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getequippedpowers_1">GetEquippedPowers</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#usage-examples">Usage examples</a>
     </li>
@@ -178,69 +190,65 @@
 <p>The <code>Artifact</code> library contains data and methods related to <a href="https://docs.google.com/document/d/1aKyZLz4ix9FYj0enKIfRv4r5IKL7cjdLlP1mcJ3Ifc0/edit">Epic Encounters Artifacts</a>.</p>
 <p>The <code>ArtifactLib_ArtifactDefiniton</code> class holds information for each of the artifacts, including slot, item/rune templates, as well as the related keyword activators and mutators (defined manually).</p>
 <p>The data is not generated automatically. You must add your own artifacts by calling <code>RegisterArtifact()</code> with the data table filled out. Ideally, this should be done on both contexts, so client scripting can also query the information.</p>
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
-<p><doc class="ArtifactLib" symbols="_SubClasses"></p>
-<pre><code class="language-lua">---@class ArtifactLib_ArtifactDefinition
----@field ID string
----@field Slot StatsItemSlot
----@field ItemTemplate GUID
----@field RuneTemplate GUID
----@field DescriptionHandle TranslatedStringHandle
----@field KeywordActivators Keyword[]
----@field KeywordMutators Keyword[]
----@field GetName fun(self):string
----@field GetDescription fun(self):string
----@field GetPowerTooltip fun(self):TooltipElement[]
-
----Returns the artifact's name.
----@return string 
-function _ArtifactDef:GetName()
-
----Returns the artifact power's description.
----@return string 
-function _ArtifactDef:GetDescription()
-
----Returns a full tooltip showing the artifact's name and power.
----@return string 
-function _ArtifactDef:GetPowerTooltip()
-
-</code></pre>
-<p></doc></p>
+<p><doc package="ArtifactLib"></p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><doc class="ArtifactLib" symbols="Function"></p>
-<pre><code class="language-lua">---Returns the definition for an artifact.
----@param artifactID string
----@return ArtifactLib_ArtifactDefinition? 
-function Artifact.GetData(artifactID)
-
----Registers the data for an artifact.
----@param data ArtifactLib_ArtifactDefinition
----@return ArtifactLib_ArtifactDefinition 
-function Artifact.RegisterArtifact(data)
-
----Returns whether char has the artifact power active.
----@param char EclCharacter
----@param artifact ArtifactLib_ArtifactDefinition|string
----@return boolean 
-function Artifact.IsEquipped(char, artifact)
-
----Returns a list of artifact powers active on char.
----@param char EclCharacter
----@return ArtifactLib_ArtifactDefinition[] 
-function Artifact.GetEquippedPowers(char)
-
----Returns whether char has the artifact power active.
----@param char EsvCharacter
----@param artifact ArtifactLib_ArtifactDefinition|string
----@return boolean 
-function Artifact.IsEquipped(char, artifact)
-
----Returns a list of artifact powers active on char.
----@param char EsvCharacter
----@return ArtifactLib_ArtifactDefinition[] 
-function Artifact.GetEquippedPowers(char)
-
+<h4 id="getdata">GetData<a class="headerlink" href="#getdata" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Artifact.GetData(artifactID)
+   -&gt; ArtifactLib_ArtifactDefinition?
 </code></pre>
+<p>Returns the definition for an artifact.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>artifactID</b> <code>string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition?</code> </p>
+
+<h4 id="registerartifact">RegisterArtifact<a class="headerlink" href="#registerartifact" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Artifact.RegisterArtifact(data)
+   -&gt; ArtifactLib_ArtifactDefinition
+</code></pre>
+<p>Registers the data for an artifact.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>data</b> <code>ArtifactLib_ArtifactDefinition</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition</code> </p>
+
+<h4 id="isequipped">IsEquipped<a class="headerlink" href="#isequipped" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Artifact.IsEquipped(char, artifact)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether char has the artifact power active.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>artifact</b> <code>ArtifactLib_ArtifactDefinition|string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+<h4 id="getequippedpowers">GetEquippedPowers<a class="headerlink" href="#getequippedpowers" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Artifact.GetEquippedPowers(char)
+   -&gt; ArtifactLib_ArtifactDefinition[]
+</code></pre>
+<p>Returns a list of artifact powers active on char.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition[]</code> </p>
+
+<h4 id="isequipped_1">IsEquipped<a class="headerlink" href="#isequipped_1" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Artifact.IsEquipped(char, artifact)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether char has the artifact power active.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>artifact</b> <code>ArtifactLib_ArtifactDefinition|string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+<h4 id="getequippedpowers_1">GetEquippedPowers<a class="headerlink" href="#getequippedpowers_1" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Artifact.GetEquippedPowers(char)
+   -&gt; ArtifactLib_ArtifactDefinition[]
+</code></pre>
+<p>Returns a list of artifact powers active on char.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition[]</code> </p>
 <p></doc></p>
 <h2 id="usage-examples">Usage examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h2>
 <p>This library is used in the Quick Examine UI to display tooltips for artifacts. It is additionally used in the stats tab to check the equipped artifacts of a character.</p>

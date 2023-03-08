@@ -94,6 +94,42 @@
     <li class="toctree-l3"><a class="reference internal" href="#rgbcolor">RGBColor</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#todecimal">ToDecimal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#unpack">Unpack</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tohex">ToHex</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tofloats">ToFloats</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#clone">Clone</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#createfromdecimal">CreateFromDecimal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create">Create</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#createfromhex">CreateFromHex</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#equals">Equals</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#color_1">Color</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#methods_1">Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#create_1">Create</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#createfromrgb">CreateFromRGB</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#createfromdecimal_1">CreateFromDecimal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#createfromhex_1">CreateFromHex</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#clone_1">Clone</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -173,106 +209,156 @@
 <p>The <code>Color</code> table offers utilities for working with colors, either through RGB, decimal, or hex.</p>
 <p>The constructor methods create an <code>RGBColor</code> table.</p>
 <h2 id="rgbcolor">RGBColor<a class="headerlink" href="#rgbcolor" title="Permanent link">&para;</a></h2>
-<p><doc class="RGBColor" symbols="Function"></p>
-<pre><code class="language-lua">---Returns the decimal representation of the color.
----Actionscript expects colors to be represented in this way.
----@param addAlpha boolean? Defaults to false.
----@return integer 
-function RGBColor:ToDecimal(addAlpha)
-
----Unpacks the color's RGB values, alpha included.
----@return integer ...
-function RGBColor:Unpack()
-
----Returns the hexadecimal representation of the color.
----@param prefix boolean? Prefix the string with #. Defaults to false.
----@param addAlpha boolean? Defaults to false. If enabled, resulting color will be in the format `#RRGGBBAA`
----@return string 
-function RGBColor:ToHex(prefix, addAlpha)
-
----Returns the RGBA values as floats in the range[0.0 - 1.0]
----@return number, number, number, number
-function RGBColor:ToFloats()
-
----Returns a new instance of RGBColor with the same values.
----@return RGBColor 
-function RGBColor:Clone()
-
----Creates a color from a decimal value.
----Does not support alpha.
----@param num integer
----@return RGBColor 
-function RGBColor.CreateFromDecimal(num)
-
----Creates a color from RGBA values.
----Expected range is [0-255] and will be clamped.
----@param r integer?
----@param g integer?
----@param b integer?
----@param a integer? Defaults to 255.
----@return RGBColor 
-function RGBColor.Create(r, g, b, a)
-
----Creates a color from a hexadecimal value.
----Does not support alpha.
----@param hex string
----@return RGBColor 
-function RGBColor.CreateFromHex(hex)
-
----Returns whether 2 colors have the same RGBA values.
----@param color RGBColor
----@return boolean 
-function RGBColor:Equals(color)
-
-</code></pre>
-<p></doc></p>
-<!-- ## Events
-
-<doc class="ColorLib" symbols="Listenable">
-
-
-<pre><code class="language-lua"></code></pre>
-
-</doc>
--->
-
+<p><doc package="RGBColor"></p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><doc class="ColorLib" symbols="Function"></p>
-<pre><code class="language-lua">---Alias for creating an RGBColor from RGBA values.
----@overload fun(color:RGBColor):RGBColor 
----@param red integer?
----@param green integer?
----@param blue integer?
----@param alpha integer?
----@return RGBColor 
-function Color.Create(red, green, blue, alpha)
-
----Creates a color from RGBA values. Expected range of values is [0-255].
----@param red integer?
----@param green integer?
----@param blue integer?
----@param alpha integer?
----@return RGBColor 
-function Color.CreateFromRGB(red, green, blue, alpha)
-
----Creates a color from a decimal value.
----Does not support alpha.
----@param num integer
----@return RGBColor 
-function Color.CreateFromDecimal(num)
-
----Creates a color from an html-format hex color code.
----Does not support alpha.
----@param hex string
----@return RGBColor 
-function Color.CreateFromHex(hex)
-
----Clones a color instance.
----@param color RGBColor
----@return RGBColor -- New instance with same values.
-function Color.Clone(color)
-
+<h4 id="todecimal">ToDecimal<a class="headerlink" href="#todecimal" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function RGBColor:ToDecimal(addAlpha)
+   -&gt; integer
 </code></pre>
+<p>Returns the decimal representation of the color.
+Actionscript expects colors to be represented in this way.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>addAlpha</b> <code>boolean?</code> Defaults to false.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
+
+<h4 id="unpack">Unpack<a class="headerlink" href="#unpack" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function RGBColor:Unpack()
+   -&gt; integer ...
+</code></pre>
+<p>Unpacks the color's RGB values, alpha included.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer ...</code> </p>
+
+<h4 id="tohex">ToHex<a class="headerlink" href="#tohex" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function RGBColor:ToHex(prefix, addAlpha)
+   -&gt; string
+</code></pre>
+<p>Returns the hexadecimal representation of the color.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>prefix</b> <code>boolean?</code> Prefix the string with #. Defaults to false.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>addAlpha</b> <code>boolean?</code> Defaults to false. If enabled, resulting color will be in the format `#RRGGBBAA`</p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
+
+<h4 id="tofloats">ToFloats<a class="headerlink" href="#tofloats" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function RGBColor:ToFloats()
+   -&gt; number, number, number, number
+</code></pre>
+<p>Returns the RGBA values as floats in the range[0.0 - 1.0]</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number, number, number, number</code> </p>
+
+<h4 id="clone">Clone<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function RGBColor:Clone()
+   -&gt; RGBColor
+</code></pre>
+<p>Returns a new instance of RGBColor with the same values.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
+
+<h4 id="createfromdecimal">CreateFromDecimal<a class="headerlink" href="#createfromdecimal" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function RGBColor.CreateFromDecimal(num)
+   -&gt; RGBColor
+</code></pre>
+<p>Creates a color from a decimal value.
+Does not support alpha.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>num</b> <code>integer</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
+
+<h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function RGBColor.Create(r, g, b, a)
+   -&gt; RGBColor
+</code></pre>
+<p>Creates a color from RGBA values.
+Expected range is [0-255] and will be clamped.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>r</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>g</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>b</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>a</b> <code>integer?</code> Defaults to 255.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
+
+<h4 id="createfromhex">CreateFromHex<a class="headerlink" href="#createfromhex" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function RGBColor.CreateFromHex(hex)
+   -&gt; RGBColor
+</code></pre>
+<p>Creates a color from a hexadecimal value.
+Does not support alpha.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>hex</b> <code>string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
+
+<h4 id="equals">Equals<a class="headerlink" href="#equals" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function RGBColor:Equals(color)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether 2 colors have the same RGBA values.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>color</b> <code>RGBColor</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+<p></doc></p>
+<h2 id="color_1">Color<a class="headerlink" href="#color_1" title="Permanent link">&para;</a></h2>
+<p><doc package="ColorLib"></p>
+<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
+<h4 id="create_1">Create<a class="headerlink" href="#create_1" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Color.Create(red, green, blue, alpha)
+   -&gt; RGBColor
+</code></pre>
+<p>Alias for creating an RGBColor from RGBA values.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>red</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>green</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>blue</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>alpha</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
+
+<h4 id="createfromrgb">CreateFromRGB<a class="headerlink" href="#createfromrgb" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Color.CreateFromRGB(red, green, blue, alpha)
+   -&gt; RGBColor
+</code></pre>
+<p>Creates a color from RGBA values. Expected range of values is [0-255].</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>red</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>green</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>blue</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>alpha</b> <code>integer?</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
+
+<h4 id="createfromdecimal_1">CreateFromDecimal<a class="headerlink" href="#createfromdecimal_1" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Color.CreateFromDecimal(num)
+   -&gt; RGBColor
+</code></pre>
+<p>Creates a color from a decimal value.
+Does not support alpha.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>num</b> <code>integer</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
+
+<h4 id="createfromhex_1">CreateFromHex<a class="headerlink" href="#createfromhex_1" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Color.CreateFromHex(hex)
+   -&gt; RGBColor
+</code></pre>
+<p>Creates a color from an html-format hex color code.
+Does not support alpha.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>hex</b> <code>string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
+
+<h4 id="clone_1">Clone<a class="headerlink" href="#clone_1" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Color.Clone(color)
+   -&gt; RGBColor 
+</code></pre>
+<p>Clones a color instance.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>color</b> <code>RGBColor</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor </code> New instance with same values.</p>
 <p></doc></p>
               
             </div>

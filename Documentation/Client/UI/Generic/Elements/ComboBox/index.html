@@ -174,48 +174,45 @@
                 <h1 id="combobox">ComboBox<a class="headerlink" href="#combobox" title="Permanent link">&para;</a></h1>
 <p>The <code>GenericUI_Element_ComboBox</code> element implements a combobox form element. The user may change its value to any labelled one from a predefined list.</p>
 <p>You can set its options with <code>SetOptions()</code> or <code>AddOption()</code>. Comboboxes contain no options by default.</p>
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
-<p><doc class="GenericUI_Element_ComboBox" symbols="_SubClasses"></p>
-<pre><code class="language-lua">---Represents an option in the combobox.
----@class GenericUI_Element_ComboBox_Option
----@field Label string
----@field ID string
+<p><doc package="GenericUI_Element_ComboBox"></p>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
+<h5 id="optionselected-event">OptionSelected (event)<a class="headerlink" href="#optionselected-event" title="Permanent link">&para;</a></h5>
+<p>Fired when the user selects an option.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Option</b> <code>GenericUI_Element_ComboBox_Option</code> </p>
 
-</code></pre>
-<p></doc></p>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
-<p><doc class="GenericUI_Element_ComboBox" symbols="Listenable"></p>
-<pre><code class="language-lua">---Fired when the user selects an option.
----@event OptionSelected
----@field Option GenericUI_Element_ComboBox_Option
----@field Index integer
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Index</b> <code>integer</code> </p>
 
-</code></pre>
-<p></doc></p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><doc class="GenericUI_Element_ComboBox" symbols="Function"></p>
-<pre><code class="language-lua">---Sets the currently selected option.
----@param id string
-function ComboBox:SelectOption(id)
-
----Removes all options from the combobox.
-function ComboBox:ClearOptions()
-
----Sets whether the combobox should open upwards, or downwards (default)
----Use to determine the orientation of the options selector when opened.
----@param openUpwards boolean
-function ComboBox:SetOpenUpwards(openUpwards)
-
----Sets the options for the combobox. Equivalent to calling `ClearOptions()` then `AddOption()` for each option in the list passed.
----@param options GenericUI_Element_ComboBox_Option[]
-function ComboBox:SetOptions(options)
-
----Adds an option to the combobox.
----@param id string
----@param label string
-function ComboBox:AddOption(id, label)
-
+<h4 id="setoptions">SetOptions<a class="headerlink" href="#setoptions" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function ComboBox:SetOptions(options)
 </code></pre>
+<p>Sets the options for the combobox. Equivalent to calling <code>ClearOptions()</code> then <code>AddOption()</code> for each option in the list passed.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>options</b> <code>GenericUI_Element_ComboBox_Option[]</code> </p>
+
+<h4 id="addoption">AddOption<a class="headerlink" href="#addoption" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function ComboBox:AddOption(id, label)
+</code></pre>
+<p>Adds an option to the combobox.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>label</b> <code>string</code> </p>
+
+<h4 id="selectoption">SelectOption<a class="headerlink" href="#selectoption" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function ComboBox:SelectOption(id)
+</code></pre>
+<p>Sets the currently selected option.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
+
+<h4 id="clearoptions">ClearOptions<a class="headerlink" href="#clearoptions" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function ComboBox:ClearOptions()
+</code></pre>
+<p>Removes all options from the combobox.</p>
+<h4 id="setopenupwards">SetOpenUpwards<a class="headerlink" href="#setopenupwards" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function ComboBox:SetOpenUpwards(openUpwards)
+</code></pre>
+<p>Sets whether the combobox should open upwards, or downwards (default)
+Use to determine the orientation of the options selector when opened.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>openUpwards</b> <code>boolean</code> </p>
 <p></doc></p>
               
             </div>

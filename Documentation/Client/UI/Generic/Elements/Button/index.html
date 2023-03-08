@@ -173,32 +173,36 @@
               
                 <h1 id="button">Button<a class="headerlink" href="#button" title="Permanent link">&para;</a></h1>
 <p>The <code>GenericUI_Element_Button</code> button element implements a typical button form element. It may be disabled (preventing user interaction) and will fire a contextual event if it is activated while not disabled.</p>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
-<p><doc class="GenericUI_Element_Button" symbols="Listenable"></p>
-<pre><code class="language-lua">---@event Pressed
-
-</code></pre>
-<p></doc></p>
+<p><doc package="GenericUI_Element_Button"></p>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
+<h5 id="pressed-event">Pressed (event)<a class="headerlink" href="#pressed-event" title="Permanent link">&para;</a></h5>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><doc class="GenericUI_Element_Button" symbols="Function"></p>
-<pre><code class="language-lua">---Sets the button's text.
----@param text string
----@param textY number? Vertical offset for the text. Use for centering.
-function Button:SetText(text, textY)
-
----Sets the button's visuals.
----@param buttonType GenericUI_Element_Button_Type
-function Button:SetType(buttonType)
-
----Sets the button's enabled state. Enabled buttons are interactable.
----@param enabled boolean
-function Button:SetEnabled(enabled)
-
----Returns whether the button is enabled.
----@return boolean 
-function Button:IsEnabled()
-
+<h4 id="settext">SetText<a class="headerlink" href="#settext" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Button:SetText(text, textY)
 </code></pre>
+<p>Sets the button's text.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>text</b> <code>string</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>textY</b> <code>number?</code> Vertical offset for the text. Use for centering.</p>
+
+<h4 id="settype">SetType<a class="headerlink" href="#settype" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Button:SetType(buttonType)
+</code></pre>
+<p>Sets the button's visuals.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>buttonType</b> <code>GenericUI_Element_Button_Type</code> </p>
+
+<h4 id="setenabled">SetEnabled<a class="headerlink" href="#setenabled" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Button:SetEnabled(enabled)
+</code></pre>
+<p>Sets the button's enabled state. Enabled buttons are interactable.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>enabled</b> <code>boolean</code> </p>
+
+<h4 id="isenabled">IsEnabled<a class="headerlink" href="#isenabled" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Button:IsEnabled()
+   -&gt; boolean
+</code></pre>
+<p>Returns whether the button is enabled.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
 <p></doc></p>
               
             </div>
