@@ -37,3 +37,7 @@ h5, h4, h3, h2 {
 code {
   font-size: 90% !important;
 }
+
+.admonition-title {
+  color: #000000 !important;
+}
