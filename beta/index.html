@@ -9,7 +9,7 @@
   
   <link rel="canonical" href="https://pinewood.team/epip/beta/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Beta - Epip Encounters</title>
+  <title>Beta Versions - Epip Encounters</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -19,7 +19,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Beta";
+    var mkdocs_page_name = "Beta Versions";
     var mkdocs_page_input_path = "beta.md";
     var mkdocs_page_url = "/epip/beta/";
   </script>
@@ -53,6 +53,12 @@
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../patchnotes/">Patch Notes</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Documentation</span></p>
@@ -143,7 +149,7 @@
     
       
     
-    <li>Beta</li>
+    <li>Beta Versions</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -155,11 +161,95 @@
           <div role="main">
             <div class="section">
               
-                <p>There is no beta version available for testing currently.</p>
+                <div class="admonition warning">
+<p class="admonition-title">Extender devel version required</p>
+<p>Requires extender v59. Intended version: <code>0ad7546c35c809f4fa95196b74248c11b2935fd66961de3f4815112c3779a43a</code>
+To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:
+`</p>
+</div>
+<pre><code class="language-json">{
+    &quot;UpdateChannel&quot;: &quot;Devel&quot;,
+    &quot;TargetResourceDigest&quot;: &quot;0ad7546c35c809f4fa95196b74248c11b2935fd66961de3f4815112c3779a43a&quot;,
+    &quot;TargetVersion&quot;: &quot;59.0.0.0&quot;,
+    &quot;Debug&quot;: true
+}
+</code></pre>
+<h1 id="v1065-1423">v1065 (1/4/23)<a class="headerlink" href="#v1065-1423" title="Permanent link">&para;</a></h1>
+<p><a href="https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing">Download here</a>.</p>
+<p>Epip Encounters is now 2 years old! Thank you all for 2 years of patience. We've heard your complaints about the decision to remove gameplay changes from 2021, and have made the decision to preserve them through a future, separate add-on.</p>
+<p>To make up for all the drama, we are happy to present a new gameplay-oriented patch, the first one since 2021 !</p>
+<p>We know the rune crafting system has been underwhelming for years now, which is why this patch introduces a brand new system just for them. It consumes more materials, but should be far more engaging and rewarding. <strong>Simply right-click a rune material and select the new option in the dropdown menu to get started.</strong></p>
+<p>This patch contains numerous other gameplay and balance changes, as well as the usual dose of UI stuff:</p>
+<ul>
+<li>Removed innate skill slots; slots for memorizing skills can now only be obtained through the memory attribute, so as to increase its value<ul>
+<li>This change only applies to new playthroughs so as not to screw up your loadout</li>
+</ul>
+</li>
+<li>Wands now have a chance to appear with the "Shuffle" modifier, causing their spells to cycle in random order</li>
+<li>Added a new talent, "Trickster's Repertoire", initially featured in the hit videogame "Darby's EE2 Tweaks":<ul>
+<li>With Trickster's Repertoire, you sneak and become invisible for free at the start of combat, until the start of your first turn. At the end of your turn in subsequent rounds, sneak for free. You always stop sneaking at the start of turns. Additionally, your special arrows count as basic attacks and you have a 33% chance to recover a special arrow after shooting it.</li>
+</ul>
+</li>
+<li>Used those 2 fancy triangle rulers to straighten the character sheet a bit</li>
+<li>Animation Cancelling is now 100% client-side, slightly faster, and works with some spells that had issues before (ex. arrow spray, staff of magus, barrage)<ul>
+<li>Let us know if this buff is too much</li>
+</ul>
+</li>
+<li>Vanity dyes now scale with finesse instead of wits</li>
+<li>The health bar when you hover over a character now displays health and armor values</li>
+<li>Added Shigeru Miyamoto as a secret recruitable party member</li>
+<li>Added 2 new types of fishing rods from vanilla that were previously unused/unobtainable</li>
+<li>Changed how hotbar row count and visibility is saved<ul>
+<li>This might not work in multiplayer due to extender shenanigans</li>
+</ul>
+</li>
+<li>Changing rows in the hotbar now deals 10% of your max health as damage, per stack of elementalist</li>
+<li>Statuses in the status bar are now sorted in the order that they are sorted</li>
+<li>Removed the "cinematic combat" option</li>
+<li>Buffed the lizard bust slider from 0.5x to 0.75x (+ 0.1x per Entropy embodied)</li>
+<li>Removed some april fools stuff, we're not joking around anymore</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Non-english languages should no longer have broken artifact descriptions<ul>
+<li>The cause was fetching the TSKs during module load, which causes a bug that overwrites the string.</li>
+</ul>
+</li>
+<li>Fixed Quick Examine not being openable for the same character twice in a row</li>
+<li>Fixed vanity dyes not applying to slots that vanilla armor (without transmog) would hide/mask</li>
+<li>Fixed error if an item was transmogged into a template that no longer existed</li>
+</ul>
+<p>On the technical side of things:</p>
+<ul>
+<li>Reworked the doc generation script again; the doc appearance has changed considerably, and now supports hotlinking to functions</li>
+<li>Added support for multiple inheritance to classes made with the OOP library</li>
+<li>Generic UIs can be fetched by string ID now (oops)</li>
+<li>Added <code>Character.Events.ItemEquipped</code></li>
+<li>Updated the Generic example script and documentation</li>
+<li>Net payloads now have methods to fetch the associated character and/or item</li>
+<li>Added <code>Osiris.GetFirstFact()</code></li>
+<li>Added new calls to CharacterLib: <code>IsOrigin()</code>, <code>IsPlayer()</code></li>
+<li>Small changes to annotations and rewrites of code that was using deprecated stuff</li>
+<li>Began work on a new cheats system and UI</li>
+<li>Added <code>Client.IsCursorOverUI()</code> and <code>Client.GetActiveUI()</code></li>
+<li>Added <code>Input.IsTextFieldFocused()</code></li>
+<li>Added skillstate-related methods to CharacterLib</li>
+<li>Reworked hotbar prepared/casting skill checks to not require server information</li>
+<li>Added <code>Client.Events.SkillStateChanged</code></li>
+</ul>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../docs/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../patchnotes/" class="btn btn-neutral" title="Patch Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -183,6 +273,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../patchnotes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../docs/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
