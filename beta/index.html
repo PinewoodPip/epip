@@ -58,6 +58,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1423-upload-old">1/4/23 upload (old)</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -163,19 +165,51 @@
               
                 <div class="admonition warning">
 <p class="admonition-title">Extender devel version required</p>
-<p>Requires extender v59. Intended version: <code>0ad7546c35c809f4fa95196b74248c11b2935fd66961de3f4815112c3779a43a</code>
+<p>Requires extender v59. Intended version: <code>bcd9f11eb14b2bab225365f38b6af6dec005cfa21c0737437c50c3ee9d747443</code>
 To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:
 `</p>
 </div>
 <pre><code class="language-json">{
     &quot;UpdateChannel&quot;: &quot;Devel&quot;,
-    &quot;TargetResourceDigest&quot;: &quot;0ad7546c35c809f4fa95196b74248c11b2935fd66961de3f4815112c3779a43a&quot;,
+    &quot;TargetResourceDigest&quot;: &quot;bcd9f11eb14b2bab225365f38b6af6dec005cfa21c0737437c50c3ee9d747443&quot;,
     &quot;TargetVersion&quot;: &quot;59.0.0.0&quot;,
     &quot;Debug&quot;: true
 }
 </code></pre>
-<h1 id="v1065-1423">v1065 (1/4/23)<a class="headerlink" href="#v1065-1423" title="Permanent link">&para;</a></h1>
+<h1 id="v1065-160423">v1065 (16/04/23)<a class="headerlink" href="#v1065-160423" title="Permanent link">&para;</a></h1>
 <p><a href="https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing">Download here</a>.</p>
+<p>With this version, EE has been removed as a dependency. It's now possible to use Epip in a vanilla playthrough and the main features will work. There may be quirks that need ironing out, ex. references to features or settings that only make sense in EE - please report these.</p>
+<p>This also means that the remaining gameplay changes have been removed. If you wish to keep them, use <a href="https://drive.google.com/file/d/1HqxEzlXaZa4AMRpCybDPvZ2IyFjAL0J0/view?usp=sharing">this mod</a>.</p>
+<ul>
+<li>Custom status UI elements are now bigger (ex. in Quick Examine)</li>
+<li>Increased delay for animation cancelling to try to work around new issues of skills being cancelled</li>
+<li>Reworked the stats tab; should be less prone to bugging out in multiplayer now<ul>
+<li>Also fixed the gold &amp; splinter stat</li>
+</ul>
+</li>
+<li>Fixed hotbar loadouts not working</li>
+<li>The incompatible mods warnings now show on every load, rather than once per playthrough</li>
+</ul>
+<p>By the way, due to logistics changes, you will have to re-enable immersive meditation in the settings, if you had it on.</p>
+<p>On the technical side of things:</p>
+<ul>
+<li>Largely decoupled the logic for custom keybinds away from the UI itself (onto InputLib)</li>
+<li>Added <code>EpicEncounters.DeltaMods</code> library with dynamically-generated data about EE deltamods</li>
+<li>Added DragDropStateChanged event to Pointer lib</li>
+<li>Equipped artifacts are now tracked using UserVars instead of tags</li>
+<li>Generic:<ul>
+<li>Added <code>RepositionElements()</code> to Grid</li>
+<li>Added <code>Destroy()</code> to UI instances</li>
+</ul>
+</li>
+<li>Fixes and additions to PlayerInfo methods</li>
+<li>Moved various functionality from Feature up to its parent class Library (UserVars, ModVars)</li>
+<li>Fixed some warning spam related to status icons</li>
+<li>Various new checks to disable EE features when playing vanilla</li>
+<li>Fixed setting ID conflict issues in the settings menu</li>
+<li>Various fixes to debug cheats</li>
+</ul>
+<h2 id="1423-upload-old">1/4/23 upload (old)<a class="headerlink" href="#1423-upload-old" title="Permanent link">&para;</a></h2>
 <p>Epip Encounters is now 2 years old! Thank you all for 2 years of patience. We've heard your complaints about the decision to remove gameplay changes from 2021, and have made the decision to preserve them through a future, separate add-on.</p>
 <p>To make up for all the drama, we are happy to present a new gameplay-oriented patch, the first one since 2021 !</p>
 <p>We know the rune crafting system has been underwhelming for years now, which is why this patch introduces a brand new system just for them. It consumes more materials, but should be far more engaging and rewarding. <strong>Simply right-click a rune material and select the new option in the dropdown menu to get started.</strong></p>
