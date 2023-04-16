@@ -82,7 +82,7 @@ Generic UI elements have no lifetime restrictions and references to them may be 
 ```lua
 -- Other modders can access your UI by its string ID
 local yourUI = Generic.GetInstance("PIP_ExampleUI")
-local yourAcceptButton = myUI:GetElementByID("AcceptButton")
+local yourAcceptButton = yourUI:GetElementByID("AcceptButton")
 
 -- And they may interface with them just as you would
 yourUI:CreateElement("MyNewElement", "GenericUI_Element_IggyIcon")
