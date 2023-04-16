@@ -1,20 +1,50 @@
 
 !!! warning "Extender devel version required"
-    Requires extender v59. Intended version: `0ad7546c35c809f4fa95196b74248c11b2935fd66961de3f4815112c3779a43a`
+    Requires extender v59. Intended version: `bcd9f11eb14b2bab225365f38b6af6dec005cfa21c0737437c50c3ee9d747443`
     To get it, use the following `ScriptExtenderUpdaterConfig.json`:
     `
 ```json
 {
 	"UpdateChannel": "Devel",
-	"TargetResourceDigest": "0ad7546c35c809f4fa95196b74248c11b2935fd66961de3f4815112c3779a43a",
+	"TargetResourceDigest": "bcd9f11eb14b2bab225365f38b6af6dec005cfa21c0737437c50c3ee9d747443",
 	"TargetVersion": "59.0.0.0",
 	"Debug": true
 }
 ```
 
-# v1065 (1/4/23)
-
+# v1065 (16/04/23)
 [Download here](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing).
+
+With this version, EE has been removed as a dependency. It's now possible to use Epip in a vanilla playthrough and the main features will work. There may be quirks that need ironing out, ex. references to features or settings that only make sense in EE - please report these.
+
+This also means that the remaining gameplay changes have been removed. If you wish to keep them, use [this mod](https://drive.google.com/file/d/1HqxEzlXaZa4AMRpCybDPvZ2IyFjAL0J0/view?usp=sharing).
+
+- Custom status UI elements are now bigger (ex. in Quick Examine)
+- Increased delay for animation cancelling to try to work around new issues of skills being cancelled
+- Reworked the stats tab; should be less prone to bugging out in multiplayer now
+    - Also fixed the gold & splinter stat
+- Fixed hotbar loadouts not working
+- The incompatible mods warnings now show on every load, rather than once per playthrough
+
+By the way, due to logistics changes, you will have to re-enable immersive meditation in the settings, if you had it on.
+
+On the technical side of things:
+
+- Largely decoupled the logic for custom keybinds away from the UI itself (onto InputLib)
+- Added `EpicEncounters.DeltaMods` library with dynamically-generated data about EE deltamods
+- Added DragDropStateChanged event to Pointer lib
+- Equipped artifacts are now tracked using UserVars instead of tags
+- Generic:
+    - Added `RepositionElements()` to Grid
+    - Added `Destroy()` to UI instances
+- Fixes and additions to PlayerInfo methods
+- Moved various functionality from Feature up to its parent class Library (UserVars, ModVars)
+- Fixed some warning spam related to status icons
+- Various new checks to disable EE features when playing vanilla
+- Fixed setting ID conflict issues in the settings menu
+- Various fixes to debug cheats
+
+## 1/4/23 upload (old)
 
 Epip Encounters is now 2 years old! Thank you all for 2 years of patience. We've heard your complaints about the decision to remove gameplay changes from 2021, and have made the decision to preserve them through a future, separate add-on.
 
