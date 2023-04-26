@@ -46,7 +46,7 @@ For the sake of making inventory management easier you can make transmog - both 
 ![Transmog keep icon](img/vanity/keep_icon_showcase.png)
 
 ### Elemental effects
-Don't like the glowing thingie on your weapon? You can turn it off.  
+Weapons with elemental damage normally get glowing visual effect applied to them. Don't like it? You can turn it off.  
 
 ![Transmog ele effects](img/vanity/ele_effects.png)
 
