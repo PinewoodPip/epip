@@ -37,5 +37,13 @@ For the sake of making inventory management easier you can make transmog - both 
 ![Transmog keep icon](img/vanity/keep_icon_showcase.png)
 
 ### Elemental effects
-Don't like the glowing thingie on your weapon? You can turn it off.
+Don't like the glowing thingie on your weapon? You can turn it off.  
 ![Transmog ele effects](img/vanity/ele_effects.png)
+
+## Outfits tab ![Outfits tab icon](img/vanity/transmog_tab_icon.png)
+Have you mastered the art of drip? Have you found your ultimate image? Never wanna wear anything else ever again? Save your entire get-up and use it across playthroughs with a few clicks.  
+![Outfits showcase](img/vanity/outfits_showcase.png)
+Saved outfits are grouped by intended race and gender, but can be applied to any character.  
+
+Adding a new outfit to your wardrobe is as simple as clicking ![Outfits button](img/vanity/outfits_button.png) and entering a name.
+![Outfits prompt](img/vanity/outfits_prompt.png)
