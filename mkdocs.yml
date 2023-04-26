@@ -10,6 +10,8 @@ markdown_extensions:
     - pymdownx.snippets
     - admonition
     # - pymdownx.superfences
+    - attr_list
+    - md_in_html
 
 extra_css:
   - css/extra.css
