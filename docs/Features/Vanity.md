@@ -80,7 +80,7 @@ You can save your favorite dyes to reuse them later by pressing ![Dyes save butt
 Saved dyes will appear under "Custom Dyes" collapsing list. There also are a few built-in dyes for you to use or take inspiration from.  
 ![Dyes customs](img/vanity/dyes_custom.png)
 
-## Auras tab
+## Auras tab ![Vanity tab icon](img/vanity/transmog_tab_icon.png)
 All these drip options were not enough for you? Want to make your presence even more noticeable? Apply permanent visual effects to your character in Auras tab.  
 ![Auras showcase](img/vanity/auras_showcase.png)
 As simple as it gets - choose your attachment point, choose auras to use with it.  
