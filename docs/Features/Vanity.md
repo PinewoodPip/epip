@@ -79,3 +79,10 @@ You can save your favorite dyes to reuse them later by pressing ![Dyes save butt
 ![Dyes save prompt](img/vanity/dyes_prompt.png)
 Saved dyes will appear under "Custom Dyes" collapsing list. There also are a few built-in dyes for you to use or take inspiration from.  
 ![Dyes customs](img/vanity/dyes_custom.png)
+
+## Auras tab
+All these drip options were not enough for you? Want to make your presence even more noticeable? Apply permanent visual effects to your character in Auras tab.  
+![Auras showcase](img/vanity/auras_showcase.png)
+As simple as it gets - choose your attachment point, choose auras to use with it.  
+
+*This feature is in rather experimental stage. It works as intended, but has seen little adoption by players (to our knowledge). Any useful feedback is welcome.*  
