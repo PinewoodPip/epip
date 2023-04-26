@@ -47,3 +47,35 @@ Saved outfits are grouped by intended race and gender, but can be applied to any
 
 Adding a new outfit to your wardrobe is as simple as clicking ![Outfits button](img/vanity/outfits_button.png) and entering a name.
 ![Outfits prompt](img/vanity/outfits_prompt.png)
+
+## Dyes tab ![Dyes tab icon](img/vanity/dyes_tab_icon.png)
+Feeling blue today? Maybe red? Or are you cool and it's time for purple? Worry not! All your coloring needs can be satisfied in the Dyes tab!  
+![Dyes showcase](img/vanity/dyes_showcase.png)
+
+### Basics
+Equipment is divided in up to 3 color zones. You can choose your favorite colors for each of them using means provided:  
+
++ Sliders - the more user-friendly option, drag a bunch of sliders around to adjust RGB values in [0; 255] range. You don't even have to understand how RGB works - a handy preview of a resulting color is always displayed for your convenience.  
++ Hex - if you think you're cool you can always straight-up enter your desired hex code. Whether you conjure them in your mind through otherwordly communion or just look them up in Google - not our problem.  
+
+Once done - press ![Dyes apply button](img/vanity/dyes_apply_button.png) to see the fruits of your labor.
+
+**Important - not all equipment can be dyed and not all dyeable equipment will have all 3 color zones. We are not to be blamed for this, blame Larian instead.**
+
+### Sharing
+Found the coolest color combination ever? Wanna share it with your friend? There are several ways to go about this:
+
++ Bruteforce - just look at RGB/hex values and send them over. Not the most convenient option, but no one can stop you from doing this.
++ Copy/paste - see these ![Dyes copypaste buttons](img/vanity/dyes_copypaste_buttons.png)? Up means "copy", down means "paste".
++ Import/export - ![Dyes export button](img/vanity/dyes_export_button.png) puts a single string representing all 3 color zones into your clipboard, kinda like this **#FF0000-#00FF00-#0000FF**.  
+![Dyes import button](img/vanity/dyes_import_button.png) scans your clipboard and if it contains the string in correct format - inputs color codes into their zones.  
+
+### Lock sliders
+By default color sliders will automatically adjust to match currently focused equipment piece whenever you change it. However by ticking ![Dyes lock button](img/vanity/dyes_lock.png) you can prevent this.  
+This can be useful for applying one dye to multiple equipment pieces.  
+
+### Saving dyes and built-ins
+You can save your favorite dyes to reuse them later by pressing ![Dyes save button](img/vanity/dyes_save_button.png) and entering a name.  
+![Dyes save prompt](img/vanity/dyes_prompt.png)
+Saved dyes will appear under "Custom Dyes" collapsing list. There also are a few built-in dyes for you to use or take inspiration from.  
+![Dyes customs](img/vanity/dyes_custom.png)
