@@ -18,6 +18,8 @@ nav:
   - Home: index.md
   - Patch Notes: patchnotes.md
   - Beta Versions: beta.md
+  - Major features:
+    - "Vanity": "Features/Vanity.md"
   - Documentation: 
     - "Introduction": "docs.md"
     - "Client":
