@@ -80,7 +80,6 @@ Once done - press ![Dyes apply button](img/vanity/dyes_apply_button.png){: style
 ### Sharing
 Found the coolest color combination ever? Wanna share it with your friend? There are several ways to go about this:
 
-+ Bruteforce - just look at RGB/hex values and send them over. Not the most convenient option, but no one can stop you from doing this.
 + Copy/paste - see these ![Dyes copypaste buttons](img/vanity/dyes_copypaste_buttons.png){: style="width:auto;height:24px;" }? Up means "copy", down means "paste".
 + Import/export - ![Dyes export button](img/vanity/dyes_export_button.png){: style="width:auto;height:24px;" } puts a single string representing all 3 color zones into your clipboard, kinda like this **#FF0000-#00FF00-#0000FF**.  
 ![Dyes import button](img/vanity/dyes_import_button.png){: style="width:auto;height:24px;" } scans your clipboard and if it contains the string in correct format - inputs color codes into their zones.  
