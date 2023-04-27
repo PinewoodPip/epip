@@ -12,8 +12,24 @@
 }
 ```
 
-# v1065 (16/04/23)
+# v1065 Beta
+
+!!! error "Standalone usage warning"
+    **If you have the Improved Hotbar mod, you must disable it to use Epip**. All of its functions are already in Epip (+ like 9 months worth of updates that the workshop mod never got).
+
+## 27/04/23 upload
 [Download here](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing).
+
+- Animation cancelling now has 2 modes: client-side (v1065 behaviour) and server-side (old behaviour). The server-side option uses the lower delay that was used previously.
+- Updated localizations and added Brazilian Portuguese, translated by Ferocidade
+
+On the technical side of things:
+
+- Added `ActionReleased` event to Input library
+- Added `GetIcon()` to BatteredHarried library
+- Added `GetLevelID()` to Entity library
+
+## 16/04/23 upload (old)
 
 With this version, EE has been removed as a dependency. It's now possible to use Epip in a vanilla playthrough and the main features will work. There may be quirks that need ironing out, ex. references to features or settings that only make sense in EE - please report these.
 
