@@ -232,19 +232,9 @@ Epic Enemies is a randomizer feature enabled from the ingame settings menu. It b
 These effects will be applied to enemies when they enter combat. You may use the "Quick Examine" feature to view the perks that each enemy rolled; see its respective section in this site for more info.
 
 ## Vanity
-Right-click equipped items and select the "Vanity" option to enter a menu with a plethora of customization options.
-
-The first tab allows you to change the item's appearance into other items of the same slot. You can also tick "Lock Appearance" to automatically transmogrify newly equipped items into your currently chosen appearance, when the Vanity menu is closed. **Support is included for "Majora's Project Fashion Sins", "Rendal's NPC Armors" and "Visitors from Cyseal" mods.**
-
-![Vanity transmog.](img/showcase/vanity_transmog.png)
-
-The second tab allows you to save and apply outfits consisting of all equipment slots with visuals. They are organized by intended race and gender, but can be applied onto any character.
-
-![Vanity outfits.](img/showcase/vanity_outfits.png)
-
-The third tab allows you to dye items with a custom color. Items may support up to 3 different colors, but certain items cannot be dyed - this depends on how the model was setup. You may also use EE's dyes from here, and save your own ones and share them with buttons that read/write the color codes to your clipboard.
-
-![Vanity dyes.](img/showcase/vanity_dyes.png)
+Easy to use cosmetic customization system, including armor transmogrification, custom RGB dyes, quick outfit swapping and auras.  
+Wanna drip as hard as this? Learn more at the dedicated [feature page](Features/Vanity.md).  
+![Maddest drip](img/showcase/drip.png)
 
 ## Miscellaneous Bug Fixes and Adjustments
 Certain vanilla issues have been fixed:

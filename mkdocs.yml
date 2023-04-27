@@ -10,6 +10,8 @@ markdown_extensions:
     - pymdownx.snippets
     - admonition
     # - pymdownx.superfences
+    - attr_list
+    - md_in_html
 
 extra_css:
   - css/extra.css
@@ -18,6 +20,8 @@ nav:
   - Home: index.md
   - Patch Notes: patchnotes.md
   - Beta Versions: beta.md
+  - Features:
+    - "Vanity": "Features/Vanity.md"
   - Documentation: 
     - "Introduction": "docs.md"
     - "Client":
