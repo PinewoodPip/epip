@@ -11,7 +11,7 @@ Epip Encounters is an add-on mod for [Epic Encounters 2](https://docs.google.com
     Only English is fully supported.
     Visit [this sheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/edit#gid=479886788) to contribute to translations.
 
-[Latest version, v1064](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=share_link). (05/03/23) 
+[Latest stable version, v1064](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=share_link). (05/03/23) 
 
 See the [patchnotes](patchnotes.md) page for patchnotes.
 
@@ -21,6 +21,11 @@ Special thanks to:
 - Derpy Moa for motivation and initial ideas
 - Norbyte for the Script Extender and it's fantastic UI features
 - Elric for his help with designing and drawing new UIs
+
+Translators:
+
+- Cathe & JoienReid: Russian translation
+- Ferocidade: Brazilian Portuguese translation (v1065+)
 
 ## Features
 Below is a non-exhaustive list of features; I suggested browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. 
