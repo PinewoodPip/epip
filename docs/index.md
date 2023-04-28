@@ -31,23 +31,9 @@ Translators:
 Below is a non-exhaustive list of features; I suggested browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. 
 
 ## UI
+Lots of minor and not-so-minor changes were made to improve upon base game UI. Read all about it [here](Features/UI.md).
 
-### Health Bar
-The health bar at the top of the screen now shows a character’s resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer. The actual B/H statuses are now hidden in this UI to reduce clutter. Credits to Elric for the new art assets used!
-
-![New enemy health bar.](img/showcase/health_bar.png)
-
-Holding the "show sneak cones" button (shift by default) will replace the resistances display with the character’s current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.
-
-![New enemy health bar, alt mode.](img/showcase/health_bar_shift.png)
-
-The health bar above the hotbar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text is removed to improve readability. Additionally, it now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. It now also shows your maximum SP, and the AP/SP indicators are properly centered. Its graphics have also been improved, with the AP bar being easier to read thanks to a dropshadow.
-
-![Improved status console.](img/showcase/status_console.png)
-
-A setting has been added to show target-related information on this health bar, including source of the Taunt status, as well as whether a character is currently unpreferred or ignored by the AI.
-
-![Aggro display.](img/showcase/aggro_display.png)
+// TODO add some cool screenshot, mb a collage?
 
 ### Hotbar
 Epip offers a heavily improved Hotbar UI, featuring multiple bars, custom "action" buttons in the bottom left, and numerous functions to make hotbar management easier.
@@ -85,22 +71,6 @@ Right-click a row on the hotbar to bring up a context menu where you can "push" 
 Additionally, all "engine actions" (except for flee) are available from the vanilla actions drawer.
 
 [The hotbar improvements are also available as a standalone mod with no EE dependency.](https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297)
-
-### Character Sheet
-The character sheet now shows physical and piercing resistances.
-
-The tags tab is replaced with a brand new "Keywords and misc." tab. You can use it to quickly reference your keyword activators and mutators, as well as reaction charges remaining.
-
-![Custom stat tab.](img/showcase/keywords.png)
-
-### Player Portraits
-The status bar on your characters now wraps onto a second row once there are more than 6 statuses, preventing it from obscuring the middle of the screen during intense fights. Summon portraits no longer show statuses and are shrunk while the status bar is wrapping.
-
-You can right-click your portraits to open a context menu where you can hide the status bar and summons, as well as access the Debug Cheats if you're in developer mode.
-
-In the settings, you may also enable a Battered/Harried display on these portraits.
-
-![Player Info preview.](img/showcase/player_info.png)
 
 ### Settings Menu
 The settings menu has been expanded to allow mods to add their own settings. Epip includes its own tab full of options to customize its features.
