@@ -51,7 +51,7 @@ Weapons with elemental damage normally get glowing visual effect applied to them
 
 ![Transmog ele effects](img/vanity/ele_effects.png)
 
-## Outfits tab ![Outfits tab icon](img/vanity/transmog_tab_icon.png)
+## Outfits tab ![Outfits tab icon](img/vanity/outfits_tab_icon.png)
 Have you mastered the art of drip? Have you found your ultimate image? Never wanna wear anything else ever again? Save your entire get-up and use it across playthroughs with a few clicks.  
 
 ![Outfits showcase](img/vanity/outfits_showcase.png)
