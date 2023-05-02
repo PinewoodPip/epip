@@ -23,7 +23,6 @@ Generic powers every UI in Epip made after its inception, including:
 
 Call `Generic.Create()` to create a new UI.
 
-TODO use sessionloaded
 ```lua
 local Generic = Client.UI.Generic
 local ExampleUI = Generic.Create("PIP_ExampleUI")
@@ -107,7 +106,7 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 The following element types are implemented:
 
-- TODO
+- TODO document
 
 You can read up about them on their dedicated pages.
 
