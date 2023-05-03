@@ -15,10 +15,15 @@
 # v1065 Beta
 
 !!! error "Standalone usage warning"
-    **If you have the Improved Hotbar mod, you must disable it to use Epip**. All of its functions are already in Epip (+ like 9 months worth of updates that the workshop mod never got).
+    **If you have the Improved Hotbar mod, you must disable it to use Epip**. All of its functions are already in Epip (+ like 9 months worth of updates that the workshop mod never got). See the [front page](index.md) and the [changelog](patchnotes.md) if you're new to Epip.
 
-## 27/04/23 upload
+## 3/05/23 upload
 [Download here](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing).
+
+- Animation Cancelling: fixed server-side blacklist not working, and reverted it to what it previously was
+- Fixed some log spam related to status icons
+
+## 27/04/23 upload (old)
 
 - Animation cancelling now has 2 modes: client-side (v1065 behaviour) and server-side (old behaviour). The server-side option uses the lower delay that was used previously.
 - Updated localizations and added Brazilian Portuguese, translated by Ferocidade
