@@ -31,7 +31,18 @@ Translators:
 Below is a non-exhaustive list of features; I suggested browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. 
 
 ## UI
-Lots of minor and not-so-minor changes were made to improve upon base game UI. Read all about it [here](Features/UI.md).
+
+### Target status bar
+Health bar shown at the top of the screen has been reworked to look better and include more information. More details [here](Features/UI.md#target-status-bar).
+
+![Health bar showcase](Features/img/ui/health_bar.png)
+
+### Player portraits
+Player portraits display has also received some love, most notably - the list of statuses will now wrap onto a second row to prevent it from obsscuring most of your screen. More details [here](Features/UI.md#player-portraits).
+
+![Player Info preview.](Features/img/ui/player_info.png)
+
+Epip makes dozens of other UI changes to improve your experience. You can read about the rest of them [here](Features/UI.md).
 
 // TODO add some cool screenshot, mb a collage?
 
