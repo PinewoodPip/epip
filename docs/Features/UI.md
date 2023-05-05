@@ -19,10 +19,11 @@ Holding the "show sneak cones" button (Shift by default) will replace the resist
 
 ### Level display
 
-An option to customize the position of targeted character level display was added.
+An option to customize the position of targeted character level display was added.  
+*By default it's displayed in alternate status bar mode (while Shift is held).*  
 <details>
 <summary>Showcase</summary>
-Accessible through <b>Options -> Epip settings -> General -> Character Level Display</b>.
+<p>Accessible through <b>Options -> Epip settings -> General -> Character Level Display</b>.</p>
 <table>
 <tr><td>Hidden:            </td><td><img src="../img/ui/lvl_display_hidden.png"/></td></tr>
 <tr><td>After Name:        </td><td><img src="../img/ui/lvl_display_after_name.png"/></td></tr>
@@ -33,8 +34,9 @@ Accessible through <b>Options -> Epip settings -> General -> Character Level Dis
 
 ### Aggro display
 
-An option to display aggro-related information was added. It shows current Taunt source, if exists, as well as whether character is a Preferred, Unpreferred or Ignored by enemies.  
-You can adjust whether this info is shown in the default or alternative health bar display, or turn it off entirely.
+An option to display aggro-related information was added. It shows current Taunt source, if exists, as well as whether a character is Preferred, Unpreferred or Ignored by enemies.  
+You can adjust whether this info is shown in the default or alternative health bar display.  
+*Disabled by default.*  
 <details>
 <summary>Showcase</summary>
 Accessible through <b>Options -> Epip settings -> General -> Show Aggro Information</b>.
