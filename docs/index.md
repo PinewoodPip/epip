@@ -38,7 +38,7 @@ Health bar shown at the top of the screen has been reworked to look better and i
 ![Health bar showcase](Features/img/ui/health_bar.png)
 
 ### Player portraits
-Player portraits display has also received some love, most notably - the list of statuses will now wrap onto a second row to prevent it from obsscuring most of your screen. More details [here](Features/UI.md#player-portraits).
+Player portraits display has also received some love, most notably - the list of statuses will now wrap onto a second row to prevent it from obscuring most of your screen. More details [here](Features/UI.md#player-portraits).
 
 ![Player Info preview.](Features/img/ui/player_info.png)
 
