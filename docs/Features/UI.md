@@ -70,21 +70,38 @@ Further minor graphical tweaks were made, such as properly centering AP/SP displ
 ## Player portraits
 
 The status bar on your characters now wraps onto a second row once there are more than 6 statuses, preventing it from obscuring the middle of the screen during intense fights. Summon portraits no longer show statuses and are shrunk while the status bar is wrapping.  
+In the settings you may also enable a Battered/Harried display on these portraits.  
+
+![Player info preview](img/ui/player_info.png)
+
 You can right-click your portraits to open a context menu where you can hide the status bar and summons, as well as access the Debug Cheats if you're in developer mode.  
-In the settings, you may also enable a Battered/Harried display on these portraits.  
 
-![Player Info preview.](img/ui/player_info.png)
+![Player info submenu](img/ui/status_dropdown.png)
 
-// TODO add summon ss
-// TODO add dev mode ss
+<details>
+<summary>Other settings</summary>
+<b>Options -> Epip settings -> Player portraits</b>
+<table>
+<tr><td>Display B/H on player portraits</td><td><p>Display nice, big B/H indicators right over player portaits.</p><p>Disabled by default.</p></td></tr>
+<tr><td>Status Opacity in Combat       </td><td><p>Make statuses less visible.</p><p>Hovering over statuses will always show them at full opacity.</p>
+                                                <br>
+                                                <p><img src="../img/ui/status_opacity.png"/></p></td></tr>
+</table>
+</details>
 
 ## Character sheet
 
 The character sheet now shows physical and piercing resistances.
-The tags tab is replaced with a brand new "Keywords and misc." tab. You can use it to quickly reference your keyword activators and mutators, as well as reaction charges remaining.
 
-![Custom stat tab.](img/ui/keywords.png)
+![Charsheet res](img/ui/resistances.png)
 
-// TODO replace showcase ss (outdated)
-// TODO add res ss
-// TODO mention combat stats
+The tags tab is replaced with a brand new "Keywords and misc." tab.  
+It's full of useful information, such as:
+
+- Remaining reaction charges.
+- Currently equipped Artifacts, with descriptions.
+- Active keyword activators and mutators, with descriptions.
+- Your combat stats. *It's not perfect, but it's a good reference.*
+- Other miscellaneous other info, e.g. your passive regeneration rates.
+
+![Custom stat tab](img/ui/keywords.png)

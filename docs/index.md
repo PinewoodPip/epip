@@ -44,8 +44,6 @@ Player portraits display has also received some love, most notably - the list of
 
 Epip makes dozens of other UI changes to improve your experience. You can read about the rest of them [here](Features/UI.md).
 
-// TODO add some cool screenshot, mb a collage?
-
 ### Hotbar
 Epip offers a heavily improved Hotbar UI, featuring multiple bars, custom "action" buttons in the bottom left, and numerous functions to make hotbar management easier.
 
