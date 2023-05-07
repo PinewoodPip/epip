@@ -11,7 +11,10 @@ Epip Encounters is an add-on mod for [Epic Encounters 2](https://docs.google.com
     Only English is fully supported.
     Visit [this sheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/edit#gid=479886788) to contribute to translations.
 
-[Latest stable version, v1064](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=share_link). (05/03/23) 
+!!! error "Standalone usage warning"
+    **If you have the Improved Hotbar mod, you must disable it to use Epip**. All of its functions are already in Epip (+ like 9 months worth of updates that the workshop mod never got). See the [front page](index.md) and the [changelog](patchnotes.md) if you're new to Epip.
+
+[Latest stable version, v1065](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing). (07/05/23) 
 
 See the [patchnotes](patchnotes.md) page for patchnotes.
 
@@ -21,11 +24,12 @@ Special thanks to:
 - Derpy Moa for motivation and initial ideas
 - Norbyte for the Script Extender and it's fantastic UI features
 - Elric for his help with designing and drawing new UIs
+- Cathe for contributing to the feature showcases on this website
 
 Translators:
 
 - Cathe & JoienReid: Russian translation
-- Ferocidade: Brazilian Portuguese translation (v1065+)
+- Ferocidade: Brazilian Portuguese translation
 
 ## Features
 Below is a non-exhaustive list of features; I suggested browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. 

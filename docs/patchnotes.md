@@ -2,6 +2,81 @@
 
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
+## v1065 - 07/05/23
+Requires extender v59+.
+
+!!! error "Standalone usage warning"
+    **If you have the Improved Hotbar mod, you must disable it to use Epip**. All of its functions are already in Epip (+ like 9 months worth of updates that the workshop mod never got). See the [front page](index.md) and the [changelog](patchnotes.md) if you're new to Epip.
+
+[Download here](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing).
+
+With this version, EE has been removed as a dependency. It's now possible to use Epip in a non-EE playthrough and the main features will work. There may be quirks that need ironing out, ex. references to features or settings that only make sense in EE - please report these.
+
+This also means that the remaining gameplay changes have been removed. If you wish to keep them, use [this mod](https://drive.google.com/file/d/1HqxEzlXaZa4AMRpCybDPvZ2IyFjAL0J0/view?usp=sharing).
+
+The following patchnotes are the merged patchnotes of all beta versions of the patch, excluding the April Fools one.
+
+By the way, due to logistics changes, you will have to re-enable immersive meditation in the settings, if you had it on.
+
+- Animation cancelling now has 2 modes: client-side (v1065 behaviour) and server-side (old behaviour). The server-side option uses the lower delay that was used previously.
+- Changed how hotbar row count and visibility is saved
+    - This might not work in multiplayer due to extender shenanigans
+- Custom status UI elements are now bigger (ex. in Quick Examine)
+- Added a new rune crafting system; simply right-click a rune material and select the new option in the dropdown menu to get started.
+- Reworked the stats tab; should be less prone to bugging out in multiplayer now
+    - Also fixed the gold & splinter stat
+- The incompatible mods warnings now show on every load, rather than once per playthrough
+- Updated localizations and added Brazilian Portuguese, translated by Ferocidade
+- Character sheet skew during anniversaries is now less extreme
+- Removed the "cinematic combat" option
+
+Fixes:
+
+- Fixed some log spam related to status icons
+- Fixed hotbar loadouts not working
+- Non-english languages should no longer have broken artifact descriptions
+    - The cause was fetching the TSKs during module load, which causes a bug that overwrites the string.
+- Fixed Quick Examine not being openable for the same character twice in a row
+- Fixed vanity dyes not applying to slots that vanilla armor (without transmog) would hide/mask
+- Fixed error if an item was transmogged into a template that no longer existed
+- Fixed a typo in the settings to fix Astrologer's Gaze tooltip
+
+
+On the technical side of things:
+
+- Added `ActionReleased` event to Input library
+- Added `GetIcon()` to BatteredHarried library
+- Added `GetLevelID()` to Entity library
+- Largely decoupled the logic for custom keybinds away from the UI itself (onto InputLib)
+- Added `EpicEncounters.DeltaMods` library with dynamically-generated data about EE deltamods
+- Added DragDropStateChanged event to Pointer lib
+- Equipped artifacts are now tracked using UserVars instead of tags
+- Generic:
+    - Added `RepositionElements()` to Grid
+    - Added `Destroy()` to UI instances
+- Fixes and additions to PlayerInfo methods
+- Moved various functionality from Feature up to its parent class Library (UserVars, ModVars)
+- Fixed some warning spam related to status icons
+- Various new checks to disable EE features when playing vanilla
+- Fixed setting ID conflict issues in the settings menu
+- Various fixes to debug cheats
+- Reworked the doc generation script again; the doc appearance has changed considerably, and now supports hotlinking to functions
+- Added support for multiple inheritance to classes made with the OOP library
+- Generic UIs can be fetched by string ID now (oops)
+- Added `Character.Events.ItemEquipped`
+- Updated the Generic example script and documentation
+- Net payloads now have methods to fetch the associated character and/or item
+- Added `Osiris.GetFirstFact()`
+- Added new calls to CharacterLib: `IsOrigin()`, `IsPlayer()`
+- Small changes to annotations and rewrites of code that was using deprecated stuff
+- Began work on a new cheats system and UI
+- Added `Client.IsCursorOverUI()` and `Client.GetActiveUI()`
+- Added `Input.IsTextFieldFocused()`
+- Added skillstate-related methods to CharacterLib
+- Reworked hotbar prepared/casting skill checks to not require server information
+- Added `Client.Events.SkillStateChanged`
+
+
 ## v1064 - 05/03/23
 [Download here](https://drive.google.com/file/d/1ni4yRX1TTPHxrqZ0mhbrimyFGXkdZsPL/view?usp=share_link).
 

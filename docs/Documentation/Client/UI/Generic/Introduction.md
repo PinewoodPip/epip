@@ -18,6 +18,7 @@ Generic powers every UI in Epip made after its inception, including:
 - Fishing minigame
 - Quick Find
 - Settings menu (partially)
+- Bedazzled (match 3 minigame)
 
 ## Getting started
 
