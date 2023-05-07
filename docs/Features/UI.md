@@ -49,7 +49,7 @@ Accessible through <b>Options -> Epip settings -> General -> Show Aggro Informat
 </details>
 <details>
 <summary>Aggro tags explanation</summary>
-AI chooses its targets based on a number of parameters, such as target's effective HP, how easy it is to get to the target and so on. Its behavior is also influenced by aggro tags.
+<p>AI chooses its targets based on a number of parameters, such as target's effective HP, how easy it is to get to the target and so on. Its behavior is also influenced by aggro tags.</p>
 <ul>
 <li>No tag: AI has no preference on whether to choose this character as the primary attack target or not. However, AI will actively try to hit this character with AOE attacks. Most characters will not have any aggro tag by default.</li>
 <li>Preferred: AI will actively try to make this character its primary attack target. This aggro tag is manually provided to some important NPCs and is not normally obtainable during gameplay.</li>
@@ -57,6 +57,7 @@ AI chooses its targets based on a number of parameters, such as target's effecti
 <li>Ignored: AI will try to act as if this character does not exist.</li>
 <li>Taunted: this AI will consider the source of Taunt a Preferred target.</li>
 </ul>
+<p><b>This information is only relevant for Epic Encounters 2!</b></p>
 </details>
 
 ## Player status bar
