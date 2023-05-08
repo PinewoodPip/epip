@@ -32,12 +32,12 @@ Below is a non-exhaustive list of features; I suggested browsing the latest [pat
 
 ## UI
 
-### Target status bar
+### Target Status Bar
 Health bar shown at the top of the screen has been reworked to look better and include more information. More details [here](Features/UI.md#target-status-bar).
 
 ![Health bar showcase](Features/img/ui/health_bar.png)
 
-### Player portraits
+### Player Portraits
 Player portraits display has also received some love, most notably - the list of statuses will now wrap onto a second row to prevent it from obscuring most of your screen. More details [here](Features/UI.md#player-portraits).
 
 ![Player Info preview.](Features/img/ui/player_info.png)
@@ -121,11 +121,6 @@ Additionally, the difficulty can now be changed to/from tactician freely at any 
 A setting has been added to enable infinite carry weight for all party members. You can also enable automatic identifying of items, optionally not requiring any Loremaster.
 
 Consumable items, like mushrooms and food, no longer require you to use them once for them to show their effects in the tooltip.
-
-### Treasure Display
-An option has been added to display noteworthy item drops of enemies and containers on their health bar. For characters, this only shows while holding shift.
-
-![Treasure display option.](img/showcase/treasure_display.png)
 
 ### Combat Log
 You may now filter out individual types of messages in the combat log by right-clicking it. Certain messages have been reworded for clarity and can now "merge" if they happen in quick succession, improving readability. You can also clear the log from the context menu.

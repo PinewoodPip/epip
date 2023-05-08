@@ -1,24 +1,20 @@
 ﻿# UI improvements
-
 Epip contains a plethora of functional and cosmetic improvements over the base game UI. Big thanks to Elric for the new art assets used!
 
-## Target status bar
+## Target Status Bar
 
-### Resistance and B/H display
-
+### Resistance and B/H Display
 The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer.  
 Actual B/H statuses are now hidden to reduce clutter.  
 
 ![Health bar showcase](img/ui/health_bar.png)
 
-### Alternative display
-
+### Alternative Display
 Holding the "show sneak cones" button (Shift by default) will replace the resistances display with the character's current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.  
 
 ![Health bar alt](img/ui/health_bar_shift.png)
 
-### Level display
-
+### Level Display
 An option to customize the position of targeted character level display was added.  
 *By default it's displayed in alternate status bar mode (while Shift is held).*  
 <details>
@@ -32,8 +28,7 @@ An option to customize the position of targeted character level display was adde
 </table>
 </details>
 
-### Aggro display
-
+### Aggro Display
 An option to display aggro-related information was added. It shows current Taunt source, if exists, as well as whether a character is Preferred, Unpreferred or Ignored by enemies.  
 You can adjust whether this info is shown in the default or alternative health bar display.  
 *Disabled by default.*  
@@ -60,16 +55,20 @@ Accessible through <b>Options -> Epip settings -> General -> Show Aggro Informat
 <p><b>This information is only relevant for Epic Encounters 2!</b></p>
 </details>
 
-## Player status bar
+### Treasure Display
+An option has been added to display noteworthy item drops of enemies and containers on their health bar. For characters, this only shows while holding shift.  
+Accessible through **Options -> Epip settings -> General -> Character Level Display**, disabled by default.  
 
+![Treasure display option.](img/ui/treasure_display.png)
+
+## Player Status Bar
 The player health bar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text was removed to improve readability.  
 Additionally, your AP display now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. Your maximum SP is also shown at all times.  
 Further minor graphical tweaks were made, such as properly centering AP/SP displays and adding a dropshadow to AP bar to improve its readability.  
 
 ![Player status bar showcase](img/ui/status_console.png)
 
-## Player portraits
-
+## Player Portraits
 The status bar on your characters now wraps onto a second row once there are more than 6 statuses, preventing it from obscuring the middle of the screen during intense fights. Summon portraits no longer show statuses and are shrunk while the status bar is wrapping.  
 In the settings you may also enable a Battered/Harried display on these portraits.  
 
@@ -90,8 +89,7 @@ You can right-click your portraits to open a context menu where you can hide the
 </table>
 </details>
 
-## Character sheet
-
+## Character Sheet
 The character sheet now shows physical and piercing resistances.
 
 ![Charsheet res](img/ui/resistances.png)

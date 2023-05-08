@@ -9,7 +9,7 @@ From here you will have access to a number of tabs packed with customization fea
 
 ![Tabs overview](img/vanity/tabs.png)
 
-## Transmog tab ![Transmog tab icon](img/vanity/transmog_tab_icon.png)
+## Transmog Tab ![Transmog tab icon](img/vanity/transmog_tab_icon.png)
 
 ![Transmog tab showcase](img/vanity/transmog_tab.png)
 
@@ -40,18 +40,18 @@ Want to go for more outlandish look? Make your equipment invisible with a press 
 
 ![Transmog invis](img/vanity/transmog_visibility.png)
 
-### Keep icon
+### Keep Icon
 For the sake of making inventory management easier you can make transmog - both manual and automatic - preserve equipment icon.  
 **This option is saved per-slot.**  
 
 ![Transmog keep icon](img/vanity/keep_icon_showcase.png)
 
-### Elemental effects
+### Elemental Effects
 Weapons with elemental damage normally get glowing visual effect applied to them. Don't like it? You can turn it off.  
 
 ![Transmog ele effects](img/vanity/ele_effects.png)
 
-## Outfits tab ![Outfits tab icon](img/vanity/outfits_tab_icon.png)
+## Outfits Tab ![Outfits tab icon](img/vanity/outfits_tab_icon.png)
 Have you mastered the art of drip? Have you found your ultimate image? Never wanna wear anything else ever again? Save your entire get-up and use it across playthroughs with a few clicks.  
 
 ![Outfits showcase](img/vanity/outfits_showcase.png)
@@ -62,7 +62,7 @@ Adding a new outfit to your wardrobe is as simple as clicking ![Outfits button](
 
 ![Outfits prompt](img/vanity/outfits_prompt.png)
 
-## Dyes tab ![Dyes tab icon](img/vanity/dyes_tab_icon.png)
+## Dyes Tab ![Dyes tab icon](img/vanity/dyes_tab_icon.png)
 Feeling blue today? Maybe red? Or are you cool and it's time for purple? Worry not! All your coloring needs can be satisfied in the Dyes tab!  
 
 ![Dyes showcase](img/vanity/dyes_showcase.png)
@@ -84,11 +84,11 @@ Found the coolest color combination ever? Wanna share it with your friend? There
 + Import/export - ![Dyes export button](img/vanity/dyes_export_button.png){: style="width:auto;height:24px;" } puts a single string representing all 3 color zones into your clipboard, kinda like this **#FF0000-#00FF00-#0000FF**.  
 ![Dyes import button](img/vanity/dyes_import_button.png){: style="width:auto;height:24px;" } scans your clipboard and if it contains the string in correct format - inputs color codes into their zones.  
 
-### Lock sliders
+### Lock Sliders
 By default color sliders will automatically adjust to match currently focused equipment piece whenever you change it. However by ticking ![Dyes lock button](img/vanity/dyes_lock.png){: style="width:auto;height:24px;" } you can prevent this.  
 This can be useful for applying one dye to multiple equipment pieces.  
 
-### Saving dyes and built-ins
+### Saving Dyes and Built-ins
 You can save your favorite dyes to reuse them later by pressing ![Dyes save button](img/vanity/dyes_save_button.png){: style="width:auto;height:24px;" } and entering a name.  
 
 ![Dyes save prompt](img/vanity/dyes_prompt.png)
@@ -97,7 +97,7 @@ Saved dyes will appear under "Custom Dyes" collapsing list. There also are a few
 
 ![Dyes customs](img/vanity/dyes_custom.png)
 
-## Auras tab ![Vanity tab icon](img/vanity/transmog_tab_icon.png)
+## Auras Tab ![Vanity tab icon](img/vanity/transmog_tab_icon.png)
 All these drip options were not enough for you? Want to make your presence even more noticeable? Apply permanent visual effects to your character in Auras tab.  
 
 ![Auras showcase](img/vanity/auras_showcase.png)
