@@ -1,6 +1,56 @@
 # Text
 The `Text` table offers utility methods for working with text and formatting tags.
 
+It also power's Epip custom TSK system, intended to make exporting strings for translation more easily, through the `TextLib_TranslatedString` class. This class contains not only the handle and default text of a string, but also contextual data that is later used to populate the public translation sheets.
+
+Internally, Epip TSKs still use the game's handle system. However, translations are created and loaded differently, through `.json` files.
+
+When lua loads, Epip looks for these translation files in the `\Data\Mods\{Mod}_{GUID}\Localization\Epip\{Game language}\{Mod table}.json` folder for each mod, following the load order. `{Mod table}.json` files are checked for every other mod present. This allows mods to provide translations or string overrides for any other mod using Epip's TSK system. Epip itself also uses this system to load the publicly contributed translations. A single mod can provide translation files for multiple mods, by creating multiple `{Mod table}.json` files within a language folder.
+
+The game language IDs correspond to the ones used by the game:
+
+```none
+English
+Amlatspanish
+Chinese
+Chinesetraditional
+Czech
+French
+German
+Italian
+Japanese
+Korean
+Polish
+Portuguesebrazil
+Russian
+Spanish
+```
+
+It's worth noting that the game supports adding custom languages by editing the `Language` field in `config.lsx` (thereby changing the `ChatLanguage` global switch). Epip's system will consider such cases for loading translations.
+
+For information on how the public translation sheets are handled, see [this page](../../Maintenance/localization.md).
+
+## CommonStrings
+
+`CommonStrings.lua` contains TSKs for generic strings that are reused across many different contexts. Strings should be added here if they are of general usage and their translation won't differ across different contexts. These are accessed via the `Text.CommonStrings`, a raw table with no particularities.
+
+The following VSC snippet is used to add entries to CommonStrings:
+
+```json
+"commonstring": {
+	"scope": "lua",
+	"prefix": "commonstring",
+	"body": [
+		"Text.CommonStrings.$1 = Text.RegisterTranslatedString({",
+		"   Handle = \"$2\",",
+		"   Text = \"$1\",",
+		"})",
+	],
+},
+```
+
+## Library
+
 <doc package="TextLib">
 
 
