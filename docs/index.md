@@ -4,15 +4,17 @@ Epip Encounters is an add-on mod for [Epic Encounters 2](https://docs.google.com
 
 ## Download
 
-!!! warning "**[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5)**"
-    Load after both EE Core and EE Origins.
-
 !!! info "Language warning"
     Only English is fully supported.
     Visit [this sheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/edit#gid=479886788) to contribute to translations.
 
 !!! error "Standalone usage warning"
     **If you have the Improved Hotbar mod, you must disable it to use Epip**. All of its functions are already in Epip (+ like 9 months worth of updates that the workshop mod never got). See the [front page](index.md) and the [changelog](patchnotes.md) if you're new to Epip.
+
+!!! warning "Gameplay mod info"
+    If you're using Derpy's EE2 Tweaks, you will likely want to grab the [gameplay mod](Info/faq.md#whats-this-talk-about-a-gameplay-mod) as well. Derpy's mod is intended to be used with it.
+
+**[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5)**. Load after both EE Core and EE Origins, if you have them.
 
 [Latest stable version, v1065](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing). (07/05/23) 
 

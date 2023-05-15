@@ -20,10 +20,10 @@ nav:
   - Home: index.md
   - Patch Notes: patchnotes.md
   - Beta Versions: beta.md
+  - FAQ: Info/faq.md
   - Features:
     - "UI improvements": "Features/UI.md"
     - "Vanity": "Features/Vanity.md"
-  - FAQ: Info/faq.md
   - Documentation: 
     - "Introduction": "docs.md"
     - "Client":

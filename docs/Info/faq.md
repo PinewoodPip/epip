@@ -6,6 +6,13 @@ The *#modding-and-projects* channel there should be used for development-related
 
 There is no "Pip discord"; its existence is a myth fabricated by a certain Subnautica fan.
 
+## What's this talk about a gameplay mod?
+Initially, Epip started out as a gameplay mod after development of EE went on hiatus, before becoming a UI & QoL mod. Gameplay changes from that era stayed in the mod for a long time due to their acceptance, but ultimately had to be split off into a separate mod for portability reasons.
+
+The gameplay mod is available [here](https://drive.google.com/file/d/1HqxEzlXaZa4AMRpCybDPvZ2IyFjAL0J0/view?usp=sharing), and its changes are documented in [this document](https://docs.google.com/document/d/10C39LndW8QwDcfA_bUpq_ZYu_6lt_vkjW7-sFeIuBKU/edit#heading=h.trnrapu9q41w). You may also get it through Mel's auto-updater.
+
+There are no plans to work on any further gameplay changes.
+
 ## What mods does Epip work with?
 Due to the nature of UI modding and the scope of the project, any other mods that alter UI will likely see problems.
 
