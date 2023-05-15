@@ -21,6 +21,7 @@ nav:
   - Patch Notes: patchnotes.md
   - Beta Versions: beta.md
   - Features:
+    - "UI improvements": "Features/UI.md"
     - "Vanity": "Features/Vanity.md"
   - Documentation: 
     - "Introduction": "docs.md"

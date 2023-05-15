@@ -36,22 +36,17 @@ Below is a non-exhaustive list of features; I suggested browsing the latest [pat
 
 ## UI
 
-### Health Bar
-The health bar at the top of the screen now shows a character’s resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer. The actual B/H statuses are now hidden in this UI to reduce clutter. Credits to Elric for the new art assets used!
+### Target Status Bar
+Health bar shown at the top of the screen has been reworked to look better and include more information. More details [here](Features/UI.md#target-status-bar).
 
-![New enemy health bar.](img/showcase/health_bar.png)
+![Health bar showcase](Features/img/ui/health_bar.png)
 
-Holding the "show sneak cones" button (shift by default) will replace the resistances display with the character’s current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.
+### Player Portraits
+Player portraits display has also received some love, most notably - the list of statuses will now wrap onto a second row to prevent it from obscuring most of your screen. More details [here](Features/UI.md#player-portraits).
 
-![New enemy health bar, alt mode.](img/showcase/health_bar_shift.png)
+![Player Info preview.](Features/img/ui/player_info.png)
 
-The health bar above the hotbar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text is removed to improve readability. Additionally, it now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. It now also shows your maximum SP, and the AP/SP indicators are properly centered. Its graphics have also been improved, with the AP bar being easier to read thanks to a dropshadow.
-
-![Improved status console.](img/showcase/status_console.png)
-
-A setting has been added to show target-related information on this health bar, including source of the Taunt status, as well as whether a character is currently unpreferred or ignored by the AI.
-
-![Aggro display.](img/showcase/aggro_display.png)
+Epip makes dozens of other UI changes to improve your experience. You can read about the rest of them [here](Features/UI.md).
 
 ### Hotbar
 Epip offers a heavily improved Hotbar UI, featuring multiple bars, custom "action" buttons in the bottom left, and numerous functions to make hotbar management easier.
@@ -89,22 +84,6 @@ Right-click a row on the hotbar to bring up a context menu where you can "push" 
 Additionally, all "engine actions" (except for flee) are available from the vanilla actions drawer.
 
 [The hotbar improvements are also available as a standalone mod with no EE dependency.](https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297)
-
-### Character Sheet
-The character sheet now shows physical and piercing resistances.
-
-The tags tab is replaced with a brand new "Keywords and misc." tab. You can use it to quickly reference your keyword activators and mutators, as well as reaction charges remaining.
-
-![Custom stat tab.](img/showcase/keywords.png)
-
-### Player Portraits
-The status bar on your characters now wraps onto a second row once there are more than 6 statuses, preventing it from obscuring the middle of the screen during intense fights. Summon portraits no longer show statuses and are shrunk while the status bar is wrapping.
-
-You can right-click your portraits to open a context menu where you can hide the status bar and summons, as well as access the Debug Cheats if you're in developer mode.
-
-In the settings, you may also enable a Battered/Harried display on these portraits.
-
-![Player Info preview.](img/showcase/player_info.png)
 
 ### Settings Menu
 The settings menu has been expanded to allow mods to add their own settings. Epip includes its own tab full of options to customize its features.
@@ -146,11 +125,6 @@ Additionally, the difficulty can now be changed to/from tactician freely at any 
 A setting has been added to enable infinite carry weight for all party members. You can also enable automatic identifying of items, optionally not requiring any Loremaster.
 
 Consumable items, like mushrooms and food, no longer require you to use them once for them to show their effects in the tooltip.
-
-### Treasure Display
-An option has been added to display noteworthy item drops of enemies and containers on their health bar. For characters, this only shows while holding shift.
-
-![Treasure display option.](img/showcase/treasure_display.png)
 
 ### Combat Log
 You may now filter out individual types of messages in the combat log by right-clicking it. Certain messages have been reworded for clarity and can now "merge" if they happen in quick succession, improving readability. You can also clear the log from the context menu.
