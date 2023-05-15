@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/epip/Features/UI/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>UI improvements - Epip Encounters</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "UI improvements";
+    var mkdocs_page_input_path = "Features\\UI.md";
+    var mkdocs_page_url = "/epip/Features/UI/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Epip Encounters</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../patchnotes/">Patch Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../beta/">Beta Versions</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Features</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">UI improvements</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#target-status-bar">Target Status Bar</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#resistance-and-bh-display">Resistance and B/H Display</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#alternative-display">Alternative Display</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#level-display">Level Display</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aggro-display">Aggro Display</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#treasure-display">Treasure Display</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#player-status-bar">Player Status Bar</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#player-portraits">Player Portraits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#character-sheet">Character Sheet</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vanity/">Vanity</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Info/faq/">FAQ</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Client/Pointer/">Pointer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Generic UI</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Documentation/Client/UI/Generic/Introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Elements</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Documentation/Client/UI/Generic/Elements/Element/">Element</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Documentation/Client/UI/Generic/Elements/Button/">Button</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Documentation/Client/UI/Generic/Elements/Color/">Color</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Documentation/Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Utilities</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Artifact/">Artifact</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Character/">Character</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Color/">Color</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Combat/">Combat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/GameState/">GameState</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Item/">Item</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Mod/">Mod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Net/">Net</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Timer/">Timer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Text/">Text</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Vector/">Vector</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Tutorials/testing/">Testing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Maintenance</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/localization/">Localization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/documentation/">Documentation</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Epip Encounters</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Features &raquo;</li>
+        
+      
+    
+    <li>UI improvements</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ui-improvements">UI improvements<a class="headerlink" href="#ui-improvements" title="Permanent link">&para;</a></h1>
+<p>Epip contains a plethora of functional and cosmetic improvements over the base game UI. Big thanks to Elric for the new art assets used!</p>
+<h2 id="target-status-bar">Target Status Bar<a class="headerlink" href="#target-status-bar" title="Permanent link">&para;</a></h2>
+<h3 id="resistance-and-bh-display">Resistance and B/H Display<a class="headerlink" href="#resistance-and-bh-display" title="Permanent link">&para;</a></h3>
+<p>The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer.<br />
+Actual B/H statuses are now hidden to reduce clutter.  </p>
+<p><img alt="Health bar showcase" src="../img/ui/health_bar.png" /></p>
+<h3 id="alternative-display">Alternative Display<a class="headerlink" href="#alternative-display" title="Permanent link">&para;</a></h3>
+<p>Holding the "show sneak cones" button (Shift by default) will replace the resistances display with the character's current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.  </p>
+<p><img alt="Health bar alt" src="../img/ui/health_bar_shift.png" /></p>
+<h3 id="level-display">Level Display<a class="headerlink" href="#level-display" title="Permanent link">&para;</a></h3>
+<p>An option to customize the position of targeted character level display was added.<br />
+<em>By default it's displayed in alternate status bar mode (while Shift is held).</em>  </p>
+<details>
+<summary>Showcase</summary>
+<p>Accessible through <b>Options -> Epip settings -> General -> Character Level Display</b>.</p>
+<table>
+<tr><td>Hidden:            </td><td><img src="../img/ui/lvl_display_hidden.png"/></td></tr>
+<tr><td>After Name:        </td><td><img src="../img/ui/lvl_display_after_name.png"/></td></tr>
+<tr><td>Below Health Bar:  </td><td><img src="../img/ui/lvl_display_below.png"/></td></tr>
+<tr><td>When holding Shift:</td><td><img src="../img/ui/lvl_display_shift.png"/></td></tr>
+</table>
+</details>
+
+<h3 id="aggro-display">Aggro Display<a class="headerlink" href="#aggro-display" title="Permanent link">&para;</a></h3>
+<p>An option to display aggro-related information was added. It shows current Taunt source, if exists, as well as whether a character is Preferred, Unpreferred or Ignored by enemies.<br />
+You can adjust whether this info is shown in the default or alternative health bar display.<br />
+<em>Disabled by default.</em>  </p>
+<details>
+<summary>Showcase</summary>
+Accessible through <b>Options -> Epip settings -> General -> Show Aggro Information</b>.
+<table>
+<tr><td>Preferred:   </td><td><img src="../img/ui/aggro_pref.png"/></td></tr>
+<tr><td>Unpreferred: </td><td><img src="../img/ui/aggro_unpref.png"/></td></tr>
+<tr><td>Ignored:     </td><td><img src="../img/ui/aggro_ignored.png"/></td></tr>
+<tr><td>Taunted:     </td><td><img src="../img/ui/aggro_taunted.png"/></td></tr>
+</table>
+</details>
+<details>
+<summary>Aggro tags explanation</summary>
+<p>AI chooses its targets based on a number of parameters, such as target's effective HP, how easy it is to get to the target and so on. Its behavior is also influenced by aggro tags.</p>
+<ul>
+<li>No tag: AI has no preference on whether to choose this character as the primary attack target or not. However, AI will actively try to hit this character with AOE attacks. Most characters will not have any aggro tag by default.</li>
+<li>Preferred: AI will actively try to make this character its primary attack target. This aggro tag is manually provided to some important NPCs and is not normally obtainable during gameplay.</li>
+<li>Unpreferred: AI will try not to make this character its primary target. <b>However, AI will still actively try to AOE this character.</b> This tag is usually acquired by using Subjugated status, and is also manually provided to some characters, mostly summons.</li>
+<li>Ignored: AI will try to act as if this character does not exist.</li>
+<li>Taunted: this AI will consider the source of Taunt a Preferred target.</li>
+</ul>
+<p><b>This information is only relevant for Epic Encounters 2!</b></p>
+</details>
+
+<h3 id="treasure-display">Treasure Display<a class="headerlink" href="#treasure-display" title="Permanent link">&para;</a></h3>
+<p>An option has been added to display noteworthy item drops of enemies and containers on their health bar. For characters, this only shows while holding shift.<br />
+Accessible through <strong>Options -&gt; Epip settings -&gt; General -&gt; Character Level Display</strong>, disabled by default.  </p>
+<p><img alt="Treasure display option." src="../img/ui/treasure_display.png" /></p>
+<h2 id="player-status-bar">Player Status Bar<a class="headerlink" href="#player-status-bar" title="Permanent link">&para;</a></h2>
+<p>The player health bar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text was removed to improve readability.<br />
+Additionally, your AP display now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. Your maximum SP is also shown at all times.<br />
+Further minor graphical tweaks were made, such as properly centering AP/SP displays and adding a dropshadow to AP bar to improve its readability.  </p>
+<p><img alt="Player status bar showcase" src="../img/ui/status_console.png" /></p>
+<h2 id="player-portraits">Player Portraits<a class="headerlink" href="#player-portraits" title="Permanent link">&para;</a></h2>
+<p>The status bar on your characters now wraps onto a second row once there are more than 6 statuses, preventing it from obscuring the middle of the screen during intense fights. Summon portraits no longer show statuses and are shrunk while the status bar is wrapping.<br />
+In the settings you may also enable a Battered/Harried display on these portraits.  </p>
+<p><img alt="Player info preview" src="../img/ui/player_info.png" /></p>
+<p>You can right-click your portraits to open a context menu where you can hide the status bar and summons, as well as access the Debug Cheats if you're in developer mode.  </p>
+<p><img alt="Player info submenu" src="../img/ui/status_dropdown.png" /></p>
+<details>
+<summary>Other settings</summary>
+<b>Options -> Epip settings -> Player portraits</b>
+<table>
+<tr><td>Display B/H on player portraits</td><td><p>Display nice, big B/H indicators right over player portaits.</p><p>Disabled by default.</p></td></tr>
+<tr><td>Status Opacity in Combat       </td><td><p>Make statuses less visible.</p><p>Hovering over statuses will always show them at full opacity.</p>
+                                                <br>
+                                                <p><img src="../img/ui/status_opacity.png"/></p></td></tr>
+</table>
+</details>
+
+<h2 id="character-sheet">Character Sheet<a class="headerlink" href="#character-sheet" title="Permanent link">&para;</a></h2>
+<p>The character sheet now shows physical and piercing resistances.</p>
+<p><img alt="Charsheet res" src="../img/ui/resistances.png" /></p>
+<p>The tags tab is replaced with a brand new "Keywords and misc." tab.<br />
+It's full of useful information, such as:</p>
+<ul>
+<li>Remaining reaction charges.</li>
+<li>Currently equipped Artifacts, with descriptions.</li>
+<li>Active keyword activators and mutators, with descriptions.</li>
+<li>Your combat stats. <em>It's not perfect, but it's a good reference.</em></li>
+<li>Other miscellaneous other info, e.g. your passive regeneration rates.</li>
+</ul>
+<p><img alt="Custom stat tab" src="../img/ui/keywords.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Vanity/" class="btn btn-neutral float-right" title="Vanity">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../beta/" class="btn btn-neutral" title="Beta Versions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../beta/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Vanity/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
