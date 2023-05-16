@@ -51,41 +51,12 @@ Player portraits display has also received some love, most notably - the list of
 Epip makes dozens of other UI changes to improve your experience. You can read about the rest of them [here](Features/UI.md).
 
 ### Hotbar
-Epip offers a heavily improved Hotbar UI, featuring multiple bars, custom "action" buttons in the bottom left, and numerous functions to make hotbar management easier.
+Epip offers a heavily improved Hotbar UI, featuring multiple bars, custom "action" buttons in the bottom left, additional skill panels shared between characters and numerous functions to make hotbar management easier.  
+Read all about it [here](Features/Hotbar.md).  
 
-![Hotbar preview.](img/showcase/hotbar.png)
+![Hotbar preview.](Features/img/hotbar/showcase.png)
 
-To add/remove rows, click the small +/- icons to the right of the buttons area. You can cycle each row independently through all 5 rows of slots that the game allows. You can have up to 5 rows visible.
-
-You can use the regular hotkeys (F/R by default) to cycle the bottom bar. Holding shift while using them will cycle the second row from the bottom instead. Holding Ctrl will cycle the 3rd row, while holding alt will cycle the 4th one.
-
-The buttons next to the portrait are now customizable; when your hotbar is unlocked, you can drag and drop to rearrange them. Additionally, mods can add their own "actions" there, and there are a few new built-in ones. You can press the middle mouse button to unbind them.
-
-Right click one of those buttons or click the `^` button to bring up a "drawer" with all the actions that you can drag and drop onto your actions bar. You can also click them to use them directly from there.
-
-![Hotbar action drawer preview.](img/showcase/hotbar_drawer.png)
-
-These buttons can be used with keyboard hotkeys; to do so, you must assign keys to them from Epip's input options menu. They are labelled "Hotbar Action #N" there.
-
-By default, if you have 2+ rows of hotbar slots, you will also have a second row of these customizable buttons. You can disable this from the settings menu.
-
-Epip Encounters implements multiple handy new actions, in addition to some vanilla functions:
-
-- Source Infuse & Meditate
-- Toggle Minimap
-- Resting (using a bedroll from anywhere in your party inventory - no need to find one for everyone!)
-- Toggle Party Link (instantaneous, no animation!)
-- Respec (if Portable Respec Mirror mod is installed)
-
-The purpose of the action bar is to provide a centralized place for modders to add shortcuts/hotkeys to their interfaces or features, eliminating the need for interactable books that clutter your inventory and freeing up space on the hotbar.
-
-Right-click a row on the hotbar to bring up a context menu where you can "push" groups of slots around (great for inserting spells inbetween!), clear unmemorized spells, or save "loadouts" to restore your hotbars in later playthroughs.
-
-![Hotbar context menu.](img/showcase/hotbar_context_menu.png)
-
-Additionally, all "engine actions" (except for flee) are available from the vanilla actions drawer.
-
-[The hotbar improvements are also available as a standalone mod with no EE dependency.](https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297)
+[Hotbar improvements are also available as a standalone mod with no EE dependency.](https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297)  
 
 ### Settings Menu
 The settings menu has been expanded to allow mods to add their own settings. Epip includes its own tab full of options to customize its features.
