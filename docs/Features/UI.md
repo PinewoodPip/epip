@@ -104,3 +104,8 @@ It's full of useful information, such as:
 - Other miscellaneous other info, e.g. your passive regeneration rates.
 
 ![Custom stat tab](img/ui/keywords.png)
+
+## Rewards UI
+An option has been added to allow viewing the character sheet while within the quest rewards screen, allowing you to compare rewards to your party's currently equipped items.
+
+![Rewards ui showcase](img/ui/rewards.png)
