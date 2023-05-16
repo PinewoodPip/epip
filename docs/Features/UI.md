@@ -106,6 +106,7 @@ It's full of useful information, such as:
 ![Custom stat tab](img/ui/keywords.png)
 
 ## Rewards UI
-An option has been added to allow viewing the character sheet while within the quest rewards screen, allowing you to compare rewards to your party's currently equipped items.
+An option has been added to allow viewing the character sheet while within the quest rewards screen, allowing you to compare rewards to your party's currently equipped items.  
+Located in **Options -> Epip settings -> Inventory -> Show Character Sheet in Reward UI**. Disabled by default.  
 
 ![Rewards ui showcase](img/ui/rewards.png)
