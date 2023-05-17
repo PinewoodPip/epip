@@ -1,6 +1,6 @@
 # Epip Encounters
 
-Epip Encounters is an add-on mod for [Epic Encounters 2](https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#) which introduces numerous Quality of Life changes as well as UI improvements.
+Epip Encounters is a UI and QoL mod targeting [Epic Encounters 2](https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#), though it may also be used without it.
 
 ## Download
 
@@ -26,7 +26,7 @@ Special thanks to:
 - Derpy Moa for motivation and initial ideas
 - Norbyte for the Script Extender and it's fantastic UI features
 - Elric for his help with designing and drawing new UIs
-- Cathe for contributing to the feature showcases on this website
+- Cathe for contributing to the feature showcases on this website, and some code and proof-reading too
 
 Translators:
 
@@ -226,15 +226,6 @@ Certain vanilla issues have been fixed:
 
 - Summons dying in combat (or being newly spawned) no longer causes your current character to be deselected
 - You can now walk into corpses in combat without looting them; you can hold shift if you need to pillage them mid-fight, or disable this in the settings
-
-## Miscellaneous Gameplay Changes
-Epip features some minor changes to the base EE gameplay. These are a remnant from before the mod switched to focusing on UX, and will be split off into a separate mod in the future. [You can read about them in the old doc.](https://docs.google.com/document/d/10C39LndW8QwDcfA_bUpq_ZYu_6lt_vkjW7-sFeIuBKU/edit)
-
-## Planned for the future
-
-- Proper controller support for EE UIs (meditate)
-- Sorting and filtering statuses on the player portraits
-- Inventory improvements: custom filtering and sorting, along with multi-select
 
 ## For developers
 Epip is built using numerous libraries, making client-side scripting and UI modding easier. This site's documentation of them is heavily WIP. Every UI touched by Epip has a lua table with wrapper APIs to manipulate it. Additionally, multiple utility libraries are available:
