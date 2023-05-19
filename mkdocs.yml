@@ -23,6 +23,7 @@ nav:
   - FAQ: Info/faq.md
   - Features:
     - "UI improvements": "Features/UI.md"
+    - "Hotbar": "Features/Hotbar.md"
     - "Vanity": "Features/Vanity.md"
   - Documentation: 
     - "Introduction": "docs.md"
