@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -155,16 +159,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">¶</a></h1>
+                <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
 <p>The documentation of functions, classes and other symbols in this site is automatically generated from LuaDoc annotations within the mod, using the <code>update_docs.py</code> script.</p>
 <p>The script parses the lua files in the Bootstrap scripts and searches line-by-line for annotations. Once these are gathered, the markdown files of the documentation site are searched for special html tags and the output of the doc script is inserted between them accordingly.</p>
 <p>For example, this tag inserts the classes, methods and events of MyLib between the doc opening and closing tags. <strong>If there was already content inbetween these tags, it is replaced; you should thus not modify the output.</strong></p>
-<pre><code> &lt;doc package="MyLib"&gt;
+<pre><code> &lt;doc package=&quot;MyLib&quot;&gt;
 
  &lt;/doc&gt;
 </code></pre>
 <p>The scripts gathers annotations using two structures: "Symbols" and "Metadata".
-A symbol represents an actual symbol within the code, for example a function or a class. Each symbol may be composed of various metadata. As an example, function symbols capture comments and parameter annotations (<code>---@param</code>) as their metadata.</p></div>
+A symbol represents an actual symbol within the code, for example a function or a class. Each symbol may be composed of various metadata. As an example, function symbols capture comments and parameter annotations (<code>---@param</code>) as their metadata.</p>
               
             </div>
           </div><footer>
@@ -200,6 +204,7 @@ A symbol represents an actual symbol within the code, for example a function or 
     <script>var base_url = '../..';</script>
     <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

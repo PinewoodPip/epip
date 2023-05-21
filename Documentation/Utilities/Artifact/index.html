@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -174,16 +178,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="artifact">Artifact<a class="headerlink" href="#artifact" title="Permanent link">¶</a></h1>
+                <h1 id="artifact">Artifact<a class="headerlink" href="#artifact" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">This library is relevant for Epic Encounters only.</p>
 </div>
 <p>The <code>Artifact</code> library contains data and methods related to <a href="https://docs.google.com/document/d/1aKyZLz4ix9FYj0enKIfRv4r5IKL7cjdLlP1mcJ3Ifc0/edit">Epic Encounters Artifacts</a>.</p>
 <p>The <code>ArtifactLib_ArtifactDefiniton</code> class holds information for each of the artifacts, including slot, item/rune templates, as well as the related keyword activators and mutators (defined manually).</p>
 <p>The data is not generated automatically. You must add your own artifacts by calling <code>RegisterArtifact()</code> with the data table filled out. Ideally, this should be done on both contexts, so client scripting can also query the information.</p>
-<p><doc package="ArtifactLib"></doc></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<h4 id="getdata">GetData<a class="headerlink" href="#getdata" title="Permanent link">¶</a></h4>
+<p><doc package="ArtifactLib"></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h4 id="getdata">GetData<a class="headerlink" href="#getdata" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Artifact.GetData(artifactID)
    -&gt; ArtifactLib_ArtifactDefinition?
 </code></pre>
@@ -192,7 +196,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition?</code> </p>
 
-<h4 id="registerartifact">RegisterArtifact<a class="headerlink" href="#registerartifact" title="Permanent link">¶</a></h4>
+<h4 id="registerartifact">RegisterArtifact<a class="headerlink" href="#registerartifact" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Artifact.RegisterArtifact(data)
    -&gt; ArtifactLib_ArtifactDefinition
 </code></pre>
@@ -201,7 +205,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition</code> </p>
 
-<h4 id="isequipped">IsEquipped<a class="headerlink" href="#isequipped" title="Permanent link">¶</a></h4>
+<h4 id="isequipped">IsEquipped<a class="headerlink" href="#isequipped" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Artifact.IsEquipped(char, artifact)
    -&gt; boolean
 </code></pre>
@@ -212,7 +216,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
 
-<h4 id="getequippedpowers">GetEquippedPowers<a class="headerlink" href="#getequippedpowers" title="Permanent link">¶</a></h4>
+<h4 id="getequippedpowers">GetEquippedPowers<a class="headerlink" href="#getequippedpowers" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Artifact.GetEquippedPowers(char)
    -&gt; ArtifactLib_ArtifactDefinition[]
 </code></pre>
@@ -221,7 +225,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition[]</code> </p>
 
-<h4 id="isequipped_1">IsEquipped<a class="headerlink" href="#isequipped_1" title="Permanent link">¶</a></h4>
+<h4 id="isequipped_1">IsEquipped<a class="headerlink" href="#isequipped_1" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Artifact.IsEquipped(char, artifact)
    -&gt; boolean
 </code></pre>
@@ -232,7 +236,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
 
-<h4 id="getequippedpowers_1">GetEquippedPowers<a class="headerlink" href="#getequippedpowers_1" title="Permanent link">¶</a></h4>
+<h4 id="getequippedpowers_1">GetEquippedPowers<a class="headerlink" href="#getequippedpowers_1" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Artifact.GetEquippedPowers(char)
    -&gt; ArtifactLib_ArtifactDefinition[]
 </code></pre>
@@ -240,9 +244,9 @@
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ArtifactLib_ArtifactDefinition[]</code> </p>
-<p></p>
-<h2 id="usage-examples">Usage examples<a class="headerlink" href="#usage-examples" title="Permanent link">¶</a></h2>
-<p>This library is used in the Quick Examine UI to display tooltips for artifacts. It is additionally used in the stats tab to check the equipped artifacts of a character.</p></div>
+<p></doc></p>
+<h2 id="usage-examples">Usage examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h2>
+<p>This library is used in the Quick Examine UI to display tooltips for artifacts. It is additionally used in the stats tab to check the equipped artifacts of a character.</p>
               
             </div>
           </div><footer>
@@ -281,6 +285,7 @@
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

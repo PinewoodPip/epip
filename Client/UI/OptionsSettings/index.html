@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,14 +156,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="optionssettings">OptionsSettings<a class="headerlink" href="#optionssettings" title="Permanent link">¶</a></h1>
+                <h1 id="optionssettings">OptionsSettings<a class="headerlink" href="#optionssettings" title="Permanent link">&para;</a></h1>
 <p>Handles the settings menu. Extended to allow for custom setting tabs. Note that the input menu is a different UI - documentation for it pending.</p>
-<h2 id="adding-settings">Adding settings<a class="headerlink" href="#adding-settings" title="Permanent link">¶</a></h2>
+<h2 id="adding-settings">Adding settings<a class="headerlink" href="#adding-settings" title="Permanent link">&para;</a></h2>
 <p>To create a tab with settings for your mod, start by calling <code>RegisterMod(mod: string, data: OptionsSettingsOptionSet)</code>, before <code>SessionLoading</code> - preferably in the lua script's body.</p>
 <p>The data table should have your mod's name, header (displayed at the top) and side button label (displayed on the button that switches tabs). You may also pass <code>Options</code> in the table at this time, or register settings later through <code>RegisterOptions</code>.</p>
-<pre><code class="language-lua">Client.UI.OptionsSettings.RegisterMod("EpipEncounters", {
-    SideButtonLabel = "Epip Encounters",
-    TabHeader = "&lt;font color='7e72d6' size='23'&gt;Epip Encounters&lt;/font&gt;",
+<pre><code class="language-lua">Client.UI.OptionsSettings.RegisterMod(&quot;EpipEncounters&quot;, {
+    SideButtonLabel = &quot;Epip Encounters&quot;,
+    TabHeader = &quot;&lt;font color='7e72d6' size='23'&gt;Epip Encounters&lt;/font&gt;&quot;,
 })
 </code></pre>
 <p><code>Options</code> is a list of the options for the settings tab, in order that they will appear in. They are in the <code>OptionsSettingsOption</code> format - see <a href="#fields">fields</a>.</p>
@@ -173,40 +177,40 @@
 </ul>
 <p>Example options, a dropdown and a slider:</p>
 <pre><code class="language-lua">{
-    ID = "ExaminePosition",
-    Type = "Dropdown",
-    Label = "Examine Menu Position",
-    Tooltip = "Controls the default position of the Examine menu when it is opened.",
+    ID = &quot;ExaminePosition&quot;,
+    Type = &quot;Dropdown&quot;,
+    Label = &quot;Examine Menu Position&quot;,
+    Tooltip = &quot;Controls the default position of the Examine menu when it is opened.&quot;,
     DefaultValue = 1,
     Options = {
-        "Center",
-        "Middle Right",
-        "Middle Left"
+        &quot;Center&quot;,
+        &quot;Middle Right&quot;,
+        &quot;Middle Left&quot;
     }
 },
 {
-    ID = "OverheadsSize",
-    Type = "Slider",
-    Label = "Overhead Text Size",
+    ID = &quot;OverheadsSize&quot;,
+    Type = &quot;Slider&quot;,
+    Label = &quot;Overhead Text Size&quot;,
     MinAmount = 10,
     MaxAmount = 45,
     DefaultValue = 19,
     Interval = 1,
     HideNumbers = false,
-    Tooltip = "Controls the size of regular text above characters talking.&lt;br&gt;&lt;br&gt;Default is 19.",
+    Tooltip = &quot;Controls the size of regular text above characters talking.&lt;br&gt;&lt;br&gt;Default is 19.&quot;,
 },
 </code></pre>
 <p>Once you've got your mod and settings registered, they will appear in the settings menu. The user will be able to change them, and their values will be stored to the disk.</p>
 <p>To query the value of a setting, use <code>GetOptionValue(mod: string, setting: string)</code>. For checkboxes this returns <code>boolean</code>, for other elements it's <code>number</code>. <strong>Dropdowns use 1-based indexing! (1 = first option)</strong>. You can also set the stored value (or hook <code>GetOptionValue</code>). If you do this, keep in mind that it will not be automatically saved to disk.</p>
-<pre><code class="language-lua">if (Minimap.visible ~= Client.UI.OptionsSettings.GetOptionValue("EpipEncounters", "Minimap")) then
-    Client.UI.OptionsSettings.SetOptionValue("EpipEncounters", "Minimap", Minimap.visible)
+<pre><code class="language-lua">if (Minimap.visible ~= Client.UI.OptionsSettings.GetOptionValue(&quot;EpipEncounters&quot;, &quot;Minimap&quot;)) then
+    Client.UI.OptionsSettings.SetOptionValue(&quot;EpipEncounters&quot;, &quot;Minimap&quot;, Minimap.visible)
 
     Client.UI.OptionsSettings.SaveSettings()
 end
 </code></pre>
 <p>You may use the <code>IsElementEnabled</code> hook to make elements in your menu non-interactable. You can use this to require a setting to first have another one enabled/disabled by the user.</p>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h2>
-<p><doc events="OptionsSettingsUI"></doc></p>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p><doc events="OptionsSettingsUI"></p>
 <pre><code class="language-lua">---Fired when a custom option's value is set, either from loading or applying changes through the menu/SetOptionValue.
 ---@event OptionSet
 ---@param data OptionsSettingsOption
@@ -241,7 +245,7 @@ end
 ---@param element OptionsSettingsOption
 ---@param optionIndex number 1-based index.
 </code></pre>
-<pre><code class="language-lua">---Fired when a custom setting's value change is applied from the menu (through the "Apply changes" button).
+<pre><code class="language-lua">---Fired when a custom setting's value change is applied from the menu (through the &quot;Apply changes&quot; button).
 ---@event ChangeApplied
 ---@param option OptionsSettingsOption
 ---@param value any
@@ -268,9 +272,9 @@ end
 ---@hook GetTabHeader
 ---@param label string Defaults to OptionsSettingsOption.TabHeader or OptionsSettingsOption.Mod
 </code></pre>
-<p></p>
-<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">¶</a></h2>
-<p><doc fields="OptionsSettingsUI"></doc></p>
+<p></doc></p>
+<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
+<p><doc fields="OptionsSettingsUI"></p>
 <pre><code class="language-lua">---@class OptionsSettingsUI
 ---@field Options table&lt;string, OptionsSettingsOptionSet&gt;
 ---@field OptionValues table&lt;string, table&gt;
@@ -281,9 +285,9 @@ end
 ---@field currentElements table&lt;number, OptionsSettingsOption&gt;
 ---@field currentCustomTabs table&lt;number, string&gt; Binds a side button's numerical ID to the mod it's for.
 </code></pre>
-<p></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<p><doc lib="OptionsSettingsUI"></doc></p>
+<p></doc></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><doc lib="OptionsSettingsUI"></p>
 <pre><code class="language-lua">---Registers a mod for use with the options menu.
 ---@param mod string
 ---@param data OptionsSettingsOptionSet
@@ -377,7 +381,7 @@ function OptionsSettings.RenderDropdownEntry(id, option) -- Client-only
 ---@param value any
 function OptionsSettings.SynchToServer(option, value) -- Client-only
 </code></pre>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -408,6 +412,7 @@ function OptionsSettings.SynchToServer(option, value) -- Client-only
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

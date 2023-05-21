@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href=".." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,19 +156,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="client">Client<a class="headerlink" href="#client" title="Permanent link">¶</a></h1>
+                <h1 id="client">Client<a class="headerlink" href="#client" title="Permanent link">&para;</a></h1>
 <p>The <code>Client</code> table contains client-specific calls as well as tables with APIs for UIs. It is only available on the Client context.</p>
 <p>The "Client character" here refers to the currently-controlled character on the client.</p>
-<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">¶</a></h2>
-<p><doc fields="Client"></doc></p>
+<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
+<p><doc fields="Client"></p>
 <pre><code class="language-lua">---@class Client
 ---@field UI ClientUI
 ---@field Input ClientInput
 ---@field IS_HOST boolean Internal; do not set!
 </code></pre>
-<p></p>
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h2>
-<p><doc lib="Client"></doc></p>
+<p></doc></p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<p><doc lib="Client"></p>
 <pre><code class="language-lua">---Get the Source Infusion level the client character is currently preparing.
 ---@return number Infusion level
 function Client.GetPreparedInfusionLevel() -- Client-only, EE-related
@@ -189,7 +193,7 @@ function Client.GetCharacter() -- Client-only
 ---@param text string
 function Client.CopyToClipboard(text) -- Client-only
 </code></pre>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -220,6 +224,7 @@ function Client.CopyToClipboard(text) -- Client-only
     <script>var base_url = '..';</script>
     <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

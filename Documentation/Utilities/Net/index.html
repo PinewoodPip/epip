@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -172,21 +176,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="net">Net<a class="headerlink" href="#net" title="Permanent link">¶</a></h1>
+                <h1 id="net">Net<a class="headerlink" href="#net" title="Permanent link">&para;</a></h1>
 <p>The <code>Net</code> library offers wrapper methods to make working with network messages easier. Its main feature is automatically stringifying messages, removing the need to do so explicitly when using tables.</p>
 <p>Additionally, <code>Net.RegisterListener()</code> provides a way to register net listeners with IDE hints for the function parameters. This is done by defining a class with the name of the net message, for example:</p>
 <pre><code class="language-lua">---@class EPIPENCOUNTERS_Vanity_ApplyAura : NetMessage, Net_SimpleMessage_NetID
 ---@field AuraID string
 ---@field BoneID string
 
-Net.RegisterListener("EPIPENCOUNTERS_Vanity_ApplyAura", function(payload)
+Net.RegisterListener(&quot;EPIPENCOUNTERS_Vanity_ApplyAura&quot;, function(payload)
     -- The payload variable here will be of the type EPIPENCOUNTERS_Vanity_ApplyAura and offer auto-completion!
 end)
 </code></pre>
 <p>Additionally, for purposes of semantic clarity, a <code>NetMessage</code> class exists for denoting net events. Several other net message classes are defined with commonly used fields like <code>CharacterNetID</code>. You may have your net message classes inherit from these to reduce annotation duplication and to clarify the class's purpose as a net message.</p>
-<p><doc package="NetLib"></doc></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<h4 id="broadcast">Broadcast<a class="headerlink" href="#broadcast" title="Permanent link">¶</a></h4>
+<p><doc package="NetLib"></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h4 id="broadcast">Broadcast<a class="headerlink" href="#broadcast" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Net.Broadcast(channel, message, excludedChar)
 </code></pre>
 <p>Sends a message to all peers.</p>
@@ -196,7 +200,7 @@ end)
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>excludedChar</b> <code>GUID?</code> </p>
 
-<h4 id="posttocharacter">PostToCharacter<a class="headerlink" href="#posttocharacter" title="Permanent link">¶</a></h4>
+<h4 id="posttocharacter">PostToCharacter<a class="headerlink" href="#posttocharacter" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Net.PostToCharacter(char, channel, message)
 </code></pre>
 <p>Sends a message to the user that currently controls char. Fails if char is a summon.</p>
@@ -206,7 +210,7 @@ end)
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code> </p>
 
-<h4 id="posttouser">PostToUser<a class="headerlink" href="#posttouser" title="Permanent link">¶</a></h4>
+<h4 id="posttouser">PostToUser<a class="headerlink" href="#posttouser" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Net.PostToUser(user, channel, message, excludedChar)
 </code></pre>
 <p>Sends a message to a user.</p>
@@ -218,7 +222,7 @@ end)
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>excludedChar</b> <code>GUID?</code> </p>
 
-<h4 id="posttoowner">PostToOwner<a class="headerlink" href="#posttoowner" title="Permanent link">¶</a></h4>
+<h4 id="posttoowner">PostToOwner<a class="headerlink" href="#posttoowner" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Net.PostToOwner(char, channel, message)
 </code></pre>
 <p>Sends a message to the owner of char. Use if you suspect the char might be a summon.</p>
@@ -228,7 +232,7 @@ end)
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>any</code> </p>
 
-<h4 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">¶</a></h4>
+<h4 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Net.RegisterListener(channel, func)
 </code></pre>
 <p>Wrapper for Ext.RegisterNetListener that parses json payloads and fires an event afterwards.</p>
@@ -236,14 +240,14 @@ end)
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>func</b> <code>fun(payload:`T`)</code> </p>
 
-<h4 id="posttoserver">PostToServer<a class="headerlink" href="#posttoserver" title="Permanent link">¶</a></h4>
+<h4 id="posttoserver">PostToServer<a class="headerlink" href="#posttoserver" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Net.PostToServer(channel, message)
 </code></pre>
 <p>Sends a message to the server.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code> </p>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -282,6 +286,7 @@ end)
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

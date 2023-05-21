@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,11 +156,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="messagebox">MessageBox<a class="headerlink" href="#messagebox" title="Permanent link">¶</a></h1>
+                <h1 id="messagebox">MessageBox<a class="headerlink" href="#messagebox" title="Permanent link">&para;</a></h1>
 <p><code>Client.UI.MessageBox</code> is used to send custom prompts (like with <code>OpenMessageBox</code> in Osiris).</p>
-<h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h1>
+<h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h1>
 <p>Subscribe with <code>Client.UI.MessageBox:RegisterListener(event: string, handler: function)</code>. You can subscribe to events coming from a specific message box with <code>RegisterMessageListener()</code> instead.</p>
-<p><doc events="MessageBoxUI"></doc></p>
+<p><doc events="MessageBoxUI"></p>
 <pre><code class="language-lua">---Fired when a button is pressed on any custom message box.
 ---@event ButtonClicked
 ---@param id number Button ID.
@@ -168,16 +172,16 @@
 ---@param id number Button ID.
 ---@param data MessageBoxData
 </code></pre>
-<p></p>
-<h1 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">¶</a></h1>
-<p><doc fields="MessageBoxUI"></doc></p>
+<p></doc></p>
+<h1 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h1>
+<p><doc fields="MessageBoxUI"></p>
 <pre><code class="language-lua">---@class MessageBoxUI
 ---@field POPUP_TYPES table&lt;string, number&gt;
 ---@field currentCustomMessageBox MessageBoxData Internal; do not set!
 </code></pre>
-<p></p>
-<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h1>
-<p><doc lib="MessageBoxUI"></doc></p>
+<p></doc></p>
+<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
+<p><doc lib="MessageBoxUI"></p>
 <pre><code class="language-lua">---Show a message box.
 ---@param data MessageBoxData
 function MessageBox.ShowMessageBox(data) -- Client-only
@@ -188,7 +192,7 @@ function MessageBox.ShowMessageBox(data) -- Client-only
 ---@param handler function
 function MessageBox:RegisterMessageListener(id, event, handler) -- Client-only
 </code></pre>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -219,6 +223,7 @@ function MessageBox:RegisterMessageListener(id, event, handler) -- Client-only
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

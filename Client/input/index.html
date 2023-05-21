@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,10 +156,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="input">Input<a class="headerlink" href="#input" title="Permanent link">¶</a></h1>
+                <h1 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h1>
 <p><code>Client.Input</code> contains input-related queries.</p>
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h2>
-<p><doc lib="ClientInput"></doc></p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<p><doc lib="ClientInput"></p>
 <pre><code class="language-lua">---Returns true if the game is unpaused and there are no focused elements in Flash.
 ---@return boolean
 function Input.IsAcceptingInput() -- Client-only
@@ -180,7 +184,7 @@ function Input.IsHoldingModifierKey(num) -- Client-only
 ---@param num number Which modifier key to set.
 function Input.SetModifierKey(event, num) -- Client-only
 </code></pre>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -211,6 +215,7 @@ function Input.SetModifierKey(event, num) -- Client-only
     <script>var base_url = '../..';</script>
     <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

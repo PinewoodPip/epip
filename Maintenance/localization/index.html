@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -155,7 +159,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="updating-localization">Updating localization<a class="headerlink" href="#updating-localization" title="Permanent link">¶</a></h1>
+                <h1 id="updating-localization">Updating localization<a class="headerlink" href="#updating-localization" title="Permanent link">&para;</a></h1>
 <p>Localization is done through the system provided by the Text library. However, python scripts are used to convert to and from the json format to a spreadsheet.</p>
 <p>To update localization:</p>
 <ol>
@@ -165,7 +169,7 @@
 <li>Run generate_epip_localization_sheets.py to update the sheet</li>
 <li>Update the google sheet</li>
 </ol>
-<p>The repository only contains the core scripts to do this, the particular ones mentioned before (which run the core script for each language in Epip) can be obtained from unpacking (or asking Pip if they're still alive).</p></div>
+<p>The repository only contains the core scripts to do this, the particular ones mentioned before (which run the core script for each language in Epip) can be obtained from unpacking (or asking Pip if they're still alive).</p>
               
             </div>
           </div><footer>
@@ -204,6 +208,7 @@
     <script>var base_url = '../..';</script>
     <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

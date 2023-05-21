@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -173,7 +177,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="generic">Generic<a class="headerlink" href="#generic" title="Permanent link">¶</a></h1>
+                <h1 id="generic">Generic<a class="headerlink" href="#generic" title="Permanent link">&para;</a></h1>
 <p>Generic is a framework for creating UIs using just lua scripting. It functions by instancing a special <em>.swf</em> with various types of <em>elements</em> implemented that you can then interface with from lua.</p>
 <p>It offers various advantages over traditional UI creation:</p>
 <ul>
@@ -194,38 +198,38 @@
 <li>Settings menu (partially)</li>
 <li>Bedazzled (match 3 minigame)</li>
 </ul>
-<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">¶</a></h2>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>Call <code>Generic.Create()</code> to create a new UI.</p>
 <pre><code class="language-lua">local Generic = Client.UI.Generic
-local ExampleUI = Generic.Create("PIP_ExampleUI")
+local ExampleUI = Generic.Create(&quot;PIP_ExampleUI&quot;)
 </code></pre>
 <p>Generic UIs are composed of elements; these can be interactable controls (such as buttons), visual elements (backgrounds, icons) and containers (lists and grids of elements).</p>
 <p>You can add elements to your UI by calling <code>CreateElement()</code>:</p>
 <pre><code class="language-lua">-- Creates a tiled background element.
 -- All elements must have a unique string ID.
-local background = ExampleUI:CreateElement("MyBackground", "GenericUI_Element_TiledBackground")
+local background = ExampleUI:CreateElement(&quot;MyBackground&quot;, &quot;GenericUI_Element_TiledBackground&quot;)
 </code></pre>
 <p>Elements are lua objects with methods and events to interface with them - all elements share basic getters/setters for properties like position, and offer additional calls based on their intended purpose.</p>
 <pre><code class="language-lua">-- Set the background to solid black with 400x400 size.
-background:SetBackground("Black", 400, 400)
+background:SetBackground(&quot;Black&quot;, 400, 400)
 </code></pre>
 <p>Parenting elements is supported. Parented elements use positioning relative to their parent, as would be in regular flash, and inherit certain other properties like visibility. To create child elements, you can pass an element (or its ID) as a third parameter to <code>CreateElement()</code> or call <code>AddChild()</code> on an existing element reference:</p>
 <pre><code class="language-lua">
 -- Adds a button
-local closeButton = background:AddChild("CloseButton", "GenericUI_Element_Button")
-closeButton:SetType("Close") -- Sets the appearance
+local closeButton = background:AddChild(&quot;CloseButton&quot;, &quot;GenericUI_Element_Button&quot;)
+closeButton:SetType(&quot;Close&quot;) -- Sets the appearance
 
 -- Put the button in the top right corner of the parent element (MyBackground) with a 20px offset on both axes
-closeButton:SetPositionRelativeToParent("TopRight", -20, 20)
+closeButton:SetPositionRelativeToParent(&quot;TopRight&quot;, -20, 20)
 </code></pre>
 <p>All elements implement basic mouse-related events (entering, exiting, press, release) as well as high-level ones based on the element's purpose.</p>
 <p>Text is available via the <code>GenericUI_Element_Text</code> element:</p>
-<pre><code class="language-lua">local header = background:AddChild("MyHeader", "GenericUI_Element_Text")
-header:SetText(Text.Format("My UI", {Color = Color.BLACK}))
+<pre><code class="language-lua">local header = background:AddChild(&quot;MyHeader&quot;, &quot;GenericUI_Element_Text&quot;)
+header:SetText(Text.Format(&quot;My UI&quot;, {Color = Color.BLACK}))
 header:SetSize(400, 50)
-header:SetPositionRelativeToParent("Top", 0, 60) -- Sets the header's position to the top center of the panel, with a 60px offset from the top
+header:SetPositionRelativeToParent(&quot;Top&quot;, 0, 60) -- Sets the header's position to the top center of the panel, with a 60px offset from the top
 </code></pre>
-<pre><code class="language-lua">-- "Pressed" event is akin to the general MouseUp event, but only fires if the button is not disabled.
+<pre><code class="language-lua">-- &quot;Pressed&quot; event is akin to the general MouseUp event, but only fires if the button is not disabled.
 closeButton.Events.Pressed:Subscribe(function (_)
     -- Close the UI when the button is pressed
     ExampleUI:Hide()
@@ -233,11 +237,11 @@ end)
 </code></pre>
 <p>Generic UI elements have no lifetime restrictions and references to them may be stored and used at any time. You can store them within your UI table for convenient access, but this is not a necessity if moddability is a concern - your UI, as well as all of its elements, are always available to other modders through their string IDs. These IDs are valid within your UI only and therefore need not be prefixed.</p>
 <pre><code class="language-lua">-- Other modders can access your UI by its string ID
-local yourUI = Generic.GetInstance("PIP_ExampleUI")
-local yourAcceptButton = yourUI:GetElementByID("AcceptButton")
+local yourUI = Generic.GetInstance(&quot;PIP_ExampleUI&quot;)
+local yourAcceptButton = yourUI:GetElementByID(&quot;AcceptButton&quot;)
 
 -- And they may interface with them just as you would
-yourUI:CreateElement("MyNewElement", "GenericUI_Element_IggyIcon")
+yourUI:CreateElement(&quot;MyNewElement&quot;, &quot;GenericUI_Element_IggyIcon&quot;)
 yourAcceptButton:SetVisible(false)
 </code></pre>
 <p>Internally, Generic UIs are no different from regular UIs - there is a <code>UIObject</code> for each UI, and its elements exist within it as flash MovieClips. Access to all these is available.</p>
@@ -246,41 +250,41 @@ print(ExampleUI:GetUI())
 print(acceptButton:GetMovieClip())
 
 -- GenericUI instances inherit from the same class as built-in UIs in Epip
-print(ExampleUI:IsFlagged("OF_PlayerInput1"))
+print(ExampleUI:IsFlagged(&quot;OF_PlayerInput1&quot;))
 </code></pre>
 <div class="admonition warning usage warning">
 <p class="admonition-title">Warning</p>
 <p>Though accessing an element's MovieClip is possible, its purpose is for debugging only. Interfacing with elements outside of their public APIs is not supported and any such use is prone to breaking in future releases with no warning.</p>
 </div>
-<h2 id="elements">Elements<a class="headerlink" href="#elements" title="Permanent link">¶</a></h2>
+<h2 id="elements">Elements<a class="headerlink" href="#elements" title="Permanent link">&para;</a></h2>
 <p>The following element types are implemented:</p>
 <ul>
 <li>TODO document</li>
 </ul>
 <p>You can read up about them on their dedicated pages.</p>
 <p>The code in this section is from an example UI in <code>Epip/Examples/GenericUI.lua</code>.</p>
-<h2 id="prefabs">Prefabs<a class="headerlink" href="#prefabs" title="Permanent link">¶</a></h2>
+<h2 id="prefabs">Prefabs<a class="headerlink" href="#prefabs" title="Permanent link">&para;</a></h2>
 <p>TODO</p>
-<h2 id="library">Library<a class="headerlink" href="#library" title="Permanent link">¶</a></h2>
-<p><doc package="GenericUI"></doc></p>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
-<h5 id="button_pressed-event">Button_Pressed (event)<a class="headerlink" href="#button_pressed-event" title="Permanent link">¶</a></h5>
+<h2 id="library">Library<a class="headerlink" href="#library" title="Permanent link">&para;</a></h2>
+<p><doc package="GenericUI"></p>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
+<h5 id="button_pressed-event">Button_Pressed (event)<a class="headerlink" href="#button_pressed-event" title="Permanent link">&para;</a></h5>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>RegisterListener</b> <code>fun(self,</code> listener:fun(stringID:string))</p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Fire</b> <code>fun(self,</code> stringID:string)</p>
 
-<h5 id="statebutton_statechanged-event">StateButton_StateChanged (event)<a class="headerlink" href="#statebutton_statechanged-event" title="Permanent link">¶</a></h5>
+<h5 id="statebutton_statechanged-event">StateButton_StateChanged (event)<a class="headerlink" href="#statebutton_statechanged-event" title="Permanent link">&para;</a></h5>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>RegisterListener</b> <code>fun(self,</code> listener:fun(stringID:string, active:boolean))</p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Fire</b> <code>fun(self,</code> stringID:string, active:boolean)</p>
 
-<h5 id="viewportchanged-event">ViewportChanged (event)<a class="headerlink" href="#viewportchanged-event" title="Permanent link">¶</a></h5>
+<h5 id="viewportchanged-event">ViewportChanged (event)<a class="headerlink" href="#viewportchanged-event" title="Permanent link">&para;</a></h5>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Width</b> <code>integer</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Height</b> <code>integer</code> </p>
 
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<h4 id="onelementuicall">OnElementUICall<a class="headerlink" href="#onelementuicall" title="Permanent link">¶</a></h4>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h4 id="onelementuicall">OnElementUICall<a class="headerlink" href="#onelementuicall" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Generic.OnElementUICall(ev, elementID, eventName, eventObj)
 </code></pre>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>ev</b> <code>EclLuaUICallEvent</code> </p>
@@ -291,7 +295,7 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>eventObj</b> <code>table?</code> </p>
 
-<h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">¶</a></h4>
+<h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Generic.Create(id)
    -&gt; GenericUI_Instance
 </code></pre>
@@ -299,7 +303,7 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GenericUI_Instance</code> </p>
 
-<h4 id="getprefab">GetPrefab<a class="headerlink" href="#getprefab" title="Permanent link">¶</a></h4>
+<h4 id="getprefab">GetPrefab<a class="headerlink" href="#getprefab" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Generic.GetPrefab(className)
    -&gt; T
 </code></pre>
@@ -307,21 +311,21 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>T</code> </p>
 
-<h4 id="inherit">Inherit<a class="headerlink" href="#inherit" title="Permanent link">¶</a></h4>
+<h4 id="inherit">Inherit<a class="headerlink" href="#inherit" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Generic.Inherit(tbl1, tbl2)
 </code></pre>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>tbl1</b> <code>table</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>tbl2</b> <code>table</code> </p>
 
-<h4 id="registerelementtype">RegisterElementType<a class="headerlink" href="#registerelementtype" title="Permanent link">¶</a></h4>
+<h4 id="registerelementtype">RegisterElementType<a class="headerlink" href="#registerelementtype" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Generic.RegisterElementType(elementType, elementTable)
 </code></pre>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>elementType</b> <code>string</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>elementTable</b> <code>GenericUI_Element</code> </p>
 
-<h4 id="exposefunction">ExposeFunction<a class="headerlink" href="#exposefunction" title="Permanent link">¶</a></h4>
+<h4 id="exposefunction">ExposeFunction<a class="headerlink" href="#exposefunction" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Generic.ExposeFunction(call)
    -&gt; fun(self:GenericUI_Element, ...):any?
 </code></pre>
@@ -329,7 +333,7 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>fun(self:GenericUI_Element, ...):any?</code> </p>
 
-<h4 id="getinstance">GetInstance<a class="headerlink" href="#getinstance" title="Permanent link">¶</a></h4>
+<h4 id="getinstance">GetInstance<a class="headerlink" href="#getinstance" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Generic.GetInstance(id)
    -&gt; GenericUI_Instance
 </code></pre>
@@ -337,7 +341,7 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GenericUI_Instance</code> </p>
 
-<h4 id="registerprefab">RegisterPrefab<a class="headerlink" href="#registerprefab" title="Permanent link">¶</a></h4>
+<h4 id="registerprefab">RegisterPrefab<a class="headerlink" href="#registerprefab" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Generic.RegisterPrefab(id, prefab)
 </code></pre>
 <p>Registers a prefab.</p>
@@ -345,7 +349,7 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>prefab</b> <code>table</code> </p>
 
-<h4 id="forwarduicall">ForwardUICall<a class="headerlink" href="#forwarduicall" title="Permanent link">¶</a></h4>
+<h4 id="forwarduicall">ForwardUICall<a class="headerlink" href="#forwarduicall" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Generic.ForwardUICall(ui, call, eventName, fields)
 </code></pre>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>ui</b> <code>GenericUI_Instance</code> </p>
@@ -355,11 +359,11 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>eventName</b> <code>string</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>fields</b> <code>string[]?</code> </p>
-<p></p>
-<h2 id="ui-instance">UI Instance<a class="headerlink" href="#ui-instance" title="Permanent link">¶</a></h2>
-<p><doc package="GenericUI_Instance"></doc></p>
-<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">¶</a></h2>
-<h4 id="getelementbyid">GetElementByID<a class="headerlink" href="#getelementbyid" title="Permanent link">¶</a></h4>
+<p></doc></p>
+<h2 id="ui-instance">UI Instance<a class="headerlink" href="#ui-instance" title="Permanent link">&para;</a></h2>
+<p><doc package="GenericUI_Instance"></p>
+<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
+<h4 id="getelementbyid">GetElementByID<a class="headerlink" href="#getelementbyid" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function _Instance:GetElementByID(id)
    -&gt; GenericUI_Element?
 </code></pre>
@@ -367,12 +371,12 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GenericUI_Element?</code> </p>
 
-<h4 id="destroyelement">DestroyElement<a class="headerlink" href="#destroyelement" title="Permanent link">¶</a></h4>
+<h4 id="destroyelement">DestroyElement<a class="headerlink" href="#destroyelement" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function _Instance:DestroyElement(element)
 </code></pre>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>element</b> <code>GenericUI_Element</code> </p>
 
-<h4 id="getmovieclipbyid">GetMovieClipByID<a class="headerlink" href="#getmovieclipbyid" title="Permanent link">¶</a></h4>
+<h4 id="getmovieclipbyid">GetMovieClipByID<a class="headerlink" href="#getmovieclipbyid" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function _Instance:GetMovieClipByID(id)
    -&gt; FlashMovieClip?
 </code></pre>
@@ -380,7 +384,7 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>FlashMovieClip?</code> </p>
 
-<h4 id="createelement">CreateElement<a class="headerlink" href="#createelement" title="Permanent link">¶</a></h4>
+<h4 id="createelement">CreateElement<a class="headerlink" href="#createelement" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function _Instance:CreateElement(id, elementType, parentID)
    -&gt; `T`
 </code></pre>
@@ -392,12 +396,12 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>`T`</code> </p>
 
-<h4 id="getmouseposition">GetMousePosition<a class="headerlink" href="#getmouseposition" title="Permanent link">¶</a></h4>
+<h4 id="getmouseposition">GetMousePosition<a class="headerlink" href="#getmouseposition" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function _Instance:GetMousePosition()
    -&gt; number, number
 </code></pre>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number, number</code> </p>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -436,6 +440,7 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
     <script>var base_url = '../../../../..';</script>
     <script src="../../../../../js/theme_extra.js" defer></script>
     <script src="../../../../../js/theme.js" defer></script>
+      <script src="../../../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

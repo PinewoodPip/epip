@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,11 +156,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="chatlog">ChatLog<a class="headerlink" href="#chatlog" title="Permanent link">¶</a></h1>
+                <h1 id="chatlog">ChatLog<a class="headerlink" href="#chatlog" title="Permanent link">&para;</a></h1>
 <p>The ChatLog UI displays and manages the chat log. Epip's script allows you to add custom tabs to it (like the Party/All Players tabs by default).</p>
 <p>Examples of its use are the chat commands features, which intercept sent messages to execute terminal-style commands.</p>
-<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">¶</a></h2>
-<p><epip class="ChatLogUI" symbols="Event,Hook"></epip></p>
+<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
+<p><epip class="ChatLogUI" symbols="Event,Hook"></p>
 <pre><code class="language-lua">---Fired when the client sends a message in chat. TODO pass tab
 ---@event MessageSent
 ---@field RegisterListener fun(self, listener:fun(text:string, clientChar:EclCharacter))
@@ -176,9 +180,9 @@
 
 
 </code></pre>
-<p></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<p><epip class="ChatLogUI" symbols="Function"></epip></p>
+<p></epip></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><epip class="ChatLogUI" symbols="Function"></p>
 <pre><code class="language-lua">---Sends text onto the chatbox, using the vanilla colors and font sizes.
 ---@param tab integer|string Tab ID. See ChatLog.TABS enum. For custom tabs, use your string ID.
 ---@param userName string
@@ -198,14 +202,14 @@ function Chat.AddMessage(tab, text)
 function Chat.AddTab(tabID, label)
 
 </code></pre>
-<p></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
-<p><epip class="ChatLogUI" symbols="Class"></epip></p>
+<p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="ChatLogUI" symbols="Class"></p>
 <pre><code class="language-lua">---@class ChatLogUI : UI
 
 
 </code></pre>
-<p></p></div>
+<p></epip></p>
               
             </div>
           </div><footer>
@@ -236,6 +240,7 @@ function Chat.AddTab(tabID, label)
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

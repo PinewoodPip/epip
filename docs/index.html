@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href=".." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -161,14 +165,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">¶</a></h1>
+                <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
 <p>The features of Epip Encounters are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.</p>
 <p>Since late 2021, the focus of development has shifted to making the internals of the mod available as libraries, aiming to provide utility, better maintainability, extendability and easy manipulation of UIs from lua.</p>
 <p>The ultimate goal is to make the mod easy for someone else to continue working on after/if I depart - EE is an overhaul built to last and be tinkered with, and I would like to honor that in my own project.</p>
 <p>This change will be a long process. There are still many features of the mod that remain to be rewritten to the new standards and methodology, or extended to provide functionality beyond what the current mod needs.</p>
 <p>Anything that is documented here is considered stable and unlikely to change drastically - <strong>any changes to these calls/systems will be mentioned in future patch notes.</strong></p>
 <p>The definitions here are auto-generated from EmmyLua annotations within the scripts (using <code>update_docs.py</code> found in the mod). Functions are tagged through <code>@meta</code> to denote tags like "Client-only", "EE-only". Declaring these at the top of the file tags all functions in the file.</p>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>The mod's root table contains the following tables:</p>
 <ul>
 <li><code>Epip</code>: stores references to "Features" and metadata related to the mod.</li>
@@ -179,14 +183,14 @@
 <p>The scripting in Epip Encounters focuses on event-driven programming. Aside from functions, systems and features tend to implement events and hooks which allow other scripts to react to them being raised.</p>
 <p>Event listeners allow you to react to events sent from scripts. They can receive parameters and are executed in the order that they were registered.</p>
 <pre><code class="language-lua">-- Listen for the shift key being pressed/unpressed.
-Client.Input:RegisterListener("SneakConesToggled", function(pressed)
-    print("Sneak cones toggled: " .. pressed)
+Client.Input:RegisterListener(&quot;SneakConesToggled&quot;, function(pressed)
+    print(&quot;Sneak cones toggled: &quot; .. pressed)
 end)
 </code></pre>
 <p>Hooks are similar to event listeners, but are used to modify values calculated within functions. Their purpose is to allow scripts to alter the logic or output of functions. A hook is always passed a "default value" as its first parameter, which will be used if no listeners choose to act upon the event.</p>
 <p>Any script can implement events/hooks, and it's easy to add "parameters" to registering listeners as well, to filter their execution conditonally.</p>
 <pre><code class="language-lua">-- Set opacity for Battered/Harried stack backgrounds in the health bar based on if the amount if enough to inflict a T3.
-Client.UI.EnemyHealthBar:RegisterHook("GetStackOpacity", function(opacity, stack, amount)
+Client.UI.EnemyHealthBar:RegisterHook(&quot;GetStackOpacity&quot;, function(opacity, stack, amount)
     local threshold = Game.Character.GetStacksNeededToInflictTier3(Client.GetCharacter())
 
     if amount &gt;= threshold then
@@ -202,16 +206,16 @@ end)
 </code></pre>
 <p>Hooks are not limited to changing primitives, they are often also used in UI scripts to allow for manipulation of the data that the engine is passing it, parsed into handy tables. The following example adds Critical Chance to the Examine UI.</p>
 <pre><code class="language-lua">-- Add Critical Chance to the examine menu when its data is being updated.
-Client.UI.Examine:RegisterHook("Update", function(examineData)
+Client.UI.Examine:RegisterHook(&quot;Update&quot;, function(examineData)
     local char = Client.UI.Examine.GetCharacter()
 
     -- Only do this for characters being examined
     if char then
         local critEntry = {
             id = 9,
-            label = "Critical Chance",
+            label = &quot;Critical Chance&quot;,
             iconID = Client.UI.Examine.ICONS.CRITICAL_CHANCE,
-            value = string.format("%d%%", char.Stats.CriticalChance),
+            value = string.format(&quot;%d%%&quot;, char.Stats.CriticalChance),
             type = Client.UI.Examine.ENTRY_TYPES.STAT,
         }
 
@@ -224,23 +228,23 @@ Client.UI.Examine:RegisterHook("Update", function(examineData)
     return examineData
 end)
 </code></pre>
-<h3 id="aliases">Aliases<a class="headerlink" href="#aliases" title="Permanent link">¶</a></h3>
+<h3 id="aliases">Aliases<a class="headerlink" href="#aliases" title="Permanent link">&para;</a></h3>
 <p>The following EmmyLua aliases are defined (in <code>EpipIdeHelpers.lua</code>):</p>
 <pre><code class="language-lua">
 ---@alias Entity EclCharacter | EsvCharacter | EclItem | EsvItem
 ---@alias Character EsvCharacter | EclCharacter
 ---@alias Item EclItem | EsvItem
 
----@alias EquipSlot "Helmet" | "Breast" | "Leggings" | "Weapon" | "Shield" | "Ring" | "Belt" | "Boots" | "Gloves" | "Amulet" | "Ring" | "Ring2" | "Horns" | "Overhead"
----@alias EquipmentSubType "Platemail" | "Robes" | "Leather" | "Belt" | "Ring" | "Amulet" | "Shield" | "Dagger" | "Sword" | "Axe" | "Mace" | "Sword" | "Spear" | "Staff" | "Bow" | "Crossbow" | "Wand"
+---@alias EquipSlot &quot;Helmet&quot; | &quot;Breast&quot; | &quot;Leggings&quot; | &quot;Weapon&quot; | &quot;Shield&quot; | &quot;Ring&quot; | &quot;Belt&quot; | &quot;Boots&quot; | &quot;Gloves&quot; | &quot;Amulet&quot; | &quot;Ring&quot; | &quot;Ring2&quot; | &quot;Horns&quot; | &quot;Overhead&quot;
+---@alias EquipmentSubType &quot;Platemail&quot; | &quot;Robes&quot; | &quot;Leather&quot; | &quot;Belt&quot; | &quot;Ring&quot; | &quot;Amulet&quot; | &quot;Shield&quot; | &quot;Dagger&quot; | &quot;Sword&quot; | &quot;Axe&quot; | &quot;Mace&quot; | &quot;Sword&quot; | &quot;Spear&quot; | &quot;Staff&quot; | &quot;Bow&quot; | &quot;Crossbow&quot; | &quot;Wand&quot;
 
----@alias StackType "Battered" | "B" | "Harried" | "H"
+---@alias StackType &quot;Battered&quot; | &quot;B&quot; | &quot;Harried&quot; | &quot;H&quot;
 
----@alias Gender "Male" | "Female"
----@alias Race "Human" | "Elf" | "Dwarf" | "Lizard"
+---@alias Gender &quot;Male&quot; | &quot;Female&quot;
+---@alias Race &quot;Human&quot; | &quot;Elf&quot; | &quot;Dwarf&quot; | &quot;Lizard&quot;
 
----@alias Keyword "ViolentStrike" | "VitalityVoid" | "Predator" | "Elementalist" | "Prosperity" | "Paucity" | "IncarnateChampion" | "Defiance" | "Occultist" | "Disintegrate" | "Wither" | "Centurion" | "Abeyance" | "Benevolence" | "Presence" | "Ward" | "Celestial" | "Purity" | "VolatileArmor" | "Voracity"
----@alias KeywordBoonType "Activator" | "Mutator"
+---@alias Keyword &quot;ViolentStrike&quot; | &quot;VitalityVoid&quot; | &quot;Predator&quot; | &quot;Elementalist&quot; | &quot;Prosperity&quot; | &quot;Paucity&quot; | &quot;IncarnateChampion&quot; | &quot;Defiance&quot; | &quot;Occultist&quot; | &quot;Disintegrate&quot; | &quot;Wither&quot; | &quot;Centurion&quot; | &quot;Abeyance&quot; | &quot;Benevolence&quot; | &quot;Presence&quot; | &quot;Ward&quot; | &quot;Celestial&quot; | &quot;Purity&quot; | &quot;VolatileArmor&quot; | &quot;Voracity&quot;
+---@alias KeywordBoonType &quot;Activator&quot; | &quot;Mutator&quot;
 
 -- For doc generation; does not actually work in IDE
 ---@class Event
@@ -250,7 +254,7 @@ end)
 -- UI
 ---------------------------------------------
 
----@alias MessageBoxType "Message" | "Input"
+---@alias MessageBoxType &quot;Message&quot; | &quot;Input&quot;
 
 ---------------------------------------------
 -- GAME.TOOLTIP
@@ -283,7 +287,7 @@ function TooltipData:AppendElement(ele) end
 ---@param ele table
 ---@param appendAfter table
 function TooltipData:AppendElementAfter(ele, appendAfter) end
-</code></pre></div>
+</code></pre>
               
             </div>
           </div><footer>
@@ -322,6 +326,7 @@ function TooltipData:AppendElementAfter(ele, appendAfter) end
     <script>var base_url = '..';</script>
     <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

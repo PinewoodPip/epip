@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,10 +156,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="statstab">StatsTab<a class="headerlink" href="#statstab" title="Permanent link">¶</a></h1>
+                <h1 id="statstab">StatsTab<a class="headerlink" href="#statstab" title="Permanent link">&para;</a></h1>
 <p><code>Epip.Features.StatsTab</code> implements collapsable categories for the Character Sheet stats tab, as well as Ascension node stats, server-side value calculations and synching, and all stats present in the mod by default. Is this decoupling overengineered? Possibly, but it's a good showcase of how easily extensible systems can be if you stuff them with events.</p>
 <p>TODO document the rest of the system - Only Shared.lua is here atm.</p>
-<h2 id="creating-stats">Creating Stats<a class="headerlink" href="#creating-stats" title="Permanent link">¶</a></h2>
+<h2 id="creating-stats">Creating Stats<a class="headerlink" href="#creating-stats" title="Permanent link">&para;</a></h2>
 <p>There's 3 steps to creating a stat. <strong>Steps 1 and 2 have to be done on both contexts.</strong></p>
 <ol>
 <li>Define the stat; it's name, tooltip, how it displays, etc.</li>
@@ -163,7 +167,7 @@
 <li>Set/update it's value when requested, through <code>RegisterStatValueHook</code></li>
 </ol>
 <p>You can define a stat with <code>RegisterStat(id: string, data: EpipStat)</code>. The structure of a stat is the following:</p>
-<p><doc fields="EpipStat"></doc></p>
+<p><doc fields="EpipStat"></p>
 <pre><code class="language-lua">---@class EpipStat
 ---@field Name string
 ---@field Description string Fallback description in case a formatted Tooltip isn't set.
@@ -172,58 +176,58 @@
 ---@field Suffix string Suffix for value display.
 ---@field Prefix string Prefix for value display.
 ---@field Boolean boolean Boolean stats show no value label.
----@field MaxCharges string If specified, this stat will display as "{Value}/{Value of MaxCharges stat}"
+---@field MaxCharges string If specified, this stat will display as &quot;{Value}/{Value of MaxCharges stat}&quot;
 ---@field IgnoreForHiding boolean If true, this stat will not be considered as added when determining if a Hidden category should display.
 </code></pre>
-<p></p>
-<pre><code class="language-lua">StatsTab.RegisterStat("RegenLifeCalculated", {
-    Name = "Missing Life Regen",
-    Description = "Restores a percentage of your missing Vitality at the start of your turn.",
+<p></doc></p>
+<pre><code class="language-lua">StatsTab.RegisterStat(&quot;RegenLifeCalculated&quot;, {
+    Name = &quot;Missing Life Regen&quot;,
+    Description = &quot;Restores a percentage of your missing Vitality at the start of your turn.&quot;,
 
-    Footnote = "Missing Regeneration is capped at 50%.",
-    Suffix = "%",
+    Footnote = &quot;Missing Regeneration is capped at 50%.&quot;,
+    Suffix = &quot;%&quot;,
 })
 </code></pre>
 <p>Next, you need to append it into a category with <code>AddStatToCategory(statID: string, categoryID: string, index?: integer)</code>. You can omit <code>index</code> and it will be placed at the bottom.</p>
-<pre><code class="language-lua">StatsTab.AddStatToCategory("RegenLifeCalculated", "Vitals")
+<pre><code class="language-lua">StatsTab.AddStatToCategory(&quot;RegenLifeCalculated&quot;, &quot;Vitals&quot;)
 </code></pre>
 <p>Finally, you need to register a hook to update the stat's value. This can be done in 2 ways: on client or on server (do not do both).</p>
 <p>If the stat's value can be queried from the client context, you only need a simple hook on the client:</p>
-<pre><code class="language-lua">StatsTab.RegisterStatValueHook("PartyFunds_Gold", function(value, data, char)
-    return Game.Items.GetPartyTemplateCount("LOOT_Gold_A_1c3c9c74-34a1-4685-989e-410dc080be6f")
+<pre><code class="language-lua">StatsTab.RegisterStatValueHook(&quot;PartyFunds_Gold&quot;, function(value, data, char)
+    return Game.Items.GetPartyTemplateCount(&quot;LOOT_Gold_A_1c3c9c74-34a1-4685-989e-410dc080be6f&quot;)
 end)
 </code></pre>
 <p>For stats that require info from the server, there is a special system in place that synchronizes stat values with tags. To set a stat's value from the server context, you need to use a different event (note it's not a hook, you must call <code>UpdateTaggedStat</code> yourself). On the client, the stat's value will be queried automatically from such tag if it is set; the advantage here being that there is no need to request stats from the server every time the tab is opened.</p>
-<pre><code class="language-lua">StatsTab.RegisterStatUpdateListener("Keyword_VitalityVoid_Power", function(char, data)
+<pre><code class="language-lua">StatsTab.RegisterStatUpdateListener(&quot;Keyword_VitalityVoid_Power&quot;, function(char, data)
     Osi.QRY_AMER_KeywordStat_VitalityVoid_GetPower(char.MyGuid, 1)
 
     local value = Osi.DB_AMER_KeywordStat_OUTPUT_Real:Get(nil)[1][1] * 100
 
-    EpipStats.UpdateTaggedStat(char, "Keyword_VitalityVoid_Power", value)
+    EpipStats.UpdateTaggedStat(char, &quot;Keyword_VitalityVoid_Power&quot;, value)
 end)
 </code></pre>
-<h2 id="creating-ascension-node-stats">Creating Ascension Node Stats<a class="headerlink" href="#creating-ascension-node-stats" title="Permanent link">¶</a></h2>
+<h2 id="creating-ascension-node-stats">Creating Ascension Node Stats<a class="headerlink" href="#creating-ascension-node-stats" title="Permanent link">&para;</a></h2>
 <p>Stats related to Ascension nodes are automatically updated if their ID follows a specific format. All you need to do is define one; no further event listeners required. It will also be automatically put into the relevant keyword's category.</p>
 <p>You can create such stat with <code>StatsTab.AddNodeStat(clusterId: string, nodeIndex: number, nodeSubIndex: number, keyword: Keyword, keywordType: KeywordBoonType, statData: EpipStat)</code>. <code>StatData</code> is the stat definition, like with a normal stat. <strong>The indexes are 0-based.</strong> <code>ClusterId</code> is the ID of the Aspect, ex. <code>Force_TheFalcon</code>.</p>
 <p>There's just one small catch: owned nodes are only tracked if there's a stat defined for them. When you add stats in an update, you should call <code>StatsTab.RecalculateNodeStats()</code> on the server during the patch routine. You can also call <code>NRD_ModCall("EpipEncounters", "PerformFullStatsUpdate");</code> from Osiris, but this will be removed in the future.</p>
-<h2 id="creating-categories">Creating Categories<a class="headerlink" href="#creating-categories" title="Permanent link">¶</a></h2>
+<h2 id="creating-categories">Creating Categories<a class="headerlink" href="#creating-categories" title="Permanent link">&para;</a></h2>
 <p>A category holds stats, and can be collapsed in the menu. Stats only render if they're within a category that is open. They can be added with <code>RegisterCategory(id: string, data: EpipStatCategory, index?: integer)</code>. See the <code>EpipStatCategory</code> struct.</p>
-<pre><code class="language-lua">StatsTab.RegisterCategory("Vitals", {
-    Header = "&lt;font size='21'&gt;————— Vitals —————&lt;/font&gt;",
-    Name = "Vitals",
-    Behaviour = "GreyOut",
+<pre><code class="language-lua">StatsTab.RegisterCategory(&quot;Vitals&quot;, {
+    Header = &quot;&lt;font size='21'&gt;————— Vitals —————&lt;/font&gt;&quot;,
+    Name = &quot;Vitals&quot;,
+    Behaviour = &quot;GreyOut&quot;,
     Stats = {
-        "RegenLifeCalculated",
-        "RegenPhysicalArmorCalculated",
-        "RegenMagicArmorCalculated",
-        "LifeSteal",
+        &quot;RegenLifeCalculated&quot;,
+        &quot;RegenPhysicalArmorCalculated&quot;,
+        &quot;RegenMagicArmorCalculated&quot;,
+        &quot;LifeSteal&quot;,
     },
 })
 </code></pre>
-<h2 id="modifying-stats">Modifying Stats<a class="headerlink" href="#modifying-stats" title="Permanent link">¶</a></h2>
+<h2 id="modifying-stats">Modifying Stats<a class="headerlink" href="#modifying-stats" title="Permanent link">&para;</a></h2>
 <p>Stat definitions are stored in <code>StatsTab.STATS</code>. You may screw with them at any time. Categories are in <code>CATEGORIES</code> instead, and their rendering order is defined in <code>CATEGORIES_ORDER</code>.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<p><epip class="EpipStatsTab" symbols="Function"></epip></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><epip class="EpipStatsTab" symbols="Function"></p>
 <pre><code class="language-lua">---Registers a stat bound to an Ascension node.
 ---@param clusterId string
 ---@param nodeIndex number
@@ -251,9 +255,9 @@ function EpipStats.RegisterCategory(id, data, index) --RequireBothContexts
 function EpipStats.AddStatToCategory(statID, categoryID, index) --RequireBothContexts
 
 </code></pre>
-<p></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
-<p><epip class="EpipStatsTab" symbols="Class"></epip></p>
+<p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="EpipStatsTab" symbols="Class"></p>
 <pre><code class="language-lua">---@class EpipStats
 ---@field CATEGORIES table&lt;string, EpipStatCategory&gt; Category definitions.
 ---@field CATEGORIES_ORDER string[]
@@ -273,7 +277,7 @@ function EpipStats.AddStatToCategory(statID, categoryID, index) --RequireBothCon
 ---@field Suffix string Suffix for value display.
 ---@field Prefix string Prefix for value display.
 ---@field Boolean boolean Boolean stats show no value label.
----@field MaxCharges string If specified, this stat will display as "{Value}/{Value of MaxCharges stat}"
+---@field MaxCharges string If specified, this stat will display as &quot;{Value}/{Value of MaxCharges stat}&quot;
 ---@field IgnoreForHiding boolean If true, this stat will not be considered as added when determining if a Hidden category should display.
 
 
@@ -284,7 +288,7 @@ function EpipStats.AddStatToCategory(statID, categoryID, index) --RequireBothCon
 ---@field Stats string[] Stats displayed in the category, ordered.
 
 
-</code></pre></div>
+</code></pre>
               
             </div>
           </div><footer>
@@ -315,6 +319,7 @@ function EpipStats.AddStatToCategory(statID, categoryID, index) --RequireBothCon
     <script>var base_url = '../..';</script>
     <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

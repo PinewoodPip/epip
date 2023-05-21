@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -184,7 +188,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">¶</a></h1>
+                <h1 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h1>
 <p>The <code>Vector</code> library offers a vector data structure and methods to work with them.</p>
 <p>They are intended to be used as immutables. All methods and operators return a new instance of the output vector.</p>
 <p>Vector objects implement various operators; the binary ones only usable for vectors of the same arity:</p>
@@ -196,20 +200,20 @@
 </ul>
 <p>Additionally, <code>vector.Arity</code> or <code>vector.Length</code> will return the amount of elements in the vector.</p>
 <p>In Epip, their primary use is semantic clarity for functions that require 2D coordinates as parameters.</p>
-<h2 id="vector-class">Vector Class<a class="headerlink" href="#vector-class" title="Permanent link">¶</a></h2>
-<p><doc package="Vector"></doc></p>
-<p></p>
-<h2 id="vector-library">Vector Library<a class="headerlink" href="#vector-library" title="Permanent link">¶</a></h2>
-<p><doc package="VectorLib"></doc></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">¶</a></h4>
+<h2 id="vector-class">Vector Class<a class="headerlink" href="#vector-class" title="Permanent link">&para;</a></h2>
+<p><doc package="Vector"></p>
+<p></doc></p>
+<h2 id="vector-library">Vector Library<a class="headerlink" href="#vector-library" title="Permanent link">&para;</a></h2>
+<p><doc package="VectorLib"></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.Create(...)
    -&gt; Vector
 </code></pre>
 <p>Creates a vector of variable length.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector</code> </p>
 
-<h4 id="dotproduct">DotProduct<a class="headerlink" href="#dotproduct" title="Permanent link">¶</a></h4>
+<h4 id="dotproduct">DotProduct<a class="headerlink" href="#dotproduct" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.DotProduct(v1, v2)
    -&gt; number
 </code></pre>
@@ -220,7 +224,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number</code> </p>
 
-<h4 id="scalarproduct">ScalarProduct<a class="headerlink" href="#scalarproduct" title="Permanent link">¶</a></h4>
+<h4 id="scalarproduct">ScalarProduct<a class="headerlink" href="#scalarproduct" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.ScalarProduct(v, scalar)
    -&gt; Vector
 </code></pre>
@@ -231,7 +235,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector</code> </p>
 
-<h4 id="sum">Sum<a class="headerlink" href="#sum" title="Permanent link">¶</a></h4>
+<h4 id="sum">Sum<a class="headerlink" href="#sum" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.Sum(v1, v2)
    -&gt; Vector
 </code></pre>
@@ -242,7 +246,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector</code> </p>
 
-<h4 id="subtract">Subtract<a class="headerlink" href="#subtract" title="Permanent link">¶</a></h4>
+<h4 id="subtract">Subtract<a class="headerlink" href="#subtract" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.Subtract(v1, v2)
    -&gt; Vector
 </code></pre>
@@ -253,7 +257,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector</code> </p>
 
-<h4 id="negate">Negate<a class="headerlink" href="#negate" title="Permanent link">¶</a></h4>
+<h4 id="negate">Negate<a class="headerlink" href="#negate" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.Negate(v)
    -&gt; Vector
 </code></pre>
@@ -261,7 +265,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector</code> </p>
 
-<h4 id="areequal">AreEqual<a class="headerlink" href="#areequal" title="Permanent link">¶</a></h4>
+<h4 id="areequal">AreEqual<a class="headerlink" href="#areequal" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.AreEqual(v1, v2)
 </code></pre>
 <p>Returns whether 2 vectors are equal.
@@ -270,7 +274,7 @@ Vectors are equal if they have the same arity and components.</p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>v2</b> <code>Vector</code> </p>
 
-<h4 id="clone">Clone<a class="headerlink" href="#clone" title="Permanent link">¶</a></h4>
+<h4 id="clone">Clone<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.Clone(vector)
    -&gt; Vector
 </code></pre>
@@ -278,7 +282,7 @@ Vectors are equal if they have the same arity and components.</p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector</code> </p>
 
-<h4 id="getnormalized">GetNormalized<a class="headerlink" href="#getnormalized" title="Permanent link">¶</a></h4>
+<h4 id="getnormalized">GetNormalized<a class="headerlink" href="#getnormalized" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.GetNormalized(vector)
    -&gt; Vector New instance; does not mutate.
 </code></pre>
@@ -286,14 +290,14 @@ Vectors are equal if they have the same arity and components.</p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector New instance; does not mutate.</code> </p>
 
-<h4 id="getlength">GetLength<a class="headerlink" href="#getlength" title="Permanent link">¶</a></h4>
+<h4 id="getlength">GetLength<a class="headerlink" href="#getlength" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Vector.GetLength(vector)
    -&gt; number
 </code></pre>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>vector</b> <code>Vector</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number</code> </p>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -332,6 +336,7 @@ Vectors are equal if they have the same arity and components.</p>
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

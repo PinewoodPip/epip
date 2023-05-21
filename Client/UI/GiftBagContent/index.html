@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,10 +156,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="giftbagcontent">GiftBagContent<a class="headerlink" href="#giftbagcontent" title="Permanent link">¶</a></h1>
+                <h1 id="giftbagcontent">GiftBagContent<a class="headerlink" href="#giftbagcontent" title="Permanent link">&para;</a></h1>
 <p>The GiftBagContent UI is the ingame giftbags menu.</p>
-<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">¶</a></h2>
-<p><epip class="GiftBagContentUI" symbols="Event,Hook"></epip></p>
+<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
+<p><epip class="GiftBagContentUI" symbols="Event,Hook"></p>
 <pre><code class="language-lua">---Fired after the UI's content is updated, upon opening the UI.
 ---@event ContentUpdated
 ---@field RegisterListener fun(self, listener:fun(content:GiftBagContentUIEntry[]))
@@ -169,9 +173,9 @@
 
 
 </code></pre>
-<p></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<p><epip class="GiftBagContentUI" symbols="Function"></epip></p>
+<p></epip></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><epip class="GiftBagContentUI" symbols="Function"></p>
 <pre><code class="language-lua">---Returns a giftbag mod by its numerical ID.
 ---@param id number
 ---@return GUID 
@@ -181,9 +185,9 @@ function GB.GetModGUID(id)
 function GB.RenderContent()
 
 </code></pre>
-<p></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
-<p><epip class="GiftBagContentUI" symbols="Class"></epip></p>
+<p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="GiftBagContentUI" symbols="Class"></p>
 <pre><code class="language-lua">---@class GiftBagContentUI : Feature
 
 
@@ -198,7 +202,7 @@ function GB.RenderContent()
 
 
 </code></pre>
-<p></p></div>
+<p></epip></p>
               
             </div>
           </div><footer>
@@ -229,6 +233,7 @@ function GB.RenderContent()
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

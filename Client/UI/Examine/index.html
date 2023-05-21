@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,19 +156,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="examine">Examine<a class="headerlink" href="#examine" title="Permanent link">¶</a></h1>
+                <h1 id="examine">Examine<a class="headerlink" href="#examine" title="Permanent link">&para;</a></h1>
 <p>Hooks for the Examine UI.</p>
-<h1 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">¶</a></h1>
-<p><doc fields="ExamineUI"></doc></p>
+<h1 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h1>
+<p><doc fields="ExamineUI"></p>
 <pre><code class="language-lua">---@class ExamineUI
 ---@field CATEGORIES table&lt;string, number&gt;
 ---@field ENTRY_TYPES table&lt;string, number&gt;
 ---@field ICONS table&lt;string, number&gt; IDs for embedded icons.
 </code></pre>
-<p></p>
-<h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h1>
+<p></doc></p>
+<h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h1>
 <p>Subscribe with <code>Client.UI.Examine:RegisterListener(event: string, handler: function)</code>.</p>
-<p><doc events="ExamineUI"></doc></p>
+<p><doc events="ExamineUI"></p>
 <pre><code class="language-lua">---Fired when the UI is opened.
 ---@event ExamineOpened
 ---@param categories ExamineData
@@ -173,9 +177,9 @@
 ---@hook Update
 ---@param data ExamineData
 </code></pre>
-<p></p>
-<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h1>
-<p><doc lib="ExamineUI"></doc></p>
+<p></doc></p>
+<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
+<p><doc lib="ExamineUI"></p>
 <pre><code class="language-lua">---Get a category of entries by its id.
 ---@param id number
 function ExamineData:GetCategory(id) -- Client-only
@@ -195,7 +199,7 @@ function ExamineData:GetElement(category, statID) -- Client-only
 ---@return EclCharacter
 function Examine.GetCharacter() -- Client-only
 </code></pre>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -226,6 +230,7 @@ function Examine.GetCharacter() -- Client-only
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

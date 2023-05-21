@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,12 +156,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">¶</a></h1>
+                <h1 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h1>
 <p>The <code>_Feature</code> table is the table that most libraries and actual mod features inherit from; it provides a plethora of generic utilities useful for any sort of script.</p>
 <p>Included are logging methods, shorthands for applying path overrides, event &amp; hook creation and dispatching, and more.</p>
 <p>To use this table, you should call <code>Epip.AddFeature()</code>. This will register your script's table to the <code>Epip.Features</code> table and initialize the <code>_Feature</code> metatable.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<p><epip class="Feature" symbols="Function"></epip></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><epip class="Feature" symbols="Function"></p>
 <pre><code class="language-lua">---Add an event to the Events field.
 ---@param name string
 ---@param data? Event
@@ -243,9 +247,9 @@ function _Feature:LogWarning(msg)
 function _Feature:LogError(msg)
 
 </code></pre>
-<p></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
-<p><epip class="Feature" symbols="Class"></epip></p>
+<p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="Feature" symbols="Class"></p>
 <pre><code class="language-lua">---@class Feature
 ---@field Name string Used for logging, event handling. Do not set!
 ---@field CONTEXT Context Set automatically.
@@ -258,7 +262,7 @@ function _Feature:LogError(msg)
 ---@field FILEPATH_OVERRIDES table&lt;string, string&gt;
 
 
-</code></pre></div>
+</code></pre>
               
             </div>
           </div><footer>
@@ -289,6 +293,7 @@ function _Feature:LogError(msg)
     <script>var base_url = '../..';</script>
     <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

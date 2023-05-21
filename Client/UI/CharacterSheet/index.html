@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,17 +156,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="charactersheet">CharacterSheet<a class="headerlink" href="#charactersheet" title="Permanent link">¶</a></h1>
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h2>
-<p><doc events="CharacterSheetUI"></doc></p>
+                <h1 id="charactersheet">CharacterSheet<a class="headerlink" href="#charactersheet" title="Permanent link">&para;</a></h1>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p><doc events="CharacterSheetUI"></p>
 <pre><code class="language-lua">---Hook to manipulate a secondary stats update.
 ---@hook SecondaryStatUpdate
 ---@param stats SecondaryStatBase[]
 ---@param char EclCharacter
 </code></pre>
-<p></p>
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h2>
-<p><doc lib="CharacterSheetUI"></doc></p>
+<p></doc></p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<p><doc lib="CharacterSheetUI"></p>
 <pre><code class="language-lua">---Get the current character on the sheet.  
 ---Defaults to client character if the sheet is uninitialized.
 ---@return EclCharacter
@@ -171,18 +175,18 @@ function CharacterSheet.GetCharacter() -- Client-only
 <pre><code class="language-lua">---@return SecondaryStatBase[]
 function CharacterSheet.DecodeSecondaryStats(ui) -- Client-only
 </code></pre>
-<p></p>
-<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">¶</a></h2>
-<p><doc fields="CharacterSheetUI"></doc></p>
+<p></doc></p>
+<h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
+<p><doc fields="CharacterSheetUI"></p>
 <pre><code class="language-lua">---@class CharacterSheetUI
 ---@field StatsTab CharacterSheetStatsTab
 ---@field SECONDARY_STAT_GROUPS table&lt;string, number&gt; IDs of secondarystat groups.
 </code></pre>
-<p></p>
-<h1 id="statstab">StatsTab<a class="headerlink" href="#statstab" title="Permanent link">¶</a></h1>
+<p></doc></p>
+<h1 id="statstab">StatsTab<a class="headerlink" href="#statstab" title="Permanent link">&para;</a></h1>
 <p><code>Client.UI.CharacterSheet.StatsTab</code> handles the basic functionality of the custom stats tab. Collapsable categories and server-side querying of stats is implemented in <code>Epip.Features.StatsTab</code>.</p>
-<h2 id="events_1">Events<a class="headerlink" href="#events_1" title="Permanent link">¶</a></h2>
-<p><doc events="CharacterSheetUIStatsTab"></doc></p>
+<h2 id="events_1">Events<a class="headerlink" href="#events_1" title="Permanent link">&para;</a></h2>
+<p><doc events="CharacterSheetUIStatsTab"></p>
 <pre><code class="language-lua">---Fired when a stat is rendered.
 ---@event EntryAdded
 ---@param data StatsTabStat
@@ -227,9 +231,9 @@ function CharacterSheet.DecodeSecondaryStats(ui) -- Client-only
 ---@param data StatsTabStat
 ---@param value number
 </code></pre>
-<p></p>
-<h2 id="functions_1">Functions<a class="headerlink" href="#functions_1" title="Permanent link">¶</a></h2>
-<p><doc lib="CharacterSheetUIStatsTab"></doc></p>
+<p></doc></p>
+<h2 id="functions_1">Functions<a class="headerlink" href="#functions_1" title="Permanent link">&para;</a></h2>
+<p><doc lib="CharacterSheetUIStatsTab"></p>
 <pre><code class="language-lua">---Get the data table of a stat.
 ---@param id string
 ---@return StatsTabStat
@@ -265,9 +269,9 @@ function StatsTab.RegisterStatValueFormatHook(stat, handler) -- Client-only
 ---@param handler function
 function StatsTab.RegisterStatValueHook(stat, handler) -- Client-only
 </code></pre>
-<p></p>
-<h2 id="fields_1">Fields<a class="headerlink" href="#fields_1" title="Permanent link">¶</a></h2>
-<p><doc fields="CharacterSheetUIStatsTab"></doc></p>
+<p></doc></p>
+<h2 id="fields_1">Fields<a class="headerlink" href="#fields_1" title="Permanent link">&para;</a></h2>
+<p><doc fields="CharacterSheetUIStatsTab"></p>
 <pre><code class="language-lua">---@class CharacterSheetUIStatsTab
 ---@field Stats table&lt;string, StatsTabStat&gt;
 ---@field StatsOrder string[] Order in which stats are rendered.
@@ -277,7 +281,7 @@ function StatsTab.RegisterStatValueHook(stat, handler) -- Client-only
 ---@field ignoreUpdate boolean Internal; do not set
 ---@field nextNumericalID number Internal; do not set
 </code></pre>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -308,6 +312,7 @@ function StatsTab.RegisterStatValueHook(stat, handler) -- Client-only
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

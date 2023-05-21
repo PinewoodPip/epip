@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -152,11 +156,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="optionsinput">OptionsInput<a class="headerlink" href="#optionsinput" title="Permanent link">¶</a></h1>
+                <h1 id="optionsinput">OptionsInput<a class="headerlink" href="#optionsinput" title="Permanent link">&para;</a></h1>
 <p>The OptionsInput UI script handles new functionality for the input settings menu, which, curiously, is actually a separate UI from the settings menu, and just like it, it does not exist whilst not open.</p>
 <p>Epip extends it to provide custom keybinding configuration tabs, as well as to read the user's current keybindings as strings to display elsewhere.</p>
-<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">¶</a></h2>
-<p><epip class="OptionsInputUI" symbols="Event,Hook"></epip></p>
+<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
+<p><epip class="OptionsInputUI" symbols="Event,Hook"></p>
 <pre><code class="language-lua">---@event ActionExecuted
 ---@field RegisterListener fun(self, listener:fun(action:string, binding:string))
 ---@field Fire fun(self, action:string, binding:string)
@@ -174,9 +178,9 @@
 
 
 </code></pre>
-<p></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<p><epip class="OptionsInputUI" symbols="Function"></epip></p>
+<p></epip></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p><epip class="OptionsInputUI" symbols="Function"></p>
 <pre><code class="language-lua">function Options.SaveBindings()
 
 ---Returns whether a keybind should show up in the UI.
@@ -234,9 +238,9 @@ function Options.IsBindingKey()
 function Options.SetPotentialBinding(key)
 
 </code></pre>
-<p></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
-<p><epip class="OptionsInputUI" symbols="Class"></epip></p>
+<p></epip></p>
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><epip class="OptionsInputUI" symbols="Class"></p>
 <pre><code class="language-lua">---@class OptionsInputUI : Feature
 ---@field CUSTOM_TABS table&lt;string, OptionsInputTab&gt;
 ---@field TAB_ORDER string[]
@@ -275,7 +279,7 @@ function Options.SetPotentialBinding(key)
 
 
 </code></pre>
-<p></p></div>
+<p></epip></p>
               
             </div>
           </div><footer>
@@ -306,6 +310,7 @@ function Options.SetPotentialBinding(key)
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

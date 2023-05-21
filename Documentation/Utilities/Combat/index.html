@@ -33,7 +33,11 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -166,17 +170,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="combat">Combat<a class="headerlink" href="#combat" title="Permanent link">¶</a></h1>
+                <h1 id="combat">Combat<a class="headerlink" href="#combat" title="Permanent link">&para;</a></h1>
 <p>The <code>Combat</code> library contains methods for querying information about ongoing combats.</p>
-<p><doc package="CombatLib"></doc></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<h4 id="getturnmanager">GetTurnManager<a class="headerlink" href="#getturnmanager" title="Permanent link">¶</a></h4>
+<p><doc package="CombatLib"></p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h4 id="getturnmanager">GetTurnManager<a class="headerlink" href="#getturnmanager" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Combat.GetTurnManager()
    -&gt; EclTurnManager|EsvTurnManager
 </code></pre>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclTurnManager|EsvTurnManager</code> </p>
 
-<h4 id="getcombat">GetCombat<a class="headerlink" href="#getcombat" title="Permanent link">¶</a></h4>
+<h4 id="getcombat">GetCombat<a class="headerlink" href="#getcombat" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Combat.GetCombat(combatID)
    -&gt; EclTurnManagerCombat|EsvTurnManagerCombat
 </code></pre>
@@ -184,13 +188,13 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclTurnManagerCombat|EsvTurnManagerCombat</code> </p>
 
-<h4 id="getturnorder">GetTurnOrder<a class="headerlink" href="#getturnorder" title="Permanent link">¶</a></h4>
+<h4 id="getturnorder">GetTurnOrder<a class="headerlink" href="#getturnorder" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Combat.GetTurnOrder(combatID)
    -&gt; CombatLib_TurnOrder
 </code></pre>
 <p>Returns the character participants of a combat.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>CombatLib_TurnOrder</code> </p>
-<p></p></div>
+<p></doc></p>
               
             </div>
           </div><footer>
@@ -229,6 +233,7 @@
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
