@@ -53,7 +53,7 @@ Epip makes dozens of other UI changes to improve your experience. You can read a
 ### Hotbar
 Epip offers a heavily improved Hotbar UI, featuring multiple bars, custom "action" buttons in the bottom left, and numerous functions to make hotbar management easier.
 
-![Hotbar preview.](img/showcase/hotbar.png)
+![Hotbar preview.](img/showcase/hotbar_extra_slots.png)
 
 To add/remove rows, click the small +/- icons to the right of the buttons area. You can cycle each row independently through all 5 rows of slots that the game allows. You can have up to 5 rows visible.
 
@@ -63,7 +63,7 @@ The buttons next to the portrait are now customizable; when your hotbar is unloc
 
 Right click one of those buttons or click the `^` button to bring up a "drawer" with all the actions that you can drag and drop onto your actions bar. You can also click them to use them directly from there.
 
-![Hotbar action drawer preview.](img/showcase/hotbar_drawer.png)
+![Hotbar action drawer preview.](img/showcase/hotbar_actions_drawer.png)
 
 These buttons can be used with keyboard hotkeys; to do so, you must assign keys to them from Epip's input options menu. They are labelled "Hotbar Action #N" there.
 
