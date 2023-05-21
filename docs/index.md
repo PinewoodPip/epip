@@ -128,6 +128,11 @@ A setting has been added to enable infinite carry weight for all party members. 
 
 Consumable items, like mushrooms and food, no longer require you to use them once for them to show their effects in the tooltip.
 
+### Animation Cancelling
+A setting has been added that speeds up skill-casting animations by cancelling them after their effects execute. You may access it from the main settings tab (**Options -> Epip settings -> General -> Animation Cancelling**).
+
+![type:video](./img/showcase/animation_cancelling.mp4)
+
 ### Combat Log
 You may now filter out individual types of messages in the combat log by right-clicking it. Certain messages have been reworded for clarity and can now "merge" if they happen in quick succession, improving readability. You can also clear the log from the context menu.
 
