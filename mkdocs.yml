@@ -12,8 +12,6 @@ markdown_extensions:
     # - pymdownx.superfences
     - attr_list
     - md_in_html
-plugins:
-    - mkdocs-video
 
 extra_css:
   - css/extra.css
