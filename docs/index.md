@@ -136,9 +136,6 @@ You may now filter out individual types of messages in the combat log by right-c
 ### World Tooltips
 A keybind has been added to make world item tooltips toggleable, so you don't need to hold alt all the time. Additionally, a setting exists to disable these tooltips for empty containers and bodies.
 
-### Rewards UI
-An option has been added to allow viewing the character sheet while within the quest rewards screen, allowing you to compare rewards to your party's currently equipped items.
-
 ### Overhead Text and Notifications
 Settings have been added to shorten the duration of overhead text, and to change their size (as well as the size of damage numbers).
 
