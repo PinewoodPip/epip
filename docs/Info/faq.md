@@ -2,7 +2,7 @@
 
 ## Where do I discuss the mod?
 The Epic Encounters discord and their feedback/bugs channels are the right places.
-The *#modding-and-projects* channel there should be used for development-related discussion.
+The *#epipeline* channel there should be used for development-related discussion.
 
 There is no "Pip discord"; its existence is a myth fabricated by a certain Subnautica fan.
 
@@ -37,6 +37,9 @@ And the following have overlay UIs made for them, meaning problems will likely o
 Advancements in UI modding and our expertise have made it possible to remove a lot of .swf overrides throughout the years, but there remain older Epip UI changes that have not yet received the rewrites required to get rid of their overrides.
 
 There's only so much that can be done in regards to Larian UI moddability however, and thus conflicts between UI mods will likely remain a problem forever. Epip does have a [solution](../Documentation/Client/UI/Generic/Introduction.md) for the problem of custom UI moddability, however.
+
+## Can I donate?
+I (Pip) don't take donations because they create pressure to deliver updates on a somewhat regular basis, which I cannot do. You can instead buy [this game I worked on](https://store.steampowered.com/app/1477950/Lazy_Galaxy_2/). It's a pretty good one within its genre too. Just keep in mind that I also worked on the UIs for it, for better or for worse.
 
 ## What does "Epip" mean?
 Unknown.
