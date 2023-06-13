@@ -96,7 +96,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#26122-birthday-patch-flashed">26/1/22: birthday patch :flashed:</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#technical-stuff-so-it-doesnt-look-like-im-doing-nothing">Technical stuff so it doesn’t look like I’m doing nothing:</a>
+    <li class="toctree-l4"><a class="reference internal" href="#technical-stuff-so-it-doesnt-look-like-im-doing-nothing">Technical stuff so it doesn't look like I'm doing nothing:</a>
     </li>
         </ul>
     </li>
@@ -131,6 +131,14 @@
     <li class="toctree-l2"><a class="reference internal" href="#v1029-060821">v1029 (06/08/21)</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#v1027-v1028-300721-and-310721">v1027, v1028 (30/07/21 and 31/07/21)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v1025-v1026-the-great-interface-update-060721">v1025, v1026 - THE GREAT INTERFACE UPDATE (06/07/21)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v1020-250421">v1020 (25/04/21)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v1010-170421">v1010 (17/04/21)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#v1001-30421">v1001 (3/04/21)</a>
     </li>
     </ul>
                 </li>
@@ -1258,14 +1266,14 @@ local value = Osiris.QRY_AMER_KeywordStat_VitalityVoid_GetRadius(char.MyGuid, 1)
 <li>Temporary solution for scrolling context menus that would leave the screen, with the mouse wheel</li>
 <li>Added something awesome to Fort Joy</li>
 </ul>
-<h4 id="technical-stuff-so-it-doesnt-look-like-im-doing-nothing">Technical stuff so it doesn’t look like I’m doing nothing:<a class="headerlink" href="#technical-stuff-so-it-doesnt-look-like-im-doing-nothing" title="Permanent link">&para;</a></h4>
+<h4 id="technical-stuff-so-it-doesnt-look-like-im-doing-nothing">Technical stuff so it doesn't look like I'm doing nothing:<a class="headerlink" href="#technical-stuff-so-it-doesnt-look-like-im-doing-nothing" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Added utility methods for initializing “Features”</li>
 <li>You can now specify required filesystem overrides and mods for features, with them automatically disabling themselves if these are missing</li>
 <li>Removed GetCharacterDodge function</li>
 <li>Rewrote character sheet resistances script</li>
 <li>Rewrote script for enemy health bar</li>
-<li>Moved Majora’s compatibility to its own script</li>
+<li>Moved Majora's compatibility to its own script</li>
 <li>Added Game.Character library for character-related stuff</li>
 <li>Moved a lot of old calls to Client</li>
 <li>Started work on a library that allows the creation of UIs purely in lua (no swf/actionscript editing)</li>
@@ -1276,9 +1284,9 @@ local value = Osiris.QRY_AMER_KeywordStat_VitalityVoid_GetRadius(char.MyGuid, 1)
 <li>Added a transmog context menu, can be enabled in settings.<ul>
 <li>Appears on equipment with visuals, including weapons.</li>
 <li>Submenus display categorized root templates, filtered down to only the ones compatible with your current race/gender/alive/undead.</li>
-<li>Supports Majora’s Fashion Sins.</li>
+<li>Supports Majora's Fashion Sins.</li>
 <li>Can save/load outfits, along with their dyes. Saved outfits are in EPIP_VanityOutfits.json</li>
-<li>Warning: artifacts and armor set items will not currently work properly when transmogrified. Also, Majora’s tabs tend to overflow the screen.</li>
+<li>Warning: artifacts and armor set items will not currently work properly when transmogrified. Also, Majora's tabs tend to overflow the screen.</li>
 </ul>
 </li>
 <li>Fixed status tooltips in v56</li>
@@ -1538,8 +1546,137 @@ local value = Osiris.QRY_AMER_KeywordStat_VitalityVoid_GetRadius(char.MyGuid, 1)
 <li>Some hotbar buttons do not have state animations yet</li>
 <li>The title in the patch notes menu will not be the right color the first time after a reload</li>
 </ul>
-<hr />
-<p>Earlier changelogs are available on the old google doc. Man, v1026 was quite the breakthrough!</p>
+<h2 id="v1025-v1026-the-great-interface-update-060721">v1025, v1026 - THE GREAT INTERFACE UPDATE (06/07/21)<a class="headerlink" href="#v1025-v1026-the-great-interface-update-060721" title="Permanent link">&para;</a></h2>
+<p>Many UI quality-of-life changes, as well as features for modders. The UI changes were untested on controllers. Most will not apply (status wrapping works, but reverts the frames to the square ones).</p>
+<ul>
+<li>The character sheet now displays physical and piercing resistances</li>
+<li>The health bar when you hover over an enemy now shows B/H, with the icons lighting up when you have enough stacks for a T3. If you hold shift, the resistance display is replaced by AP, SP and Initiative info. Special thanks to Elric for the new art assets!</li>
+<li>
+<p>The B/H statuses are now hidden in that UI, to reduce clutter.</p>
+</li>
+<li>
+<p>Added hotkeys for Meditate, Source Infusion and toggling additional hotbars. You can bind them from the game's normal controls screen. The hotbar hotkey allows you to temporarily toggle the additional bars from the multibar feature, explained below.</p>
+</li>
+<li>You can dismantle non-uniques from your inventory by right-clicking them and selecting the new Dismantle option at the bottom (work-in-progress, can get ‘stuck' sometimes; simply use it again on another item and both should be dismantled)</li>
+<li>Presets in character creation now support descriptions (see the modding section on how to add these; Derpy's mod soon will)</li>
+<li>"Stat Adjustments" in tooltips are merged into one line</li>
+<li>Skill and item tooltips now reflect the +1ap costs from Slowed III (using items is still bugged; I'm pretty sure that's en engine issue)</li>
+<li>The health bars at the bottom now always show their values (no need to hover)</li>
+<li>Added a new stats tab in the character sheet with EE-related stats, like reaction charges and missing regeneration. Will also show your keyword activators and mutators. You can expand/collapse the stat tabs by left-clicking them.</li>
+<li>The player portraits on the left now wrap their status displays onto a second row once a character has &gt;6 statuses. Each row tries to maintain an equal amount of statuses (they never wrap onto a third row).</li>
+<li>Unfortunately, to make this work I had to hide summon statuses there. You can still see them in the middle of the screen or on the tooltip of their portrait. I might be able to remedy this in the future, it just needs more research.</li>
+<li>
+<p>Summon portraits will be shrunk once the player's statuses wrap.</p>
+<ul>
+<li>You can disable this in the config file.</li>
+</ul>
+</li>
+<li>
+<p>Added a work-progress multihotbar; you must enable it from the config file in  Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Osiris Data\Config_EpipEncounters.json (it will be generated on first load). I don't promise any stability at the moment. Multiplayer is untested.</p>
+<ul>
+<li>You can add up to 4 extra bars, and reorder them. Multihotbar layouts are synchronized to the host (savegame) every 8 mins.</li>
+</ul>
+</li>
+<li>The first time you load a save with the setting active, you will have to manually switch all characters to the first hotbar row before the multihotbar will be enabled. This is to circumvent a crash. You will only need to do this once per playthrough (and anytime you disable and re-enable the feature)</li>
+<li>If the extra rows get in the way, remember there is a hotkey to temporarily toggle them.</li>
+</ul>
+<p>Known issues with the multihotbar:</p>
+<ul>
+<li>Resizing window does not update the health bar position properly, neither the bars<ul>
+<li>The extra rows will not show icons if your resolution does not have space for all 29 slots in a row</li>
+</ul>
+</li>
+<li>You can click outside of the bar to the right to select slots from upper rows</li>
+<li>In dialogues, you can still see the hotbar cycling buttons</li>
+<li>Combat log button positioning is not adjusted</li>
+</ul>
+<p>Fixes in this patch:</p>
+<ul>
+<li>Added SP refund to Reactive Shot tooltip</li>
+<li>Updated the infusion deltamod removal to use the new removal PROC (should be compatible with Derpy's deltamod additions now)</li>
+<li>Fixed Opportunist charge script after Amer's patch, and removed the patching procedure from the new versioning system (hopefully there are no more issues with this)</li>
+<li>Updated the GoTS script to work with the new basic attack script</li>
+<li>Fixed Leper rune having old Incons (this might not be retroactive)</li>
+<li>Added the AP penalty to Slowed III tooltip<ul>
+<li>No clue how to do so for the journal</li>
+</ul>
+</li>
+<li>Updated Horrid Wilting SI reaction script</li>
+<li>The modded centurion activator now mentions the 1 ranged charge</li>
+<li>Thirst accumulated AP is now lost on death or combat exit</li>
+</ul>
+<p>For modders:</p>
+<ul>
+<li>Added Utilities.lua, a table which contains helper methods for adding features in way that is compatible with multiple mods, and some UI helpers<ul>
+<li>Can be accessed with Mods[“EpipEncounters”].Utilities</li>
+<li>Calls to its methods are not persistent, and you must always make them when the lua engine loads, before the StatsLoaded / SessionLoaded events. In other words, call its methods from the main lua body, not from any listener.</li>
+<li>AddArtifactToTreasure() has been moved here.</li>
+</ul>
+</li>
+<li>Added AddSkillbook(), which functions similarly to the previous method and adds a skillbook to a trader table. Params are the item id (without the I_ prefix that you'd normally use for tables) and the school name, as it appears ingame (capitalized)</li>
+<li>You can modify the characterCreationPresetDescriptions subtable to add descriptions to the presets in character creation. The table is commented with the preset that corresponds to the index in the preset selector.</li>
+<li>No documentation currently exists for the new stats tab, but do let me know if you want to add your own mod's stats to this panel.</li>
+<li>Added GetConfig(), which retrieves a json config file for your mod. Takes two params: the suffix of the config file, and a table containing its default values, for patching old configs with new settings</li>
+</ul>
+<p>Known issues:</p>
+<ul>
+<li>Picking a talent will not update the new stats</li>
+<li>Preset descriptions do not appear until you switch presets at least once</li>
+<li>Changing name in character creation causes the skills to disappear (fixed by changing tabs)</li>
+<li>Dismantling from right click can get ‘stuck' on some items - this can be fixed by dismantling another one.</li>
+<li>Character creation spits a few errors on startup, these are completely harmless (some element is not yet initialized at that point, unsure which one)</li>
+<li>New stats fail to update when starting a new playthrough (harmless)</li>
+<li>With multiple controlled summons, the gap between their portraits changes when you switch between them</li>
+</ul>
+<h2 id="v1020-250421">v1020 (25/04/21)<a class="headerlink" href="#v1020-250421" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Boneshaped Crusher now has All-In</li>
+<li>Removed Incons from talent menus and characters that had it; you will be refunded Talent Points for characters that had it. Special thanks to Focus for the UI editing help.</li>
+<li>Leper now grants Trickster's Repertoire instead of old Inconspicuous</li>
+<li>Ending combat with the new incons now automatically unsneaks</li>
+<li>Added (hopefully) all the text changes that were missing (infused reactions, artifacts, some talents)</li>
+<li>Reactive Shot SI3 refunds 1SP</li>
+<li>Added descriptions of the Epic Enemies effects to the condensed tooltip (thanks Derpy)</li>
+<li>Presence mutator from Epic Enemies now grants all Presence effects</li>
+<li>The custom loading screen is now toggleable, and off by default. To re-enable it, edit EpipEncountersConfig.json in Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Osiris Data</li>
+<li>For modders: added a function to safely add artifacts to the ST_AMER_UNI treasuretable. Simply call Mods[“EpipEncounters”].AddArtifactToTreasure(statsID) (ex. AddArtifactToTreasure("UNI_AMER_Abyss") ) before the StatsLoaded engine event. You can copy TreasureTables.lua into your mod to use it, if you don't want to have Epip Encounters as a dependency. If I implement more helpers like this, I'll split them off into their own mod.</li>
+<li>Fixed opportunist script not running</li>
+<li>Fixed Chthonian not appearing as a status on Epic Enemies</li>
+<li>Fixed Greatforge item validation breaking<ul>
+<li>Warning for other modders: if you're overloading an existing query with Lua, do not do so directly from Ext.NewQuery(), as there is no way to define queries that expect specific params. This causes issues with negating queries. Instead, create a wrapper query in osiris that uses NRD_ModQuery.</li>
+</ul>
+</li>
+</ul>
+<h2 id="v1010-170421">v1010 (17/04/21)<a class="headerlink" href="#v1010-170421" title="Permanent link">&para;</a></h2>
+<p>Note: you will need the latest EE update (the one for modders) for the text changes to work properly. Also, you will not see the usual “Epip Encounters has been updated” message as the normal EE one will show up instead.</p>
+<ul>
+<li>Break the Shackles cleanses dazzled</li>
+<li>Inconspicuous rework, as a rework of Master Fletcher (now named Trickster's Repertoire):</li>
+<li>You sneak and become invisible for free at the start of combat, until the end of your first turn. At the end of your turn, sneak for free. At the start of your turns, if you were sneaking from this effect, you stop sneaking. Additionally, your special arrows count as basic attacks and you have a 33% chance to recover a special arrow after shooting it.</li>
+<li>
+<p>Old inconspicuous remains available. At least for now.</p>
+</li>
+<li>
+<p>Apotheosis SI3 is now exclusive from the previous SIs, but lasts until your source gen depletes</p>
+</li>
+<li>Escapist skill costs 0AP, has 5m range, up from 4m</li>
+<li>Opportunist grants 2 free generic reaction charges, up from 1</li>
+<li>Added a tutorial for when you get an infused reaction node for the first time (kekw)</li>
+<li>Executioner grants 2 AP, up from 1</li>
+<li>Charity is now once per round per character, rather than once per round</li>
+<li>Added meta skills to print SP and resistances</li>
+<li>Added correct text for most changes (ascension, artifacts and executioner are still missing)</li>
+<li>Fixed using Clouded Memories from bags not consuming them</li>
+<li>Fixed finesse recovery for weapon-based skills activating per-target rather than per skill cast</li>
+<li>I'm surprised no one tried whirlwind while this lasted</li>
+<li>Fixed Prototrophize not granting SP when under infinite SG</li>
+<li>It will still extend SG when you're at max sp. I'm not sure what the behaviour should be in that case.</li>
+</ul>
+<h2 id="v1001-30421">v1001 (3/04/21)<a class="headerlink" href="#v1001-30421" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fixed Drill Sockets merging damage types for weapons</li>
+<li>Fixed permanent Prosperity keyword from Hothead talent - loading a save will recalculate your legitimate sources</li>
+</ul>
               
             </div>
           </div><footer>
