@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://pinewood.team/epip/Global%20Tables/Feature/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://pinewood.team/epip/Maintenance/IDESetup/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Feature - Epip Encounters</title>
+    <title>IDE Setup - Epip Encounters</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Feature";
-        var mkdocs_page_input_path = "Global Tables\\Feature.md";
-        var mkdocs_page_url = "/epip/Global%20Tables/Feature/";
+        var mkdocs_page_name = "IDE Setup";
+        var mkdocs_page_input_path = "Maintenance\\IDESetup.md";
+        var mkdocs_page_url = "/epip/Maintenance/IDESetup/";
       </script>
     
     <script src="../../js/jquery-3.6.0.min.js" defer></script>
@@ -125,14 +125,22 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Maintenance</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/">Index</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Index</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/IDESetup/">IDE Setup</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">IDE Setup</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#sumnekolua-settings">SumnekoLua settings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ahk-script">AHK Script</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#theme">Theme</a>
+    </li>
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/localization/">Localization</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Maintenance/documentation/">Documentation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
                   </li>
               </ul>
       </div>
@@ -149,7 +157,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Feature</li>
+          <li>Maintenance &raquo;</li>
+      <li>IDE Setup</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -158,116 +167,161 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h1>
-<p>The <code>_Feature</code> table is the table that most libraries and actual mod features inherit from; it provides a plethora of generic utilities useful for any sort of script.</p>
-<p>Included are logging methods, shorthands for applying path overrides, event &amp; hook creation and dispatching, and more.</p>
-<p>To use this table, you should call <code>Epip.AddFeature()</code>. This will register your script's table to the <code>Epip.Features</code> table and initialize the <code>_Feature</code> metatable.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><epip class="Feature" symbols="Function"></p>
-<pre><code class="language-lua">---Add an event to the Events field.
----@param name string
----@param data? Event
----@return Event 
-function _Feature:AddEvent(name, data)
-
----Add a hook to the Hooks field.
----@param name string
----@param data? Hook
----@return Hook 
-function _Feature:AddHook(name, data)
-
----Returns whether the feature has *not* been disabled. Use to condition your feature's logic.
----@return boolean 
-function _Feature:IsEnabled()
-
----Invoked on SessionLoaded if the feature is not disabled.
----Override to run initialization routines.
----Sets the Disabled flag.
-function _Feature:Disable()
-
----Called after a feature is initialized with Epip.AddFeature(),
----if it is not disabled.
----Override to run initialization routines.
----Register an event listener.
----To define events with multiple variables, you can easily create a wrapper function for this (and FireEvent)
----that registers an event listener with a prefix(es).
----@param event string
----@param handler function
-function _Feature:RegisterListener(event, handler)
-
----Fire an event.
----@param event string
-function _Feature:FireEvent(event, ...)
-
----Register a hook.
----@param event string
----@param handler function
-function _Feature:RegisterHook(event, handler)
-
----Get a value from registered hook listeners.
----@param event string
----@param defaultValue any Default value, will be passed to the first listener.
-function _Feature:ReturnFromHooks(event, defaultValue, ...)
-
----Fire an event to all contexts and peers.
----@param event string
-function _Feature:FireGlobalEvent(event, ...)
-
----Show debug-level logging from this feature.
----Only work in Developer mode.
-function _Feature:Debug()
-
----Returns whether :Debug() has been ran successfully.
-function _Feature:IsDebug()
-
----Stop all non-error, non-warning logging from this feature.
-function _Feature:Mute()
-
----Stop all non-error logging.
-function _Feature:ShutUp()
-
----Log a value in Debug mode.
-function _Feature:DebugLog(...)
-
----Dump a value to the console, in Debug mode.
----@param msg any
-function _Feature:Dump(msg)
-
----Log a value.
----@param msg any
-function _Feature:Log(msg)
-
----Log values without any prefixing.
-function _Feature:RawLog(...)
-
----Log a warning.
----@param msg any
-function _Feature:LogWarning(msg)
-
----Log an error.
----@param msg any
-function _Feature:LogError(msg)
-
+                <h1 id="ide-setup">IDE Setup<a class="headerlink" href="#ide-setup" title="Permanent link">&para;</a></h1>
+<p>The project is developed in VS Code using the <a href="https://github.com/LuaLS/lua-language-server">SumnekoLua</a> extension for annotating types. At the time of writing (2023) it's the best Lua extension by a long shot, so I'd say don't waste time trying others. Any PRs are expected to use it, annotating types &amp; methods and avoiding diagnostic warnings (the backlog of those from old code is large enough as it is).</p>
+<h2 id="sumnekolua-settings">SumnekoLua settings<a class="headerlink" href="#sumnekolua-settings" title="Permanent link">&para;</a></h2>
+<p>The following extension settings are used, mainly changing the severity of some diagnostics to better highlight code oversights and remove warnings from some needlessly strict type-checking.</p>
+<pre><code class="language-json">&quot;Lua.completion.autoRequire&quot;: false,
+&quot;Lua.type.castNumberToInteger&quot;: true,
+&quot;Lua.hint.setType&quot;: true,
+&quot;Lua.diagnostics.severity&quot;: {
+    &quot;cast-local-type&quot;: &quot;Hint&quot;,
+    &quot;trailing-space&quot;: &quot;Hint&quot;,
+    &quot;redefined-local&quot;: &quot;Warning&quot;,
+    &quot;need-check-nil&quot;: &quot;Error&quot;,
+    &quot;deprecated&quot;: &quot;Information&quot;,
+    &quot;duplicate-set-field&quot;: &quot;Information&quot;,
+    &quot;assign-type-mismatch&quot;: &quot;Information&quot;,
+    &quot;redundant-return-value&quot;: &quot;Warning&quot;,
+    &quot;unbalanced-assignments&quot;: &quot;Error!&quot;,
+    &quot;redundant-value&quot;: &quot;Error!&quot;,
+    &quot;code-after-break&quot;: &quot;Error!&quot;,
+    &quot;param-type-mismatch&quot;: &quot;Information&quot;
+},
+&quot;Lua.diagnostics.groupSeverity&quot;: {
+    &quot;unused&quot;: &quot;Warning&quot;,
+    &quot;ambiguity&quot;: &quot;Warning&quot;
+},
+&quot;Lua.diagnostics.disable&quot;: [
+    &quot;trailing-space&quot;,
+    &quot;need-check-nil&quot;
+],
+&quot;Lua.type.weakNilCheck&quot;: true,
+&quot;Lua.diagnostics.workspaceRate&quot;: 30,
+&quot;Lua.workspace.maxPreload&quot;: 50000,
+&quot;Lua.workspace.preloadFileSize&quot;: 5000,
+&quot;Lua.diagnostics.globals&quot;: [
+    &quot;LibStub&quot;
+],
+&quot;Lua.workspace.ignoreDir&quot;: [
+    &quot;.vscode&quot;,
+    &quot;Story/RawFiles/Lua/Utilities/LibDeflate.lua&quot;
+],
+&quot;Lua.doc.protectedName&quot;: [
+    &quot;__[A-Z]*&quot;,
+    &quot;__[a-z]*&quot;
+],
+&quot;Lua.hover.expandAlias&quot;: false,
+&quot;Lua.type.weakUnionCheck&quot;: true,
+&quot;Lua.doc.privateName&quot;: [
+    &quot;_[a-z]*&quot;,
+    &quot;_[A-Z]*&quot;
+]
 </code></pre>
-<p></epip></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<p><epip class="Feature" symbols="Class"></p>
-<pre><code class="language-lua">---@class Feature
----@field Name string Used for logging, event handling. Do not set!
----@field CONTEXT Context Set automatically.
----@field Disabled boolean
----@field Logging integer Logging level.
----@field Events table&lt;string, Event&gt; Metatables initialized automatically.
----@field Hooks table&lt;string, Hook&gt; Metatables initialized automatically.
----@field LOGGING_LEVEL table&lt;string, integer&gt; Valid logging levels.
----@field REQUIRED_MODS table&lt;GUID, string&gt; The feature will be automatically disabled if any required mods are missing.
----@field FILEPATH_OVERRIDES table&lt;string, string&gt;
+<p>LibStub global is used to remove a warning from LibDeflate. The private &amp; protected patterns are used to automatically set the visibility of fields based on Epip's naming conventions: <code>_</code> prefix for private, <code>__</code> prefix for protected.</p>
+<h2 id="ahk-script">AHK Script<a class="headerlink" href="#ahk-script" title="Permanent link">&para;</a></h2>
+<p>An Autohotkey script is used to speed up switching windows and resetting Lua. It's hotkeys are the following:</p>
+<ul>
+<li>Ctrl+M5: focus game window</li>
+<li>Ctrl+M4: focus console window</li>
+<li>Ctrl+R: reset Lua and focus game. This also creates the aliases <code>epip = Mods.EpipEncounters</code> and <code>ui = epip.Client.UI</code> in the console chunk.</li>
+<li>Shift+M5: focus VS Code</li>
+</ul>
+<pre><code class="language-ahk">ConsoleWindowClass := &quot;ConsoleWindowClass&quot;
+GameWindowClass := &quot;SDL_app&quot;
+ConsoleWindow := &quot;D:OS2 Script Extender Debug Console&quot;
+
+^r::LuaReset()
 
 
++XButton2::FocusVSC()
+^XButton1::FocusConsole()
+^XButton2::FocusGame()
+
+LuaReset()
+{
+    global ConsoleWindow
+
+    SetKeyDelay, 10
+
+    WinGet, PID, PID, %GameWindow%
+    ControlSend, , {enter}reset{enter}, %ConsoleWindow%
+
+    FocusGame()
+
+    ControlSend, , epip = Mods.EpipEncounters{enter}, %ConsoleWindow%
+    ControlSend, , ui = epip.Client.UI{enter}exit{enter}, %ConsoleWindow%
+}
+
+FocusGame()
+{
+    global GameWindowClass
+
+    WinActivate, ahk_class %GameWindowClass%
+}
+
+FocusConsole()
+{
+    global ConsoleWindowClass
+
+    WinActivate, ahk_class %ConsoleWindowClass%
+}
+
+FocusVSC()
+{
+    WinGet, PID, PID, ahk_exe Code.exe
+    WinActivate, ahk_pid %PID%
+}
 </code></pre>
+<h2 id="theme">Theme<a class="headerlink" href="#theme" title="Permanent link">&para;</a></h2>
+<p>Pip's theme is Noctis Bordo (from the <a href="https://marketplace.visualstudio.com/items?itemName=liviuschera.noctis">Noctis</a> extension) using the following overrides for token styles:</p>
+<pre><code class="language-json">{
+  &quot;editor.tokenColorCustomizations&quot;: {
+      &quot;textMateRules&quot;: [
+          {
+              &quot;scope&quot;: &quot;storage.type.annotation.lua&quot;,
+              &quot;settings&quot;: {
+                  &quot;foreground&quot;: &quot;#df769b&quot;,
+                  &quot;fontStyle&quot;: &quot;bold&quot;
+              }
+          },
+          {
+            &quot;scope&quot;: &quot;variable.other.lua&quot;,
+            &quot;settings&quot;: {
+              &quot;foreground&quot;: &quot;#cbbec2&quot;,
+            }
+          },
+          {
+            &quot;scope&quot;: &quot;support.type.lua&quot;,
+            &quot;settings&quot;: {
+              &quot;foreground&quot;: &quot;#8b747c&quot;,
+            }
+          },
+          {
+            &quot;scope&quot;: &quot;support.constant.lua&quot;,
+            &quot;settings&quot;: {
+              &quot;foreground&quot;: &quot;#87a3b4&quot;,
+            }
+          },
+          {
+            &quot;scope&quot;: &quot;entity.other.property.lua&quot;,
+            &quot;settings&quot;: {
+              &quot;foreground&quot;: &quot;#c4c4c4&quot;,
+              &quot;fontStyle&quot;: &quot;&quot;,
+            }
+          },
+      ]
+  }
+}
+</code></pre>
+<p>Obviously you needn't use the same one. This detail is for posterity only.</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../localization/" class="btn btn-neutral float-right" title="Localization">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -289,6 +343,10 @@ function _Feature:LogError(msg)
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../localization/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
