@@ -74,5 +74,6 @@ nav:
     - "Testing": "Tutorials/testing.md"
   - Maintenance:
     - "Index": "Maintenance/index.md"
+    - "IDE Setup": "Maintenance/IDESetup.md"
     - "Localization": "Maintenance/localization.md"
     - "Documentation": "Maintenance/documentation.md"
