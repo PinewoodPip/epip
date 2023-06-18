@@ -52,6 +52,10 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#other-changes-and-additions">Other changes and additions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-small-changes">Other small changes</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -160,68 +164,112 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>There is no beta running currently. You can enjoy this year's anniversary patchnotes here, though. Until I find a better place for them. Them being a part of the beta made things awkward.</p>
-<h2 id="1423-upload-old">1/4/23 upload (old)<a class="headerlink" href="#1423-upload-old" title="Permanent link">&para;</a></h2>
-<p>Epip Encounters is now 2 years old! Thank you all for 2 years of patience. We've heard your complaints about the decision to remove gameplay changes from 2021, and have made the decision to preserve them through a future, separate add-on.</p>
-<p>To make up for all the drama, we are happy to present a new gameplay-oriented patch, the first one since 2021 !</p>
-<p>We know the rune crafting system has been underwhelming for years now, which is why this patch introduces a brand new system just for them. It consumes more materials, but should be far more engaging and rewarding. <strong>Simply right-click a rune material and select the new option in the dropdown menu to get started.</strong></p>
-<p>This patch contains numerous other gameplay and balance changes, as well as the usual dose of UI stuff:</p>
+                <div class="admonition warning">
+<p class="admonition-title">Extender devel version required</p>
+<p>Requires extender v60. Intended version: <code>40e17c6be9aae8f879e13a5e1d771cb07d7e672b8e7e10b55bc1691ffb9eb1e0</code>
+To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
+</div>
+<pre><code class="language-json">{
+    &quot;UpdateChannel&quot;: &quot;Devel&quot;,
+    &quot;TargetResourceDigest&quot;: &quot;40e17c6be9aae8f879e13a5e1d771cb07d7e672b8e7e10b55bc1691ffb9eb1e0&quot;,
+    &quot;TargetVersion&quot;: &quot;60.0.0.0&quot;,
+    &quot;Debug&quot;: true
+}
+</code></pre>
+<h2 id="v1066-180623-upload">v1066 (18/06/23 upload)<a class="headerlink" href="#v1066-180623-upload" title="Permanent link">&para;</a></h2>
+<p><a href="https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing">Download here</a>.</p>
+<p>This version adds an option to replace the status bar by your character's portraits with a new custom UI - see "Alternative status display" in Player Portrait settings.</p>
+<p><img alt="Settings for the alternative status bar." src="../Features/img/ui/settings_playerportraits_statusesdisplay.png" /></p>
+<p>This by default behaves mostly the same as the regular status bar, with the major exception being no animations for statuses being removed - they might be added if there is demand.</p>
+<p>The major advantage of this new UI is status sorting, which was thought to be too difficulty to implement in Larian's UI. Right-click a status to set its sorting priority.</p>
+<p><img alt="Context menu for a status." src="../Features/img/ui/statusesdisplay_contextmenu.png" /></p>
+<p>Statuses with a high priority show up in the leftmost position, while statuses with a low priority show up in the rightmost position. Statuses that are tied in priority show in order of application. <strong>You may use this to position important or informational statuses (ex. Source Generation duration or tiered statuses) in a consistent position.</strong></p>
+<p>You may also filter out statuses in this context menu to hide them. Holding shift will temporarily disable this filter, letting you quickly check your hidden statuses and unhide them if necessary. You may also manage this filter within the settings menu.</p>
+<hr />
+<h3 id="other-changes-and-additions">Other changes and additions<a class="headerlink" href="#other-changes-and-additions" title="Permanent link">&para;</a></h3>
+<p>Added a new hotkey that will show BH over the heads of nearby characters while held ("Show B/H" binding; unbound by default):
+<img alt="BH Overheads feature." src="../Features/img/ui/bhoverheads.png" /></p>
+<hr />
+<p>Added an option to display common flags in the enemy health bar ("Display common flags" setting). It will display the following information (if applicable) while holding shift:</p>
 <ul>
-<li>Removed innate skill slots; slots for memorizing skills can now only be obtained through the memory attribute, so as to increase its value<ul>
-<li>This change only applies to new playthroughs so as not to screw up your loadout</li>
+<li>Whether Comeback Kid is available</li>
+<li>Whether Attack of Opportunity is available</li>
+<li>Whether the character is flagged as incapable of joining combat</li>
+<li>The character's AI archetype (ranger, rogue, etc.)</li>
+<li>These flags are not shown if the character doesn't have them</li>
+</ul>
+<p><img alt="Flags display feature." src="../Features/img/ui/flagsdisplay.png" /></p>
+<hr />
+<p>Holding shift while looking at equipment tooltips will now display information about their EE gear modifiers, such as their tier. This display will be improved in the future to be more user-friendly.</p>
+<p><img alt="Deltamods tiers display." src="../Features/img/ui/tooltipadjustments_deltamodstiersdisplay.png" /></p>
+<hr />
+<p>Quick Find has received various improvements:</p>
+<ul>
+<li>Added a filter for Culled items</li>
+<li>Added a filter to hide equipped items</li>
+<li>The UI is now draggable (from the top area)</li>
+<li>The UI is now closed automatically when you drag an item into the Greatforge socket (which you can now do thanks to an extender fix)</li>
+</ul>
+<hr />
+<p>You can now manually set an icon for an item with Vanity Transmog using the new "Set Icon" button. The "Keep Icon" toggle remains and works alongside it. This uses a new "Icon Picker" UI.</p>
+<p><img alt="Icon Picker UI." src="../Features/img/ui/iconpicker.png" /></p>
+<h3 id="other-small-changes">Other small changes<a class="headerlink" href="#other-small-changes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Server-side animation cancelling now has special logic to handle some previously problematic skills<ul>
+<li>Projectile, Jump, MultiStrike, ProjectileStrike and Target skills now have special logic to handle cases like multi-projectile/hit skills</li>
 </ul>
 </li>
-<li>Wands now have a chance to appear with the "Shuffle" modifier, causing their spells to cycle in random order</li>
-<li>Added a new talent, "Trickster's Repertoire", initially featured in the hit videogame "Darby's EE2 Tweaks":<ul>
-<li>With Trickster's Repertoire, you sneak and become invisible for free at the start of combat, until the start of your first turn. At the end of your turn in subsequent rounds, sneak for free. You always stop sneaking at the start of turns. Additionally, your special arrows count as basic attacks and you have a 33% chance to recover a special arrow after shooting it.</li>
-</ul>
-</li>
-<li>Used those 2 fancy triangle rulers to straighten the character sheet a bit</li>
-<li>Animation Cancelling is now 100% client-side, slightly faster, and works with some spells that had issues before (ex. arrow spray, staff of magus, barrage)<ul>
-<li>Let us know if this buff is too much</li>
-</ul>
-</li>
-<li>Vanity dyes now scale with finesse instead of wits</li>
-<li>The health bar when you hover over a character now displays health and armor values</li>
-<li>Added Shigeru Miyamoto as a secret recruitable party member</li>
-<li>Added 2 new types of fishing rods from vanilla that were previously unused/unobtainable</li>
-<li>Changed how hotbar row count and visibility is saved<ul>
-<li>This might not work in multiplayer due to extender shenanigans</li>
-</ul>
-</li>
-<li>Changing rows in the hotbar now deals 10% of your max health as damage, per stack of elementalist</li>
-<li>Statuses in the status bar are now sorted in the order that they are sorted</li>
-<li>Removed the "cinematic combat" option</li>
-<li>Buffed the lizard bust slider from 0.5x to 0.75x (+ 0.1x per Entropy embodied)</li>
-<li>Removed some april fools stuff, we're not joking around anymore</li>
+<li>"+X% Weapon Elemental Damage" tooltip now works for any deltamod that adds damage, not just ones from EE</li>
+<li>Hotbar groups can now be resized through their context menu - you can thank Cathe for that</li>
+<li>Changed hotbar slot requirement evaluation to use a new extender call, which should also make it compatible with mods using custom requirements</li>
+<li>Added a Gloves filter to Quick Find, which was previously missing (thanks Cathe)</li>
+<li>Reordered slot filters in Quick Find; armor goes first, then weapons/shield, then jewelry (thanks Cathe)</li>
+<li>Fixed a vanilla bug where undead characters would not see any armor restoration numbers over their head</li>
+<li>Added the <code>!rainbowoverlays</code> console command</li>
+<li>Cleaned up some scripting for the default crafting filter; as a sideeffect you will have to reconfigure the setting</li>
 </ul>
 <p>Fixes:</p>
 <ul>
-<li>Non-english languages should no longer have broken artifact descriptions<ul>
-<li>The cause was fetching the TSKs during module load, which causes a bug that overwrites the string.</li>
+<li>Fixed a regression that caused EE to add permanent stats when using their dyes<ul>
+<li>You can use the <code>!fixdyestats</code> console command to remove these extra stats from your current active character; you'll need to run it once for each dye you applied</li>
+<li>Reminder that Epip has a far more customizable dyes feature in the Vanity UI</li>
 </ul>
 </li>
-<li>Fixed Quick Examine not being openable for the same character twice in a row</li>
-<li>Fixed vanity dyes not applying to slots that vanilla armor (without transmog) would hide/mask</li>
-<li>Fixed error if an item was transmogged into a template that no longer existed</li>
+<li>Fixed EE dyes being usable from Vanity even if the party didn't have them</li>
+<li>Fixed hotbar group slots having wrong element layering and all blinking while using any skill</li>
+<li>Fixed some hotbar inaccuracies when using Ambidextrous</li>
+<li>Fixed node stats in the stats tab not disappearing after being removed. This fix is retroactive.</li>
+<li>Fixed Inconspicuous being hidden while not using Derpy's Tweaks</li>
+<li>Fixed "Show loot drops in healthbar" feature possibly not working correctly with Derpy's changes</li>
+<li>Fixed a hotbar error if you unbound the vanilla hotkeys for vanilla actions (inventory, journal, map, etc.)</li>
+<li>Fixed an error when dealing damage through moving items</li>
 </ul>
-<p>On the technical side of things:</p>
+<p>On the technical side:</p>
 <ul>
-<li>Reworked the doc generation script again; the doc appearance has changed considerably, and now supports hotlinking to functions</li>
-<li>Added support for multiple inheritance to classes made with the OOP library</li>
-<li>Generic UIs can be fetched by string ID now (oops)</li>
-<li>Added <code>Character.Events.ItemEquipped</code></li>
-<li>Updated the Generic example script and documentation</li>
-<li>Net payloads now have methods to fetch the associated character and/or item</li>
-<li>Added <code>Osiris.GetFirstFact()</code></li>
-<li>Added new calls to CharacterLib: <code>IsOrigin()</code>, <code>IsPlayer()</code></li>
-<li>Small changes to annotations and rewrites of code that was using deprecated stuff</li>
-<li>Began work on a new cheats system and UI</li>
-<li>Added <code>Client.IsCursorOverUI()</code> and <code>Client.GetActiveUI()</code></li>
-<li>Added <code>Input.IsTextFieldFocused()</code></li>
-<li>Added skillstate-related methods to CharacterLib</li>
-<li>Reworked hotbar prepared/casting skill checks to not require server information</li>
-<li>Added <code>Client.Events.SkillStateChanged</code></li>
+<li>Added OverlayColorsBruteForcer feature, which as the name suggests helps with figuring out the usages of the 50 overlay colors in GlobalSwitches</li>
+<li>ColorLib now contains an enum of most overlay colors used by the game</li>
+<li>Fixed <code>Character.GetSkillState()</code> on server</li>
+<li>Added <code>Damage</code> library, currently only containing TSKs for damage types - will be used for hit/heal-related business later on</li>
+<li>Craft UI table now has the TSKs for item filters</li>
+<li>Ambidextrous check in <code>Item.CanUse()</code> should be more accurate now</li>
+<li>Added <code>Tick</code> event to GameStateLib</li>
+<li>Added <code>BatteredHarried.IsDisplayStatus()</code>, <code>Stats.GetStatusName()</code>, <code>Color.Lerp()</code>, <code>DeltaMods.GetItemDeltaMods()</code> and an item-only overload to <code>Item.IsEquipped()</code></li>
+<li>Added SPIRIT_VISION icon to StatsLib</li>
+<li>SourceInfusionLib now holds Source Generation status IDs</li>
+<li>Fixed <code>Stats.GetStatusIcon()</code> for CONSUME statuses</li>
+<li>It's possible to now register TSKs post-init in features/libraries via <code>:RegisterTranslatedString()</code></li>
+<li>Various annotation fixes, mostly to Stat entries</li>
+<li>Simplified <code>Client.IsInDialogue()</code> implementation</li>
+<li>UserVarsLib now supports default values for user and mod variables</li>
+<li><code>Item.GetPartyTemplateCount()</code> now strips GUID prefixes</li>
+<li>Generic:<ul>
+<li>Added CloseButton and DraggingArea prefabs</li>
+<li><code>IggyIcon:SetIcon()</code> call is NOOP'd if there is no change in the icon setup (texture, width and height), which possibly increases performance in icon-heavy UIs</li>
+<li>Fixed <code>Instance:Destroy()</code></li>
+<li>Status prefab now looks a lot closer to the statuses in Larian UIs</li>
+<li><code>IggyIcon:SetAlpha()</code> now supports <code>affectChildren</code> parameter</li>
+</ul>
+</li>
 </ul>
               
             </div>

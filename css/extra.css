@@ -41,3 +41,8 @@ code {
 .admonition-title {
   color: #000000 !important;
 }
+
+img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
