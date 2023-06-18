@@ -1,58 +1,123 @@
 
-There is no beta running currently. You can enjoy this year's anniversary patchnotes here, though. Until I find a better place for them. Them being a part of the beta made things awkward.
 
-## 1/4/23 upload (old)
+!!! warning "Extender devel version required"
+    Requires extender v60. Intended version: `40e17c6be9aae8f879e13a5e1d771cb07d7e672b8e7e10b55bc1691ffb9eb1e0`
+    To get it, use the following `ScriptExtenderUpdaterConfig.json`:
+```json
+{
+	"UpdateChannel": "Devel",
+	"TargetResourceDigest": "40e17c6be9aae8f879e13a5e1d771cb07d7e672b8e7e10b55bc1691ffb9eb1e0",
+	"TargetVersion": "60.0.0.0",
+	"Debug": true
+}
+```
 
-Epip Encounters is now 2 years old! Thank you all for 2 years of patience. We've heard your complaints about the decision to remove gameplay changes from 2021, and have made the decision to preserve them through a future, separate add-on.
+## v1066 (18/06/23 upload)
 
-To make up for all the drama, we are happy to present a new gameplay-oriented patch, the first one since 2021 !
+[Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
 
-We know the rune crafting system has been underwhelming for years now, which is why this patch introduces a brand new system just for them. It consumes more materials, but should be far more engaging and rewarding. **Simply right-click a rune material and select the new option in the dropdown menu to get started.**
+This version adds an option to replace the status bar by your character's portraits with a new custom UI - see "Alternative status display" in Player Portrait settings.
 
-This patch contains numerous other gameplay and balance changes, as well as the usual dose of UI stuff:
+![Settings for the alternative status bar.](Features/img/ui/settings_playerportraits_statusesdisplay.png)
 
-- Removed innate skill slots; slots for memorizing skills can now only be obtained through the memory attribute, so as to increase its value
-    - This change only applies to new playthroughs so as not to screw up your loadout
-- Wands now have a chance to appear with the "Shuffle" modifier, causing their spells to cycle in random order
-- Added a new talent, "Trickster's Repertoire", initially featured in the hit videogame "Darby's EE2 Tweaks":
-    - With Trickster's Repertoire, you sneak and become invisible for free at the start of combat, until the start of your first turn. At the end of your turn in subsequent rounds, sneak for free. You always stop sneaking at the start of turns. Additionally, your special arrows count as basic attacks and you have a 33% chance to recover a special arrow after shooting it.
-- Used those 2 fancy triangle rulers to straighten the character sheet a bit
-- Animation Cancelling is now 100% client-side, slightly faster, and works with some spells that had issues before (ex. arrow spray, staff of magus, barrage)
-    - Let us know if this buff is too much
-- Vanity dyes now scale with finesse instead of wits
-- The health bar when you hover over a character now displays health and armor values
-- Added Shigeru Miyamoto as a secret recruitable party member
-- Added 2 new types of fishing rods from vanilla that were previously unused/unobtainable
-- Changed how hotbar row count and visibility is saved
-    - This might not work in multiplayer due to extender shenanigans
-- Changing rows in the hotbar now deals 10% of your max health as damage, per stack of elementalist
-- Statuses in the status bar are now sorted in the order that they are sorted
-- Removed the "cinematic combat" option
-- Buffed the lizard bust slider from 0.5x to 0.75x (+ 0.1x per Entropy embodied)
-- Removed some april fools stuff, we're not joking around anymore
+This by default behaves mostly the same as the regular status bar, with the major exception being no animations for statuses being removed - they might be added if there is demand.
+
+The major advantage of this new UI is status sorting, which was thought to be too difficulty to implement in Larian's UI. Right-click a status to set its sorting priority.
+
+![Context menu for a status.](Features/img/ui/statusesdisplay_contextmenu.png)
+
+Statuses with a high priority show up in the leftmost position, while statuses with a low priority show up in the rightmost position. Statuses that are tied in priority show in order of application. **You may use this to position important or informational statuses (ex. Source Generation duration or tiered statuses) in a consistent position.**
+
+You may also filter out statuses in this context menu to hide them. Holding shift will temporarily disable this filter, letting you quickly check your hidden statuses and unhide them if necessary. You may also manage this filter within the settings menu.
+
+---
+
+### Other changes and additions
+
+Added a new hotkey that will show BH over the heads of nearby characters while held ("Show B/H" binding; unbound by default):
+![BH Overheads feature.](Features/img/ui/bhoverheads.png)
+
+---
+
+Added an option to display common flags in the enemy health bar ("Display common flags" setting). It will display the following information (if applicable) while holding shift:
+
+- Whether Comeback Kid is available
+- Whether Attack of Opportunity is available
+- Whether the character is flagged as incapable of joining combat
+- The character's AI archetype (ranger, rogue, etc.)
+- These flags are not shown if the character doesn't have them
+
+![Flags display feature.](Features/img/ui/flagsdisplay.png)
+
+---
+
+Holding shift while looking at equipment tooltips will now display information about their EE gear modifiers, such as their tier. This display will be improved in the future to be more user-friendly.
+
+![Deltamods tiers display.](Features/img/ui/tooltipadjustments_deltamodstiersdisplay.png)
+
+---
+
+Quick Find has received various improvements:
+
+- Added a filter for Culled items
+- Added a filter to hide equipped items
+- The UI is now draggable (from the top area)
+- The UI is now closed automatically when you drag an item into the Greatforge socket (which you can now do thanks to an extender fix)
+
+---
+
+You can now manually set an icon for an item with Vanity Transmog using the new "Set Icon" button. The "Keep Icon" toggle remains and works alongside it. This uses a new "Icon Picker" UI.
+
+![Icon Picker UI.](Features/img/ui/iconpicker.png)
+
+### Other small changes
+
+- Server-side animation cancelling now has special logic to handle some previously problematic skills
+    - Projectile, Jump, MultiStrike, ProjectileStrike and Target skills now have special logic to handle cases like multi-projectile/hit skills
+- "+X% Weapon Elemental Damage" tooltip now works for any deltamod that adds damage, not just ones from EE
+- Hotbar groups can now be resized through their context menu - you can thank Cathe for that
+- Changed hotbar slot requirement evaluation to use a new extender call, which should also make it compatible with mods using custom requirements
+- Added a Gloves filter to Quick Find, which was previously missing (thanks Cathe)
+- Reordered slot filters in Quick Find; armor goes first, then weapons/shield, then jewelry (thanks Cathe)
+- Fixed a vanilla bug where undead characters would not see any armor restoration numbers over their head
+- Added the `!rainbowoverlays` console command
+- Cleaned up some scripting for the default crafting filter; as a sideeffect you will have to reconfigure the setting
 
 Fixes:
 
-- Non-english languages should no longer have broken artifact descriptions
-    - The cause was fetching the TSKs during module load, which causes a bug that overwrites the string.
-- Fixed Quick Examine not being openable for the same character twice in a row
-- Fixed vanity dyes not applying to slots that vanilla armor (without transmog) would hide/mask
-- Fixed error if an item was transmogged into a template that no longer existed
+- Fixed a regression that caused EE to add permanent stats when using their dyes
+    - You can use the `!fixdyestats` console command to remove these extra stats from your current active character; you'll need to run it once for each dye you applied
+    - Reminder that Epip has a far more customizable dyes feature in the Vanity UI
+- Fixed EE dyes being usable from Vanity even if the party didn't have them
+- Fixed hotbar group slots having wrong element layering and all blinking while using any skill
+- Fixed some hotbar inaccuracies when using Ambidextrous
+- Fixed node stats in the stats tab not disappearing after being removed. This fix is retroactive.
+- Fixed Inconspicuous being hidden while not using Derpy's Tweaks
+- Fixed "Show loot drops in healthbar" feature possibly not working correctly with Derpy's changes
+- Fixed a hotbar error if you unbound the vanilla hotkeys for vanilla actions (inventory, journal, map, etc.)
+- Fixed an error when dealing damage through moving items
 
-On the technical side of things:
+On the technical side:
 
-- Reworked the doc generation script again; the doc appearance has changed considerably, and now supports hotlinking to functions
-- Added support for multiple inheritance to classes made with the OOP library
-- Generic UIs can be fetched by string ID now (oops)
-- Added `Character.Events.ItemEquipped`
-- Updated the Generic example script and documentation
-- Net payloads now have methods to fetch the associated character and/or item
-- Added `Osiris.GetFirstFact()`
-- Added new calls to CharacterLib: `IsOrigin()`, `IsPlayer()`
-- Small changes to annotations and rewrites of code that was using deprecated stuff
-- Began work on a new cheats system and UI
-- Added `Client.IsCursorOverUI()` and `Client.GetActiveUI()`
-- Added `Input.IsTextFieldFocused()`
-- Added skillstate-related methods to CharacterLib
-- Reworked hotbar prepared/casting skill checks to not require server information
-- Added `Client.Events.SkillStateChanged`
+- Added OverlayColorsBruteForcer feature, which as the name suggests helps with figuring out the usages of the 50 overlay colors in GlobalSwitches
+- ColorLib now contains an enum of most overlay colors used by the game
+- Fixed `Character.GetSkillState()` on server
+- Added `Damage` library, currently only containing TSKs for damage types - will be used for hit/heal-related business later on
+- Craft UI table now has the TSKs for item filters
+- Ambidextrous check in `Item.CanUse()` should be more accurate now
+- Added `Tick` event to GameStateLib
+- Added `BatteredHarried.IsDisplayStatus()`, `Stats.GetStatusName()`, `Color.Lerp()`, `DeltaMods.GetItemDeltaMods()` and an item-only overload to `Item.IsEquipped()`
+- Added SPIRIT_VISION icon to StatsLib
+- SourceInfusionLib now holds Source Generation status IDs
+- Fixed `Stats.GetStatusIcon()` for CONSUME statuses
+- It's possible to now register TSKs post-init in features/libraries via `:RegisterTranslatedString()`
+- Various annotation fixes, mostly to Stat entries
+- Simplified `Client.IsInDialogue()` implementation
+- UserVarsLib now supports default values for user and mod variables
+- `Item.GetPartyTemplateCount()` now strips GUID prefixes
+- Generic:
+    - Added CloseButton and DraggingArea prefabs
+    - `IggyIcon:SetIcon()` call is NOOP'd if there is no change in the icon setup (texture, width and height), which possibly increases performance in icon-heavy UIs
+    - Fixed `Instance:Destroy()`
+    - Status prefab now looks a lot closer to the statuses in Larian UIs
+    - `IggyIcon:SetAlpha()` now supports `affectChildren` parameter
