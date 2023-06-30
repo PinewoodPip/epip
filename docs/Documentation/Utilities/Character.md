@@ -23,6 +23,20 @@ TODO move somewhere else, since victim could be an item
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Status</b> <code>EclStatus|EsvStatus</code> </p>
 
+##### ItemEquipped (event)
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Character</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Item</b> <code>Item</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Slot</b> <code>ItemSlot</code> </p>
+
 ##### CreateEquipmentVisuals (hook)
 
 Wrapper for Ext.Events.CreateEquipmentVisualsRequest.
@@ -372,7 +386,7 @@ Returns the computed resistance value of char.
 
 
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>damageType</b> <code>StatsDamageType</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>damageType</b> <code>DamageType</code> </p>
 
 
 
@@ -461,6 +475,50 @@ function Character.IsIgnoredByAI(char)
 
 
 Returns whether char is ignored by AI.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsPlayer
+
+
+
+```lua
+function Character.IsPlayer(char)
+   -> boolean
+```
+
+
+
+Returns whether char is a player.
+A player is any character that is controllable by the users,
+including summons and party followers.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsOrigin
+
+
+
+```lua
+function Character.IsOrigin(char)
+   -> boolean
+```
+
+
+
+Returns whether char is a non-generic origin.
 
 
 
@@ -657,7 +715,7 @@ Returns whether the character is in a combat.
 
 
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
 
 
@@ -1001,6 +1059,91 @@ Returns a status on char by its net ID.
 
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclStatus|EsvStatus</code> </p>
+
+#### GetSkillState
+
+
+
+```lua
+function Character.GetSkillState(char)
+   -> (EclSkillState|EsvSkillState)?
+```
+
+
+
+Returns the current skill state of char.
+**On the server, this can only return the state while using the skill. Preparation state cannot be accessed.**
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>(EclSkillState|EsvSkillState)?</code> </p>
+
+#### GetCurrentSkill
+
+
+
+```lua
+function Character.GetCurrentSkill(char)
+   -> string? 
+```
+
+
+
+Returns the ID of the skill that char is preparing or casting.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string? </code> `nil` if the character has no active skill state.</p>
+
+#### IsPreparingSkill
+
+
+
+```lua
+function Character.IsPreparingSkill(char)
+   -> boolean
+```
+
+
+
+Returns whether char is preparing a skill.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+#### IsCastingSkill
+
+
+
+```lua
+function Character.IsCastingSkill(char)
+   -> boolean
+```
+
+
+
+Returns whether char is casting a skill.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
 
 #### GetPartyMembers
 

@@ -431,6 +431,27 @@ Shorthand for Ext.DumpExport() which does not require you to explicitly define t
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
 
+#### IsTranslatedStringRegistered
+
+
+
+```lua
+function Text.IsTranslatedStringRegistered(handle)
+   -> boolean
+```
+
+
+
+Returns whether a TSK handle was registered **through the Text library.**
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
 #### GetTranslatedString
 
 

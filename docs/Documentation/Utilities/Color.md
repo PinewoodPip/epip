@@ -347,4 +347,29 @@ Clones a color instance.
 
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor </code> New instance with same values.</p>
+
+#### Lerp
+
+
+
+```lua
+function Color.Lerp(startColor, targetColor, progress)
+```
+
+
+
+Creates a new color whose RGB components are linearly interpolated from one to another.
+Uses the alpha of the target color.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>startColor</b> <code>RGBColor</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>targetColor</b> <code>RGBColor</code> </p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>progress</b> <code>number</code> Expected values are from 0.0 to 1.0.</p>
 </doc>

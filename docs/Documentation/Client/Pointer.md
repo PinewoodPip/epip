@@ -35,6 +35,18 @@ Fired when the corpse character over the pointer changes.
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Entity</b> <code>Entity?</code> </p>
 
+##### DragDropStateChanged (event)
+
+Fired when a player starts or ends a drag drop. 
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>State</b> <code>DragDropManagerPlayerDragInfo?</code> `nil` if the player stopped dragging.</p>
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>PlayerIndex</b> <code>integer</code> </p>
+
 
 
 ## Methods

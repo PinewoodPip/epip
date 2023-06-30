@@ -71,6 +71,22 @@ function _Element:AddChild(id, elementType)
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>`T`</code> </p>
 
+#### RemoveChild
+
+
+
+```lua
+function _Element:RemoveChild(element)
+```
+
+
+
+
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>element</b> <code>GenericUI_Element</code> </p>
+
 #### SetCenterInLists
 
 
@@ -422,6 +438,23 @@ function _Element:GetScale()
 
 
 Returns the scale of the element.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector2</code> </p>
+
+#### GetRawSize
+
+
+
+```lua
+function _Element:GetRawSize()
+   -> Vector2
+```
+
+
+
+Gets the size of the element without considering its children.
 
 
 

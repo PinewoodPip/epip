@@ -17,6 +17,14 @@ Its events are helpful for initialization purposes. `ClientReady`, for example, 
 
 Fires when the game transitions from PrepareRunning to Running (on the client)or when transitioning from Sync to Running (on the server)
 
+##### Tick (event)
+
+Fired every tick.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick</p>
+
 ##### RunningTick (event)
 
 Fired every tick while the game is not paused.

@@ -300,11 +300,11 @@ function Generic.GetInstance(id)
 
 
 
+Returns the instance of a Generic UI by its identifier.
 
 
 
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string|integer</code> </p>
 
 
 
@@ -367,6 +367,23 @@ function Generic.ForwardUICall(ui, call, eventName, fields)
 
 ## Methods
 
+#### GetID
+
+
+
+```lua
+function _Instance:GetID()
+   -> string
+```
+
+
+
+Returns the string identifier of the UI.
+
+
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
+
 #### GetElementByID
 
 
@@ -424,6 +441,18 @@ function _Instance:GetMovieClipByID(id)
 
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>FlashMovieClip?</code> </p>
+
+#### Destroy
+
+
+
+```lua
+function _Instance:Destroy()
+```
+
+
+
+Destroys the UI.
 
 #### CreateElement
 

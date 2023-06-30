@@ -365,7 +365,7 @@ function Item.GetUseAPCost(item)
 
 
 
-
+Returns the base AP cost of using an item, independent of the character.
 
 
 
@@ -386,7 +386,7 @@ function Item.CanUse(char, item)
 
 
 
-
+Returns whether char meets the requirements to use an item.
 
 
 
@@ -515,7 +515,7 @@ function Item.IsDyeable(item)
 
 ```lua
 function Item.GetItemSlot(item)
-   -> ItemSlot
+   -> ItemSlot? 
 ```
 
 
@@ -528,7 +528,7 @@ function Item.GetItemSlot(item)
 
 
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ItemSlot</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ItemSlot? </code> Nil if the item has no stats.</p>
 
 #### GetEquippedItem
 
