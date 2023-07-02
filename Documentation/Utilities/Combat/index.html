@@ -108,6 +108,12 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#getcombat">GetCombat</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getactivecombatant">GetActiveCombatant</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getcombatcomponent">GetCombatComponent</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getcombatid">GetCombatID</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#getturnorder">GetTurnOrder</a>
     </li>
         </ul>
@@ -189,6 +195,31 @@
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>combatID</b> <code>integer</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclTurnManagerCombat|EsvTurnManagerCombat</code> </p>
+
+<h4 id="getactivecombatant">GetActiveCombatant<a class="headerlink" href="#getactivecombatant" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Combat.GetActiveCombatant(combatID)
+   -&gt; CombatLib_CombatCompatibleEntity
+</code></pre>
+<p>Returns the current active combatant in a combat.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>CombatLib_CombatCompatibleEntity</code> </p>
+
+<h4 id="getcombatcomponent">GetCombatComponent<a class="headerlink" href="#getcombatcomponent" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Combat.GetCombatComponent(entity)
+   -&gt; EocCombatComponent? 
+</code></pre>
+<p>Returns the combat component of an entity.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>entity</b> <code>CombatLib_CombatCompatibleEntity</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EocCombatComponent? </code> `nil` if the entity does not have the component.</p>
+
+<h4 id="getcombatid">GetCombatID<a class="headerlink" href="#getcombatid" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Combat.GetCombatID(entity)
+   -&gt; integer? 
+</code></pre>
+<p>Returns the combat ID of an entity.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>entity</b> <code>CombatLib_CombatCompatibleEntity</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer? </code> `nil` if the entity is not in combat.</p>
 
 <h4 id="getturnorder">GetTurnOrder<a class="headerlink" href="#getturnorder" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Combat.GetTurnOrder(combatID)

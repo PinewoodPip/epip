@@ -339,7 +339,8 @@ print(ExampleUI:IsFlagged(&quot;OF_PlayerInput1&quot;))
 <pre><code class="language-lua">function Generic.GetInstance(id)
    -&gt; GenericUI_Instance
 </code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>integer</code> </p>
+<p>Returns the instance of a Generic UI by its identifier.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string|integer</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GenericUI_Instance</code> </p>
 
@@ -365,6 +366,13 @@ print(ExampleUI:IsFlagged(&quot;OF_PlayerInput1&quot;))
 <h2 id="ui-instance">UI Instance<a class="headerlink" href="#ui-instance" title="Permanent link">&para;</a></h2>
 <p><doc package="GenericUI_Instance"></p>
 <h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
+<h4 id="getid">GetID<a class="headerlink" href="#getid" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Instance:GetID()
+   -&gt; string
+</code></pre>
+<p>Returns the string identifier of the UI.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
+
 <h4 id="getelementbyid">GetElementByID<a class="headerlink" href="#getelementbyid" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function _Instance:GetElementByID(id)
    -&gt; GenericUI_Element?
@@ -386,6 +394,10 @@ print(ExampleUI:IsFlagged(&quot;OF_PlayerInput1&quot;))
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>FlashMovieClip?</code> </p>
 
+<h4 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Instance:Destroy()
+</code></pre>
+<p>Destroys the UI.</p>
 <h4 id="createelement">CreateElement<a class="headerlink" href="#createelement" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function _Instance:CreateElement(id, elementType, parentID)
    -&gt; `T`

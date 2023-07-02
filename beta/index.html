@@ -52,9 +52,17 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#other-changes-and-additions">Other changes and additions</a>
+    <li class="toctree-l2"><a class="reference internal" href="#quick-inventory">Quick Inventory</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#other-small-changes">Other small changes</a>
+    <li class="toctree-l2"><a class="reference internal" href="#other-changes">Other Changes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fixes">Fixes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#technical-stuff">Technical Stuff</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generic">Generic</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -176,8 +184,81 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
     &quot;Debug&quot;: true
 }
 </code></pre>
-<h2 id="v1066-180623-upload">v1066 (18/06/23 upload)<a class="headerlink" href="#v1066-180623-upload" title="Permanent link">&para;</a></h2>
+<h2 id="v1066-10723-upload">v1066 (1/07/23 upload)<a class="headerlink" href="#v1066-10723-upload" title="Permanent link">&para;</a></h2>
 <p><a href="https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing">Download here</a>.</p>
+<p>This update adds the Codex UI, which will be an in-game knowledgebase for various topics. Currently it only features a Skills page that displays all player skills in the game, and allows for filtering and searching them. The default keybind for opening the Codex is <code>LCtrl + G</code>.</p>
+<p><img alt="Skills Codex." src="../Features/img/ui/codex_skills.png" /></p>
+<p>This page also serves as an alternative to the skillbook; you can drag skills out of it to memorize them and assign them to your hotbar.</p>
+<p>In the future, you'll also be able to unmemorize and learn skills directly from it, if you have the skillbook.</p>
+<h3 id="quick-inventory">Quick Inventory<a class="headerlink" href="#quick-inventory" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added wand, bow and crossbow filters, which were missing by oversight</li>
+<li>Added sorting for consumables; order is:<ol>
+<li>Scrolls</li>
+<li>Grenades</li>
+<li>Arrows</li>
+<li>Potions</li>
+<li>Food</li>
+<li>Drinks</li>
+</ol>
+</li>
+<li>Fixed searching for resistances not working properly</li>
+</ul>
+<h3 id="other-changes">Other Changes<a class="headerlink" href="#other-changes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>You can now change the layer of a hotbar group through their context menu</li>
+<li>Added a close button to the hotbar group creation/resize UIs</li>
+<li>Runes no longer show the confusing "Set :" prefix<ul>
+<li>This was previously only done for equipment</li>
+<li>A setting to disable this tweak has also been added</li>
+</ul>
+</li>
+</ul>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fixed TSKs from the gameplay mod still being in Epip; you will need to redownload the gameplay mod if you use it</li>
+<li>Slots within Epip UIs now only play a dragging sound if the slot is not empty</li>
+<li>Fixed some tooltip adjustments not working on tooltips created within Epip UIs</li>
+<li>Fixed Ambidextrous checks (again) which might've lead to incorrect hotbar behaviour with potions and scrolls</li>
+<li>Fixed the Debug Cheats menu showing the wrong talents for characters that weren't the active client character</li>
+<li>Fixed performance issues from the stats tab when picking up items</li>
+</ul>
+<h3 id="technical-stuff">Technical Stuff<a class="headerlink" href="#technical-stuff" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added a way to load lua scripts from a file defined in <code>Osiris Data/Epip/PersonalScripts.json</code>; this can be used to load test/debug scripts without needing to include them within the mod. See the <code>PersonalScripts</code> feature.<ul>
+<li>Removed various console commands as they are of no use other than personal</li>
+</ul>
+</li>
+<li>Added <code>Texture</code> library, and support for its data structures for Generic</li>
+<li>Various annotation fixes and clean ups</li>
+<li>Added more methods to CombatLib and fixed <code>GetTurnOrder()</code></li>
+<li>Moved Epip's Hotbar actions to a new feature</li>
+<li>Added <code>GetClassDefinition()</code> to OOP classes</li>
+<li>Choice settings's <code>SetValue()</code> now has validation</li>
+<li>Fixed registering TSKs with a StringKey</li>
+<li><code>Library:RegisterTranslatedString()</code> now returns the TSK</li>
+<li>Fixed <code>OOP.IsClass()</code> throwing if the object was not a class</li>
+<li>Added the <code>Elementable</code> interface, which lets prefabs behave as if they were elements ("inheriting" Element's methods)</li>
+<li><code>Stats.Get()</code> now allows type-capture</li>
+<li>Added <code>UI:ToggleVisibility()</code></li>
+<li>Added some basic InputLib integration to Feature</li>
+<li>Added the <code>SettingsWidgets</code> feature, for rendering settings into Generic UIs as form elements</li>
+<li>Added the <code>SkillbookTemplates</code> feature, which lets you query item templates that have a SkillBook use action</li>
+<li>Fixed an error when hovering over a Status prefab whose status had expired</li>
+</ul>
+<h4 id="generic">Generic<a class="headerlink" href="#generic" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Added the <code>Stylable</code> interface, for defining styles for customizing prefab appearances</li>
+<li>Added the <code>Button</code> prefab, which will replace the Button and StateButton elements. Its major advantage is support for styling, as well as the extendability and maintainability that comes from it being implemented in lua rather than flash.</li>
+<li>Various fixes to the Texture element</li>
+<li>Added <code>GetRawSize()</code> to some elements</li>
+<li>Fixed return values when calling exposed flash functions from lua</li>
+<li>Reworked CloseButton prefab to use the Button prefab</li>
+<li>Added focus-related events to Text element</li>
+<li>Added lots of UI textures and icons for use with Generic; see the <code>GenericUITextures</code> feature</li>
+<li>Added the <code>SearchBar</code> prefab</li>
+</ul>
+<h2 id="v1066-180623-upload">v1066 (18/06/23 upload)<a class="headerlink" href="#v1066-180623-upload" title="Permanent link">&para;</a></h2>
 <p>This version adds an option to replace the status bar by your character's portraits with a new custom UI - see "Alternative status display" in Player Portrait settings.</p>
 <p><img alt="Settings for the alternative status bar." src="../Features/img/ui/settings_playerportraits_statusesdisplay.png" /></p>
 <p>This by default behaves mostly the same as the regular status bar, with the major exception being no animations for statuses being removed - they might be added if there is demand.</p>

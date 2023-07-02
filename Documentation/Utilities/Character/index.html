@@ -102,6 +102,8 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#statusapplied-event">StatusApplied (event)</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#itemequipped-event">ItemEquipped (event)</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#createequipmentvisuals-hook">CreateEquipmentVisuals (hook)</a>
     </li>
         </ul>
@@ -145,6 +147,10 @@
     <li class="toctree-l4"><a class="reference internal" href="#isunpreferredbyai">IsUnpreferredByAI</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#isignoredbyai">IsIgnoredByAI</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isplayer">IsPlayer</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isorigin">IsOrigin</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#issummon">IsSummon</a>
     </li>
@@ -193,6 +199,14 @@
     <li class="toctree-l4"><a class="reference internal" href="#getskillbarrowcontents">GetSkillBarRowContents</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#getstatusbynetid">GetStatusByNetID</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getskillstate">GetSkillState</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getcurrentskill">GetCurrentSkill</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ispreparingskill">IsPreparingSkill</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iscastingskill">IsCastingSkill</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#getpartymembers">GetPartyMembers</a>
     </li>
@@ -277,6 +291,13 @@
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Victim</b> <code>Character|Item</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Status</b> <code>EclStatus|EsvStatus</code> </p>
+
+<h5 id="itemequipped-event">ItemEquipped (event)<a class="headerlink" href="#itemequipped-event" title="Permanent link">&para;</a></h5>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Character</b> <code>Character</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Item</b> <code>Item</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Slot</b> <code>ItemSlot</code> </p>
 
 <h5 id="createequipmentvisuals-hook">CreateEquipmentVisuals (hook)<a class="headerlink" href="#createequipmentvisuals-hook" title="Permanent link">&para;</a></h5>
 <p>Wrapper for Ext.Events.CreateEquipmentVisualsRequest.</p>
@@ -426,7 +447,7 @@ Returns false if the character doesn't have the skill in any way.</p>
 <p>Returns the computed resistance value of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>damageType</b> <code>StatsDamageType</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>damageType</b> <code>DamageType</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>baseValuesOnly</b> <code>boolean?</code> If `true`, base value will be returned. Defaults to `false`.</p>
 
@@ -464,6 +485,26 @@ Returns false if the character doesn't have the skill in any way.</p>
    -&gt; boolean
 </code></pre>
 <p>Returns whether char is ignored by AI.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+<h4 id="isplayer">IsPlayer<a class="headerlink" href="#isplayer" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Character.IsPlayer(char)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether char is a player.
+A player is any character that is controllable by the users,
+including summons and party followers.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+<h4 id="isorigin">IsOrigin<a class="headerlink" href="#isorigin" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Character.IsOrigin(char)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether char is a non-generic origin.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
@@ -547,7 +588,7 @@ Returns false if the character doesn't have the skill in any way.</p>
    -&gt; boolean
 </code></pre>
 <p>Returns whether the character is in a combat.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
 
@@ -697,6 +738,43 @@ Returns false if the character doesn't have the skill in any way.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>netID</b> <code>NetId</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclStatus|EsvStatus</code> </p>
+
+<h4 id="getskillstate">GetSkillState<a class="headerlink" href="#getskillstate" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Character.GetSkillState(char)
+   -&gt; (EclSkillState|EsvSkillState)?
+</code></pre>
+<p>Returns the current skill state of char.
+<strong>On the server, this can only return the state while using the skill. Preparation state cannot be accessed.</strong></p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>(EclSkillState|EsvSkillState)?</code> </p>
+
+<h4 id="getcurrentskill">GetCurrentSkill<a class="headerlink" href="#getcurrentskill" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Character.GetCurrentSkill(char)
+   -&gt; string? 
+</code></pre>
+<p>Returns the ID of the skill that char is preparing or casting.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string? </code> `nil` if the character has no active skill state.</p>
+
+<h4 id="ispreparingskill">IsPreparingSkill<a class="headerlink" href="#ispreparingskill" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Character.IsPreparingSkill(char)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether char is preparing a skill.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+
+<h4 id="iscastingskill">IsCastingSkill<a class="headerlink" href="#iscastingskill" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function Character.IsCastingSkill(char)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether char is casting a skill.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
+
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
 
 <h4 id="getpartymembers">GetPartyMembers<a class="headerlink" href="#getpartymembers" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Character.GetPartyMembers(char)

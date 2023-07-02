@@ -193,6 +193,11 @@
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>`T`</code> </p>
 
+<h4 id="removechild">RemoveChild<a class="headerlink" href="#removechild" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:RemoveChild(element)
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>element</b> <code>GenericUI_Element</code> </p>
+
 <h4 id="setcenterinlists">SetCenterInLists<a class="headerlink" href="#setcenterinlists" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function _Element:SetCenterInLists(center)
 </code></pre>
@@ -318,6 +323,13 @@
    -&gt; Vector2
 </code></pre>
 <p>Returns the scale of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector2</code> </p>
+
+<h4 id="getrawsize">GetRawSize<a class="headerlink" href="#getrawsize" title="Permanent link">&para;</a></h4>
+<pre><code class="language-lua">function _Element:GetRawSize()
+   -&gt; Vector2
+</code></pre>
+<p>Gets the size of the element without considering its children.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector2</code> </p>
 
 <h4 id="settooltip">SetTooltip<a class="headerlink" href="#settooltip" title="Permanent link">&para;</a></h4>

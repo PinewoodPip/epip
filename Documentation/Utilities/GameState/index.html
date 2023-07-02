@@ -112,6 +112,8 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#gameready-event">GameReady (event)</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tick-event">Tick (event)</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#runningtick-event">RunningTick (event)</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#statechanged-event">StateChanged (event)</a>
@@ -211,6 +213,10 @@
 <h5 id="gameunpaused-event">GameUnpaused (event)<a class="headerlink" href="#gameunpaused-event" title="Permanent link">&para;</a></h5>
 <h5 id="gameready-event">GameReady (event)<a class="headerlink" href="#gameready-event" title="Permanent link">&para;</a></h5>
 <p>Fires when the game transitions from PrepareRunning to Running (on the client)or when transitioning from Sync to Running (on the server)</p>
+<h5 id="tick-event">Tick (event)<a class="headerlink" href="#tick-event" title="Permanent link">&para;</a></h5>
+<p>Fired every tick.</p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick</p>
+
 <h5 id="runningtick-event">RunningTick (event)<a class="headerlink" href="#runningtick-event" title="Permanent link">&para;</a></h5>
 <p>Fired every tick while the game is not paused.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick (NOT the last running tick)</p>

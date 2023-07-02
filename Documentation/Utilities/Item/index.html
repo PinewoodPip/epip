@@ -413,6 +413,7 @@ The owner will be nil if the character who owned the item died.</p>
 <pre><code class="language-lua">function Item.GetUseAPCost(item)
    -&gt; integer
 </code></pre>
+<p>Returns the base AP cost of using an item, independent of the character.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
@@ -421,6 +422,7 @@ The owner will be nil if the character who owned the item died.</p>
 <pre><code class="language-lua">function Item.CanUse(char, item)
    -&gt; boolean
 </code></pre>
+<p>Returns whether char meets the requirements to use an item.</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> </p>
 
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
@@ -475,12 +477,12 @@ The owner will be nil if the character who owned the item died.</p>
 
 <h4 id="getitemslot">GetItemSlot<a class="headerlink" href="#getitemslot" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Item.GetItemSlot(item)
-   -&gt; ItemSlot
+   -&gt; ItemSlot? 
 </code></pre>
 <p>Alias for Item.Stats.ItemSlot</p>
 <p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code> </p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ItemSlot</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>ItemSlot? </code> Nil if the item has no stats.</p>
 
 <h4 id="getequippeditem">GetEquippedItem<a class="headerlink" href="#getequippeditem" title="Permanent link">&para;</a></h4>
 <pre><code class="language-lua">function Item.GetEquippedItem(char, slot)
