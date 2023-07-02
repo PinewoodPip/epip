@@ -12,9 +12,76 @@
 }
 ```
 
-## v1066 (18/06/23 upload)
-
+## v1066 (1/07/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
+
+This update adds the Codex UI, which will be an in-game knowledgebase for various topics. Currently it only features a Skills page that displays all player skills in the game, and allows for filtering and searching them. The default keybind for opening the Codex is `LCtrl + G`.
+
+![Skills Codex.](Features/img/ui/codex_skills.png)
+
+This page also serves as an alternative to the skillbook; you can drag skills out of it to memorize them and assign them to your hotbar.
+
+In the future, you'll also be able to unmemorize and learn skills directly from it, if you have the skillbook.
+
+### Quick Inventory
+- Added wand, bow and crossbow filters, which were missing by oversight
+- Added sorting for consumables; order is:
+    1. Scrolls
+    2. Grenades
+    3. Arrows
+    4. Potions
+    5. Food
+    6. Drinks
+- Fixed searching for resistances not working properly
+
+### Other Changes
+- You can now change the layer of a hotbar group through their context menu
+- Added a close button to the hotbar group creation/resize UIs
+- Runes no longer show the confusing "Set :" prefix
+    - This was previously only done for equipment
+    - A setting to disable this tweak has also been added
+
+### Fixes
+- Fixed TSKs from the gameplay mod still being in Epip; you will need to redownload the gameplay mod if you use it
+- Slots within Epip UIs now only play a dragging sound if the slot is not empty
+- Fixed some tooltip adjustments not working on tooltips created within Epip UIs
+- Fixed Ambidextrous checks (again) which might've lead to incorrect hotbar behaviour with potions and scrolls
+- Fixed the Debug Cheats menu showing the wrong talents for characters that weren't the active client character
+- Fixed performance issues from the stats tab when picking up items
+
+### Technical Stuff
+
+- Added a way to load lua scripts from a file defined in `Osiris Data/Epip/PersonalScripts.json`; this can be used to load test/debug scripts without needing to include them within the mod. See the `PersonalScripts` feature.
+    - Removed various console commands as they are of no use other than personal
+- Added `Texture` library, and support for its data structures for Generic
+- Various annotation fixes and clean ups
+- Added more methods to CombatLib and fixed `GetTurnOrder()`
+- Moved Epip's Hotbar actions to a new feature
+- Added `GetClassDefinition()` to OOP classes
+- Choice settings's `SetValue()` now has validation
+- Fixed registering TSKs with a StringKey
+- `Library:RegisterTranslatedString()` now returns the TSK
+- Fixed `OOP.IsClass()` throwing if the object was not a class
+- Added the `Elementable` interface, which lets prefabs behave as if they were elements ("inheriting" Element's methods)
+- `Stats.Get()` now allows type-capture
+- Added `UI:ToggleVisibility()`
+- Added some basic InputLib integration to Feature
+- Added the `SettingsWidgets` feature, for rendering settings into Generic UIs as form elements
+- Added the `SkillbookTemplates` feature, which lets you query item templates that have a SkillBook use action
+- Fixed an error when hovering over a Status prefab whose status had expired
+
+#### Generic
+- Added the `Stylable` interface, for defining styles for customizing prefab appearances
+- Added the `Button` prefab, which will replace the Button and StateButton elements. Its major advantage is support for styling, as well as the extendability and maintainability that comes from it being implemented in lua rather than flash.
+- Various fixes to the Texture element
+- Added `GetRawSize()` to some elements
+- Fixed return values when calling exposed flash functions from lua
+- Reworked CloseButton prefab to use the Button prefab
+- Added focus-related events to Text element
+- Added lots of UI textures and icons for use with Generic; see the `GenericUITextures` feature
+- Added the `SearchBar` prefab
+
+## v1066 (18/06/23 upload)
 
 This version adds an option to replace the status bar by your character's portraits with a new custom UI - see "Alternative status display" in Player Portrait settings.
 
