@@ -5,8 +5,8 @@ Epip Encounters is a UI and QoL mod targeting [Epic Encounters 2](https://docs.g
 ## Download
 
 !!! info "Language warning"
-    Only English is fully supported.
-    Visit [this sheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/edit#gid=479886788) to contribute to translations.
+    Only English is fully supported, however crowdsourced translations are underway.  
+    Localization is only possible thanks to the members of our community. If you want to help with it - feel free to contribute at [our translation spreadsheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/).  
 
 !!! error "Standalone usage warning"
     **If you have the Improved Hotbar mod, you must disable it to use Epip**. All of its functions are already in Epip (+ like 9 months worth of updates that the workshop mod never got). See the [front page](index.md) and the [changelog](patchnotes.md) if you're new to Epip.
