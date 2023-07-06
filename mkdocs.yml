@@ -47,6 +47,7 @@ nav:
       - "Timer": "Documentation/Utilities/Timer.md"
       - "Text": "Documentation/Utilities/Text.md"
       - "Vector": "Documentation/Utilities/Vector.md"
+      - "OOP": "Documentation/Utilities/OOP.md"
   #   - "Global Tables":
   #     - "Feature": "Global Tables/Feature.md"
   #   - "Game":
