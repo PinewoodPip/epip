@@ -68,6 +68,8 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../../../../../../docs/">Introduction</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../../Terminology/">Terminology</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Client</a>
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Pointer/">Pointer</a>
@@ -115,6 +117,10 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Text/">Text</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Vector/">Vector</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/OOP/">OOP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../../Utilities/Library/">Library</a>
                 </li>
     </ul>
                   </li>
@@ -164,36 +170,33 @@
               
                 <h1 id="button">Button<a class="headerlink" href="#button" title="Permanent link">&para;</a></h1>
 <p>The <code>GenericUI_Element_Button</code> button element implements a typical button form element. It may be disabled (preventing user interaction) and will fire a contextual event if it is activated while not disabled.</p>
-<p><doc package="GenericUI_Element_Button"></p>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h5 id="pressed-event">Pressed (event)<a class="headerlink" href="#pressed-event" title="Permanent link">&para;</a></h5>
+<p><doc class="GenericUI_Element_Button"></p>
+<h1 id="genericui_element_button-class">GenericUI_Element_Button Class<a class="headerlink" href="#genericui_element_button-class" title="Permanent link">&para;</a></h1>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h4 id="settext">SetText<a class="headerlink" href="#settext" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Button:SetText(text, textY)
-</code></pre>
-<p>Sets the button's text.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>text</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>textY</b> <code>number?</code> Vertical offset for the text. Use for centering.</p>
-
-<h4 id="settype">SetType<a class="headerlink" href="#settype" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Button:SetType(buttonType)
-</code></pre>
-<p>Sets the button's visuals.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>buttonType</b> <code>GenericUI_Element_Button_Type</code> </p>
-
-<h4 id="setenabled">SetEnabled<a class="headerlink" href="#setenabled" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Button:SetEnabled(enabled)
-</code></pre>
-<p>Sets the button's enabled state. Enabled buttons are interactable.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>enabled</b> <code>boolean</code> </p>
-
-<h4 id="isenabled">IsEnabled<a class="headerlink" href="#isenabled" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Button:IsEnabled()
+<h5 id="isenabled">IsEnabled<a class="headerlink" href="#isenabled" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element_Button:IsEnabled()
    -&gt; boolean
 </code></pre>
 <p>Returns whether the button is enabled.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+<h5 id="setenabled">SetEnabled<a class="headerlink" href="#setenabled" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element_Button:SetEnabled(enabled)
+</code></pre>
+<p>Sets the button's enabled state. Enabled buttons are interactable.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>enabled</b> <code>boolean</code></p>
+
+<h5 id="settext">SetText<a class="headerlink" href="#settext" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element_Button:SetText(text, textY)
+</code></pre>
+<p>Sets the button's text.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>textY</b> <code>number?</code> Vertical offset for the text. Use for centering.</p>
+
+<h5 id="settype">SetType<a class="headerlink" href="#settype" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element_Button:SetType(buttonType)
+</code></pre>
+<p>Sets the button's visuals.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>buttonType</b> <code>GenericUI_Element_Button_Type</code></p>
 <p></doc></p>
               
             </div>

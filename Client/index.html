@@ -68,6 +68,8 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../docs/">Introduction</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Documentation/Terminology/">Terminology</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../Documentation/Client/Pointer/">Pointer</a>
@@ -116,6 +118,10 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Documentation/Utilities/Vector/">Vector</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Documentation/Utilities/OOP/">OOP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Documentation/Utilities/Library/">Library</a>
+                </li>
     </ul>
                   </li>
               </ul>
@@ -163,39 +169,8 @@
 <p>The "Client character" here refers to the currently-controlled character on the client.</p>
 <h2 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
 <p><doc fields="Client"></p>
-<pre><code class="language-lua">---@class Client
----@field UI ClientUI
----@field Input ClientInput
----@field IS_HOST boolean Internal; do not set!
-</code></pre>
-<p></doc></p>
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
-<p><doc lib="Client"></p>
-<pre><code class="language-lua">---Get the Source Infusion level the client character is currently preparing.
----@return number Infusion level
-function Client.GetPreparedInfusionLevel() -- Client-only, EE-related
-</code></pre>
-<pre><code class="language-lua">---Returns true if the client character is preparing a Source Infusion.
----@return boolean
-function Client.IsPreparingInfusion() -- Client-only, EE-related
-</code></pre>
-<pre><code class="language-lua">---Returns true if the client is the host of the current session.  
----Relies on GameMenu.
----@return boolean
-function Client.IsHost() -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Returns the currently-controlled character on the client.  
----Checks StatusConsole, then CharacterCreation as a fallback.
----@return EclCharacter
-function Client.GetCharacter() -- Client-only
-</code></pre>
-<pre><code class="language-lua">--- Copies text to the clipboard.  
----Some characters, like newlines, will be trimmed out as per the vanilla scripting on the swf.
----Relies on MessageBox.
----@param text string
-function Client.CopyToClipboard(text) -- Client-only
-</code></pre>
-<p></doc></p>
+<p>nil
+</doc></p>
               
             </div>
           </div><footer>

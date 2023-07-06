@@ -68,6 +68,8 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Documentation/Terminology/">Terminology</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Client/Pointer/">Pointer</a>
@@ -116,6 +118,10 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Vector/">Vector</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/OOP/">OOP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Documentation/Utilities/Library/">Library</a>
+                </li>
     </ul>
                   </li>
               </ul>
@@ -163,38 +169,8 @@
 <h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h1>
 <p>Subscribe with <code>Client.UI.MessageBox:RegisterListener(event: string, handler: function)</code>. You can subscribe to events coming from a specific message box with <code>RegisterMessageListener()</code> instead.</p>
 <p><doc events="MessageBoxUI"></p>
-<pre><code class="language-lua">---Fired when a button is pressed on any custom message box.
----@event ButtonClicked
----@param id number Button ID.
----@param data MessageBoxData
-</code></pre>
-<pre><code class="language-lua">---Fired when a message box with an input field is closed.
----@event InputSubmitted
----@param input string
----@param id number Button ID.
----@param data MessageBoxData
-</code></pre>
-<p></doc></p>
-<h1 id="fields">Fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h1>
-<p><doc fields="MessageBoxUI"></p>
-<pre><code class="language-lua">---@class MessageBoxUI
----@field POPUP_TYPES table&lt;string, number&gt;
----@field currentCustomMessageBox MessageBoxData Internal; do not set!
-</code></pre>
-<p></doc></p>
-<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
-<p><doc lib="MessageBoxUI"></p>
-<pre><code class="language-lua">---Show a message box.
----@param data MessageBoxData
-function MessageBox.ShowMessageBox(data) -- Client-only
-</code></pre>
-<pre><code class="language-lua">---Register an event listener for a message box with a specific ID.
----@param id string Message box ID.
----@param event string Event ID. See the regular events.
----@param handler function
-function MessageBox:RegisterMessageListener(id, event, handler) -- Client-only
-</code></pre>
-<p></doc></p>
+<p>nil
+</doc></p>
               
             </div>
           </div><footer>

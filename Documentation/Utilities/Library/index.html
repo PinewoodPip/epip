@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Library/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Library - Epip Encounters</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Library";
+        var mkdocs_page_input_path = "Documentation\\Utilities\\Library.md";
+        var mkdocs_page_url = "/epip/Documentation/Utilities/Library/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Epip Encounters
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../patchnotes/">Patch Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../beta/">Beta Versions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../Info/faq/">FAQ</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Features</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/UI/">UI improvements</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/Vanity/">Vanity</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Generic UI</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Client/UI/Generic/Introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="#">Elements</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Element/">Element</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Button/">Button</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/Color/">Color</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Utilities</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Artifact/">Artifact</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Character/">Character</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Color/">Color</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Combat/">Combat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../GameState/">GameState</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Item/">Item</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Mod/">Mod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Net/">Net</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Timer/">Timer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Text/">Text</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Vector/">Vector</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../OOP/">OOP</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Library</a>
+    <ul class="current">
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/testing/">Testing</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Maintenance</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/IDESetup/">IDE Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/localization/">Localization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/documentation/">Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Epip Encounters</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Documentation &raquo;</li>
+          <li>Utilities &raquo;</li>
+      <li>Library</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="library">Library<a class="headerlink" href="#library" title="Permanent link">&para;</a></h1>
+<p>The <code>Library</code> class is the <a href="../../Terminology/#internal">internal</a> base class for libraries in Epip. It offers general-purpose utility methods, such as logging, debug flags, event systems, as well as integrations with some core Epip libraries to simplify the registration of resources.</p>
+<p><code>Epip.InitializeLibrary()</code> is meant to be used to define libraries, though you are not intended to do so in your own mod - use Features instead.</p>
+<p>Library contains integrations with the following core Epip libraries:</p>
+<ul>
+<li>Text (for TSK registration and organizing TSKs by library/feature within the localization sheet)</li>
+<li>UserVars (for <a href="../../Terminology/#namespacing">namespacing</a>)</li>
+<li>OOP (for containing related subclasses)</li>
+</ul>
+<p>Perceptive readers will realize that these integrations indeed create circular dependencies. This concern is however pretty low on the list.</p>
+<p>The class includes some methods to filter out unwanted logging, however the recommended way to filter it is to use the "control panel" UI (<code>Feature_DebugMenu</code>, defaults to <code>LCtrl + B</code>) to set the logging level instead of calling the methods yourself anywhere.</p>
+<p><doc class="Library"></p>
+<h1 id="library-class">Library Class<a class="headerlink" href="#library-class" title="Permanent link">&para;</a></h1>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h5 id="addsubscribableevent">AddSubscribableEvent<a class="headerlink" href="#addsubscribableevent" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:AddSubscribableEvent(evName, preventable)
+   -&gt; Event
+</code></pre>
+<p>Registers a new event.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>evName</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>preventable</b> <code>boolean?</code> Defaults to false.</p>
+
+<h5 id="addsubscribablehook">AddSubscribableHook<a class="headerlink" href="#addsubscribablehook" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:AddSubscribableHook(evName, preventable)
+   -&gt; Event
+</code></pre>
+<p>Registers a new hook.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>evName</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>preventable</b> <code>boolean?</code> Defaults to false.</p>
+
+<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library.Create(modTable, id, data)
+   -&gt; Library
+</code></pre>
+<p>Initializes a table as a Library.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modTable</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>Library</code></p>
+
+<h5 id="debug">Debug<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:Debug()
+</code></pre>
+<p>Show debug-level logging from this library.</p>
+<p>Only work in Developer mode.</p>
+<h5 id="debuglog">DebugLog<a class="headerlink" href="#debuglog" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:DebugLog()
+</code></pre>
+<p>Log a value in Debug mode.</p>
+<h5 id="dump">Dump<a class="headerlink" href="#dump" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:Dump(msg)
+</code></pre>
+<p>Dump a value to the console, in Debug mode.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+
+<h5 id="error">Error<a class="headerlink" href="#error" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:Error(method)
+</code></pre>
+<p>Throws an error.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>method</b> <code>string</code></p>
+
+<h5 id="getclass">GetClass<a class="headerlink" href="#getclass" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:GetClass(className)
+   -&gt; `T`
+</code></pre>
+<p>Returns a class's base table.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>`T`</code></p>
+
+<h5 id="getmodvariable">GetModVariable<a class="headerlink" href="#getmodvariable" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:GetModVariable(modGUID, name)
+   -&gt; any
+</code></pre>
+<p>Returns the value of a mod variable.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modGUID</b> <code>GUID</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>name</b> <code>string</code></p>
+
+<h5 id="getpackageprefix">GetPackagePrefix<a class="headerlink" href="#getpackageprefix" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:GetPackagePrefix()
+   -&gt; string
+</code></pre>
+<p>Returns the package prefix for this library's subclasses.</p>
+<h5 id="gettranslatedstringhandleforkey">GetTranslatedStringHandleForKey<a class="headerlink" href="#gettranslatedstringhandleforkey" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:GetTranslatedStringHandleForKey(localKey)
+   -&gt; TranslatedStringHandle?
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>localKey</b> <code>string</code></p>
+
+<h5 id="getuservariable">GetUserVariable<a class="headerlink" href="#getuservariable" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:GetUserVariable(component, variable)
+   -&gt; any
+</code></pre>
+<p>Gets the value of a user variable on an entity component.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>component</b> <code>UserVarsLib_CompatibleComponent</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>variable</b> <code>string|UserVarsLib_UserVar</code></p>
+
+<h5 id="isdebug">IsDebug<a class="headerlink" href="#isdebug" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:IsDebug()
+   -&gt; boolean
+</code></pre>
+<p>Returns whether :Debug() has been ran successfully.</p>
+<h5 id="log">Log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:Log(msg)
+</code></pre>
+<p>Log a value.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+
+<h5 id="logerror">LogError<a class="headerlink" href="#logerror" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:LogError(msg)
+</code></pre>
+<p>Log an error.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+
+<h5 id="logmethod">LogMethod<a class="headerlink" href="#logmethod" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:LogMethod(method, ...)
+</code></pre>
+<p>Log a message in the format "[MODULE] method(): msg"</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>method</b> <code>any</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
+
+<h5 id="lognotimplemented">LogNotImplemented<a class="headerlink" href="#lognotimplemented" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:LogNotImplemented(methodName)
+</code></pre>
+<p>Logs a "Not implemented" warning. Use as a placeholder.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
+
+<h5 id="logwarning">LogWarning<a class="headerlink" href="#logwarning" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:LogWarning(msg)
+</code></pre>
+<p>Log a warning.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+
+<h5 id="mute">Mute<a class="headerlink" href="#mute" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:Mute()
+</code></pre>
+<p>Stop all non-error, non-warning logging from this feature.</p>
+<h5 id="rawlog">RawLog<a class="headerlink" href="#rawlog" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:RawLog()
+</code></pre>
+<p>Log values without any prefixing.</p>
+<h5 id="registerclass">RegisterClass<a class="headerlink" href="#registerclass" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:RegisterClass(className, class, parentClasses)
+   -&gt; `T`
+</code></pre>
+<p>Registers a class.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>`T`</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>class</b> <code>table</code> Class table.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>parentClasses</b> <code>string[]?</code> Classes this one inherits from.</p>
+
+<h5 id="registermodvariable">RegisterModVariable<a class="headerlink" href="#registermodvariable" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:RegisterModVariable(modGUID, name, data)
+</code></pre>
+<p>Registers a mod variable.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modGUID</b> <code>GUID</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>name</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>UserVarsLib_ModVar</code></p>
+
+<h5 id="registertranslatedstring">RegisterTranslatedString<a class="headerlink" href="#registertranslatedstring" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:RegisterTranslatedString(handle, tsk)
+   -&gt; Library_TranslatedString
+</code></pre>
+<p>Registers a TSK.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tsk</b> <code>Library_TranslatedString</code> ModTable, FeatureID and Handle fields are auto-initialized.</p>
+
+<h5 id="registeruservariable">RegisterUserVariable<a class="headerlink" href="#registeruservariable" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:RegisterUserVariable(name, data)
+</code></pre>
+<p>Registers a user variable.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>name</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>UserVarsLib_UserVar?</code></p>
+
+<h5 id="setmodvariable">SetModVariable<a class="headerlink" href="#setmodvariable" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:SetModVariable(modGUID, name, value)
+</code></pre>
+<p>Sets the value of a mod variable.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modGUID</b> <code>GUID</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>name</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>any</code></p>
+
+<h5 id="setuservariable">SetUserVariable<a class="headerlink" href="#setuservariable" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:SetUserVariable(component, variable, value)
+</code></pre>
+<p>Sets the value of a user variable.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>component</b> <code>UserVarsLib_CompatibleComponent</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>variable</b> <code>string|UserVarsLib_UserVar</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>any</code></p>
+
+<h5 id="shutup">ShutUp<a class="headerlink" href="#shutup" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:ShutUp()
+</code></pre>
+<p>Stop all non-error logging.
+</doc></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../OOP/" class="btn btn-neutral float-left" title="OOP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../Tutorials/testing/" class="btn btn-neutral float-right" title="Testing">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../OOP/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../Tutorials/testing/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

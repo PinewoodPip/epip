@@ -68,6 +68,8 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
@@ -104,48 +106,6 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">GameState</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#events-and-hooks">Events and Hooks</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#gamepaused-event">GamePaused (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#gameunpaused-event">GameUnpaused (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#gameready-event">GameReady (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#tick-event">Tick (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#runningtick-event">RunningTick (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#statechanged-event">StateChanged (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#clientready-event">ClientReady (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#regionstarted-event">RegionStarted (event)</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#isinsession">IsInSession</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#isloading">IsLoading</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#isinmainmenu">IsInMainMenu</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#isinrunningsession">IsInRunningSession</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ispaused">IsPaused</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getstate">GetState</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ispaused_1">IsPaused</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getstate_1">GetState</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#issessionloaded">IsSessionLoaded</a>
-    </li>
-        </ul>
-    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Item/">Item</a>
@@ -159,6 +119,10 @@
                 <li class="toctree-l2"><a class="reference internal" href="../Text/">Text</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Vector/">Vector</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../OOP/">OOP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Library/">Library</a>
                 </li>
     </ul>
                   </li>
@@ -207,92 +171,77 @@
                 <h1 id="gamestate">GameState<a class="headerlink" href="#gamestate" title="Permanent link">&para;</a></h1>
 <p>The <code>GameState</code> library contains methods and events related to the global game state - that is, whether it's in a session, loading, paused, etc.</p>
 <p>Its events are helpful for initialization purposes. <code>ClientReady</code>, for example, fires when the client transitions from <code>PrepareRunning</code> to <code>Running</code> and is a great moment to initialize anything that could need the client character to be present and/or send messages to the server (both of which are not reliable to do before that point).</p>
-<p><doc package="GameStateLib"></p>
+<p><doc class="GameStateLib"></p>
+<h1 id="gamestatelib-class">GameStateLib Class<a class="headerlink" href="#gamestatelib-class" title="Permanent link">&para;</a></h1>
 <h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h5 id="gamepaused-event">GamePaused (event)<a class="headerlink" href="#gamepaused-event" title="Permanent link">&para;</a></h5>
-<h5 id="gameunpaused-event">GameUnpaused (event)<a class="headerlink" href="#gameunpaused-event" title="Permanent link">&para;</a></h5>
-<h5 id="gameready-event">GameReady (event)<a class="headerlink" href="#gameready-event" title="Permanent link">&para;</a></h5>
-<p>Fires when the game transitions from PrepareRunning to Running (on the client)or when transitioning from Sync to Running (on the server)</p>
-<h5 id="tick-event">Tick (event)<a class="headerlink" href="#tick-event" title="Permanent link">&para;</a></h5>
-<p>Fired every tick.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick</p>
+<h4 id="gamepaused-event">GamePaused (event)<a class="headerlink" href="#gamepaused-event" title="Permanent link">&para;</a></h4>
+<h4 id="gameunpaused-event">GameUnpaused (event)<a class="headerlink" href="#gameunpaused-event" title="Permanent link">&para;</a></h4>
+<h4 id="statechanged-event">StateChanged (event)<a class="headerlink" href="#statechanged-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>From</b> <code>GameState</code></p>
 
-<h5 id="runningtick-event">RunningTick (event)<a class="headerlink" href="#runningtick-event" title="Permanent link">&para;</a></h5>
-<p>Fired every tick while the game is not paused.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick (NOT the last running tick)</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>To</b> <code>GameState</code></p>
 
-<h5 id="statechanged-event">StateChanged (event)<a class="headerlink" href="#statechanged-event" title="Permanent link">&para;</a></h5>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>From</b> <code>GameState</code> </p>
+<h4 id="gameready-event">GameReady (event)<a class="headerlink" href="#gameready-event" title="Permanent link">&para;</a></h4>
+<h4 id="tick-event">Tick (event)<a class="headerlink" href="#tick-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>To</b> <code>GameState</code> </p>
+<h4 id="runningtick-event">RunningTick (event)<a class="headerlink" href="#runningtick-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick (NOT the last running tick)</p>
 
-<h5 id="clientready-event">ClientReady (event)<a class="headerlink" href="#clientready-event" title="Permanent link">&para;</a></h5>
-<p>Fired when the client transitions from PrepareRunning to Running,as well as when lua is reset.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>CharacterNetID</b> <code>NetId</code> </p>
+<h4 id="luaresetted-event">LuaResetted (event)<a class="headerlink" href="#luaresetted-event" title="Permanent link">&para;</a></h4>
+<h4 id="clientready-event">ClientReady (event)<a class="headerlink" href="#clientready-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>CharacterNetID</b> <code>NetId</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>ProfileGUID</b> <code>GUID</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>ProfileGUID</b> <code>GUID</code></p>
 
-<h5 id="regionstarted-event">RegionStarted (event)<a class="headerlink" href="#regionstarted-event" title="Permanent link">&para;</a></h5>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>LevelID</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>CharacterNetID</b> <code>NetId</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>ProfileGUID</b> <code>GUID</code></p>
+
+<h4 id="regionstarted-event">RegionStarted (event)<a class="headerlink" href="#regionstarted-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>LevelID</b> <code>string</code></p>
 
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h4 id="isinsession">IsInSession<a class="headerlink" href="#isinsession" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function GameState.IsInSession()
-   -&gt; boolean
+<h5 id="getstate">GetState<a class="headerlink" href="#getstate" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GameStateLib.GetState() -- (Server-only)
+   -&gt; GameState
 </code></pre>
-<p>Returns whether the game state is currently in a session.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
-
-<h4 id="isloading">IsLoading<a class="headerlink" href="#isloading" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function GameState.IsLoading()
-   -&gt; boolean
+<h5 id="getstate_1">GetState<a class="headerlink" href="#getstate_1" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GameStateLib.GetState() -- (Client-only)
+   -&gt; GameState
 </code></pre>
-<p>Returns whether the game is within a loading-related state.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
-
-<h4 id="isinmainmenu">IsInMainMenu<a class="headerlink" href="#isinmainmenu" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function GameState.IsInMainMenu()
+<h5 id="isinmainmenu">IsInMainMenu<a class="headerlink" href="#isinmainmenu" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GameStateLib.IsInMainMenu()
    -&gt; boolean
 </code></pre>
 <p>Returns whether the game is in a main menu-related state.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
-
-<h4 id="isinrunningsession">IsInRunningSession<a class="headerlink" href="#isinrunningsession" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function GameState.IsInRunningSession()
+<h5 id="isinrunningsession">IsInRunningSession<a class="headerlink" href="#isinrunningsession" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GameStateLib.IsInRunningSession()
    -&gt; boolean
 </code></pre>
 <p>Returns whether the game state is within a running session (not paused)</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
-
-<h4 id="ispaused">IsPaused<a class="headerlink" href="#ispaused" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function GameState.IsPaused()
+<h5 id="isinsession">IsInSession<a class="headerlink" href="#isinsession" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GameStateLib.IsInSession()
    -&gt; boolean
 </code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
-
-<h4 id="getstate">GetState<a class="headerlink" href="#getstate" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function GameState.GetState()
-   -&gt; GameState
-</code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GameState</code> </p>
-
-<h4 id="ispaused_1">IsPaused<a class="headerlink" href="#ispaused_1" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function GameState.IsPaused()
+<p>Returns whether the game state is currently in a session.</p>
+<h5 id="isloading">IsLoading<a class="headerlink" href="#isloading" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GameStateLib.IsLoading()
    -&gt; boolean
 </code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
-
-<h4 id="getstate_1">GetState<a class="headerlink" href="#getstate_1" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function GameState.GetState()
-   -&gt; GameState
-</code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GameState</code> </p>
-
-<h4 id="issessionloaded">IsSessionLoaded<a class="headerlink" href="#issessionloaded" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function GameState.IsSessionLoaded()
+<p>Returns whether the game is within a loading-related state.</p>
+<h5 id="ispaused">IsPaused<a class="headerlink" href="#ispaused" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GameStateLib.IsPaused() -- (Client-only)
    -&gt; boolean
 </code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+<h5 id="ispaused_1">IsPaused<a class="headerlink" href="#ispaused_1" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GameStateLib.IsPaused() -- (Server-only)
+   -&gt; boolean
+</code></pre>
+<h5 id="issessionloaded">IsSessionLoaded<a class="headerlink" href="#issessionloaded" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GameStateLib.IsSessionLoaded() -- (Server-only)
+   -&gt; boolean
+</code></pre>
 <p></doc></p>
               
             </div>

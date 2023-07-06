@@ -68,6 +68,8 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
@@ -118,73 +120,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#library">Library</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#events-and-hooks">Events and Hooks</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#gettranslationtemplateentry-hook">GetTranslationTemplateEntry (hook)</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#round">Round</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#equalizespace">EqualizeSpace</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#generateguid">GenerateGUID</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#generatetranslatedstringhandle">GenerateTranslatedStringHandle</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#join">Join</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#appendline">AppendLine</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#separatepascalcase">SeparatePascalCase</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#removetrailingzeros">RemoveTrailingZeros</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#escapepatterncharacters">EscapePatternCharacters</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#contains">Contains</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#addpadding">AddPadding</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#split_2">Split_2</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#capitalize">Capitalize</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#format">Format</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#stripfonttags">StripFontTags</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#dump">Dump</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#istranslatedstringregistered">IsTranslatedStringRegistered</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#gettranslatedstring">GetTranslatedString</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#registertranslatedstring">RegisterTranslatedString</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#settranslatedstring">SetTranslatedString</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#setstringkey">SetStringKey</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#generatelocalizationtemplate">GenerateLocalizationTemplate</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getcurrentlanguage">GetCurrentLanguage</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#settranslatedstringtranslation">SetTranslatedStringTranslation</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#gettranslatedstringtranslation">GetTranslatedStringTranslation</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#loadlocalization">LoadLocalization</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#removeguidprefix">RemoveGUIDPrefix</a>
-    </li>
-        </ul>
-    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Vector/">Vector</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../OOP/">OOP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Library/">Library</a>
                 </li>
     </ul>
                   </li>
@@ -268,271 +210,235 @@ Spanish
 },
 </code></pre>
 <h2 id="library">Library<a class="headerlink" href="#library" title="Permanent link">&para;</a></h2>
-<p><doc package="TextLib"></p>
+<p><doc class="TextLib"></p>
+<h1 id="textlib-class">TextLib Class<a class="headerlink" href="#textlib-class" title="Permanent link">&para;</a></h1>
 <h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h5 id="gettranslationtemplateentry-hook">GetTranslationTemplateEntry (hook)<a class="headerlink" href="#gettranslationtemplateentry-hook" title="Permanent link">&para;</a></h5>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Entry</b> <code>TextLib_LocalizationTemplate_Entry</code> Hookable. Set to nil to prevent an entry from getting exported.</p>
+<h4 id="gettranslationtemplateentry-hook">GetTranslationTemplateEntry (hook)<a class="headerlink" href="#gettranslationtemplateentry-hook" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Entry</b> <code>TextLib_LocalizationTemplate_Entry</code> Hookable. Set to nil to prevent an entry from getting exported.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>TranslatedString</b> <code>TextLib_TranslatedString</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>TranslatedString</b> <code>TextLib_TranslatedString</code></p>
 
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h4 id="round">Round<a class="headerlink" href="#round" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.Round(value, decimals)
-   -&gt; string
-</code></pre>
-<p>Returns a string representation of a number, rounded.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>value</b> <code>number</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>decimals?</b> <code>integer</code> Defaults to 0.</p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="equalizespace">EqualizeSpace<a class="headerlink" href="#equalizespace" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.EqualizeSpace(str1, str2, space)
-   -&gt; string
-</code></pre>
-<p>Concatenates 2 strings and adds enough whitespace padding inbetween them to ensure a specific length.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str1</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str2</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>space</b> <code>integer</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="generateguid">GenerateGUID<a class="headerlink" href="#generateguid" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.GenerateGUID(pattern)
-   -&gt; GUID
-</code></pre>
-<p>Generate a random GUID.
-Source: https://gist.github.com/jrus/3197011</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>pattern</b> <code>pattern?</code> Defaults to GUID4 pattern.</p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GUID</code> </p>
-
-<h4 id="generatetranslatedstringhandle">GenerateTranslatedStringHandle<a class="headerlink" href="#generatetranslatedstringhandle" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.GenerateTranslatedStringHandle()
-   -&gt; TranslatedStringHandle
-</code></pre>
-<p>Generates a random handle in the format that Larian uses for TranslatedStringHandle.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>TranslatedStringHandle</code> </p>
-
-<h4 id="join">Join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.Join(str1, str2, separator)
-</code></pre>
-<p>Joins two strings together.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str1</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str2</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>separator</b> <code>string?</code> Defaults to ` `</p>
-
-<h4 id="appendline">AppendLine<a class="headerlink" href="#appendline" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.AppendLine(str1, str2)
-</code></pre>
-<h4 id="separatepascalcase">SeparatePascalCase<a class="headerlink" href="#separatepascalcase" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.SeparatePascalCase(str)
-   -&gt; string
-</code></pre>
-<p>Returns a string with spaces inserted inbetween PascalCase words.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="removetrailingzeros">RemoveTrailingZeros<a class="headerlink" href="#removetrailingzeros" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.RemoveTrailingZeros(num)
-   -&gt; string
-</code></pre>
-<p>Removes trailing zeros from a number and returns it as string.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>num</b> <code>number</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="escapepatterncharacters">EscapePatternCharacters<a class="headerlink" href="#escapepatterncharacters" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.EscapePatternCharacters(str)
-   -&gt; string
-</code></pre>
-<p>Escapes characters that have a special meaning in lua patterns.
-Source: https://github.com/lua-nucleo/lua-nucleo/blob/v0.1.0/lua-nucleo/string.lua#L245-L267</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.Contains(str, pattern)
-</code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>pattern</b> <code>pattern</code> </p>
-
-<h4 id="addpadding">AddPadding<a class="headerlink" href="#addpadding" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.AddPadding(str, minLength, paddingCharacter)
+<h5 id="addpadding">AddPadding<a class="headerlink" href="#addpadding" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.AddPadding(str, minLength, paddingCharacter)
    -&gt; string
 </code></pre>
 <p>Adds padding characters to the front of a string to meet a minimum length.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>minLength</b> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>minLength</b> <code>integer</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>paddingCharacter</b> <code>string?</code> Defaults to `""`</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>paddingCharacter</b> <code>string?</code> Defaults to `""`</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="split_2">Split_2<a class="headerlink" href="#split_2" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.Split_2(str, sep)
-   -&gt; string[]
+<h5 id="appendline">AppendLine<a class="headerlink" href="#appendline" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.AppendLine()
 </code></pre>
-<p>Split a string by delimiter. Source: https://stackoverflow.com/questions/1426954/split-string-in-lua</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>inputstr</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>sep</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string[]</code> </p>
-
-<h4 id="capitalize">Capitalize<a class="headerlink" href="#capitalize" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.Capitalize(str)
+<h5 id="capitalize">Capitalize<a class="headerlink" href="#capitalize" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.Capitalize(str)
    -&gt; string
 </code></pre>
-<p>Capitalizes the first letter of the string.
-https://stackoverflow.com/a/2421746</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str</b> <code>string</code> </p>
+<p>Capitalizes the first letter of the string.</p>
+<p>https://stackoverflow.com/a/2421746</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="format">Format<a class="headerlink" href="#format" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.Format(str, formatData)
-   -&gt; string 
+<h5 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.Contains(str, pattern)
 </code></pre>
-<p>Format a string.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>formatData</b> <code>TextFormatData</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>pattern</b> <code>pattern</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string </code> </p>
-
-<h4 id="stripfonttags">StripFontTags<a class="headerlink" href="#stripfonttags" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.StripFontTags(str)
-   -&gt; string
-</code></pre>
-<p>Removes all <font> tags from a string. WIP!</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>str</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="dump">Dump<a class="headerlink" href="#dump" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.Dump(obj, opts)
+<h5 id="dump">Dump<a class="headerlink" href="#dump" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.Dump(obj, opts)
    -&gt; string
 </code></pre>
 <p>Shorthand for Ext.DumpExport() which does not require you to explicitly define the default options (Beautify, StringifyInternalTypes, etc.)</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>obj</b> <code>any</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>obj</b> <code>any</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>opts</b> <code>unknown?</code> TODO specify type</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>opts</b> <code>unknown?</code> TODO specify type</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="istranslatedstringregistered">IsTranslatedStringRegistered<a class="headerlink" href="#istranslatedstringregistered" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.IsTranslatedStringRegistered(handle)
-   -&gt; boolean
+<h5 id="equalizespace">EqualizeSpace<a class="headerlink" href="#equalizespace" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.EqualizeSpace(str1, str2, space)
+   -&gt; string
 </code></pre>
-<p>Returns whether a TSK handle was registered <strong>through the Text library.</strong></p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code> </p>
+<p>Concatenates 2 strings and adds enough whitespace padding inbetween them to ensure a specific length.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str1</b> <code>string</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str2</b> <code>string</code></p>
 
-<h4 id="gettranslatedstring">GetTranslatedString<a class="headerlink" href="#gettranslatedstring" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.GetTranslatedString(handle, fallBack)
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>space</b> <code>integer</code></p>
+
+<h5 id="escapepatterncharacters">EscapePatternCharacters<a class="headerlink" href="#escapepatterncharacters" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.EscapePatternCharacters(str)
+   -&gt; string
+</code></pre>
+<p>Escapes characters that have a special meaning in lua patterns.</p>
+<p>Source: https://github.com/lua-nucleo/lua-nucleo/blob/v0.1.0/lua-nucleo/string.lua#L245-L267</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
+
+<h5 id="format">Format<a class="headerlink" href="#format" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.Format(str, formatData)
    -&gt; string 
 </code></pre>
-<p>Returns the string bound to a TranslatedStringHandle, or a key.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle|string|TextLib_TranslatedString</code> Accepts handles or keys.</p>
+<p>Format a string.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>fallBack</b> <code>string?</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>formatData</b> <code>TextFormatData</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string </code> Defaults to the handle, or fallBack if specified.</p>
-
-<h4 id="registertranslatedstring">RegisterTranslatedString<a class="headerlink" href="#registertranslatedstring" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.RegisterTranslatedString(handle, text)
-   -&gt; TextLib_TranslatedString
+<h5 id="generateguid">GenerateGUID<a class="headerlink" href="#generateguid" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.GenerateGUID(pattern)
+   -&gt; GUID
 </code></pre>
-<p>Registers a translated string.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code> </p>
+<p>Generate a random GUID.</p>
+<p>Source: https://gist.github.com/jrus/3197011</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>pattern</b> <code>pattern?</code> Defaults to GUID4 pattern.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>text</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>TextLib_TranslatedString</code> </p>
-
-<h4 id="settranslatedstring">SetTranslatedString<a class="headerlink" href="#settranslatedstring" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.SetTranslatedString(handle, text)
-</code></pre>
-<p>Sets the text of a translated string.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>text</b> <code>string</code> </p>
-
-<h4 id="setstringkey">SetStringKey<a class="headerlink" href="#setstringkey" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.SetStringKey(key, handle)
-</code></pre>
-<p>Binds a TSK to a string key.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>key</b> <code>string</code> </p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code> </p>
-
-<h4 id="generatelocalizationtemplate">GenerateLocalizationTemplate<a class="headerlink" href="#generatelocalizationtemplate" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.GenerateLocalizationTemplate(modTable, existingTemplate)
-   -&gt; TextLib_LocalizationTemplate, integer[]?, integer[]? 
+<h5 id="generatelocalizationtemplate">GenerateLocalizationTemplate<a class="headerlink" href="#generatelocalizationtemplate" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.GenerateLocalizationTemplate(modTable, existingTemplate)
+   -&gt; TextLib_LocalizationTemplate, integer[]?, integer[]? -- Second param is new strings, third is outdated strings. Second param onwards is only returned while patching.
 </code></pre>
 <p>Generates a template file for localizing strings registered through this library.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>modTable</b> <code>string?</code> Defaults to "EpipEncounters"</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modTable</b> <code>string?</code> Defaults to "EpipEncounters"</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>existingTemplate</b> <code>TextLib_LocalizationTemplate?</code> If present, translated strings from this template will be patched into the new one, if the reference text is still up-to-date.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>existingTemplate</b> <code>TextLib_LocalizationTemplate?</code> If present, translated strings from this template will be patched into the new one, if the reference text is still up-to-date.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>TextLib_LocalizationTemplate, integer[]?, integer[]? </code> Second param is new strings, third is outdated strings. Second param onwards is only returned while patching.</p>
-
-<h4 id="getcurrentlanguage">GetCurrentLanguage<a class="headerlink" href="#getcurrentlanguage" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.GetCurrentLanguage()
+<h5 id="generatetranslatedstringhandle">GenerateTranslatedStringHandle<a class="headerlink" href="#generatetranslatedstringhandle" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.GenerateTranslatedStringHandle()
+   -&gt; TranslatedStringHandle
+</code></pre>
+<p>Generates a random handle in the format that Larian uses for TranslatedStringHandle.</p>
+<h5 id="getcurrentlanguage">GetCurrentLanguage<a class="headerlink" href="#getcurrentlanguage" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.GetCurrentLanguage()
    -&gt; string
 </code></pre>
 <p>Returns the language the game is set to.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-<h4 id="settranslatedstringtranslation">SetTranslatedStringTranslation<a class="headerlink" href="#settranslatedstringtranslation" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.SetTranslatedStringTranslation(handle, language, text)
+<h5 id="gettranslatedstring">GetTranslatedString<a class="headerlink" href="#gettranslatedstring" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.GetTranslatedString(handle, fallBack)
+   -&gt; string -- Defaults to the handle, or fallBack if specified.
 </code></pre>
-<p>Sets the translation of a TSK.
-The handle's bound text will be updated if the game's language matches.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code> </p>
+<p>Returns the string bound to a TranslatedStringHandle, or a key.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle|string|TextLib_TranslatedString</code> Accepts handles or keys.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>language</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>fallBack</b> <code>string?</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>text</b> <code>string</code> </p>
-
-<h4 id="gettranslatedstringtranslation">GetTranslatedStringTranslation<a class="headerlink" href="#gettranslatedstringtranslation" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.GetTranslatedStringTranslation(handle, language)
-   -&gt; string? 
+<h5 id="gettranslatedstringtranslation">GetTranslatedStringTranslation<a class="headerlink" href="#gettranslatedstringtranslation" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.GetTranslatedStringTranslation(handle, language)
+   -&gt; string? -- `nil` if the handle is not translated
 </code></pre>
 <p>Returns the translation for a handle.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>language</b> <code>string?</code> Defaults to current language.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>language</b> <code>string?</code> Defaults to current language.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string? </code> `nil` if the handle is not translated</p>
+<h5 id="istranslatedstringregistered">IsTranslatedStringRegistered<a class="headerlink" href="#istranslatedstringregistered" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.IsTranslatedStringRegistered(handle)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether a TSK handle was registered <strong>through the Text library.</strong></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
 
-<h4 id="loadlocalization">LoadLocalization<a class="headerlink" href="#loadlocalization" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.LoadLocalization(language, filePath)
+<h5 id="join">Join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.Join(str1, str2, separator)
+</code></pre>
+<p>Joins two strings together.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str1</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str2</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>separator</b> <code>string?</code> Defaults to ` `</p>
+
+<h5 id="loadlocalization">LoadLocalization<a class="headerlink" href="#loadlocalization" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.LoadLocalization(language, filePath)
 </code></pre>
 <p>Loads a localization file. Must be in the format generated by GenerateLocalizationTemplate()</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>language</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>language</b> <code>string</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>filePath</b> <code>string</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>filePath</b> <code>string</code></p>
 
-<h4 id="removeguidprefix">RemoveGUIDPrefix<a class="headerlink" href="#removeguidprefix" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Text.RemoveGUIDPrefix(guid)
+<h5 id="registertranslatedstring">RegisterTranslatedString<a class="headerlink" href="#registertranslatedstring" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.RegisterTranslatedString(handle, text)
+   -&gt; TextLib_TranslatedString
+</code></pre>
+<p>Registers a translated string.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
+
+<h5 id="removeguidprefix">RemoveGUIDPrefix<a class="headerlink" href="#removeguidprefix" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.RemoveGUIDPrefix(guid)
    -&gt; GUID
 </code></pre>
 <p>Returns the GUID passed by parameter with any prefixes removed.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>guid</b> <code>PrefixedGUID</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>guid</b> <code>PrefixedGUID</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GUID</code> </p>
+<h5 id="removetrailingzeros">RemoveTrailingZeros<a class="headerlink" href="#removetrailingzeros" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.RemoveTrailingZeros(num)
+   -&gt; string
+</code></pre>
+<p>Removes trailing zeros from a number and returns it as string.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>num</b> <code>number</code></p>
+
+<h5 id="round">Round<a class="headerlink" href="#round" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.Round(value, decimals)
+   -&gt; string
+</code></pre>
+<p>Returns a string representation of a number, rounded.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>number</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>decimals</b> <code>integer</code> Defaults to 0.</p>
+
+<h5 id="separatepascalcase">SeparatePascalCase<a class="headerlink" href="#separatepascalcase" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.SeparatePascalCase(str)
+   -&gt; string
+</code></pre>
+<p>Returns a string with spaces inserted inbetween PascalCase words.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
+
+<h5 id="setstringkey">SetStringKey<a class="headerlink" href="#setstringkey" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.SetStringKey(key, handle)
+</code></pre>
+<p>Binds a TSK to a string key.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>key</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
+
+<h5 id="settranslatedstring">SetTranslatedString<a class="headerlink" href="#settranslatedstring" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.SetTranslatedString(handle, text)
+</code></pre>
+<p>Sets the text of a translated string.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
+
+<h5 id="settranslatedstringtranslation">SetTranslatedStringTranslation<a class="headerlink" href="#settranslatedstringtranslation" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.SetTranslatedStringTranslation(handle, language, text)
+</code></pre>
+<p>Sets the translation of a TSK.</p>
+<p>The handle's bound text will be updated if the game's language matches.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>language</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
+
+<h5 id="split">Split<a class="headerlink" href="#split" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.Split(inputstr, sep)
+   -&gt; string[]
+</code></pre>
+<p>Split a string by delimiter. Source: https://stackoverflow.com/questions/1426954/split-string-in-lua</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>inputstr</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>sep</b> <code>string</code></p>
+
+<h5 id="split_2">Split_2<a class="headerlink" href="#split_2" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.Split_2()
+</code></pre>
+<h5 id="stripfonttags">StripFontTags<a class="headerlink" href="#stripfonttags" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function TextLib.StripFontTags(str)
+   -&gt; string
+</code></pre>
+<p>Removes all <font> tags from a string. WIP!</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 <p></doc></p>
               
             </div>

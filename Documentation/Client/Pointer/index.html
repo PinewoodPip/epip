@@ -68,46 +68,12 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Client</a>
     <ul class="current">
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Pointer</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#events-and-hooks">Events and Hooks</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#hovercharacterchanged-event">HoverCharacterChanged (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#hovercharacter2changed-event">HoverCharacter2Changed (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#hoveritemchanged-event">HoverItemChanged (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#hoverentitychanged-event">HoverEntityChanged (event)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#dragdropstatechanged-event">DragDropStateChanged (event)</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#getcurrentcharacter">GetCurrentCharacter</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getcurrentitem">GetCurrentItem</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getcurrententity">GetCurrentEntity</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getwalkableposition">GetWalkablePosition</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getworldposition">GetWorldPosition</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getdragdropstate">GetDragDropState</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getdraggedskill">GetDraggedSkill</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getdraggeditem">GetDraggedItem</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#isdragging">IsDragging</a>
-    </li>
-        </ul>
-    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Generic UI</a>
@@ -153,6 +119,10 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Text/">Text</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Vector/">Vector</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/OOP/">OOP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Utilities/Library/">Library</a>
                 </li>
     </ul>
                   </li>
@@ -201,111 +171,92 @@
                 <h1 id="pointer">Pointer<a class="headerlink" href="#pointer" title="Permanent link">&para;</a></h1>
 <p>The <code>Pointer</code> library contains methods related to the pointer for the game world; used to interact with game objects and move around.</p>
 <p>It's primarily a wrapper around <code>Ext.UI.GetPickingState()</code>. In addition to methods to quickly fetch its entities, it offers events for when they change (when the user starts/stops hovering over a new entity).</p>
-<p><doc package="PointerLib"></p>
+<p><doc class="PointerLib"></p>
+<h1 id="pointerlib-class">PointerLib Class<a class="headerlink" href="#pointerlib-class" title="Permanent link">&para;</a></h1>
 <h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h5 id="hovercharacterchanged-event">HoverCharacterChanged (event)<a class="headerlink" href="#hovercharacterchanged-event" title="Permanent link">&para;</a></h5>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter?</code> </p>
+<h4 id="hovercharacterchanged-event">HoverCharacterChanged (event)<a class="headerlink" href="#hovercharacterchanged-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter?</code></p>
 
-<h5 id="hovercharacter2changed-event">HoverCharacter2Changed (event)<a class="headerlink" href="#hovercharacter2changed-event" title="Permanent link">&para;</a></h5>
-<p>Fired when the corpse character over the pointer changes.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter?</code> </p>
+<h4 id="hovercharacter2changed-event">HoverCharacter2Changed (event)<a class="headerlink" href="#hovercharacter2changed-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter?</code></p>
 
-<h5 id="hoveritemchanged-event">HoverItemChanged (event)<a class="headerlink" href="#hoveritemchanged-event" title="Permanent link">&para;</a></h5>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Item</b> <code>EclItem?</code> </p>
+<h4 id="hoveritemchanged-event">HoverItemChanged (event)<a class="headerlink" href="#hoveritemchanged-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Item</b> <code>EclItem?</code></p>
 
-<h5 id="hoverentitychanged-event">HoverEntityChanged (event)<a class="headerlink" href="#hoverentitychanged-event" title="Permanent link">&para;</a></h5>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Entity</b> <code>Entity?</code> </p>
+<h4 id="hoverentitychanged-event">HoverEntityChanged (event)<a class="headerlink" href="#hoverentitychanged-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Entity</b> <code>Entity?</code></p>
 
-<h5 id="dragdropstatechanged-event">DragDropStateChanged (event)<a class="headerlink" href="#dragdropstatechanged-event" title="Permanent link">&para;</a></h5>
-<p>Fired when a player starts or ends a drag drop. </p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>State</b> <code>DragDropManagerPlayerDragInfo?</code> `nil` if the player stopped dragging.</p>
+<h4 id="dragdropstatechanged-event">DragDropStateChanged (event)<a class="headerlink" href="#dragdropstatechanged-event" title="Permanent link">&para;</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>State</b> <code>DragDropManagerPlayerDragInfo?</code> `nil` if the player stopped dragging.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>PlayerIndex</b> <code>integer</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>PlayerIndex</b> <code>integer</code></p>
 
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h4 id="getcurrentcharacter">GetCurrentCharacter<a class="headerlink" href="#getcurrentcharacter" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Pointer.GetCurrentCharacter(playerIndex, includeDead)
+<h5 id="getcurrentcharacter">GetCurrentCharacter<a class="headerlink" href="#getcurrentcharacter" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function PointerLib.GetCurrentCharacter(playerIndex, includeDead) -- (Client-only)
    -&gt; EclCharacter?
 </code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>includeDead</b> <code>boolean?</code> Defaults to false.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>includeDead</b> <code>boolean?</code> Defaults to false.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclCharacter?</code> </p>
-
-<h4 id="getcurrentitem">GetCurrentItem<a class="headerlink" href="#getcurrentitem" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Pointer.GetCurrentItem(playerIndex)
-   -&gt; EclItem?
-</code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclItem?</code> </p>
-
-<h4 id="getcurrententity">GetCurrentEntity<a class="headerlink" href="#getcurrententity" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Pointer.GetCurrentEntity(playerIndex)
+<h5 id="getcurrententity">GetCurrentEntity<a class="headerlink" href="#getcurrententity" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function PointerLib.GetCurrentEntity(playerIndex) -- (Client-only)
    -&gt; Entity?
 </code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Entity?</code> </p>
-
-<h4 id="getwalkableposition">GetWalkablePosition<a class="headerlink" href="#getwalkableposition" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Pointer.GetWalkablePosition(playerIndex)
-   -&gt; Vector3D
+<h5 id="getcurrentitem">GetCurrentItem<a class="headerlink" href="#getcurrentitem" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function PointerLib.GetCurrentItem(playerIndex) -- (Client-only)
+   -&gt; EclItem?
 </code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector3D</code> </p>
-
-<h4 id="getworldposition">GetWorldPosition<a class="headerlink" href="#getworldposition" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Pointer.GetWorldPosition(playerIndex)
-   -&gt; Vector3D
-</code></pre>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Vector3D</code> </p>
-
-<h4 id="getdragdropstate">GetDragDropState<a class="headerlink" href="#getdragdropstate" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Pointer.GetDragDropState(playerIndex)
+<h5 id="getdragdropstate">GetDragDropState<a class="headerlink" href="#getdragdropstate" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function PointerLib.GetDragDropState(playerIndex) -- (Client-only)
    -&gt; DragDropManagerPlayerDragInfo
 </code></pre>
 <p>Returns the drag-drop system state for a player.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>DragDropManagerPlayerDragInfo</code> </p>
-
-<h4 id="getdraggedskill">GetDraggedSkill<a class="headerlink" href="#getdraggedskill" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Pointer.GetDraggedSkill(playerIndex)
-   -&gt; string? 
-</code></pre>
-<p>Returns the skill being dragged by a player.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string? </code> Can be an action as well.</p>
-
-<h4 id="getdraggeditem">GetDraggedItem<a class="headerlink" href="#getdraggeditem" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Pointer.GetDraggedItem(playerIndex)
+<h5 id="getdraggeditem">GetDraggedItem<a class="headerlink" href="#getdraggeditem" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function PointerLib.GetDraggedItem(playerIndex) -- (Client-only)
    -&gt; EclItem?
 </code></pre>
 <p>Returns the item being dragged by a player.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>EclItem?</code> </p>
+<h5 id="getdraggedskill">GetDraggedSkill<a class="headerlink" href="#getdraggedskill" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function PointerLib.GetDraggedSkill(playerIndex) -- (Client-only)
+   -&gt; string? -- Can be an action as well.
+</code></pre>
+<p>Returns the skill being dragged by a player.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<h4 id="isdragging">IsDragging<a class="headerlink" href="#isdragging" title="Permanent link">&para;</a></h4>
-<pre><code class="language-lua">function Pointer.IsDragging(playerIndex)
+<h5 id="getwalkableposition">GetWalkablePosition<a class="headerlink" href="#getwalkableposition" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function PointerLib.GetWalkablePosition(playerIndex) -- (Client-only)
+   -&gt; Vector3D
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
+
+<h5 id="getworldposition">GetWorldPosition<a class="headerlink" href="#getworldposition" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function PointerLib.GetWorldPosition(playerIndex) -- (Client-only)
+   -&gt; Vector3D
+</code></pre>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
+
+<h5 id="isdragging">IsDragging<a class="headerlink" href="#isdragging" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function PointerLib.IsDragging(playerIndex) -- (Client-only)
    -&gt; boolean
 </code></pre>
 <p>Returns whether the player's cursor is dragging anything.</p>
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 <p></doc></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../../docs/" class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Terminology/" class="btn btn-neutral float-left" title="Terminology"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../UI/Generic/Introduction/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -329,7 +280,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../../docs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../Terminology/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../UI/Generic/Introduction/" style="color: #fcfcfc">Next &raquo;</a></span>

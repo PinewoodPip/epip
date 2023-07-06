@@ -68,6 +68,8 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../docs/">Introduction</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Documentation/Terminology/">Terminology</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Client/Pointer/">Pointer</a>
@@ -115,6 +117,10 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Text/">Text</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Vector/">Vector</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/OOP/">OOP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Documentation/Utilities/Library/">Library</a>
                 </li>
     </ul>
                   </li>
@@ -170,18 +176,8 @@
 </ol>
 <p>You can define a stat with <code>RegisterStat(id: string, data: EpipStat)</code>. The structure of a stat is the following:</p>
 <p><doc fields="EpipStat"></p>
-<pre><code class="language-lua">---@class EpipStat
----@field Name string
----@field Description string Fallback description in case a formatted Tooltip isn't set.
----@field Tooltip TooltipData
----@field Footnote string Italic text after description, in new paragraph.
----@field Suffix string Suffix for value display.
----@field Prefix string Prefix for value display.
----@field Boolean boolean Boolean stats show no value label.
----@field MaxCharges string If specified, this stat will display as &quot;{Value}/{Value of MaxCharges stat}&quot;
----@field IgnoreForHiding boolean If true, this stat will not be considered as added when determining if a Hidden category should display.
-</code></pre>
-<p></doc></p>
+<p>nil
+</doc></p>
 <pre><code class="language-lua">StatsTab.RegisterStat(&quot;RegenLifeCalculated&quot;, {
     Name = &quot;Missing Life Regen&quot;,
     Description = &quot;Restores a percentage of your missing Vitality at the start of your turn.&quot;,
