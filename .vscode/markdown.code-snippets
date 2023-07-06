@@ -21,22 +21,18 @@
 		"body": [
 			"# $1",
 			"",
-			"",
-			"## Classes",
-			"",
-			"<doc class=\"$2\" symbols=\"_SubClasses\">",
-			"</doc>",
-			"",
-			"## Events",
-			"",
-			"<doc class=\"$2\" symbols=\"Listenable\">",
-			"</doc>",
-			"",
-			"## Methods",
-			"",
-			"<doc class=\"$2\" symbols=\"Function\">",
+			"<doc class=\"$2\">",
 			"</doc>",
 		],
 		"description": "Template for a documentation page."
-	}
+	},
+	"class": {
+		"scope": "markdown",
+		"prefix": "class",
+		"body": [
+			"<doc class=\"$2\">",
+			"</doc>",
+		],
+		"description": "Template for a class doc tag."
+	},
 }

@@ -26,6 +26,7 @@ nav:
     - "Vanity": "Features/Vanity.md"
   - Documentation: 
     - "Introduction": "docs.md"
+    - "Terminology": "Documentation/Terminology.md"
     - "Client":
       - "Pointer": "Documentation/Client/Pointer.md"
       - Generic UI:
