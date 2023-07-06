@@ -49,6 +49,7 @@ nav:
       - "Text": "Documentation/Utilities/Text.md"
       - "Vector": "Documentation/Utilities/Vector.md"
       - "OOP": "Documentation/Utilities/OOP.md"
+      - "Library": "Documentation/Utilities/Library.md"
   #   - "Global Tables":
   #     - "Feature": "Global Tables/Feature.md"
   #   - "Game":
