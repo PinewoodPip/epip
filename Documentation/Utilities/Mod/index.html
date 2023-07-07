@@ -70,6 +70,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Global%20Tables/Epip/">Important Tables</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
@@ -123,6 +125,16 @@
                 <li class="toctree-l2"><a class="reference internal" href="../OOP/">OOP</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Library/">Library</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IO/">IO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Coroutine/">Coroutine</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../UserVars/">UserVars</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Texture/">Texture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pointer/">Pointer</a>
                 </li>
     </ul>
                   </li>
@@ -193,11 +205,13 @@
 <pre><code class="language-lua">function ModLib.GetStoryVersion(guid)
    -&gt; integer?, integer?, integer?, integer? -- Major, minor, revision, build version. Fails if the mod is not loaded.
 </code></pre>
+<p>Returns the story version of a mod.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code></p>
 
 <h5 id="isloaded">IsLoaded<a class="headerlink" href="#isloaded" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function ModLib.IsLoaded(guid)
 </code></pre>
+<p>Returns whether a mod is loaded.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code></p>
 <p></doc></p>
               

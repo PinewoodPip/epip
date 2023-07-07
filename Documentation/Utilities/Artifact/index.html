@@ -70,6 +70,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Global%20Tables/Epip/">Important Tables</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
@@ -124,6 +126,16 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Library/">Library</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IO/">IO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Coroutine/">Coroutine</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../UserVars/">UserVars</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Texture/">Texture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pointer/">Pointer</a>
+                </li>
     </ul>
                   </li>
               </ul>
@@ -173,11 +185,35 @@
 <p class="admonition-title">This library is relevant for Epic Encounters only.</p>
 </div>
 <p>The <code>Artifact</code> library contains data and methods related to <a href="https://docs.google.com/document/d/1aKyZLz4ix9FYj0enKIfRv4r5IKL7cjdLlP1mcJ3Ifc0/edit">Epic Encounters Artifacts</a>.</p>
-<p>The <code>ArtifactLib_ArtifactDefiniton</code> class holds information for each of the artifacts, including slot, item/rune templates, as well as the related keyword activators and mutators (defined manually).</p>
+<p>The <code>ArtifactLib_ArtifactDefinition</code> class holds information for each of the artifacts, including slot, item/rune templates, as well as the related keyword activators and mutators (defined manually).</p>
 <p>The data is not generated automatically. You must add your own artifacts by calling <code>RegisterArtifact()</code> with the data table filled out. Ideally, this should be done on both contexts, so client scripting can also query the information.</p>
+<p><doc classWithFields="ArtifactLib_ArtifactDefinition"></p>
+<h1 id="artifactlib_artifactdefinition-class">ArtifactLib_ArtifactDefinition Class<a class="headerlink" href="#artifactlib_artifactdefinition-class" title="Permanent link">&para;</a></h1>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>ID</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Slot</b> <code>ItemSlot</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>ItemTemplate</b> <code>GUID</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>RuneTemplate</b> <code>GUID</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>DescriptionHandle</b> <code>TranslatedStringHandle</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>KeywordActivators</b> <code>Keyword[]</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>KeywordMutators</b> <code>Keyword[]</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>GetName</b> <code>fun(self):string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>GetDescription</b> <code>fun(self):string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>GetPowerTooltip</b> <code>fun(self):TooltipLib_Element[]</code></p>
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p></doc></p>
 <p><doc class="ArtifactLib"></p>
 <h1 id="artifactlib-class">ArtifactLib Class<a class="headerlink" href="#artifactlib-class" title="Permanent link">&para;</a></h1>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
 <h5 id="getdata">GetData<a class="headerlink" href="#getdata" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function ArtifactLib.GetData(artifactID)
    -&gt; ArtifactLib_ArtifactDefinition?

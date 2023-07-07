@@ -70,6 +70,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Global%20Tables/Epip/">Important Tables</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
@@ -118,8 +120,6 @@
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#commonstrings">CommonStrings</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#library">Library</a>
-    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Vector/">Vector</a>
@@ -127,6 +127,16 @@
                 <li class="toctree-l2"><a class="reference internal" href="../OOP/">OOP</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Library/">Library</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IO/">IO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Coroutine/">Coroutine</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../UserVars/">UserVars</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Texture/">Texture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pointer/">Pointer</a>
                 </li>
     </ul>
                   </li>
@@ -199,17 +209,16 @@ Spanish
 <p><code>CommonStrings.lua</code> contains TSKs for generic strings that are reused across many different contexts. Strings should be added here if they are of general usage and their translation won't differ across different contexts. These are accessed via the <code>Text.CommonStrings</code>, a raw table with no particularities.</p>
 <p>The following VSC snippet is used to add entries to CommonStrings:</p>
 <pre><code class="language-json">&quot;commonstring&quot;: {
-    &quot;scope&quot;: &quot;lua&quot;,
-    &quot;prefix&quot;: &quot;commonstring&quot;,
-    &quot;body&quot;: [
-        &quot;Text.CommonStrings.$1 = Text.RegisterTranslatedString({&quot;,
-        &quot;   Handle = \&quot;$2\&quot;,&quot;,
-        &quot;   Text = \&quot;$1\&quot;,&quot;,
-        &quot;})&quot;,
-    ],
+   &quot;scope&quot;: &quot;lua&quot;,
+   &quot;prefix&quot;: &quot;commonstring&quot;,
+   &quot;body&quot;: [
+      &quot;Text.CommonStrings.$1 = Text.RegisterTranslatedString({&quot;,
+      &quot;   Handle = \&quot;h${UUID/[\\-]/g/g}\&quot;,&quot;,
+      &quot;   Text = \&quot;$1\&quot;,&quot;,
+      &quot;})&quot;,
+   ],
 },
 </code></pre>
-<h2 id="library">Library<a class="headerlink" href="#library" title="Permanent link">&para;</a></h2>
 <p><doc class="TextLib"></p>
 <h1 id="textlib-class">TextLib Class<a class="headerlink" href="#textlib-class" title="Permanent link">&para;</a></h1>
 <h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
@@ -231,8 +240,14 @@ Spanish
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>paddingCharacter</b> <code>string?</code> Defaults to `""`</p>
 
 <h5 id="appendline">AppendLine<a class="headerlink" href="#appendline" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function TextLib.AppendLine()
+<pre><code class="language-lua">function TextLib.AppendLine(str1, str2)
+   -&gt; string
 </code></pre>
+<p>Joins two strings inserting a line break between them.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str1</b> <code>string</code> The line break is not added if this string is empty.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str2</b> <code>string</code></p>
+
 <h5 id="capitalize">Capitalize<a class="headerlink" href="#capitalize" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function TextLib.Capitalize(str)
    -&gt; string
@@ -244,6 +259,7 @@ Spanish
 <h5 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function TextLib.Contains(str, pattern)
 </code></pre>
+<p>Returns whether str contains the pattern.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>pattern</b> <code>pattern</code></p>

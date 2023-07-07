@@ -70,6 +70,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Global%20Tables/Epip/">Important Tables</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Client</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
@@ -124,6 +126,16 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Library/">Library</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IO/">IO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Coroutine/">Coroutine</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../UserVars/">UserVars</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Texture/">Texture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pointer/">Pointer</a>
+                </li>
     </ul>
                   </li>
               </ul>
@@ -174,6 +186,7 @@
 <h1 id="characterlib-class">CharacterLib Class<a class="headerlink" href="#characterlib-class" title="Permanent link">&para;</a></h1>
 <h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
 <h4 id="statusapplied-event">StatusApplied (event)<a class="headerlink" href="#statusapplied-event" title="Permanent link">&para;</a></h4>
+<p>TODO move somewhere else, since victim could be an item</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>SourceHandle</b> <code>EntityHandle</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Victim</b> <code>Character|Item</code></p>
@@ -188,6 +201,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Slot</b> <code>ItemSlot</code></p>
 
 <h4 id="createequipmentvisuals-hook">CreateEquipmentVisuals (hook)<a class="headerlink" href="#createequipmentvisuals-hook" title="Permanent link">&para;</a></h4>
+<p>Wrapper for Ext.Events.CreateEquipmentVisualsRequest.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Item</b> <code>EclItem</code></p>
