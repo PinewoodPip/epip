@@ -3,6 +3,8 @@
 
 The `Pointer` library offers methods and events related to the state of the pointer - that is, what the user is selecting with their cursor. This includes world objects as well as drag-drop.
 
+It's primarily a wrapper around `Ext.UI.GetPickingState()`. In addition to methods to quickly fetch its entities, it offers events for when they change (when the user starts/stops hovering over a new entity).
+
 <doc class="PointerLib">
 
 # PointerLib Class

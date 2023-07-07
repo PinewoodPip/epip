@@ -37,10 +37,6 @@ Its events are helpful for initialization purposes. `ClientReady`, for example, 
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>ProfileGUID</b> <code>GUID</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>CharacterNetID</b> <code>NetId</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>ProfileGUID</b> <code>GUID</code></p>
-
 #### RegionStarted (event)
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>LevelID</b> <code>string</code></p>
@@ -50,14 +46,14 @@ Its events are helpful for initialization purposes. `ClientReady`, for example, 
 ##### GetState
 
 ```lua
-function GameStateLib.GetState() -- (Client-only)
+function GameStateLib.GetState() -- (Server-only)
    -> GameState
 ```
 
 ##### GetState
 
 ```lua
-function GameStateLib.GetState() -- (Server-only)
+function GameStateLib.GetState() -- (Client-only)
    -> GameState
 ```
 
