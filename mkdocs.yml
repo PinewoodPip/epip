@@ -52,6 +52,7 @@ nav:
       - "OOP": "Documentation/Utilities/OOP.md"
       - "Library": "Documentation/Utilities/Library.md"
       - "IO": "Documentation/Utilities/IO.md"
+      - "Coroutine": "Documentation/Utilities/Coroutine.md"
   #   - "Global Tables":
   #     - "Feature": "Global Tables/Feature.md"
   #   - "Game":
