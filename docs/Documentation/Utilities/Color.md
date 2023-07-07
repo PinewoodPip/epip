@@ -1,375 +1,258 @@
 # Color
-The `Color` table offers utilities for working with colors, either through RGB, decimal, or hex.
+The `Color` library offers utilities for working with colors, either through RGB, decimal, or hex.
 
 The constructor methods create an `RGBColor` table.
 
-## RGBColor
+The library also contains constants for common colors used by Larian.
 
-<doc package="RGBColor">
+<doc class="ColorLib">
 
-
+# ColorLib Class
 
 ## Methods
 
-#### ToDecimal
-
-
+##### Clone
 
 ```lua
-function RGBColor:ToDecimal(addAlpha)
-   -> integer
+function ColorLib.Clone(color)
+   -> RGBColor -- New instance with same values.
 ```
 
+Clones a color instance.
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color</b> <code>RGBColor</code></p>
 
-Returns the decimal representation of the color.
-Actionscript expects colors to be represented in this way.
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>addAlpha</b> <code>boolean?</code> Defaults to false.</p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer</code> </p>
-
-#### Unpack
-
-
+##### Create
 
 ```lua
-function RGBColor:Unpack()
-   -> integer ...
+function ColorLib.Create(red, green, blue, alpha)
+   -> RGBColor
 ```
 
+Alias for creating an RGBColor from RGBA values.
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>red</b> <code>integer?</code></p>
 
-Unpacks the color's RGB values, alpha included.
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>green</b> <code>integer?</code></p>
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>blue</b> <code>integer?</code></p>
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>alpha</b> <code>integer?</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer ...</code> </p>
-
-#### ToHex
-
-
+##### CreateFromDecimal
 
 ```lua
-function RGBColor:ToHex(prefix, addAlpha)
-   -> string
+function ColorLib.CreateFromDecimal(num)
+   -> RGBColor
 ```
 
+Creates a color from a decimal value.
 
+Does not support alpha.
 
-Returns the hexadecimal representation of the color.
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>num</b> <code>integer</code></p>
 
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>prefix</b> <code>boolean?</code> Prefix the string with #. Defaults to false.</p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>addAlpha</b> <code>boolean?</code> Defaults to false. If enabled, resulting color will be in the format `#RRGGBBAA`</p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-#### ToFloats
-
-
+##### CreateFromHex
 
 ```lua
-function RGBColor:ToFloats()
-   -> number, number, number, number
+function ColorLib.CreateFromHex(hex)
+   -> RGBColor
 ```
 
+Creates a color from an html-format hex color code.
 
+Does not support alpha.
 
-Returns the RGBA values as floats in the range[0.0 - 1.0]
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>hex</b> <code>string</code></p>
 
+##### CreateFromRGB
 
+```lua
+function ColorLib.CreateFromRGB(red, green, blue, alpha)
+   -> RGBColor
+```
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number, number, number, number</code> </p>
+Creates a color from RGBA values. Expected range of values is [0-255].
 
-#### Clone
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>red</b> <code>integer?</code></p>
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>green</b> <code>integer?</code></p>
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>blue</b> <code>integer?</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>alpha</b> <code>integer?</code></p>
+
+##### Lerp
+
+```lua
+function ColorLib.Lerp(startColor, targetColor, progress)
+```
+
+Creates a new color whose RGB components are linearly interpolated from one to another.
+
+Uses the alpha of the target color.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>startColor</b> <code>RGBColor</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>targetColor</b> <code>RGBColor</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>progress</b> <code>number</code> Expected values are from 0.0 to 1.0.</p>
+</doc>
+
+<doc class="RGBColor">
+
+# RGBColor Class
+
+## Methods
+
+##### Clone
 
 ```lua
 function RGBColor:Clone()
    -> RGBColor
 ```
 
-
-
 Returns a new instance of RGBColor with the same values.
 
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
-
-#### CreateFromDecimal
-
-
-
-```lua
-function RGBColor.CreateFromDecimal(num)
-   -> RGBColor
-```
-
-
-
-Creates a color from a decimal value.
-Does not support alpha.
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>num</b> <code>integer</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
-
-#### Create
-
-
+##### Create
 
 ```lua
 function RGBColor.Create(r, g, b, a)
    -> RGBColor
 ```
 
-
-
 Creates a color from RGBA values.
+
 Expected range is [0-255] and will be clamped.
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>r</b> <code>integer?</code></p>
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>g</b> <code>integer?</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>r</b> <code>integer?</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>b</b> <code>integer?</code></p>
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>a</b> <code>integer?</code> Defaults to 255.</p>
 
+##### CreateFromDecimal
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>g</b> <code>integer?</code> </p>
+```lua
+function RGBColor.CreateFromDecimal(num)
+   -> RGBColor
+```
 
+Creates a color from a decimal value.
 
+Does not support alpha.
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>b</b> <code>integer?</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>num</b> <code>integer</code></p>
 
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>a</b> <code>integer?</code> Defaults to 255.</p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
-
-#### CreateFromHex
-
-
+##### CreateFromHex
 
 ```lua
 function RGBColor.CreateFromHex(hex)
    -> RGBColor
 ```
 
-
-
 Creates a color from a hexadecimal value.
+
 Does not support alpha.
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>hex</b> <code>string</code></p>
 
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>hex</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
-
-#### Equals
-
-
+##### Equals
 
 ```lua
 function RGBColor:Equals(color)
    -> boolean
 ```
 
-
-
 Returns whether 2 colors have the same RGBA values.
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color</b> <code>RGBColor</code></p>
 
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>color</b> <code>RGBColor</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>boolean</code> </p>
-</doc>
-
-## Color
-
-<doc package="ColorLib">
-
-
-
-## Methods
-
-#### Create
-
-
+##### ToDecimal
 
 ```lua
-function Color.Create(red, green, blue, alpha)
+function RGBColor:ToDecimal(addAlpha)
+   -> integer
+```
+
+Returns the decimal representation of the color.
+
+Actionscript expects colors to be represented in this way.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>addAlpha</b> <code>boolean?</code> Defaults to false.</p>
+
+##### ToFloats
+
+```lua
+function RGBColor:ToFloats()
+   -> number, number, number, number
+```
+
+Returns the RGBA values as floats in the range[0.0 - 1.0]
+
+##### ToHex
+
+```lua
+function RGBColor:ToHex(prefix, addAlpha)
+   -> string
+```
+
+Returns the hexadecimal representation of the color.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>prefix</b> <code>boolean?</code> Prefix the string with #. Defaults to false.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>addAlpha</b> <code>boolean?</code> Defaults to false. If enabled, resulting color will be in the format `#RRGGBBAA`</p>
+
+##### Unpack
+
+```lua
+function RGBColor:Unpack()
+   -> integer ...
+```
+
+Unpacks the color's RGB values, alpha included.
+
+##### __add
+
+```lua
+---@protected
+function RGBColor.__add(color1, color2)
    -> RGBColor
 ```
 
+__add overload. Adds the RGB values of both colors.
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color1</b> <code>RGBColor</code></p>
 
-Alias for creating an RGBColor from RGBA values.
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color2</b> <code>RGBColor</code></p>
 
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>red</b> <code>integer?</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>green</b> <code>integer?</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>blue</b> <code>integer?</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>alpha</b> <code>integer?</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
-
-#### CreateFromRGB
-
-
+##### __eq
 
 ```lua
-function Color.CreateFromRGB(red, green, blue, alpha)
+---@protected
+function RGBColor.__eq(color1, color2)
+   -> boolean
+```
+
+__eq overload. Equivalent to calling RGBColor:Equals()
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color1</b> <code>RGBColor</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color2</b> <code>RGBColor</code></p>
+
+##### __sub
+
+```lua
+---@protected
+function RGBColor.__sub(color1, color2)
    -> RGBColor
 ```
 
+__sub overload. Subtracts the RGB values.
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color1</b> <code>RGBColor</code></p>
 
-Creates a color from RGBA values. Expected range of values is [0-255].
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>red</b> <code>integer?</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>green</b> <code>integer?</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>blue</b> <code>integer?</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>alpha</b> <code>integer?</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
-
-#### CreateFromDecimal
-
-
-
-```lua
-function Color.CreateFromDecimal(num)
-   -> RGBColor
-```
-
-
-
-Creates a color from a decimal value.
-Does not support alpha.
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>num</b> <code>integer</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
-
-#### CreateFromHex
-
-
-
-```lua
-function Color.CreateFromHex(hex)
-   -> RGBColor
-```
-
-
-
-Creates a color from an html-format hex color code.
-Does not support alpha.
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>hex</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor</code> </p>
-
-#### Clone
-
-
-
-```lua
-function Color.Clone(color)
-   -> RGBColor 
-```
-
-
-
-Clones a color instance.
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>color</b> <code>RGBColor</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>RGBColor </code> New instance with same values.</p>
-
-#### Lerp
-
-
-
-```lua
-function Color.Lerp(startColor, targetColor, progress)
-```
-
-
-
-Creates a new color whose RGB components are linearly interpolated from one to another.
-Uses the alpha of the target color.
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>startColor</b> <code>RGBColor</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>targetColor</b> <code>RGBColor</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>progress</b> <code>number</code> Expected values are from 0.0 to 1.0.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color2</b> <code>RGBColor</code></p>
 </doc>

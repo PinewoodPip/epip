@@ -68,7 +68,7 @@ function Library:Debug()
 
 Show debug-level logging from this library.
 
-Only work in Developer mode.
+Only works in Developer mode.
 
 ##### DebugLog
 
@@ -94,7 +94,7 @@ Dump a value to the console, in Debug mode.
 function Library:Error(method)
 ```
 
-Throws an error.
+Throws an error prefixed by the thrower method name.
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>method</b> <code>string</code></p>
 
@@ -160,7 +160,7 @@ function Library:IsDebug()
    -> boolean
 ```
 
-Returns whether :Debug() has been ran successfully.
+Returns whether `:Debug()` has been ran successfully.
 
 ##### Log
 
@@ -225,10 +225,12 @@ Stop all non-error, non-warning logging from this feature.
 ##### RawLog
 
 ```lua
-function Library:RawLog()
+function Library:RawLog(...)
 ```
 
 Log values without any prefixing.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 ##### RegisterClass
 

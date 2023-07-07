@@ -27,6 +27,7 @@ nav:
   - Documentation: 
     - "Introduction": "docs.md"
     - "Terminology": "Documentation/Terminology.md"
+    - "Important Tables": "Documentation/Global Tables/Epip.md"
     - "Client":
       - "Pointer": "Documentation/Client/Pointer.md"
       - Generic UI:
@@ -50,6 +51,7 @@ nav:
       - "Vector": "Documentation/Utilities/Vector.md"
       - "OOP": "Documentation/Utilities/OOP.md"
       - "Library": "Documentation/Utilities/Library.md"
+      - "IO": "Documentation/Utilities/IO.md"
   #   - "Global Tables":
   #     - "Feature": "Global Tables/Feature.md"
   #   - "Game":
