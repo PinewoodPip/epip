@@ -3,97 +3,57 @@ The `Mod` library contains wrapper methods for querying mod-related information.
 
 The `GUIDS` table contains the GUIDs of various notable mods.
 
-<doc package="ModLib">
+<doc class="ModLib">
 
-
+# ModLib Class
 
 ## Methods
 
-#### IsLoaded
-
-
+##### Get
 
 ```lua
-function Mod.IsLoaded(guid)
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code> </p>
-
-#### Get
-
-
-
-```lua
-function Mod.Get(guid)
+function ModLib.Get()
    -> Module
 ```
 
-
-
 Returns a mod by its guid.
 
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Module</code> </p>
-
-#### GetLoadOrder
-
-
+##### GetCurrentContext
 
 ```lua
-function Mod.GetLoadOrder()
-   -> Module[]
-```
-
-
-
-Returns a list of the currently loaded mods.
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>Module[]</code> </p>
-
-#### GetStoryVersion
-
-
-
-```lua
-function Mod.GetStoryVersion(guid)
-   -> integer?, integer?, integer?, integer? 
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>integer?, integer?, integer?, integer? </code> Major, minor, revision, build version. Fails if the mod is not loaded.</p>
-
-#### GetCurrentContext
-
-
-
-```lua
-function Mod.GetCurrentContext()
+function ModLib.GetCurrentContext()
    -> "Client"|"Server"
 ```
 
-
-
 Returns the context the caller script is running in.
 
+##### GetLoadOrder
 
+```lua
+function ModLib.GetLoadOrder()
+   -> Module[]
+```
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>"Client"|"Server"</code> </p>
+Returns a list of the currently loaded mods.
+
+##### GetStoryVersion
+
+```lua
+function ModLib.GetStoryVersion(guid)
+   -> integer?, integer?, integer?, integer? -- Major, minor, revision, build version. Fails if the mod is not loaded.
+```
+
+Returns the story version of a mod.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code></p>
+
+##### IsLoaded
+
+```lua
+function ModLib.IsLoaded(guid)
+```
+
+Returns whether a mod is loaded.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code></p>
 </doc>
