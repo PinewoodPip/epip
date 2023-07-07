@@ -25,6 +25,8 @@ function CoroutineLib.Create(fun)
 
 #### Finished (event)
 
+An event object with no parameters.
+
 ## Methods
 
 ##### Continue

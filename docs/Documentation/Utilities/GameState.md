@@ -21,17 +21,31 @@ Its events are helpful for initialization purposes. `ClientReady`, for example, 
 
 #### GameReady (event)
 
+Fires when the game transitions from PrepareRunning to Running (on the client)
+
+or when transitioning from Sync to Running (on the server)
+
 #### Tick (event)
+
+Fired every tick.
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick</p>
 
 #### RunningTick (event)
 
+Fired every tick while the game is not paused.
+
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick (NOT the last running tick)</p>
 
 #### LuaResetted (event)
 
+An event object with no parameters.
+
 #### ClientReady (event)
+
+Fired when the client transitions from PrepareRunning to Running,
+
+as well as when lua is reset.
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>CharacterNetID</b> <code>NetId</code></p>
 

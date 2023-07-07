@@ -17,6 +17,8 @@ It's primarily a wrapper around `Ext.UI.GetPickingState()`. In addition to metho
 
 #### HoverCharacter2Changed (event)
 
+Fired when the corpse character over the pointer changes.
+
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter?</code></p>
 
 #### HoverItemChanged (event)
@@ -28,6 +30,8 @@ It's primarily a wrapper around `Ext.UI.GetPickingState()`. In addition to metho
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Entity</b> <code>Entity?</code></p>
 
 #### DragDropStateChanged (event)
+
+Fired when a player starts or ends a drag drop. 
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>State</b> <code>DragDropManagerPlayerDragInfo?</code> `nil` if the player stopped dragging.</p>
 

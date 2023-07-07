@@ -9,6 +9,8 @@ The `Character` library contains utility methods relating to characters. The vas
 
 #### StatusApplied (event)
 
+TODO move somewhere else, since victim could be an item
+
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>SourceHandle</b> <code>EntityHandle</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Victim</b> <code>Character|Item</code></p>
@@ -24,6 +26,8 @@ The `Character` library contains utility methods relating to characters. The vas
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Slot</b> <code>ItemSlot</code></p>
 
 #### CreateEquipmentVisuals (hook)
+
+Wrapper for Ext.Events.CreateEquipmentVisualsRequest.
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter</code></p>
 
