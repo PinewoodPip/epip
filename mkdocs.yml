@@ -54,6 +54,8 @@ nav:
       - "IO": "Documentation/Utilities/IO.md"
       - "Coroutine": "Documentation/Utilities/Coroutine.md"
       - "UserVars": "Documentation/Utilities/UserVars.md"
+      - "Texture": "Documentation/Utilities/Texture.md"
+      - "Pointer": "Documentation/Utilities/Pointer.md"
   #   - "Global Tables":
   #     - "Feature": "Global Tables/Feature.md"
   #   - "Game":
