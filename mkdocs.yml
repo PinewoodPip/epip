@@ -86,3 +86,4 @@ nav:
     - "IDE Setup": "Maintenance/IDESetup.md"
     - "Localization": "Maintenance/localization.md"
     - "Documentation": "Maintenance/documentation.md"
+    - "Keybinds Reference": "Maintenance/keybinds.md"
