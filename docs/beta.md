@@ -1,19 +1,83 @@
 
 
 !!! warning "Extender devel version required"
-    Requires extender v60. Intended version: `40e17c6be9aae8f879e13a5e1d771cb07d7e672b8e7e10b55bc1691ffb9eb1e0`
+    Requires extender v60. Intended version: `e8f1e8085df4a5f2e8862d2c719be38a5ddf6348e9c910429bccbfd2e6938605`
     To get it, use the following `ScriptExtenderUpdaterConfig.json`:
 ```json
 {
 	"UpdateChannel": "Devel",
-	"TargetResourceDigest": "40e17c6be9aae8f879e13a5e1d771cb07d7e672b8e7e10b55bc1691ffb9eb1e0",
+	"TargetResourceDigest": "e8f1e8085df4a5f2e8862d2c719be38a5ddf6348e9c910429bccbfd2e6938605",
 	"TargetVersion": "60.0.0.0",
 	"Debug": true
 }
 ```
 
-## v1066 (1/07/23 upload)
+## v1066 (16/07/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
+
+This patch adds an Artifacts tab to the Codex.
+
+![Artifacts Codex.](../Features/img/codex/artifacts.png)
+
+Artifacts that you own (either equipped or in the party inventory, as item or rune) are highlighted. You may filter artifacts by their slot, associated keywords, as well as tier, if you're using Derpy's Artifact Tiers.
+
+### Other changes and additions
+
+- Added Simplified Chinese localization by Ainsky
+    - There are certain issues with this translation, however we have not been able to contact the author yet. Please join the `#epipeline` channel on the EE discord if you authored this translation.
+- Enabled mouse controls when using controller
+    - This enables you to use UIs that support mouse, such as custom Epip UIs, as well as some reused Larian KB+M UIs such as the player portraits
+    - This prevents the mouse from being hidden while idle when using controller (might become a setting later)
+- Custom tooltips from Epip UIs now work while using controller
+- BH Overheads now show for characters near the camera point, rather than near your selected character
+- Significantly reduced stutter from BH Overheads
+- Significantly reduced stutter for Epip UIs that use inventory-like slots
+    - The time to open Quick Find for the first time should be reduced by 30-35%
+    - The Skills Codex should see similar improvement
+- Source Infuse and Meditate keybinds are now only shown if EE is enabled
+
+### Fixes
+- Fixed the tooltips for various world tooltip options misnaming the "Enable tooltips for all items" option
+- Hotbar: fixed chain/unchain actions not working (beta issue)
+- Fixed source infuse / meditate keybinds not working (beta issue)
+- Examine Menu: fixed critical chance appearing in the wrong place for characters with many resistances
+- Quick Examine: fixed resistances text getting cropped out if a character had too many of them
+- Fixed the click sound for close buttons not playing in some custom UIs
+- Fixed BH Overheads appearing over invisible enemies
+- Fixed some sliders in the settings menu having their values cropped out until interacted with
+- Fixed positioning of the "Alternative Status Display" when using controller
+
+### Technical stuff
+- ArtifactLib: added `IsOwnedByParty()`, `HasKeyword()`, and missing VolatileArmor keyword tags to artifacts
+- Added `Profiling` library as well as Feature integration. No GUI exists for this yet, results can only be viewed through the console command
+- Added `EnabledFunctor` property to event options, letting listeners only fire conditionally
+    - Feature has a method that returns such a functor which checks for `:IsEnabled()`
+- Added `ObjectPool` data structure
+- Fixed `Text.Round()` for negative values
+- Added `Meditate` library (currently barebones, will aid in controller support later)
+- Added `SourceInfusion.RequestInfuse()`
+- Various annotation fixes, and purging of trailing whitespace
+- Improved `Character.GetStatusesFromItems()`, now works with many more status sources (hopefully all)
+- Fixed `Combat.GetCombatID()` on server
+- Removed the extender IDE files from the project to fix issues with doc generation. In the future, Epip will get its own annotation generator to fix the many issues with the current one
+- Improvements to the localization sheet (will be deployed the next time the sheet is updated):
+    - Outdated translations will have their cell marked in red background color
+    - Rows will be sorted by script and original text (alphabetically)
+
+#### Generic
+- Added custom tooltip support to elements, and fixed not being to replace an existing tooltip
+- Added `Element:GetParent()` and `Element:GetChildren()`
+- Added an experimental `VerticalList` prefab that reimplements the basic VerticalList element functionality.
+    - Unfortunately the performance of this is at best tied with the element, but it can serve as an example of how to implement custom containers, should you need for example unusual element positioning.
+- Manual `Destroy()` now makes table references unusable
+- Fixed `Destroy()` not working properly for elements within `VerticalList`. The other containers will be fixed later.
+- Fixed `Text:GetTextSize()`; the flash `textHeight` property was highly inaccurate; it seemingly considered the height as if the text had one more line than it actually did
+- Added `Text:GetLineHeight()`
+- Added more textures and icons - make sure to redownload the assets folder if you're using the unpacked mod
+- The `Slot` element now has certain features such as cooldown animations disabled until they are needed. This signficantly improves performance when creating many slots
+    - `HotbarSlot` prefab has been adjusted to support this
+
+## v1066 (1/07/23 upload)
 
 This update adds the Codex UI, which will be an in-game knowledgebase for various topics. Currently it only features a Skills page that displays all player skills in the game, and allows for filtering and searching them. The default keybind for opening the Codex is `LCtrl + G`.
 
