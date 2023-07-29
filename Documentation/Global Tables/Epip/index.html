@@ -181,20 +181,29 @@
 <p>Use <code>RegisterFeature()</code> to register and initialize a Feature.</p>
 <p><doc class="Epip"></p>
 <h1 id="epip-class">Epip Class<a class="headerlink" href="#epip-class" title="Permanent link">&para;</a></h1>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
+<h4 id="beforefeatureinitialization-event">BeforeFeatureInitialization (event)<a class="headerlink" href="#beforefeatureinitialization-event" title="Permanent link">&para;</a></h4>
+<p>Fired during feature initialization.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Feature</b> <code>Feature</code></p>
+
+<h4 id="afterfeatureinitialization-event">AfterFeatureInitialization (event)<a class="headerlink" href="#afterfeatureinitialization-event" title="Permanent link">&para;</a></h4>
+<p>Fired during feature initialization.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Feature</b> <code>Feature</code></p>
+
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h5 id="getfeature">GetFeature<a class="headerlink" href="#getfeature" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Epip.GetFeature(id)
-   -&gt; Feature|`T`
-</code></pre>
-<p>Overload for fetching features defined in EpipEncounters.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>`T`</code></p>
-
-<h5 id="getfeature_1">GetFeature<a class="headerlink" href="#getfeature_1" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function Epip.GetFeature(modTable, id)
    -&gt; Feature|`T`
 </code></pre>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modTable</b> <code>string</code></p>
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>`T`</code></p>
+
+<h5 id="getfeature_1">GetFeature<a class="headerlink" href="#getfeature_1" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Epip.GetFeature(id)
+   -&gt; Feature|`T`
+</code></pre>
+<p>Overload for fetching features defined in EpipEncounters.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>`T`</code></p>
 
 <h5 id="initializefeature">InitializeFeature<a class="headerlink" href="#initializefeature" title="Permanent link">&para;</a></h5>
@@ -225,6 +234,18 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>feature</b> <code>Feature</code></p>
+
+<h5 id="registerfeatureinitializationlistener">RegisterFeatureInitializationListener<a class="headerlink" href="#registerfeatureinitializationlistener" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Epip.RegisterFeatureInitializationListener(modTable, featureID, timing, listener)
+</code></pre>
+<p>Registers a <code>FeatureInitialization</code> listener for a specific feature.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modTable</b> <code>modtable</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>featureID</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>timing</b> <code>"Before"|"After"</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>listener</b> <code>fun(ev:Epip.Events.FeatureInitialization)</code></p>
 
 <h5 id="savedump">SaveDump<a class="headerlink" href="#savedump" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function Epip.SaveDump(obj, opts, fileName)

@@ -180,6 +180,7 @@
 <p>The <code>Item</code> library contains methods relating to item game objects.</p>
 <p><doc class="ItemLib"></p>
 <h1 id="itemlib-class">ItemLib Class<a class="headerlink" href="#itemlib-class" title="Permanent link">&para;</a></h1>
+<p>Inherits from <code>Library</code>.</p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h5 id="applydye">ApplyDye<a class="headerlink" href="#applydye" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function ItemLib.ApplyDye(item, dye)
@@ -335,6 +336,12 @@
 <p>Returns the icon frame for a rarity, if any.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>rarity</b> <code>ItemLib_Rarity|EclItem</code></p>
 
+<h5 id="getrarityname">GetRarityName<a class="headerlink" href="#getrarityname" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function ItemLib.GetRarityName(rarity)
+</code></pre>
+<p>Returns the name of a rarity.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>rarity</b> <code>Item|ItemLib_Rarity</code></p>
+
 <h5 id="getrune">GetRune<a class="headerlink" href="#getrune" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function ItemLib.GetRune(item, index)
    -&gt; StatItem
@@ -353,7 +360,7 @@
 
 <h5 id="getruneslotsicon">GetRuneSlotsIcon<a class="headerlink" href="#getruneslotsicon" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function ItemLib.GetRuneSlotsIcon(item)
-   -&gt; icon
+   -&gt; icon? -- `nil` if the item has no rune slots.
 </code></pre>
 <p>Returns the icon displaying the state of item's rune slots.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>

@@ -191,6 +191,7 @@
 <p>Features are not just used for scripts targeting the player user; in Epip they are also commonly used to create libraries or wrappers whose use is too specific to be made into a core library. Since Feature inherits from Library, all the tools to create good event-driven libraries remain available. You are encouraged to use Events and Hooks in any kind of feature to facilitate mod interoperability.</p>
 <p><doc class="Feature"></p>
 <h1 id="feature-class">Feature Class<a class="headerlink" href="#feature-class" title="Permanent link">&para;</a></h1>
+<p>Inherits from <code>Library</code>.</p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function Feature.Create(modTable, id, feature)
@@ -203,6 +204,22 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>feature</b> <code>Feature</code></p>
 
+<h5 id="getenabledfunctor">GetEnabledFunctor<a class="headerlink" href="#getenabledfunctor" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Feature:GetEnabledFunctor()
+   -&gt; fun():boolean
+</code></pre>
+<p>Returns a function that takes no parameters and returns whether the feature is enabled.</p>
+<p>Intended for use with Event options.</p>
+<h5 id="getfeatureid">GetFeatureID<a class="headerlink" href="#getfeatureid" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Feature:GetFeatureID()
+   -&gt; string
+</code></pre>
+<p>Returns the ID of the feature.</p>
+<h5 id="getmodtable">GetModTable<a class="headerlink" href="#getmodtable" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Feature:GetModTable()
+   -&gt; modtable
+</code></pre>
+<p>Returns the mod table of the feature.</p>
 <h5 id="getnamespace">GetNamespace<a class="headerlink" href="#getnamespace" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function Feature:GetNamespace()
    -&gt; string
@@ -251,6 +268,13 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>any</code></p>
 
+<h5 id="__initialize">__Initialize<a class="headerlink" href="#__initialize" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">---@protected
+function Feature:__Initialize()
+</code></pre>
+<p>Called after the feature is registered.</p>
+<p>Override to run initialization routines - this is preferable over initializing things at the root of your script, as it is hookable.</p>
+<p>@virtual</p>
 <h5 id="__setup">__Setup<a class="headerlink" href="#__setup" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">---@protected
 function Feature:__Setup()

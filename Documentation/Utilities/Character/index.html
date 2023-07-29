@@ -180,6 +180,7 @@
 <p>The <code>Character</code> library contains utility methods relating to characters. The vast majority of them are available on both contexts.</p>
 <p><doc class="CharacterLib"></p>
 <h1 id="characterlib-class">CharacterLib Class<a class="headerlink" href="#characterlib-class" title="Permanent link">&para;</a></h1>
+<p>Inherits from <code>Library</code>.</p>
 <h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
 <h4 id="statusapplied-event">StatusApplied (event)<a class="headerlink" href="#statusapplied-event" title="Permanent link">&para;</a></h4>
 <p>TODO move somewhere else, since victim could be an item</p>
@@ -234,7 +235,7 @@
 
 <h5 id="getcombatid">GetCombatID<a class="headerlink" href="#getcombatid" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function CharacterLib.GetCombatID(char)
-   -&gt; integer?, integer? -- The combat ID and team ID. Nil if the character is not in combat. This is different from the osi query, which returns a reserved value.
+   -&gt; integer?, integer? -- The combat ID and team ID. `nil` if the character is not in combat. This is different from the osi query, which returns a reserved value.
 </code></pre>
 <p>Returns the combat ID and team ID of char, if any.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
@@ -500,6 +501,20 @@
 <p>Returns whether the character is in a combat.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
+<h5 id="isinstealth">IsInStealth<a class="headerlink" href="#isinstealth" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function CharacterLib.IsInStealth(char)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether char is sneaking or invisible.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
+
+<h5 id="isinvisible">IsInvisible<a class="headerlink" href="#isinvisible" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function CharacterLib.IsInvisible(char)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether char is invisible - as in, has the INVISIBLE status.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
+
 <h5 id="ismale">IsMale<a class="headerlink" href="#ismale" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function CharacterLib.IsMale(char)
    -&gt; boolean
@@ -570,6 +585,13 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code></p>
+
+<h5 id="issneaking">IsSneaking<a class="headerlink" href="#issneaking" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function CharacterLib.IsSneaking(char)
+   -&gt; boolean
+</code></pre>
+<p>Returns whether char is sneaking.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="issummon">IsSummon<a class="headerlink" href="#issummon" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function CharacterLib.IsSummon(char)

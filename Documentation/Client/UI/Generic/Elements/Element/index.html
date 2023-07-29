@@ -192,35 +192,79 @@
 <h5 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function GenericUI_Element:Destroy()
 </code></pre>
+<h5 id="getchildren">GetChildren<a class="headerlink" href="#getchildren" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element:GetChildren()
+   -&gt; GenericUI_Element[]
+</code></pre>
+<p>Returns the children of the element.</p>
 <h5 id="getheight">GetHeight<a class="headerlink" href="#getheight" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function GenericUI_Element:GetHeight()
+<pre><code class="language-lua">function GenericUI_Element:GetHeight(considerOverrides)
    -&gt; number
 </code></pre>
-<p>Returns the calculated height of the element.</p>
+<p>Returns the height of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>considerOverrides</b> <code>boolean?</code> If `true`, height overrides will be considered. Defaults to `true`.</p>
+
 <h5 id="getmovieclip">GetMovieClip<a class="headerlink" href="#getmovieclip" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function GenericUI_Element:GetMovieClip()
    -&gt; FlashMovieClip
 </code></pre>
 <p>Get the movie clip of this element.</p>
+<h5 id="getparent">GetParent<a class="headerlink" href="#getparent" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element:GetParent()
+   -&gt; GenericUI_Element
+</code></pre>
+<p>Returns the parent element.</p>
 <h5 id="getposition">GetPosition<a class="headerlink" href="#getposition" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function GenericUI_Element:GetPosition()
    -&gt; number, number -- X and Y coordinates in local space.
 </code></pre>
+<h5 id="getrawheight">GetRawHeight<a class="headerlink" href="#getrawheight" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element:GetRawHeight()
+   -&gt; number
+</code></pre>
+<p>Returns the height of the element without considering its children.</p>
 <h5 id="getrawsize">GetRawSize<a class="headerlink" href="#getrawsize" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function GenericUI_Element:GetRawSize()
    -&gt; Vector2
 </code></pre>
 <p>Gets the size of the element without considering its children.</p>
+<h5 id="getrawwidth">GetRawWidth<a class="headerlink" href="#getrawwidth" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element:GetRawWidth()
+   -&gt; number
+</code></pre>
+<p>Returns the width of the element without considering its children.</p>
 <h5 id="getscale">GetScale<a class="headerlink" href="#getscale" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function GenericUI_Element:GetScale()
    -&gt; Vector2
 </code></pre>
 <p>Returns the scale of the element.</p>
+<h5 id="getsize">GetSize<a class="headerlink" href="#getsize" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element:GetSize(considerOverrides)
+   -&gt; Vector2
+</code></pre>
+<p>Returns the size of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>considerOverrides</b> <code>boolean?</code> If `true`, width/height overrides will be considered. Defaults to `true`.</p>
+
+<h5 id="getsizeoverride">GetSizeOverride<a class="headerlink" href="#getsizeoverride" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element:GetSizeOverride()
+   -&gt; Vector2?
+</code></pre>
+<p>Returns the size override of the element, if any.</p>
 <h5 id="getwidth">GetWidth<a class="headerlink" href="#getwidth" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function GenericUI_Element:GetWidth()
+<pre><code class="language-lua">function GenericUI_Element:GetWidth(considerOverrides)
    -&gt; number
 </code></pre>
-<p>Returns the calculated width of the element.</p>
+<p>Returns the width of the element.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>considerOverrides</b> <code>boolean?</code> If `true`, width overrides will be considered. Defaults to `true`.</p>
+
+<h5 id="move">Move<a class="headerlink" href="#move" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element:Move(x, y)
+</code></pre>
+<p>Moves the element a certain amount of pixels from its current position.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>x</b> <code>number</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>y</b> <code>number</code></p>
+
 <h5 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function GenericUI_Element:RegisterListener(eventType, handler)
 </code></pre>
@@ -278,6 +322,16 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>x</b> <code>number</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>y</b> <code>number</code></p>
+
+<h5 id="setpositionrelativetoparent">SetPositionRelativeToParent<a class="headerlink" href="#setpositionrelativetoparent" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function GenericUI_Element:SetPositionRelativeToParent(position, horizontalOffset, verticalOffset)
+</code></pre>
+<p>Sets the position of the element relative to its parent.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>position</b> <code>GenericUI_Element_RelativePosition</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>horizontalOffset</b> <code>number?</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>verticalOffset</b> <code>number?</code></p>
 
 <h5 id="setrotation">SetRotation<a class="headerlink" href="#setrotation" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function GenericUI_Element:SetRotation(degrees)

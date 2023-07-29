@@ -52,15 +52,17 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#punisher">Punisher</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#custom-hotkeys">Custom Hotkeys</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quick-find">Quick Find</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#other-changes-and-additions">Other changes and additions</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#fixes">Fixes</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#technical-stuff">Technical stuff</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#generic">Generic</a>
-    </li>
-        </ul>
     </li>
     </ul>
                 </li>
@@ -187,22 +189,90 @@
               
                 <div class="admonition warning">
 <p class="admonition-title">Extender devel version required</p>
-<p>Requires extender v60. Intended version: <code>e8f1e8085df4a5f2e8862d2c719be38a5ddf6348e9c910429bccbfd2e6938605</code>
+<p>Requires extender v60. Intended version: <code>4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff</code>
 To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 </div>
 <pre><code class="language-json">{
     &quot;UpdateChannel&quot;: &quot;Devel&quot;,
-    &quot;TargetResourceDigest&quot;: &quot;e8f1e8085df4a5f2e8862d2c719be38a5ddf6348e9c910429bccbfd2e6938605&quot;,
+    &quot;TargetResourceDigest&quot;: &quot;4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff&quot;,
     &quot;TargetVersion&quot;: &quot;60.0.0.0&quot;,
     &quot;Debug&quot;: true
 }
 </code></pre>
-<h2 id="v1066-160723-upload">v1066 (16/07/23 upload)<a class="headerlink" href="#v1066-160723-upload" title="Permanent link">&para;</a></h2>
+<h2 id="v1066-290723-upload">v1066 (29/07/23 upload)<a class="headerlink" href="#v1066-290723-upload" title="Permanent link">&para;</a></h2>
 <p><a href="https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing">Download here</a>.</p>
+<h3 id="punisher">Punisher<a class="headerlink" href="#punisher" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added voice acting, available for a limited time only as it hurts my throat to do such an edgy voice all the time</li>
+</ul>
+<h3 id="custom-hotkeys">Custom Hotkeys<a class="headerlink" href="#custom-hotkeys" title="Permanent link">&para;</a></h3>
+<p>The custom hotkeys system has been reworked. They are now accessed via a tab within the Epip settings menu, rather than the game's controls menu. This will offer them more flexibility in the future.</p>
+<p>You will have to reconfigure your previous bindings.</p>
+<h3 id="quick-find">Quick Find<a class="headerlink" href="#quick-find" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added a rarity filter</li>
+<li>Added a setting to close the UI when you click something in the world</li>
+<li>The close button now plays a sound when clicked</li>
+<li>Considerably improved performance once again</li>
+</ul>
+<h3 id="other-changes-and-additions">Other changes and additions<a class="headerlink" href="#other-changes-and-additions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The settings menu now has some margin on the leftmost labels of settings</li>
+<li>Slight performance improvements to the Codex</li>
+<li>Small (~5%) performance improvement to all Generic UIs (most custom Epip UIs)</li>
+</ul>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fixed Portable Respec Mirror hotbar action not working</li>
+<li>Fixed the Alternative Statuses Display showing up in the respec screen</li>
+<li>Fixed tooltips not being hidden if you exit the settings menu with escape key</li>
+<li>Fixed sliders in the settings menu not being vertically centered</li>
+<li>Fixed being able to scroll too far in Quick Find and the Codex if you go from having a lot of slots to only having a few</li>
+<li>Fixed massive FPS drops in the Epip settings menu</li>
+</ul>
+<h3 id="technical-stuff">Technical stuff<a class="headerlink" href="#technical-stuff" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added hooks to the Overhead UI</li>
+<li>Fixed cases of trying to fetch vanilla TSKs during module load</li>
+<li>Added vararg to all logging methods in Library/Feature</li>
+<li>Added <code>Feature:__Initialize()</code> as well as a hook for before/after it; this will be the intended moment to initialize feature fields from now on (for easier patching)</li>
+<li>Added <code>RegisterAction()</code> to HotbarActions to make it easier to use</li>
+<li>Extracted TSKs for HotbarActions</li>
+<li>Codex: added an interface for grid-like sections, reducing code duplication</li>
+<li>Moved some Generic classes to separate files, cleaned up annotations</li>
+<li>Fix a missing nil check in PersonalScripts</li>
+<li>Deprecated the <code>REQUIRED_MODS</code> field in Feature</li>
+<li>Added a Hook alias for Event; the previous Hook class is now LegacyHook</li>
+<li>Consolidated previous ViewportChanged events into a single one within Client</li>
+</ul>
+<p>Generic:</p>
+<ul>
+<li>Changed layout to <code>fitVertical</code></li>
+<li>Added support for capturing input events ("Iggy Events")<ul>
+<li>A more sophisticated system for creating navigation will be added in the future</li>
+</ul>
+</li>
+<li>Added FormTextHolder prefab (for input settings menu)</li>
+<li>Added more width/height-related calls</li>
+<li><code>SetPositionRelativeToParent()</code> now considers size overrides</li>
+<li>Fixed destroying children within containers for all remaining container types<ul>
+<li>Previously only Grid had this consideration, where in practice it was the only place it mattered, as it set the visibility of elements it positioned - which it no longer does either</li>
+</ul>
+</li>
+<li>Improved <code>Text:GetTextSize()</code> accuracy yet again - all cases of short text being cropped horizontally should now be solved</li>
+<li>Fixed annotations for exposed Element methods</li>
+<li>Marked listeners as private methods</li>
+<li>Removed obsolete events</li>
+<li>Containers now use <code>GetWidth()</code>/<code>GetHeight()</code> to fetch element sizes, meaning they not only respect size overrides (which they already did) but also overrides of the function itself<ul>
+<li>Containers now override this to return the width/height of the visible content itself, rather than using the calculated flash values. This fixes the case of scrollbars being oversized</li>
+</ul>
+</li>
+</ul>
+<h2 id="v1066-160723-upload">v1066 (16/07/23 upload)<a class="headerlink" href="#v1066-160723-upload" title="Permanent link">&para;</a></h2>
 <p>This patch adds an Artifacts tab to the Codex.</p>
 <p><img alt="Artifacts Codex." src="../Features/img/codex/artifacts.png" /></p>
 <p>Artifacts that you own (either equipped or in the party inventory, as item or rune) are highlighted. You may filter artifacts by their slot, associated keywords, as well as tier, if you're using Derpy's Artifact Tiers.</p>
-<h3 id="other-changes-and-additions">Other changes and additions<a class="headerlink" href="#other-changes-and-additions" title="Permanent link">&para;</a></h3>
+<h3 id="other-changes-and-additions_1">Other changes and additions<a class="headerlink" href="#other-changes-and-additions_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Added Simplified Chinese localization by Ainsky<ul>
 <li>There are certain issues with this translation, however we have not been able to contact the author yet. Please join the <code>#epipeline</code> channel on the EE discord if you authored this translation.</li>
@@ -223,7 +293,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 </li>
 <li>Source Infuse and Meditate keybinds are now only shown if EE is enabled</li>
 </ul>
-<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">&para;</a></h3>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed the tooltips for various world tooltip options misnaming the "Enable tooltips for all items" option</li>
 <li>Hotbar: fixed chain/unchain actions not working (beta issue)</li>
@@ -235,7 +305,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 <li>Fixed some sliders in the settings menu having their values cropped out until interacted with</li>
 <li>Fixed positioning of the "Alternative Status Display" when using controller</li>
 </ul>
-<h3 id="technical-stuff">Technical stuff<a class="headerlink" href="#technical-stuff" title="Permanent link">&para;</a></h3>
+<h3 id="technical-stuff_1">Technical stuff<a class="headerlink" href="#technical-stuff_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>ArtifactLib: added <code>IsOwnedByParty()</code>, <code>HasKeyword()</code>, and missing VolatileArmor keyword tags to artifacts</li>
 <li>Added <code>Profiling</code> library as well as Feature integration. No GUI exists for this yet, results can only be viewed through the console command</li>
@@ -304,7 +374,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 </ul>
 </li>
 </ul>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">&para;</a></h3>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed TSKs from the gameplay mod still being in Epip; you will need to redownload the gameplay mod if you use it</li>
 <li>Slots within Epip UIs now only play a dragging sound if the slot is not empty</li>
@@ -313,7 +383,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 <li>Fixed the Debug Cheats menu showing the wrong talents for characters that weren't the active client character</li>
 <li>Fixed performance issues from the stats tab when picking up items</li>
 </ul>
-<h3 id="technical-stuff_1">Technical Stuff<a class="headerlink" href="#technical-stuff_1" title="Permanent link">&para;</a></h3>
+<h3 id="technical-stuff_2">Technical Stuff<a class="headerlink" href="#technical-stuff_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Added a way to load lua scripts from a file defined in <code>Osiris Data/Epip/PersonalScripts.json</code>; this can be used to load test/debug scripts without needing to include them within the mod. See the <code>PersonalScripts</code> feature.<ul>
 <li>Removed various console commands as they are of no use other than personal</li>
@@ -357,7 +427,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 <p>Statuses with a high priority show up in the leftmost position, while statuses with a low priority show up in the rightmost position. Statuses that are tied in priority show in order of application. <strong>You may use this to position important or informational statuses (ex. Source Generation duration or tiered statuses) in a consistent position.</strong></p>
 <p>You may also filter out statuses in this context menu to hide them. Holding shift will temporarily disable this filter, letting you quickly check your hidden statuses and unhide them if necessary. You may also manage this filter within the settings menu.</p>
 <hr />
-<h3 id="other-changes-and-additions_1">Other changes and additions<a class="headerlink" href="#other-changes-and-additions_1" title="Permanent link">&para;</a></h3>
+<h3 id="other-changes-and-additions_2">Other changes and additions<a class="headerlink" href="#other-changes-and-additions_2" title="Permanent link">&para;</a></h3>
 <p>Added a new hotkey that will show BH over the heads of nearby characters while held ("Show B/H" binding; unbound by default):
 <img alt="BH Overheads feature." src="../Features/img/ui/bhoverheads.png" /></p>
 <hr />

@@ -199,16 +199,31 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>KeywordMutators</b> <code>Keyword[]</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>GetName</b> <code>fun(self):string</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>GetDescription</b> <code>fun(self):string</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>GetPowerTooltip</b> <code>fun(self):TooltipLib_Element[]</code></p>
-
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h5 id="getdescription">GetDescription<a class="headerlink" href="#getdescription" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function ArtifactLib_ArtifactDefinition:GetDescription()
+   -&gt; string
+</code></pre>
+<p>Returns the artifact power's description.</p>
+<h5 id="getname">GetName<a class="headerlink" href="#getname" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function ArtifactLib_ArtifactDefinition:GetName()
+   -&gt; string
+</code></pre>
+<p>Returns the artifact's name.</p>
+<h5 id="getpowertooltip">GetPowerTooltip<a class="headerlink" href="#getpowertooltip" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function ArtifactLib_ArtifactDefinition:GetPowerTooltip()
+   -&gt; TooltipLib_Element[]
+</code></pre>
+<p>Returns a full tooltip showing the artifact's name and power.</p>
+<h5 id="haskeyword">HasKeyword<a class="headerlink" href="#haskeyword" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function ArtifactLib_ArtifactDefinition:HasKeyword(keyword)
+</code></pre>
+<p>Returns whether the artifact has a keyword activator or mutator.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>keyword</b> <code>Keyword</code></p>
 <p></doc></p>
 <p><doc class="ArtifactLib"></p>
 <h1 id="artifactlib-class">ArtifactLib Class<a class="headerlink" href="#artifactlib-class" title="Permanent link">&para;</a></h1>
+<p>Inherits from <code>Feature</code>.</p>
 <h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
 <h5 id="getdata">GetData<a class="headerlink" href="#getdata" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function ArtifactLib.GetData(artifactID)
@@ -218,18 +233,18 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>artifactID</b> <code>string</code></p>
 
 <h5 id="getequippedpowers">GetEquippedPowers<a class="headerlink" href="#getequippedpowers" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function ArtifactLib.GetEquippedPowers(char) -- (Client-only)
-   -&gt; ArtifactLib_ArtifactDefinition[]
-</code></pre>
-<p>Returns a list of artifact powers active on char.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
-
-<h5 id="getequippedpowers_1">GetEquippedPowers<a class="headerlink" href="#getequippedpowers_1" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function ArtifactLib.GetEquippedPowers(char) -- (Server-only)
    -&gt; ArtifactLib_ArtifactDefinition[]
 </code></pre>
 <p>Returns a list of artifact powers active on char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code></p>
+
+<h5 id="getequippedpowers_1">GetEquippedPowers<a class="headerlink" href="#getequippedpowers_1" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function ArtifactLib.GetEquippedPowers(char) -- (Client-only)
+   -&gt; ArtifactLib_ArtifactDefinition[]
+</code></pre>
+<p>Returns a list of artifact powers active on char.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
 
 <h5 id="isequipped">IsEquipped<a class="headerlink" href="#isequipped" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function ArtifactLib.IsEquipped(char, artifact) -- (Server-only)
@@ -248,6 +263,12 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>artifact</b> <code>ArtifactLib_ArtifactDefinition|string</code></p>
+
+<h5 id="isownedbyparty">IsOwnedByParty<a class="headerlink" href="#isownedbyparty" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function ArtifactLib.IsOwnedByParty(id)
+</code></pre>
+<p>Returns whether the party owns an artifact.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
 
 <h5 id="registerartifact">RegisterArtifact<a class="headerlink" href="#registerartifact" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function ArtifactLib.RegisterArtifact(data)

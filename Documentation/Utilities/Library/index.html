@@ -189,7 +189,15 @@
 <p>The class includes some methods to filter out unwanted logging, however the recommended way to filter it is to use the "control panel" UI (<code>Feature_DebugMenu</code>, defaults to <code>LCtrl + B</code>) to set the logging level instead of calling the methods yourself anywhere.</p>
 <p><doc class="Library"></p>
 <h1 id="library-class">Library Class<a class="headerlink" href="#library-class" title="Permanent link">&para;</a></h1>
+<p>Inherits from <code>Class</code>.</p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<h5 id="addprofilingstep">AddProfilingStep<a class="headerlink" href="#addprofilingstep" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:AddProfilingStep(stepID)
+</code></pre>
+<p>Adds a step to the current profiling session.</p>
+<p><strong>Does nothing outside of Debug mode.</strong></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>stepID</b> <code>string</code></p>
+
 <h5 id="addsubscribableevent">AddSubscribableEvent<a class="headerlink" href="#addsubscribableevent" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function Library:AddSubscribableEvent(evName, preventable)
    -&gt; Event
@@ -234,6 +242,11 @@
 <p>Dump a value to the console, in Debug mode.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
 
+<h5 id="endprofiling">EndProfiling<a class="headerlink" href="#endprofiling" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:EndProfiling()
+</code></pre>
+<p>Ends the current profiling session.</p>
+<p><strong>Does nothing outside of Debug mode.</strong></p>
 <h5 id="error">Error<a class="headerlink" href="#error" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function Library:Error(method)
 </code></pre>
@@ -282,16 +295,16 @@
 </code></pre>
 <p>Returns whether <code>:Debug()</code> has been ran successfully.</p>
 <h5 id="log">Log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:Log(msg)
+<pre><code class="language-lua">function Library:Log(...)
 </code></pre>
 <p>Log a value.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 <h5 id="logerror">LogError<a class="headerlink" href="#logerror" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:LogError(msg)
+<pre><code class="language-lua">function Library:LogError(...)
 </code></pre>
 <p>Log an error.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 <h5 id="logmethod">LogMethod<a class="headerlink" href="#logmethod" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function Library:LogMethod(method, ...)
@@ -308,10 +321,11 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
 
 <h5 id="logwarning">LogWarning<a class="headerlink" href="#logwarning" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:LogWarning(msg)
+<pre><code class="language-lua">function Library:LogWarning(...)
 </code></pre>
 <p>Log a warning.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+<p>Requires logging level to be set to WARN or lower.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 <h5 id="mute">Mute<a class="headerlink" href="#mute" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function Library:Mute()
@@ -384,8 +398,20 @@
 <h5 id="shutup">ShutUp<a class="headerlink" href="#shutup" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function Library:ShutUp()
 </code></pre>
-<p>Stop all non-error logging.
-</doc></p>
+<p>Stop all non-error logging.</p>
+<h5 id="startprofiling">StartProfiling<a class="headerlink" href="#startprofiling" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:StartProfiling(id)
+</code></pre>
+<p>Starts a profiling session.</p>
+<p><strong>Does nothing outside of Debug mode.</strong></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> Session ID.</p>
+
+<h5 id="thrownotimplemented">ThrowNotImplemented<a class="headerlink" href="#thrownotimplemented" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function Library:ThrowNotImplemented(methodName)
+</code></pre>
+<p>Throws a "Not implemented" error. Use as a placeholder.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
+<p></doc></p>
               
             </div>
           </div><footer>
