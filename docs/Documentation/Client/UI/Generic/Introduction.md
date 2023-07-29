@@ -101,7 +101,7 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 ```
 
 !!! warning Usage warning
-    Though accessing an element's MovieClip is possible, its purpose is for debugging only. Interfacing with elements outside of their public APIs is not supported and any such use is prone to breaking in future releases with no warning.
+    Though accessing an element's MovieClip is possible, its purpose is for internal & debug usage only. Interfacing with elements outside of their public APIs is not supported and any such use is prone to breaking in future releases with no warning.
 
 ## Elements
 
@@ -116,387 +116,105 @@ The code in this section is from an example UI in `Epip/Examples/GenericUI.lua`.
 ## Prefabs
 TODO
 
-## Library
+## Limitations, considerations and observations
+### Sprite-based animations
+There is currently no convenient way of creating animations that involve multiple animation sprites. Two solutions have been theorized, but their practicality is untested:
 
-<doc package="GenericUI">
+1. Animate the Texture element: this appears to be the most straightforward option (and already possible); the obvious inconvenience being the need to import every frame of your animation as a separate texture resource. The performance of repeatedly calling `:SetTexture()` has also not been investigated.
+2. Implement a custom element: it is theoretically possible to implement a custom flash element in Generic, importing its script and Sprite from another `.swf`. You could setup your animation in the `.swf` as you'd normally do in flash and create a simple element to instantiate it from Generic. This approach has the massive problem of flash library slots being limited; there's only a few available slots for custom libraries, and they would have to be registered in advance within Generic's swf (ex. use `ImportAssets` to import "Custom1.swf", "Custom2.swf", and have the user override those to provide their custom elements).
 
+### Stutters when creating hundreds of elements at a time
+Creating MovieClips programmatically appears to be the major performance bottleneck in Generic/Iggy. UIs that instantiate hundreds of elements at once will likely see noticeable stutter during that process. **The performance of these UIs afterwards is normal**.
 
+The major UIs that suffer from this are inventory-like UIs, due to the Slot element being particularly complex and consisting of multiple parts.
+In v1066, measures have been taken to minimize the amount of DisplayObjects created - certain aspects of Slots such as the cooldown animation are now only created on-demand, resulting in a 30-35% performance improvement when creating Slot elements that do not use all of its features.
 
-## Events and Hooks
+No further possible major improvements are known. It's worth noting that  the problems lies within class instantiation and not Generic itself; vanilla UIs such as PartyInventory and Craft experience similar stutters when needing to create a ton of slots/recipes.
 
-##### Button_Pressed (event)
+A possible workaround for this is to create your elements during the load screen, however this will inflict the resulting "stutter" as extra loading time for the user. Epip prefers initializing UIs on-demand; that is, the UI basically doesn't exist until it is necessary.
 
+When working with UIs where this is a concern, it is recommended to implement a pooling system to reuse elements. Avoid clearing and re-creating lists of hundreds of elements - instead reuse existing instances.
 
+QuickInventory and Codex sections that inherit from `Features.Codex.Sections.Grid` are good examples of implementing pooling for an inventory-like UI, massively improving responsiveness after the creation of the elements.
 
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>RegisterListener</b> <code>fun(self,</code> listener:fun(stringID:string))</p>
+### Testing
+Since user interaction in Generic is driven through events in Lua, it's theoretically possible to implement instrumented tests for UIs by invoking those events to spoof user interaction.
 
+<doc class="GenericUI">
 
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Fire</b> <code>fun(self,</code> stringID:string)</p>
-
-##### StateButton_StateChanged (event)
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>RegisterListener</b> <code>fun(self,</code> listener:fun(stringID:string, active:boolean))</p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Fire</b> <code>fun(self,</code> stringID:string, active:boolean)</p>
-
-##### ViewportChanged (event)
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Width</b> <code>integer</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@field</i></b></span> <b>Height</b> <code>integer</code> </p>
-
-
+# GenericUI Class
 
 ## Methods
 
-#### OnElementUICall
-
-
+##### Create
 
 ```lua
-function Generic.OnElementUICall(ev, elementID, eventName, eventObj)
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>ev</b> <code>EclLuaUICallEvent</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>elementID</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>eventName</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>eventObj</b> <code>table?</code> </p>
-
-#### Create
-
-
-
-```lua
-function Generic.Create(id)
+function GenericUI.Create(id, layer)
    -> GenericUI_Instance
 ```
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>layer</b> <code>integer?</code> Defaults to `DEFAULT_LAYER`.</p>
 
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GenericUI_Instance</code> </p>
-
-#### GetPrefab
-
-
+##### ExposeFunction
 
 ```lua
-function Generic.GetPrefab(className)
-   -> T
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>className</b> <code>`T`|GenericUI_PrefabClass</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>T</code> </p>
-
-#### Inherit
-
-
-
-```lua
-function Generic.Inherit(tbl1, tbl2)
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>tbl1</b> <code>table</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>tbl2</b> <code>table</code> </p>
-
-#### RegisterElementType
-
-
-
-```lua
-function Generic.RegisterElementType(elementType, elementTable)
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>elementType</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>elementTable</b> <code>GenericUI_Element</code> </p>
-
-#### ExposeFunction
-
-
-
-```lua
-function Generic.ExposeFunction(call)
+function GenericUI.ExposeFunction(call)
    -> fun(self:GenericUI_Element, ...):any?
 ```
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>call</b> <code>string</code></p>
 
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>call</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>fun(self:GenericUI_Element, ...):any?</code> </p>
-
-#### GetInstance
-
-
+##### GetInstance
 
 ```lua
-function Generic.GetInstance(id)
+function GenericUI.GetInstance(id)
    -> GenericUI_Instance
 ```
 
-
-
 Returns the instance of a Generic UI by its identifier.
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string|integer</code> String ID of the UI or its TypeID.</p>
 
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string|integer</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GenericUI_Instance</code> </p>
-
-#### RegisterPrefab
-
-
+##### GetPrefab
 
 ```lua
-function Generic.RegisterPrefab(id, prefab)
+function GenericUI.GetPrefab(className)
+   -> T
 ```
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>`T`|GenericUI_PrefabClass</code></p>
 
+##### Inherit
+
+```lua
+function GenericUI.Inherit(tbl1, tbl2)
+```
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tbl1</b> <code>table</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tbl2</b> <code>table</code></p>
+
+##### RegisterElementType
+
+```lua
+function GenericUI.RegisterElementType(elementType, elementTable)
+```
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>elementType</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>elementTable</b> <code>GenericUI_Element</code></p>
+
+##### RegisterPrefab
+
+```lua
+function GenericUI.RegisterPrefab(id, prefab)
+```
 
 Registers a prefab.
 
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
 
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>prefab</b> <code>table</code> </p>
-
-#### ForwardUICall
-
-
-
-```lua
-function Generic.ForwardUICall(ui, call, eventName, fields)
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>ui</b> <code>GenericUI_Instance</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>call</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>eventName</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>fields</b> <code>string[]?</code> </p>
-</doc>
-
-## UI Instance
-
-<doc package="GenericUI_Instance">
-
-
-
-## Methods
-
-#### GetID
-
-
-
-```lua
-function _Instance:GetID()
-   -> string
-```
-
-
-
-Returns the string identifier of the UI.
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>string</code> </p>
-
-#### GetElementByID
-
-
-
-```lua
-function _Instance:GetElementByID(id)
-   -> GenericUI_Element?
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>GenericUI_Element?</code> </p>
-
-#### DestroyElement
-
-
-
-```lua
-function _Instance:DestroyElement(element)
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>element</b> <code>GenericUI_Element</code> </p>
-
-#### GetMovieClipByID
-
-
-
-```lua
-function _Instance:GetMovieClipByID(id)
-   -> FlashMovieClip?
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>FlashMovieClip?</code> </p>
-
-#### Destroy
-
-
-
-```lua
-function _Instance:Destroy()
-```
-
-
-
-Destroys the UI.
-
-#### CreateElement
-
-
-
-```lua
-function _Instance:CreateElement(id, elementType, parentID)
-   -> `T`
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>elementType</b> <code>`T`|GenericUI_ElementType</code> </p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@param</i></b></span> <b>parentID</b> <code>string|GenericUI_Element?</code> Defaults to root of the MainTimeline.</p>
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>`T`</code> </p>
-
-#### GetMousePosition
-
-
-
-```lua
-function _Instance:GetMousePosition()
-   -> number, number
-```
-
-
-
-
-
-
-
-<p style="margin-bottom:0px;"><span style="color:#b04a6e;"><b><i>@return</i></b></span> <code>number, number</code> </p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>prefab</b> <code>table</code></p>
 </doc>
