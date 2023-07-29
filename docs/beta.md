@@ -1,20 +1,79 @@
 
 
 !!! warning "Extender devel version required"
-    Requires extender v60. Intended version: `e8f1e8085df4a5f2e8862d2c719be38a5ddf6348e9c910429bccbfd2e6938605`
+    Requires extender v60. Intended version: `4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff`
     To get it, use the following `ScriptExtenderUpdaterConfig.json`:
 ```json
 {
 	"UpdateChannel": "Devel",
-	"TargetResourceDigest": "e8f1e8085df4a5f2e8862d2c719be38a5ddf6348e9c910429bccbfd2e6938605",
+	"TargetResourceDigest": "4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff",
 	"TargetVersion": "60.0.0.0",
 	"Debug": true
 }
 ```
 
-## v1066 (16/07/23 upload)
+## v1066 (29/07/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
 
+### Punisher
+- Added voice acting, available for a limited time only as it hurts my throat to do such an edgy voice all the time
+
+### Custom Hotkeys
+The custom hotkeys system has been reworked. They are now accessed via a tab within the Epip settings menu, rather than the game's controls menu. This will offer them more flexibility in the future.
+
+You will have to reconfigure your previous bindings.
+
+### Quick Find
+- Added a rarity filter
+- Added a setting to close the UI when you click something in the world
+- The close button now plays a sound when clicked
+- Considerably improved performance once again
+
+### Other changes and additions
+- The settings menu now has some margin on the leftmost labels of settings
+- Slight performance improvements to the Codex
+- Small (~5%) performance improvement to all Generic UIs (most custom Epip UIs)
+
+### Fixes
+- Fixed Portable Respec Mirror hotbar action not working
+- Fixed the Alternative Statuses Display showing up in the respec screen
+- Fixed tooltips not being hidden if you exit the settings menu with escape key
+- Fixed sliders in the settings menu not being vertically centered
+- Fixed being able to scroll too far in Quick Find and the Codex if you go from having a lot of slots to only having a few
+- Fixed massive FPS drops in the Epip settings menu
+
+### Technical stuff
+- Added hooks to the Overhead UI
+- Fixed cases of trying to fetch vanilla TSKs during module load
+- Added vararg to all logging methods in Library/Feature
+- Added `Feature:__Initialize()` as well as a hook for before/after it; this will be the intended moment to initialize feature fields from now on (for easier patching)
+- Added `RegisterAction()` to HotbarActions to make it easier to use
+- Extracted TSKs for HotbarActions
+- Codex: added an interface for grid-like sections, reducing code duplication
+- Moved some Generic classes to separate files, cleaned up annotations
+- Fix a missing nil check in PersonalScripts
+- Deprecated the `REQUIRED_MODS` field in Feature
+- Added a Hook alias for Event; the previous Hook class is now LegacyHook
+- Consolidated previous ViewportChanged events into a single one within Client
+
+Generic:
+
+- Changed layout to `fitVertical`
+- Added support for capturing input events ("Iggy Events")
+    - A more sophisticated system for creating navigation will be added in the future
+- Added FormTextHolder prefab (for input settings menu)
+- Added more width/height-related calls
+- `SetPositionRelativeToParent()` now considers size overrides
+- Fixed destroying children within containers for all remaining container types
+    - Previously only Grid had this consideration, where in practice it was the only place it mattered, as it set the visibility of elements it positioned - which it no longer does either
+- Improved `Text:GetTextSize()` accuracy yet again - all cases of short text being cropped horizontally should now be solved
+- Fixed annotations for exposed Element methods
+- Marked listeners as private methods
+- Removed obsolete events
+- Containers now use `GetWidth()`/`GetHeight()` to fetch element sizes, meaning they not only respect size overrides (which they already did) but also overrides of the function itself
+    - Containers now override this to return the width/height of the visible content itself, rather than using the calculated flash values. This fixes the case of scrollbars being oversized
+
+## v1066 (16/07/23 upload)
 This patch adds an Artifacts tab to the Codex.
 
 ![Artifacts Codex.](../Features/img/codex/artifacts.png)
