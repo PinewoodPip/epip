@@ -19,6 +19,18 @@ The class includes some methods to filter out unwanted logging, however the reco
 
 ## Methods
 
+##### AddProfilingStep
+
+```lua
+function Library:AddProfilingStep(stepID)
+```
+
+Adds a step to the current profiling session.
+
+**Does nothing outside of Debug mode.**
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>stepID</b> <code>string</code></p>
+
 ##### AddSubscribableEvent
 
 ```lua
@@ -87,6 +99,16 @@ function Library:Dump(msg)
 Dump a value to the console, in Debug mode.
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+
+##### EndProfiling
+
+```lua
+function Library:EndProfiling()
+```
+
+Ends the current profiling session.
+
+**Does nothing outside of Debug mode.**
 
 ##### Error
 
@@ -165,22 +187,22 @@ Returns whether `:Debug()` has been ran successfully.
 ##### Log
 
 ```lua
-function Library:Log(msg)
+function Library:Log(...)
 ```
 
 Log a value.
 
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 ##### LogError
 
 ```lua
-function Library:LogError(msg)
+function Library:LogError(...)
 ```
 
 Log an error.
 
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 ##### LogMethod
 
@@ -207,12 +229,14 @@ Logs a "Not implemented" warning. Use as a placeholder.
 ##### LogWarning
 
 ```lua
-function Library:LogWarning(msg)
+function Library:LogWarning(...)
 ```
 
 Log a warning.
 
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
+Requires logging level to be set to WARN or lower.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 ##### Mute
 
@@ -321,4 +345,26 @@ function Library:ShutUp()
 ```
 
 Stop all non-error logging.
+
+##### StartProfiling
+
+```lua
+function Library:StartProfiling(id)
+```
+
+Starts a profiling session.
+
+**Does nothing outside of Debug mode.**
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> Session ID.</p>
+
+##### ThrowNotImplemented
+
+```lua
+function Library:ThrowNotImplemented(methodName)
+```
+
+Throws a "Not implemented" error. Use as a placeholder.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
 </doc>

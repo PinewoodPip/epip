@@ -66,17 +66,19 @@ The following VSC snippet is used to add entries to CommonStrings:
 ##### AddPadding
 
 ```lua
-function TextLib.AddPadding(str, minLength, paddingCharacter)
+function TextLib.AddPadding(str, minLength, paddingCharacter, direction)
    -> string
 ```
 
-Adds padding characters to the front of a string to meet a minimum length.
+Adds padding characters to a string to meet a minimum length.
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>minLength</b> <code>integer</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>paddingCharacter</b> <code>string?</code> Defaults to `""`</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>paddingCharacter</b> <code>string?</code> Defaults to `" "`</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>direction</b> <code>("front"|"back")?</code> Defaults to `"front"`.</p>
 
 ##### AppendLine
 

@@ -241,6 +241,16 @@ Returns the icon frame for a rarity, if any.
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>rarity</b> <code>ItemLib_Rarity|EclItem</code></p>
 
+##### GetRarityName
+
+```lua
+function ItemLib.GetRarityName(rarity)
+```
+
+Returns the name of a rarity.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>rarity</b> <code>Item|ItemLib_Rarity</code></p>
+
 ##### GetRune
 
 ```lua
@@ -269,7 +279,7 @@ Returns the amount of rune slots an item has.
 
 ```lua
 function ItemLib.GetRuneSlotsIcon(item)
-   -> icon
+   -> icon? -- `nil` if the item has no rune slots.
 ```
 
 Returns the icon displaying the state of item's rune slots.

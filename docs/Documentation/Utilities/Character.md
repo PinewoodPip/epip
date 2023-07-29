@@ -78,7 +78,7 @@ function CharacterLib.GetActionPoints(char)
 
 ```lua
 function CharacterLib.GetCombatID(char)
-   -> integer?, integer? -- The combat ID and team ID. Nil if the character is not in combat. This is different from the osi query, which returns a reserved value.
+   -> integer?, integer? -- The combat ID and team ID. `nil` if the character is not in combat. This is different from the osi query, which returns a reserved value.
 ```
 
 Returns the combat ID and team ID of char, if any.
@@ -487,6 +487,28 @@ Returns whether the character is in a combat.
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
+##### IsInStealth
+
+```lua
+function CharacterLib.IsInStealth(char)
+   -> boolean
+```
+
+Returns whether char is sneaking or invisible.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
+
+##### IsInvisible
+
+```lua
+function CharacterLib.IsInvisible(char)
+   -> boolean
+```
+
+Returns whether char is invisible - as in, has the INVISIBLE status.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
+
 ##### IsMale
 
 ```lua
@@ -595,6 +617,17 @@ Returns whether char has a skill memorized. Returns true for innate skills.
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code></p>
+
+##### IsSneaking
+
+```lua
+function CharacterLib.IsSneaking(char)
+   -> boolean
+```
+
+Returns whether char is sneaking.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 ##### IsSummon
 

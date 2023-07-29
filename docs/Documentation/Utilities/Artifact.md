@@ -26,13 +26,44 @@ The data is not generated automatically. You must add your own artifacts by call
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>KeywordMutators</b> <code>Keyword[]</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>GetName</b> <code>fun(self):string</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>GetDescription</b> <code>fun(self):string</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>GetPowerTooltip</b> <code>fun(self):TooltipLib_Element[]</code></p>
-
 ## Methods
+
+##### GetDescription
+
+```lua
+function ArtifactLib_ArtifactDefinition:GetDescription()
+   -> string
+```
+
+Returns the artifact power's description.
+
+##### GetName
+
+```lua
+function ArtifactLib_ArtifactDefinition:GetName()
+   -> string
+```
+
+Returns the artifact's name.
+
+##### GetPowerTooltip
+
+```lua
+function ArtifactLib_ArtifactDefinition:GetPowerTooltip()
+   -> TooltipLib_Element[]
+```
+
+Returns a full tooltip showing the artifact's name and power.
+
+##### HasKeyword
+
+```lua
+function ArtifactLib_ArtifactDefinition:HasKeyword(keyword)
+```
+
+Returns whether the artifact has a keyword activator or mutator.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>keyword</b> <code>Keyword</code></p>
 </doc>
 
 <doc class="ArtifactLib">
@@ -55,17 +86,6 @@ Returns the definition for an artifact.
 ##### GetEquippedPowers
 
 ```lua
-function ArtifactLib.GetEquippedPowers(char) -- (Client-only)
-   -> ArtifactLib_ArtifactDefinition[]
-```
-
-Returns a list of artifact powers active on char.
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
-
-##### GetEquippedPowers
-
-```lua
 function ArtifactLib.GetEquippedPowers(char) -- (Server-only)
    -> ArtifactLib_ArtifactDefinition[]
 ```
@@ -73,6 +93,17 @@ function ArtifactLib.GetEquippedPowers(char) -- (Server-only)
 Returns a list of artifact powers active on char.
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code></p>
+
+##### GetEquippedPowers
+
+```lua
+function ArtifactLib.GetEquippedPowers(char) -- (Client-only)
+   -> ArtifactLib_ArtifactDefinition[]
+```
+
+Returns a list of artifact powers active on char.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
 
 ##### IsEquipped
 
@@ -99,6 +130,16 @@ Returns whether char has the artifact power active.
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>artifact</b> <code>ArtifactLib_ArtifactDefinition|string</code></p>
+
+##### IsOwnedByParty
+
+```lua
+function ArtifactLib.IsOwnedByParty(id)
+```
+
+Returns whether the party owns an artifact.
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
 
 ##### RegisterArtifact
 
