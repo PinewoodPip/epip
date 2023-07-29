@@ -5,6 +5,8 @@ The `Timer` library implements timers, for running scripting with a delay. Since
 
 # TimerLib Class
 
+Inherits from <code>Feature</code>.
+
 ## Events and Hooks
 
 #### TimerCompleted (event)

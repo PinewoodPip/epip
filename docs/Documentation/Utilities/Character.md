@@ -5,6 +5,8 @@ The `Character` library contains utility methods relating to characters. The vas
 
 # CharacterLib Class
 
+Inherits from <code>Library</code>.
+
 ## Events and Hooks
 
 #### StatusApplied (event)

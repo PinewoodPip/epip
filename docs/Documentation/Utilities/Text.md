@@ -53,6 +53,8 @@ The following VSC snippet is used to add entries to CommonStrings:
 
 # TextLib Class
 
+Inherits from <code>Library</code>.
+
 ## Events and Hooks
 
 #### GetTranslationTemplateEntry (hook)

@@ -36,6 +36,8 @@ You may also define default values to return if a variable is unset on the compo
 
 # UserVarsLib Class
 
+Inherits from <code>Library</code>.
+
 ## Methods
 
 ##### GetModVarDefinition

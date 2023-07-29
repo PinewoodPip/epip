@@ -5,6 +5,8 @@ The `Item` library contains methods relating to item game objects.
 
 # ItemLib Class
 
+Inherits from <code>Library</code>.
+
 ## Methods
 
 ##### ApplyDye

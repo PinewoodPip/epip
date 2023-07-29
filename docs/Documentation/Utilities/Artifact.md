@@ -70,6 +70,8 @@ Returns whether the artifact has a keyword activator or mutator.
 
 # ArtifactLib Class
 
+Inherits from <code>Feature</code>.
+
 ## Methods
 
 ##### GetData

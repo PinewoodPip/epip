@@ -18,6 +18,8 @@ Additionally, for purposes of semantic clarity, a `NetMessage` class exists for 
 
 # NetLib Class
 
+Inherits from <code>Library</code>.
+
 ## Events and Hooks
 
 #### MessageReceived (event)

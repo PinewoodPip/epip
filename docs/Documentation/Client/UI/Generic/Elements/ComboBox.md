@@ -7,6 +7,8 @@ You can set its options with `SetOptions()` or `AddOption()`. Comboboxes contain
 
 # GenericUI_Element_ComboBox Class
 
+Inherits from <code>GenericUI_Element</code>.
+
 ## Methods
 
 ##### AddOption

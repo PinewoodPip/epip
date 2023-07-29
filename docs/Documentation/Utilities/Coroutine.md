@@ -5,6 +5,8 @@ The `Coroutine` library offers coroutines that support sleeping for X seconds or
 
 # CoroutineLib Class
 
+Inherits from <code>Library</code>.
+
 ## Methods
 
 ##### Create

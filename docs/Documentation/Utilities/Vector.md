@@ -18,6 +18,8 @@ In Epip, their primary use is semantic clarity for functions that require 2D coo
 
 # VectorLib Class
 
+Inherits from <code>Library</code>.
+
 ## Methods
 
 ##### AreEqual

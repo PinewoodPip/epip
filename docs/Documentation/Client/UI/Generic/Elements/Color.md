@@ -9,6 +9,8 @@ Its performance for "painting" textures dynamically is untested.
 
 # GenericUI_Element_Color Class
 
+Inherits from <code>GenericUI_Element</code>.
+
 ## Methods
 
 ##### SetColor

@@ -9,6 +9,8 @@ It's primarily a wrapper around `Ext.UI.GetPickingState()`. In addition to metho
 
 # PointerLib Class
 
+Inherits from <code>Library</code>.
+
 ## Events and Hooks
 
 #### HoverCharacterChanged (event)

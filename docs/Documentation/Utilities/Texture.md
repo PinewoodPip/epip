@@ -16,6 +16,8 @@ It is mainly used to store UI textures used for Generic styles, via the `Feature
 
 # TextureLib Class
 
+Inherits from <code>Library</code>.
+
 ## Methods
 
 ##### GetTexture

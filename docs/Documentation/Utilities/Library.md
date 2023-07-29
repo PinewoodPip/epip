@@ -17,6 +17,8 @@ The class includes some methods to filter out unwanted logging, however the reco
 
 # Library Class
 
+Inherits from <code>Class</code>.
+
 ## Methods
 
 ##### AddProfilingStep

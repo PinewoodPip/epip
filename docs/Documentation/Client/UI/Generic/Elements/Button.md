@@ -10,6 +10,8 @@ The `GenericUI_Element_Button` button element implements a typical button form e
 
 # GenericUI_Element_Button Class
 
+Inherits from <code>GenericUI_Element</code>.
+
 ## Methods
 
 ##### IsEnabled

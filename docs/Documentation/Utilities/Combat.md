@@ -5,6 +5,8 @@ The `Combat` library contains methods for querying information about ongoing com
 
 # CombatLib Class
 
+Inherits from <code>Library</code>.
+
 ## Methods
 
 ##### GetActiveCombatant

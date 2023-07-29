@@ -144,6 +144,8 @@ Since user interaction in Generic is driven through events in Lua, it's theoreti
 
 # GenericUI Class
 
+Inherits from <code>Feature</code>.
+
 ## Methods
 
 ##### Create

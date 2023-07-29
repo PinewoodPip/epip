@@ -7,6 +7,8 @@ Its events are helpful for initialization purposes. `ClientReady`, for example, 
 
 # GameStateLib Class
 
+Inherits from <code>Feature</code>.
+
 ## Events and Hooks
 
 #### GamePaused (event)
