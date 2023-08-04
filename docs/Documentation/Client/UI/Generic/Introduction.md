@@ -100,6 +100,8 @@ print(acceptButton:GetMovieClip())
 print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 ```
 
+The code in this section is from an example UI in `Epip/Examples/GenericUI.lua`.
+
 !!! warning Usage warning
     Though accessing an element's MovieClip is possible, its purpose is for internal & debug usage only. Interfacing with elements outside of their public APIs is not supported and any such use is prone to breaking in future releases with no warning.
 
@@ -107,14 +109,47 @@ print(ExampleUI:IsFlagged("OF_PlayerInput1"))
 
 The following element types are implemented:
 
-- TODO document
+- Empty: an element with no visual presence. Ideal for anchoring or as a root for custom container prefabs.
+- Texture: displays a texture resource.
+- Text: displays a text field, optionally user-editable.
+- IggyIcon: displays an Iggy icon - an icon from a texture atlas.
+- Color: displays a solid color.
+- ComboBox: implements a combobox (dropdown).
+- Slider: implements a slider.
+- Slot: implements a hotbar-like slot, with cooldown/refresh animations. See `GenericUI_Prefab_HotbarSlot` for a ready-to-use inventory-like slot.
+
+Worthy of distinction are the following "container/list" elements, whose purpose is to position their children in a specific layout:
+
+- VerticalList: positions elements along the vertical axis. Equivalent to Larian's `listDisplay`.
+- HorizontalList: positions elements along the horizontal axis. Equivalent to Larian's `horizontalList`.
+- ScrollList: positions elements along the vertical axis and has a set frame size; overflowing elements can be accessed by scrolling the viewport with a scrollbar. Equivalent to Larian's `scrollList`.
+- Grid: positions elements in a grid composed of rows and columns of elements. Equivalent to Larian's `grid`.
 
 You can read up about them on their dedicated pages.
 
-The code in this section is from an example UI in `Epip/Examples/GenericUI.lua`.
+The following element types also exist, but are deprecated in favor of Prefab-based solutions:
+
+- Button: replaced by `GenericUI_Prefab_Button`.
+- StateButton: a button with 2 states (inactive/active). Replaced by `GenericUI_Prefab_Button`.
+- Divider: replaced by Texture element and SlicedTexture prefab.
+- TiledBackground: a 9-sliced resizable background. Replaced by SlicedTexture.
+
+These elements continue to exist for backwards compatibility, but their usage in newer UIs is discouraged.
 
 ## Prefabs
-TODO
+Prefabs are classes which initialize and manage groups of elements; they allow complex pieces of UIs to be reused efficiently, being analogous to ex. Fragments in Android UI development.
+
+Typically, prefabs have a public constructor which takes UI, ID and parent parameters, creates & initializes its elements, and returns an instance of the prefab class.
+
+Prefabs implement high-level, contextual APIs to interact with their elements indirectly - ideally the user should not need to consider how the prefab is structured in terms of actual elements; the prefab manages its hierarchy of elements.
+
+The `Spinner` prefab for example implements a spinner form element; the user may use the -/+ buttons to decrement/increment a value, and that value can be queried using `:GetValue()` on the prefab instance. This Spinner is composed of Text and Button elements, as well as a background.
+
+![Example of a Spinner prefab instance.](../../../../img/docs/generic/spinner_prefab.png)
+
+A prefab in itself is not an element, but may implement the `Elementable` interface to allow calling Element methods on them, by specifying the target element (most commonly the root of the prefab).
+
+The `Stylable` interface allows customizing the appearance of prefabs through styles consisting of textures, sounds, and other assets/parameters. Each prefab using this interface declares its own style class with possible customizations. If a prefab does not use this system, you can of course always tweak the elements yourself directly.
 
 ## Limitations, considerations and observations
 ### Sprite-based animations
@@ -140,6 +175,9 @@ QuickInventory and Codex sections that inherit from `Features.Codex.Sections.Gri
 ### Testing
 Since user interaction in Generic is driven through events in Lua, it's theoretically possible to implement instrumented tests for UIs by invoking those events to spoof user interaction.
 
+### Wrong container size when using prefabs
+Container size is by default recalculated upon adding an element; in the case of adding prefabs, this happens when the root of the prefab is added. As such, the container will use the size of the first element created by the prefab, before any other element creation or calls. To address positioning issues, you should call `RepositionElements()` on the container after all elements are added and initialized. Disabling auto-positioning with `SetRepositionAfterAdding()` in this case might improve performance.
+
 <doc class="GenericUI">
 
 # GenericUI Class
@@ -158,15 +196,6 @@ function GenericUI.Create(id, layer)
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>layer</b> <code>integer?</code> Defaults to `DEFAULT_LAYER`.</p>
-
-##### ExposeFunction
-
-```lua
-function GenericUI.ExposeFunction(call)
-   -> fun(self:GenericUI_Element, ...):any?
-```
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>call</b> <code>string</code></p>
 
 ##### GetInstance
 

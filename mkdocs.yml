@@ -39,6 +39,8 @@ nav:
     - Button: "Documentation/Client/UI/Generic/Elements/Button.md"
     - Color: "Documentation/Client/UI/Generic/Elements/Color.md"
     - ComboBox: "Documentation/Client/UI/Generic/Elements/ComboBox.md"
+  - Generic Prefabs:
+    - Button: "Documentation/Client/UI/Generic/Prefabs/Button.md"
   - "Utilities":
     - "Artifact": "Documentation/Utilities/Artifact.md"
     - "Character": "Documentation/Utilities/Character.md"
