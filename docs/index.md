@@ -16,9 +16,13 @@ Epip Encounters is a UI and QoL mod targeting [Epic Encounters 2](https://docs.g
 
 **[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5)**. Load after both EE Core and EE Origins, if you have them.
 
-[Latest stable version, v1065](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing). (07/05/23) 
+**The stable version is months behind the [beta](beta.md) one. Consider using the [beta](beta.md) instead to avoid running into issues that were fixed long ago. As of 5/8/23 extender v60 is in a stable state; there are no known issues with it.**
+
+[Latest stable version, v1065](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing). (07/05/23)
 
 See the [patchnotes](patchnotes.md) page for patchnotes.
+
+---
 
 Special thanks to:
 
@@ -30,8 +34,9 @@ Special thanks to:
 
 Translators:
 
-- Cathe & JoienReid: Russian translation
-- Ferocidade: Brazilian Portuguese translation
+- Cathe & JoienReid: Russian
+- Ferocidade: Brazilian Portuguese
+- Ainsky: Simplified Chinese
 
 ## Features
 Below is a non-exhaustive list of features; I suggested browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. 
