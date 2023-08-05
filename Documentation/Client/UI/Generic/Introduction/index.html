@@ -98,6 +98,10 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wrong-container-size-when-using-prefabs">Wrong container size when using prefabs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#overlay-uis">Overlay UIs</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -109,6 +113,11 @@
                   <li class="toctree-l1"><a class="reference internal" href="../Elements/Color/">Color</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Elements/ComboBox/">ComboBox</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Generic Prefabs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Prefabs/Button/">Button</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Utilities</span></p>
@@ -267,6 +276,7 @@ print(acceptButton:GetMovieClip())
 -- GenericUI instances inherit from the same class as built-in UIs in Epip
 print(ExampleUI:IsFlagged(&quot;OF_PlayerInput1&quot;))
 </code></pre>
+<p>The code in this section is from an example UI in <code>Epip/Examples/GenericUI.lua</code>.</p>
 <div class="admonition warning usage warning">
 <p class="admonition-title">Warning</p>
 <p>Though accessing an element's MovieClip is possible, its purpose is for internal &amp; debug usage only. Interfacing with elements outside of their public APIs is not supported and any such use is prone to breaking in future releases with no warning.</p>
@@ -274,12 +284,39 @@ print(ExampleUI:IsFlagged(&quot;OF_PlayerInput1&quot;))
 <h2 id="elements">Elements<a class="headerlink" href="#elements" title="Permanent link">&para;</a></h2>
 <p>The following element types are implemented:</p>
 <ul>
-<li>TODO document</li>
+<li>Empty: an element with no visual presence. Ideal for anchoring or as a root for custom container prefabs.</li>
+<li>Texture: displays a texture resource.</li>
+<li>Text: displays a text field, optionally user-editable.</li>
+<li>IggyIcon: displays an Iggy icon - an icon from a texture atlas.</li>
+<li>Color: displays a solid color.</li>
+<li>ComboBox: implements a combobox (dropdown).</li>
+<li>Slider: implements a slider.</li>
+<li>Slot: implements a hotbar-like slot, with cooldown/refresh animations. See <code>GenericUI_Prefab_HotbarSlot</code> for a ready-to-use inventory-like slot.</li>
+</ul>
+<p>Worthy of distinction are the following "container/list" elements, whose purpose is to position their children in a specific layout:</p>
+<ul>
+<li>VerticalList: positions elements along the vertical axis. Equivalent to Larian's <code>listDisplay</code>.</li>
+<li>HorizontalList: positions elements along the horizontal axis. Equivalent to Larian's <code>horizontalList</code>.</li>
+<li>ScrollList: positions elements along the vertical axis and has a set frame size; overflowing elements can be accessed by scrolling the viewport with a scrollbar. Equivalent to Larian's <code>scrollList</code>.</li>
+<li>Grid: positions elements in a grid composed of rows and columns of elements. Equivalent to Larian's <code>grid</code>.</li>
 </ul>
 <p>You can read up about them on their dedicated pages.</p>
-<p>The code in this section is from an example UI in <code>Epip/Examples/GenericUI.lua</code>.</p>
+<p>The following element types also exist, but are deprecated in favor of Prefab-based solutions:</p>
+<ul>
+<li>Button: replaced by <code>GenericUI_Prefab_Button</code>.</li>
+<li>StateButton: a button with 2 states (inactive/active). Replaced by <code>GenericUI_Prefab_Button</code>.</li>
+<li>Divider: replaced by Texture element and SlicedTexture prefab.</li>
+<li>TiledBackground: a 9-sliced resizable background. Replaced by SlicedTexture.</li>
+</ul>
+<p>These elements continue to exist for backwards compatibility, but their usage in newer UIs is discouraged.</p>
 <h2 id="prefabs">Prefabs<a class="headerlink" href="#prefabs" title="Permanent link">&para;</a></h2>
-<p>TODO</p>
+<p>Prefabs are classes which initialize and manage groups of elements; they allow complex pieces of UIs to be reused efficiently, being analogous to ex. Fragments in Android UI development.</p>
+<p>Typically, prefabs have a public constructor which takes UI, ID and parent parameters, creates &amp; initializes its elements, and returns an instance of the prefab class.</p>
+<p>Prefabs implement high-level, contextual APIs to interact with their elements indirectly - ideally the user should not need to consider how the prefab is structured in terms of actual elements; the prefab manages its hierarchy of elements.</p>
+<p>The <code>Spinner</code> prefab for example implements a spinner form element; the user may use the -/+ buttons to decrement/increment a value, and that value can be queried using <code>:GetValue()</code> on the prefab instance. This Spinner is composed of Text and Button elements, as well as a background.</p>
+<p><img alt="Example of a Spinner prefab instance." src="../../../../../img/docs/generic/spinner_prefab.png" /></p>
+<p>A prefab in itself is not an element, but may implement the <code>Elementable</code> interface to allow calling Element methods on them, by specifying the target element (most commonly the root of the prefab).</p>
+<p>The <code>Stylable</code> interface allows customizing the appearance of prefabs through styles consisting of textures, sounds, and other assets/parameters. Each prefab using this interface declares its own style class with possible customizations. If a prefab does not use this system, you can of course always tweak the elements yourself directly.</p>
 <h2 id="limitations-considerations-and-observations">Limitations, considerations and observations<a class="headerlink" href="#limitations-considerations-and-observations" title="Permanent link">&para;</a></h2>
 <h3 id="sprite-based-animations">Sprite-based animations<a class="headerlink" href="#sprite-based-animations" title="Permanent link">&para;</a></h3>
 <p>There is currently no convenient way of creating animations that involve multiple animation sprites. Two solutions have been theorized, but their practicality is untested:</p>
@@ -297,6 +334,14 @@ In v1066, measures have been taken to minimize the amount of DisplayObjects crea
 <p>QuickInventory and Codex sections that inherit from <code>Features.Codex.Sections.Grid</code> are good examples of implementing pooling for an inventory-like UI, massively improving responsiveness after the creation of the elements.</p>
 <h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
 <p>Since user interaction in Generic is driven through events in Lua, it's theoretically possible to implement instrumented tests for UIs by invoking those events to spoof user interaction.</p>
+<h3 id="wrong-container-size-when-using-prefabs">Wrong container size when using prefabs<a class="headerlink" href="#wrong-container-size-when-using-prefabs" title="Permanent link">&para;</a></h3>
+<p>Container size is by default recalculated upon adding an element; in the case of adding prefabs, this happens when the root of the prefab is added. As such, the container will use the size of the first element created by the prefab, before any other element creation or calls. To address positioning issues, you should call <code>RepositionElements()</code> on the container after all elements are added and initialized. Disabling auto-positioning with <code>SetRepositionAfterAdding()</code> in this case might improve performance.</p>
+<h3 id="overlay-uis">Overlay UIs<a class="headerlink" href="#overlay-uis" title="Permanent link">&para;</a></h3>
+<p>Though overlay UIs are an overall good solution to extending vanilla UIs, regular ones made in Flash still have moddability issues. Two mods overlaying the same part of a UI is gonna result in a visual conflict with both of them overlapping.</p>
+<p>The recommended solution for this problem in Generic (assuming both mods are using it) is to insert elements of one overlay UI onto the other as a compatibility measure.</p>
+<p>If you have mod A and B both with an overlay UI that extends a similar area of the vanilla UI, mod B could check for mod A being loaded and if it is, instead of creating its own overlay UI, mod B could add its own overlay elements into the Generic UI of mod A.</p>
+<p>This of course only works reliably if mod A offers a stable UI structure, which is why it's not recommended to change element IDs or keys of element references in the UI table in new versions of your mod.</p>
+<p>With that in mind there is little reason to create overlay UIs for Generic UIs. It is far simpler and reliable to simply insert your elements within the UI itself.</p>
 <p><doc class="GenericUI"></p>
 <h1 id="genericui-class">GenericUI Class<a class="headerlink" href="#genericui-class" title="Permanent link">&para;</a></h1>
 <p>Inherits from <code>Feature</code>.</p>
@@ -308,12 +353,6 @@ In v1066, measures have been taken to minimize the amount of DisplayObjects crea
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>layer</b> <code>integer?</code> Defaults to `DEFAULT_LAYER`.</p>
-
-<h5 id="exposefunction">ExposeFunction<a class="headerlink" href="#exposefunction" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function GenericUI.ExposeFunction(call)
-   -&gt; fun(self:GenericUI_Element, ...):any?
-</code></pre>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>call</b> <code>string</code></p>
 
 <h5 id="getinstance">GetInstance<a class="headerlink" href="#getinstance" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function GenericUI.GetInstance(id)

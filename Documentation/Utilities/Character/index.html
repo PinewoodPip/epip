@@ -93,6 +93,11 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Generic Prefabs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Prefabs/Button/">Button</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Utilities</span></p>
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../Artifact/">Artifact</a>
@@ -198,7 +203,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Slot</b> <code>ItemSlot</code></p>
 
 <h4 id="createequipmentvisuals-hook">CreateEquipmentVisuals (hook)<a class="headerlink" href="#createequipmentvisuals-hook" title="Permanent link">&para;</a></h4>
-<p>Wrapper for Ext.Events.CreateEquipmentVisualsRequest.</p>
+<p>Client-only.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Item</b> <code>EclItem</code></p>
@@ -327,19 +332,19 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getpartymembers">GetPartyMembers<a class="headerlink" href="#getpartymembers" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetPartyMembers(char) -- (Server-only)
-   -&gt; EsvCharacter[] Includes the char passed per param.-- the char passed per param.
-</code></pre>
-<p>Returns a list of party members of char's party. Char must be a player.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code></p>
-
-<h5 id="getpartymembers_1">GetPartyMembers<a class="headerlink" href="#getpartymembers_1" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function CharacterLib.GetPartyMembers(char) -- (Client-only)
    -&gt; EclCharacter[] Includes the char passed per param.-- the char passed per param.
 </code></pre>
 <p>Returns a list of party members of char's party. Char must be a player.</p>
 <p>Depends on PlayerInfo.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
+
+<h5 id="getpartymembers_1">GetPartyMembers<a class="headerlink" href="#getpartymembers_1" title="Permanent link">&para;</a></h5>
+<pre><code class="language-lua">function CharacterLib.GetPartyMembers(char) -- (Server-only)
+   -&gt; EsvCharacter[] Includes the char passed per param.-- the char passed per param.
+</code></pre>
+<p>Returns a list of party members of char's party. Char must be a player.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code></p>
 
 <h5 id="getrace">GetRace<a class="headerlink" href="#getrace" title="Permanent link">&para;</a></h5>
 <pre><code class="language-lua">function CharacterLib.GetRace(char)

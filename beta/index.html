@@ -52,17 +52,15 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Beta Versions</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#punisher">Punisher</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#custom-hotkeys">Custom Hotkeys</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#quick-find">Quick Find</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#other-changes-and-additions">Other changes and additions</a>
+    <li class="toctree-l2"><a class="reference internal" href="#changes-additions">Changes &amp; additions</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#fixes">Fixes</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#technical-stuff">Technical stuff</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generic">Generic</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -105,6 +103,11 @@
                   <li class="toctree-l1"><a class="reference internal" href="../Documentation/Client/UI/Generic/Elements/Color/">Color</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Documentation/Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Generic Prefabs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Documentation/Client/UI/Generic/Prefabs/Button/">Button</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Utilities</span></p>
@@ -199,8 +202,38 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
     &quot;Debug&quot;: true
 }
 </code></pre>
-<h2 id="v1066-290723-upload">v1066 (29/07/23 upload)<a class="headerlink" href="#v1066-290723-upload" title="Permanent link">&para;</a></h2>
+<h2 id="v1066-50823-upload">v1066 (5/08/23 upload)<a class="headerlink" href="#v1066-50823-upload" title="Permanent link">&para;</a></h2>
 <p><a href="https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing">Download here</a>.</p>
+<h3 id="changes-additions">Changes &amp; additions<a class="headerlink" href="#changes-additions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added a setting to show surface tooltips above the hotbar UI, enabled by default</li>
+<li>When creating Hotbar Groups, the labels in the UI now use a black text color</li>
+</ul>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vanity: fixed transmogged armors showing up after the character's corpse was destroyed, which also lead to materials persisting on them</li>
+<li>Codex: fixed skills with a name that's not a string key being filtered out (ex. skills that had their name directly set in Lua)</li>
+<li>Fixed some artifacts having the wrong keywords declared in Epip (which affected Codex filtering), and added keywords to many artifacts which previously didn't have them</li>
+<li>Marked more scripts as EE-only<ul>
+<li>You should no longer see giftbag warnings if EE is not enabled</li>
+</ul>
+</li>
+</ul>
+<h3 id="technical-stuff">Technical stuff<a class="headerlink" href="#technical-stuff" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Minor annotation fixes for CombatLog</li>
+<li>Fixed some TooltipAdjustments TSKs being registered on the wrong library</li>
+<li>Added more DB methods to <code>Osiris</code></li>
+<li>Updated the Osiris calls used by the StatsTab feature, hopefully removing all deprecation warnings</li>
+</ul>
+<h4 id="generic">Generic<a class="headerlink" href="#generic" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Added more textures and button styles</li>
+<li>Texture: width and height overrides can be specified separately (ex. can pass <code>-1, 100</code> as params to <code>SetTexture()</code>)</li>
+<li>Fixed field visibility of <code>Stylable._Style</code> (now protected), added <code>GetStyles()</code></li>
+<li>Added the <code>SlicedTexture</code> prefab, which will replace <code>TiledBackground</code> and <code>Divider</code>. Only a few textures are built-in for it right now</li>
+</ul>
+<h2 id="v1066-290723-upload">v1066 (29/07/23 upload)<a class="headerlink" href="#v1066-290723-upload" title="Permanent link">&para;</a></h2>
 <h3 id="punisher">Punisher<a class="headerlink" href="#punisher" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Added voice acting, available for a limited time only as it hurts my throat to do such an edgy voice all the time</li>
@@ -221,7 +254,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 <li>Slight performance improvements to the Codex</li>
 <li>Small (~5%) performance improvement to all Generic UIs (most custom Epip UIs)</li>
 </ul>
-<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">&para;</a></h3>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed Portable Respec Mirror hotbar action not working</li>
 <li>Fixed the Alternative Statuses Display showing up in the respec screen</li>
@@ -230,7 +263,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 <li>Fixed being able to scroll too far in Quick Find and the Codex if you go from having a lot of slots to only having a few</li>
 <li>Fixed massive FPS drops in the Epip settings menu</li>
 </ul>
-<h3 id="technical-stuff">Technical stuff<a class="headerlink" href="#technical-stuff" title="Permanent link">&para;</a></h3>
+<h3 id="technical-stuff_1">Technical stuff<a class="headerlink" href="#technical-stuff_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Added hooks to the Overhead UI</li>
 <li>Fixed cases of trying to fetch vanilla TSKs during module load</li>
@@ -293,7 +326,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 </li>
 <li>Source Infuse and Meditate keybinds are now only shown if EE is enabled</li>
 </ul>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">&para;</a></h3>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed the tooltips for various world tooltip options misnaming the "Enable tooltips for all items" option</li>
 <li>Hotbar: fixed chain/unchain actions not working (beta issue)</li>
@@ -305,7 +338,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 <li>Fixed some sliders in the settings menu having their values cropped out until interacted with</li>
 <li>Fixed positioning of the "Alternative Status Display" when using controller</li>
 </ul>
-<h3 id="technical-stuff_1">Technical stuff<a class="headerlink" href="#technical-stuff_1" title="Permanent link">&para;</a></h3>
+<h3 id="technical-stuff_2">Technical stuff<a class="headerlink" href="#technical-stuff_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>ArtifactLib: added <code>IsOwnedByParty()</code>, <code>HasKeyword()</code>, and missing VolatileArmor keyword tags to artifacts</li>
 <li>Added <code>Profiling</code> library as well as Feature integration. No GUI exists for this yet, results can only be viewed through the console command</li>
@@ -327,7 +360,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 </ul>
 </li>
 </ul>
-<h4 id="generic">Generic<a class="headerlink" href="#generic" title="Permanent link">&para;</a></h4>
+<h4 id="generic_1">Generic<a class="headerlink" href="#generic_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Added custom tooltip support to elements, and fixed not being to replace an existing tooltip</li>
 <li>Added <code>Element:GetParent()</code> and <code>Element:GetChildren()</code></li>
@@ -374,7 +407,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 </ul>
 </li>
 </ul>
-<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">&para;</a></h3>
+<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed TSKs from the gameplay mod still being in Epip; you will need to redownload the gameplay mod if you use it</li>
 <li>Slots within Epip UIs now only play a dragging sound if the slot is not empty</li>
@@ -383,7 +416,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 <li>Fixed the Debug Cheats menu showing the wrong talents for characters that weren't the active client character</li>
 <li>Fixed performance issues from the stats tab when picking up items</li>
 </ul>
-<h3 id="technical-stuff_2">Technical Stuff<a class="headerlink" href="#technical-stuff_2" title="Permanent link">&para;</a></h3>
+<h3 id="technical-stuff_3">Technical Stuff<a class="headerlink" href="#technical-stuff_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Added a way to load lua scripts from a file defined in <code>Osiris Data/Epip/PersonalScripts.json</code>; this can be used to load test/debug scripts without needing to include them within the mod. See the <code>PersonalScripts</code> feature.<ul>
 <li>Removed various console commands as they are of no use other than personal</li>
@@ -406,7 +439,7 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
 <li>Added the <code>SkillbookTemplates</code> feature, which lets you query item templates that have a SkillBook use action</li>
 <li>Fixed an error when hovering over a Status prefab whose status had expired</li>
 </ul>
-<h4 id="generic_1">Generic<a class="headerlink" href="#generic_1" title="Permanent link">&para;</a></h4>
+<h4 id="generic_2">Generic<a class="headerlink" href="#generic_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Added the <code>Stylable</code> interface, for defining styles for customizing prefab appearances</li>
 <li>Added the <code>Button</code> prefab, which will replace the Button and StateButton elements. Its major advantage is support for styling, as well as the extendability and maintainability that comes from it being implemented in lua rather than flash.</li>
