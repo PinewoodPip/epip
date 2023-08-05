@@ -12,8 +12,37 @@
 }
 ```
 
-## v1066 (29/07/23 upload)
+## v1066 (5/08/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
+
+### Changes & additions
+
+- Added a setting to show surface tooltips above the hotbar UI, enabled by default
+- When creating Hotbar Groups, the labels in the UI now use a black text color
+
+### Fixes
+
+- Vanity: fixed transmogged armors showing up after the character's corpse was destroyed, which also lead to materials persisting on them
+- Codex: fixed skills with a name that's not a string key being filtered out (ex. skills that had their name directly set in Lua)
+- Fixed some artifacts having the wrong keywords declared in Epip (which affected Codex filtering), and added keywords to many artifacts which previously didn't have them
+- Marked more scripts as EE-only
+    - You should no longer see giftbag warnings if EE is not enabled
+
+### Technical stuff
+
+- Minor annotation fixes for CombatLog
+- Fixed some TooltipAdjustments TSKs being registered on the wrong library
+- Added more DB methods to `Osiris`
+- Updated the Osiris calls used by the StatsTab feature, hopefully removing all deprecation warnings
+
+#### Generic
+
+- Added more textures and button styles
+- Texture: width and height overrides can be specified separately (ex. can pass `-1, 100` as params to `SetTexture()`)
+- Fixed field visibility of `Stylable._Style` (now protected), added `GetStyles()`
+- Added the `SlicedTexture` prefab, which will replace `TiledBackground` and `Divider`. Only a few textures are built-in for it right now
+
+## v1066 (29/07/23 upload)
 
 ### Punisher
 - Added voice acting, available for a limited time only as it hurts my throat to do such an edgy voice all the time
