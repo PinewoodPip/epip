@@ -121,7 +121,11 @@ You may now filter out individual types of messages in the combat log by right-c
 ![Combat log filters.](img/showcase/combat_log.png)
 
 ### World Tooltips
-A keybind has been added to make world item tooltips toggleable, so you don't need to hold alt all the time. Additionally, a setting exists to disable these tooltips for empty containers and bodies.
+A keybind has been added to make world item tooltips toggleable, so you don't need to hold alt all the time. A setting also exists to disable these tooltips for empty containers and bodies, as well as to make clicking the tooltips open containers rather than pick them up.
+
+Additional settings exist to enable these tooltips for more item types, as well as to highlight certain types of items with a customizable color.
+
+![Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.](img/showcase/world_tooltips.png)
 
 ### Overhead Text and Notifications
 Settings have been added to shorten the duration of overhead text, and to change their size (as well as the size of damage numbers).
@@ -141,7 +145,7 @@ Gift bag mods incompatible with EE are no longer selectable, to prevent regrets.
 
 ![Giftbag warning.](img/showcase/giftbags_warning.png)
 
-Common mods incompatible with EE now show a warning when you load into the game with them enabled, once per playthrough.
+Common mods incompatible with EE or its add-ons now show a warning when you load into the game with them enabled.
 
 ### Quick Examine
 A "Quick Examine" panel can be opened with a custom hotkey (defaults to `V`). This panel is mainly used to show the effects enemies have from the "Epic Enemies" feature, but it also displays the character's artifacts, useful to check your ally's effects in multiplayer. More information will be added to this panel in the future.
@@ -151,7 +155,7 @@ A "Quick Examine" panel can be opened with a custom hotkey (defaults to `V`). Th
 ### Examine
 The Examine UI now shows Critical Chance, and can be configured to open on the sides of the screen instead of the center.
 
-Additionally, there is now a keybind to open the examine menu.
+Additionally, there is now a keybind to open the examine menu, and capitalization of the word "Status efects" has been made consistent with the rest of the UI.
 
 ### Ingame Patchnotes
 A new journal UI can be accessed from the Hotbar actions, or after updating the mod. It lists the patchnotes of Epip, and other mods can add information/patchnotes there freely as well. Updating the mod will also show a prompt to open the UI.
