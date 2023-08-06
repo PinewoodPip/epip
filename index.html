@@ -131,6 +131,10 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="Features/Camera/">Camera</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Features/TooltipAdjustments/">Tooltip Adjustments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="Features/VanillaFixes/">Vanilla Fixes</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Documentation</span></p>
               <ul>
@@ -320,27 +324,7 @@ Localization is only possible thanks to the members of our community. If you wan
 <p><img alt="Input menu." src="img/showcase/options_input.png" /></p>
 <p>Additionally, the difficulty can now be changed to/from tactician freely at any time. The side effects of this have not been studied well, but everything appears to work fine with the exception of already-initialized enemies having missing HP and consumables(?).</p>
 <h3 id="tooltip-adjustments">Tooltip Adjustments<a class="headerlink" href="#tooltip-adjustments" title="Permanent link">&para;</a></h3>
-<ul>
-<li>"Stat Adjustments" in tooltips are now merged into one line.</li>
-<li>Added a label for items that have been Masterworked</li>
-<li>While infusing a spell or holding shift, skill tooltips now highlight Source Infusions you don't meet the requirements for. Holding shift also displays your relevant ability score in the tooltip.</li>
-<li>The simple small tooltips appear without a delay</li>
-<li>Skill tooltips now account for effects that increase or decrease AP costs</li>
-<li>Most statuses that deal damage now show the calculated damage, rather than showing "(before modifiers)"</li>
-<li>Status tooltips show who applied the status (if anyone)</li>
-<li>Tooltips for randomly generated items now show a "quality" label, which indicates how good the damage/armor rolls were for that item. A 100% quality indicates the best roll, possibly only on divine items.</li>
-<li>The word "Set:" has been removed from tooltips due to confusion and redundancy.</li>
-<li>Deltamods that previously did not show clearly in tooltips (+range, +elemental damage) now have blue labels in tooltips, like others.</li>
-<li>Holding shift will cause skill tooltips to display damage multipliers instead. Does not work for all skills.</li>
-<li>Removed the skull icon introduced by GB5 that appeared on negative status effects</li>
-<li>Added a keybind to scroll tooltips</li>
-<li>The damage tooltip in the character sheet has been made less confusing by removing the mention of damage from gear and dummied out LW values. Additionally, it now makes it clear that the weapon abilities grant multiplicative damage increases.</li>
-<li>Books that have been read and keys that have been used now have a green label in their tooltip.</li>
-<li>Artifacts display with a special rarity and item color, hand-picked by the EE devs. This change has been made available in the base EE mod as well. Additionally, artifact runes now show a "Cannot equip." warning for slots that they are incompatible with.</li>
-<li>Tooltips for damaging statuses now display the damage they will deal approximately, rather than showing the base damage before any modifiers.</li>
-<li>Long item tooltips will try to fit the screen better, eliminating the issue of being unable to compare items while wielding a heavily upgraded item.</li>
-<li>In developer mode, statuses and skills show their IDs in their tooltips.</li>
-</ul>
+<p>Tooltips have received numerous fixes and improvements, displaying a lot of information in a clearer manner. You can read about them at their <a href="Features/TooltipAdjustments/">dedicated page</a>.</p>
 <p><img alt="A weapon tooltip showing the changes." src="img/showcase/weapon_tooltip.png" /></p>
 <h3 id="inventory">Inventory<a class="headerlink" href="#inventory" title="Permanent link">&para;</a></h3>
 <p>A setting has been added to enable infinite carry weight for all party members. You can also enable automatic identifying of items, optionally not requiring any Loremaster.</p>
@@ -349,7 +333,9 @@ Localization is only possible thanks to the members of our community. If you wan
 <p>You may now filter out individual types of messages in the combat log by right-clicking it. Certain messages have been reworded for clarity and can now "merge" if they happen in quick succession, improving readability. You can also clear the log from the context menu.</p>
 <p><img alt="Combat log filters." src="img/showcase/combat_log.png" /></p>
 <h3 id="world-tooltips">World Tooltips<a class="headerlink" href="#world-tooltips" title="Permanent link">&para;</a></h3>
-<p>A keybind has been added to make world item tooltips toggleable, so you don't need to hold alt all the time. Additionally, a setting exists to disable these tooltips for empty containers and bodies.</p>
+<p>A keybind has been added to make world item tooltips toggleable, so you don't need to hold alt all the time. A setting also exists to disable these tooltips for empty containers and bodies, as well as to make clicking the tooltips open containers rather than pick them up.</p>
+<p>Additional settings exist to enable these tooltips for more item types, as well as to highlight certain types of items with a customizable color.</p>
+<p><img alt="Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color." src="img/showcase/world_tooltips.png" /></p>
 <h3 id="overhead-text-and-notifications">Overhead Text and Notifications<a class="headerlink" href="#overhead-text-and-notifications" title="Permanent link">&para;</a></h3>
 <p>Settings have been added to shorten the duration of overhead text, and to change their size (as well as the size of damage numbers).</p>
 <p>Notifications from characters casting skills in combat are repositioned to show above the hotbar, so as not to obscure the enemy health bars. They can also be disabled in the settings.</p>
@@ -361,13 +347,13 @@ Localization is only possible thanks to the members of our community. If you wan
 <h3 id="gift-bags-and-mod-incompatibilities">Gift Bags and mod incompatibilities<a class="headerlink" href="#gift-bags-and-mod-incompatibilities" title="Permanent link">&para;</a></h3>
 <p>Gift bag mods incompatible with EE are no longer selectable, to prevent regrets. Gift bags that work but for one reason or another are undesirable show a warning upon attempting to enable them.</p>
 <p><img alt="Giftbag warning." src="img/showcase/giftbags_warning.png" /></p>
-<p>Common mods incompatible with EE now show a warning when you load into the game with them enabled, once per playthrough.</p>
+<p>Common mods incompatible with EE or its add-ons now show a warning when you load into the game with them enabled.</p>
 <h3 id="quick-examine">Quick Examine<a class="headerlink" href="#quick-examine" title="Permanent link">&para;</a></h3>
 <p>A "Quick Examine" panel can be opened with a custom hotkey (defaults to <code>V</code>). This panel is mainly used to show the effects enemies have from the "Epic Enemies" feature, but it also displays the character's artifacts, useful to check your ally's effects in multiplayer. More information will be added to this panel in the future.</p>
 <p><img alt="Quick Examine." src="img/showcase/quick_examine.png" /></p>
 <h3 id="examine">Examine<a class="headerlink" href="#examine" title="Permanent link">&para;</a></h3>
 <p>The Examine UI now shows Critical Chance, and can be configured to open on the sides of the screen instead of the center.</p>
-<p>Additionally, there is now a keybind to open the examine menu.</p>
+<p>Additionally, there is now a keybind to open the examine menu, and capitalization of the word "Status efects" has been made consistent with the rest of the UI.</p>
 <h3 id="ingame-patchnotes">Ingame Patchnotes<a class="headerlink" href="#ingame-patchnotes" title="Permanent link">&para;</a></h3>
 <p>A new journal UI can be accessed from the Hotbar actions, or after updating the mod. It lists the patchnotes of Epip, and other mods can add information/patchnotes there freely as well. Updating the mod will also show a prompt to open the UI.</p>
 <p><img alt="Custom journal." src="img/showcase/journal.png" /></p>
@@ -403,11 +389,7 @@ Localization is only possible thanks to the members of our community. If you wan
 Wanna drip as hard as this? Learn more at the dedicated <a href="Features/Vanity/">feature page</a>.<br />
 <img alt="Maddest drip" src="img/showcase/drip.png" /></p>
 <h2 id="miscellaneous-bug-fixes-and-adjustments">Miscellaneous Bug Fixes and Adjustments<a class="headerlink" href="#miscellaneous-bug-fixes-and-adjustments" title="Permanent link">&para;</a></h2>
-<p>Certain vanilla issues have been fixed:</p>
-<ul>
-<li>Summons dying in combat (or being newly spawned) no longer causes your current character to be deselected</li>
-<li>You can now walk into corpses in combat without looting them; you can hold shift if you need to pillage them mid-fight, or disable this in the settings</li>
-</ul>
+<p>Certain client-side vanilla issues have been fixed. You may read about them at their <a href="Features/VanillaFixes/">dedicated page</a>.</p>
 <h2 id="for-developers">For developers<a class="headerlink" href="#for-developers" title="Permanent link">&para;</a></h2>
 <p>Epip is built using numerous libraries, making client-side scripting and UI modding easier. This site's documentation of them is heavily WIP. Every UI touched by Epip has a lua table with wrapper APIs to manipulate it. Additionally, multiple utility libraries are available:</p>
 <ul>
@@ -505,5 +487,5 @@ Wanna drip as hard as this? Learn more at the dedicated <a href="Features/Vanity
 
 <!--
 MkDocs version : 1.4.3
-Build Date UTC : 2023-08-05 15:28:28.751185+00:00
+Build Date UTC : 2023-08-06 16:42:39.412485+00:00
 -->

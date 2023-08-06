@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://pinewood.team/epip/Features/Camera/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://pinewood.team/epip/Features/TooltipAdjustments/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Camera - Epip Encounters</title>
+    <title>Tooltip Adjustments - Epip Encounters</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Camera";
-        var mkdocs_page_input_path = "Features\\Camera.md";
-        var mkdocs_page_url = "/epip/Features/Camera/";
+        var mkdocs_page_name = "Tooltip Adjustments";
+        var mkdocs_page_input_path = "Features\\TooltipAdjustments.md";
+        var mkdocs_page_url = "/epip/Features/TooltipAdjustments/";
       </script>
     
     <script src="../../js/jquery-3.6.0.min.js" defer></script>
@@ -63,13 +63,15 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Vanity/">Vanity</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Camera</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Camera/">Camera</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Tooltip Adjustments</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#angles">Angles</a>
+    <li class="toctree-l2"><a class="reference internal" href="#general">General</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ee-specific">EE-specific</a>
     </li>
     </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../TooltipAdjustments/">Tooltip Adjustments</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../VanillaFixes/">Vanilla Fixes</a>
                   </li>
@@ -178,7 +180,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Features &raquo;</li>
-      <li>Camera</li>
+      <li>Tooltip Adjustments</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -187,27 +189,47 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="camera">Camera<a class="headerlink" href="#camera" title="Permanent link">&para;</a></h1>
-<p>The Epip settings menu features a dedicated tab for customizing camera properties such as the zoom, angle, and field of view.</p>
-<p><img alt="Camera settings tab." src="../img/camera/main_settings.png" /></p>
-<hr />
-<p><img alt="Maximum zoom out." src="../img/camera/example_max_zoomout.png" />
-<center>Example of the maximum zoom out level.</center></p>
-<h2 id="angles">Angles<a class="headerlink" href="#angles" title="Permanent link">&para;</a></h2>
-<p>For each camera mode, the game accepts two angles: one used when zoomed in as much as possible, and the second used when the camera is zoomed out as much as possible.</p>
-<p>Any zoom level inbetween the minimum and maximum will have its angle resolved through linear interpolation.</p>
-<p><img alt="Angle settings tab." src="../img/camera/angle_settings.png" /></p>
-<p>These angles are actually position offsets applied to the camera, with the values being multiplied by the zoom level. This means that raising "Angle value 2" will result in the camera being higher up.</p>
-<p>However, the game camera always points towards the ground or the focused character, and as such, raising the Y level also means it will point more towards the ground.</p>
-<hr />
-<p><img alt="Example of an angle with a low Y (Angle value 2)." src="../img/camera/example_low_tilt.png" />
-<center>Example of an angle with a low Y (angle value 2)</center></p>
+                <h2 id="tooltip-adjustments">Tooltip Adjustments<a class="headerlink" href="#tooltip-adjustments" title="Permanent link">&para;</a></h2>
+<p>Numerous fixes and additions have been made to tooltips to improve their clarity. Some of these may be toggled off from the Tooltips tab in the settings menu.</p>
+<h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Delay for simple tooltips appearing is customizable in the settings menu.</li>
+<li>Skill tooltips now account for effects that increase or decrease AP costs.</li>
+<li>Status tooltips show who applied the status (if anyone), as well as whether the status comes from an equipped item.</li>
+<li>Deltamods that previously did not show clearly in tooltips (+range, +elemental damage) now have blue labels in tooltips, like others.</li>
+<li>Holding shift will cause skill tooltips to display damage multipliers instead. Does not work for all skills.</li>
+<li>Removed the skull icon introduced by GB5 that appeared on negative status effects (unlikely to have been intentional).</li>
+<li>Added a keybind to scroll tooltips, useful for 3-socket items whose tooltips often overflow the screen.</li>
+<li>Books that have been read and keys that have been used now have a green label in their tooltip.</li>
+<li>Long item tooltips will be top-anchored, helping with the issue of being unable to compare items while wielding a heavily upgraded item.</li>
+<li>Fixed cone and zone-type skill tooltips saying that their range is boosted by Astrologer's Gaze (Far-out Man in vanilla), as they are not actually affected.</li>
+<li>Surface tooltips now show their owner as well as a hint regarding damage scaling.</li>
+<li>Surface tooltips now render on top of the hotbar.</li>
+<li>In developer mode, statuses and skills show their IDs in their tooltips. A debug keybind exists to copy these identifiers to the clipboard.</li>
+<li>Active Defense statuses now show their charges and max charges.</li>
+<li>Holding shift in combat displays partial AP costs for movement.</li>
+</ul>
+<p><img alt="Surface tooltip showing ownership and damage scaling, as well as partial AP movement costs." src="../img/tooltipadjustments/surface.png" /></p>
+<h3 id="ee-specific">EE-specific<a class="headerlink" href="#ee-specific" title="Permanent link">&para;</a></h3>
+<ul>
+<li>"Stat Adjustments" in tooltips are now merged into one line.</li>
+<li>Added a label for items that have been Masterworked.</li>
+<li>While infusing a spell or holding shift, skill tooltips now highlight Source Infusions you don't meet the requirements for. Holding shift also displays your relevant ability score in the tooltip.</li>
+<li>Most statuses that deal damage now show the calculated damage, rather than showing "(before modifiers)".</li>
+<li>Tooltips for randomly generated EE items now show a "quality" label, which indicates how good the damage/armor rolls were for that item. A 100% quality indicates the best roll, possibly only on divine items.</li>
+<li>The word "Set: " has been removed from tooltips due to confusion and redundancy.</li>
+<li>The damage tooltip in the character sheet has been made less confusing by removing the mention of damage from gear and dummied out LW values. Additionally, it now makes it clear that the weapon abilities grant multiplicative damage increases.</li>
+<li>Artifacts display with a special rarity and item color, hand-picked by the EE devs. This change has been made available in the base EE mod as well. Additionally, artifact runes now show a "Cannot equip." warning for slots that they are incompatible with.</li>
+<li>Added a hint in the quest rewards screen which explains that deltamods are only generated after picking the item.</li>
+<li>EE rune crafting materials now have a hint explaining their usage.</li>
+</ul>
+<p><img alt="A weapon tooltip showing the changes." src="../../img/showcase/weapon_tooltip.png" /></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Vanity/" class="btn btn-neutral float-left" title="Vanity"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../TooltipAdjustments/" class="btn btn-neutral float-right" title="Tooltip Adjustments">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Camera/" class="btn btn-neutral float-left" title="Camera"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../VanillaFixes/" class="btn btn-neutral float-right" title="Vanilla Fixes">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -230,10 +252,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Vanity/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Camera/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../TooltipAdjustments/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../VanillaFixes/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

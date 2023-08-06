@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://pinewood.team/epip/Features/Camera/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://pinewood.team/epip/Features/VanillaFixes/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Camera - Epip Encounters</title>
+    <title>Vanilla Fixes - Epip Encounters</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Camera";
-        var mkdocs_page_input_path = "Features\\Camera.md";
-        var mkdocs_page_url = "/epip/Features/Camera/";
+        var mkdocs_page_name = "Vanilla Fixes";
+        var mkdocs_page_input_path = "Features\\VanillaFixes.md";
+        var mkdocs_page_url = "/epip/Features/VanillaFixes/";
       </script>
     
     <script src="../../js/jquery-3.6.0.min.js" defer></script>
@@ -63,15 +63,13 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Vanity/">Vanity</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Camera</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#angles">Angles</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Camera/">Camera</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../TooltipAdjustments/">Tooltip Adjustments</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../VanillaFixes/">Vanilla Fixes</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Vanilla Fixes</a>
+    <ul class="current">
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Documentation</span></p>
@@ -178,7 +176,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Features &raquo;</li>
-      <li>Camera</li>
+      <li>Vanilla Fixes</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -187,27 +185,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="camera">Camera<a class="headerlink" href="#camera" title="Permanent link">&para;</a></h1>
-<p>The Epip settings menu features a dedicated tab for customizing camera properties such as the zoom, angle, and field of view.</p>
-<p><img alt="Camera settings tab." src="../img/camera/main_settings.png" /></p>
-<hr />
-<p><img alt="Maximum zoom out." src="../img/camera/example_max_zoomout.png" />
-<center>Example of the maximum zoom out level.</center></p>
-<h2 id="angles">Angles<a class="headerlink" href="#angles" title="Permanent link">&para;</a></h2>
-<p>For each camera mode, the game accepts two angles: one used when zoomed in as much as possible, and the second used when the camera is zoomed out as much as possible.</p>
-<p>Any zoom level inbetween the minimum and maximum will have its angle resolved through linear interpolation.</p>
-<p><img alt="Angle settings tab." src="../img/camera/angle_settings.png" /></p>
-<p>These angles are actually position offsets applied to the camera, with the values being multiplied by the zoom level. This means that raising "Angle value 2" will result in the camera being higher up.</p>
-<p>However, the game camera always points towards the ground or the focused character, and as such, raising the Y level also means it will point more towards the ground.</p>
-<hr />
-<p><img alt="Example of an angle with a low Y (Angle value 2)." src="../img/camera/example_low_tilt.png" />
-<center>Example of an angle with a low Y (angle value 2)</center></p>
+                <h2 id="fixes-to-vanilla-issues">Fixes to vanilla issues<a class="headerlink" href="#fixes-to-vanilla-issues" title="Permanent link">&para;</a></h2>
+<p>Epip contains fixes to certain vanilla issues, mostly client-related.</p>
+<ul>
+<li>When summons die or are newly-spawned in combat, control will be automatically switched back to the summoner - you don't have to manually switch back to the summoner.</li>
+<li>You can now walk into corpses in combat without looting them; you can hold shift if you need to pillage them mid-fight, or disable this in the settings menu.</li>
+<li>Fixed undead characters not displaying overhead text for armor restoration.</li>
+<li>Fixed overhead text blocking clicks to the world (supposedly a DefEd regression).</li>
+<li>Fixed being unable to use items when under the effects of increased AP costs, if you didn't have <code>normal_use_cost + 2 * cost_penalty</code> AP. Essentially, the game was applying this AP cost penalty twice on the client.</li>
+</ul>
+<p>Tooltip-related fixes are on the <a href="../TooltipAdjustments/">Tooltip Adjustments page</a>.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Vanity/" class="btn btn-neutral float-left" title="Vanity"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../TooltipAdjustments/" class="btn btn-neutral float-right" title="Tooltip Adjustments">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../TooltipAdjustments/" class="btn btn-neutral float-left" title="Tooltip Adjustments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../docs/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -230,10 +223,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Vanity/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../TooltipAdjustments/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../TooltipAdjustments/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../docs/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

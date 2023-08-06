@@ -65,6 +65,10 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../../../../Features/Camera/">Camera</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../../Features/TooltipAdjustments/">Tooltip Adjustments</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../../Features/VanillaFixes/">Vanilla Fixes</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Documentation</span></p>
               <ul>
@@ -101,6 +105,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#wrong-container-size-when-using-prefabs">Wrong container size when using prefabs</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#overlay-uis">Overlay UIs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#colored-translucency-in-textures">Colored translucency in textures</a>
     </li>
         </ul>
     </li>
@@ -342,6 +348,10 @@ In v1066, measures have been taken to minimize the amount of DisplayObjects crea
 <p>If you have mod A and B both with an overlay UI that extends a similar area of the vanilla UI, mod B could check for mod A being loaded and if it is, instead of creating its own overlay UI, mod B could add its own overlay elements into the Generic UI of mod A.</p>
 <p>This of course only works reliably if mod A offers a stable UI structure, which is why it's not recommended to change element IDs or keys of element references in the UI table in new versions of your mod.</p>
 <p>With that in mind there is little reason to create overlay UIs for Generic UIs. It is far simpler and reliable to simply insert your elements within the UI itself.</p>
+<h3 id="colored-translucency-in-textures">Colored translucency in textures<a class="headerlink" href="#colored-translucency-in-textures" title="Permanent link">&para;</a></h3>
+<p>Textures with low alpha and colored (non-grayscale) areas just don't appear to render correctly. The low-alpha areas will appear much brighter than expected and may exhibit strange blending with UIs below it. DDS color format and compression chosen doesn't seem to have an effect on this; it is suspected to be either an Iggy bug or a bug within the texture-to-bitmap engine function.</p>
+<p><img alt="Example of bugged translucency." src="../../../../../img/docs/generic/translucency.png" /></p>
+<p>Textures with black dropshadows or brownish backgrounds like the one in the example screenshot appear fine. The exact alpha+color combinations that cause this issue are unknown.</p>
 <p><doc class="GenericUI"></p>
 <h1 id="genericui-class">GenericUI Class<a class="headerlink" href="#genericui-class" title="Permanent link">&para;</a></h1>
 <p>Inherits from <code>Feature</code>.</p>
