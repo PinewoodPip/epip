@@ -27,6 +27,7 @@ nav:
     - "UI improvements": "Features/UI.md"
     - "Vanity": "Features/Vanity.md"
     - "Camera": "Features/Camera.md"
+    - "Tooltip Adjustments": "Features/TooltipAdjustments.md"
   - Documentation: 
     - "Introduction": "docs.md"
     - "Terminology": "Documentation/Terminology.md"

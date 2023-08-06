@@ -106,25 +106,7 @@ Custom hotkeys include Meditate, Source Infuse, as well as binding the 12 "actio
 Additionally, the difficulty can now be changed to/from tactician freely at any time. The side effects of this have not been studied well, but everything appears to work fine with the exception of already-initialized enemies having missing HP and consumables(?).
 
 ### Tooltip Adjustments
-- "Stat Adjustments" in tooltips are now merged into one line.
-- Added a label for items that have been Masterworked
-- While infusing a spell or holding shift, skill tooltips now highlight Source Infusions you don't meet the requirements for. Holding shift also displays your relevant ability score in the tooltip.
-- The simple small tooltips appear without a delay
-- Skill tooltips now account for effects that increase or decrease AP costs
-- Most statuses that deal damage now show the calculated damage, rather than showing "(before modifiers)"
-- Status tooltips show who applied the status (if anyone)
-- Tooltips for randomly generated items now show a "quality" label, which indicates how good the damage/armor rolls were for that item. A 100% quality indicates the best roll, possibly only on divine items.
-- The word "Set:" has been removed from tooltips due to confusion and redundancy.
-- Deltamods that previously did not show clearly in tooltips (+range, +elemental damage) now have blue labels in tooltips, like others.
-- Holding shift will cause skill tooltips to display damage multipliers instead. Does not work for all skills.
-- Removed the skull icon introduced by GB5 that appeared on negative status effects
-- Added a keybind to scroll tooltips
-- The damage tooltip in the character sheet has been made less confusing by removing the mention of damage from gear and dummied out LW values. Additionally, it now makes it clear that the weapon abilities grant multiplicative damage increases.
-- Books that have been read and keys that have been used now have a green label in their tooltip.
-- Artifacts display with a special rarity and item color, hand-picked by the EE devs. This change has been made available in the base EE mod as well. Additionally, artifact runes now show a "Cannot equip." warning for slots that they are incompatible with.
-- Tooltips for damaging statuses now display the damage they will deal approximately, rather than showing the base damage before any modifiers.
-- Long item tooltips will try to fit the screen better, eliminating the issue of being unable to compare items while wielding a heavily upgraded item.
-- In developer mode, statuses and skills show their IDs in their tooltips.
+Tooltips have received numerous fixes and improvements, displaying a lot of information in a clearer manner. You can read about them at their [dedicated page](Features/TooltipAdjustments.md).
 
 ![A weapon tooltip showing the changes.](img/showcase/weapon_tooltip.png)
 
