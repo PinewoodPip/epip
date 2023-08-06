@@ -206,10 +206,7 @@ Wanna drip as hard as this? Learn more at the dedicated [feature page](Features/
 ![Maddest drip](img/showcase/drip.png)
 
 ## Miscellaneous Bug Fixes and Adjustments
-Certain vanilla issues have been fixed:
-
-- Summons dying in combat (or being newly spawned) no longer causes your current character to be deselected
-- You can now walk into corpses in combat without looting them; you can hold shift if you need to pillage them mid-fight, or disable this in the settings
+Certain client-side vanilla issues have been fixed. You may read about them at their [dedicated page](Features/VanillaFixes.md).
 
 ## For developers
 Epip is built using numerous libraries, making client-side scripting and UI modding easier. This site's documentation of them is heavily WIP. Every UI touched by Epip has a lua table with wrapper APIs to manipulate it. Additionally, multiple utility libraries are available:

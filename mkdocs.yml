@@ -28,6 +28,7 @@ nav:
     - "Vanity": "Features/Vanity.md"
     - "Camera": "Features/Camera.md"
     - "Tooltip Adjustments": "Features/TooltipAdjustments.md"
+    - "Vanilla Fixes": "Features/VanillaFixes.md"
   - Documentation: 
     - "Introduction": "docs.md"
     - "Terminology": "Documentation/Terminology.md"
