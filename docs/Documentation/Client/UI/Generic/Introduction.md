@@ -178,6 +178,24 @@ Since user interaction in Generic is driven through events in Lua, it's theoreti
 ### Wrong container size when using prefabs
 Container size is by default recalculated upon adding an element; in the case of adding prefabs, this happens when the root of the prefab is added. As such, the container will use the size of the first element created by the prefab, before any other element creation or calls. To address positioning issues, you should call `RepositionElements()` on the container after all elements are added and initialized. Disabling auto-positioning with `SetRepositionAfterAdding()` in this case might improve performance.
 
+### Overlay UIs
+Though overlay UIs are an overall good solution to extending vanilla UIs, regular ones made in Flash still have moddability issues. Two mods overlaying the same part of a UI is gonna result in a visual conflict with both of them overlapping.
+
+The recommended solution for this problem in Generic (assuming both mods are using it) is to insert elements of one overlay UI onto the other as a compatibility measure.
+
+If you have mod A and B both with an overlay UI that extends a similar area of the vanilla UI, mod B could check for mod A being loaded and if it is, instead of creating its own overlay UI, mod B could add its own overlay elements into the Generic UI of mod A.
+
+This of course only works reliably if mod A offers a stable UI structure, which is why it's not recommended to change element IDs or keys of element references in the UI table in new versions of your mod.
+
+With that in mind there is little reason to create overlay UIs for Generic UIs. It is far simpler and reliable to simply insert your elements within the UI itself.
+
+### Colored translucency in textures
+Textures with low alpha and colored (non-grayscale) areas just don't appear to render correctly. The low-alpha areas will appear much brighter than expected and may exhibit strange blending with UIs below it. DDS color format and compression chosen doesn't seem to have an effect on this; it is suspected to be either an Iggy bug or a bug within the texture-to-bitmap engine function.
+
+![Example of bugged translucency.](../../../../img/docs/generic/translucency.png)
+
+Textures with black dropshadows or brownish backgrounds like the one in the example screenshot appear fine. The exact alpha+color combinations that cause this issue are unknown.
+
 <doc class="GenericUI">
 
 # GenericUI Class
