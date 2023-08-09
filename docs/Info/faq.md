@@ -66,6 +66,21 @@ No, because it's a logistics nightmare. The time spent maintaining separate repo
 
 The vast majority of features in Epip are optional and opt-in; the few that aren't, are the way they are because nobody has ever complained about them existing. If you feel like something needs a toggle, feel free to let us know.
 
+## Did you steal the Improved Hotbar mod?
+The Improved Hotbar mod comes from Epip; it existed to allow that particular feature to be used outside of EE before Epip dropped it as a hard dependency, which was a lengthy process.
+
+Since Epip is now usable without EE, the standalone hotbar mod is obsolete and will not receive any further updates, possibly being removed from the workshop sometime in the future.
+
+## Will there be controller support?
+Controller support for UI mods largely requires all the work to be done twice; this is an immense time commitment for a single developer. As much as I (Pip) enjoy the controller support in DOS games, it is unreasonable to fully support it at the time - it's time that could be spent making the mod better.
+
+Since v1066, mouse control is enabled while playing with a controller. This allows you to use certain custom Epip UIs such as Quick Find or the Codex - though critical features such as the settings menu remain unavailable.
+
+Plans exist to add proper controller navigation to EE UIs and certain custom Epip UIs, however it is not a priority and is unlikely to happen in 2023.
+
+## Will there be a workshop release?
+Plans exist for this, but are being held back by a lack of workshop art assets as well as Extender v60 still being in development; for a workshop release we would like to use v1066 at the very least.
+
 ## Can you add X?
 Though it's easy to think that Epip is an all-in-one mod where anything goes, there are moderately strict guidelines for features that are either inappropriate or out of scope, listed as follows.
 
@@ -74,6 +89,7 @@ Though it's easy to think that Epip is an all-in-one mod where anything goes, th
 - **Cheats or developer features outside of developer mode**: the simple reason being that making such cheats accessible encourages users to mess with game balance before they understand it. Keeping such features locked behind a simple json edit or the creation of a mod ensures users have to at least think twice before making any questionable changes.
 - **Fixes or workarounds for other mods**: not our responsibility. Features such as the world tooltip improvements or vanity exist because we were able to improve upon the concepts of the original works, not because there was anything fundamentally broken about them.
 - **Server-side systems**: Epip is primarily a client QoL mod. Any server-side systems exist out of pure necessity, and EE Core already offers a phenomenal gameplay-oriented library that I do not think I (Pip) could improve much on. Wrappers around EE systems are for this same reason minimal.
+- **In-game tutorials**: Epip is meant to be as non-intrusive as possible; the user should be able to explore features at their own pace and use only the ones they want. In-game tutorials go against this idea and are disrespectful to the people that read what mods do before they install them.
 
 ## What does "Epip" mean?
 Unknown.
