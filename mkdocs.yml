@@ -23,9 +23,10 @@ nav:
   - Patch Notes: patchnotes.md
   - Beta Versions: beta.md
   - FAQ: Info/faq.md
-  - Features:
+  - Major Features:
     - "UI improvements": "Features/UI.md"
     - "Vanity": "Features/Vanity.md"
+    - "Quick Find": "Features/QuickFind.md"
     - "Camera": "Features/Camera.md"
     - "Tooltip Adjustments": "Features/TooltipAdjustments.md"
     - "Vanilla Fixes": "Features/VanillaFixes.md"
