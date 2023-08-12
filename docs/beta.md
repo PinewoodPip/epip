@@ -12,8 +12,59 @@
 }
 ```
 
-## v1066 (5/08/23 upload)
+## v1066 (12/08/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
+
+### New Features & Changes
+
+- When holding shift during combat, your remaining free movement distance is displayed, and decimal AP costs are now also displayed with the Pawn talent
+- Added a new setting that speeds up picking items through clicking their world tooltips; you may find it underneath the Animation Cancelling setting
+- In the mods menu, "Targets story mode" tooltip is now "Targets campaign mode" to prevent confusion
+
+![Remaining move distance tooltip.](../Features/img/tooltipadjustments/remaining_move_distance.png)
+
+#### Quick Inventory
+- Added a "Miscellaneous" filter, which currently shows books and keys
+    - You may filter out read books and used keys
+
+#### Codex
+The Codex has received a new "Info" section, where textual information will be placed. Currently, it contains Epip changelogs; the previous UI for these has been removed. The "Epip has been updated" message box will now take you to this UI instead.
+
+![Info Codex.](../Features/img/codex/info.png)
+
+#### World Tooltips
+
+- Added a filter for lights (torches, braziers, etc.)
+- Added a filter for beds, within the same setting that filters chairs and doors
+
+### Fixes
+- Fixed non-English languages still having gameplay mod string overrides
+- Fixed an issue that was causing custom tooltips that were positioned near the mouse to "stick" to their initial place
+
+### Technical stuff
+
+- Fixed `Library:Error()` erroring (lol)
+- Codex's sidebar can now be extended by Sections
+- Minor cleanups and annotation fixes
+- ExtraData in Stats library is now parsed from mod files
+- A few minor new calls were added to some libraries
+- Choice settings no longer throw when an invalid value is set; this helps with migrating choice IDs of existing settings
+- QuickInventory UI now has a RenderSettings event, solving the open-closed violation of the settings panel
+
+#### Generic
+
+- Added the AnchoredText prefab, which enables events when hovering or click text with `<a>` HTML tags
+- `SettingWidgets` feature now supports setting descriptions as tooltips
+- Passing `nil` to `SetTooltip()` is now supported, removing the tooltip properly
+- Added a MouseMove event; this is spammy, so it is opt-in
+- Added `Text:IsMouseWithinRange()` and `Text:IsMouseWithinKeyword()`
+- Text prefab now inherits events from the element, and supports the `setSize` parameter
+- Size overrides are now considered for GetRawWidth/GetRawHeight
+    - The size overrides are getting a bit weird to handle, so this might change in the future
+- Button prefab's Pressed event is now thrown after state changes
+- Cleaned up the Text element, possibly improving preformance a tiny bit
+
+## v1066 (5/08/23 upload)
 
 ### Changes & additions
 
