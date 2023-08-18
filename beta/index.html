@@ -8,7 +8,7 @@
     <title>Beta Versions - Epip Encounters</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../css/extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/epip/beta/";
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -195,7 +194,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Beta Versions</li>
+      <li class="breadcrumb-item active">Beta Versions</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -207,13 +206,12 @@
                 <div class="admonition warning">
 <p class="admonition-title">Extender devel version required</p>
 <p>Requires extender v60. Intended version: <code>4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff</code>
-To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
+To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code> in the same folder where you installed the Extender (<code>DefEd/bin</code>):</p>
 </div>
 <pre><code class="language-json">{
     &quot;UpdateChannel&quot;: &quot;Devel&quot;,
     &quot;TargetResourceDigest&quot;: &quot;4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff&quot;,
-    &quot;TargetVersion&quot;: &quot;60.0.0.0&quot;,
-    &quot;Debug&quot;: true
+    &quot;TargetVersion&quot;: &quot;60.0.0.0&quot;
 }
 </code></pre>
 <h2 id="v1066-120823-upload">v1066 (12/08/23 upload)<a class="headerlink" href="#v1066-120823-upload" title="Permanent link">&para;</a></h2>
@@ -647,14 +645,15 @@ To get it, use the following <code>ScriptExtenderUpdaterConfig.json</code>:</p>
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
