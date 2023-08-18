@@ -9,10 +9,10 @@ markdown_extensions:
         anchor_linenums: true
     - toc:
         permalink: True
-    # - pymdownx.inlinehilite
+    - pymdownx.inlinehilite
     - pymdownx.snippets
+    - pymdownx.superfences
     - admonition
-    # - pymdownx.superfences
     - attr_list
     - md_in_html
 extra_css:
