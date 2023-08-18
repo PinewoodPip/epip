@@ -9,7 +9,7 @@ From here you will have access to a number of tabs packed with customization fea
 
 ![Tabs overview](img/vanity/tabs.png)
 
-## Transmog Tab ![Transmog tab icon](img/vanity/transmog_tab_icon.png)
+## Transmog Tab ![Transmog tab icon](img/vanity/transmog_tab_icon.png){style='height:35px;'}
 
 ![Transmog tab showcase](img/vanity/transmog_tab.png)
 
@@ -51,7 +51,7 @@ Weapons with elemental damage normally get glowing visual effect applied to them
 
 ![Transmog ele effects](img/vanity/ele_effects.png)
 
-## Outfits Tab ![Outfits tab icon](img/vanity/outfits_tab_icon.png)
+## Outfits Tab ![Outfits tab icon](img/vanity/outfits_tab_icon.png){style='height:35px;'}
 Have you mastered the art of drip? Have you found your ultimate image? Never wanna wear anything else ever again? Save your entire get-up and use it across playthroughs with a few clicks.  
 
 ![Outfits showcase](img/vanity/outfits_showcase.png)
@@ -62,7 +62,7 @@ Adding a new outfit to your wardrobe is as simple as clicking ![Outfits button](
 
 ![Outfits prompt](img/vanity/outfits_prompt.png)
 
-## Dyes Tab ![Dyes tab icon](img/vanity/dyes_tab_icon.png)
+## Dyes Tab ![Dyes tab icon](img/vanity/dyes_tab_icon.png){style='height:35px;'}
 Feeling blue today? Maybe red? Or are you cool and it's time for purple? Worry not! All your coloring needs can be satisfied in the Dyes tab!  
 
 ![Dyes showcase](img/vanity/dyes_showcase.png)
@@ -97,11 +97,11 @@ Saved dyes will appear under "Custom Dyes" collapsing list. There also are a few
 
 ![Dyes customs](img/vanity/dyes_custom.png)
 
-## Auras Tab ![Vanity tab icon](img/vanity/transmog_tab_icon.png)
+## Auras Tab ![Vanity tab icon](img/vanity/transmog_tab_icon.png){style='height:35px;'}
 All these drip options were not enough for you? Want to make your presence even more noticeable? Apply permanent visual effects to your character in Auras tab.  
 
 ![Auras showcase](img/vanity/auras_showcase.png)
 
-As simple as it gets - choose your attachment point, choose auras to use with it.  
+As simple as it gets - choose your attachment point, choose auras to use with it.
 
 *This feature is in rather experimental stage. It works as intended, but has seen little adoption by players (to our knowledge). Any useful feedback is welcome.*  
