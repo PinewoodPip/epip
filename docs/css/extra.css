@@ -13,6 +13,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.md-header__button.md-logo img {
+  height: 2rem !important; /* Header itself has no height set; it's dictated by the logo */
+}
+
+.md-header__button {
+  margin: 0 0 0 5px !important;
+  padding: 0 !important;
+}
+
 .hljs-comment {
   color: #3e3e3e;
 }

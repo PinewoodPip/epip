@@ -4,6 +4,8 @@ theme:
   name: material
   collapse_navigation: false
   navigation_depth: 3
+  logo: img/tpw_logo_purple.png
+  favicon: img/tpw_logo_purple.png
 markdown_extensions:
     - pymdownx.highlight:
         anchor_linenums: true
