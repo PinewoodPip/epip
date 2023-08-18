@@ -109,6 +109,17 @@ img {
   margin-top: 0px !important;
 }
 
+/* Centering tables */
+.md-typeset__table {
+  display: flex !important;
+}
+
+.md-typeset__table table {
+  margin: 0 auto !important;
+  flex-grow: 0;
+  width: unset !important;
+}
+
 /* Code Highlighting */
 
 /* Function keyword, table and function name */
