@@ -1,8 +1,8 @@
 site_name: Epip Encounters
 site_url: https://pinewood.team/epip/
 theme:
-  name: readthedocs
-  collapse_navigation: true
+  name: material
+  collapse_navigation: false
   navigation_depth: 3
 markdown_extensions:
     - pymdownx.highlight:
@@ -17,6 +17,9 @@ markdown_extensions:
     - md_in_html
 extra_css:
   - css/extra.css
+plugins:
+  - search
+  - meta-descriptions
 
 nav:
   - Home: index.md
