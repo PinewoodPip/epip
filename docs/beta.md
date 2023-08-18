@@ -3,7 +3,7 @@
 !!! warning "Extender devel version required"
     Requires extender v60. Intended version: `4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff`
     To get it, use the following `ScriptExtenderUpdaterConfig.json` in the same folder where you installed the Extender (`DefEd/bin`):
-```json
+```{ .yaml .copy }
 {
 	"UpdateChannel": "Devel",
 	"TargetResourceDigest": "4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff",
@@ -217,7 +217,7 @@ Artifacts that you own (either equipped or in the party inventory, as item or ru
 
 ## v1066 (1/07/23 upload)
 
-This update adds the Codex UI, which will be an in-game knowledgebase for various topics. Currently it only features a Skills page that displays all player skills in the game, and allows for filtering and searching them. The default keybind for opening the Codex is `LCtrl + G`.
+This update adds the Codex UI, which will be an in-game knowledgebase for various topics. Currently it only features a Skills page that displays all player skills in the game, and allows for filtering and searching them. The default keybind for opening the Codex is ++lctrl+g++.
 
 ![Skills Codex.](Features/img/ui/codex_skills.png)
 
