@@ -53,3 +53,18 @@ img {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+/* Admonitions */
+
+.admonition {
+  border-radius: 0px !important;
+  border-color: transparent !important;
+}
+
+.admonition.info {
+  background-color: #e7f2fa;
+}
+
+.admonition.warning {
+  background-color: #ffedcc;
+}
