@@ -1,192 +1,1172 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Library/" />
-      <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Library - Epip Encounters</title>
-    <link rel="stylesheet" href="../../../css/theme.css" />
-    <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../../css/extra.css" rel="stylesheet" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Library";
-        var mkdocs_page_input_path = "Documentation\\Utilities\\Library.md";
-        var mkdocs_page_url = "/epip/Documentation/Utilities/Library/";
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Library class is the internal base class for libraries in Epip. It offers general-purpose utility methods, such as logging, debug flags, event systems, as well as integrations with some core Epip libraries to simplify the registration of resources.">
+      
+      
+      
+        <link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Library/">
+      
+      
+        <link rel="prev" href="../OOP/">
+      
+      
+        <link rel="next" href="../IO/">
+      
+      <link rel="icon" href="../../../img/tpw_logo_purple.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
-    <!--[if lt IE 9]>
-      <script src="../../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-</head>
+    
+      
+        <title>Library - Epip Encounters</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../patchnotes/">Patch Notes</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../beta/">Beta Versions</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../Info/faq/">FAQ</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Major Features</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/UI/">UI improvements</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/Vanity/">Vanity</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/QuickFind/">Quick Find</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/Camera/">Camera</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/TooltipAdjustments/">Tooltip Adjustments</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/VanillaFixes/">Vanilla Fixes</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Documentation</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Global%20Tables/Epip/">Important Tables</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Client</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Generic UI</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Introduction/">Introduction</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Elements/Element/">Element</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Elements/Button/">Button</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Elements/Color/">Color</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Generic Prefabs</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Prefabs/Button/">Button</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Utilities</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../Artifact/">Artifact</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Character/">Character</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Color/">Color</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Combat/">Combat</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../GameState/">GameState</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Item/">Item</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Mod/">Mod</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Net/">Net</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Timer/">Timer</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Text/">Text</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Vector/">Vector</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../OOP/">OOP</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Library</a>
-    <ul class="current">
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../IO/">IO</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Coroutine/">Coroutine</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../UserVars/">UserVars</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Texture/">Texture</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Pointer/">Pointer</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Tutorials</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/testing/">Testing</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Maintenance</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/">Index</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/IDESetup/">IDE Setup</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/localization/">Localization</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/documentation/">Documentation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/keybinds/">Keybinds Reference</a>
-                  </li>
-              </ul>
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-K2XG4QX6F3"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-K2XG4QX6F3",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-K2XG4QX6F3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Epip Encounters" class="md-header__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
+      
+  <img src="../../../img/tpw_logo_purple.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Epip Encounters
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Library
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../..">Epip Encounters</a>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
         
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-          <li>Utilities &raquo;</li>
-      <li class="breadcrumb-item active">Library</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h1 id="library">Library<a class="headerlink" href="#library" title="Permanent link">&para;</a></h1>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Epip Encounters" class="md-nav__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
+      
+  <img src="../../../img/tpw_logo_purple.png" alt="logo">
+
+    </a>
+    Epip Encounters
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../patchnotes/" class="md-nav__link">
+        Patch Notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../beta/" class="md-nav__link">
+        Beta Versions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Info/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Major Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Major Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/UI/" class="md-nav__link">
+        UI improvements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/Vanity/" class="md-nav__link">
+        Vanity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/QuickFind/" class="md-nav__link">
+        Quick Find
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/Camera/" class="md-nav__link">
+        Camera
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/TooltipAdjustments/" class="md-nav__link">
+        Tooltip Adjustments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/VanillaFixes/" class="md-nav__link">
+        Vanilla Fixes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Technical Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Technical Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terminology/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Global%20Tables/Epip/" class="md-nav__link">
+        Important Tables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          Client
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Client
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/Pointer/" class="md-nav__link">
+        Pointer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+          Generic UI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Generic UI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Elements/Element/" class="md-nav__link">
+        Element
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Elements/Button/" class="md-nav__link">
+        Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Elements/Color/" class="md-nav__link">
+        Color
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Elements/ComboBox/" class="md-nav__link">
+        ComboBox
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+          Generic Prefabs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          Generic Prefabs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Prefabs/Button/" class="md-nav__link">
+        Button
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+          Utilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6_7">
+          <span class="md-nav__icon md-icon"></span>
+          Utilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Artifact/" class="md-nav__link">
+        Artifact
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Character/" class="md-nav__link">
+        Character
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Color/" class="md-nav__link">
+        Color
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Combat/" class="md-nav__link">
+        Combat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GameState/" class="md-nav__link">
+        GameState
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Item/" class="md-nav__link">
+        Item
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mod/" class="md-nav__link">
+        Mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Net/" class="md-nav__link">
+        Net
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Timer/" class="md-nav__link">
+        Timer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Text/" class="md-nav__link">
+        Text
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Vector/" class="md-nav__link">
+        Vector
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OOP/" class="md-nav__link">
+        OOP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Library
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IO/" class="md-nav__link">
+        IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Coroutine/" class="md-nav__link">
+        Coroutine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserVars/" class="md-nav__link">
+        UserVars
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Texture/" class="md-nav__link">
+        Texture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pointer/" class="md-nav__link">
+        Pointer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          Maintenance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Maintenance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/IDESetup/" class="md-nav__link">
+        IDE Setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/localization/" class="md-nav__link">
+        Localization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/documentation/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/keybinds/" class="md-nav__link">
+        Keybinds Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="library">Library<a class="headerlink" href="#library" title="Permanent link">&para;</a></h1>
 <p>The <code>Library</code> class is the <a href="../../Terminology/#internal">internal</a> base class for libraries in Epip. It offers general-purpose utility methods, such as logging, debug flags, event systems, as well as integrations with some core Epip libraries to simplify the registration of resources.</p>
 <p><code>Epip.InitializeLibrary()</code> is meant to be used to define libraries, though you are not intended to do so in your own mod - use Features instead.</p>
 <p>Library contains integrations with the following core Epip libraries:</p>
@@ -196,40 +1176,40 @@
 <li>OOP (for containing related subclasses)</li>
 </ul>
 <p>Perceptive readers will realize that these integrations indeed create circular dependencies. This concern is however pretty low on the list.</p>
-<p>The class includes some methods to filter out unwanted logging, however the recommended way to filter it is to use the "control panel" UI (<code>Feature_DebugMenu</code>, defaults to <code>LCtrl + B</code>) to set the logging level instead of calling the methods yourself anywhere.</p>
+<p>The class includes some methods to filter out unwanted logging, however the recommended way to filter it is to use the "control panel" UI (<code>Feature_DebugMenu</code>, defaults to <span class="keys"><kbd class="key-left-control">Left Ctrl</kbd><span>+</span><kbd class="key-b">B</kbd></span>) to set the logging level instead of calling the methods yourself anywhere.</p>
 <p><doc class="Library"></p>
 <h1 id="library-class">Library Class<a class="headerlink" href="#library-class" title="Permanent link">&para;</a></h1>
 <p>Inherits from <code>Class</code>.</p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h5 id="addprofilingstep">AddProfilingStep<a class="headerlink" href="#addprofilingstep" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:AddProfilingStep(stepID)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">AddProfilingStep</span><span class="p">(</span><span class="n">stepID</span><span class="p">)</span>
+</code></pre></div>
 <p>Adds a step to the current profiling session.</p>
 <p><strong>Does nothing outside of Debug mode.</strong></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>stepID</b> <code>string</code></p>
 
 <h5 id="addsubscribableevent">AddSubscribableEvent<a class="headerlink" href="#addsubscribableevent" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:AddSubscribableEvent(evName, preventable)
-   -&gt; Event
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">AddSubscribableEvent</span><span class="p">(</span><span class="n">evName</span><span class="p">,</span> <span class="n">preventable</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">Event</span>
+</code></pre></div>
 <p>Registers a new event.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>evName</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>preventable</b> <code>boolean?</code> Defaults to false.</p>
 
 <h5 id="addsubscribablehook">AddSubscribableHook<a class="headerlink" href="#addsubscribablehook" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:AddSubscribableHook(evName, preventable)
-   -&gt; Event
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">AddSubscribableHook</span><span class="p">(</span><span class="n">evName</span><span class="p">,</span> <span class="n">preventable</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">Event</span>
+</code></pre></div>
 <p>Registers a new hook.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>evName</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>preventable</b> <code>boolean?</code> Defaults to false.</p>
 
 <h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library.Create(modTable, id, data)
-   -&gt; Library
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">modTable</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">Library</span>
+</code></pre></div>
 <p>Initializes a table as a Library.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modTable</b> <code>string</code></p>
 
@@ -238,119 +1218,119 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>Library</code></p>
 
 <h5 id="debug">Debug<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:Debug()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">Debug</span><span class="p">()</span>
+</code></pre></div>
 <p>Show debug-level logging from this library.</p>
 <p>Only works in Developer mode.</p>
 <h5 id="debuglog">DebugLog<a class="headerlink" href="#debuglog" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:DebugLog()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">DebugLog</span><span class="p">()</span>
+</code></pre></div>
 <p>Log a value in Debug mode.</p>
 <h5 id="dump">Dump<a class="headerlink" href="#dump" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:Dump(msg)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">Dump</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</code></pre></div>
 <p>Dump a value to the console, in Debug mode.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>msg</b> <code>any</code></p>
 
 <h5 id="endprofiling">EndProfiling<a class="headerlink" href="#endprofiling" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:EndProfiling()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">EndProfiling</span><span class="p">()</span>
+</code></pre></div>
 <p>Ends the current profiling session.</p>
 <p><strong>Does nothing outside of Debug mode.</strong></p>
 <h5 id="error">Error<a class="headerlink" href="#error" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:Error(method)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">Error</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+</code></pre></div>
 <p>Throws an error prefixed by the thrower method name.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>method</b> <code>string</code></p>
 
 <h5 id="getclass">GetClass<a class="headerlink" href="#getclass" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:GetClass(className)
-   -&gt; `T`
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">(</span><span class="n">className</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="err">`</span><span class="n">T</span><span class="err">`</span>
+</code></pre></div>
 <p>Returns a class's base table.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>`T`</code></p>
 
 <h5 id="getmodvariable">GetModVariable<a class="headerlink" href="#getmodvariable" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:GetModVariable(modGUID, name)
-   -&gt; any
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetModVariable</span><span class="p">(</span><span class="n">modGUID</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">any</span>
+</code></pre></div>
 <p>Returns the value of a mod variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modGUID</b> <code>GUID</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>name</b> <code>string</code></p>
 
 <h5 id="getpackageprefix">GetPackagePrefix<a class="headerlink" href="#getpackageprefix" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:GetPackagePrefix()
-   -&gt; string
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetPackagePrefix</span><span class="p">()</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+</code></pre></div>
 <p>Returns the package prefix for this library's subclasses.</p>
 <h5 id="gettranslatedstringhandleforkey">GetTranslatedStringHandleForKey<a class="headerlink" href="#gettranslatedstringhandleforkey" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:GetTranslatedStringHandleForKey(localKey)
-   -&gt; TranslatedStringHandle?
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetTranslatedStringHandleForKey</span><span class="p">(</span><span class="n">localKey</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">TranslatedStringHandle</span><span class="err">?</span>
+</code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>localKey</b> <code>string</code></p>
 
 <h5 id="getuservariable">GetUserVariable<a class="headerlink" href="#getuservariable" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:GetUserVariable(component, variable)
-   -&gt; any
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetUserVariable</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">any</span>
+</code></pre></div>
 <p>Gets the value of a user variable on an entity component.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>component</b> <code>UserVarsLib_CompatibleComponent</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>variable</b> <code>string|UserVarsLib_UserVar</code></p>
 
 <h5 id="isdebug">IsDebug<a class="headerlink" href="#isdebug" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:IsDebug()
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">IsDebug</span><span class="p">()</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether <code>:Debug()</code> has been ran successfully.</p>
 <h5 id="log">Log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:Log(...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">Log</span><span class="p">(...)</span>
+</code></pre></div>
 <p>Log a value.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 <h5 id="logerror">LogError<a class="headerlink" href="#logerror" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:LogError(...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">LogError</span><span class="p">(...)</span>
+</code></pre></div>
 <p>Log an error.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 <h5 id="logmethod">LogMethod<a class="headerlink" href="#logmethod" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:LogMethod(method, ...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">LogMethod</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="p">...)</span>
+</code></pre></div>
 <p>Log a message in the format "[MODULE] method(): msg"</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>method</b> <code>any</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 <h5 id="lognotimplemented">LogNotImplemented<a class="headerlink" href="#lognotimplemented" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:LogNotImplemented(methodName)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">LogNotImplemented</span><span class="p">(</span><span class="n">methodName</span><span class="p">)</span>
+</code></pre></div>
 <p>Logs a "Not implemented" warning. Use as a placeholder.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
 
 <h5 id="logwarning">LogWarning<a class="headerlink" href="#logwarning" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:LogWarning(...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">LogWarning</span><span class="p">(...)</span>
+</code></pre></div>
 <p>Log a warning.</p>
 <p>Requires logging level to be set to WARN or lower.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 <h5 id="mute">Mute<a class="headerlink" href="#mute" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:Mute()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">Mute</span><span class="p">()</span>
+</code></pre></div>
 <p>Stop all non-error, non-warning logging from this feature.</p>
 <h5 id="rawlog">RawLog<a class="headerlink" href="#rawlog" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:RawLog(...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RawLog</span><span class="p">(...)</span>
+</code></pre></div>
 <p>Log values without any prefixing.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
 <h5 id="registerclass">RegisterClass<a class="headerlink" href="#registerclass" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:RegisterClass(className, class, parentClasses)
-   -&gt; `T`
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterClass</span><span class="p">(</span><span class="n">className</span><span class="p">,</span> <span class="n">class</span><span class="p">,</span> <span class="n">parentClasses</span><span class="p">)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   <span class="o">-&gt;</span> <span class="err">`</span><span class="n">T</span><span class="err">`</span>
+</code></pre></div>
 <p>Registers a class.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>`T`</code></p>
 
@@ -359,8 +1339,8 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>parentClasses</b> <code>string[]?</code> Classes this one inherits from.</p>
 
 <h5 id="registermodvariable">RegisterModVariable<a class="headerlink" href="#registermodvariable" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:RegisterModVariable(modGUID, name, data)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterModVariable</span><span class="p">(</span><span class="n">modGUID</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 <p>Registers a mod variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modGUID</b> <code>GUID</code></p>
 
@@ -369,25 +1349,25 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>UserVarsLib_ModVar</code></p>
 
 <h5 id="registertranslatedstring">RegisterTranslatedString<a class="headerlink" href="#registertranslatedstring" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:RegisterTranslatedString(handle, tsk)
-   -&gt; Library_TranslatedString
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">tsk</span><span class="p">)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>   <span class="o">-&gt;</span> <span class="n">Library_TranslatedString</span>
+</code></pre></div>
 <p>Registers a TSK.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tsk</b> <code>Library_TranslatedString</code> ModTable, FeatureID and Handle fields are auto-initialized.</p>
 
 <h5 id="registeruservariable">RegisterUserVariable<a class="headerlink" href="#registeruservariable" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:RegisterUserVariable(name, data)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterUserVariable</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 <p>Registers a user variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>name</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>UserVarsLib_UserVar?</code></p>
 
 <h5 id="setmodvariable">SetModVariable<a class="headerlink" href="#setmodvariable" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:SetModVariable(modGUID, name, value)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">SetModVariable</span><span class="p">(</span><span class="n">modGUID</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</code></pre></div>
 <p>Sets the value of a mod variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modGUID</b> <code>GUID</code></p>
 
@@ -396,8 +1376,8 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>any</code></p>
 
 <h5 id="setuservariable">SetUserVariable<a class="headerlink" href="#setuservariable" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:SetUserVariable(component, variable, value)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">SetUserVariable</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</code></pre></div>
 <p>Sets the value of a user variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>component</b> <code>UserVarsLib_CompatibleComponent</code></p>
 
@@ -406,67 +1386,70 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>any</code></p>
 
 <h5 id="shutup">ShutUp<a class="headerlink" href="#shutup" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:ShutUp()
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">ShutUp</span><span class="p">()</span>
+</code></pre></div>
 <p>Stop all non-error logging.</p>
 <h5 id="startprofiling">StartProfiling<a class="headerlink" href="#startprofiling" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:StartProfiling(id)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">StartProfiling</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
 <p>Starts a profiling session.</p>
 <p><strong>Does nothing outside of Debug mode.</strong></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> Session ID.</p>
 
 <h5 id="thrownotimplemented">ThrowNotImplemented<a class="headerlink" href="#thrownotimplemented" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function Library:ThrowNotImplemented(methodName)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">ThrowNotImplemented</span><span class="p">(</span><span class="n">methodName</span><span class="p">)</span>
+</code></pre></div>
 <p>Throws a "Not implemented" error. Use as a placeholder.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
 <p></doc></p>
-              
+
+
+  
+
+
+
+
+                
+              </article>
             </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../OOP/" class="btn btn-neutral float-left" title="OOP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../IO/" class="btn btn-neutral float-right" title="IO">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
+          
           
         </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href="../OOP/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../IO/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-    <script src="../../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../../..";</script>
-    <script src="../../../js/theme_extra.js"></script>
-    <script src="../../../js/theme.js"></script>
-      <script src="../../../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
-</body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../js/extra.js"></script>
+        
+      
+    
+  </body>
 </html>

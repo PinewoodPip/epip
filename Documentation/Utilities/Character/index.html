@@ -1,192 +1,1172 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Character/" />
-      <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Character - Epip Encounters</title>
-    <link rel="stylesheet" href="../../../css/theme.css" />
-    <link rel="stylesheet" href="../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../../css/extra.css" rel="stylesheet" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Character";
-        var mkdocs_page_input_path = "Documentation\\Utilities\\Character.md";
-        var mkdocs_page_url = "/epip/Documentation/Utilities/Character/";
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Character library contains utility methods relating to characters. The vast majority of them are available on both contexts.">
+      
+      
+      
+        <link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Character/">
+      
+      
+        <link rel="prev" href="../Artifact/">
+      
+      
+        <link rel="next" href="../Color/">
+      
+      <link rel="icon" href="../../../img/tpw_logo_purple.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
-    <!--[if lt IE 9]>
-      <script src="../../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-</head>
+    
+      
+        <title>Character - Epip Encounters</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../../.." class="icon icon-home"> Epip Encounters
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../patchnotes/">Patch Notes</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../beta/">Beta Versions</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../Info/faq/">FAQ</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Major Features</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/UI/">UI improvements</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/Vanity/">Vanity</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/QuickFind/">Quick Find</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/Camera/">Camera</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/TooltipAdjustments/">Tooltip Adjustments</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Features/VanillaFixes/">Vanilla Fixes</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Documentation</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../docs/">Introduction</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Terminology/">Terminology</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Global%20Tables/Epip/">Important Tables</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Client</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/Pointer/">Pointer</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Generic UI</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Introduction/">Introduction</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Elements/Element/">Element</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Elements/Button/">Button</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Elements/Color/">Color</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Elements/ComboBox/">ComboBox</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Generic Prefabs</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Client/UI/Generic/Prefabs/Button/">Button</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Utilities</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../Artifact/">Artifact</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Character</a>
-    <ul class="current">
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Color/">Color</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Combat/">Combat</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../GameState/">GameState</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Item/">Item</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Mod/">Mod</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Net/">Net</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Timer/">Timer</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Text/">Text</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Vector/">Vector</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../OOP/">OOP</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Library/">Library</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../IO/">IO</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Coroutine/">Coroutine</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../UserVars/">UserVars</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Texture/">Texture</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Pointer/">Pointer</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Tutorials</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/testing/">Testing</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Maintenance</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/">Index</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/IDESetup/">IDE Setup</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/localization/">Localization</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/documentation/">Documentation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Maintenance/keybinds/">Keybinds Reference</a>
-                  </li>
-              </ul>
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-K2XG4QX6F3"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-K2XG4QX6F3",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-K2XG4QX6F3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#character" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Epip Encounters" class="md-header__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
+      
+  <img src="../../../img/tpw_logo_purple.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Epip Encounters
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Character
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../..">Epip Encounters</a>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
         
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-          <li>Utilities &raquo;</li>
-      <li class="breadcrumb-item active">Character</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h1 id="character">Character<a class="headerlink" href="#character" title="Permanent link">&para;</a></h1>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Epip Encounters" class="md-nav__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
+      
+  <img src="../../../img/tpw_logo_purple.png" alt="logo">
+
+    </a>
+    Epip Encounters
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../patchnotes/" class="md-nav__link">
+        Patch Notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../beta/" class="md-nav__link">
+        Beta Versions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Info/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Major Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Major Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/UI/" class="md-nav__link">
+        UI improvements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/Vanity/" class="md-nav__link">
+        Vanity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/QuickFind/" class="md-nav__link">
+        Quick Find
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/Camera/" class="md-nav__link">
+        Camera
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/TooltipAdjustments/" class="md-nav__link">
+        Tooltip Adjustments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Features/VanillaFixes/" class="md-nav__link">
+        Vanilla Fixes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Technical Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Technical Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terminology/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Global%20Tables/Epip/" class="md-nav__link">
+        Important Tables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          Client
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Client
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/Pointer/" class="md-nav__link">
+        Pointer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+          Generic UI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Generic UI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Elements/Element/" class="md-nav__link">
+        Element
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Elements/Button/" class="md-nav__link">
+        Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Elements/Color/" class="md-nav__link">
+        Color
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Elements/ComboBox/" class="md-nav__link">
+        ComboBox
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+          Generic Prefabs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          Generic Prefabs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Client/UI/Generic/Prefabs/Button/" class="md-nav__link">
+        Button
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+          Utilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6_7">
+          <span class="md-nav__icon md-icon"></span>
+          Utilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Artifact/" class="md-nav__link">
+        Artifact
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Character
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Color/" class="md-nav__link">
+        Color
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Combat/" class="md-nav__link">
+        Combat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GameState/" class="md-nav__link">
+        GameState
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Item/" class="md-nav__link">
+        Item
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mod/" class="md-nav__link">
+        Mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Net/" class="md-nav__link">
+        Net
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Timer/" class="md-nav__link">
+        Timer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Text/" class="md-nav__link">
+        Text
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Vector/" class="md-nav__link">
+        Vector
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OOP/" class="md-nav__link">
+        OOP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Library/" class="md-nav__link">
+        Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IO/" class="md-nav__link">
+        IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Coroutine/" class="md-nav__link">
+        Coroutine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserVars/" class="md-nav__link">
+        UserVars
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Texture/" class="md-nav__link">
+        Texture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pointer/" class="md-nav__link">
+        Pointer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          Maintenance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Maintenance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/IDESetup/" class="md-nav__link">
+        IDE Setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/localization/" class="md-nav__link">
+        Localization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/documentation/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Maintenance/keybinds/" class="md-nav__link">
+        Keybinds Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="character">Character<a class="headerlink" href="#character" title="Permanent link">&para;</a></h1>
 <p>The <code>Character</code> library contains utility methods relating to characters. The vast majority of them are available on both contexts.</p>
 <p><doc class="CharacterLib"></p>
 <h1 id="characterlib-class">CharacterLib Class<a class="headerlink" href="#characterlib-class" title="Permanent link">&para;</a></h1>
@@ -219,9 +1199,9 @@
 
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h5 id="canuseskill">CanUseSkill<a class="headerlink" href="#canuseskill" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.CanUseSkill(char, skillID, itemSource)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">CanUseSkill</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">skillID</span><span class="p">,</span> <span class="n">itemSource</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char can enter preparation state for a skill.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
@@ -230,145 +1210,145 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>itemSource</b> <code>Item?</code></p>
 
 <h5 id="get">Get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.Get(identifier, isFlashHandle)
-   -&gt; Character
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">isFlashHandle</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">Character</span>
+</code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>identifier</b> <code>GUID|PrefixedGUID|NetId|EntityHandle</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>isFlashHandle</b> <code>boolean?</code> If true, the identifier will be passed through DoubleToHandle() first.</p>
 
 <h5 id="getactionpoints">GetActionPoints<a class="headerlink" href="#getactionpoints" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetActionPoints(char)
-   -&gt; integer, integer -- Current, maximum
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetActionPoints</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="p">,</span> <span class="n">integer</span> <span class="c1">-- Current, maximum</span>
+</code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getcombatid">GetCombatID<a class="headerlink" href="#getcombatid" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetCombatID(char)
-   -&gt; integer?, integer? -- The combat ID and team ID. `nil` if the character is not in combat. This is different from the osi query, which returns a reserved value.
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetCombatID</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="err">?</span> <span class="c1">-- The combat ID and team ID. `nil` if the character is not in combat. This is different from the osi query, which returns a reserved value.</span>
+</code></pre></div>
 <p>Returns the combat ID and team ID of char, if any.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getcurrentskill">GetCurrentSkill<a class="headerlink" href="#getcurrentskill" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetCurrentSkill(char)
-   -&gt; string? -- `nil` if the character has no active skill state.
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetCurrentSkill</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="err">?</span> <span class="c1">-- `nil` if the character has no active skill state.</span>
+</code></pre></div>
 <p>Returns the ID of the skill that char is preparing or casting.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getdynamicstat">GetDynamicStat<a class="headerlink" href="#getdynamicstat" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetDynamicStat(char, statName)
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetDynamicStat</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">statName</span><span class="p">)</span>
+</code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>statName</b> <code>string</code></p>
 
 <h5 id="getequippeditems">GetEquippedItems<a class="headerlink" href="#getequippeditems" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetEquippedItems(char)
-   -&gt; table&lt;ItemSlot, EclItem&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetEquippedItems</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">table</span><span class="o">&lt;</span><span class="n">ItemSlot</span><span class="p">,</span> <span class="n">EclItem</span><span class="o">&gt;</span>
+</code></pre></div>
 <p>Returns the equipped items of char, per slot.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getexperience">GetExperience<a class="headerlink" href="#getexperience" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetExperience(char)
-   -&gt; integer
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetExperience</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
+</code></pre></div>
 <p>Returns the current experience points of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getexperiencerequiredforlevel">GetExperienceRequiredForLevel<a class="headerlink" href="#getexperiencerequiredforlevel" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetExperienceRequiredForLevel(targetLevel)
-   -&gt; integer -- Experience points.
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetExperienceRequiredForLevel</span><span class="p">(</span><span class="n">targetLevel</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span> <span class="c1">-- Experience points.</span>
+</code></pre></div>
 <p>Returns the <strong>cumulative</strong> experience required to reach a level.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>targetLevel</b> <code>integer</code></p>
 
 <h5 id="getgender">GetGender<a class="headerlink" href="#getgender" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetGender(char)
-   -&gt; Gender
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetGender</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">Gender</span>
+</code></pre></div>
 <p>Returns the gender of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="gethighestpartyability">GetHighestPartyAbility<a class="headerlink" href="#gethighestpartyability" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetHighestPartyAbility(char, ability)
-   -&gt; integer
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetHighestPartyAbility</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">ability</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
+</code></pre></div>
 <p>Gets the highest stat score of all characters in char's party.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>ability</b> <code>string</code> Needs to be a property indexable in char.Stats</p>
 
 <h5 id="getinitiative">GetInitiative<a class="headerlink" href="#getinitiative" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetInitiative(char)
-   -&gt; integer
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetInitiative</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
+</code></pre></div>
 <p>Returns the initiative of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getlevel">GetLevel<a class="headerlink" href="#getlevel" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetLevel(char)
-   -&gt; integer
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetLevel</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
+</code></pre></div>
 <p>Returns the level of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getmaxcarryweight">GetMaxCarryWeight<a class="headerlink" href="#getmaxcarryweight" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetMaxCarryWeight(char)
-   -&gt; integer -- In &quot;grams&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetMaxCarryWeight</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span> <span class="c1">-- In &quot;grams&quot;</span>
+</code></pre></div>
 <p>Returns the maximum carry weight of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getmovement">GetMovement<a class="headerlink" href="#getmovement" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetMovement(char)
-   -&gt; number -- In centimeters.
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetMovement</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span> <span class="c1">-- In centimeters.</span>
+</code></pre></div>
 <p>Returns the calculated movement stat of a character.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getowner">GetOwner<a class="headerlink" href="#getowner" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetOwner(char)
-   -&gt; Character?
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetOwner</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   <span class="o">-&gt;</span> <span class="n">Character</span><span class="err">?</span>
+</code></pre></div>
 <p>Returns the character's owner, if it is a summon or party follower(?).</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getpartymembers">GetPartyMembers<a class="headerlink" href="#getpartymembers" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetPartyMembers(char) -- (Client-only)
-   -&gt; EclCharacter[] Includes the char passed per param.-- the char passed per param.
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetPartyMembers</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="n">EclCharacter</span><span class="p">[]</span> <span class="n">Includes</span> <span class="n">the</span> <span class="n">char</span> <span class="n">passed</span> <span class="n">per</span> <span class="n">param</span><span class="p">.</span><span class="c1">-- the char passed per param.</span>
+</code></pre></div>
 <p>Returns a list of party members of char's party. Char must be a player.</p>
 <p>Depends on PlayerInfo.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
 
 <h5 id="getpartymembers_1">GetPartyMembers<a class="headerlink" href="#getpartymembers_1" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetPartyMembers(char) -- (Server-only)
-   -&gt; EsvCharacter[] Includes the char passed per param.-- the char passed per param.
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetPartyMembers</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Server-only)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>   <span class="o">-&gt;</span> <span class="n">EsvCharacter</span><span class="p">[]</span> <span class="n">Includes</span> <span class="n">the</span> <span class="n">char</span> <span class="n">passed</span> <span class="n">per</span> <span class="n">param</span><span class="p">.</span><span class="c1">-- the char passed per param.</span>
+</code></pre></div>
 <p>Returns a list of party members of char's party. Char must be a player.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code></p>
 
 <h5 id="getrace">GetRace<a class="headerlink" href="#getrace" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetRace(char)
-   -&gt; Race
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetRace</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   <span class="o">-&gt;</span> <span class="n">Race</span>
+</code></pre></div>
 <p>Returns the current race of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getrealrace">GetRealRace<a class="headerlink" href="#getrealrace" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetRealRace(char)
-   -&gt; Race
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetRealRace</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>   <span class="o">-&gt;</span> <span class="n">Race</span>
+</code></pre></div>
 <p>Returns the original race of a player char, before any transforms.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> Must be tagged with "REALLY_{Race}"</p>
 
 <h5 id="getresistance">GetResistance<a class="headerlink" href="#getresistance" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetResistance(char, damageType, baseValuesOnly)
-   -&gt; integer
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetResistance</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">damageType</span><span class="p">,</span> <span class="n">baseValuesOnly</span><span class="p">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
+</code></pre></div>
 <p>Returns the computed resistance value of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
@@ -377,9 +1357,9 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>baseValuesOnly</b> <code>boolean?</code> If `true`, base value will be returned. Defaults to `false`.</p>
 
 <h5 id="getskillbarrowcontents">GetSkillBarRowContents<a class="headerlink" href="#getskillbarrowcontents" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetSkillBarRowContents(char, row, slotsPerRow)
-   -&gt; EocSkillBarItem[]
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetSkillBarRowContents</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">slotsPerRow</span><span class="p">)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>   <span class="o">-&gt;</span> <span class="n">EocSkillBarItem</span><span class="p">[]</span>
+</code></pre></div>
 <p>Returns the contents of a character's skillbar row.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> Must be a player.</p>
 
@@ -388,190 +1368,190 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>slotsPerRow</b> <code>integer?</code> Defaults to 29.</p>
 
 <h5 id="getskillstate">GetSkillState<a class="headerlink" href="#getskillstate" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetSkillState(char)
-   -&gt; (EclSkillState|EsvSkillState)?
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetSkillState</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   <span class="o">-&gt;</span> <span class="p">(</span><span class="n">EclSkillState</span><span class="o">|</span><span class="n">EsvSkillState</span><span class="p">)</span><span class="err">?</span>
+</code></pre></div>
 <p>Returns the current skill state of char.</p>
 <p><strong>On the server, this can only return the state while using the skill. Preparation state cannot be accessed.</strong></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getsourcepoints">GetSourcePoints<a class="headerlink" href="#getsourcepoints" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetSourcePoints(char)
-   -&gt; integer, integer -- Current and maximum points.
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetSourcePoints</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="p">,</span> <span class="n">integer</span> <span class="c1">-- Current and maximum points.</span>
+</code></pre></div>
 <p>Returns the current and maximum source points of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="getstatusbyhandle">GetStatusByHandle<a class="headerlink" href="#getstatusbyhandle" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetStatusByHandle(char, handle)
-   -&gt; EclStatus|EsvStatus
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetStatusByHandle</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">handle</span><span class="p">)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>   <span class="o">-&gt;</span> <span class="n">EclStatus</span><span class="o">|</span><span class="n">EsvStatus</span>
+</code></pre></div>
 <p>Returns a status by handle.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>EntityHandle</code></p>
 
 <h5 id="getstatusbynetid">GetStatusByNetID<a class="headerlink" href="#getstatusbynetid" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetStatusByNetID(char, netID)
-   -&gt; EclStatus|EsvStatus
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetStatusByNetID</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">netID</span><span class="p">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>   <span class="o">-&gt;</span> <span class="n">EclStatus</span><span class="o">|</span><span class="n">EsvStatus</span>
+</code></pre></div>
 <p>Returns a status on char by its net ID.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>netID</b> <code>NetId</code></p>
 
 <h5 id="getstatusesfromitems">GetStatusesFromItems<a class="headerlink" href="#getstatusesfromitems" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.GetStatusesFromItems(char) -- (Client-only)
-   -&gt; CharacterLib_StatusFromItem[]
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetStatusesFromItems</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>   <span class="o">-&gt;</span> <span class="n">CharacterLib_StatusFromItem</span><span class="p">[]</span>
+</code></pre></div>
 <p>Returns a list of statuses the character has from its equipped items.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="hasdagger">HasDagger<a class="headerlink" href="#hasdagger" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.HasDagger(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasDagger</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char has a dagger equipped in either slot.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="hasimmunity">HasImmunity<a class="headerlink" href="#hasimmunity" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.HasImmunity(char, immunityName)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasImmunity</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">immunityName</span><span class="p">)</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns wether char has a certain immunity.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>immunityName</b> <code>StatsLib_ImmunityID</code></p>
 
 <h5 id="hasmeleeweapon">HasMeleeWeapon<a class="headerlink" href="#hasmeleeweapon" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.HasMeleeWeapon(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasMeleeWeapon</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char has a melee weapon equipped in either slot.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="hasowner">HasOwner<a class="headerlink" href="#hasowner" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.HasOwner(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasOwner</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char has an owner.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="hasrangedweapon">HasRangedWeapon<a class="headerlink" href="#hasrangedweapon" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.HasRangedWeapon(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasRangedWeapon</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char has a bow or crossbow equipped.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="hasshield">HasShield<a class="headerlink" href="#hasshield" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.HasShield(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasShield</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char has a shield equipped.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isactive">IsActive<a class="headerlink" href="#isactive" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsActive()
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsActive</span><span class="p">()</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is currently the active character of any player.</p>
 <h5 id="iscastingskill">IsCastingSkill<a class="headerlink" href="#iscastingskill" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsCastingSkill(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsCastingSkill</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is casting a skill.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isdead">IsDead<a class="headerlink" href="#isdead" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsDead(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsDead</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns true if the character is dead.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isdisarmed">IsDisarmed<a class="headerlink" href="#isdisarmed" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsDisarmed(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsDisarmed</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is disarmed.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isignoredbyai">IsIgnoredByAI<a class="headerlink" href="#isignoredbyai" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsIgnoredByAI(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsIgnoredByAI</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is ignored by AI.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isincombat">IsInCombat<a class="headerlink" href="#isincombat" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsInCombat(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsInCombat</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether the character is in a combat.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isinstealth">IsInStealth<a class="headerlink" href="#isinstealth" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsInStealth(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsInStealth</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is sneaking or invisible.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isinvisible">IsInvisible<a class="headerlink" href="#isinvisible" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsInvisible(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsInvisible</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is invisible - as in, has the INVISIBLE status.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="ismale">IsMale<a class="headerlink" href="#ismale" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsMale(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsMale</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns true if char is male.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="ismuted">IsMuted<a class="headerlink" href="#ismuted" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsMuted(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsMuted</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is muted.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isorigin">IsOrigin<a class="headerlink" href="#isorigin" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsOrigin(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsOrigin</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is a non-generic origin.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isplayer">IsPlayer<a class="headerlink" href="#isplayer" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsPlayer(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsPlayer</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is a player.</p>
 <p>A player is any character that is controllable by the users,</p>
 <p>including summons and party followers.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="ispreferredbyai">IsPreferredByAI<a class="headerlink" href="#ispreferredbyai" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsPreferredByAI(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsPreferredByAI</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="ispreparingskill">IsPreparingSkill<a class="headerlink" href="#ispreparingskill" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsPreparingSkill(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsPreparingSkill</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is preparing a skill.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isskillinnate">IsSkillInnate<a class="headerlink" href="#isskillinnate" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsSkillInnate(char, skillID)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSkillInnate</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">skillID</span><span class="p">)</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether a skill is innate to a character.</p>
 <p>Returns false if the character doesn't have the skill in any way.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
@@ -579,103 +1559,106 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code></p>
 
 <h5 id="isskilllearnt">IsSkillLearnt<a class="headerlink" href="#isskilllearnt" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsSkillLearnt(char, skillID)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSkillLearnt</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">skillID</span><span class="p">)</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char has a skill learnt. Returns true for innate skills.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code></p>
 
 <h5 id="isskillmemorized">IsSkillMemorized<a class="headerlink" href="#isskillmemorized" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsSkillMemorized(char, skillID)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSkillMemorized</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">skillID</span><span class="p">)</span>
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char has a skill memorized. Returns true for innate skills.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code></p>
 
 <h5 id="issneaking">IsSneaking<a class="headerlink" href="#issneaking" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsSneaking(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSneaking</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is sneaking.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="issummon">IsSummon<a class="headerlink" href="#issummon" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsSummon(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSummon</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns true if char is a summon.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isundead">IsUndead<a class="headerlink" href="#isundead" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsUndead(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsUndead</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns true if char is undead.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isunpreferredbyai">IsUnpreferredByAI<a class="headerlink" href="#isunpreferredbyai" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsUnpreferredByAI(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsUnpreferredByAI</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char is unpreferred by AI.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <h5 id="isunsheathed">IsUnsheathed<a class="headerlink" href="#isunsheathed" title="Permanent link">&para;</a></h5>
-<pre><code class="language-lua">function CharacterLib.IsUnsheathed(char)
-   -&gt; boolean
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsUnsheathed</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
 <p>Returns whether char has their weapon(s) unsheathed.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 <p></doc></p>
-              
+
+
+  
+
+
+
+
+                
+              </article>
             </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Artifact/" class="btn btn-neutral float-left" title="Artifact"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Color/" class="btn btn-neutral float-right" title="Color">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
+          
           
         </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href="../Artifact/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../Color/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-    <script src="../../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../../..";</script>
-    <script src="../../../js/theme_extra.js"></script>
-    <script src="../../../js/theme.js"></script>
-      <script src="../../../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
-</body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../js/extra.js"></script>
+        
+      
+    
+  </body>
 </html>
