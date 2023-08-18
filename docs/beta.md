@@ -2,13 +2,12 @@
 
 !!! warning "Extender devel version required"
     Requires extender v60. Intended version: `4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff`
-    To get it, use the following `ScriptExtenderUpdaterConfig.json`:
+    To get it, use the following `ScriptExtenderUpdaterConfig.json` in the same folder where you installed the Extender (`DefEd/bin`):
 ```json
 {
 	"UpdateChannel": "Devel",
 	"TargetResourceDigest": "4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff",
-	"TargetVersion": "60.0.0.0",
-	"Debug": true
+	"TargetVersion": "60.0.0.0"
 }
 ```
 
