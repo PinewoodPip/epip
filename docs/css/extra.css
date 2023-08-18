@@ -1,6 +1,7 @@
 :root {
   --md-default-fg-color--light: #404040;
   --md-code-hl-function-color: #7a008f;
+  --md-default-bg-color: #f2f2f2;
 }
 
 body {
@@ -77,6 +78,21 @@ img {
 
 .admonition.warning {
   background-color: #ffedcc;
+}
+
+/* Content area */
+.md-main__inner.md-grid {
+  max-width: 65rem !important;
+  justify-content: space-between; /* Snap first and last element to edges, so that the center grid element is centered but can leave a gap (through max-width) */
+}
+
+.md-content {
+  max-width: 38rem !important;
+  background: white;
+}
+
+.md-main__inner {
+  margin-top: 0px !important;
 }
 
 /* Code Highlighting */
