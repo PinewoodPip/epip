@@ -3,7 +3,7 @@ Quick Find is a new UI that displays a filtered view of the party inventory. You
 
 You may directly use or drag items from the UI. There's no need to organize your inventory when you can find what you need in the blink of an eye!
 
-Quick Find is opened using `LCtrl + F` by default. You may also right-click an equipped item and select the "Quick Swap..." option to bring up the UI with filters configured to show items that go in the selected item slot.
+Quick Find is opened using ++lctrl+f++ by default. You may also right-click an equipped item and select the "Quick Swap..." option to bring up the UI with filters configured to show items that go in the selected item slot.
 
 ![Quick Find showing equipment with multiple filters set.](img/quickfind/equipment.png)
 

@@ -11,7 +11,7 @@ Library contains integrations with the following core Epip libraries:
 
 Perceptive readers will realize that these integrations indeed create circular dependencies. This concern is however pretty low on the list.
 
-The class includes some methods to filter out unwanted logging, however the recommended way to filter it is to use the "control panel" UI (`Feature_DebugMenu`, defaults to `LCtrl + B`) to set the logging level instead of calling the methods yourself anywhere.
+The class includes some methods to filter out unwanted logging, however the recommended way to filter it is to use the "control panel" UI (`Feature_DebugMenu`, defaults to ++lctrl+b++) to set the logging level instead of calling the methods yourself anywhere.
 
 <doc class="Library">
 

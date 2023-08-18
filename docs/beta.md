@@ -217,7 +217,7 @@ Artifacts that you own (either equipped or in the party inventory, as item or ru
 
 ## v1066 (1/07/23 upload)
 
-This update adds the Codex UI, which will be an in-game knowledgebase for various topics. Currently it only features a Skills page that displays all player skills in the game, and allows for filtering and searching them. The default keybind for opening the Codex is `LCtrl + G`.
+This update adds the Codex UI, which will be an in-game knowledgebase for various topics. Currently it only features a Skills page that displays all player skills in the game, and allows for filtering and searching them. The default keybind for opening the Codex is ++lctrl+g++.
 
 ![Skills Codex.](Features/img/ui/codex_skills.png)
 
