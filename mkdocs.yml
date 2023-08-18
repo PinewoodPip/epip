@@ -41,39 +41,39 @@ nav:
     - "Camera": "Features/Camera.md"
     - "Tooltip Adjustments": "Features/TooltipAdjustments.md"
     - "Vanilla Fixes": "Features/VanillaFixes.md"
-  - Documentation: 
+  - Technical Documentation: 
     - "Introduction": "docs.md"
     - "Terminology": "Documentation/Terminology.md"
     - "Important Tables": "Documentation/Global Tables/Epip.md"
-  - Client:
-    - "Pointer": "Documentation/Client/Pointer.md"
-  - Generic UI:
-    - Introduction: "Documentation/Client/UI/Generic/Introduction.md"
-    - Element: "Documentation/Client/UI/Generic/Elements/Element.md"
-    - Button: "Documentation/Client/UI/Generic/Elements/Button.md"
-    - Color: "Documentation/Client/UI/Generic/Elements/Color.md"
-    - ComboBox: "Documentation/Client/UI/Generic/Elements/ComboBox.md"
-  - Generic Prefabs:
-    - Button: "Documentation/Client/UI/Generic/Prefabs/Button.md"
-  - "Utilities":
-    - "Artifact": "Documentation/Utilities/Artifact.md"
-    - "Character": "Documentation/Utilities/Character.md"
-    - "Color": "Documentation/Utilities/Color.md"
-    - "Combat": "Documentation/Utilities/Combat.md"
-    - "GameState": "Documentation/Utilities/GameState.md"
-    - "Item": "Documentation/Utilities/Item.md"
-    - "Mod": "Documentation/Utilities/Mod.md"
-    - "Net": "Documentation/Utilities/Net.md"
-    - "Timer": "Documentation/Utilities/Timer.md"
-    - "Text": "Documentation/Utilities/Text.md"
-    - "Vector": "Documentation/Utilities/Vector.md"
-    - "OOP": "Documentation/Utilities/OOP.md"
-    - "Library": "Documentation/Utilities/Library.md"
-    - "IO": "Documentation/Utilities/IO.md"
-    - "Coroutine": "Documentation/Utilities/Coroutine.md"
-    - "UserVars": "Documentation/Utilities/UserVars.md"
-    - "Texture": "Documentation/Utilities/Texture.md"
-    - "Pointer": "Documentation/Utilities/Pointer.md"
+    - Client:
+      - "Pointer": "Documentation/Client/Pointer.md"
+    - Generic UI:
+      - Introduction: "Documentation/Client/UI/Generic/Introduction.md"
+      - Element: "Documentation/Client/UI/Generic/Elements/Element.md"
+      - Button: "Documentation/Client/UI/Generic/Elements/Button.md"
+      - Color: "Documentation/Client/UI/Generic/Elements/Color.md"
+      - ComboBox: "Documentation/Client/UI/Generic/Elements/ComboBox.md"
+    - Generic Prefabs:
+      - Button: "Documentation/Client/UI/Generic/Prefabs/Button.md"
+    - Utilities:
+      - "Artifact": "Documentation/Utilities/Artifact.md"
+      - "Character": "Documentation/Utilities/Character.md"
+      - "Color": "Documentation/Utilities/Color.md"
+      - "Combat": "Documentation/Utilities/Combat.md"
+      - "GameState": "Documentation/Utilities/GameState.md"
+      - "Item": "Documentation/Utilities/Item.md"
+      - "Mod": "Documentation/Utilities/Mod.md"
+      - "Net": "Documentation/Utilities/Net.md"
+      - "Timer": "Documentation/Utilities/Timer.md"
+      - "Text": "Documentation/Utilities/Text.md"
+      - "Vector": "Documentation/Utilities/Vector.md"
+      - "OOP": "Documentation/Utilities/OOP.md"
+      - "Library": "Documentation/Utilities/Library.md"
+      - "IO": "Documentation/Utilities/IO.md"
+      - "Coroutine": "Documentation/Utilities/Coroutine.md"
+      - "UserVars": "Documentation/Utilities/UserVars.md"
+      - "Texture": "Documentation/Utilities/Texture.md"
+      - "Pointer": "Documentation/Utilities/Pointer.md"
   #   - "Global Tables":
   #     - "Feature": "Global Tables/Feature.md"
   #   - "Game":
@@ -96,12 +96,13 @@ nav:
   #     - "Features":
   #       - "EpicEnemies" : "Epip/EpicEnemies.md"
   #       - "StatsTab": "Epip/StatsTab.md"
-  - Tutorials:
-    # - "Lua": "Tutorials/Lua/index.md"
-    - "Testing": "Tutorials/testing.md"
-  - Maintenance:
-    - "Index": "Maintenance/index.md"
-    - "IDE Setup": "Maintenance/IDESetup.md"
-    - "Localization": "Maintenance/localization.md"
-    - "Documentation": "Maintenance/documentation.md"
-    - "Keybinds Reference": "Maintenance/keybinds.md"
+  - Development:
+    - Tutorials:
+      # - "Lua": "Tutorials/Lua/index.md"
+      - "Testing": "Tutorials/testing.md"
+    - Maintenance:
+      - "Index": "Maintenance/index.md"
+      - "IDE Setup": "Maintenance/IDESetup.md"
+      - "Localization": "Maintenance/localization.md"
+      - "Documentation": "Maintenance/documentation.md"
+      - "Keybinds Reference": "Maintenance/keybinds.md"
