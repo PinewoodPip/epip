@@ -1,5 +1,6 @@
 :root {
   --md-default-fg-color--light: #404040;
+  --md-code-hl-function-color: #7a008f;
 }
 
 body {
@@ -27,6 +28,10 @@ body {
   color: #032982;
 }
 
+code {
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,Courier,monospace;
+}
+
 p {
   line-height: 24px;
   margin: 0;
@@ -39,6 +44,11 @@ h5, h4, h3, h2, h1 {
   margin: 18px 0 8px 0 !important;
   font-weight: 700 !important;
   color: var(--md-default-fg-color--light);
+}
+
+h5 {
+  text-transform: none !important;
+  font-size: 110% !important;
 }
 
 code {
@@ -67,4 +77,11 @@ img {
 
 .admonition.warning {
   background-color: #ffedcc;
+}
+
+/* Code Highlighting */
+
+/* Function keyword, table and function name */
+.nf, .nc, .kr { 
+  font-weight: 700;
 }
