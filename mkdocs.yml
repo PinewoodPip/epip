@@ -17,6 +17,8 @@ markdown_extensions:
     - md_in_html
 extra_css:
   - css/extra.css
+extra_javascript:
+  - js/extra.js
 plugins:
   - search
   - meta-descriptions
