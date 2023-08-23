@@ -40,11 +40,14 @@ Want to go for more outlandish look? Make your equipment invisible with a press 
 
 ![Transmog invis](img/vanity/transmog_visibility.png)
 
-### Keep Icon
-For the sake of making inventory management easier you can make transmog - both manual and automatic - preserve equipment icon.  
-**This option is saved per-slot.**  
+### Icon Options
+For the sake of making inventory management easier, you can make transmog (both manual and automatic) preserve the equipment's current icon. **This option is saved per-slot.**
 
 ![Transmog keep icon](img/vanity/keep_icon_showcase.png)
+
+Additionally, you may change the icon of an item through a new Icon Picker UI.
+
+![Icon Picker UI.](img/ui/iconpicker.png)
 
 ### Elemental Effects
 Weapons with elemental damage normally get glowing visual effect applied to them. Don't like it? You can turn it off.  

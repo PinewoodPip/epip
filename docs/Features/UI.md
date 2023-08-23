@@ -4,13 +4,22 @@ Epip contains a plethora of functional and cosmetic improvements over the base g
 ## Target Status Bar
 
 ### Resistance and B/H Display
-The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer.  
-Actual B/H statuses are now hidden to reduce clutter.  
+The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer. Actual B/H statuses are now hidden to reduce clutter.
 
 ![Health bar showcase](img/ui/health_bar.png)
 
 ### Alternative Display
 Holding the "show sneak cones" button (Shift by default) will replace the resistances display with the character's current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.  
+
+### Flags Display
+The "Display Common Flags" setting enables showing additional miscellaneous information under the bar while shift is held, including:
+
+- Whether Comeback Kid is available
+- Whether Attack of Opportunity is available
+- Whether the character is flagged as incapable of joining combat
+- The character's AI archetype (ranger, rogue, etc.)
+
+These flags are not shown if the character doesn't have them.
 
 ![Health bar alt](img/ui/health_bar_shift.png)
 
@@ -104,6 +113,14 @@ It's full of useful information, such as:
 - Other miscellaneous other info, e.g. your passive regeneration rates.
 
 ![Custom stat tab](img/ui/keywords.png)
+
+## New UIs
+Numerous new UIs have been added for various purposes. Some of these have dedicated pages on them under the "Major Features" section.
+
+### BH Overheads
+A "Show B/H" keybind exists that will display Battered & Harried of nearby characters in combat while held. Stacks that meet the tier 3 requirement will be shown with higher opacity.
+
+![BH Overheads feature.](img/ui/bhoverheads.png)
 
 ## Rewards UI
 An option has been added to allow viewing the character sheet while within the quest rewards screen, allowing you to compare rewards to your party's currently equipped items.  

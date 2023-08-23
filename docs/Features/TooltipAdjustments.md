@@ -34,3 +34,11 @@ Numerous fixes and additions have been made to tooltips to improve their clarity
 - EE rune crafting materials now have a hint explaining their usage.
 
 ![A weapon tooltip showing the changes.](../img/showcase/weapon_tooltip.png)
+
+#### Deltamods Display
+
+Holding shift while looking at equipment tooltips will display information about their EE gear modifiers, such as their tier. This display will be improved in the future to be more user-friendly.
+
+For information on how deltamods work in EE, consult [this site](https://www.pinewood.team/ee2gearmods/) as well as [this sheet](https://docs.google.com/spreadsheets/d/1zaLjNqaNqTbzAknvp1BcvxQClNcT-mwGrkvPxNJVC8I/edit#gid=0).
+
+![Deltamods tiers display.](img/ui/tooltipadjustments_deltamodstiersdisplay.png)
