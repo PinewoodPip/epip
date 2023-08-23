@@ -23,7 +23,7 @@
     
     
       
-        <title>UI improvements - Epip Encounters</title>
+        <title>UI Improvements - Epip Encounters</title>
       
     
     
@@ -48,6 +48,18 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-K2XG4QX6F3"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-K2XG4QX6F3",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-K2XG4QX6F3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -101,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UI improvements
+              UI Improvements
             
           </span>
         </div>
@@ -285,12 +297,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          UI improvements
+          UI Improvements
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        UI improvements
+        UI Improvements
       </a>
       
         
@@ -326,6 +338,13 @@
           <li class="md-nav__item">
   <a href="#alternative-display" class="md-nav__link">
     Alternative Display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags-display" class="md-nav__link">
+    Flags Display
   </a>
   
 </li>
@@ -378,6 +397,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-uis" class="md-nav__link">
+    New UIs
+  </a>
+  
+    <nav class="md-nav" aria-label="New UIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bh-overheads" class="md-nav__link">
+    BH Overheads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rewards-ui" class="md-nav__link">
     Rewards UI
   </a>
@@ -415,6 +454,20 @@
     <li class="md-nav__item">
       <a href="../QuickFind/" class="md-nav__link">
         Quick Find
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AnimationCancelling/" class="md-nav__link">
+        Animation Cancelling
       </a>
     </li>
   
@@ -1268,6 +1321,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#flags-display" class="md-nav__link">
+    Flags Display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#level-display" class="md-nav__link">
     Level Display
   </a>
@@ -1315,6 +1375,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-uis" class="md-nav__link">
+    New UIs
+  </a>
+  
+    <nav class="md-nav" aria-label="New UIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bh-overheads" class="md-nav__link">
+    BH Overheads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rewards-ui" class="md-nav__link">
     Rewards UI
   </a>
@@ -1340,11 +1420,20 @@
 <p>Epip contains a plethora of functional and cosmetic improvements over the base game UI. Big thanks to Elric for the new art assets used!</p>
 <h2 id="target-status-bar">Target Status Bar<a class="headerlink" href="#target-status-bar" title="Permanent link">&para;</a></h2>
 <h3 id="resistance-and-bh-display">Resistance and B/H Display<a class="headerlink" href="#resistance-and-bh-display" title="Permanent link">&para;</a></h3>
-<p>The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer.<br />
-Actual B/H statuses are now hidden to reduce clutter.  </p>
+<p>The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer.
+Actual B/H statuses are now hidden to reduce clutter.</p>
 <p><img alt="Health bar showcase" src="../img/ui/health_bar.png" /></p>
 <h3 id="alternative-display">Alternative Display<a class="headerlink" href="#alternative-display" title="Permanent link">&para;</a></h3>
 <p>Holding the "show sneak cones" button (Shift by default) will replace the resistances display with the character's current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.  </p>
+<h3 id="flags-display">Flags Display<a class="headerlink" href="#flags-display" title="Permanent link">&para;</a></h3>
+<p>The "Display Common Flags" setting enables showing additional miscellaneous information under the bar while shift is held, including:</p>
+<ul>
+<li>Whether Comeback Kid is available</li>
+<li>Whether Attack of Opportunity is available</li>
+<li>Whether the character is flagged as incapable of joining combat</li>
+<li>The character's AI archetype (ranger, rogue, etc.)</li>
+</ul>
+<p>These flags are not shown if the character doesn't have them.</p>
 <p><img alt="Health bar alt" src="../img/ui/health_bar_shift.png" /></p>
 <h3 id="level-display">Level Display<a class="headerlink" href="#level-display" title="Permanent link">&para;</a></h3>
 <p>An option to customize the position of targeted character level display was added.<br />
@@ -1393,7 +1482,7 @@ Accessible through <strong>Options -&gt; Epip settings -&gt; General -&gt; Chara
 <p><img alt="Treasure display option." src="../img/ui/treasure_display.png" /></p>
 <h2 id="player-status-bar">Player Status Bar<a class="headerlink" href="#player-status-bar" title="Permanent link">&para;</a></h2>
 <p>The player health bar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text was removed to improve readability.<br />
-Additionally, your AP display now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. Your maximum SP is also shown at all times.<br />
+Additionally, the AP display now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. Your maximum SP is also shown at all times.<br />
 Further minor graphical tweaks were made, such as properly centering AP/SP displays and adding a dropshadow to AP bar to improve its readability.  </p>
 <p><img alt="Player status bar showcase" src="../img/ui/status_console.png" /></p>
 <h2 id="player-portraits">Player Portraits<a class="headerlink" href="#player-portraits" title="Permanent link">&para;</a></h2>
@@ -1426,11 +1515,18 @@ It's full of useful information, such as:</p>
 <li>Other miscellaneous other info, e.g. your passive regeneration rates.</li>
 </ul>
 <p><img alt="Custom stat tab" src="../img/ui/keywords.png" /></p>
+<h2 id="new-uis">New UIs<a class="headerlink" href="#new-uis" title="Permanent link">&para;</a></h2>
+<p>Numerous new UIs have been added for various purposes. Some of these have dedicated pages on them under the "Major Features" section.</p>
+<h3 id="bh-overheads">BH Overheads<a class="headerlink" href="#bh-overheads" title="Permanent link">&para;</a></h3>
+<p>A "Show B/H" keybind exists that will display Battered &amp; Harried of nearby characters in combat while held. Stacks that meet the tier 3 requirement will be shown with higher opacity.</p>
+<p><img alt="BH Overheads feature." src="../img/ui/bhoverheads.png" /></p>
 <h2 id="rewards-ui">Rewards UI<a class="headerlink" href="#rewards-ui" title="Permanent link">&para;</a></h2>
 <p>An option has been added to allow viewing the character sheet while within the quest rewards screen, allowing you to compare rewards to your party's currently equipped items.<br />
 Located in <strong>Options -&gt; Epip settings -&gt; Inventory -&gt; Show Character Sheet in Reward UI</strong>. Disabled by default.  </p>
 <p><img alt="Rewards ui showcase" src="../img/ui/rewards.png" /></p>
 
+
+  
 
 
 
