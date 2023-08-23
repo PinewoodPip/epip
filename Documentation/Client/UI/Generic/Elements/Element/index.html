@@ -1180,12 +1180,12 @@
                   
 
 
-<h1 id="element">Element<a class="headerlink" href="#element" title="Permanent link">&para;</a></h1>
+<div><h1 id="element">Element<a class="headerlink" href="#element" title="Permanent link">¶</a></h1>
 <p><code>GenericUI_Element</code> is the base class that all built-in elements inherit from.</p>
-<p><doc class="GenericUI_Element"></p>
-<h1 id="genericui_element-class">GenericUI_Element Class<a class="headerlink" href="#genericui_element-class" title="Permanent link">&para;</a></h1>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="addchild">AddChild<a class="headerlink" href="#addchild" title="Permanent link">&para;</a></h5>
+<p><doc class="GenericUI_Element"></doc></p>
+<h1 id="genericui_element-class">GenericUI_Element Class<a class="headerlink" href="#genericui_element-class" title="Permanent link">¶</a></h1>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="addchild">AddChild<a class="headerlink" href="#addchild" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">AddChild</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">elementType</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="err">`</span><span class="n">T</span><span class="err">`</span>
 </code></pre></div>
@@ -1193,75 +1193,75 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>elementType</b> <code>`T`|GenericUI_ElementType</code></p>
 
-<h5 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">&para;</a></h5>
+<h5 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">Destroy</span><span class="p">()</span>
 </code></pre></div>
-<h5 id="getchildren">GetChildren<a class="headerlink" href="#getchildren" title="Permanent link">&para;</a></h5>
+<h5 id="getchildren">GetChildren<a class="headerlink" href="#getchildren" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetChildren</span><span class="p">()</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">GenericUI_Element</span><span class="p">[]</span>
 </code></pre></div>
 <p>Returns the children of the element.</p>
-<h5 id="getheight">GetHeight<a class="headerlink" href="#getheight" title="Permanent link">&para;</a></h5>
+<h5 id="getheight">GetHeight<a class="headerlink" href="#getheight" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetHeight</span><span class="p">(</span><span class="n">considerOverrides</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
 <p>Returns the height of the element.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>considerOverrides</b> <code>boolean?</code> If `true`, height overrides will be considered. Defaults to `true`.</p>
 
-<h5 id="getmovieclip">GetMovieClip<a class="headerlink" href="#getmovieclip" title="Permanent link">&para;</a></h5>
+<h5 id="getmovieclip">GetMovieClip<a class="headerlink" href="#getmovieclip" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetMovieClip</span><span class="p">()</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">FlashMovieClip</span>
 </code></pre></div>
 <p>Get the movie clip of this element.</p>
-<h5 id="getparent">GetParent<a class="headerlink" href="#getparent" title="Permanent link">&para;</a></h5>
+<h5 id="getparent">GetParent<a class="headerlink" href="#getparent" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetParent</span><span class="p">()</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">GenericUI_Element</span>
 </code></pre></div>
 <p>Returns the parent element.</p>
-<h5 id="getposition">GetPosition<a class="headerlink" href="#getposition" title="Permanent link">&para;</a></h5>
+<h5 id="getposition">GetPosition<a class="headerlink" href="#getposition" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetPosition</span><span class="p">()</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span><span class="p">,</span> <span class="n">number</span> <span class="c1">-- X and Y coordinates in local space.</span>
 </code></pre></div>
-<h5 id="getrawheight">GetRawHeight<a class="headerlink" href="#getrawheight" title="Permanent link">&para;</a></h5>
+<h5 id="getrawheight">GetRawHeight<a class="headerlink" href="#getrawheight" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetRawHeight</span><span class="p">()</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
 <p>Returns the height of the element without considering its children.</p>
-<h5 id="getrawsize">GetRawSize<a class="headerlink" href="#getrawsize" title="Permanent link">&para;</a></h5>
+<h5 id="getrawsize">GetRawSize<a class="headerlink" href="#getrawsize" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetRawSize</span><span class="p">()</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector2</span>
 </code></pre></div>
 <p>Gets the size of the element without considering its children.</p>
-<h5 id="getrawwidth">GetRawWidth<a class="headerlink" href="#getrawwidth" title="Permanent link">&para;</a></h5>
+<h5 id="getrawwidth">GetRawWidth<a class="headerlink" href="#getrawwidth" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetRawWidth</span><span class="p">()</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
 <p>Returns the width of the element without considering its children.</p>
-<h5 id="getscale">GetScale<a class="headerlink" href="#getscale" title="Permanent link">&para;</a></h5>
+<h5 id="getscale">GetScale<a class="headerlink" href="#getscale" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetScale</span><span class="p">()</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector2</span>
 </code></pre></div>
 <p>Returns the scale of the element.</p>
-<h5 id="getsize">GetSize<a class="headerlink" href="#getsize" title="Permanent link">&para;</a></h5>
+<h5 id="getsize">GetSize<a class="headerlink" href="#getsize" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetSize</span><span class="p">(</span><span class="n">considerOverrides</span><span class="p">)</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector2</span>
 </code></pre></div>
 <p>Returns the size of the element.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>considerOverrides</b> <code>boolean?</code> If `true`, width/height overrides will be considered. Defaults to `true`.</p>
 
-<h5 id="getsizeoverride">GetSizeOverride<a class="headerlink" href="#getsizeoverride" title="Permanent link">&para;</a></h5>
+<h5 id="getsizeoverride">GetSizeOverride<a class="headerlink" href="#getsizeoverride" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetSizeOverride</span><span class="p">()</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector2</span><span class="err">?</span>
 </code></pre></div>
 <p>Returns the size override of the element, if any.</p>
-<h5 id="getwidth">GetWidth<a class="headerlink" href="#getwidth" title="Permanent link">&para;</a></h5>
+<h5 id="getwidth">GetWidth<a class="headerlink" href="#getwidth" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">GetWidth</span><span class="p">(</span><span class="n">considerOverrides</span><span class="p">)</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
 <p>Returns the width of the element.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>considerOverrides</b> <code>boolean?</code> If `true`, width overrides will be considered. Defaults to `true`.</p>
 
-<h5 id="move">Move<a class="headerlink" href="#move" title="Permanent link">&para;</a></h5>
+<h5 id="move">Move<a class="headerlink" href="#move" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">Move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div>
 <p>Moves the element a certain amount of pixels from its current position.</p>
@@ -1269,40 +1269,40 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>y</b> <code>number</code></p>
 
-<h5 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">&para;</a></h5>
+<h5 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">RegisterListener</span><span class="p">(</span><span class="n">eventType</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>eventType</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handler</b> <code>function</code></p>
 
-<h5 id="removechild">RemoveChild<a class="headerlink" href="#removechild" title="Permanent link">&para;</a></h5>
+<h5 id="removechild">RemoveChild<a class="headerlink" href="#removechild" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">RemoveChild</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>element</b> <code>GenericUI_Element</code></p>
 
-<h5 id="removescrollrect">RemoveScrollRect<a class="headerlink" href="#removescrollrect" title="Permanent link">&para;</a></h5>
+<h5 id="removescrollrect">RemoveScrollRect<a class="headerlink" href="#removescrollrect" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">RemoveScrollRect</span><span class="p">()</span>
 </code></pre></div>
 <p>Removes the scroll rect from the element, if any.</p>
-<h5 id="setalpha">SetAlpha<a class="headerlink" href="#setalpha" title="Permanent link">&para;</a></h5>
+<h5 id="setalpha">SetAlpha<a class="headerlink" href="#setalpha" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetAlpha</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">affectChildren</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>alpha</b> <code>number</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>affectChildren</b> <code>boolean?</code> Defaults to not affecting children alpha.</p>
 
-<h5 id="setasdraggablearea">SetAsDraggableArea<a class="headerlink" href="#setasdraggablearea" title="Permanent link">&para;</a></h5>
+<h5 id="setasdraggablearea">SetAsDraggableArea<a class="headerlink" href="#setasdraggablearea" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetAsDraggableArea</span><span class="p">()</span>
 </code></pre></div>
 <p>Sets this element as the area for dragging the <em>entire</em> UI.</p>
-<h5 id="setcenterinlists">SetCenterInLists<a class="headerlink" href="#setcenterinlists" title="Permanent link">&para;</a></h5>
+<h5 id="setcenterinlists">SetCenterInLists<a class="headerlink" href="#setcenterinlists" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetCenterInLists</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets whether the element should be horizontally centered in VerticalList and ScrollList.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>center</b> <code>boolean</code></p>
 
-<h5 id="setchildindex">SetChildIndex<a class="headerlink" href="#setchildindex" title="Permanent link">&para;</a></h5>
+<h5 id="setchildindex">SetChildIndex<a class="headerlink" href="#setchildindex" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetChildIndex</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the Z-order index of a child element.</p>
@@ -1310,24 +1310,24 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>index</b> <code>integer</code></p>
 
-<h5 id="setmousechildren">SetMouseChildren<a class="headerlink" href="#setmousechildren" title="Permanent link">&para;</a></h5>
+<h5 id="setmousechildren">SetMouseChildren<a class="headerlink" href="#setmousechildren" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetMouseChildren</span><span class="p">(</span><span class="n">enabled</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>enabled</b> <code>boolean</code></p>
 
-<h5 id="setmouseenabled">SetMouseEnabled<a class="headerlink" href="#setmouseenabled" title="Permanent link">&para;</a></h5>
+<h5 id="setmouseenabled">SetMouseEnabled<a class="headerlink" href="#setmouseenabled" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetMouseEnabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>enabled</b> <code>boolean</code></p>
 
-<h5 id="setposition">SetPosition<a class="headerlink" href="#setposition" title="Permanent link">&para;</a></h5>
+<h5 id="setposition">SetPosition<a class="headerlink" href="#setposition" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetPosition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>x</b> <code>number</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>y</b> <code>number</code></p>
 
-<h5 id="setpositionrelativetoparent">SetPositionRelativeToParent<a class="headerlink" href="#setpositionrelativetoparent" title="Permanent link">&para;</a></h5>
+<h5 id="setpositionrelativetoparent">SetPositionRelativeToParent<a class="headerlink" href="#setpositionrelativetoparent" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetPositionRelativeToParent</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">horizontalOffset</span><span class="p">,</span> <span class="n">verticalOffset</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the position of the element relative to its parent.</p>
@@ -1337,18 +1337,18 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>verticalOffset</b> <code>number?</code></p>
 
-<h5 id="setrotation">SetRotation<a class="headerlink" href="#setrotation" title="Permanent link">&para;</a></h5>
+<h5 id="setrotation">SetRotation<a class="headerlink" href="#setrotation" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetRotation</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>degrees</b> <code>number</code></p>
 
-<h5 id="setscale">SetScale<a class="headerlink" href="#setscale" title="Permanent link">&para;</a></h5>
+<h5 id="setscale">SetScale<a class="headerlink" href="#setscale" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetScale</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the scale of the element.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>scale</b> <code>Vector2</code></p>
 
-<h5 id="setscrollrect">SetScrollRect<a class="headerlink" href="#setscrollrect" title="Permanent link">&para;</a></h5>
+<h5 id="setscrollrect">SetScrollRect<a class="headerlink" href="#setscrollrect" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetScrollRect</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the scroll rect of the element.</p>
@@ -1356,14 +1356,14 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>size</b> <code>Vector2</code></p>
 
-<h5 id="setsize">SetSize<a class="headerlink" href="#setsize" title="Permanent link">&para;</a></h5>
+<h5 id="setsize">SetSize<a class="headerlink" href="#setsize" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetSize</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>width</b> <code>number</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>height</b> <code>number</code></p>
 
-<h5 id="setsizeoverride">SetSizeOverride<a class="headerlink" href="#setsizeoverride" title="Permanent link">&para;</a></h5>
+<h5 id="setsizeoverride">SetSizeOverride<a class="headerlink" href="#setsizeoverride" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetSizeOverride</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the size override, used to override the element size within list-like elements.</p>
@@ -1371,7 +1371,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>height</b> <code>number</code></p>
 
-<h5 id="settooltip">SetTooltip<a class="headerlink" href="#settooltip" title="Permanent link">&para;</a></h5>
+<h5 id="settooltip">SetTooltip<a class="headerlink" href="#settooltip" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetTooltip</span><span class="p">(</span><span class="n">tooltipType</span><span class="p">,</span> <span class="n">tooltip</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the tooltip of the element.</p>
@@ -1379,16 +1379,16 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tooltip</b> <code>any</code> TODO document</p>
 
-<h5 id="setvisible">SetVisible<a class="headerlink" href="#setvisible" title="Permanent link">&para;</a></h5>
+<h5 id="setvisible">SetVisible<a class="headerlink" href="#setvisible" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">SetVisible</span><span class="p">(</span><span class="n">visible</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>visible</b> <code>boolean</code></p>
 
-<h5 id="tween">Tween<a class="headerlink" href="#tween" title="Permanent link">&para;</a></h5>
+<h5 id="tween">Tween<a class="headerlink" href="#tween" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Element</span><span class="p">:</span><span class="nf">Tween</span><span class="p">(</span><span class="n">tween</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tween</b> <code>GenericUI_ElementTween</code></p>
-<p></doc></p>
+<p></p></div>
 
 
   

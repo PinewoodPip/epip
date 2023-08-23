@@ -1216,9 +1216,9 @@
 
   <h1>EpicEnemies</h1>
 
-<h2 id="epic-enemies">Epic Enemies<a class="headerlink" href="#epic-enemies" title="Permanent link">&para;</a></h2>
+<div><h2 id="epic-enemies">Epic Enemies<a class="headerlink" href="#epic-enemies" title="Permanent link">¶</a></h2>
 <p>Epic Enemies is a randomizer feature that gives enemies in combat random keyword effects, artifacts and other boons. It is accessed from its own settings tab in the settings menu.</p>
-<h3 id="creating-effects">Creating Effects<a class="headerlink" href="#creating-effects" title="Permanent link">&para;</a></h3>
+<h3 id="creating-effects">Creating Effects<a class="headerlink" href="#creating-effects" title="Permanent link">¶</a></h3>
 <p>An <em>Effect</em> is a perk that an enemy can roll if Epic Enemies is enabled. Effects can belong to a category; each category gets their own settings sliders for all its effects in the UI.</p>
 <p>If you wish to add effects, you should register your own category for them with <code>RegisterEffectCategory()</code>. You may define the effects while defining the category (of type <code>EpicEnemiesEffect</code>), and they will be automatically registered as well. Registering effects directly with <code>RegisterEffect()</code> does not bind them to any category by default, meaning they will not appear in the UI and will not be customizable - this is great if you wish to create auxiliary effects with 0 weight and script their applications yourself.</p>
 <p>Effects can be rolled on a character with <code>InitializeCharacter()</code>. By default, this happens when they enter combat, and numerous characters are excluded: players, summons, and already initialized characters. You may tag characters with <code>PIP_EpicEnemies_Ineligible</code> to exclude them as well.</p>
@@ -1236,7 +1236,7 @@
 </ul>
 <p>This is done by extending the the <code>EpicEnemiesEffect</code> class into <code>EpicEnemiesExtendedEffect</code> - you need only to add its extra fields to your effect definitions, and the event listeners from that script will take care of making them work.</p>
 <p>Of course, you may also add functionality yourself the same way, as detailed in the next section.</p>
-<h3 id="scripting-effects">Scripting Effects<a class="headerlink" href="#scripting-effects" title="Permanent link">&para;</a></h3>
+<h3 id="scripting-effects">Scripting Effects<a class="headerlink" href="#scripting-effects" title="Permanent link">¶</a></h3>
 <p>Effects can be in 2 states: applied and activated. "Applied" means the character has the effect, but its benefits are dormant and not yet active. "Activated" effects grant their benefits (stats, Special Logic, etc.).</p>
 <p>The condition for effects is based on the <code>ActivationCondition</code> field. If unspecified, it defaults to the "EffectApplied" type, which causes the effect to be activated as soon as it is applied (during initialization). If you specify a custom <code>ActivationCondition</code>, you will have to activate the effect's perks manually.</p>
 <p>The <code>EpicEnemiesEffectConditions</code> feature script implements some custom ActivationConditions:</p>
@@ -1255,23 +1255,23 @@
 </ol>
 <p>For example, the following effect activates on turn 2, meaning the enemy only becomes hasted on turn 2, since the listeners that manage the <code>TurnStart</code> activation condition compare <code>Round</code> and <code>Repeat</code> with the parameters from the activation attempt. The effect is however always visible in the tooltip, along with its activation condition, so players can plan around it.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;TurnStart Activation Test&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">ID</span> <span class="o">=</span> <span class="s2">&quot;TestStatus2&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">Description</span> <span class="o">=</span> <span class="s2">&quot;Hasted on turn 2.&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">Name</span> <span class="o">=</span> <span class="s2">"TurnStart Activation Test"</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">ID</span> <span class="o">=</span> <span class="s2">"TestStatus2"</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">Description</span> <span class="o">=</span> <span class="s2">"Hasted on turn 2."</span><span class="p">,</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">Status</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">StatusID</span> <span class="o">=</span> <span class="s2">&quot;HASTED&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">StatusID</span> <span class="o">=</span> <span class="s2">"HASTED"</span><span class="p">,</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="n">Duration</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">},</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">ActivationCondition</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">Type</span> <span class="o">=</span> <span class="s2">&quot;TurnStart&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">Type</span> <span class="o">=</span> <span class="s2">"TurnStart"</span><span class="p">,</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="n">Round</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">Repeat</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="p">},</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">},</span>
 </code></pre></div>
-<h3 id="eventshooks">Events/Hooks<a class="headerlink" href="#eventshooks" title="Permanent link">&para;</a></h3>
-<p><epip class="EpicEnemies" symbols="Event,Hook"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">---@hook GetActivationConditionDescription</span>
+<h3 id="eventshooks">Events/Hooks<a class="headerlink" href="#eventshooks" title="Permanent link">¶</a></h3>
+<p><epip class="EpicEnemies" symbols="Event,Hook"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">---@hook GetActivationConditionDescription</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">---@field RegisterHook fun(self, handler:fun(text:string, condition:EpicEnemiesActivationCondition, char:EclCharacter))</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">---@field Return fun(self, text:string, condition:EpicEnemiesActivationCondition, char:EclCharacter)</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
@@ -1325,10 +1325,10 @@
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="c1">---@field RegisterListener fun(self, listener:fun(char:EsvCharacter))</span>
 <a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="c1">---@field Fire fun(self, char:EsvCharacter)</span>
 </code></pre></div>
-</epip></p>
-<h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h3>
-<p><epip class="EpicEnemies" symbols="Function"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">EpicEnemies</span><span class="p">.</span><span class="nf">IsInitialized</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+<h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h3>
+<p><epip class="EpicEnemies" symbols="Function"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">EpicEnemies</span><span class="p">.</span><span class="nf">IsInitialized</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">---@param char EsvCharacter</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kr">function</span> <span class="nc">EpicEnemies</span><span class="p">.</span><span class="nf">InitializeCharacter</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
@@ -1409,10 +1409,10 @@
 <a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="c1">---@param effect EpicEnemiesEffect</span>
 <a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a><span class="kr">function</span> <span class="nc">EpicEnemies</span><span class="p">.</span><span class="nf">GenerateOptionData</span><span class="p">(</span><span class="n">effect</span><span class="p">)</span>
 </code></pre></div>
-</epip></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<p><epip class="EpicEnemies" symbols="Class"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">---@class EpicEnemiesActivationCondition</span>
+
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
+<p><epip class="EpicEnemies" symbols="Class"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">---@class EpicEnemiesActivationCondition</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">---@field Type string</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">---@field MaxActivations integer</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -1440,10 +1440,10 @@
 <a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="c1">---@field ID string</span>
 <a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="c1">---@field Effects string[]|EpicEnemiesEffect[] Can be an array of EpicEnemiesEffect while calling the register method. Will be turned into an ID array afterwards.</span>
 </code></pre></div>
-</epip></p>
+
 <p>The scripts that implement the basic effect functionality define the following objects:</p>
-<p><epip class="EpicEnemiesEffectTemplates" symbols="Class"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">---@class EpicEnemiesExtendedEffect : EpicEnemiesEffect</span>
+<p><epip class="EpicEnemiesEffectTemplates" symbols="Class"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">---@class EpicEnemiesExtendedEffect : EpicEnemiesEffect</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">---@field SpecialLogic? string Special logic to grant when the effect is rolled.</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">---@field Artifact? string Artifact power to grant when the effect is rolled.</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">---@field Keyword? EpicEnemiesKeywordData Used for activation conditions; certain keyword mutators will not be granted if the target has no activators of the keyword.</span>
@@ -1472,9 +1472,9 @@
 <a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="c1">---@field Property2 string?</span>
 <a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="c1">---@field Property3 string?</span>
 </code></pre></div>
-</epip></p>
-<p><epip class="EpicEnemiesEffectConditions" symbols="Class"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">---@class EpicEnemiesCondition_TurnStart : EpicEnemiesActivationCondition</span>
+
+<p><epip class="EpicEnemiesEffectConditions" symbols="Class"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">---@class EpicEnemiesCondition_TurnStart : EpicEnemiesActivationCondition</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">---@field Round integer Which round to activate the effect on.</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">---@field Repeat boolean Whether to re-activate the effect on subsequent rounds as well.</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">---@field RepeatFrequency uint64? How many turns must pass between re-activations if Repeat is true. Defaults to 1.</span>
@@ -1495,7 +1495,7 @@
 <a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c1">---@class EpicEnemiesCondition_StatusGained : EpicEnemiesActivationCondition</span>
 <a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1">---@field StatusID string</span>
 </code></pre></div>
-</epip></p>
+</div>
 
 
   

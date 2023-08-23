@@ -1180,37 +1180,37 @@
                   
 
 
-<h1 id="pointer">Pointer<a class="headerlink" href="#pointer" title="Permanent link">&para;</a></h1>
+<div><h1 id="pointer">Pointer<a class="headerlink" href="#pointer" title="Permanent link">¶</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Client-only</p>
 </div>
 <p>The <code>Pointer</code> library offers methods and events related to the state of the pointer - that is, what the user is selecting with their cursor. This includes world objects as well as drag-drop.</p>
 <p>It's primarily a wrapper around <code>Ext.UI.GetPickingState()</code>. In addition to methods to quickly fetch its entities, it offers events for when they change (when the user starts/stops hovering over a new entity).</p>
-<p><doc class="PointerLib"></p>
-<h1 id="pointerlib-class">PointerLib Class<a class="headerlink" href="#pointerlib-class" title="Permanent link">&para;</a></h1>
+<p><doc class="PointerLib"></doc></p>
+<h1 id="pointerlib-class">PointerLib Class<a class="headerlink" href="#pointerlib-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Library</code>.</p>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h4 id="hovercharacterchanged-event">HoverCharacterChanged (event)<a class="headerlink" href="#hovercharacterchanged-event" title="Permanent link">&para;</a></h4>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
+<h4 id="hovercharacterchanged-event">HoverCharacterChanged (event)<a class="headerlink" href="#hovercharacterchanged-event" title="Permanent link">¶</a></h4>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter?</code></p>
 
-<h4 id="hovercharacter2changed-event">HoverCharacter2Changed (event)<a class="headerlink" href="#hovercharacter2changed-event" title="Permanent link">&para;</a></h4>
+<h4 id="hovercharacter2changed-event">HoverCharacter2Changed (event)<a class="headerlink" href="#hovercharacter2changed-event" title="Permanent link">¶</a></h4>
 <p>Fired when the corpse character over the pointer changes.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter?</code></p>
 
-<h4 id="hoveritemchanged-event">HoverItemChanged (event)<a class="headerlink" href="#hoveritemchanged-event" title="Permanent link">&para;</a></h4>
+<h4 id="hoveritemchanged-event">HoverItemChanged (event)<a class="headerlink" href="#hoveritemchanged-event" title="Permanent link">¶</a></h4>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Item</b> <code>EclItem?</code></p>
 
-<h4 id="hoverentitychanged-event">HoverEntityChanged (event)<a class="headerlink" href="#hoverentitychanged-event" title="Permanent link">&para;</a></h4>
+<h4 id="hoverentitychanged-event">HoverEntityChanged (event)<a class="headerlink" href="#hoverentitychanged-event" title="Permanent link">¶</a></h4>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Entity</b> <code>Entity?</code></p>
 
-<h4 id="dragdropstatechanged-event">DragDropStateChanged (event)<a class="headerlink" href="#dragdropstatechanged-event" title="Permanent link">&para;</a></h4>
+<h4 id="dragdropstatechanged-event">DragDropStateChanged (event)<a class="headerlink" href="#dragdropstatechanged-event" title="Permanent link">¶</a></h4>
 <p>Fired when a player starts or ends a drag drop. </p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>State</b> <code>DragDropManagerPlayerDragInfo?</code> `nil` if the player stopped dragging.</p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>PlayerIndex</b> <code>integer</code></p>
 
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="getcurrentcharacter">GetCurrentCharacter<a class="headerlink" href="#getcurrentcharacter" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="getcurrentcharacter">GetCurrentCharacter<a class="headerlink" href="#getcurrentcharacter" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">GetCurrentCharacter</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">,</span> <span class="n">includeDead</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">EclCharacter</span><span class="err">?</span>
 </code></pre></div>
@@ -1218,58 +1218,58 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>includeDead</b> <code>boolean?</code> Defaults to false.</p>
 
-<h5 id="getcurrententity">GetCurrentEntity<a class="headerlink" href="#getcurrententity" title="Permanent link">&para;</a></h5>
+<h5 id="getcurrententity">GetCurrentEntity<a class="headerlink" href="#getcurrententity" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">GetCurrentEntity</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">Entity</span><span class="err">?</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<h5 id="getcurrentitem">GetCurrentItem<a class="headerlink" href="#getcurrentitem" title="Permanent link">&para;</a></h5>
+<h5 id="getcurrentitem">GetCurrentItem<a class="headerlink" href="#getcurrentitem" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">GetCurrentItem</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">EclItem</span><span class="err">?</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<h5 id="getdragdropstate">GetDragDropState<a class="headerlink" href="#getdragdropstate" title="Permanent link">&para;</a></h5>
+<h5 id="getdragdropstate">GetDragDropState<a class="headerlink" href="#getdragdropstate" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">GetDragDropState</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">DragDropManagerPlayerDragInfo</span>
 </code></pre></div>
 <p>Returns the drag-drop system state for a player.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<h5 id="getdraggeditem">GetDraggedItem<a class="headerlink" href="#getdraggeditem" title="Permanent link">&para;</a></h5>
+<h5 id="getdraggeditem">GetDraggedItem<a class="headerlink" href="#getdraggeditem" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">GetDraggedItem</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">EclItem</span><span class="err">?</span>
 </code></pre></div>
 <p>Returns the item being dragged by a player.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<h5 id="getdraggedskill">GetDraggedSkill<a class="headerlink" href="#getdraggedskill" title="Permanent link">&para;</a></h5>
+<h5 id="getdraggedskill">GetDraggedSkill<a class="headerlink" href="#getdraggedskill" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">GetDraggedSkill</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="err">?</span> <span class="c1">-- Can be an action as well.</span>
 </code></pre></div>
 <p>Returns the skill being dragged by a player.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<h5 id="getwalkableposition">GetWalkablePosition<a class="headerlink" href="#getwalkableposition" title="Permanent link">&para;</a></h5>
+<h5 id="getwalkableposition">GetWalkablePosition<a class="headerlink" href="#getwalkableposition" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">GetWalkablePosition</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector3D</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<h5 id="getworldposition">GetWorldPosition<a class="headerlink" href="#getworldposition" title="Permanent link">&para;</a></h5>
+<h5 id="getworldposition">GetWorldPosition<a class="headerlink" href="#getworldposition" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">GetWorldPosition</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector3D</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
-<h5 id="isdragging">IsDragging<a class="headerlink" href="#isdragging" title="Permanent link">&para;</a></h5>
+<h5 id="isdragging">IsDragging<a class="headerlink" href="#isdragging" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">IsDragging</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether the player's cursor is dragging anything.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
-<p></doc></p>
+<p></p></div>
 
 
   

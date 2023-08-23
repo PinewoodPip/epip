@@ -1226,7 +1226,7 @@
                   
 
 
-<h1 id="text">Text<a class="headerlink" href="#text" title="Permanent link">&para;</a></h1>
+<div><h1 id="text">Text<a class="headerlink" href="#text" title="Permanent link">¶</a></h1>
 <p>The <code>Text</code> table offers utility methods for working with text and formatting tags.</p>
 <p>It also power's Epip custom TSK system, intended to make exporting strings for translation more easily, through the <code>TextLib_TranslatedString</code> class. This class contains not only the handle and default text of a string, but also contextual data that is later used to populate the public translation sheets.</p>
 <p>Internally, Epip TSKs still use the game's handle system. However, translations are created and loaded differently, through <code>.json</code> files.</p>
@@ -1249,31 +1249,31 @@
 </code></pre></div>
 <p>It's worth noting that the game supports adding custom languages by editing the <code>Language</code> field in <code>config.lsx</code> (thereby changing the <code>ChatLanguage</code> global switch). Epip's system will consider such cases for loading translations.</p>
 <p>For information on how the public translation sheets are handled, see <a href="../../../Maintenance/localization/">this page</a>.</p>
-<h2 id="commonstrings">CommonStrings<a class="headerlink" href="#commonstrings" title="Permanent link">&para;</a></h2>
+<h2 id="commonstrings">CommonStrings<a class="headerlink" href="#commonstrings" title="Permanent link">¶</a></h2>
 <p><code>CommonStrings.lua</code> contains TSKs for generic strings that are reused across many different contexts. Strings should be added here if they are of general usage and their translation won't differ across different contexts. These are accessed via the <code>Text.CommonStrings</code>, a raw table with no particularities.</p>
 <p>The following VSC snippet is used to add entries to CommonStrings:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&quot;commonstring&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">   </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lua&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">   </span><span class="nt">&quot;prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;commonstring&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">   </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="s2">&quot;Text.CommonStrings.$1 = Text.RegisterTranslatedString({&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="s2">&quot;   Handle = \&quot;h${UUID/[\\-]/g/g}\&quot;,&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="s2">&quot;   Text = \&quot;$1\&quot;,&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="s2">&quot;})&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">"commonstring"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">   </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua"</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">   </span><span class="nt">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commonstring"</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">   </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="s2">"Text.CommonStrings.$1 = Text.RegisterTranslatedString({"</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="s2">"   Handle = \"h${UUID/[\\-]/g/g}\","</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="s2">"   Text = \"$1\","</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="s2">"})"</span><span class="p">,</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">   </span><span class="p">],</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">},</span>
 </code></pre></div>
-<p><doc class="TextLib"></p>
-<h1 id="textlib-class">TextLib Class<a class="headerlink" href="#textlib-class" title="Permanent link">&para;</a></h1>
+<p><doc class="TextLib"></doc></p>
+<h1 id="textlib-class">TextLib Class<a class="headerlink" href="#textlib-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Library</code>.</p>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h4 id="gettranslationtemplateentry-hook">GetTranslationTemplateEntry (hook)<a class="headerlink" href="#gettranslationtemplateentry-hook" title="Permanent link">&para;</a></h4>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
+<h4 id="gettranslationtemplateentry-hook">GetTranslationTemplateEntry (hook)<a class="headerlink" href="#gettranslationtemplateentry-hook" title="Permanent link">¶</a></h4>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Entry</b> <code>TextLib_LocalizationTemplate_Entry</code> Hookable. Set to nil to prevent an entry from getting exported.</p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>TranslatedString</b> <code>TextLib_TranslatedString</code></p>
 
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="addpadding">AddPadding<a class="headerlink" href="#addpadding" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="addpadding">AddPadding<a class="headerlink" href="#addpadding" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">AddPadding</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">minLength</span><span class="p">,</span> <span class="n">paddingCharacter</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
@@ -1286,7 +1286,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>direction</b> <code>("front"|"back")?</code> Defaults to `"front"`.</p>
 
-<h5 id="appendline">AppendLine<a class="headerlink" href="#appendline" title="Permanent link">&para;</a></h5>
+<h5 id="appendline">AppendLine<a class="headerlink" href="#appendline" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
@@ -1295,7 +1295,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str2</b> <code>string</code></p>
 
-<h5 id="capitalize">Capitalize<a class="headerlink" href="#capitalize" title="Permanent link">&para;</a></h5>
+<h5 id="capitalize">Capitalize<a class="headerlink" href="#capitalize" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Capitalize</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
@@ -1303,7 +1303,7 @@
 <p>https://stackoverflow.com/a/2421746</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
-<h5 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h5>
+<h5 id="contains">Contains<a class="headerlink" href="#contains" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
 </code></pre></div>
 <p>Returns whether str contains the pattern.</p>
@@ -1311,7 +1311,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>pattern</b> <code>pattern</code></p>
 
-<h5 id="dump">Dump<a class="headerlink" href="#dump" title="Permanent link">&para;</a></h5>
+<h5 id="dump">Dump<a class="headerlink" href="#dump" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
@@ -1320,7 +1320,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>opts</b> <code>unknown?</code> TODO specify type</p>
 
-<h5 id="equalizespace">EqualizeSpace<a class="headerlink" href="#equalizespace" title="Permanent link">&para;</a></h5>
+<h5 id="equalizespace">EqualizeSpace<a class="headerlink" href="#equalizespace" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">EqualizeSpace</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">space</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
@@ -1331,7 +1331,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>space</b> <code>integer</code></p>
 
-<h5 id="escapepatterncharacters">EscapePatternCharacters<a class="headerlink" href="#escapepatterncharacters" title="Permanent link">&para;</a></h5>
+<h5 id="escapepatterncharacters">EscapePatternCharacters<a class="headerlink" href="#escapepatterncharacters" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">EscapePatternCharacters</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
@@ -1339,7 +1339,7 @@
 <p>Source: https://github.com/lua-nucleo/lua-nucleo/blob/v0.1.0/lua-nucleo/string.lua#L245-L267</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
-<h5 id="format">Format<a class="headerlink" href="#format" title="Permanent link">&para;</a></h5>
+<h5 id="format">Format<a class="headerlink" href="#format" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">formatData</span><span class="p">)</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span> 
 </code></pre></div>
@@ -1348,7 +1348,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>formatData</b> <code>TextFormatData</code></p>
 
-<h5 id="generateguid">GenerateGUID<a class="headerlink" href="#generateguid" title="Permanent link">&para;</a></h5>
+<h5 id="generateguid">GenerateGUID<a class="headerlink" href="#generateguid" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GenerateGUID</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">GUID</span>
 </code></pre></div>
@@ -1356,7 +1356,7 @@
 <p>Source: https://gist.github.com/jrus/3197011</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>pattern</b> <code>pattern?</code> Defaults to GUID4 pattern.</p>
 
-<h5 id="generatelocalizationtemplate">GenerateLocalizationTemplate<a class="headerlink" href="#generatelocalizationtemplate" title="Permanent link">&para;</a></h5>
+<h5 id="generatelocalizationtemplate">GenerateLocalizationTemplate<a class="headerlink" href="#generatelocalizationtemplate" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GenerateLocalizationTemplate</span><span class="p">(</span><span class="n">modTable</span><span class="p">,</span> <span class="n">existingTemplate</span><span class="p">)</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">TextLib_LocalizationTemplate</span><span class="p">,</span> <span class="n">integer</span><span class="p">[]</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="p">[]</span><span class="err">?</span> <span class="c1">-- Second param is new strings, third is outdated strings. Second param onwards is only returned while patching.</span>
 </code></pre></div>
@@ -1365,17 +1365,17 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>existingTemplate</b> <code>TextLib_LocalizationTemplate?</code> If present, translated strings from this template will be patched into the new one, if the reference text is still up-to-date.</p>
 
-<h5 id="generatetranslatedstringhandle">GenerateTranslatedStringHandle<a class="headerlink" href="#generatetranslatedstringhandle" title="Permanent link">&para;</a></h5>
+<h5 id="generatetranslatedstringhandle">GenerateTranslatedStringHandle<a class="headerlink" href="#generatetranslatedstringhandle" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GenerateTranslatedStringHandle</span><span class="p">()</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">TranslatedStringHandle</span>
 </code></pre></div>
 <p>Generates a random handle in the format that Larian uses for TranslatedStringHandle.</p>
-<h5 id="getcurrentlanguage">GetCurrentLanguage<a class="headerlink" href="#getcurrentlanguage" title="Permanent link">&para;</a></h5>
+<h5 id="getcurrentlanguage">GetCurrentLanguage<a class="headerlink" href="#getcurrentlanguage" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetCurrentLanguage</span><span class="p">()</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Returns the language the game is set to.</p>
-<h5 id="gettranslatedstring">GetTranslatedString<a class="headerlink" href="#gettranslatedstring" title="Permanent link">&para;</a></h5>
+<h5 id="gettranslatedstring">GetTranslatedString<a class="headerlink" href="#gettranslatedstring" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">fallBack</span><span class="p">)</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span> <span class="c1">-- Defaults to the handle, or fallBack if specified.</span>
 </code></pre></div>
@@ -1384,7 +1384,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>fallBack</b> <code>string?</code></p>
 
-<h5 id="gettranslatedstringtranslation">GetTranslatedStringTranslation<a class="headerlink" href="#gettranslatedstringtranslation" title="Permanent link">&para;</a></h5>
+<h5 id="gettranslatedstringtranslation">GetTranslatedStringTranslation<a class="headerlink" href="#gettranslatedstringtranslation" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetTranslatedStringTranslation</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="err">?</span> <span class="c1">-- `nil` if the handle is not translated</span>
 </code></pre></div>
@@ -1393,14 +1393,14 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>language</b> <code>string?</code> Defaults to current language.</p>
 
-<h5 id="istranslatedstringregistered">IsTranslatedStringRegistered<a class="headerlink" href="#istranslatedstringregistered" title="Permanent link">&para;</a></h5>
+<h5 id="istranslatedstringregistered">IsTranslatedStringRegistered<a class="headerlink" href="#istranslatedstringregistered" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">IsTranslatedStringRegistered</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether a TSK handle was registered <strong>through the Text library.</strong></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
 
-<h5 id="join">Join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h5>
+<h5 id="join">Join<a class="headerlink" href="#join" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">separator</span><span class="p">)</span>
 </code></pre></div>
 <p>Joins two strings together.</p>
@@ -1410,7 +1410,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>separator</b> <code>string?</code> Defaults to ` `</p>
 
-<h5 id="loadlocalization">LoadLocalization<a class="headerlink" href="#loadlocalization" title="Permanent link">&para;</a></h5>
+<h5 id="loadlocalization">LoadLocalization<a class="headerlink" href="#loadlocalization" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">LoadLocalization</span><span class="p">(</span><span class="n">language</span><span class="p">,</span> <span class="n">filePath</span><span class="p">)</span>
 </code></pre></div>
 <p>Loads a localization file. Must be in the format generated by GenerateLocalizationTemplate()</p>
@@ -1418,7 +1418,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>filePath</b> <code>string</code></p>
 
-<h5 id="registertranslatedstring">RegisterTranslatedString<a class="headerlink" href="#registertranslatedstring" title="Permanent link">&para;</a></h5>
+<h5 id="registertranslatedstring">RegisterTranslatedString<a class="headerlink" href="#registertranslatedstring" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">RegisterTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>   <span class="o">-&gt;</span> <span class="n">TextLib_TranslatedString</span>
 </code></pre></div>
@@ -1427,21 +1427,21 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
 
-<h5 id="removeguidprefix">RemoveGUIDPrefix<a class="headerlink" href="#removeguidprefix" title="Permanent link">&para;</a></h5>
+<h5 id="removeguidprefix">RemoveGUIDPrefix<a class="headerlink" href="#removeguidprefix" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">RemoveGUIDPrefix</span><span class="p">(</span><span class="n">guid</span><span class="p">)</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>   <span class="o">-&gt;</span> <span class="n">GUID</span>
 </code></pre></div>
 <p>Returns the GUID passed by parameter with any prefixes removed.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>guid</b> <code>PrefixedGUID</code></p>
 
-<h5 id="removetrailingzeros">RemoveTrailingZeros<a class="headerlink" href="#removetrailingzeros" title="Permanent link">&para;</a></h5>
+<h5 id="removetrailingzeros">RemoveTrailingZeros<a class="headerlink" href="#removetrailingzeros" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">RemoveTrailingZeros</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Removes trailing zeros from a number and returns it as string.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>num</b> <code>number</code></p>
 
-<h5 id="round">Round<a class="headerlink" href="#round" title="Permanent link">&para;</a></h5>
+<h5 id="round">Round<a class="headerlink" href="#round" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Round</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">decimals</span><span class="p">)</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
@@ -1450,14 +1450,14 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>decimals</b> <code>integer</code> Defaults to 0.</p>
 
-<h5 id="separatepascalcase">SeparatePascalCase<a class="headerlink" href="#separatepascalcase" title="Permanent link">&para;</a></h5>
+<h5 id="separatepascalcase">SeparatePascalCase<a class="headerlink" href="#separatepascalcase" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SeparatePascalCase</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Returns a string with spaces inserted inbetween PascalCase words.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
-<h5 id="setstringkey">SetStringKey<a class="headerlink" href="#setstringkey" title="Permanent link">&para;</a></h5>
+<h5 id="setstringkey">SetStringKey<a class="headerlink" href="#setstringkey" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SetStringKey</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">handle</span><span class="p">)</span>
 </code></pre></div>
 <p>Binds a TSK to a string key.</p>
@@ -1465,7 +1465,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
 
-<h5 id="settranslatedstring">SetTranslatedString<a class="headerlink" href="#settranslatedstring" title="Permanent link">&para;</a></h5>
+<h5 id="settranslatedstring">SetTranslatedString<a class="headerlink" href="#settranslatedstring" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SetTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the text of a translated string.</p>
@@ -1473,7 +1473,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
 
-<h5 id="settranslatedstringtranslation">SetTranslatedStringTranslation<a class="headerlink" href="#settranslatedstringtranslation" title="Permanent link">&para;</a></h5>
+<h5 id="settranslatedstringtranslation">SetTranslatedStringTranslation<a class="headerlink" href="#settranslatedstringtranslation" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SetTranslatedStringTranslation</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the translation of a TSK.</p>
@@ -1484,7 +1484,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
 
-<h5 id="split">Split<a class="headerlink" href="#split" title="Permanent link">&para;</a></h5>
+<h5 id="split">Split<a class="headerlink" href="#split" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="n">inputstr</span><span class="p">,</span> <span class="n">sep</span><span class="p">)</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="p">[]</span>
 </code></pre></div>
@@ -1493,16 +1493,16 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>sep</b> <code>string</code></p>
 
-<h5 id="split_2">Split_2<a class="headerlink" href="#split_2" title="Permanent link">&para;</a></h5>
+<h5 id="split_2">Split_2<a class="headerlink" href="#split_2" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Split_2</span><span class="p">()</span>
 </code></pre></div>
-<h5 id="stripfonttags">StripFontTags<a class="headerlink" href="#stripfonttags" title="Permanent link">&para;</a></h5>
+<h5 id="stripfonttags">StripFontTags<a class="headerlink" href="#stripfonttags" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">StripFontTags</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
-<p>Removes all <font> tags from a string. WIP!</p>
+<p>Removes all <font> tags from a string. WIP!</font></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
-<p></doc></p>
+<p></p></div>
 
 
   

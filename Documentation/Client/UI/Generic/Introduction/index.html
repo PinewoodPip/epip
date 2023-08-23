@@ -1364,7 +1364,7 @@
                   
 
 
-<h1 id="generic">Generic<a class="headerlink" href="#generic" title="Permanent link">&para;</a></h1>
+<div><h1 id="generic">Generic<a class="headerlink" href="#generic" title="Permanent link">¶</a></h1>
 <p>Generic is a framework for creating UIs using just lua scripting. It functions by instancing a special <em>.swf</em> with various types of <em>elements</em> implemented that you can then interface with from lua.</p>
 <p>It offers various advantages over traditional UI creation:</p>
 <ul>
@@ -1385,37 +1385,37 @@
 <li>Settings menu (partially)</li>
 <li>Bedazzled (match 3 minigame)</li>
 </ul>
-<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">¶</a></h2>
 <p>Call <code>Generic.Create()</code> to create a new UI.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span> <span class="n">Generic</span> <span class="o">=</span> <span class="n">Client</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Generic</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">local</span> <span class="n">ExampleUI</span> <span class="o">=</span> <span class="n">Generic</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="s2">&quot;PIP_ExampleUI&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">local</span> <span class="n">ExampleUI</span> <span class="o">=</span> <span class="n">Generic</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="s2">"PIP_ExampleUI"</span><span class="p">)</span>
 </code></pre></div>
 <p>Generic UIs are composed of elements; these can be interactable controls (such as buttons), visual elements (backgrounds, icons) and containers (lists and grids of elements).</p>
 <p>You can add elements to your UI by calling <code>CreateElement()</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- Creates a tiled background element.</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">-- All elements must have a unique string ID.</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">local</span> <span class="n">background</span> <span class="o">=</span> <span class="n">ExampleUI</span><span class="p">:</span><span class="n">CreateElement</span><span class="p">(</span><span class="s2">&quot;MyBackground&quot;</span><span class="p">,</span> <span class="s2">&quot;GenericUI_Element_TiledBackground&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">local</span> <span class="n">background</span> <span class="o">=</span> <span class="n">ExampleUI</span><span class="p">:</span><span class="n">CreateElement</span><span class="p">(</span><span class="s2">"MyBackground"</span><span class="p">,</span> <span class="s2">"GenericUI_Element_TiledBackground"</span><span class="p">)</span>
 </code></pre></div>
 <p>Elements are lua objects with methods and events to interface with them - all elements share basic getters/setters for properties like position, and offer additional calls based on their intended purpose.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Set the background to solid black with 400x400 size.</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">background</span><span class="p">:</span><span class="n">SetBackground</span><span class="p">(</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">background</span><span class="p">:</span><span class="n">SetBackground</span><span class="p">(</span><span class="s2">"Black"</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 </code></pre></div>
 <p>Parenting elements is supported. Parented elements use positioning relative to their parent, as would be in regular flash, and inherit certain other properties like visibility. To create child elements, you can pass an element (or its ID) as a third parameter to <code>CreateElement()</code> or call <code>AddChild()</code> on an existing element reference:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- Adds a button</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">local</span> <span class="n">closeButton</span> <span class="o">=</span> <span class="n">background</span><span class="p">:</span><span class="n">AddChild</span><span class="p">(</span><span class="s2">&quot;CloseButton&quot;</span><span class="p">,</span> <span class="s2">&quot;GenericUI_Element_Button&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">closeButton</span><span class="p">:</span><span class="n">SetType</span><span class="p">(</span><span class="s2">&quot;Close&quot;</span><span class="p">)</span> <span class="c1">-- Sets the appearance</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">local</span> <span class="n">closeButton</span> <span class="o">=</span> <span class="n">background</span><span class="p">:</span><span class="n">AddChild</span><span class="p">(</span><span class="s2">"CloseButton"</span><span class="p">,</span> <span class="s2">"GenericUI_Element_Button"</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">closeButton</span><span class="p">:</span><span class="n">SetType</span><span class="p">(</span><span class="s2">"Close"</span><span class="p">)</span> <span class="c1">-- Sets the appearance</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">-- Put the button in the top right corner of the parent element (MyBackground) with a 20px offset on both axes</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">closeButton</span><span class="p">:</span><span class="n">SetPositionRelativeToParent</span><span class="p">(</span><span class="s2">&quot;TopRight&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">closeButton</span><span class="p">:</span><span class="n">SetPositionRelativeToParent</span><span class="p">(</span><span class="s2">"TopRight"</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 </code></pre></div>
 <p>All elements implement basic mouse-related events (entering, exiting, press, release) as well as high-level ones based on the element's purpose.</p>
 <p>Text is available via the <code>GenericUI_Element_Text</code> element:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">local</span> <span class="n">header</span> <span class="o">=</span> <span class="n">background</span><span class="p">:</span><span class="n">AddChild</span><span class="p">(</span><span class="s2">&quot;MyHeader&quot;</span><span class="p">,</span> <span class="s2">&quot;GenericUI_Element_Text&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">header</span><span class="p">:</span><span class="n">SetText</span><span class="p">(</span><span class="n">Text</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s2">&quot;My UI&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">Color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">BLACK</span><span class="p">}))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">local</span> <span class="n">header</span> <span class="o">=</span> <span class="n">background</span><span class="p">:</span><span class="n">AddChild</span><span class="p">(</span><span class="s2">"MyHeader"</span><span class="p">,</span> <span class="s2">"GenericUI_Element_Text"</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">header</span><span class="p">:</span><span class="n">SetText</span><span class="p">(</span><span class="n">Text</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s2">"My UI"</span><span class="p">,</span> <span class="p">{</span><span class="n">Color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">BLACK</span><span class="p">}))</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">header</span><span class="p">:</span><span class="n">SetSize</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">header</span><span class="p">:</span><span class="n">SetPositionRelativeToParent</span><span class="p">(</span><span class="s2">&quot;Top&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span> <span class="c1">-- Sets the header&#39;s position to the top center of the panel, with a 60px offset from the top</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">header</span><span class="p">:</span><span class="n">SetPositionRelativeToParent</span><span class="p">(</span><span class="s2">"Top"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span> <span class="c1">-- Sets the header's position to the top center of the panel, with a 60px offset from the top</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">-- &quot;Pressed&quot; event is akin to the general MouseUp event, but only fires if the button is not disabled.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">-- "Pressed" event is akin to the general MouseUp event, but only fires if the button is not disabled.</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">closeButton</span><span class="p">.</span><span class="n">Events</span><span class="p">.</span><span class="n">Pressed</span><span class="p">:</span><span class="n">Subscribe</span><span class="p">(</span><span class="kr">function</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="c1">-- Close the UI when the button is pressed</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">ExampleUI</span><span class="p">:</span><span class="n">Hide</span><span class="p">()</span>
@@ -1423,11 +1423,11 @@
 </code></pre></div>
 <p>Generic UI elements have no lifetime restrictions and references to them may be stored and used at any time. You can store them within your UI table for convenient access, but this is not a necessity if moddability is a concern - your UI, as well as all of its elements, are always available to other modders through their string IDs. These IDs are valid within your UI only and therefore need not be prefixed.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- Other modders can access your UI by its string ID</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">local</span> <span class="n">yourUI</span> <span class="o">=</span> <span class="n">Generic</span><span class="p">.</span><span class="n">GetInstance</span><span class="p">(</span><span class="s2">&quot;PIP_ExampleUI&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">local</span> <span class="n">yourAcceptButton</span> <span class="o">=</span> <span class="n">yourUI</span><span class="p">:</span><span class="n">GetElementByID</span><span class="p">(</span><span class="s2">&quot;AcceptButton&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">local</span> <span class="n">yourUI</span> <span class="o">=</span> <span class="n">Generic</span><span class="p">.</span><span class="n">GetInstance</span><span class="p">(</span><span class="s2">"PIP_ExampleUI"</span><span class="p">)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">local</span> <span class="n">yourAcceptButton</span> <span class="o">=</span> <span class="n">yourUI</span><span class="p">:</span><span class="n">GetElementByID</span><span class="p">(</span><span class="s2">"AcceptButton"</span><span class="p">)</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">-- And they may interface with them just as you would</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">yourUI</span><span class="p">:</span><span class="n">CreateElement</span><span class="p">(</span><span class="s2">&quot;MyNewElement&quot;</span><span class="p">,</span> <span class="s2">&quot;GenericUI_Element_IggyIcon&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">yourUI</span><span class="p">:</span><span class="n">CreateElement</span><span class="p">(</span><span class="s2">"MyNewElement"</span><span class="p">,</span> <span class="s2">"GenericUI_Element_IggyIcon"</span><span class="p">)</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">yourAcceptButton</span><span class="p">:</span><span class="n">SetVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
 <p>Internally, Generic UIs are no different from regular UIs - there is a <code>UIObject</code> for each UI, and its elements exist within it as flash MovieClips. Access to all these is available.</p>
@@ -1436,14 +1436,14 @@
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">acceptButton</span><span class="p">:</span><span class="n">GetMovieClip</span><span class="p">())</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">-- GenericUI instances inherit from the same class as built-in UIs in Epip</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">ExampleUI</span><span class="p">:</span><span class="n">IsFlagged</span><span class="p">(</span><span class="s2">&quot;OF_PlayerInput1&quot;</span><span class="p">))</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">ExampleUI</span><span class="p">:</span><span class="n">IsFlagged</span><span class="p">(</span><span class="s2">"OF_PlayerInput1"</span><span class="p">))</span>
 </code></pre></div>
 <p>The code in this section is from an example UI in <code>Epip/Examples/GenericUI.lua</code>.</p>
 <div class="admonition warning usage warning">
 <p class="admonition-title">Warning</p>
 <p>Though accessing an element's MovieClip is possible, its purpose is for internal &amp; debug usage only. Interfacing with elements outside of their public APIs is not supported and any such use is prone to breaking in future releases with no warning.</p>
 </div>
-<h2 id="elements">Elements<a class="headerlink" href="#elements" title="Permanent link">&para;</a></h2>
+<h2 id="elements">Elements<a class="headerlink" href="#elements" title="Permanent link">¶</a></h2>
 <p>The following element types are implemented:</p>
 <ul>
 <li>Empty: an element with no visual presence. Ideal for anchoring or as a root for custom container prefabs.</li>
@@ -1471,22 +1471,22 @@
 <li>TiledBackground: a 9-sliced resizable background. Replaced by SlicedTexture.</li>
 </ul>
 <p>These elements continue to exist for backwards compatibility, but their usage in newer UIs is discouraged.</p>
-<h2 id="prefabs">Prefabs<a class="headerlink" href="#prefabs" title="Permanent link">&para;</a></h2>
+<h2 id="prefabs">Prefabs<a class="headerlink" href="#prefabs" title="Permanent link">¶</a></h2>
 <p>Prefabs are classes which initialize and manage groups of elements; they allow complex pieces of UIs to be reused efficiently, being analogous to ex. Fragments in Android UI development.</p>
 <p>Typically, prefabs have a public constructor which takes UI, ID and parent parameters, creates &amp; initializes its elements, and returns an instance of the prefab class.</p>
 <p>Prefabs implement high-level, contextual APIs to interact with their elements indirectly - ideally the user should not need to consider how the prefab is structured in terms of actual elements; the prefab manages its hierarchy of elements.</p>
 <p>The <code>Spinner</code> prefab for example implements a spinner form element; the user may use the -/+ buttons to decrement/increment a value, and that value can be queried using <code>:GetValue()</code> on the prefab instance. This Spinner is composed of Text and Button elements, as well as a background.</p>
-<p><img alt="Example of a Spinner prefab instance." src="../../../../../img/docs/generic/spinner_prefab.png" /></p>
+<p><img alt="Example of a Spinner prefab instance." src="../../../../../img/docs/generic/spinner_prefab.png"></p>
 <p>A prefab in itself is not an element, but may implement the <code>Elementable</code> interface to allow calling Element methods on them, by specifying the target element (most commonly the root of the prefab).</p>
 <p>The <code>Stylable</code> interface allows customizing the appearance of prefabs through styles consisting of textures, sounds, and other assets/parameters. Each prefab using this interface declares its own style class with possible customizations. If a prefab does not use this system, you can of course always tweak the elements yourself directly.</p>
-<h2 id="limitations-considerations-and-observations">Limitations, considerations and observations<a class="headerlink" href="#limitations-considerations-and-observations" title="Permanent link">&para;</a></h2>
-<h3 id="sprite-based-animations">Sprite-based animations<a class="headerlink" href="#sprite-based-animations" title="Permanent link">&para;</a></h3>
+<h2 id="limitations-considerations-and-observations">Limitations, considerations and observations<a class="headerlink" href="#limitations-considerations-and-observations" title="Permanent link">¶</a></h2>
+<h3 id="sprite-based-animations">Sprite-based animations<a class="headerlink" href="#sprite-based-animations" title="Permanent link">¶</a></h3>
 <p>There is currently no convenient way of creating animations that involve multiple animation sprites. Two solutions have been theorized, but their practicality is untested:</p>
 <ol>
 <li>Animate the Texture element: this appears to be the most straightforward option (and already possible); the obvious inconvenience being the need to import every frame of your animation as a separate texture resource. The performance of repeatedly calling <code>:SetTexture()</code> has also not been investigated.</li>
 <li>Implement a custom element: it is theoretically possible to implement a custom flash element in Generic, importing its script and Sprite from another <code>.swf</code>. You could setup your animation in the <code>.swf</code> as you'd normally do in flash and create a simple element to instantiate it from Generic. This approach has the massive problem of flash library slots being limited; there's only a few available slots for custom libraries, and they would have to be registered in advance within Generic's swf (ex. use <code>ImportAssets</code> to import "Custom1.swf", "Custom2.swf", and have the user override those to provide their custom elements).</li>
 </ol>
-<h3 id="stutters-when-creating-hundreds-of-elements-at-a-time">Stutters when creating hundreds of elements at a time<a class="headerlink" href="#stutters-when-creating-hundreds-of-elements-at-a-time" title="Permanent link">&para;</a></h3>
+<h3 id="stutters-when-creating-hundreds-of-elements-at-a-time">Stutters when creating hundreds of elements at a time<a class="headerlink" href="#stutters-when-creating-hundreds-of-elements-at-a-time" title="Permanent link">¶</a></h3>
 <p>Creating MovieClips programmatically appears to be the major performance bottleneck in Generic/Iggy. UIs that instantiate hundreds of elements at once will likely see noticeable stutter during that process. <strong>The performance of these UIs afterwards is normal</strong>.</p>
 <p>The major UIs that suffer from this are inventory-like UIs, due to the Slot element being particularly complex and consisting of multiple parts.
 In v1066, measures have been taken to minimize the amount of DisplayObjects created - certain aspects of Slots such as the cooldown animation are now only created on-demand, resulting in a 30-35% performance improvement when creating Slot elements that do not use all of its features.</p>
@@ -1494,25 +1494,25 @@ In v1066, measures have been taken to minimize the amount of DisplayObjects crea
 <p>A possible workaround for this is to create your elements during the load screen, however this will inflict the resulting "stutter" as extra loading time for the user. Epip prefers initializing UIs on-demand; that is, the UI basically doesn't exist until it is necessary.</p>
 <p>When working with UIs where this is a concern, it is recommended to implement a pooling system to reuse elements. Avoid clearing and re-creating lists of hundreds of elements - instead reuse existing instances.</p>
 <p>QuickInventory and Codex sections that inherit from <code>Features.Codex.Sections.Grid</code> are good examples of implementing pooling for an inventory-like UI, massively improving responsiveness after the creation of the elements.</p>
-<h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
+<h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">¶</a></h3>
 <p>Since user interaction in Generic is driven through events in Lua, it's theoretically possible to implement instrumented tests for UIs by invoking those events to spoof user interaction.</p>
-<h3 id="wrong-container-size-when-using-prefabs">Wrong container size when using prefabs<a class="headerlink" href="#wrong-container-size-when-using-prefabs" title="Permanent link">&para;</a></h3>
+<h3 id="wrong-container-size-when-using-prefabs">Wrong container size when using prefabs<a class="headerlink" href="#wrong-container-size-when-using-prefabs" title="Permanent link">¶</a></h3>
 <p>Container size is by default recalculated upon adding an element; in the case of adding prefabs, this happens when the root of the prefab is added. As such, the container will use the size of the first element created by the prefab, before any other element creation or calls. To address positioning issues, you should call <code>RepositionElements()</code> on the container after all elements are added and initialized. Disabling auto-positioning with <code>SetRepositionAfterAdding()</code> in this case might improve performance.</p>
-<h3 id="overlay-uis">Overlay UIs<a class="headerlink" href="#overlay-uis" title="Permanent link">&para;</a></h3>
+<h3 id="overlay-uis">Overlay UIs<a class="headerlink" href="#overlay-uis" title="Permanent link">¶</a></h3>
 <p>Though overlay UIs are an overall good solution to extending vanilla UIs, regular ones made in Flash still have moddability issues. Two mods overlaying the same part of a UI is gonna result in a visual conflict with both of them overlapping.</p>
 <p>The recommended solution for this problem in Generic (assuming both mods are using it) is to insert elements of one overlay UI onto the other as a compatibility measure.</p>
 <p>If you have mod A and B both with an overlay UI that extends a similar area of the vanilla UI, mod B could check for mod A being loaded and if it is, instead of creating its own overlay UI, mod B could add its own overlay elements into the Generic UI of mod A.</p>
 <p>This of course only works reliably if mod A offers a stable UI structure, which is why it's not recommended to change element IDs or keys of element references in the UI table in new versions of your mod.</p>
 <p>With that in mind there is little reason to create overlay UIs for Generic UIs. It is far simpler and reliable to simply insert your elements within the UI itself.</p>
-<h3 id="colored-translucency-in-textures">Colored translucency in textures<a class="headerlink" href="#colored-translucency-in-textures" title="Permanent link">&para;</a></h3>
+<h3 id="colored-translucency-in-textures">Colored translucency in textures<a class="headerlink" href="#colored-translucency-in-textures" title="Permanent link">¶</a></h3>
 <p>Textures with low alpha and colored (non-grayscale) areas just don't appear to render correctly. The low-alpha areas will appear much brighter than expected and may exhibit strange blending with UIs below it. DDS color format and compression chosen doesn't seem to have an effect on this; it is suspected to be either an Iggy bug or a bug within the texture-to-bitmap engine function.</p>
-<p><img alt="Example of bugged translucency." src="../../../../../img/docs/generic/translucency.png" /></p>
+<p><img alt="Example of bugged translucency." src="../../../../../img/docs/generic/translucency.png"></p>
 <p>Textures with black dropshadows or brownish backgrounds like the one in the example screenshot appear fine. The exact alpha+color combinations that cause this issue are unknown.</p>
-<p><doc class="GenericUI"></p>
-<h1 id="genericui-class">GenericUI Class<a class="headerlink" href="#genericui-class" title="Permanent link">&para;</a></h1>
+<p><doc class="GenericUI"></doc></p>
+<h1 id="genericui-class">GenericUI Class<a class="headerlink" href="#genericui-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Feature</code>.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">GenericUI</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">layer</span><span class="p">)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">GenericUI_Instance</span>
 </code></pre></div>
@@ -1520,41 +1520,41 @@ In v1066, measures have been taken to minimize the amount of DisplayObjects crea
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>layer</b> <code>integer?</code> Defaults to `DEFAULT_LAYER`.</p>
 
-<h5 id="getinstance">GetInstance<a class="headerlink" href="#getinstance" title="Permanent link">&para;</a></h5>
+<h5 id="getinstance">GetInstance<a class="headerlink" href="#getinstance" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">GenericUI</span><span class="p">.</span><span class="nf">GetInstance</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">GenericUI_Instance</span>
 </code></pre></div>
 <p>Returns the instance of a Generic UI by its identifier.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string|integer</code> String ID of the UI or its TypeID.</p>
 
-<h5 id="getprefab">GetPrefab<a class="headerlink" href="#getprefab" title="Permanent link">&para;</a></h5>
+<h5 id="getprefab">GetPrefab<a class="headerlink" href="#getprefab" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">GenericUI</span><span class="p">.</span><span class="nf">GetPrefab</span><span class="p">(</span><span class="n">className</span><span class="p">)</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">T</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>`T`|GenericUI_PrefabClass</code></p>
 
-<h5 id="inherit">Inherit<a class="headerlink" href="#inherit" title="Permanent link">&para;</a></h5>
+<h5 id="inherit">Inherit<a class="headerlink" href="#inherit" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">GenericUI</span><span class="p">.</span><span class="nf">Inherit</span><span class="p">(</span><span class="n">tbl1</span><span class="p">,</span> <span class="n">tbl2</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tbl1</b> <code>table</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tbl2</b> <code>table</code></p>
 
-<h5 id="registerelementtype">RegisterElementType<a class="headerlink" href="#registerelementtype" title="Permanent link">&para;</a></h5>
+<h5 id="registerelementtype">RegisterElementType<a class="headerlink" href="#registerelementtype" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">GenericUI</span><span class="p">.</span><span class="nf">RegisterElementType</span><span class="p">(</span><span class="n">elementType</span><span class="p">,</span> <span class="n">elementTable</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>elementType</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>elementTable</b> <code>GenericUI_Element</code></p>
 
-<h5 id="registerprefab">RegisterPrefab<a class="headerlink" href="#registerprefab" title="Permanent link">&para;</a></h5>
+<h5 id="registerprefab">RegisterPrefab<a class="headerlink" href="#registerprefab" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">GenericUI</span><span class="p">.</span><span class="nf">RegisterPrefab</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">prefab</span><span class="p">)</span>
 </code></pre></div>
 <p>Registers a prefab.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>prefab</b> <code>table</code></p>
-<p></doc></p>
+<p></p></div>
 
 
   

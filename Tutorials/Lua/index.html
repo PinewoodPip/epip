@@ -1243,23 +1243,23 @@
 
   <h1>Index</h1>
 
-<h2 id="lua-tutorial">Lua Tutorial<a class="headerlink" href="#lua-tutorial" title="Permanent link">&para;</a></h2>
+<div><h2 id="lua-tutorial">Lua Tutorial<a class="headerlink" href="#lua-tutorial" title="Permanent link">¶</a></h2>
 <p>The following is an Extender-focused lua tutorial. It is intended to teach you how to use lua with the Script Extender assuming no prior knowledge of the language, just programming basics (variables, control structures, classes etc.)</p>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
 <p>Lua is an interpreted, functional, dynamically-typed language with possibility for prototype-based object-oriented programming. It is intended to be embedded within other applications (in this case, within the extender/game), offering high-level scripting.</p>
 <p>In the context of the Script Extender, it offers new forms of interaction with the game by allowing read/write access to the internal game object classes, as well as additional events to listen for.</p>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">¶</a></h2>
 <p>Lua scripts are stored within the <code>Mods/MyMod-GUID/Story/RawFiles/Lua</code> folder and are loaded if the mod is active. Prior to creating lua scripts, you must enable the functionality by configuring a <code>OsiToolsConfig.json</code> file within the <code>Mods/MyMod-GUID</code> folder. The basic configuration is the following:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &quot;RequiredExtensionVersion&quot;: 56,
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;ModTable&quot;: &quot;MyMod&quot;,
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &quot;FeatureFlags&quot;: [
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        &quot;OsirisExtensions&quot;,
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        &quot;Lua&quot;,
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        &quot;Preprocessor&quot;
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    "RequiredExtensionVersion": 56,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    "ModTable": "MyMod",
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    "FeatureFlags": [
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        "OsirisExtensions",
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        "Lua",
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        "Preprocessor"
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    ]
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>}
-</code></pre></div></p>
+</code></pre></div>
 <p>Fields:
 - <code>RequiredExtensionVersion</code>: determines the minimum Script Extender version that the mod requires. Set this to the current version as of the time of your mod's creation, and increment it as you start using features from later versions. An error message box will be shown to users if they try to use your mod with an outdated Script Extender.
 - <code>ModTable</code>: determines the lua table that your mod's variables will be put into. Set this to a unique identifier. We'll get to its use later.
@@ -1269,13 +1269,13 @@
 - Server: the part of the game that runs nearly all the logic (ex. damage calculations, Story scripting) and lets players connect to it.
 - Client: the game application that connects to the server, displays the game state and allows user interaction. In human words, the game window. Each game instance is one client (players in splitscreen use the same client).</p>
 <p>As the 2 contexts server different purposes, they differ in the information that is accessible in each. For example, the user interface (character sheet, inventory, etc.) only exists for clients, while Story scripting only runs on the server. As such, lua scripting is also split between Client and Server scripting so you can cleanly separate your functionality based on context.</p>
-<h2 id="lua-basics">Lua Basics<a class="headerlink" href="#lua-basics" title="Permanent link">&para;</a></h2>
-<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<h2 id="lua-basics">Lua Basics<a class="headerlink" href="#lua-basics" title="Permanent link">¶</a></h2>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">¶</a></h3>
 <p>Lua is an interpreted, dynamically-typed language. This means there is no need to compile it, the raw <code>.lua</code> file is loaded by the extender and interpreted line-by-line. Being dynamically-typed means that variables do not need to be declared with a type, and instead can be assigned and reassigned freely to any value, as is the case in Python for example.</p>
 <p>Variables are declared and assigned as the following (semicolons at the end of lines are optional):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span> <span class="n">myVar</span> <span class="o">=</span> <span class="mi">1</span>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span> <span class="n">myVar</span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre></div>
-The <code>local</code> keyword is optional, and restricts the variable to the current context (the function/file, more precisely a "chunk"). Non-local variables are global.</p>
+The <code>local</code> keyword is optional, and restricts the variable to the current context (the function/file, more precisely a "chunk"). Non-local variables are global.
 <p>The following types exist in lua:
 - <code>nil</code> (null)
 - <code>number</code>
@@ -1286,35 +1286,35 @@ The <code>local</code> keyword is optional, and restricts the variable to the cu
 - <code>userdata</code> (garbage-collected values also accessible from C)
 - <code>lightuserdata</code> (C pointers)</p>
 <p>The concept of the first few should be familiar, while the latter are more lua-specific and we'll cover them later, for now focusing instead on functions and tables.</p>
-<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
+<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h3>
 <p>Functions can be defined in multiple ways, the simplest one being:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nf">MyFunc</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">)</span>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nf">MyFunc</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c1">-- Code here!</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kr">end</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Note that comments in lua start with 2 dashes (<code>--</code>).</p>
 <p>Functions can be given the local modifier as well, and any number of arguments, with no type specification.</p>
 <p>It is important to note that as lua is not a class-based language, there is no overloading. Creating a new <code>function MyFunc</code> after the first one will override that function no matter if its signature is different. Additionally, since functions are types, assigning <code>MyFunc = something</code> will also override the function!</p>
 <p>Lua functions can also be called with any amount of parameters, regardless of definition - we'll go into more detail on that quirk later.</p>
 <p><strong>Functions and tables are passed by reference.</strong> (TODO remark that this does not mean you can "alter" them outside their context)</p>
-<h3 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">&para;</a></h3>
+<h3 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">¶</a></h3>
 <p>Tables are lua's take on <em>objects</em>. If you've done JavaScript or other prototype-based languages, they will be easy to understand.</p>
 <p>A table-type variable is defined, in its simplest form, like this:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">local</span> <span class="n">myTable</span> <span class="o">=</span> <span class="p">{}</span>
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">local</span> <span class="n">myTable</span> <span class="o">=</span> <span class="p">{}</span>
+</code></pre></div>
 <p>Tables are the basic, extendable object in lua. You may set and retrieve values on them by indexing them:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">myTable</span><span class="p">[</span><span class="s2">&quot;key1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">myTable</span><span class="p">[</span><span class="s2">"key1"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">-- This also works (if no spaces or special characters)</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">myTable</span><span class="p">.</span><span class="n">key2</span> <span class="o">=</span> <span class="mi">2</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">myTable</span><span class="p">.</span><span class="n">key1</span><span class="p">)</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">myTable</span><span class="p">[</span><span class="s2">&quot;key2&quot;</span><span class="p">])</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">myTable</span><span class="p">[</span><span class="s2">"key2"</span><span class="p">])</span>
 </code></pre></div>
-<h2 id="working-with-the-extender">Working with the Extender<a class="headerlink" href="#working-with-the-extender" title="Permanent link">&para;</a></h2>
-<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
+<h2 id="working-with-the-extender">Working with the Extender<a class="headerlink" href="#working-with-the-extender" title="Permanent link">¶</a></h2>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">¶</a></h3>
 <p>So far the tutorial has introduced lua basics, but with no explanation on how we'll be interfacing with the game with it.</p>
 <p>Lua scripting in the extender is primarily event-driven, as is Story scripting. You register listener functions for built-in events to react to things occurring in the game.</p>
-<p>TODO</p>
+<p>TODO</p></div>
 
 
   

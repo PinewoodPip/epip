@@ -1250,14 +1250,14 @@
                   
 
 
-<h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+<div><h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">¶</a></h1>
 <p>The features of Epip Encounters are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.</p>
 <p>Since late 2021, the focus of development has shifted to making the internals of the mod available as libraries, aiming to provide utility, better maintainability, extendability and easy manipulation of UIs from lua.</p>
 <p>The ultimate goal is to make the mod easy for someone else to continue working on after/if I depart - EE is an overhaul built to last and be tinkered with, and I would like to honor that in my own project.</p>
 <p>This change will be a long process. There are still many features of the mod that remain to be rewritten to the new standards and methodology, or extended to provide functionality beyond what the current mod needs.</p>
 <p>Anything that is documented here is considered stable and unlikely to change drastically - <strong>any changes to these calls/systems will be mentioned in future patch notes.</strong></p>
 <p>The definitions here are auto-generated from EmmyLua annotations within the scripts (using <code>update_docs.py</code> found in the mod). Functions are tagged through <code>@meta</code> to denote tags like "Client-only", "EE-only". Declaring these at the top of the file tags all functions in the file.</p>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
 <p>The mod's root table contains the following tables:</p>
 <ul>
 <li><code>Epip</code>: stores references to "Features" and metadata related to the mod.</li>
@@ -1268,14 +1268,14 @@
 <p>The scripting in Epip Encounters focuses on event-driven programming. Aside from functions, systems and features tend to implement events and hooks which allow other scripts to react to them being raised.</p>
 <p>Event listeners allow you to react to events sent from scripts. They can receive parameters and are executed in the order that they were registered.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Listen for the shift key being pressed/unpressed.</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Client</span><span class="p">.</span><span class="n">Input</span><span class="p">:</span><span class="n">RegisterListener</span><span class="p">(</span><span class="s2">&quot;SneakConesToggled&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">pressed</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sneak cones toggled: &quot;</span> <span class="o">..</span> <span class="n">pressed</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Client</span><span class="p">.</span><span class="n">Input</span><span class="p">:</span><span class="n">RegisterListener</span><span class="p">(</span><span class="s2">"SneakConesToggled"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">pressed</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sneak cones toggled: "</span> <span class="o">..</span> <span class="n">pressed</span><span class="p">)</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kr">end</span><span class="p">)</span>
 </code></pre></div>
 <p>Hooks are similar to event listeners, but are used to modify values calculated within functions. Their purpose is to allow scripts to alter the logic or output of functions. A hook is always passed a "default value" as its first parameter, which will be used if no listeners choose to act upon the event.</p>
 <p>Any script can implement events/hooks, and it's easy to add "parameters" to registering listeners as well, to filter their execution conditonally.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- Set opacity for Battered/Harried stack backgrounds in the health bar based on if the amount if enough to inflict a T3.</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Client</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">EnemyHealthBar</span><span class="p">:</span><span class="n">RegisterHook</span><span class="p">(</span><span class="s2">&quot;GetStackOpacity&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">opacity</span><span class="p">,</span> <span class="n">stack</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Client</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">EnemyHealthBar</span><span class="p">:</span><span class="n">RegisterHook</span><span class="p">(</span><span class="s2">"GetStackOpacity"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">opacity</span><span class="p">,</span> <span class="n">stack</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="kd">local</span> <span class="n">threshold</span> <span class="o">=</span> <span class="n">Game</span><span class="p">.</span><span class="n">Character</span><span class="p">.</span><span class="n">GetStacksNeededToInflictTier3</span><span class="p">(</span><span class="n">Client</span><span class="p">.</span><span class="n">GetCharacter</span><span class="p">())</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="kr">if</span> <span class="n">amount</span> <span class="o">&gt;=</span> <span class="n">threshold</span> <span class="kr">then</span>
@@ -1291,16 +1291,16 @@
 </code></pre></div>
 <p>Hooks are not limited to changing primitives, they are often also used in UI scripts to allow for manipulation of the data that the engine is passing it, parsed into handy tables. The following example adds Critical Chance to the Examine UI.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Add Critical Chance to the examine menu when its data is being updated.</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Client</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Examine</span><span class="p">:</span><span class="n">RegisterHook</span><span class="p">(</span><span class="s2">&quot;Update&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">examineData</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Client</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Examine</span><span class="p">:</span><span class="n">RegisterHook</span><span class="p">(</span><span class="s2">"Update"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">examineData</span><span class="p">)</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="kd">local</span> <span class="n">char</span> <span class="o">=</span> <span class="n">Client</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Examine</span><span class="p">.</span><span class="n">GetCharacter</span><span class="p">()</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="c1">-- Only do this for characters being examined</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="kr">if</span> <span class="n">char</span> <span class="kr">then</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="kd">local</span> <span class="n">critEntry</span> <span class="o">=</span> <span class="p">{</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            <span class="n">id</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Critical Chance&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="n">label</span> <span class="o">=</span> <span class="s2">"Critical Chance"</span><span class="p">,</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>            <span class="n">iconID</span> <span class="o">=</span> <span class="n">Client</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Examine</span><span class="p">.</span><span class="n">ICONS</span><span class="p">.</span><span class="n">CRITICAL_CHANCE</span><span class="p">,</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="n">value</span> <span class="o">=</span> <span class="nb">string.format</span><span class="p">(</span><span class="s2">&quot;%d%%&quot;</span><span class="p">,</span> <span class="n">char</span><span class="p">.</span><span class="n">Stats</span><span class="p">.</span><span class="n">CriticalChance</span><span class="p">),</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="n">value</span> <span class="o">=</span> <span class="nb">string.format</span><span class="p">(</span><span class="s2">"%d%%"</span><span class="p">,</span> <span class="n">char</span><span class="p">.</span><span class="n">Stats</span><span class="p">.</span><span class="n">CriticalChance</span><span class="p">),</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>            <span class="nb">type</span> <span class="o">=</span> <span class="n">Client</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Examine</span><span class="p">.</span><span class="n">ENTRY_TYPES</span><span class="p">.</span><span class="n">STAT</span><span class="p">,</span>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="p">}</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
@@ -1313,22 +1313,22 @@
 <a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="kr">return</span> <span class="n">examineData</span>
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="kr">end</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="aliases">Aliases<a class="headerlink" href="#aliases" title="Permanent link">&para;</a></h3>
+<h3 id="aliases">Aliases<a class="headerlink" href="#aliases" title="Permanent link">¶</a></h3>
 <p>The following EmmyLua aliases are defined (in <code>EpipIdeHelpers.lua</code>):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">---@alias Entity EclCharacter | EsvCharacter | EclItem | EsvItem</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">---@alias Character EsvCharacter | EclCharacter</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">---@alias Item EclItem | EsvItem</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">---@alias EquipSlot &quot;Helmet&quot; | &quot;Breast&quot; | &quot;Leggings&quot; | &quot;Weapon&quot; | &quot;Shield&quot; | &quot;Ring&quot; | &quot;Belt&quot; | &quot;Boots&quot; | &quot;Gloves&quot; | &quot;Amulet&quot; | &quot;Ring&quot; | &quot;Ring2&quot; | &quot;Horns&quot; | &quot;Overhead&quot;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">---@alias EquipmentSubType &quot;Platemail&quot; | &quot;Robes&quot; | &quot;Leather&quot; | &quot;Belt&quot; | &quot;Ring&quot; | &quot;Amulet&quot; | &quot;Shield&quot; | &quot;Dagger&quot; | &quot;Sword&quot; | &quot;Axe&quot; | &quot;Mace&quot; | &quot;Sword&quot; | &quot;Spear&quot; | &quot;Staff&quot; | &quot;Bow&quot; | &quot;Crossbow&quot; | &quot;Wand&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">---@alias EquipSlot "Helmet" | "Breast" | "Leggings" | "Weapon" | "Shield" | "Ring" | "Belt" | "Boots" | "Gloves" | "Amulet" | "Ring" | "Ring2" | "Horns" | "Overhead"</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">---@alias EquipmentSubType "Platemail" | "Robes" | "Leather" | "Belt" | "Ring" | "Amulet" | "Shield" | "Dagger" | "Sword" | "Axe" | "Mace" | "Sword" | "Spear" | "Staff" | "Bow" | "Crossbow" | "Wand"</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1">---@alias StackType &quot;Battered&quot; | &quot;B&quot; | &quot;Harried&quot; | &quot;H&quot;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1">---@alias StackType "Battered" | "B" | "Harried" | "H"</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">---@alias Gender &quot;Male&quot; | &quot;Female&quot;</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">---@alias Race &quot;Human&quot; | &quot;Elf&quot; | &quot;Dwarf&quot; | &quot;Lizard&quot;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">---@alias Gender "Male" | "Female"</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">---@alias Race "Human" | "Elf" | "Dwarf" | "Lizard"</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">---@alias Keyword &quot;ViolentStrike&quot; | &quot;VitalityVoid&quot; | &quot;Predator&quot; | &quot;Elementalist&quot; | &quot;Prosperity&quot; | &quot;Paucity&quot; | &quot;IncarnateChampion&quot; | &quot;Defiance&quot; | &quot;Occultist&quot; | &quot;Disintegrate&quot; | &quot;Wither&quot; | &quot;Centurion&quot; | &quot;Abeyance&quot; | &quot;Benevolence&quot; | &quot;Presence&quot; | &quot;Ward&quot; | &quot;Celestial&quot; | &quot;Purity&quot; | &quot;VolatileArmor&quot; | &quot;Voracity&quot;</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">---@alias KeywordBoonType &quot;Activator&quot; | &quot;Mutator&quot;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">---@alias Keyword "ViolentStrike" | "VitalityVoid" | "Predator" | "Elementalist" | "Prosperity" | "Paucity" | "IncarnateChampion" | "Defiance" | "Occultist" | "Disintegrate" | "Wither" | "Centurion" | "Abeyance" | "Benevolence" | "Presence" | "Ward" | "Celestial" | "Purity" | "VolatileArmor" | "Voracity"</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">---@alias KeywordBoonType "Activator" | "Mutator"</span>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1">-- For doc generation; does not actually work in IDE</span>
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1">---@class Event</span>
@@ -1338,7 +1338,7 @@
 <a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="c1">-- UI</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="c1">---------------------------------------------</span>
 <a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="c1">---@alias MessageBoxType &quot;Message&quot; | &quot;Input&quot;</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="c1">---@alias MessageBoxType "Message" | "Input"</span>
 <a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
 <a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="c1">---------------------------------------------</span>
 <a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="c1">-- GAME.TOOLTIP</span>
@@ -1371,7 +1371,7 @@
 <a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="c1">---@param ele table</span>
 <a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="c1">---@param appendAfter table</span>
 <a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="kr">function</span> <span class="nc">TooltipData</span><span class="p">:</span><span class="nf">AppendElementAfter</span><span class="p">(</span><span class="n">ele</span><span class="p">,</span> <span class="n">appendAfter</span><span class="p">)</span> <span class="kr">end</span>
-</code></pre></div>
+</code></pre></div></div>
 
 
   

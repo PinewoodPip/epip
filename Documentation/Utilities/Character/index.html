@@ -1180,13 +1180,13 @@
                   
 
 
-<h1 id="character">Character<a class="headerlink" href="#character" title="Permanent link">&para;</a></h1>
+<div><h1 id="character">Character<a class="headerlink" href="#character" title="Permanent link">¶</a></h1>
 <p>The <code>Character</code> library contains utility methods relating to characters. The vast majority of them are available on both contexts.</p>
-<p><doc class="CharacterLib"></p>
-<h1 id="characterlib-class">CharacterLib Class<a class="headerlink" href="#characterlib-class" title="Permanent link">&para;</a></h1>
+<p><doc class="CharacterLib"></doc></p>
+<h1 id="characterlib-class">CharacterLib Class<a class="headerlink" href="#characterlib-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Library</code>.</p>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h4 id="statusapplied-event">StatusApplied (event)<a class="headerlink" href="#statusapplied-event" title="Permanent link">&para;</a></h4>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
+<h4 id="statusapplied-event">StatusApplied (event)<a class="headerlink" href="#statusapplied-event" title="Permanent link">¶</a></h4>
 <p>TODO move somewhere else, since victim could be an item</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>SourceHandle</b> <code>EntityHandle</code></p>
 
@@ -1194,14 +1194,14 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Status</b> <code>EclStatus|EsvStatus</code></p>
 
-<h4 id="itemequipped-event">ItemEquipped (event)<a class="headerlink" href="#itemequipped-event" title="Permanent link">&para;</a></h4>
+<h4 id="itemequipped-event">ItemEquipped (event)<a class="headerlink" href="#itemequipped-event" title="Permanent link">¶</a></h4>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Item</b> <code>Item</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Slot</b> <code>ItemSlot</code></p>
 
-<h4 id="createequipmentvisuals-hook">CreateEquipmentVisuals (hook)<a class="headerlink" href="#createequipmentvisuals-hook" title="Permanent link">&para;</a></h4>
+<h4 id="createequipmentvisuals-hook">CreateEquipmentVisuals (hook)<a class="headerlink" href="#createequipmentvisuals-hook" title="Permanent link">¶</a></h4>
 <p>Client-only.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Character</b> <code>EclCharacter</code></p>
 
@@ -1211,8 +1211,8 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>RawEvent</b> <code>EclLuaCreateEquipmentVisualsRequestEvent</code></p>
 
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="canuseskill">CanUseSkill<a class="headerlink" href="#canuseskill" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="canuseskill">CanUseSkill<a class="headerlink" href="#canuseskill" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">CanUseSkill</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">skillID</span><span class="p">,</span> <span class="n">itemSource</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1223,7 +1223,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>itemSource</b> <code>Item?</code></p>
 
-<h5 id="get">Get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h5>
+<h5 id="get">Get<a class="headerlink" href="#get" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">isFlashHandle</span><span class="p">)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">Character</span>
 </code></pre></div>
@@ -1231,62 +1231,62 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>isFlashHandle</b> <code>boolean?</code> If true, the identifier will be passed through DoubleToHandle() first.</p>
 
-<h5 id="getactionpoints">GetActionPoints<a class="headerlink" href="#getactionpoints" title="Permanent link">&para;</a></h5>
+<h5 id="getactionpoints">GetActionPoints<a class="headerlink" href="#getactionpoints" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetActionPoints</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="p">,</span> <span class="n">integer</span> <span class="c1">-- Current, maximum</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getcombatid">GetCombatID<a class="headerlink" href="#getcombatid" title="Permanent link">&para;</a></h5>
+<h5 id="getcombatid">GetCombatID<a class="headerlink" href="#getcombatid" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetCombatID</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="err">?</span> <span class="c1">-- The combat ID and team ID. `nil` if the character is not in combat. This is different from the osi query, which returns a reserved value.</span>
 </code></pre></div>
 <p>Returns the combat ID and team ID of char, if any.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getcurrentskill">GetCurrentSkill<a class="headerlink" href="#getcurrentskill" title="Permanent link">&para;</a></h5>
+<h5 id="getcurrentskill">GetCurrentSkill<a class="headerlink" href="#getcurrentskill" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetCurrentSkill</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="err">?</span> <span class="c1">-- `nil` if the character has no active skill state.</span>
 </code></pre></div>
 <p>Returns the ID of the skill that char is preparing or casting.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getdynamicstat">GetDynamicStat<a class="headerlink" href="#getdynamicstat" title="Permanent link">&para;</a></h5>
+<h5 id="getdynamicstat">GetDynamicStat<a class="headerlink" href="#getdynamicstat" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetDynamicStat</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">statName</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>statName</b> <code>string</code></p>
 
-<h5 id="getequippeditems">GetEquippedItems<a class="headerlink" href="#getequippeditems" title="Permanent link">&para;</a></h5>
+<h5 id="getequippeditems">GetEquippedItems<a class="headerlink" href="#getequippeditems" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetEquippedItems</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">table</span><span class="o">&lt;</span><span class="n">ItemSlot</span><span class="p">,</span> <span class="n">EclItem</span><span class="o">&gt;</span>
 </code></pre></div>
 <p>Returns the equipped items of char, per slot.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getexperience">GetExperience<a class="headerlink" href="#getexperience" title="Permanent link">&para;</a></h5>
+<h5 id="getexperience">GetExperience<a class="headerlink" href="#getexperience" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetExperience</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
 </code></pre></div>
 <p>Returns the current experience points of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getexperiencerequiredforlevel">GetExperienceRequiredForLevel<a class="headerlink" href="#getexperiencerequiredforlevel" title="Permanent link">&para;</a></h5>
+<h5 id="getexperiencerequiredforlevel">GetExperienceRequiredForLevel<a class="headerlink" href="#getexperiencerequiredforlevel" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetExperienceRequiredForLevel</span><span class="p">(</span><span class="n">targetLevel</span><span class="p">)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span> <span class="c1">-- Experience points.</span>
 </code></pre></div>
 <p>Returns the <strong>cumulative</strong> experience required to reach a level.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>targetLevel</b> <code>integer</code></p>
 
-<h5 id="getgender">GetGender<a class="headerlink" href="#getgender" title="Permanent link">&para;</a></h5>
+<h5 id="getgender">GetGender<a class="headerlink" href="#getgender" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetGender</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">Gender</span>
 </code></pre></div>
 <p>Returns the gender of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="gethighestpartyability">GetHighestPartyAbility<a class="headerlink" href="#gethighestpartyability" title="Permanent link">&para;</a></h5>
+<h5 id="gethighestpartyability">GetHighestPartyAbility<a class="headerlink" href="#gethighestpartyability" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetHighestPartyAbility</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">ability</span><span class="p">)</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
 </code></pre></div>
@@ -1295,42 +1295,42 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>ability</b> <code>string</code> Needs to be a property indexable in char.Stats</p>
 
-<h5 id="getinitiative">GetInitiative<a class="headerlink" href="#getinitiative" title="Permanent link">&para;</a></h5>
+<h5 id="getinitiative">GetInitiative<a class="headerlink" href="#getinitiative" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetInitiative</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
 </code></pre></div>
 <p>Returns the initiative of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getlevel">GetLevel<a class="headerlink" href="#getlevel" title="Permanent link">&para;</a></h5>
+<h5 id="getlevel">GetLevel<a class="headerlink" href="#getlevel" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetLevel</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
 </code></pre></div>
 <p>Returns the level of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getmaxcarryweight">GetMaxCarryWeight<a class="headerlink" href="#getmaxcarryweight" title="Permanent link">&para;</a></h5>
+<h5 id="getmaxcarryweight">GetMaxCarryWeight<a class="headerlink" href="#getmaxcarryweight" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetMaxCarryWeight</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span> <span class="c1">-- In &quot;grams&quot;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span> <span class="c1">-- In "grams"</span>
 </code></pre></div>
 <p>Returns the maximum carry weight of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getmovement">GetMovement<a class="headerlink" href="#getmovement" title="Permanent link">&para;</a></h5>
+<h5 id="getmovement">GetMovement<a class="headerlink" href="#getmovement" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetMovement</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span> <span class="c1">-- In centimeters.</span>
 </code></pre></div>
 <p>Returns the calculated movement stat of a character.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getowner">GetOwner<a class="headerlink" href="#getowner" title="Permanent link">&para;</a></h5>
+<h5 id="getowner">GetOwner<a class="headerlink" href="#getowner" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetOwner</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   <span class="o">-&gt;</span> <span class="n">Character</span><span class="err">?</span>
 </code></pre></div>
 <p>Returns the character's owner, if it is a summon or party follower(?).</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getpartymembers">GetPartyMembers<a class="headerlink" href="#getpartymembers" title="Permanent link">&para;</a></h5>
+<h5 id="getpartymembers">GetPartyMembers<a class="headerlink" href="#getpartymembers" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetPartyMembers</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="n">EclCharacter</span><span class="p">[]</span> <span class="n">Includes</span> <span class="n">the</span> <span class="n">char</span> <span class="n">passed</span> <span class="n">per</span> <span class="n">param</span><span class="p">.</span><span class="c1">-- the char passed per param.</span>
 </code></pre></div>
@@ -1338,28 +1338,28 @@
 <p>Depends on PlayerInfo.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
 
-<h5 id="getpartymembers_1">GetPartyMembers<a class="headerlink" href="#getpartymembers_1" title="Permanent link">&para;</a></h5>
+<h5 id="getpartymembers_1">GetPartyMembers<a class="headerlink" href="#getpartymembers_1" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetPartyMembers</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Server-only)</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>   <span class="o">-&gt;</span> <span class="n">EsvCharacter</span><span class="p">[]</span> <span class="n">Includes</span> <span class="n">the</span> <span class="n">char</span> <span class="n">passed</span> <span class="n">per</span> <span class="n">param</span><span class="p">.</span><span class="c1">-- the char passed per param.</span>
 </code></pre></div>
 <p>Returns a list of party members of char's party. Char must be a player.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code></p>
 
-<h5 id="getrace">GetRace<a class="headerlink" href="#getrace" title="Permanent link">&para;</a></h5>
+<h5 id="getrace">GetRace<a class="headerlink" href="#getrace" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetRace</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   <span class="o">-&gt;</span> <span class="n">Race</span>
 </code></pre></div>
 <p>Returns the current race of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getrealrace">GetRealRace<a class="headerlink" href="#getrealrace" title="Permanent link">&para;</a></h5>
+<h5 id="getrealrace">GetRealRace<a class="headerlink" href="#getrealrace" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetRealRace</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>   <span class="o">-&gt;</span> <span class="n">Race</span>
 </code></pre></div>
 <p>Returns the original race of a player char, before any transforms.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code> Must be tagged with "REALLY_{Race}"</p>
 
-<h5 id="getresistance">GetResistance<a class="headerlink" href="#getresistance" title="Permanent link">&para;</a></h5>
+<h5 id="getresistance">GetResistance<a class="headerlink" href="#getresistance" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetResistance</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">damageType</span><span class="p">,</span> <span class="n">baseValuesOnly</span><span class="p">)</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
 </code></pre></div>
@@ -1370,7 +1370,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>baseValuesOnly</b> <code>boolean?</code> If `true`, base value will be returned. Defaults to `false`.</p>
 
-<h5 id="getskillbarrowcontents">GetSkillBarRowContents<a class="headerlink" href="#getskillbarrowcontents" title="Permanent link">&para;</a></h5>
+<h5 id="getskillbarrowcontents">GetSkillBarRowContents<a class="headerlink" href="#getskillbarrowcontents" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetSkillBarRowContents</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">slotsPerRow</span><span class="p">)</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>   <span class="o">-&gt;</span> <span class="n">EocSkillBarItem</span><span class="p">[]</span>
 </code></pre></div>
@@ -1381,7 +1381,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>slotsPerRow</b> <code>integer?</code> Defaults to 29.</p>
 
-<h5 id="getskillstate">GetSkillState<a class="headerlink" href="#getskillstate" title="Permanent link">&para;</a></h5>
+<h5 id="getskillstate">GetSkillState<a class="headerlink" href="#getskillstate" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetSkillState</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   <span class="o">-&gt;</span> <span class="p">(</span><span class="n">EclSkillState</span><span class="o">|</span><span class="n">EsvSkillState</span><span class="p">)</span><span class="err">?</span>
 </code></pre></div>
@@ -1389,14 +1389,14 @@
 <p><strong>On the server, this can only return the state while using the skill. Preparation state cannot be accessed.</strong></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getsourcepoints">GetSourcePoints<a class="headerlink" href="#getsourcepoints" title="Permanent link">&para;</a></h5>
+<h5 id="getsourcepoints">GetSourcePoints<a class="headerlink" href="#getsourcepoints" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetSourcePoints</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="p">,</span> <span class="n">integer</span> <span class="c1">-- Current and maximum points.</span>
 </code></pre></div>
 <p>Returns the current and maximum source points of char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="getstatusbyhandle">GetStatusByHandle<a class="headerlink" href="#getstatusbyhandle" title="Permanent link">&para;</a></h5>
+<h5 id="getstatusbyhandle">GetStatusByHandle<a class="headerlink" href="#getstatusbyhandle" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetStatusByHandle</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">handle</span><span class="p">)</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>   <span class="o">-&gt;</span> <span class="n">EclStatus</span><span class="o">|</span><span class="n">EsvStatus</span>
 </code></pre></div>
@@ -1405,7 +1405,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>EntityHandle</code></p>
 
-<h5 id="getstatusbynetid">GetStatusByNetID<a class="headerlink" href="#getstatusbynetid" title="Permanent link">&para;</a></h5>
+<h5 id="getstatusbynetid">GetStatusByNetID<a class="headerlink" href="#getstatusbynetid" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetStatusByNetID</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">netID</span><span class="p">)</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>   <span class="o">-&gt;</span> <span class="n">EclStatus</span><span class="o">|</span><span class="n">EsvStatus</span>
 </code></pre></div>
@@ -1414,21 +1414,21 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>netID</b> <code>NetId</code></p>
 
-<h5 id="getstatusesfromitems">GetStatusesFromItems<a class="headerlink" href="#getstatusesfromitems" title="Permanent link">&para;</a></h5>
+<h5 id="getstatusesfromitems">GetStatusesFromItems<a class="headerlink" href="#getstatusesfromitems" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">GetStatusesFromItems</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>   <span class="o">-&gt;</span> <span class="n">CharacterLib_StatusFromItem</span><span class="p">[]</span>
 </code></pre></div>
 <p>Returns a list of statuses the character has from its equipped items.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="hasdagger">HasDagger<a class="headerlink" href="#hasdagger" title="Permanent link">&para;</a></h5>
+<h5 id="hasdagger">HasDagger<a class="headerlink" href="#hasdagger" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasDagger</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char has a dagger equipped in either slot.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="hasimmunity">HasImmunity<a class="headerlink" href="#hasimmunity" title="Permanent link">&para;</a></h5>
+<h5 id="hasimmunity">HasImmunity<a class="headerlink" href="#hasimmunity" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasImmunity</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">immunityName</span><span class="p">)</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1437,110 +1437,110 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>immunityName</b> <code>StatsLib_ImmunityID</code></p>
 
-<h5 id="hasmeleeweapon">HasMeleeWeapon<a class="headerlink" href="#hasmeleeweapon" title="Permanent link">&para;</a></h5>
+<h5 id="hasmeleeweapon">HasMeleeWeapon<a class="headerlink" href="#hasmeleeweapon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasMeleeWeapon</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char has a melee weapon equipped in either slot.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="hasowner">HasOwner<a class="headerlink" href="#hasowner" title="Permanent link">&para;</a></h5>
+<h5 id="hasowner">HasOwner<a class="headerlink" href="#hasowner" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasOwner</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char has an owner.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="hasrangedweapon">HasRangedWeapon<a class="headerlink" href="#hasrangedweapon" title="Permanent link">&para;</a></h5>
+<h5 id="hasrangedweapon">HasRangedWeapon<a class="headerlink" href="#hasrangedweapon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasRangedWeapon</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char has a bow or crossbow equipped.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="hasshield">HasShield<a class="headerlink" href="#hasshield" title="Permanent link">&para;</a></h5>
+<h5 id="hasshield">HasShield<a class="headerlink" href="#hasshield" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">HasShield</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char has a shield equipped.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isactive">IsActive<a class="headerlink" href="#isactive" title="Permanent link">&para;</a></h5>
+<h5 id="isactive">IsActive<a class="headerlink" href="#isactive" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsActive</span><span class="p">()</span>
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is currently the active character of any player.</p>
-<h5 id="iscastingskill">IsCastingSkill<a class="headerlink" href="#iscastingskill" title="Permanent link">&para;</a></h5>
+<h5 id="iscastingskill">IsCastingSkill<a class="headerlink" href="#iscastingskill" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsCastingSkill</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is casting a skill.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isdead">IsDead<a class="headerlink" href="#isdead" title="Permanent link">&para;</a></h5>
+<h5 id="isdead">IsDead<a class="headerlink" href="#isdead" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsDead</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if the character is dead.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isdisarmed">IsDisarmed<a class="headerlink" href="#isdisarmed" title="Permanent link">&para;</a></h5>
+<h5 id="isdisarmed">IsDisarmed<a class="headerlink" href="#isdisarmed" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsDisarmed</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is disarmed.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isignoredbyai">IsIgnoredByAI<a class="headerlink" href="#isignoredbyai" title="Permanent link">&para;</a></h5>
+<h5 id="isignoredbyai">IsIgnoredByAI<a class="headerlink" href="#isignoredbyai" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsIgnoredByAI</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is ignored by AI.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isincombat">IsInCombat<a class="headerlink" href="#isincombat" title="Permanent link">&para;</a></h5>
+<h5 id="isincombat">IsInCombat<a class="headerlink" href="#isincombat" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsInCombat</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether the character is in a combat.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isinstealth">IsInStealth<a class="headerlink" href="#isinstealth" title="Permanent link">&para;</a></h5>
+<h5 id="isinstealth">IsInStealth<a class="headerlink" href="#isinstealth" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsInStealth</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is sneaking or invisible.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isinvisible">IsInvisible<a class="headerlink" href="#isinvisible" title="Permanent link">&para;</a></h5>
+<h5 id="isinvisible">IsInvisible<a class="headerlink" href="#isinvisible" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsInvisible</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is invisible - as in, has the INVISIBLE status.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="ismale">IsMale<a class="headerlink" href="#ismale" title="Permanent link">&para;</a></h5>
+<h5 id="ismale">IsMale<a class="headerlink" href="#ismale" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsMale</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if char is male.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="ismuted">IsMuted<a class="headerlink" href="#ismuted" title="Permanent link">&para;</a></h5>
+<h5 id="ismuted">IsMuted<a class="headerlink" href="#ismuted" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsMuted</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is muted.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isorigin">IsOrigin<a class="headerlink" href="#isorigin" title="Permanent link">&para;</a></h5>
+<h5 id="isorigin">IsOrigin<a class="headerlink" href="#isorigin" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsOrigin</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is a non-generic origin.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isplayer">IsPlayer<a class="headerlink" href="#isplayer" title="Permanent link">&para;</a></h5>
+<h5 id="isplayer">IsPlayer<a class="headerlink" href="#isplayer" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsPlayer</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1549,20 +1549,20 @@
 <p>including summons and party followers.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="ispreferredbyai">IsPreferredByAI<a class="headerlink" href="#ispreferredbyai" title="Permanent link">&para;</a></h5>
+<h5 id="ispreferredbyai">IsPreferredByAI<a class="headerlink" href="#ispreferredbyai" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsPreferredByAI</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="ispreparingskill">IsPreparingSkill<a class="headerlink" href="#ispreparingskill" title="Permanent link">&para;</a></h5>
+<h5 id="ispreparingskill">IsPreparingSkill<a class="headerlink" href="#ispreparingskill" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsPreparingSkill</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is preparing a skill.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isskillinnate">IsSkillInnate<a class="headerlink" href="#isskillinnate" title="Permanent link">&para;</a></h5>
+<h5 id="isskillinnate">IsSkillInnate<a class="headerlink" href="#isskillinnate" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSkillInnate</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">skillID</span><span class="p">)</span>
 <a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1572,7 +1572,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code></p>
 
-<h5 id="isskilllearnt">IsSkillLearnt<a class="headerlink" href="#isskilllearnt" title="Permanent link">&para;</a></h5>
+<h5 id="isskilllearnt">IsSkillLearnt<a class="headerlink" href="#isskilllearnt" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSkillLearnt</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">skillID</span><span class="p">)</span>
 <a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1581,7 +1581,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code></p>
 
-<h5 id="isskillmemorized">IsSkillMemorized<a class="headerlink" href="#isskillmemorized" title="Permanent link">&para;</a></h5>
+<h5 id="isskillmemorized">IsSkillMemorized<a class="headerlink" href="#isskillmemorized" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSkillMemorized</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">skillID</span><span class="p">)</span>
 <a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1590,41 +1590,41 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>skillID</b> <code>string</code></p>
 
-<h5 id="issneaking">IsSneaking<a class="headerlink" href="#issneaking" title="Permanent link">&para;</a></h5>
+<h5 id="issneaking">IsSneaking<a class="headerlink" href="#issneaking" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSneaking</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is sneaking.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="issummon">IsSummon<a class="headerlink" href="#issummon" title="Permanent link">&para;</a></h5>
+<h5 id="issummon">IsSummon<a class="headerlink" href="#issummon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsSummon</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if char is a summon.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isundead">IsUndead<a class="headerlink" href="#isundead" title="Permanent link">&para;</a></h5>
+<h5 id="isundead">IsUndead<a class="headerlink" href="#isundead" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsUndead</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if char is undead.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isunpreferredbyai">IsUnpreferredByAI<a class="headerlink" href="#isunpreferredbyai" title="Permanent link">&para;</a></h5>
+<h5 id="isunpreferredbyai">IsUnpreferredByAI<a class="headerlink" href="#isunpreferredbyai" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsUnpreferredByAI</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char is unpreferred by AI.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
 
-<h5 id="isunsheathed">IsUnsheathed<a class="headerlink" href="#isunsheathed" title="Permanent link">&para;</a></h5>
+<h5 id="isunsheathed">IsUnsheathed<a class="headerlink" href="#isunsheathed" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="kr">function</span> <span class="nc">CharacterLib</span><span class="p">.</span><span class="nf">IsUnsheathed</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char has their weapon(s) unsheathed.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character</code></p>
-<p></doc></p>
+<p></p></div>
 
 
   

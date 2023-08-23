@@ -1276,17 +1276,17 @@
 
   <h1>Testing</h1>
 
-<p>Testing and debugging mods in-game can be made a lot easier with the extender.</p>
-<h2 id="script-extender-console">Script Extender Console<a class="headerlink" href="#script-extender-console" title="Permanent link">&para;</a></h2>
+<div><p>Testing and debugging mods in-game can be made a lot easier with the extender.</p>
+<h2 id="script-extender-console">Script Extender Console<a class="headerlink" href="#script-extender-console" title="Permanent link">¶</a></h2>
 <p>Enabled by setting <code>CreateConsole</code> to <code>true</code> in <code>OsirisExtenderSettings.json</code>, the extender console logs messages from the extender, as well as lua scripting and osiris DebugBreaks.</p>
 <p>The console can also be used to run lua code (and therefore osiris as well). Pressing enter in the console window will enter the lua console, in server context by default. Typing <code>server</code>/<code>client</code> switches between the lua contexts.</p>
-<h3 id="running-osiris">Running Osiris<a class="headerlink" href="#running-osiris" title="Permanent link">&para;</a></h3>
+<h3 id="running-osiris">Running Osiris<a class="headerlink" href="#running-osiris" title="Permanent link">¶</a></h3>
 <p>Calls, events and queries from the base game can be called directly, executing right away:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">CharacterGetHostCharacter</span><span class="p">())</span>
 </code></pre></div>
 <p>Note that for queries, no out parameters are specified; they are instead returned as variables. Lua supports multiple returns per call, and the print function will print them all in order. User queries return true for success and false for failure - you have to lookup the return DBs yourself.</p>
 <p>For custom symbols, you must add an <code>Osi.</code> prefix (the Osi table is used to resolve custom osiris symbols, whereas the Larian ones are in the global table/scope):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Osi</span><span class="p">.</span><span class="n">PROC_AMER_GEN_OpenQueuedMessageBox</span><span class="p">(</span><span class="n">CharacterGetHostCharacter</span><span class="p">(),</span> <span class="s2">&quot;Test&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Osi</span><span class="p">.</span><span class="n">PROC_AMER_GEN_OpenQueuedMessageBox</span><span class="p">(</span><span class="n">CharacterGetHostCharacter</span><span class="p">(),</span> <span class="s2">"Test"</span><span class="p">)</span>
 </code></pre></div>
 <p>DBs can be interacted with in all the usual manners:</p>
 <ul>
@@ -1295,27 +1295,27 @@
 <li>Deleted with the delete function: <code>Osi.DB_MyDB:Delete(param1, param2, ...)</code>. Once again, <code>nil</code> can be used as a wildcard.</li>
 </ul>
 <p>Querying DBs returns a list of all the valid tuples. In the console, the <code>Ext.Dump()</code> function can be used to print values as json. A useful shorthand for the function is <code>_D()</code>:</p>
-<p><img alt="Dumping a DB." src="../dump.png" /></p>
+<p><img alt="Dumping a DB." src="../dump.png"></p>
 <p>As of v56, all extender objects can be dumped as well, revealing their mapped properties and methods:</p>
-<p><img alt="Dumping an ItemColor." src="../stat_dump.png" /></p>
+<p><img alt="Dumping an ItemColor." src="../stat_dump.png"></p>
 <p>The <code>_C()</code> function is a shorthand for returning the currently active character, available on both client and server.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>S &gt;&gt; print(_C())
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>esv::Character (00007FF4C7E13200)
 </code></pre></div>
 <p>Note that this returns an extender character object (<code>esv::Character</code>), not the GUID. The GUID of most objects is mapped to the <code>.MyGuid</code> property, and it's what you have to use for osiris:</p>
-<p><img alt="Calling an osiris symbol with an EsvCharacter." src="../char_print.png" /></p>
+<p><img alt="Calling an osiris symbol with an EsvCharacter." src="../char_print.png"></p>
 <p>The boolean type is automatically converted to <code>0</code>/<code>1</code> when used in a call, but queries will still return integers.</p>
 <p>On the client context, <code>_E()</code> returns the character currently being examined in the examine UI.</p>
-<h2 id="epip-helpers">Epip Helpers<a class="headerlink" href="#epip-helpers" title="Permanent link">&para;</a></h2>
+<h2 id="epip-helpers">Epip Helpers<a class="headerlink" href="#epip-helpers" title="Permanent link">¶</a></h2>
 <p>Epip has some easy-to-use features to make testing ingame easier, if <code>DeveloperMode</code> is set to <code>true</code> in <code>OsirisExtenderSettings.json</code>.</p>
 <p>The most important of these is the Force Story Patching setting in the mod's settings menu. It will cause story compilation and patching to occur on any session load, making it far more convenient to test script changes ingame. This and other debug settings are always at the top of the menu, only visible in developer mode.</p>
 <p>The other useful, non-UI-related tool is the cheat context menu, accessed by right-clicking a character in the world or a player portrait on the left:</p>
-<p><img alt="Cheat debug menu." src="../cheat_context_menu.png" /></p>
+<p><img alt="Cheat debug menu." src="../cheat_context_menu.png"></p>
 <p>The "Copy GUID to clipboard" option is self-explanatory. "Teleport to object" teleports the character to another character, item, or trigger, by its GUID. You can combine these two options to quickly teleport party members to eachother.</p>
 <p>"Pipmode" grants immortality, instantly-refreshing cooldowns, as well as infinite AP and SP. The options following it allow you to grant EE scripted stats to the character, with +/- buttons. Holding the "Show sneak cones" key (shift by default) adds/removes 10 points at a time. <strong>The longer menus can be scrolled with the mouse wheel, though it doesn't look intuitive at the moment.</strong> You may also add SpecialLogic and spells through a popup box:</p>
-<p><img alt="Adding a spell." src="../add_spell.png" /></p>
+<p><img alt="Adding a spell." src="../add_spell.png"></p>
 <p>Lastly, the "Items..." submenu allows you to spawn item templates, generate treasure loot onto yourself, as well as quickly spawning in all artifacts and runes (can take a while to have it all generate!).</p>
-<h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">&para;</a></h2>
+<h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">¶</a></h2>
 <p>I have a simple AutoHotkey script for modding, with the following macros:</p>
 <ul>
 <li><code>Ctrl+M4</code>: focuses the console. M4 is the mouse side button that performs the 'back' function.</li>
@@ -1323,9 +1323,9 @@
 <li><code>Shift+M5</code>: focuses VS Code.</li>
 <li><code>Ctrl+R</code>: resets lua scripts (types <code>reset</code> in the console), sets some Epip tables to be available from the global context in the client console, then focuses the game.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">ConsoleWindowClass</span> <span class="o">:=</span> <span class="s">&quot;ConsoleWindowClass&quot;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">GameWindowClass</span> <span class="o">:=</span> <span class="s">&quot;SDL_app&quot;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">ConsoleWindow</span> <span class="o">:=</span> <span class="s">&quot;D:OS2 Script Extender Debug Console&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">ConsoleWindowClass</span> <span class="o">:=</span> <span class="s">"ConsoleWindowClass"</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">GameWindowClass</span> <span class="o">:=</span> <span class="s">"SDL_app"</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">ConsoleWindow</span> <span class="o">:=</span> <span class="s">"D:OS2 Script Extender Debug Console"</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nl">^r::</span><span class="n">LuaReset</span><span class="p">()</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
@@ -1368,7 +1368,7 @@
 <a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>    <span class="nb">WinGet</span><span class="p">,</span> <span class="n">PID</span><span class="p">,</span> <span class="n">PID</span><span class="p">,</span> <span class="n">ahk_exe</span> <span class="n">Code</span><span class="o">.</span><span class="n">exe</span>
 <a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>    <span class="nb">WinActivate</span><span class="p">,</span> <span class="n">ahk_pid</span> <span class="nv">%PID%</span>
 <a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
 
 
   

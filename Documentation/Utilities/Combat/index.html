@@ -1180,47 +1180,47 @@
                   
 
 
-<h1 id="combat">Combat<a class="headerlink" href="#combat" title="Permanent link">&para;</a></h1>
+<div><h1 id="combat">Combat<a class="headerlink" href="#combat" title="Permanent link">¶</a></h1>
 <p>The <code>Combat</code> library contains methods for querying information about ongoing combats.</p>
-<p><doc class="CombatLib"></p>
-<h1 id="combatlib-class">CombatLib Class<a class="headerlink" href="#combatlib-class" title="Permanent link">&para;</a></h1>
+<p><doc class="CombatLib"></doc></p>
+<h1 id="combatlib-class">CombatLib Class<a class="headerlink" href="#combatlib-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Library</code>.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="getactivecombatant">GetActiveCombatant<a class="headerlink" href="#getactivecombatant" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="getactivecombatant">GetActiveCombatant<a class="headerlink" href="#getactivecombatant" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">CombatLib</span><span class="p">.</span><span class="nf">GetActiveCombatant</span><span class="p">()</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">CombatLib_CombatCompatibleEntity</span>
 </code></pre></div>
 <p>Returns the current active combatant in a combat.</p>
-<h5 id="getcombat">GetCombat<a class="headerlink" href="#getcombat" title="Permanent link">&para;</a></h5>
+<h5 id="getcombat">GetCombat<a class="headerlink" href="#getcombat" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">CombatLib</span><span class="p">.</span><span class="nf">GetCombat</span><span class="p">(</span><span class="n">combatID</span><span class="p">)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">EclTurnManagerCombat</span><span class="o">|</span><span class="n">EsvTurnManagerCombat</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>combatID</b> <code>integer</code></p>
 
-<h5 id="getcombatcomponent">GetCombatComponent<a class="headerlink" href="#getcombatcomponent" title="Permanent link">&para;</a></h5>
+<h5 id="getcombatcomponent">GetCombatComponent<a class="headerlink" href="#getcombatcomponent" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">CombatLib</span><span class="p">.</span><span class="nf">GetCombatComponent</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">EocCombatComponent</span><span class="err">?</span> <span class="c1">-- `nil` if the entity does not have the component.</span>
 </code></pre></div>
 <p>Returns the combat component of an entity.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>entity</b> <code>CombatLib_CombatCompatibleEntity</code></p>
 
-<h5 id="getcombatid">GetCombatID<a class="headerlink" href="#getcombatid" title="Permanent link">&para;</a></h5>
+<h5 id="getcombatid">GetCombatID<a class="headerlink" href="#getcombatid" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">CombatLib</span><span class="p">.</span><span class="nf">GetCombatID</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="err">?</span> <span class="c1">-- `nil` if the entity is not in combat.</span>
 </code></pre></div>
 <p>Returns the combat ID of an entity.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>entity</b> <code>CombatLib_CombatCompatibleEntity</code></p>
 
-<h5 id="getturnmanager">GetTurnManager<a class="headerlink" href="#getturnmanager" title="Permanent link">&para;</a></h5>
+<h5 id="getturnmanager">GetTurnManager<a class="headerlink" href="#getturnmanager" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">CombatLib</span><span class="p">.</span><span class="nf">GetTurnManager</span><span class="p">()</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">EclTurnManager</span><span class="o">|</span><span class="n">EsvTurnManager</span>
 </code></pre></div>
-<h5 id="getturnorder">GetTurnOrder<a class="headerlink" href="#getturnorder" title="Permanent link">&para;</a></h5>
+<h5 id="getturnorder">GetTurnOrder<a class="headerlink" href="#getturnorder" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">CombatLib</span><span class="p">.</span><span class="nf">GetTurnOrder</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">CombatLib_TurnOrder</span>
 </code></pre></div>
 <p>Returns the character participants of a combat.
-</doc></p>
+</p></div>
 
 
   

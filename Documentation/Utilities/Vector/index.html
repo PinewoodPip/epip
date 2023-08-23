@@ -1180,7 +1180,7 @@
                   
 
 
-<h1 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h1>
+<div><h1 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">¶</a></h1>
 <p>The <code>Vector</code> library offers a numeric vector data structure and methods to work with them.</p>
 <p>They are intended to be used as immutables. All methods and operators return a new instance of the output vector.</p>
 <p><code>Vector</code> objects implement various operators; the binary ones only usable for vectors of the same arity:</p>
@@ -1192,11 +1192,11 @@
 </ul>
 <p>Additionally, <code>vector.Arity</code> or <code>vector.Length</code> will return the amount of elements in the vector.</p>
 <p>In Epip, their primary use is semantic clarity for functions that require 2D coordinates as parameters.</p>
-<p><doc class="VectorLib"></p>
-<h1 id="vectorlib-class">VectorLib Class<a class="headerlink" href="#vectorlib-class" title="Permanent link">&para;</a></h1>
+<p><doc class="VectorLib"></doc></p>
+<h1 id="vectorlib-class">VectorLib Class<a class="headerlink" href="#vectorlib-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Library</code>.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="areequal">AreEqual<a class="headerlink" href="#areequal" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="areequal">AreEqual<a class="headerlink" href="#areequal" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">AreEqual</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
 </code></pre></div>
 <p>Returns whether 2 vectors are equal.</p>
@@ -1205,18 +1205,18 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v2</b> <code>Vector</code></p>
 
-<h5 id="clone">Clone<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h5>
+<h5 id="clone">Clone<a class="headerlink" href="#clone" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Clone</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>vector</b> <code>Vector</code></p>
 
-<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h5>
+<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Create</span><span class="p">()</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
 </code></pre></div>
 <p>Creates a vector of variable length.</p>
-<h5 id="dotproduct">DotProduct<a class="headerlink" href="#dotproduct" title="Permanent link">&para;</a></h5>
+<h5 id="dotproduct">DotProduct<a class="headerlink" href="#dotproduct" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">DotProduct</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
@@ -1225,25 +1225,25 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v2</b> <code>Vector</code></p>
 
-<h5 id="getlength">GetLength<a class="headerlink" href="#getlength" title="Permanent link">&para;</a></h5>
+<h5 id="getlength">GetLength<a class="headerlink" href="#getlength" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">GetLength</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>vector</b> <code>Vector</code></p>
 
-<h5 id="getnormalized">GetNormalized<a class="headerlink" href="#getnormalized" title="Permanent link">&para;</a></h5>
+<h5 id="getnormalized">GetNormalized<a class="headerlink" href="#getnormalized" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">GetNormalized</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span> <span class="n">New</span> <span class="n">instance</span><span class="p">;</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">mutate</span><span class="p">.</span><span class="c1">-- instance; does not mutate.</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>vector</b> <code>Vector</code></p>
 
-<h5 id="negate">Negate<a class="headerlink" href="#negate" title="Permanent link">&para;</a></h5>
+<h5 id="negate">Negate<a class="headerlink" href="#negate" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Negate</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v</b> <code>Vector</code></p>
 
-<h5 id="scalarproduct">ScalarProduct<a class="headerlink" href="#scalarproduct" title="Permanent link">&para;</a></h5>
+<h5 id="scalarproduct">ScalarProduct<a class="headerlink" href="#scalarproduct" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">ScalarProduct</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">scalar</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
 </code></pre></div>
@@ -1252,7 +1252,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>scalar</b> <code>number</code></p>
 
-<h5 id="subtract">Subtract<a class="headerlink" href="#subtract" title="Permanent link">&para;</a></h5>
+<h5 id="subtract">Subtract<a class="headerlink" href="#subtract" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Subtract</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
 </code></pre></div>
@@ -1261,7 +1261,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v2</b> <code>Vector</code></p>
 
-<h5 id="sum">Sum<a class="headerlink" href="#sum" title="Permanent link">&para;</a></h5>
+<h5 id="sum">Sum<a class="headerlink" href="#sum" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Sum</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
 </code></pre></div>
@@ -1269,7 +1269,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v1</b> <code>Vector</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v2</b> <code>Vector</code></p>
-<p></doc></p>
+<p></p></div>
 
 
   

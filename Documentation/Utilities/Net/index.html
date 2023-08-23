@@ -1180,31 +1180,31 @@
                   
 
 
-<h1 id="net">Net<a class="headerlink" href="#net" title="Permanent link">&para;</a></h1>
+<div><h1 id="net">Net<a class="headerlink" href="#net" title="Permanent link">¶</a></h1>
 <p>The <code>Net</code> library offers wrapper methods to make working with network messages easier. Its main feature is automatically stringifying messages, removing the need to do so explicitly when using tables.</p>
 <p>Additionally, <code>Net.RegisterListener()</code> provides a way to register net listeners with IDE hints for the function parameters. This is done by defining a class with the name of the net message, for example:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">---@class EPIPENCOUNTERS_Vanity_ApplyAura : NetMessage, Net_SimpleMessage_NetID</span>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">---@class EPIPENCOUNTERS_Vanity_ApplyAura : NetMessage, Net_SimpleMessage_NetID</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">---@field AuraID string</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">---@field BoneID string</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">Net</span><span class="p">.</span><span class="n">RegisterListener</span><span class="p">(</span><span class="s2">&quot;EPIPENCOUNTERS_Vanity_ApplyAura&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">Net</span><span class="p">.</span><span class="n">RegisterListener</span><span class="p">(</span><span class="s2">"EPIPENCOUNTERS_Vanity_ApplyAura"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="c1">-- The payload variable here will be of the type EPIPENCOUNTERS_Vanity_ApplyAura and offer auto-completion!</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kr">end</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Additionally, for purposes of semantic clarity, a <code>NetMessage</code> class exists for denoting net events. Several other net message classes are defined with commonly used fields like <code>CharacterNetID</code>. You may have your net message classes inherit from these to reduce annotation duplication and to clarify the class's purpose as a net message.</p>
-<p><doc class="NetLib"></p>
-<h1 id="netlib-class">NetLib Class<a class="headerlink" href="#netlib-class" title="Permanent link">&para;</a></h1>
+<p><doc class="NetLib"></doc></p>
+<h1 id="netlib-class">NetLib Class<a class="headerlink" href="#netlib-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Library</code>.</p>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h4 id="messagereceived-event">MessageReceived (event)<a class="headerlink" href="#messagereceived-event" title="Permanent link">&para;</a></h4>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
+<h4 id="messagereceived-event">MessageReceived (event)<a class="headerlink" href="#messagereceived-event" title="Permanent link">¶</a></h4>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Channel</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Message</b> <code>`T`|any</code> Will be a primitive if the payload sent wasn't a table.</p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>UserID</b> <code>UserId</code></p>
 
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="broadcast">Broadcast<a class="headerlink" href="#broadcast" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="broadcast">Broadcast<a class="headerlink" href="#broadcast" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">NetLib</span><span class="p">.</span><span class="nf">Broadcast</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">excludedChar</span><span class="p">)</span>
 </code></pre></div>
 <p>Sends a message to all peers.</p>
@@ -1214,7 +1214,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>excludedChar</b> <code>GUID?</code></p>
 
-<h5 id="posttocharacter">PostToCharacter<a class="headerlink" href="#posttocharacter" title="Permanent link">&para;</a></h5>
+<h5 id="posttocharacter">PostToCharacter<a class="headerlink" href="#posttocharacter" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">NetLib</span><span class="p">.</span><span class="nf">PostToCharacter</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 </code></pre></div>
 <p>Sends a message to the user that currently controls char. Fails if char is a summon.</p>
@@ -1224,7 +1224,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code></p>
 
-<h5 id="posttoowner">PostToOwner<a class="headerlink" href="#posttoowner" title="Permanent link">&para;</a></h5>
+<h5 id="posttoowner">PostToOwner<a class="headerlink" href="#posttoowner" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">NetLib</span><span class="p">.</span><span class="nf">PostToOwner</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 </code></pre></div>
 <p>Sends a message to the owner of char. Use if you suspect the char might be a summon.</p>
@@ -1234,7 +1234,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>message</b> <code>any</code></p>
 
-<h5 id="posttouser">PostToUser<a class="headerlink" href="#posttouser" title="Permanent link">&para;</a></h5>
+<h5 id="posttouser">PostToUser<a class="headerlink" href="#posttouser" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">NetLib</span><span class="p">.</span><span class="nf">PostToUser</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">excludedChar</span><span class="p">)</span>
 </code></pre></div>
 <p>Sends a message to a user.</p>
@@ -1246,14 +1246,14 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>excludedChar</b> <code>GUID?</code></p>
 
-<h5 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">&para;</a></h5>
+<h5 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">NetLib</span><span class="p">.</span><span class="nf">RegisterListener</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
 </code></pre></div>
 <p>Wrapper for Ext.RegisterNetListener that parses json payloads and fires an event afterwards.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>func</b> <code>fun(payload:`T`)</code></p>
-<p></doc></p>
+<p></p></div>
 
 
   

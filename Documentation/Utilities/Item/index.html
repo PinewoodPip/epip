@@ -1180,13 +1180,13 @@
                   
 
 
-<h1 id="item">Item<a class="headerlink" href="#item" title="Permanent link">&para;</a></h1>
+<div><h1 id="item">Item<a class="headerlink" href="#item" title="Permanent link">¶</a></h1>
 <p>The <code>Item</code> library contains methods relating to item game objects.</p>
-<p><doc class="ItemLib"></p>
-<h1 id="itemlib-class">ItemLib Class<a class="headerlink" href="#itemlib-class" title="Permanent link">&para;</a></h1>
+<p><doc class="ItemLib"></doc></p>
+<h1 id="itemlib-class">ItemLib Class<a class="headerlink" href="#itemlib-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Library</code>.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="applydye">ApplyDye<a class="headerlink" href="#applydye" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="applydye">ApplyDye<a class="headerlink" href="#applydye" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">ApplyDye</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">dye</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span> <span class="n">False</span> <span class="kr">if</span> <span class="n">item</span> <span class="n">is</span> <span class="n">already</span> <span class="n">dyed</span> <span class="n">with</span> <span class="n">the</span> <span class="n">same</span> <span class="n">dye</span><span class="p">,</span> <span class="ow">or</span> <span class="kr">if</span> <span class="n">dye</span> <span class="n">is</span> <span class="err">``</span><span class="kc">nil</span><span class="err">``</span><span class="p">.</span><span class="c1">-- if item is already dyed with the same dye, or if dye is ``nil``.</span>
 </code></pre></div>
@@ -1195,7 +1195,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>dye</b> <code>Dye</code></p>
 
-<h5 id="canuse">CanUse<a class="headerlink" href="#canuse" title="Permanent link">&para;</a></h5>
+<h5 id="canuse">CanUse<a class="headerlink" href="#canuse" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">CanUse</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1204,7 +1204,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="countitemsininventory">CountItemsInInventory<a class="headerlink" href="#countitemsininventory" title="Permanent link">&para;</a></h5>
+<h5 id="countitemsininventory">CountItemsInInventory<a class="headerlink" href="#countitemsininventory" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">CountItemsInInventory</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">predicate</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
@@ -1214,7 +1214,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>predicate</b> <code>fun(item: EsvItem)</code></p>
 
-<h5 id="get">Get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h5>
+<h5 id="get">Get<a class="headerlink" href="#get" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">isFlashHandle</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">Item</span>
 </code></pre></div>
@@ -1222,7 +1222,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>isFlashHandle</b> <code>boolean?</code></p>
 
-<h5 id="getcontaineditems">GetContainedItems<a class="headerlink" href="#getcontaineditems" title="Permanent link">&para;</a></h5>
+<h5 id="getcontaineditems">GetContainedItems<a class="headerlink" href="#getcontaineditems" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetContainedItems</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">predicate</span><span class="p">)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">Item</span><span class="p">[]</span>
 </code></pre></div>
@@ -1231,14 +1231,14 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>predicate</b> <code>(fun(item:Item):boolean)?</code> The predicate should return `true` for items to be included. If `nil`, all items will be included.</p>
 
-<h5 id="getcurrentdye">GetCurrentDye<a class="headerlink" href="#getcurrentdye" title="Permanent link">&para;</a></h5>
+<h5 id="getcurrentdye">GetCurrentDye<a class="headerlink" href="#getcurrentdye" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetCurrentDye</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="p">,</span><span class="n">Dye</span> <span class="n">The</span> <span class="n">dye</span> <span class="n">ID</span> <span class="ow">and</span> <span class="n">data</span> <span class="n">table</span><span class="p">.</span><span class="c1">-- dye ID and data table.</span>
 </code></pre></div>
 <p>Returns the ID and data for the most recently-applied dye deltamod on the item.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getequipmentsubtype">GetEquipmentSubtype<a class="headerlink" href="#getequipmentsubtype" title="Permanent link">&para;</a></h5>
+<h5 id="getequipmentsubtype">GetEquipmentSubtype<a class="headerlink" href="#getequipmentsubtype" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetEquipmentSubtype</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">ItemLib_EquipmentType</span><span class="o">|</span><span class="n">ItemSlot</span>
 </code></pre></div>
@@ -1246,7 +1246,7 @@
 <p>Returns ItemSlot for items with no subtypes.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getequippeditem">GetEquippedItem<a class="headerlink" href="#getequippeditem" title="Permanent link">&para;</a></h5>
+<h5 id="getequippeditem">GetEquippedItem<a class="headerlink" href="#getequippeditem" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetEquippedItem</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">slot</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">Item</span><span class="err">?</span>
 </code></pre></div>
@@ -1254,7 +1254,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>slot</b> <code>ItemSlot</code></p>
 
-<h5 id="getequippedslot">GetEquippedSlot<a class="headerlink" href="#getequippedslot" title="Permanent link">&para;</a></h5>
+<h5 id="getequippedslot">GetEquippedSlot<a class="headerlink" href="#getequippedslot" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetEquippedSlot</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">EquipSlot</span><span class="err">?</span>
 </code></pre></div>
@@ -1263,7 +1263,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>Character?</code> Defaults to item's owner.</p>
 
-<h5 id="geticon">GetIcon<a class="headerlink" href="#geticon" title="Permanent link">&para;</a></h5>
+<h5 id="geticon">GetIcon<a class="headerlink" href="#geticon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetIcon</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
@@ -1271,7 +1271,7 @@
 <p>Fetching the icon is technically different per context; the server only cares about root template icon (except for the gold template). This function uses the client logic (which also checks icon override and icon from stats).</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getidentifyrequirement">GetIdentifyRequirement<a class="headerlink" href="#getidentifyrequirement" title="Permanent link">&para;</a></h5>
+<h5 id="getidentifyrequirement">GetIdentifyRequirement<a class="headerlink" href="#getidentifyrequirement" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetIdentifyRequirement</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
@@ -1279,14 +1279,14 @@
 <p>Ignores whether the item is already identified.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getitemslot">GetItemSlot<a class="headerlink" href="#getitemslot" title="Permanent link">&para;</a></h5>
+<h5 id="getitemslot">GetItemSlot<a class="headerlink" href="#getitemslot" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetItemSlot</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">ItemSlot</span><span class="err">?</span> <span class="c1">-- Nil if the item has no stats.</span>
 </code></pre></div>
 <p>Alias for Item.Stats.ItemSlot</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getitemsininventory">GetItemsInInventory<a class="headerlink" href="#getitemsininventory" title="Permanent link">&para;</a></h5>
+<h5 id="getitemsininventory">GetItemsInInventory<a class="headerlink" href="#getitemsininventory" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetItemsInInventory</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">predicate</span><span class="p">)</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">Item</span><span class="p">[]</span>
 </code></pre></div>
@@ -1296,7 +1296,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>predicate</b> <code>fun(item: Item)</code></p>
 
-<h5 id="getitemsinpartyinventory">GetItemsInPartyInventory<a class="headerlink" href="#getitemsinpartyinventory" title="Permanent link">&para;</a></h5>
+<h5 id="getitemsinpartyinventory">GetItemsInPartyInventory<a class="headerlink" href="#getitemsinpartyinventory" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetItemsInPartyInventory</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">predicate</span><span class="p">)</span>
 </code></pre></div>
 <p>Returns all items in the party inventory of char matching the predicate, or all if no predicate is passed.</p>
@@ -1304,21 +1304,21 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>predicate</b> <code>fun(item:Item)</code></p>
 
-<h5 id="getlevel">GetLevel<a class="headerlink" href="#getlevel" title="Permanent link">&para;</a></h5>
+<h5 id="getlevel">GetLevel<a class="headerlink" href="#getlevel" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetLevel</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="err">?</span> <span class="c1">-- `nil` if the item has no stats.</span>
 </code></pre></div>
 <p>Returns the level of an item.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getnamedboosts">GetNamedBoosts<a class="headerlink" href="#getnamedboosts" title="Permanent link">&para;</a></h5>
+<h5 id="getnamedboosts">GetNamedBoosts<a class="headerlink" href="#getnamedboosts" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetNamedBoosts</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="p">[]</span>
 </code></pre></div>
 <p>Returns a list of the named boosts on the item.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getowner">GetOwner<a class="headerlink" href="#getowner" title="Permanent link">&para;</a></h5>
+<h5 id="getowner">GetOwner<a class="headerlink" href="#getowner" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetOwner</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="n">Character</span><span class="err">?</span>
 </code></pre></div>
@@ -1326,27 +1326,27 @@
 <p>The owner will be nil if the character who owned the item died.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getpartytemplatecount">GetPartyTemplateCount<a class="headerlink" href="#getpartytemplatecount" title="Permanent link">&para;</a></h5>
+<h5 id="getpartytemplatecount">GetPartyTemplateCount<a class="headerlink" href="#getpartytemplatecount" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetPartyTemplateCount</span><span class="p">(</span><span class="n">template</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
 <p>Count the amount of template instances (prefix + guid) in the client party's inventory.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>template</b> <code>string</code></p>
 
-<h5 id="getrarityicon">GetRarityIcon<a class="headerlink" href="#getrarityicon" title="Permanent link">&para;</a></h5>
+<h5 id="getrarityicon">GetRarityIcon<a class="headerlink" href="#getrarityicon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetRarityIcon</span><span class="p">(</span><span class="n">rarity</span><span class="p">)</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   <span class="o">-&gt;</span> <span class="n">icon</span><span class="err">?</span> <span class="c1">-- Not all rarities have icons.</span>
 </code></pre></div>
 <p>Returns the icon frame for a rarity, if any.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>rarity</b> <code>ItemLib_Rarity|EclItem</code></p>
 
-<h5 id="getrarityname">GetRarityName<a class="headerlink" href="#getrarityname" title="Permanent link">&para;</a></h5>
+<h5 id="getrarityname">GetRarityName<a class="headerlink" href="#getrarityname" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetRarityName</span><span class="p">(</span><span class="n">rarity</span><span class="p">)</span>
 </code></pre></div>
 <p>Returns the name of a rarity.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>rarity</b> <code>Item|ItemLib_Rarity</code></p>
 
-<h5 id="getrune">GetRune<a class="headerlink" href="#getrune" title="Permanent link">&para;</a></h5>
+<h5 id="getrune">GetRune<a class="headerlink" href="#getrune" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetRune</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>   <span class="o">-&gt;</span> <span class="n">StatItem</span>
 </code></pre></div>
@@ -1355,35 +1355,35 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>index</b> <code>integer</code> **0-based.**</p>
 
-<h5 id="getruneslots">GetRuneSlots<a class="headerlink" href="#getruneslots" title="Permanent link">&para;</a></h5>
+<h5 id="getruneslots">GetRuneSlots<a class="headerlink" href="#getruneslots" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetRuneSlots</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
 </code></pre></div>
 <p>Returns the amount of rune slots an item has.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getruneslotsicon">GetRuneSlotsIcon<a class="headerlink" href="#getruneslotsicon" title="Permanent link">&para;</a></h5>
+<h5 id="getruneslotsicon">GetRuneSlotsIcon<a class="headerlink" href="#getruneslotsicon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetRuneSlotsIcon</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   <span class="o">-&gt;</span> <span class="n">icon</span><span class="err">?</span> <span class="c1">-- `nil` if the item has no rune slots.</span>
 </code></pre></div>
 <p>Returns the icon displaying the state of item's rune slots.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getrunes">GetRunes<a class="headerlink" href="#getrunes" title="Permanent link">&para;</a></h5>
+<h5 id="getrunes">GetRunes<a class="headerlink" href="#getrunes" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetRunes</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>   <span class="o">-&gt;</span> <span class="n">table</span><span class="o">&lt;</span><span class="n">number</span><span class="p">,</span> <span class="n">StatItem</span><span class="o">&gt;</span> <span class="c1">-- Empty slots are nil.</span>
 </code></pre></div>
 <p>Returns a list of runes on the item.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getuseapcost">GetUseAPCost<a class="headerlink" href="#getuseapcost" title="Permanent link">&para;</a></h5>
+<h5 id="getuseapcost">GetUseAPCost<a class="headerlink" href="#getuseapcost" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetUseAPCost</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
 </code></pre></div>
 <p>Returns the base AP cost of using an item, independent of the character.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="getuseactions">GetUseActions<a class="headerlink" href="#getuseactions" title="Permanent link">&para;</a></h5>
+<h5 id="getuseactions">GetUseActions<a class="headerlink" href="#getuseactions" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">GetUseActions</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">actionType</span><span class="p">)</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>   <span class="o">-&gt;</span> <span class="n">IActionData</span><span class="p">[]</span>
 </code></pre></div>
@@ -1392,7 +1392,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>actionType</b> <code>ActionDataType</code></p>
 
-<h5 id="hasflag">HasFlag<a class="headerlink" href="#hasflag" title="Permanent link">&para;</a></h5>
+<h5 id="hasflag">HasFlag<a class="headerlink" href="#hasflag" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">HasFlag</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
 </code></pre></div>
 <p>Returns whether the item has a flag.</p>
@@ -1400,14 +1400,14 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>flag</b> <code>EclItemFlags|EsvItemFlags|EclItemFlags2|EsvItemFlags2</code></p>
 
-<h5 id="hasrunes">HasRunes<a class="headerlink" href="#hasrunes" title="Permanent link">&para;</a></h5>
+<h5 id="hasrunes">HasRunes<a class="headerlink" href="#hasrunes" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">HasRunes</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if item has any runes slotted.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="hasuseaction">HasUseAction<a class="headerlink" href="#hasuseaction" title="Permanent link">&para;</a></h5>
+<h5 id="hasuseaction">HasUseAction<a class="headerlink" href="#hasuseaction" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">HasUseAction</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">useActionID</span><span class="p">)</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1416,49 +1416,49 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>useActionID</b> <code>ActionDataType</code></p>
 
-<h5 id="hasuseactions">HasUseActions<a class="headerlink" href="#hasuseactions" title="Permanent link">&para;</a></h5>
+<h5 id="hasuseactions">HasUseActions<a class="headerlink" href="#hasuseactions" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">HasUseActions</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether an item has any use actions.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="isartifact">IsArtifact<a class="headerlink" href="#isartifact" title="Permanent link">&para;</a></h5>
+<h5 id="isartifact">IsArtifact<a class="headerlink" href="#isartifact" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsArtifact</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if the item is an Artifact by checking the AMER_UNI tag.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="iscontainer">IsContainer<a class="headerlink" href="#iscontainer" title="Permanent link">&para;</a></h5>
+<h5 id="iscontainer">IsContainer<a class="headerlink" href="#iscontainer" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsContainer</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether an item is a container.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="isdagger">IsDagger<a class="headerlink" href="#isdagger" title="Permanent link">&para;</a></h5>
+<h5 id="isdagger">IsDagger<a class="headerlink" href="#isdagger" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsDagger</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether item is a dagger (satisfying a DaggerWeapon requirement)</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="isdyeable">IsDyeable<a class="headerlink" href="#isdyeable" title="Permanent link">&para;</a></h5>
+<h5 id="isdyeable">IsDyeable<a class="headerlink" href="#isdyeable" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsDyeable</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true for dyeable items (equipment, except rings/amulet/belt).</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="isequipment">IsEquipment<a class="headerlink" href="#isequipment" title="Permanent link">&para;</a></h5>
+<h5 id="isequipment">IsEquipment<a class="headerlink" href="#isequipment" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsEquipment</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if the item is an armor piece or a weapon.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="isequipped">IsEquipped<a class="headerlink" href="#isequipped" title="Permanent link">&para;</a></h5>
+<h5 id="isequipped">IsEquipped<a class="headerlink" href="#isequipped" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsEquipped</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1467,21 +1467,21 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="islegal">IsLegal<a class="headerlink" href="#islegal" title="Permanent link">&para;</a></h5>
+<h5 id="islegal">IsLegal<a class="headerlink" href="#islegal" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsLegal</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether interacting with an item is legal.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="ismarkedaswares">IsMarkedAsWares<a class="headerlink" href="#ismarkedaswares" title="Permanent link">&para;</a></h5>
+<h5 id="ismarkedaswares">IsMarkedAsWares<a class="headerlink" href="#ismarkedaswares" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsMarkedAsWares</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether an item is marked as wares.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="ismeleeweapon">IsMeleeWeapon<a class="headerlink" href="#ismeleeweapon" title="Permanent link">&para;</a></h5>
+<h5 id="ismeleeweapon">IsMeleeWeapon<a class="headerlink" href="#ismeleeweapon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsMeleeWeapon</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1489,28 +1489,28 @@
 <p>Returns true for None-type weaponry.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="israngedweapon">IsRangedWeapon<a class="headerlink" href="#israngedweapon" title="Permanent link">&para;</a></h5>
+<h5 id="israngedweapon">IsRangedWeapon<a class="headerlink" href="#israngedweapon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsRangedWeapon</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether item is a ranged weapon; bow or crossbow only!</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="isrune">IsRune<a class="headerlink" href="#isrune" title="Permanent link">&para;</a></h5>
+<h5 id="isrune">IsRune<a class="headerlink" href="#isrune" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsRune</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether the item is a rune.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="isshield">IsShield<a class="headerlink" href="#isshield" title="Permanent link">&para;</a></h5>
+<h5 id="isshield">IsShield<a class="headerlink" href="#isshield" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsShield</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether item is a shield (satisfying a ShieldWeapon requirement)</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="isunique">IsUnique<a class="headerlink" href="#isunique" title="Permanent link">&para;</a></h5>
+<h5 id="isunique">IsUnique<a class="headerlink" href="#isunique" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsUnique</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
@@ -1518,14 +1518,14 @@
 <p>Returns <code>true</code> for Artifact items.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="isweapon">IsWeapon<a class="headerlink" href="#isweapon" title="Permanent link">&para;</a></h5>
+<h5 id="isweapon">IsWeapon<a class="headerlink" href="#isweapon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">IsWeapon</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if the item is a weapon (shields don't count!)</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
-<h5 id="seticonoverride">SetIconOverride<a class="headerlink" href="#seticonoverride" title="Permanent link">&para;</a></h5>
+<h5 id="seticonoverride">SetIconOverride<a class="headerlink" href="#seticonoverride" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="kr">function</span> <span class="nc">ItemLib</span><span class="p">.</span><span class="nf">SetIconOverride</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">icon</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 </code></pre></div>
 <p>Sets a custom icon for an item.</p>
@@ -1533,7 +1533,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>icon</b> <code>string</code></p>
-<p></doc></p>
+<p></p></div>
 
 
   

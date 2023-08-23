@@ -1212,10 +1212,10 @@
                   
 
 
-<h1 id="statstab">StatsTab<a class="headerlink" href="#statstab" title="Permanent link">&para;</a></h1>
+<div><h1 id="statstab">StatsTab<a class="headerlink" href="#statstab" title="Permanent link">¶</a></h1>
 <p><code>Epip.Features.StatsTab</code> implements collapsable categories for the Character Sheet stats tab, as well as Ascension node stats, server-side value calculations and synching, and all stats present in the mod by default. Is this decoupling overengineered? Possibly, but it's a good showcase of how easily extensible systems can be if you stuff them with events.</p>
 <p>TODO document the rest of the system - Only Shared.lua is here atm.</p>
-<h2 id="creating-stats">Creating Stats<a class="headerlink" href="#creating-stats" title="Permanent link">&para;</a></h2>
+<h2 id="creating-stats">Creating Stats<a class="headerlink" href="#creating-stats" title="Permanent link">¶</a></h2>
 <p>There's 3 steps to creating a stat. <strong>Steps 1 and 2 have to be done on both contexts.</strong></p>
 <ol>
 <li>Define the stat; it's name, tooltip, how it displays, etc.</li>
@@ -1223,55 +1223,55 @@
 <li>Set/update it's value when requested, through <code>RegisterStatValueHook</code></li>
 </ol>
 <p>You can define a stat with <code>RegisterStat(id: string, data: EpipStat)</code>. The structure of a stat is the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">RegisterStat</span><span class="p">(</span><span class="s2">&quot;RegenLifeCalculated&quot;</span><span class="p">,</span> <span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;Missing Life Regen&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">Description</span> <span class="o">=</span> <span class="s2">&quot;Restores a percentage of your missing Vitality at the start of your turn.&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">RegisterStat</span><span class="p">(</span><span class="s2">"RegenLifeCalculated"</span><span class="p">,</span> <span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Missing Life Regen"</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">Description</span> <span class="o">=</span> <span class="s2">"Restores a percentage of your missing Vitality at the start of your turn."</span><span class="p">,</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">Footnote</span> <span class="o">=</span> <span class="s2">&quot;Missing Regeneration is capped at 50%.&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">Suffix</span> <span class="o">=</span> <span class="s2">&quot;%&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">Footnote</span> <span class="o">=</span> <span class="s2">"Missing Regeneration is capped at 50%."</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">Suffix</span> <span class="o">=</span> <span class="s2">"%"</span><span class="p">,</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">})</span>
 </code></pre></div>
 <p>Next, you need to append it into a category with <code>AddStatToCategory(statID: string, categoryID: string, index?: integer)</code>. You can omit <code>index</code> and it will be placed at the bottom.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">AddStatToCategory</span><span class="p">(</span><span class="s2">&quot;RegenLifeCalculated&quot;</span><span class="p">,</span> <span class="s2">&quot;Vitals&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">AddStatToCategory</span><span class="p">(</span><span class="s2">"RegenLifeCalculated"</span><span class="p">,</span> <span class="s2">"Vitals"</span><span class="p">)</span>
 </code></pre></div>
 <p>Finally, you need to register a hook to update the stat's value. This can be done in 2 ways: on client or on server (do not do both).</p>
 <p>If the stat's value can be queried from the client context, you only need a simple hook on the client:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">RegisterStatValueHook</span><span class="p">(</span><span class="s2">&quot;PartyFunds_Gold&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="kr">return</span> <span class="n">Game</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="n">GetPartyTemplateCount</span><span class="p">(</span><span class="s2">&quot;LOOT_Gold_A_1c3c9c74-34a1-4685-989e-410dc080be6f&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">RegisterStatValueHook</span><span class="p">(</span><span class="s2">"PartyFunds_Gold"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="kr">return</span> <span class="n">Game</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="n">GetPartyTemplateCount</span><span class="p">(</span><span class="s2">"LOOT_Gold_A_1c3c9c74-34a1-4685-989e-410dc080be6f"</span><span class="p">)</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kr">end</span><span class="p">)</span>
 </code></pre></div>
 <p>For stats that require info from the server, there is a special system in place that synchronizes stat values with tags. To set a stat's value from the server context, you need to use a different event (note it's not a hook, you must call <code>UpdateTaggedStat</code> yourself). On the client, the stat's value will be queried automatically from such tag if it is set; the advantage here being that there is no need to request stats from the server every time the tab is opened.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">RegisterStatUpdateListener</span><span class="p">(</span><span class="s2">&quot;Keyword_VitalityVoid_Power&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">RegisterStatUpdateListener</span><span class="p">(</span><span class="s2">"Keyword_VitalityVoid_Power"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">Osi</span><span class="p">.</span><span class="n">QRY_AMER_KeywordStat_VitalityVoid_GetPower</span><span class="p">(</span><span class="n">char</span><span class="p">.</span><span class="n">MyGuid</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="kd">local</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Osi</span><span class="p">.</span><span class="n">DB_AMER_KeywordStat_OUTPUT_Real</span><span class="p">:</span><span class="n">Get</span><span class="p">(</span><span class="kc">nil</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">EpipStats</span><span class="p">.</span><span class="n">UpdateTaggedStat</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s2">&quot;Keyword_VitalityVoid_Power&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">EpipStats</span><span class="p">.</span><span class="n">UpdateTaggedStat</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s2">"Keyword_VitalityVoid_Power"</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="kr">end</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="creating-ascension-node-stats">Creating Ascension Node Stats<a class="headerlink" href="#creating-ascension-node-stats" title="Permanent link">&para;</a></h2>
+<h2 id="creating-ascension-node-stats">Creating Ascension Node Stats<a class="headerlink" href="#creating-ascension-node-stats" title="Permanent link">¶</a></h2>
 <p>Stats related to Ascension nodes are automatically updated if their ID follows a specific format. All you need to do is define one; no further event listeners required. It will also be automatically put into the relevant keyword's category.</p>
 <p>You can create such stat with <code>StatsTab.AddNodeStat(clusterId: string, nodeIndex: number, nodeSubIndex: number, keyword: Keyword, keywordType: KeywordBoonType, statData: EpipStat)</code>. <code>StatData</code> is the stat definition, like with a normal stat. <strong>The indexes are 0-based.</strong> <code>ClusterId</code> is the ID of the Aspect, ex. <code>Force_TheFalcon</code>.</p>
 <p>There's just one small catch: owned nodes are only tracked if there's a stat defined for them. When you add stats in an update, you should call <code>StatsTab.RecalculateNodeStats()</code> on the server during the patch routine. You can also call <code>NRD_ModCall("EpipEncounters", "PerformFullStatsUpdate");</code> from Osiris, but this will be removed in the future.</p>
-<h2 id="creating-categories">Creating Categories<a class="headerlink" href="#creating-categories" title="Permanent link">&para;</a></h2>
+<h2 id="creating-categories">Creating Categories<a class="headerlink" href="#creating-categories" title="Permanent link">¶</a></h2>
 <p>A category holds stats, and can be collapsed in the menu. Stats only render if they're within a category that is open. They can be added with <code>RegisterCategory(id: string, data: EpipStatCategory, index?: integer)</code>. See the <code>EpipStatCategory</code> struct.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">RegisterCategory</span><span class="p">(</span><span class="s2">&quot;Vitals&quot;</span><span class="p">,</span> <span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">Header</span> <span class="o">=</span> <span class="s2">&quot;&lt;font size=&#39;21&#39;&gt;————— Vitals —————&lt;/font&gt;&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;Vitals&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">Behaviour</span> <span class="o">=</span> <span class="s2">&quot;GreyOut&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">StatsTab</span><span class="p">.</span><span class="n">RegisterCategory</span><span class="p">(</span><span class="s2">"Vitals"</span><span class="p">,</span> <span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">Header</span> <span class="o">=</span> <span class="s2">"&lt;font size='21'&gt;————— Vitals —————&lt;/font&gt;"</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Vitals"</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">Behaviour</span> <span class="o">=</span> <span class="s2">"GreyOut"</span><span class="p">,</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">Stats</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="s2">&quot;RegenLifeCalculated&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="s2">&quot;RegenPhysicalArmorCalculated&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="s2">&quot;RegenMagicArmorCalculated&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="s2">&quot;LifeSteal&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="s2">"RegenLifeCalculated"</span><span class="p">,</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="s2">"RegenPhysicalArmorCalculated"</span><span class="p">,</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="s2">"RegenMagicArmorCalculated"</span><span class="p">,</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="s2">"LifeSteal"</span><span class="p">,</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="p">},</span>
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">})</span>
 </code></pre></div>
-<h2 id="modifying-stats">Modifying Stats<a class="headerlink" href="#modifying-stats" title="Permanent link">&para;</a></h2>
+<h2 id="modifying-stats">Modifying Stats<a class="headerlink" href="#modifying-stats" title="Permanent link">¶</a></h2>
 <p>Stat definitions are stored in <code>StatsTab.STATS</code>. You may screw with them at any time. Categories are in <code>CATEGORIES</code> instead, and their rendering order is defined in <code>CATEGORIES_ORDER</code>.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><epip class="EpipStatsTab" symbols="Function"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">---Registers a stat bound to an Ascension node.</span>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<p><epip class="EpipStatsTab" symbols="Function"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">---Registers a stat bound to an Ascension node.</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">---@param clusterId string</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">---@param nodeIndex number</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">---@param nodeSubIndex number</span>
@@ -1297,9 +1297,9 @@
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="c1">---@param index? integer</span>
 <a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="kr">function</span> <span class="nc">EpipStats</span><span class="p">.</span><span class="nf">AddStatToCategory</span><span class="p">(</span><span class="n">statID</span><span class="p">,</span> <span class="n">categoryID</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span> <span class="c1">--RequireBothContexts</span>
 </code></pre></div>
-</epip></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<p><epip class="EpipStatsTab" symbols="Class"></p>
+
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
+<p><epip class="EpipStatsTab" symbols="Class"></epip></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">---@class EpipStats</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">---@field CATEGORIES table&lt;string, EpipStatCategory&gt; Category definitions.</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">---@field CATEGORIES_ORDER string[]</span>
@@ -1313,13 +1313,13 @@
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1">---@class EpipStat</span>
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1">---@field Name string</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1">---@field Description string Fallback description in case a formatted Tooltip isn&#39;t set.</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1">---@field Description string Fallback description in case a formatted Tooltip isn't set.</span>
 <a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="c1">---@field Tooltip TooltipData</span>
 <a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1">---@field Footnote string Italic text after description, in new paragraph.</span>
 <a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="c1">---@field Suffix string Suffix for value display.</span>
 <a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="c1">---@field Prefix string Prefix for value display.</span>
 <a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="c1">---@field Boolean boolean Boolean stats show no value label.</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="c1">---@field MaxCharges string If specified, this stat will display as &quot;{Value}/{Value of MaxCharges stat}&quot;</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="c1">---@field MaxCharges string If specified, this stat will display as "{Value}/{Value of MaxCharges stat}"</span>
 <a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="c1">---@field IgnoreForHiding boolean If true, this stat will not be considered as added when determining if a Hidden category should display.</span>
 <a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
 <a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
@@ -1328,7 +1328,7 @@
 <a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="c1">---@field Name string Name of the category in the tooltip.</span>
 <a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="c1">---@field Behaviour EpipStatCategoryBehaviour Controls how default-value stats are shown. GreyOut greys out their label and value, hidden hides them - and the whole category - if no stats are owned.</span>
 <a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="c1">---@field Stats string[] Stats displayed in the category, ordered.</span>
-</code></pre></div>
+</code></pre></div></div>
 
 
   

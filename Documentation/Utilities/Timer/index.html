@@ -1180,29 +1180,29 @@
                   
 
 
-<h1 id="timer">Timer<a class="headerlink" href="#timer" title="Permanent link">&para;</a></h1>
+<div><h1 id="timer">Timer<a class="headerlink" href="#timer" title="Permanent link">¶</a></h1>
 <p>The <code>Timer</code> library implements timers, for running scripting with a delay. Since listeners for the timers ending can be registered in-line, they are usually cleaner to use than the Osiris timers. Additionally, they are available on the client.</p>
-<p><doc class="TimerLib"></p>
-<h1 id="timerlib-class">TimerLib Class<a class="headerlink" href="#timerlib-class" title="Permanent link">&para;</a></h1>
+<p><doc class="TimerLib"></doc></p>
+<h1 id="timerlib-class">TimerLib Class<a class="headerlink" href="#timerlib-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Feature</code>.</p>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h4 id="timercompleted-event">TimerCompleted (event)<a class="headerlink" href="#timercompleted-event" title="Permanent link">&para;</a></h4>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
+<h4 id="timercompleted-event">TimerCompleted (event)<a class="headerlink" href="#timercompleted-event" title="Permanent link">¶</a></h4>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Timer</b> <code>TimerLib_Entry</code></p>
 
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="gettimer">GetTimer<a class="headerlink" href="#gettimer" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="gettimer">GetTimer<a class="headerlink" href="#gettimer" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">TimerLib</span><span class="p">.</span><span class="nf">GetTimer</span><span class="p">(</span><span class="n">stringID</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">TimerLib_Entry</span>
 </code></pre></div>
 <p>Returns the timer with the passed string ID.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>stringID</b> <code>string</code></p>
 
-<h5 id="remove">Remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h5>
+<h5 id="remove">Remove<a class="headerlink" href="#remove" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">TimerLib</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="n">timer</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>timer</b> <code>TimerLib_Entry</code></p>
 
-<h5 id="start">Start<a class="headerlink" href="#start" title="Permanent link">&para;</a></h5>
+<h5 id="start">Start<a class="headerlink" href="#start" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">TimerLib</span><span class="p">.</span><span class="nf">Start</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">timerType</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">TimerLib_Entry</span><span class="o">|</span><span class="n">TimerLib_TickTimerEntry</span>
 </code></pre></div>
@@ -1214,7 +1214,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>timerType</b> <code>("Normal"|"Tick")?</code> Defaults to `"Normal"`</p>
 
-<h5 id="startticktimer">StartTickTimer<a class="headerlink" href="#startticktimer" title="Permanent link">&para;</a></h5>
+<h5 id="startticktimer">StartTickTimer<a class="headerlink" href="#startticktimer" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">TimerLib</span><span class="p">.</span><span class="nf">StartTickTimer</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">ticks</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">TimerLib_TickTimerEntry</span>
 </code></pre></div>
@@ -1224,11 +1224,11 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handler</b> <code>fun(ev:TimerLib_Event_TimerCompleted)</code></p>
 
-<h5 id="__test">__Test<a class="headerlink" href="#__test" title="Permanent link">&para;</a></h5>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">---@protected</span>
+<h5 id="__test">__Test<a class="headerlink" href="#__test" title="Permanent link">¶</a></h5>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">---@protected</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kr">function</span> <span class="nc">TimerLib</span><span class="p">:</span><span class="nf">__Test</span><span class="p">()</span>
 </code></pre></div>
-</doc></p>
+</div>
 
 
   

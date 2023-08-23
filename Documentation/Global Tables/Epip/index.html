@@ -1178,22 +1178,22 @@
                   
 
 
-<h1 id="epip">Epip<a class="headerlink" href="#epip" title="Permanent link">&para;</a></h1>
+<div><h1 id="epip">Epip<a class="headerlink" href="#epip" title="Permanent link">¶</a></h1>
 <p>The <code>Epip</code> table mainly serves as a container for Features. It contains methods to register Features as well as libraries and UI tables.</p>
 <p>Use <code>RegisterFeature()</code> to register and initialize a Feature.</p>
-<p><doc class="Epip"></p>
-<h1 id="epip-class">Epip Class<a class="headerlink" href="#epip-class" title="Permanent link">&para;</a></h1>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h4 id="beforefeatureinitialization-event">BeforeFeatureInitialization (event)<a class="headerlink" href="#beforefeatureinitialization-event" title="Permanent link">&para;</a></h4>
+<p><doc class="Epip"></doc></p>
+<h1 id="epip-class">Epip Class<a class="headerlink" href="#epip-class" title="Permanent link">¶</a></h1>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
+<h4 id="beforefeatureinitialization-event">BeforeFeatureInitialization (event)<a class="headerlink" href="#beforefeatureinitialization-event" title="Permanent link">¶</a></h4>
 <p>Fired during feature initialization.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Feature</b> <code>Feature</code></p>
 
-<h4 id="afterfeatureinitialization-event">AfterFeatureInitialization (event)<a class="headerlink" href="#afterfeatureinitialization-event" title="Permanent link">&para;</a></h4>
+<h4 id="afterfeatureinitialization-event">AfterFeatureInitialization (event)<a class="headerlink" href="#afterfeatureinitialization-event" title="Permanent link">¶</a></h4>
 <p>Fired during feature initialization.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>Feature</b> <code>Feature</code></p>
 
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="getfeature">GetFeature<a class="headerlink" href="#getfeature" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="getfeature">GetFeature<a class="headerlink" href="#getfeature" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">Epip</span><span class="p">.</span><span class="nf">GetFeature</span><span class="p">(</span><span class="n">modTable</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">Feature</span><span class="o">|</span><span class="err">`</span><span class="n">T</span><span class="err">`</span>
 </code></pre></div>
@@ -1201,14 +1201,14 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>`T`</code></p>
 
-<h5 id="getfeature_1">GetFeature<a class="headerlink" href="#getfeature_1" title="Permanent link">&para;</a></h5>
+<h5 id="getfeature_1">GetFeature<a class="headerlink" href="#getfeature_1" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">Epip</span><span class="p">.</span><span class="nf">GetFeature</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">Feature</span><span class="o">|</span><span class="err">`</span><span class="n">T</span><span class="err">`</span>
 </code></pre></div>
 <p>Overload for fetching features defined in EpipEncounters.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>`T`</code></p>
 
-<h5 id="initializefeature">InitializeFeature<a class="headerlink" href="#initializefeature" title="Permanent link">&para;</a></h5>
+<h5 id="initializefeature">InitializeFeature<a class="headerlink" href="#initializefeature" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">Epip</span><span class="p">.</span><span class="nf">InitializeFeature</span><span class="p">(</span><span class="n">modTable</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">feature</span><span class="p">)</span>
 </code></pre></div>
 <p>TODO move to Feature</p>
@@ -1218,16 +1218,16 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>feature</b> <code>Feature</code></p>
 
-<h5 id="initializelibrary">InitializeLibrary<a class="headerlink" href="#initializelibrary" title="Permanent link">&para;</a></h5>
+<h5 id="initializelibrary">InitializeLibrary<a class="headerlink" href="#initializelibrary" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">Epip</span><span class="p">.</span><span class="nf">InitializeLibrary</span><span class="p">()</span>
 </code></pre></div>
-<h5 id="isdevelopermode">IsDeveloperMode<a class="headerlink" href="#isdevelopermode" title="Permanent link">&para;</a></h5>
+<h5 id="isdevelopermode">IsDeveloperMode<a class="headerlink" href="#isdevelopermode" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">Epip</span><span class="p">.</span><span class="nf">IsDeveloperMode</span><span class="p">(</span><span class="n">requirePipPoem</span><span class="p">)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>requirePipPoem</b> <code>boolean?</code> Whether a poem to Pip is required for this call to succeed. Defaults to false (which checks Extender dev mode instead)</p>
 
-<h5 id="registerfeature">RegisterFeature<a class="headerlink" href="#registerfeature" title="Permanent link">&para;</a></h5>
+<h5 id="registerfeature">RegisterFeature<a class="headerlink" href="#registerfeature" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">Epip</span><span class="p">.</span><span class="nf">RegisterFeature</span><span class="p">(</span><span class="n">modTable</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">feature</span><span class="p">)</span>
 </code></pre></div>
 <p>Registers a feature, initializing its utility metatable and exposing it to other mods via GetFeature(). Should be called outside of any listener, as soon as the table is defined. This will also check for required path overrides and disable the feature if the required mods are not enabled.</p>
@@ -1237,7 +1237,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>feature</b> <code>Feature</code></p>
 
-<h5 id="registerfeatureinitializationlistener">RegisterFeatureInitializationListener<a class="headerlink" href="#registerfeatureinitializationlistener" title="Permanent link">&para;</a></h5>
+<h5 id="registerfeatureinitializationlistener">RegisterFeatureInitializationListener<a class="headerlink" href="#registerfeatureinitializationlistener" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">Epip</span><span class="p">.</span><span class="nf">RegisterFeatureInitializationListener</span><span class="p">(</span><span class="n">modTable</span><span class="p">,</span> <span class="n">featureID</span><span class="p">,</span> <span class="n">timing</span><span class="p">,</span> <span class="n">listener</span><span class="p">)</span>
 </code></pre></div>
 <p>Registers a <code>FeatureInitialization</code> listener for a specific feature.</p>
@@ -1249,7 +1249,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>listener</b> <code>fun(ev:Epip.Events.FeatureInitialization)</code></p>
 
-<h5 id="savedump">SaveDump<a class="headerlink" href="#savedump" title="Permanent link">&para;</a></h5>
+<h5 id="savedump">SaveDump<a class="headerlink" href="#savedump" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">Epip</span><span class="p">.</span><span class="nf">SaveDump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">opts</span><span class="p">,</span> <span class="n">fileName</span><span class="p">)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>obj</b> <code>any</code></p>
@@ -1257,7 +1257,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>opts</b> <code>any?</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>fileName</b> <code>string?</code></p>
-<p></doc></p>
+<p></p></div>
 
 
   

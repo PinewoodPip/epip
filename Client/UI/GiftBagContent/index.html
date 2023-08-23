@@ -1191,11 +1191,11 @@
                   
 
 
-<h1 id="giftbagcontent">GiftBagContent<a class="headerlink" href="#giftbagcontent" title="Permanent link">&para;</a></h1>
+<div><h1 id="giftbagcontent">GiftBagContent<a class="headerlink" href="#giftbagcontent" title="Permanent link">¶</a></h1>
 <p>The GiftBagContent UI is the ingame giftbags menu.</p>
-<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
-<p><epip class="GiftBagContentUI" symbols="Event,Hook"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">---Fired after the UI&#39;s content is updated, upon opening the UI.</span>
+<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">¶</a></h2>
+<p><epip class="GiftBagContentUI" symbols="Event,Hook"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">---Fired after the UI's content is updated, upon opening the UI.</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">---@event ContentUpdated</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">---@field RegisterListener fun(self, listener:fun(content:GiftBagContentUIEntry[]))</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">---@field Fire fun(self, content:GiftBagContentUIEntry[])</span>
@@ -1206,10 +1206,10 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">---@field RegisterHook fun(self, handler:fun(content:GiftBagContentUIEntry[]))</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">---@field Return fun(self, content:GiftBagContentUIEntry[])</span>
 </code></pre></div>
-</epip></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><epip class="GiftBagContentUI" symbols="Function"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">---Returns a giftbag mod by its numerical ID.</span>
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<p><epip class="GiftBagContentUI" symbols="Function"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">---Returns a giftbag mod by its numerical ID.</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">---@param id number</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">---@return GUID </span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kr">function</span> <span class="nc">GB</span><span class="p">.</span><span class="nf">GetModGUID</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
@@ -1217,10 +1217,10 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">---Renders the contents of the UI, based on the data arrays in flash.</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kr">function</span> <span class="nc">GB</span><span class="p">.</span><span class="nf">RenderContent</span><span class="p">()</span>
 </code></pre></div>
-</epip></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<p><epip class="GiftBagContentUI" symbols="Class"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">---@class GiftBagContentUI : Feature</span>
+
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
+<p><epip class="GiftBagContentUI" symbols="Class"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">---@class GiftBagContentUI : Feature</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">---Represents a mod entry in the UI.</span>
@@ -1232,7 +1232,7 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">---@field Locked boolean Locked giftbags cannot be toggled.</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">---@field Mod string GUID of giftbag mod.</span>
 </code></pre></div>
-</epip></p>
+</div>
 
 
   

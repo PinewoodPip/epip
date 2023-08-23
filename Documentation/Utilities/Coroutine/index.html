@@ -1180,47 +1180,47 @@
                   
 
 
-<h1 id="coroutine">Coroutine<a class="headerlink" href="#coroutine" title="Permanent link">&para;</a></h1>
+<div><h1 id="coroutine">Coroutine<a class="headerlink" href="#coroutine" title="Permanent link">¶</a></h1>
 <p>The <code>Coroutine</code> library offers coroutines that support sleeping for X seconds or until a predicate is met.</p>
-<p><doc class="CoroutineLib"></p>
-<h1 id="coroutinelib-class">CoroutineLib Class<a class="headerlink" href="#coroutinelib-class" title="Permanent link">&para;</a></h1>
+<p><doc class="CoroutineLib"></doc></p>
+<h1 id="coroutinelib-class">CoroutineLib Class<a class="headerlink" href="#coroutinelib-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>Library</code>.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">CoroutineLib</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">CoroutineInstance</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>fun</b> <code>fun(inst:CoroutineInstance, ...)</code></p>
-<p></doc></p>
-<p><doc class="CoroutineInstance"></p>
-<h1 id="coroutineinstance-class">CoroutineInstance Class<a class="headerlink" href="#coroutineinstance-class" title="Permanent link">&para;</a></h1>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h4 id="finished-event">Finished (event)<a class="headerlink" href="#finished-event" title="Permanent link">&para;</a></h4>
+<p></p>
+<p><doc class="CoroutineInstance"></doc></p>
+<h1 id="coroutineinstance-class">CoroutineInstance Class<a class="headerlink" href="#coroutineinstance-class" title="Permanent link">¶</a></h1>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
+<h4 id="finished-event">Finished (event)<a class="headerlink" href="#finished-event" title="Permanent link">¶</a></h4>
 <p>An event object with no parameters.</p>
-<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
-<h5 id="continue">Continue<a class="headerlink" href="#continue" title="Permanent link">&para;</a></h5>
+<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">¶</a></h2>
+<h5 id="continue">Continue<a class="headerlink" href="#continue" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">Continue</span><span class="p">()</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="p">...</span>
 </code></pre></div>
-<h5 id="isdead">IsDead<a class="headerlink" href="#isdead" title="Permanent link">&para;</a></h5>
+<h5 id="isdead">IsDead<a class="headerlink" href="#isdead" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">IsDead</span><span class="p">()</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
-<h5 id="issleeping">IsSleeping<a class="headerlink" href="#issleeping" title="Permanent link">&para;</a></h5>
+<h5 id="issleeping">IsSleeping<a class="headerlink" href="#issleeping" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">IsSleeping</span><span class="p">()</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
-<h5 id="sleep">Sleep<a class="headerlink" href="#sleep" title="Permanent link">&para;</a></h5>
+<h5 id="sleep">Sleep<a class="headerlink" href="#sleep" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">Sleep</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="p">...)</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>time</b> <code>number|function</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code> Variables yielded. Discarded if the coroutine is resuming from sleeping, as there is no caller.</p>
 
-<h5 id="yield">Yield<a class="headerlink" href="#yield" title="Permanent link">&para;</a></h5>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">Yield</span><span class="p">()</span>
+<h5 id="yield">Yield<a class="headerlink" href="#yield" title="Permanent link">¶</a></h5>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">Yield</span><span class="p">()</span>
 </code></pre></div>
-</doc></p>
+</div>
 
 
   

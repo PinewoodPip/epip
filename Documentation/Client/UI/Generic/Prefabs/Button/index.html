@@ -1180,24 +1180,24 @@
                   
 
 
-<h1 id="button">Button<a class="headerlink" href="#button" title="Permanent link">&para;</a></h1>
+<div><h1 id="button">Button<a class="headerlink" href="#button" title="Permanent link">¶</a></h1>
 <p>The <code>GenericUI_Prefab_Button</code> prefab implements a button; an element that can be clicked and visually reacts to user interaction.</p>
 <p>This prefab is intended to replace the built-in <code>Button</code> and <code>StateButton</code> elements. It's major advantage is easier styling and maintainability, as there is no flash code directly involved.</p>
 <p>Buttons implement <code>I_Stylable</code>, which allows customizing their group of textures and other visual assets to use. Styles can be registered via <code>:RegisterStyle()</code> and fetched using <code>:GetStyle()</code>.</p>
 <p>StateButtons (buttons that toggle between active/inactive states) are created by supplying and additional style to use for the active state, via <code>:SetActiveStyle()</code>.</p>
 <p>Epip has many premade button styles. You may browse them via <code>GenericUITextures</code> UI.</p>
 <p>The button prefab additionally supports adding an IggyIcon to it with <code>:SetIcon()</code>.</p>
-<p><doc class="GenericUI_Prefab_Button"></p>
-<h1 id="genericui_prefab_button-class">GenericUI_Prefab_Button Class<a class="headerlink" href="#genericui_prefab_button-class" title="Permanent link">&para;</a></h1>
+<p><doc class="GenericUI_Prefab_Button"></doc></p>
+<h1 id="genericui_prefab_button-class">GenericUI_Prefab_Button Class<a class="headerlink" href="#genericui_prefab_button-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>GenericUI_Prefab, GenericUI_I_Stylable, GenericUI_I_Elementable</code>.</p>
 <p>Prefab for a button.</p>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h2>
-<h4 id="pressed-event">Pressed (event)<a class="headerlink" href="#pressed-event" title="Permanent link">&para;</a></h4>
+<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
+<h4 id="pressed-event">Pressed (event)<a class="headerlink" href="#pressed-event" title="Permanent link">¶</a></h4>
 <p>Fires only if the button is enabled.</p>
-<h4 id="rightclicked-event">RightClicked (event)<a class="headerlink" href="#rightclicked-event" title="Permanent link">&para;</a></h4>
+<h4 id="rightclicked-event">RightClicked (event)<a class="headerlink" href="#rightclicked-event" title="Permanent link">¶</a></h4>
 <p>An event object with no parameters.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h5>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">ui</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">GenericUI_Prefab_Button</span>
 </code></pre></div>
@@ -1209,53 +1209,53 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>style</b> <code>GenericUI_Prefab_Button_Style</code></p>
 
-<h5 id="geticonelement">GetIconElement<a class="headerlink" href="#geticonelement" title="Permanent link">&para;</a></h5>
+<h5 id="geticonelement">GetIconElement<a class="headerlink" href="#geticonelement" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">GetIconElement</span><span class="p">()</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">GenericUI_Element_IggyIcon</span><span class="err">?</span>
 </code></pre></div>
 <p>Returns the icon element, if any.</p>
-<h5 id="getlabelelement">GetLabelElement<a class="headerlink" href="#getlabelelement" title="Permanent link">&para;</a></h5>
+<h5 id="getlabelelement">GetLabelElement<a class="headerlink" href="#getlabelelement" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">GetLabelElement</span><span class="p">()</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">GenericUI_Prefab_Text</span>
 </code></pre></div>
 <p>Returns the label element.</p>
-<h5 id="getrootelement">GetRootElement<a class="headerlink" href="#getrootelement" title="Permanent link">&para;</a></h5>
+<h5 id="getrootelement">GetRootElement<a class="headerlink" href="#getrootelement" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">GetRootElement</span><span class="p">()</span>
 </code></pre></div>
 <p>@override</p>
-<h5 id="isactivated">IsActivated<a class="headerlink" href="#isactivated" title="Permanent link">&para;</a></h5>
+<h5 id="isactivated">IsActivated<a class="headerlink" href="#isactivated" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">IsActivated</span><span class="p">()</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether the button is activated.</p>
 <p>Will throw if the button is not a state button.</p>
-<h5 id="isenabled">IsEnabled<a class="headerlink" href="#isenabled" title="Permanent link">&para;</a></h5>
+<h5 id="isenabled">IsEnabled<a class="headerlink" href="#isenabled" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">IsEnabled</span><span class="p">()</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether the button is enabled.</p>
 <p>Disabled buttons do not fire the Pressed event.</p>
-<h5 id="setactivated">SetActivated<a class="headerlink" href="#setactivated" title="Permanent link">&para;</a></h5>
+<h5 id="setactivated">SetActivated<a class="headerlink" href="#setactivated" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">SetActivated</span><span class="p">(</span><span class="n">activated</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the activated state of the button.</p>
 <p>Will throw if the button is not a state button.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>activated</b> <code>any</code></p>
 
-<h5 id="setactivestyle">SetActiveStyle<a class="headerlink" href="#setactivestyle" title="Permanent link">&para;</a></h5>
+<h5 id="setactivestyle">SetActiveStyle<a class="headerlink" href="#setactivestyle" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">SetActiveStyle</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets a style to be used while the button is active.</p>
 <p><strong>This cannot be used to revert the button to a normal one if it was already a state button.</strong></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>style</b> <code>GenericUI_Prefab_Button_Style</code> If background fields are not assigned, the normal style will be used as fallback.</p>
 
-<h5 id="setenabled">SetEnabled<a class="headerlink" href="#setenabled" title="Permanent link">&para;</a></h5>
+<h5 id="setenabled">SetEnabled<a class="headerlink" href="#setenabled" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">SetEnabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the enabled state of the button.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>enabled</b> <code>boolean</code></p>
 
-<h5 id="seticon">SetIcon<a class="headerlink" href="#seticon" title="Permanent link">&para;</a></h5>
+<h5 id="seticon">SetIcon<a class="headerlink" href="#seticon" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">SetIcon</span><span class="p">(</span><span class="n">icon</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">relativePosition</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets an icon for the button.</p>
@@ -1267,7 +1267,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>offset</b> <code>Vector2?</code> Defaults to `(0, 0)`.</p>
 
-<h5 id="setlabel">SetLabel<a class="headerlink" href="#setlabel" title="Permanent link">&para;</a></h5>
+<h5 id="setlabel">SetLabel<a class="headerlink" href="#setlabel" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">SetLabel</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">align</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the label of the button.</p>
@@ -1275,7 +1275,7 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>align</b> <code>GenericUI_Element_Text_Align?</code> Defaults to `"Center"`.</p>
 
-<h5 id="settooltip">SetTooltip<a class="headerlink" href="#settooltip" title="Permanent link">&para;</a></h5>
+<h5 id="settooltip">SetTooltip<a class="headerlink" href="#settooltip" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">SetTooltip</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">tooltip</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the tooltip of the element.</p>
@@ -1283,14 +1283,14 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tooltip</b> <code>any</code> TODO document</p>
 
-<h5 id="__onstylechanged">__OnStyleChanged<a class="headerlink" href="#__onstylechanged" title="Permanent link">&para;</a></h5>
+<h5 id="__onstylechanged">__OnStyleChanged<a class="headerlink" href="#__onstylechanged" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">---@protected</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">__OnStyleChanged</span><span class="p">()</span>
 </code></pre></div>
 <p>@override
-</doc></p>
-<p><doc classWithFields="GenericUI_Prefab_Button_Style"></p>
-<h1 id="genericui_prefab_button_style-class">GenericUI_Prefab_Button_Style Class<a class="headerlink" href="#genericui_prefab_button_style-class" title="Permanent link">&para;</a></h1>
+</p>
+<p><doc classwithfields="GenericUI_Prefab_Button_Style"></doc></p>
+<h1 id="genericui_prefab_button_style-class">GenericUI_Prefab_Button_Style Class<a class="headerlink" href="#genericui_prefab_button_style-class" title="Permanent link">¶</a></h1>
 <p>Inherits from <code>GenericUI_I_Stylable_Style</code>.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>IdleTexture</b> <code>TextureLib_Texture</code></p>
 
@@ -1310,8 +1310,8 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>PressedOverlay</b> <code>TextureLib_Texture?</code> If not present, `IdleOverlay` will be used instead.</p>
 
-<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
-<p></doc></p>
+<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">¶</a></h2>
+<p></p></div>
 
 
   

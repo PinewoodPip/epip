@@ -1191,12 +1191,12 @@
                   
 
 
-<h1 id="chatlog">ChatLog<a class="headerlink" href="#chatlog" title="Permanent link">&para;</a></h1>
+<div><h1 id="chatlog">ChatLog<a class="headerlink" href="#chatlog" title="Permanent link">¶</a></h1>
 <p>The ChatLog UI displays and manages the chat log. Epip's script allows you to add custom tabs to it (like the Party/All Players tabs by default).</p>
 <p>Examples of its use are the chat commands features, which intercept sent messages to execute terminal-style commands.</p>
-<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
-<p><epip class="ChatLogUI" symbols="Event,Hook"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">---Fired when the client sends a message in chat. TODO pass tab</span>
+<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">¶</a></h2>
+<p><epip class="ChatLogUI" symbols="Event,Hook"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">---Fired when the client sends a message in chat. TODO pass tab</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">---@event MessageSent</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">---@field RegisterListener fun(self, listener:fun(text:string, clientChar:EclCharacter))</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">---@field Fire fun(self, text:string, clientChar:EclCharacter)</span>
@@ -1213,16 +1213,16 @@
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1">---@field RegisterHook fun(self, handler:fun(canSend:boolean, text:string, char:EclCharacter))</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">---@field Return fun(self, canSend:boolean, text:string, char:EclCharacter)</span>
 </code></pre></div>
-</epip></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><epip class="ChatLogUI" symbols="Function"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">---Sends text onto the chatbox, using the vanilla colors and font sizes.</span>
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<p><epip class="ChatLogUI" symbols="Function"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">---Sends text onto the chatbox, using the vanilla colors and font sizes.</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">---@param tab integer|string Tab ID. See ChatLog.TABS enum. For custom tabs, use your string ID.</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">---@param userName string</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">---@param message string</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kr">function</span> <span class="nc">Chat</span><span class="p">.</span><span class="nf">AddFormattedMessage</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">userName</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">---Clear a chat tab&#39;s messages.</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">---Clear a chat tab's messages.</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">---Render raw text onto the chatbox.</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">---@param tab integer|string</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">---@param tab? integer|string Tab ID. See ChatLog.TABS enum. For custom tabs, use your string ID. Defaults to current tab.</span>
@@ -1234,12 +1234,12 @@
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1">---@param label string</span>
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="kr">function</span> <span class="nc">Chat</span><span class="p">.</span><span class="nf">AddTab</span><span class="p">(</span><span class="n">tabID</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
 </code></pre></div>
-</epip></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<p><epip class="ChatLogUI" symbols="Class"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">---@class ChatLogUI : UI</span>
+
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
+<p><epip class="ChatLogUI" symbols="Class"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">---@class ChatLogUI : UI</span>
 </code></pre></div>
-</epip></p>
+</div>
 
 
   

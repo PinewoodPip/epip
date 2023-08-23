@@ -1191,12 +1191,12 @@
                   
 
 
-<h1 id="optionsinput">OptionsInput<a class="headerlink" href="#optionsinput" title="Permanent link">&para;</a></h1>
+<div><h1 id="optionsinput">OptionsInput<a class="headerlink" href="#optionsinput" title="Permanent link">¶</a></h1>
 <p>The OptionsInput UI script handles new functionality for the input settings menu, which, curiously, is actually a separate UI from the settings menu, and just like it, it does not exist whilst not open.</p>
 <p>Epip extends it to provide custom keybinding configuration tabs, as well as to read the user's current keybindings as strings to display elsewhere.</p>
-<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">&para;</a></h2>
-<p><epip class="OptionsInputUI" symbols="Event,Hook"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">---@event ActionExecuted</span>
+<h2 id="events-hooks">Events &amp; Hooks<a class="headerlink" href="#events-hooks" title="Permanent link">¶</a></h2>
+<p><epip class="OptionsInputUI" symbols="Event,Hook"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">---@event ActionExecuted</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">---@field RegisterListener fun(self, listener:fun(action:string, binding:string))</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">---@field Fire fun(self, action:string, binding:string)</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
@@ -1206,15 +1206,15 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">---@field Return fun(self, render:boolean, entry:OptionsInputKeybind)</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">---Saves the user&#39;s bindings to the disk.</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">---Saves the user's bindings to the disk.</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1">---@hook CanExecuteAction</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">---@field RegisterHook fun(self, handler:fun(execute:boolean, action:string, data:OptionsInputKeybind))</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1">---@field Return fun(self, execute:boolean, action:string, data:OptionsInputKeybind)</span>
 </code></pre></div>
-</epip></p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
-<p><epip class="OptionsInputUI" symbols="Function"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">Options</span><span class="p">.</span><span class="nf">SaveBindings</span><span class="p">()</span>
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<p><epip class="OptionsInputUI" symbols="Function"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">Options</span><span class="p">.</span><span class="nf">SaveBindings</span><span class="p">()</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">---Returns whether a keybind should show up in the UI.</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">---@param entry OptionsInputKeybind</span>
@@ -1226,7 +1226,7 @@
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">---@return boolean </span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="kr">function</span> <span class="nc">Options</span><span class="p">.</span><span class="nf">CanExecuteAction</span><span class="p">(</span><span class="n">actionID</span><span class="p">)</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">---Loads the user&#39;s bindings from the disk.</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">---Loads the user's bindings from the disk.</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="kr">function</span> <span class="nc">Options</span><span class="p">.</span><span class="nf">LoadBindings</span><span class="p">()</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1">---@param actionID string</span>
@@ -1234,7 +1234,7 @@
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1">---@param keybind string</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="kr">function</span> <span class="nc">Options</span><span class="p">.</span><span class="nf">SetKeybind</span><span class="p">(</span><span class="n">actionID</span><span class="p">,</span> <span class="n">bindingIndex</span><span class="p">,</span> <span class="n">keybind</span><span class="p">)</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1">---Updates the input map. Call this every time after modifying the user&#39;s keybindings.</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1">---Updates the input map. Call this every time after modifying the user's keybindings.</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="c1">---@return table&lt;string, string[]&gt;</span>
 <a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="kr">function</span> <span class="nc">Options</span><span class="p">.</span><span class="nf">UpdateInputMap</span><span class="p">()</span>
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
@@ -1270,10 +1270,10 @@
 <a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="c1">---@param key string</span>
 <a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="kr">function</span> <span class="nc">Options</span><span class="p">.</span><span class="nf">SetPotentialBinding</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 </code></pre></div>
-</epip></p>
-<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
-<p><epip class="OptionsInputUI" symbols="Class"></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">---@class OptionsInputUI : Feature</span>
+
+<h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">¶</a></h2>
+<p><epip class="OptionsInputUI" symbols="Class"></epip></p>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">---@class OptionsInputUI : Feature</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">---@field CUSTOM_TABS table&lt;string, OptionsInputTab&gt;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">---@field TAB_ORDER string[]</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">---@field nextCustomTabID integer</span>
@@ -1301,7 +1301,7 @@
 <a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="c1">---@field ID string</span>
 <a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="c1">---@field DefaultInput1 string?</span>
 <a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="c1">---@field DefaultInput2 string?</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="c1">---@field DeveloperOnly boolean? If true, the binding will not be visible in the UI outside of developer mode (and won&#39;t function either)</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="c1">---@field DeveloperOnly boolean? If true, the binding will not be visible in the UI outside of developer mode (and won't function either)</span>
 <a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
 <a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
 <a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="c1">---@class OptionsInputSavedKeybind</span>
@@ -1309,7 +1309,7 @@
 <a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="c1">---@field Input1 OptionsInputBinding</span>
 <a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="c1">---@field Input2 OptionsInputBinding</span>
 </code></pre></div>
-</epip></p>
+</div>
 
 
   
