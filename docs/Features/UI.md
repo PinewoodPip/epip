@@ -63,7 +63,7 @@ Accessible through **Options -> Epip settings -> General -> Character Level Disp
 
 ## Player Status Bar
 The player health bar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text was removed to improve readability.  
-Additionally, your AP display now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. Your maximum SP is also shown at all times.  
+Additionally, the AP display now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. Your maximum SP is also shown at all times.  
 Further minor graphical tweaks were made, such as properly centering AP/SP displays and adding a dropshadow to AP bar to improve its readability.  
 
 ![Player status bar showcase](img/ui/status_console.png)

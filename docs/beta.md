@@ -350,7 +350,7 @@ You can now manually set an icon for an item with Vanity Transmog using the new 
 - Reordered slot filters in Quick Find; armor goes first, then weapons/shield, then jewelry (thanks Cathe)
 - Fixed a vanilla bug where undead characters would not see any armor restoration numbers over their head
 - Added the `!rainbowoverlays` console command
-- Cleaned up some scripting for the default crafting filter; as a sideeffect you will have to reconfigure the setting
+- Cleaned up some scripting for the default crafting filter; as a side-effect you will have to reconfigure the setting
 
 Fixes:
 
