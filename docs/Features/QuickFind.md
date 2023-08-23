@@ -24,4 +24,6 @@ The following filter options are available:
     - Skillbooks with unlearnt skills
     - Ability school
 
+The UI may be dragged by the top part, and will keep its position within the same session when re-opened.
+
 ![Quick Find showing consumables.](img/quickfind/consumables.png)
