@@ -1185,10 +1185,10 @@
 <p>To update localization:</p>
 <ol>
 <li>Download the google sheet</li>
-<li>Run generate_epip_localization_json.py to update the current localization with data from the sheet</li>
-<li>Generate new json with new/modified strings via !generatelocalizationtemplates command</li>
-<li>Run generate_epip_localization_sheets.py to update the sheet</li>
-<li>Update the google sheet</li>
+<li>Run <code>generate_epip_localization_json.py</code> to update the current localization with data from the sheet</li>
+<li>Generate new json with new/modified strings via <code>!generatelocalizationtemplates</code> command ingame</li>
+<li>Run <code>generate_epip_localization_sheets.py</code> to update the sheet</li>
+<li>Update the google sheet; the most efficient way to do this is to import all sheets from the new sheet, then copy-paste them into the old ones; this will keep formatting and frozen ranges intact</li>
 </ol>
 <p>The repository only contains the core scripts to do this, the particular ones mentioned before (which run the core script for each language in Epip) can be obtained from unpacking (or asking Pip if they're still alive).</p></div>
 
