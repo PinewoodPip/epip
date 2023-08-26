@@ -11,8 +11,59 @@
 }
 ```
 
-## v1066 (12/08/23 upload)
+## v1066 (26/08/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
+
+### New Features & Changes
+- Added a setting to allow dragging unlearnt skills onto the hotbar, ex. from the codex. This is useful for creating placeholders. You can find it in the "Hotbar" tab.
+- Made various strings from older features translatable, mostly tooltip-related ones
+- Holding shift to see precise AP costs for movement should now work in other languages
+- The setting to disable loremaster shared notifications should now work in other languages
+- Added a setting to disable the "Masterworked" tooltip
+
+Due to some reorganization, you will have to rebind the B/H Overheads hotkey.
+
+#### Quick Find
+- The position of the UI no longer resets to the screen center every time it's opened
+- Added a wares filter
+- Added a scrollbar to the settings panel, for when there are too many of them
+- Improved performance when changing settings
+- Stat filter now has a tooltip
+- Fixed searching for "two-handed" and "single-handed" stat boosts not working
+
+### Fixes
+- Fixed the "Gear modifiers are added after choosing your reward" and surface damage scaling tooltips appearing when not using EE
+- Fixed performance degradation in the Codex Info section
+- Fixed physical armor reduction using the wrong color when holding shift to see damage multipliers in skill tooltips
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+- Removed some old UI files
+- Added HTML-related methods to `Text.HTML`
+- `Text.Format()` now mentions relative font sizes being supported, and the `FormatData`` class now has all fields marked as optional for clarity
+- Fixed align option in `Text.Format()`
+- Added a new IDE annotations generator for Extender classes and libraries; see `Features.IDEAnnotations` and `!ideannotations`
+    - Fixes various issues with the built-in generator, ex. aliases for enums
+- Minor annotation fixes and cleansing of unholy trailing space
+- Hotbar: added new methods and `SlotHovered` event
+- InputLib: action names and descriptions now support TSKs
+- DebugMenu configuration is now saved upon exiting
+- `Feature:Disable()` has been reworked into `Feature:SetEnabled()` and now properly supports re-enabling
+- `Event:Unsubscribe()` now removes all nodes with the passed ID
+- TooltipLib now has some methods copied over from Game.Tooltip to workaround certain mods yeeting them
+
+#### Generic
+- AnchoredText: added `inactivecolor` and `activecolor` attributes to `<a>`, for auto-coloring anchors based on state
+- Texture: implemented `SetAlpha()`
+- GenericUITextures now has a UI that previews registered textures and styles, opened using `!genericstyles` or a new developer keybind (defaults to ++lctrl+l++)
+- Added support for pooling Text elements, improving performance in cases where they are destroyed and recreated (ex. Codex Info section)
+- Fixed `SetChildIndex()` for lists and out-of-range indexes (ex. passing 999 now properly sets the element as last)
+- Added `SortByChildIndex()` to lists (except Grid)
+- FormElement now implements Elementable
+
+</details>
+
+## v1066 (12/08/23 upload)
 
 ### New Features & Changes
 
