@@ -1,7 +1,7 @@
 ## Fixes to vanilla issues
 Epip contains fixes to certain vanilla issues, mostly client-related.
 
-- When summons die or are newly-spawned in combat, control will be automatically switched back to the summoner - you don't have to manually switch back to the summoner.
+- When summons die or are newly-spawned in combat, control will be automatically switched back to the summoner - you don't have to manually do so.
 - You can now walk into corpses in combat without looting them; you can hold shift if you need to pillage them mid-fight, or disable this in the settings menu.
 - Fixed undead characters not displaying overhead text for armor restoration.
 - Fixed overhead text blocking clicks to the world (supposedly a DefEd regression).

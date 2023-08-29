@@ -12,7 +12,7 @@ Numerous fixes and additions have been made to tooltips to improve their clarity
 - Books that have been read and keys that have been used now have a green label in their tooltip.
 - Long item tooltips will be top-anchored, helping with the issue of being unable to compare items while wielding a heavily upgraded item.
 - Fixed cone and zone-type skill tooltips saying that their range is boosted by Astrologer's Gaze (Far-out Man in vanilla), as they are not actually affected.
-- Surface tooltips now show their owner as well as a hint regarding damage scaling.
+- Surface tooltips now show their owner - the character from who the surface scales from.
 - Surface tooltips now render on top of the hotbar.
 - In developer mode, statuses and skills show their IDs in their tooltips. A debug keybind exists to copy these identifiers to the clipboard.
 - Active Defense statuses now show their charges and max charges.
@@ -32,6 +32,7 @@ Numerous fixes and additions have been made to tooltips to improve their clarity
 - Artifacts display with a special rarity and item color, hand-picked by the EE devs. This change has been made available in the base EE mod as well. Additionally, artifact runes now show a "Cannot equip." warning for slots that they are incompatible with.
 - Added a hint in the quest rewards screen which explains that deltamods are only generated after picking the item.
 - EE rune crafting materials now have a hint explaining their usage.
+- Surface tooltips now have a hint for their damage scaling.
 
 ![A weapon tooltip showing the changes.](../img/showcase/weapon_tooltip.png)
 
