@@ -6,28 +6,28 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Coroutine library offers coroutines that support sleeping for X seconds or until a predicate is met.">
+        <meta name="description" content="Hotbar Groups allow you to create detached grids of hotbar slots of any size and freely position them on the screen. The skills and items dragged into these groups are shared across characters, making them ideal for consumables and utility skills that you may have on multiple characters.">
       
       
       
-        <link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Coroutine/">
+        <link rel="canonical" href="https://pinewood.team/epip/Features/HotbarGroups/">
       
       
-        <link rel="prev" href="../IO/">
+        <link rel="prev" href="../AnimationCancelling/">
       
       
-        <link rel="next" href="../UserVars/">
+        <link rel="next" href="../Camera/">
       
-      <link rel="icon" href="../../../img/tpw_logo_purple.png">
+      <link rel="icon" href="../../img/tpw_logo_purple.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>Coroutine - Epip Encounters</title>
+        <title>Hotbar Groups - Epip Encounters</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
       
 
@@ -43,9 +43,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#coroutine" class="md-skip">
+        <a href="#hotbar-groups" class="md-skip">
           Skip to content
         </a>
       
@@ -95,9 +95,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Epip Encounters" class="md-header__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
+    <a href="../.." title="Epip Encounters" class="md-header__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
       
-  <img src="../../../img/tpw_logo_purple.png" alt="logo">
+  <img src="../../img/tpw_logo_purple.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Coroutine
+              Hotbar Groups
             
           </span>
         </div>
@@ -180,9 +180,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Epip Encounters" class="md-nav__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
+    <a href="../.." title="Epip Encounters" class="md-nav__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
       
-  <img src="../../../img/tpw_logo_purple.png" alt="logo">
+  <img src="../../img/tpw_logo_purple.png" alt="logo">
 
     </a>
     Epip Encounters
@@ -198,7 +198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -213,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../patchnotes/" class="md-nav__link">
+      <a href="../../patchnotes/" class="md-nav__link">
         Patch Notes
       </a>
     </li>
@@ -228,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../beta/" class="md-nav__link">
+      <a href="../../beta/" class="md-nav__link">
         Beta Versions
       </a>
     </li>
@@ -243,156 +243,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Info/faq/" class="md-nav__link">
+      <a href="../../Info/faq/" class="md-nav__link">
         FAQ
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-          Major Features
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          Major Features
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/UI/" class="md-nav__link">
-        UI Improvements
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/Vanity/" class="md-nav__link">
-        Vanity
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/QuickFind/" class="md-nav__link">
-        Quick Find
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/AnimationCancelling/" class="md-nav__link">
-        Animation Cancelling
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/HotbarGroups/" class="md-nav__link">
-        Hotbar Groups
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/Camera/" class="md-nav__link">
-        Camera
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/TooltipAdjustments/" class="md-nav__link">
-        Tooltip Adjustments
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/VanillaFixes/" class="md-nav__link">
-        Vanilla Fixes
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -412,7 +265,195 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Major Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Major Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UI/" class="md-nav__link">
+        UI Improvements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Vanity/" class="md-nav__link">
+        Vanity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QuickFind/" class="md-nav__link">
+        Quick Find
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AnimationCancelling/" class="md-nav__link">
+        Animation Cancelling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Hotbar Groups
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Hotbar Groups
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demonstration" class="md-nav__link">
+    Demonstration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Camera/" class="md-nav__link">
+        Camera
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TooltipAdjustments/" class="md-nav__link">
+        Tooltip Adjustments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VanillaFixes/" class="md-nav__link">
+        Vanilla Fixes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
       
@@ -421,7 +462,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Technical Documentation
@@ -434,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -448,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terminology/" class="md-nav__link">
+      <a href="../../Documentation/Terminology/" class="md-nav__link">
         Terminology
       </a>
     </li>
@@ -462,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Global%20Tables/Epip/" class="md-nav__link">
+      <a href="../../Documentation/Global%20Tables/Epip/" class="md-nav__link">
         Important Tables
       </a>
     </li>
@@ -503,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/Pointer/" class="md-nav__link">
+      <a href="../../Documentation/Client/Pointer/" class="md-nav__link">
         Pointer
       </a>
     </li>
@@ -551,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Introduction/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -565,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Elements/Element/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Elements/Element/" class="md-nav__link">
         Element
       </a>
     </li>
@@ -579,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Elements/Button/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Elements/Button/" class="md-nav__link">
         Button
       </a>
     </li>
@@ -593,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Elements/Color/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Elements/Color/" class="md-nav__link">
         Color
       </a>
     </li>
@@ -607,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Elements/ComboBox/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Elements/ComboBox/" class="md-nav__link">
         ComboBox
       </a>
     </li>
@@ -655,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Prefabs/Button/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Prefabs/Button/" class="md-nav__link">
         Button
       </a>
     </li>
@@ -674,16 +715,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
       
       
       
@@ -692,7 +731,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7">
           <span class="md-nav__icon md-icon"></span>
           Utilities
@@ -705,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Artifact/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Artifact/" class="md-nav__link">
         Artifact
       </a>
     </li>
@@ -719,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Character/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Character/" class="md-nav__link">
         Character
       </a>
     </li>
@@ -733,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Color/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Color/" class="md-nav__link">
         Color
       </a>
     </li>
@@ -747,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Combat/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Combat/" class="md-nav__link">
         Combat
       </a>
     </li>
@@ -761,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GameState/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/GameState/" class="md-nav__link">
         GameState
       </a>
     </li>
@@ -775,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Item/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Item/" class="md-nav__link">
         Item
       </a>
     </li>
@@ -789,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Mod/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Mod/" class="md-nav__link">
         Mod
       </a>
     </li>
@@ -803,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Net/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Net/" class="md-nav__link">
         Net
       </a>
     </li>
@@ -817,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Timer/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Timer/" class="md-nav__link">
         Timer
       </a>
     </li>
@@ -831,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Text/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Text/" class="md-nav__link">
         Text
       </a>
     </li>
@@ -845,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Vector/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Vector/" class="md-nav__link">
         Vector
       </a>
     </li>
@@ -859,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OOP/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/OOP/" class="md-nav__link">
         OOP
       </a>
     </li>
@@ -873,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Library/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Library/" class="md-nav__link">
         Library
       </a>
     </li>
@@ -887,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../IO/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/IO/" class="md-nav__link">
         IO
       </a>
     </li>
@@ -899,21 +938,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Documentation/Utilities/Coroutine/" class="md-nav__link">
         Coroutine
       </a>
-      
     </li>
   
 
@@ -925,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../UserVars/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/UserVars/" class="md-nav__link">
         UserVars
       </a>
     </li>
@@ -939,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Texture/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Texture/" class="md-nav__link">
         Texture
       </a>
     </li>
@@ -953,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Pointer/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Pointer/" class="md-nav__link">
         Pointer
       </a>
     </li>
@@ -1036,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tutorials/testing/" class="md-nav__link">
+      <a href="../../Tutorials/testing/" class="md-nav__link">
         Testing
       </a>
     </li>
@@ -1084,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/" class="md-nav__link">
+      <a href="../../Maintenance/" class="md-nav__link">
         Index
       </a>
     </li>
@@ -1098,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/IDESetup/" class="md-nav__link">
+      <a href="../../Maintenance/IDESetup/" class="md-nav__link">
         IDE Setup
       </a>
     </li>
@@ -1112,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/localization/" class="md-nav__link">
+      <a href="../../Maintenance/localization/" class="md-nav__link">
         Localization
       </a>
     </li>
@@ -1126,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/documentation/" class="md-nav__link">
+      <a href="../../Maintenance/documentation/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -1140,7 +1169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/keybinds/" class="md-nav__link">
+      <a href="../../Maintenance/keybinds/" class="md-nav__link">
         Keybinds Reference
       </a>
     </li>
@@ -1181,6 +1210,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demonstration" class="md-nav__link">
+    Demonstration
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1194,47 +1238,16 @@
                   
 
 
-<div><h1 id="coroutine">Coroutine<a class="headerlink" href="#coroutine" title="Permanent link">¶</a></h1>
-<p>The <code>Coroutine</code> library offers coroutines that support sleeping for X seconds or until a predicate is met.</p>
-<p><doc class="CoroutineLib"></doc></p>
-<h1 id="coroutinelib-class">CoroutineLib Class<a class="headerlink" href="#coroutinelib-class" title="Permanent link">¶</a></h1>
-<p>Inherits from <code>Library</code>.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">CoroutineLib</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">CoroutineInstance</span>
-</code></pre></div>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>fun</b> <code>fun(inst:CoroutineInstance, ...)</code></p>
-<p></p>
-<p><doc class="CoroutineInstance"></doc></p>
-<h1 id="coroutineinstance-class">CoroutineInstance Class<a class="headerlink" href="#coroutineinstance-class" title="Permanent link">¶</a></h1>
-<h2 id="events-and-hooks">Events and Hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">¶</a></h2>
-<h4 id="finished-event">Finished (event)<a class="headerlink" href="#finished-event" title="Permanent link">¶</a></h4>
-<p>An event object with no parameters.</p>
-<h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">¶</a></h2>
-<h5 id="continue">Continue<a class="headerlink" href="#continue" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">Continue</span><span class="p">()</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="p">...</span>
-</code></pre></div>
-<h5 id="isdead">IsDead<a class="headerlink" href="#isdead" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">IsDead</span><span class="p">()</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
-</code></pre></div>
-<h5 id="issleeping">IsSleeping<a class="headerlink" href="#issleeping" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">IsSleeping</span><span class="p">()</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
-</code></pre></div>
-<h5 id="sleep">Sleep<a class="headerlink" href="#sleep" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">Sleep</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="p">...)</span>
-</code></pre></div>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>time</b> <code>number|function</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code> Variables yielded. Discarded if the coroutine is resuming from sleeping, as there is no caller.</p>
-
-<h5 id="yield">Yield<a class="headerlink" href="#yield" title="Permanent link">¶</a></h5>
-<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">CoroutineInstance</span><span class="p">:</span><span class="nf">Yield</span><span class="p">()</span>
-</code></pre></div>
-</div>
+<div><h1 id="hotbar-groups">Hotbar Groups<a class="headerlink" href="#hotbar-groups" title="Permanent link">¶</a></h1>
+<p>Hotbar Groups allow you to create detached grids of hotbar slots of any size and freely position them on the screen. The skills and items dragged into these groups are shared across characters, making them ideal for consumables and utility skills that you may have on multiple characters.</p>
+<p>Right-click the regular hotbar and select "Create Hotbar Group" to get started. There is no limit on the amount of hotbar groups you can have.</p>
+<p><img alt="Example of 2 hotbar groups." src="../img/hotbargroups/example.png"></p>
+<p>Hotbar Groups may be dragged around using the brown handle on the sides. The relative position of the groups on the screen is saved across sessions.</p>
+<p>Right-click a group to bring up a context menu where you can change the group's UI layer (positioning it below or above other UIs), resize the grid of the group, or delete it. Special thanks goes to Cathe for implementing group resizing!</p>
+<p><img alt="Context menu of a hotbar group." src="../img/hotbargroups/context_menu.png"></p>
+<p>The possibility to create non-shared groups will be available in the future.</p>
+<h2 id="demonstration">Demonstration<a class="headerlink" href="#demonstration" title="Permanent link">¶</a></h2>
+<p><div class="video-container"><iframe src="https://www.youtube.com/embed/_wKdDO1-ooo" style="height:400px;width:100%" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p></div>
 
 
   
@@ -1274,13 +1287,13 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
         
-          <script src="../../../js/extra.js"></script>
+          <script src="../../js/extra.js"></script>
         
       
     
