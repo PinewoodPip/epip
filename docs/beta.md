@@ -11,8 +11,56 @@
 }
 ```
 
-## v1066 (26/08/23 upload)
+## v1066 (02/09/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
+
+### Inventory Multi-Select
+An option to enable multi-select controls for the party inventory UI has been added, enabled from the "Inventory" settings tab.
+
+![type:video](https://www.youtube.com/embed/xqr88b6DGDY)
+
+Use ++ctrl+m1++ to select/deselect items. If at least one item is selected, ++shift+m1++ will select a range of items between the mouse and the first selected item.
+
+Right-click selected items to access a context menu with operations, or drag and drop them to inventory slots, player inventory tabs, or container items to move them.
+
+<center>
+![Context menu for selected items.](./Features/img/inventorymultiselect/context_menu.png)
+</center>
+
+### Other additions and changes
+
+- Added a setting to play a notification when another player joins dialogue, to make it harder to miss. You may enable it in the "Notifications" tab.
+- The hotbar action for using pyramids now has the following priority for picking the pyramid to use:
+    1. Pyramid within the inventory of the character that pressed the button
+    2. Pyramids within other characters controlled by the same user
+    3. Other pyramids in party inventory
+
+### Fixes
+- Fixed hotbar bedroll and pyramids actions not working if EE was not enabled
+- Fixed camera settings not being saved after clicking "Reset to defaults"
+- Fixed status tooltips appearing far away from the cursor in the Alternative Status Display
+- Fixed some labels being cut off in the settings menu
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+- TextLib no longer removes outdated translations from localization templates
+- Added `PlayerInfo.GetPlayerElements()`, and hooks for `updateInfos`
+- Fixed a regression causing the prompt for opening the Fishing log to not work
+- QuickInventory: fixed built-in Generic events being hidden
+- Added align options to `Tooltip.ShowStatusTooltip()`, moved it to separate script (other tooltip types will follow)
+- `Library:Error()` now blames user code in the stack; the new `Library:InternalError()` blames the function itself
+- Fixed comments for aliases in generated IDE annotations
+- OsirisIDEAnnotationGenerator now supports all symbol types from the header, uses lowercase for parameter names, avoids parameter name duplication and has an option to generate annotations intended for the `Osiris` library
+- Fixed `Item` not actually being a library
+- Clarified the usage of `Item.GetOwner()`
+
+#### Generic
+- Instances now come with an empty `Hooks` table
+- Fixed `Text:SetType()` not applying until the text was changed (didn't affect Text prefab)
+- Spinner: cleaned up script, implemented Elementable, changed default colors to white
+</details>
+
+## v1066 (26/08/23 upload)
 
 ### New Features & Changes
 - Added a setting to allow dragging unlearnt skills onto the hotbar, ex. from the codex. This is useful for creating placeholders. You can find it in the "Hotbar" tab.
