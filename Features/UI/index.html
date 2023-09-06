@@ -336,13 +336,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#alternative-display" class="md-nav__link">
-    Alternative Display
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#flags-display" class="md-nav__link">
     Flags Display
   </a>
@@ -1223,6 +1216,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Maintenance/ProjectSetup/" class="md-nav__link">
+        Project Setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Maintenance/IDESetup/" class="md-nav__link">
         IDE Setup
       </a>
@@ -1328,13 +1335,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#alternative-display" class="md-nav__link">
-    Alternative Display
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#flags-display" class="md-nav__link">
     Flags Display
   </a>
@@ -1434,10 +1434,10 @@
 <p>Epip contains a plethora of functional and cosmetic improvements over the base game UI. Big thanks to Elric for the new art assets used!</p>
 <h2 id="target-status-bar">Target Status Bar<a class="headerlink" href="#target-status-bar" title="Permanent link">¶</a></h2>
 <h3 id="resistance-and-bh-display">Resistance and B/H Display<a class="headerlink" href="#resistance-and-bh-display" title="Permanent link">¶</a></h3>
-<p>The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer. Actual B/H statuses are now hidden to reduce clutter.</p>
+<p>The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks in EE. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer. Actual B/H statuses are now hidden to reduce clutter.</p>
 <p><img alt="Health bar showcase" src="../img/ui/health_bar.png"></p>
-<h3 id="alternative-display">Alternative Display<a class="headerlink" href="#alternative-display" title="Permanent link">¶</a></h3>
-<p>Holding the "show sneak cones" button (Shift by default) will replace the resistances display with the character's current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.  </p>
+<p>Holding <span class="keys"><kbd class="key-shift">Shift</kbd></span> will replace the resistances display with the character's current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.</p>
+<p><img alt="Health bar alt" src="../img/ui/health_bar_shift.png"></p>
 <h3 id="flags-display">Flags Display<a class="headerlink" href="#flags-display" title="Permanent link">¶</a></h3>
 <p>The "Display Common Flags" setting enables showing additional miscellaneous information under the bar while shift is held, including:</p>
 <ul>
@@ -1446,8 +1446,8 @@
 <li>Whether the character is flagged as incapable of joining combat</li>
 <li>The character's AI archetype (ranger, rogue, etc.)</li>
 </ul>
+<p><img alt="Flags display." src="../img/ui/flagsdisplay.png"></p>
 <p>These flags are not shown if the character doesn't have them.</p>
-<p><img alt="Health bar alt" src="../img/ui/health_bar_shift.png"></p>
 <h3 id="level-display">Level Display<a class="headerlink" href="#level-display" title="Permanent link">¶</a></h3>
 <p>An option to customize the position of targeted character level display was added.<br>
 <em>By default it's displayed in alternate status bar mode (while Shift is held).</em>  </p>
@@ -1463,7 +1463,7 @@
 </details>
 
 <h3 id="aggro-display">Aggro Display<a class="headerlink" href="#aggro-display" title="Permanent link">¶</a></h3>
-<p>An option to display aggro-related information was added. It shows current Taunt source, if exists, as well as whether a character is Preferred, Unpreferred or Ignored by enemies.<br>
+<p>An option to display aggro-related information was added. It shows current Taunt source, if one exists, as well as whether a character is <em>Preferred</em>, <em>Unpreferred</em> or <em>Ignored</em> by enemies.<br>
 You can adjust whether this info is shown in the default or alternative health bar display.<br>
 <em>Disabled by default.</em>  </p>
 <details>
@@ -1478,7 +1478,7 @@ Accessible through <b>Options -&gt; Epip settings -&gt; General -&gt; Show Aggro
 </details>
 <details>
 <summary>Aggro tags explanation</summary>
-<p>AI chooses its targets based on a number of parameters, such as target's effective HP, how easy it is to get to the target and so on. Its behavior is also influenced by aggro tags.</p>
+<p>AI chooses its targets based on a number of parameters, such as target's effective HP, how easy it is to get to the target and so on. Its behavior is also influenced by aggro tags.</p><p><b>This information is only relevant for Epic Encounters 2.</b></p>
 <ul>
 <li>No tag: AI has no preference on whether to choose this character as the primary attack target or not. However, AI will actively try to hit this character with AOE attacks. Most characters will not have any aggro tag by default.</li>
 <li>Preferred: AI will actively try to make this character its primary attack target. This aggro tag is manually provided to some important NPCs and is not normally obtainable during gameplay.</li>
@@ -1486,12 +1486,11 @@ Accessible through <b>Options -&gt; Epip settings -&gt; General -&gt; Show Aggro
 <li>Ignored: AI will try to act as if this character does not exist.</li>
 <li>Taunted: this AI will consider the source of Taunt a Preferred target.</li>
 </ul>
-<p><b>This information is only relevant for Epic Encounters 2!</b></p>
 </details>
 
 <h3 id="treasure-display">Treasure Display<a class="headerlink" href="#treasure-display" title="Permanent link">¶</a></h3>
-<p>An option has been added to display noteworthy item drops of enemies and containers on their health bar. For characters, this only shows while holding shift.<br>
-Accessible through <strong>Options -&gt; Epip settings -&gt; General -&gt; Character Level Display</strong>, disabled by default.  </p>
+<p>An option has been added to display noteworthy EE item drops of enemies and containers on their health bar. For characters, this only shows while holding shift. Changes and special cases from Derpy's Tweaks are supported.
+Accessible through <strong>Epip Settings -&gt; General -&gt; Character Level Display</strong>, disabled by default.  </p>
 <p><img alt="Treasure display option." src="../img/ui/treasure_display.png"></p>
 <h2 id="player-status-bar">Player Status Bar<a class="headerlink" href="#player-status-bar" title="Permanent link">¶</a></h2>
 <p>The player health bar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text was removed to improve readability.<br>
