@@ -4,12 +4,13 @@ Epip contains a plethora of functional and cosmetic improvements over the base g
 ## Target Status Bar
 
 ### Resistance and B/H Display
-The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer. Actual B/H statuses are now hidden to reduce clutter.
+The health bar at the top of the screen now shows character's resistances as well as their Battered and Harried stacks in EE. The B/H icons will light up if the target has enough of them to suffer a Tier 3 status, and will blink when the duration of the stacks is 1 turn or fewer. Actual B/H statuses are now hidden to reduce clutter.
 
 ![Health bar showcase](img/ui/health_bar.png)
 
-### Alternative Display
-Holding the "show sneak cones" button (Shift by default) will replace the resistances display with the character's current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.  
+Holding ++shift++ will replace the resistances display with the character's current AP, Source and Initiative - very handy for planning and foreseeing enemy turns. Additionally, it will lower the opacity of status effects on the health bar.
+
+![Health bar alt](img/ui/health_bar_shift.png)
 
 ### Flags Display
 The "Display Common Flags" setting enables showing additional miscellaneous information under the bar while shift is held, including:
@@ -19,9 +20,9 @@ The "Display Common Flags" setting enables showing additional miscellaneous info
 - Whether the character is flagged as incapable of joining combat
 - The character's AI archetype (ranger, rogue, etc.)
 
-These flags are not shown if the character doesn't have them.
+![Flags display.](img/ui/flagsdisplay.png)
 
-![Health bar alt](img/ui/health_bar_shift.png)
+These flags are not shown if the character doesn't have them.
 
 ### Level Display
 An option to customize the position of targeted character level display was added.  
@@ -38,7 +39,7 @@ An option to customize the position of targeted character level display was adde
 </details>
 
 ### Aggro Display
-An option to display aggro-related information was added. It shows current Taunt source, if exists, as well as whether a character is Preferred, Unpreferred or Ignored by enemies.  
+An option to display aggro-related information was added. It shows current Taunt source, if one exists, as well as whether a character is *Preferred*, *Unpreferred* or *Ignored* by enemies.  
 You can adjust whether this info is shown in the default or alternative health bar display.  
 *Disabled by default.*  
 <details>
@@ -53,7 +54,7 @@ Accessible through <b>Options -> Epip settings -> General -> Show Aggro Informat
 </details>
 <details>
 <summary>Aggro tags explanation</summary>
-<p>AI chooses its targets based on a number of parameters, such as target's effective HP, how easy it is to get to the target and so on. Its behavior is also influenced by aggro tags.</p>
+<p>AI chooses its targets based on a number of parameters, such as target's effective HP, how easy it is to get to the target and so on. Its behavior is also influenced by aggro tags.</p><p><b>This information is only relevant for Epic Encounters 2.</b></p>
 <ul>
 <li>No tag: AI has no preference on whether to choose this character as the primary attack target or not. However, AI will actively try to hit this character with AOE attacks. Most characters will not have any aggro tag by default.</li>
 <li>Preferred: AI will actively try to make this character its primary attack target. This aggro tag is manually provided to some important NPCs and is not normally obtainable during gameplay.</li>
@@ -61,12 +62,11 @@ Accessible through <b>Options -> Epip settings -> General -> Show Aggro Informat
 <li>Ignored: AI will try to act as if this character does not exist.</li>
 <li>Taunted: this AI will consider the source of Taunt a Preferred target.</li>
 </ul>
-<p><b>This information is only relevant for Epic Encounters 2!</b></p>
 </details>
 
 ### Treasure Display
-An option has been added to display noteworthy item drops of enemies and containers on their health bar. For characters, this only shows while holding shift.  
-Accessible through **Options -> Epip settings -> General -> Character Level Display**, disabled by default.  
+An option has been added to display noteworthy EE item drops of enemies and containers on their health bar. For characters, this only shows while holding shift. Changes and special cases from Derpy's Tweaks are supported.
+Accessible through **Epip Settings -> General -> Character Level Display**, disabled by default.  
 
 ![Treasure display option.](img/ui/treasure_display.png)
 
