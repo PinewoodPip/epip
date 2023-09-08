@@ -1,15 +1,12 @@
 # Epip Encounters
 
-Epip Encounters is a UI and QoL mod targeting [Epic Encounters 2](https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#), though it may also be used without it.
+Epip Encounters is a UI and quality-of-life mod targeting [Epic Encounters 2](https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#), though it may also be used with the vanilla Divinity: Original Sin 2 game or other overhaul mods.
 
 ## Download
 
 !!! info "Language warning"
     Only English is fully supported, however crowdsourced translations are underway.  
     Localization is only possible thanks to the members of our community. If you want to help with it - feel free to contribute at [our translation spreadsheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/).  
-
-!!! warning "Standalone usage warning"
-    **If you have the Improved Hotbar mod, you must disable it to use Epip**. All of its functions are already in Epip (+ like 9 months worth of updates that the workshop mod never got). See the [front page](index.md) and the [changelog](patchnotes.md) if you're new to Epip.
 
 !!! warning "Gameplay mod info"
     If you're using Derpy's EE2 Tweaks, you will likely want to grab the [gameplay mod](Info/faq.md#whats-this-talk-about-a-gameplay-mod) as well. Derpy's mod is intended to be used with it.
