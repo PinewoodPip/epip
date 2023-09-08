@@ -11,8 +11,58 @@
 }
 ```
 
-## v1066 (02/09/23 upload)
+## v1066 (08/09/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
+
+### Quick Find
+- Added a "Containers" filter, that displays items such as backpacks or barrels
+    - Empty containers may be filtered out
+- Added a recursive search option, which will find items within containers that are in the party inventory
+
+### Other additions and changes
+- Added a setting that shows the names of items within containers in their tooltips, enabled from the "Tooltips" tab (*"Preview Container Items"*). Previews up to 3 items by default.
+![Container preview.](./Features/img/tooltipadjustments/container_preview.png)
+- Added a setting to allow slots from higher hotbar rows to be used when holding ++shift++/++ctrl++/++alt++/++cmd++ while pressing the vanilla slot keys. For example, pressing ++shift+2++ will use the second slot on the second bar. Enabled from the "Hotbar" tab (*"Select upper bars with modifier keys"*).
+- Added support for Gamemaster Mode
+- Updated localization
+
+### Fixes
+- The fix for being unable to use items properly when under the effects of +AP Costs now works correctly when using items from context menus
+- Fixed some issues with the Alternative Status Display when travelling between acts
+- Fixed Preferred AI tag not showing up in the enemy health bar with "Show Aggro Information" enabled
+- Fixed certain Epip tooltips such as "+Elemental Weapon Damage" and "+Weapon Range" showing up on unidentified items
+- Fixed custom context menus not working correctly on items placed in the world
+- Fixed custom context menus being able to overflow through the right edge of the screen
+- Fixed numbers in the stats tab not getting grayed out in some cases and not being rounded, possibly overflowing outside the UI
+- Fixed some item tooltips showing an empty line after their item level
+- "Show loot drops in health bar" setting is no longer visible outside of EE (as it doesn't do anything without it)
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+- Various small changes to support GM mode (commit a4f82c4)
+- Fixed `Item.GetContainerItems()` erroring if no predicate was passed.
+- Added `:Format()` to TSKs, as well as `FormatOptions`
+- Added `InputEventBinding:ToKeyCombination()`
+- Added `Input.GetBoundActions()`
+- `Osi.RegisterListener()` is now properly annotated by IDEAnnotations
+- `Item.GetItemsInPartyInventory()` now has a recursive option
+- Added `Item.GetDisplayName()`
+- Added `Item.IsIdentified()`
+- Added an API for `ContainerInventory` UI
+- Numerous changes to the Epip table:
+    - Added `ShutUp()`
+    - Features can be fetched by non-stripped ID
+    - Deprecated `AddFeature()`
+    - `Epip.VERSION` now uses `Mod.GetStoryVersion()` instead of being a static field
+    - `GetFeature()` no longer errors by default if the feature is not found, unless a new param is passed
+    - Added `ImportGlobals()`
+
+#### Generic
+- Added more frame and panel textures
+- Added `texture_importer.py` for importing texture resources without using the editor
+</details>
+
+## v1066 (02/09/23 upload)
 
 ### Inventory Multi-Select
 An option to enable multi-select controls for the party inventory UI has been added, enabled from the "Inventory" settings tab.

@@ -1,5 +1,5 @@
 ## Tooltip Adjustments
-Numerous fixes and additions have been made to tooltips to improve their clarity. Some of these may be toggled off from the Tooltips tab in the settings menu.
+Numerous fixes and additions have been made to tooltips to improve their clarity. Some of these may be toggled off or reconfigured from the "Tooltips" tab in the settings menu.
 
 ### General
 - Delay for simple tooltips appearing is customizable in the settings menu.
@@ -17,6 +17,9 @@ Numerous fixes and additions have been made to tooltips to improve their clarity
 - In developer mode, statuses and skills show their IDs in their tooltips. A debug keybind exists to copy these identifiers to the clipboard.
 - Active Defense statuses now show their charges and max charges.
 - Holding shift in combat displays partial AP costs for movement.
+- Containers (backpacks, barrels, etc.) show the names of the first few items within them. Defaults to previewing up to 3 items.
+
+![Container preview.](./img/tooltipadjustments/container_preview.png)
 
 ![Surface tooltip showing ownership and damage scaling, as well as partial AP movement costs.](img/tooltipadjustments/surface.png)
 

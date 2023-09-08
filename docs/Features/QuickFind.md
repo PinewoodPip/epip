@@ -23,7 +23,11 @@ The following filter options are available:
 - Skillbooks
     - Skillbooks with unlearnt skills
     - Ability school
+- Containers (backpacks, barrels, etc.)
+    - Empty containers
 
 The UI may be dragged by the top part, and will keep its position within the same session when re-opened.
+
+By default, only items directly in the party inventory are shown. You may enable the "Recursive Search" option to also search items within backpacks and other containers the party holds.
 
 ![Quick Find showing consumables.](img/quickfind/consumables.png)
