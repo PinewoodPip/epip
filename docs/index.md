@@ -2,6 +2,10 @@
 
 Epip Encounters is a UI and quality-of-life mod targeting [Epic Encounters 2](https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#), though it may also be used with the vanilla Divinity: Original Sin 2 game or other overhaul mods.
 
+Epip introduces dozens of usability improvements to the vanilla UIs, as well as numerous new custom UIs to fulfill needs the vanilla ones cannot. See [the features section](#features) for details.
+
+Vast customization for Epip's features is available through an in-game settings menu - you may use as many or as few features as you deem necessary.
+
 ## Download
 
 !!! info "Language warning"
@@ -9,7 +13,7 @@ Epip Encounters is a UI and quality-of-life mod targeting [Epic Encounters 2](ht
     Localization is only possible thanks to the members of our community. If you want to help with it - feel free to contribute at [our translation spreadsheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/).  
 
 !!! warning "Gameplay mod info"
-    If you're using Derpy's EE2 Tweaks, you will likely want to grab the [gameplay mod](Info/faq.md#whats-this-talk-about-a-gameplay-mod) as well. Derpy's mod is intended to be used with it.
+    If you're using Derpy's EE2 Tweaks, you will likely want to grab the legacy [gameplay changes mod](Info/faq.md#whats-this-talk-about-a-gameplay-mod) as well. Derpy's mod is intended to be used with it.
 
 **[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5)**. Load after both EE Core and EE Origins, if you have them.
 
@@ -36,7 +40,20 @@ Translators:
 - Ainsky: Simplified Chinese
 
 ## Features
-Below is a non-exhaustive list of features; I suggested browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. 
+Below is a non-exhaustive list of features; I suggested browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. Exploring the in-game settings menu is another good way of getting familiar with the mod's features.
+
+Major features have dedicated pages for them, accessible from the sidebar, or the following index:
+
+- **[UI Improvements](Features/UI.md)**: list of improvements to the vanilla UIs as well as some custom UIs.
+- **[Vanity](Features/Vanity.md)**: exhaustive cosmetic equipment transmog, featuring a menu to browse item models, dyeing, persistent outfits, and much more.
+- **[Quick Find](Features/QuickFind.md)**: filterable view of the party inventory, making searching for specific items easier.
+- **[Animation Cancelling](Features/AnimationCancelling.md)**: speeds up combat by ending player skill animations early.
+- **[Hotbar Groups](Features/HotbarGroups.md)**: customizable, shared groups of additional hotbar slots.
+- **[Camera](Features/Camera.md)**: settings to tweak the game camera.
+- **[Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
+- **[Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
+
+The rest of this page covers changes and additions that are not (yet) categorized into other pages.
 
 ## UI
 
@@ -94,7 +111,7 @@ The settings menu has been expanded to allow mods to add their own settings. Epi
 
 ![Options menu.](img/showcase/options_settings.png)
 
-The input menu has received similar treatment, with custom keybindings becoming possible. You must first click the "Controls" tab before you can access custom keybinds added by Epip.
+The input menu has received similar treatment, with custom keybindings becoming possible. You must first click the "Controls" tab before you can access custom keybinds added by Epip. *(In v1066+, this menu is accessible through a "Keybinds" tab in the Epip settings menu instead).*
 
 Custom hotkeys include Meditate, Source Infuse, as well as binding the 12 "action buttons" from the Hotbar UI.
 
@@ -155,7 +172,7 @@ The Examine UI now shows Critical Chance, and can be configured to open on the s
 Additionally, there is now a keybind to open the examine menu, and capitalization of the word "Status efects" has been made consistent with the rest of the UI.
 
 ### Ingame Patchnotes
-A new journal UI can be accessed from the Hotbar actions, or after updating the mod. It lists the patchnotes of Epip, and other mods can add information/patchnotes there freely as well. Updating the mod will also show a prompt to open the UI.
+A new journal UI can be accessed from the Hotbar actions, or after updating the mod. It lists the patchnotes of Epip, and other mods can add information/patchnotes there freely as well. Updating the mod will also show a prompt to open the UI. *(In v1066+, this UI has been replaced by the Codex).*
 
 ![Custom journal.](img/showcase/journal.png)
 
