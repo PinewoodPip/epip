@@ -17,9 +17,9 @@ Vast customization for Epip's features is available through an in-game settings 
 
 **[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5)**. Load after both EE Core and EE Origins, if you have them.
 
-**The stable version is months behind the [beta](beta.md) one. Consider using the [beta](beta.md) instead to avoid running into issues that were fixed long ago. As of 5/8/23 extender v60 is in a stable state; there are no known issues with it.**
+>**The stable version is months behind the [v1066 beta](beta.md) one. Consider using [v1066](beta.md) for better non-EE support and to avoid running into issues that were fixed long ago. As of 5/8/23 extender v60 is in a stable state; there are no known issues with it.**
 
-[Latest stable version, v1065](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing). (07/05/23)
+[Latest stable version, v1065](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing). (07/05/23) - Not recommended, see previous paragraph.
 
 See the [patchnotes](patchnotes.md) page for patchnotes.
 

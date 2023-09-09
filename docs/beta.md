@@ -1,7 +1,7 @@
 
 
 !!! warning "Extender devel version required"
-    Requires extender v60. Intended version: `4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff`
+    Requires extender v60.
     To get it, use the following `ScriptExtenderUpdaterConfig.json` in the same folder where you installed the Extender (`DefEd/bin`):
 ```{ .yaml .copy }
 {
@@ -12,7 +12,7 @@
 ```
 
 ## v1066 (08/09/23 upload)
-[Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing).
+[Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing). **Make sure you've read the installation instructions above.**
 
 ### Quick Find
 - Added a "Containers" filter, that displays items such as backpacks or barrels
