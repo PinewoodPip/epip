@@ -11,8 +11,21 @@
 }
 ```
 
-## v1066 (08/09/23 upload)
+## v1066 (10/09/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing). **Make sure you've read the installation instructions above.**
+
+### Fixes
+- Fixed issues with Alternative Status Display tooltips appearing over other UIs
+- Hopefully fixed custom context menus for window sizes above 1080p, including ultrawide
+- Fixed the "Previous" and "Next" buttons in the Epic Enemies settings tab behaving the same way (both scrolled in the same direction)
+- Fixed the "Show Action Hotkeys" hotbar setting not working
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+- Fixes and cleanups to remove IDE warnings in old code. Functionality unaffected (if anything, some possible unnoticed bugs from typos have been fixed).
+</details>
+
+## v1066 (08/09/23 upload)
 
 ### Quick Find
 - Added a "Containers" filter, that displays items such as backpacks or barrels
