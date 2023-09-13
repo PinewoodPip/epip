@@ -16,7 +16,7 @@
         <link rel="prev" href="../../docs/">
       
       
-        <link rel="next" href="../Global%20Tables/Epip/">
+        <link rel="next" href="../Feature/">
       
       <link rel="icon" href="../../img/tpw_logo_purple.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
@@ -509,10 +509,38 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#core-library" class="md-nav__link">
+    Core Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    Feature
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Feature/" class="md-nav__link">
+        Feature Development
+      </a>
     </li>
   
 
@@ -543,17 +571,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
       
       
       
-        <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
           Client
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6_4">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_5">
           <span class="md-nav__icon md-icon"></span>
           Client
         </label>
@@ -591,17 +619,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
       
       
       
-        <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
           Generic UI
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6_5">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_6">
           <span class="md-nav__icon md-icon"></span>
           Generic UI
         </label>
@@ -695,17 +723,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
       
       
       
-        <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
           Generic Prefabs
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6_6">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_7">
           <span class="md-nav__icon md-icon"></span>
           Generic Prefabs
         </label>
@@ -743,17 +771,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
           Utilities
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6_7">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_8">
           <span class="md-nav__icon md-icon"></span>
           Utilities
         </label>
@@ -1279,6 +1307,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#core-library" class="md-nav__link">
+    Core Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    Feature
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1309,7 +1351,11 @@
 <h2 id="namespacing">Namespacing<a class="headerlink" href="#namespacing" title="Permanent link">¶</a></h2>
 <p>As is the case for modding the base game, numerous resources in Epip use string identifiers which in turn can lead to collisions. Namespacing refers to prefixing such identifiers to avoid accidentally overwriting resources from other Epip mods.</p>
 <p>The Library and Feature classes contain wrapper methods for certain core libraries to automatically prefix identifiers used.</p>
-<p>Most methods in Epip do not throw nor warn when you attempt to register some resource under an ID already in use - this is by design so as to allow easy overriding.</p></div>
+<p>Most methods in Epip do not throw nor warn when you attempt to register some resource under an ID already in use - this is by design so as to allow easy overriding.</p>
+<h2 id="core-library">Core Library<a class="headerlink" href="#core-library" title="Permanent link">¶</a></h2>
+<p>Refers to global library tables, such as <code>Item</code>, <code>Character</code>, <code>Settings</code>, or other tables that inherit from the <code>Library</code> class in namespaces such as <code>Client</code> (ex. <code>Client.Tooltip</code>).</p>
+<h2 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">¶</a></h2>
+<p>Refers to either an end-user feature of the mod, <a href="../Feature/">or the <code>Feature</code> class and system</a>.</p></div>
 
 
   
