@@ -1,8 +1,7 @@
 
-
 !!! warning "Extender devel version required"
     Requires extender v60.
-    To get it, use the following `ScriptExtenderUpdaterConfig.json` in the same folder where you installed the Extender (`DefEd/bin`):
+    To get it, create the following `ScriptExtenderUpdaterConfig.json` file in the same folder where you installed the Extender (`DefEd/bin`):
 ```{ .yaml .copy }
 {
 	"UpdateChannel": "Devel",
