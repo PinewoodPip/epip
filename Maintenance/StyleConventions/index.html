@@ -1221,6 +1221,7 @@
 
 <div><h1 id="code-style-conventions">Code Style &amp; Conventions<a class="headerlink" href="#code-style-conventions" title="Permanent link">¶</a></h1>
 <p>TODO</p>
+<p>Places where hooks are involved typically do not throw any errors or warnings for unknown values being passed (ex. an option for a Choice setting that's not one of the predefined ones) due to the possibility of other scripts or mods implementing them.</p>
 <p>In the case of Generic UIs, often instances are extended with new fields and functions without defining them as a separate class. This is done to reduce the amount of class annotations, as generally they are not needed for simple extensions; the extension can tell those new fields are valid for that particular set only. It is only necessary to declare a class to override the Events table.</p>
 <p>Package names that are in plural indicate a package that by itself is not a class, and is used only to organize its subclasses. Ex. <code>MyFeature.Events</code> is a package that will hold the event tables of <code>MyFeature</code>, but by itself will not be a class (in other words, there is no <code>MyFeature.Events</code> class, only ex. <code>MyFeature.Events.SomethingHappened</code>).</p>
 <h2 id="class-definitions">Class Definitions<a class="headerlink" href="#class-definitions" title="Permanent link">¶</a></h2>
