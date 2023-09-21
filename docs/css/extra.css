@@ -96,6 +96,10 @@ img {
   margin-bottom: 2px;
 }
 
+summary {
+  user-select: none;
+}
+
 /* Admonitions */
 
 .admonition {
