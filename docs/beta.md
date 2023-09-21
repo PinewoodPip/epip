@@ -10,8 +10,47 @@
 }
 ```
 
-## v1066 (10/09/23 upload)
+## v1066 (21/09/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing). **Make sure you've read the installation instructions above.**
+
+### Changes and additions
+- Increased the speed of Mass Dismantle
+- Added a setting to use opaque backgrounds for skill/item/status tooltips, in the "Tooltips" settings tab ("*Opaque Background*")
+- Added a setting to remember the position of character sheet and party inventory UIs between sessions, in the "Miscellaneous UI" settings tab ("*Remember Panel Positions*")
+- The Codex Skills tab now has an option to show skill tooltips on the left page instead of by the cursor
+- Numerous old tooltip-related strings are now translateable (and already translated into some languages)
+
+![Codex setting to show tooltips on the left, with opaque background enabled.](./Features/img/codex/skills_tooltips_on_left.png)
+<center>*Codex setting to show tooltips on the left, with opaque background enabled.*</center>
+
+### Fixes
+- Fixed context menu positioning on resolutions other 16:9 and 1080p
+- Hopefully fixed context menus overflowing through the bottom edge of the screen
+- Fixed Alternative Status Display not hiding the vanilla one when characters are recruited
+- Fixed Epip keybinds triggering while a message box is open
+- Fixed Vanity Transmog "keep appearance" option resetting racial skill cooldowns
+- Fixed some skills still having descriptions from Epip Gameplay
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+
+- Fixed error spam in the title screen from HotbarTweaks
+- Added `UI:GetPath()`, `UI:FlashPositionToScreen()`, and `Client.GetUI()`
+- Fixed `Vector.ScalarProduct()`
+- Added `Character.GetSkill()`
+- Added events for dragging UIs to `PointerLib`
+
+#### Generic
+- Up/Down IggyEvents are now distinguished
+- Added the foundation of the KB/controller navigation system and basic components
+- Added `Grid:GetGridSize()`
+- `Element.Type` now uses the class name
+- Added `Element:GetGlobalPosition()` and `Element:GetScreenPosition()`
+
+</details>
+
+
+## v1066 (10/09/23 upload)
 
 ### Fixes
 - Fixed issues with Alternative Status Display tooltips appearing over other UIs
