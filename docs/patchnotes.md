@@ -1,5 +1,8 @@
 # Changelog
 
+!!! warning ""
+	This page contains patchnotes for the versions that use the stable extender (v59). Patchnotes for versions that use v60 can be found on the [beta page](beta.md) instead.
+
 Older versions of the mod can be found [here](https://drive.google.com/drive/folders/13rN97wZFWoyaxgBDwtgxymenjXwezBF5?usp=sharing).
 
 ## v1065 - 07/05/23
