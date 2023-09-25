@@ -10,8 +10,42 @@
 }
 ```
 
-## v1066 (21/09/23 upload)
+## v1066 (25/09/23 upload)
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing). **Make sure you've read the installation instructions above.**
+### Changes and additions
+- The "Open containers" world tooltip setting now allows the move-to action to be cancelled using right-click or the escape key
+- The auto-identify setting will now try to identify all items in the party inventory when it is enabled and when a save is loaded, as well as when unidentified items are added to the party inventory
+- The search bar from "Save/Load UI Improvements" now automatically clears the hint text when you focus it
+- The "Show empty containers" world tooltip setting should now work in all languages
+- Warnings for unavailable Source Infusions in skill tooltips as well as ability score displays are now translatable and support Joien's translation mod
+- The UI for binding Epip keybinds now uses a black panel rather than a buggy-looking one
+
+### Fixes
+- Fixed surface tooltips "sticking" if you moved the mouse away from them before surface ownership data was retrieved
+- Fixed Hotbar Loadouts context menu when you have >6 loadouts saved
+- Fixed the "Stat-sharing notifications" setting not working in some languages (ex. Korean)
+- Fixed names of items within containers breaking if "Preview Container Items" was set to >0
+- Fixed movement AP costs having an extra space in some languages while shift was held
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+
+- Fixed error spam in the title screen from EnemyHealthBar stuff
+- Errors during `Library:__Setup()` won't stop other scripts's setup from being ran
+
+#### Generic
+- Added `Element:GetChildIndex()`
+- The order of `Element:GetChildren()` is now updated when child index of the children changes
+- Added `GetOptions()` and `IsOpen()` to ComboBox
+- Navigation:
+    - Fixed recursive unfocusing
+    - Added LegacyElementNavigation class to aid with the creation of components for legacy element types
+    - Replacing components is now allowed; ex. you can have a default component on a prefab, but have a specific UI replace it with another
+    - FormElement and its current derived classes now have a default component
+
+</details>
+
+## v1066 (21/09/23 upload)
 
 ### Changes and additions
 - Increased the speed of Mass Dismantle
