@@ -44,7 +44,7 @@ plugins:
 nav:
   - Home: index.md
   - Patch Notes: patchnotes.md
-  - Beta Versions: beta.md
+  # - Beta Versions: beta.md
   - FAQ: Info/faq.md
   - Major Features:
     - "UI Improvements": "Features/UI.md"

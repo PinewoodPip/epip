@@ -10,16 +10,15 @@ Vast customization for Epip's features is available through an in-game settings 
 
 !!! info "Language warning"
     Only English is fully supported, however crowdsourced translations are underway.  
-    Localization is only possible thanks to the members of our community. If you want to help with it - feel free to contribute at [our translation spreadsheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/).  
+    Localization is only possible thanks to the members of our community. If you want to help with it - feel free to contribute at [our translation spreadsheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/).
 
-!!! warning "Gameplay mod info"
-    If you're using Derpy's EE2 Tweaks, you will likely want to grab the legacy [gameplay changes mod](Info/faq.md#whats-this-talk-about-a-gameplay-mod) as well. Derpy's mod is intended to be used with it.
+    You may change the language from the "General" tab in the Epip settings menu.
+
 
 **[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5)**. Load after both EE Core and EE Origins, if you have them.
 
->**The stable version is months behind the [v1066 beta](beta.md) one. Consider using [v1066](beta.md) for better non-EE support and to avoid running into issues that were fixed long ago. As of 5/8/23 extender v60 is in a stable state; there are no known issues with it.**
-
-[Latest stable version, v1065](https://drive.google.com/file/d/1NLEjkgnKlc6r4dDZw_AUHT1cdXVKhTmL/view?usp=sharing). (07/05/23) - Not recommended, see previous paragraph.
+!!! info ""
+    **[Latest version, v1066](patchnotes.md). (30/09/23)**
 
 See the [patchnotes](patchnotes.md) page for patchnotes.
 
@@ -40,9 +39,9 @@ Translators:
 - Ainsky: Simplified Chinese
 
 ## Features
-Below is a non-exhaustive list of features; I suggested browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. Exploring the in-game settings menu is another good way of getting familiar with the mod's features.
+Below is a non-exhaustive list of features; I suggest browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. Exploring the in-game settings menu is another good way of getting familiar with the mod's features.
 
-Major features have dedicated pages for them, accessible from the sidebar, or the following index:
+Major features have dedicated pages for them, accessible from the sidebar, or from the following index:
 
 - **[UI Improvements](Features/UI.md)**: list of improvements to the vanilla UIs as well as some custom UIs.
 - **[Vanity](Features/Vanity.md)**: exhaustive cosmetic equipment transmog, featuring a menu to browse item models, dyeing, persistent outfits, and much more.
