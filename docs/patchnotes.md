@@ -12,6 +12,10 @@
 ```
 
 ## v1066 - 30/09/23
+
+!!! info ""
+    This patch was reuploaded on 1/10/23 to fix an issue when playing with a controller.
+
 [Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing). **Make sure you've read the installation instructions above.**
 
 Due to Extender shenanigans, the development of v1066 spanned ~3 months and 12 beta releases; it would be a tremendous amount of work to aggregate all changes, so they are laid out in chronological order as previously shown on the beta page.
