@@ -2,11 +2,10 @@
 
 !!! warning "Extender devel version required"
     Requires extender v60.
-    To get it, create the following `ScriptExtenderUpdaterConfig.json` file in the same folder where you installed the Extender (`DefEd/bin`):
+    To get it, create the following `ScriptExtenderUpdaterConfig.json` file in the same folder where you installed the Extender (`DefEd/bin`) or download a pre-made config file <a href="/epip/ScriptExtenderUpdaterConfig.json" download>from here</a>.
 ```{ .yaml .copy }
 {
 	"UpdateChannel": "Devel",
-	"TargetResourceDigest": "4732ddc239fac2feeb1a5388a81e81a1920f7b7553dff0d3ac67b7c03916a9ff",
 	"TargetVersion": "60.0.0.0"
 }
 ```
