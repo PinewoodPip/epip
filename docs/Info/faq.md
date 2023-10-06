@@ -91,6 +91,9 @@ Though it's easy to think that Epip is an all-in-one mod where anything goes, th
 - **Server-side systems**: Epip is primarily a client QoL mod. Any server-side systems exist out of pure necessity, and EE Core already offers a phenomenal gameplay-oriented library that I do not think I (Pip) could improve much on. Wrappers around EE systems are for this same reason minimal.
 - **In-game tutorials**: Epip is meant to be as non-intrusive as possible; the user should be able to explore features at their own pace and use only the ones they want. In-game tutorials go against this idea and are disrespectful to the people that read what mods do before they install them.
 
+## How do you pronounce Epip?
+It's pronounced "eh-peep" and written as Epip. Any other form of capitalization (especially all-caps) will cause my (Pip's) attitude towards you to decrease by 20.
+
 ## What does "Epip" mean?
 Unknown.
 
