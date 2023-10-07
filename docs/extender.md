@@ -1,0 +1,31 @@
+# Custom Extender Build
+A custom, experimental build of the extender is available for Epip which enables various features that would otherwise not be possible. This extender fork is entirely optional to use; features that require it will simply not be available if it is not used.
+
+You can download the build [here](https://drive.google.com/file/d/12KfrJ_ooeSOMDkkaulh-8l1rGskLGvXg/view?usp=drive_link) and the repository for it is [here](https://github.com/Pinewoodpip/ositools/tree/pip).
+
+!!! warning
+    **The custom build is experimental - use it only at your own risk.**
+
+    In multiplayer, all players should use the same extender build (either Norbyte's or this custom one). Switching between them is safe.
+
+## Exlusive Features and Changes
+
+Epip features that require the fork:
+
+- Dialogue auto-listening: makes you automatically listen to dialogues that other players start nearby.
+    - Requires `UIObjectManagerPlayerState`'s `ActiveUIObjectHandle` and `UIUnderMouseCursor` to be writeable. More information [available in #epipeline](https://discord.com/channels/607369048929468456/1109024195528118282/1156471924675858443)
+
+Features for modders:
+
+- Added `Ext.IO.Enumerate()`, `Ext.IO.IsFile()` and `Ext.IO.IsDirectory()`, and fixed file saving not working if it would require creating more than one directory along the way. More info on the [PR](https://github.com/Norbyte/ositools/pull/130).
+- `Ext.IsPipFork` (field, not a function) is `true` if the fork is installed, which may be used to condition logic
+- [Relaxed RO restrictions on UIObjectManager fields](https://github.com/Norbyte/ositools/commit/acee921d406725ce61dd4121b031dc209a91a9cc)
+- Attempting to call an unregistered console command now shows a warning; this is useful to realize faster that you've made a typo, are calling the command from the wrong context, didn't register it properly, or ran into any other shenanigans
+- The console now says "Entering lua client console" when entering the client context (previously it would erroneously still say "server")
+- Documentation of `OsirisExtenderSettings.json` is more up-to-date
+
+## FAQ
+
+### Why is the dll so much bigger?
+
+The regular extender dll is the updater, which downloads the actual extender to `\AppData\Local\DOS2ScriptExtender\ScriptExtender` and loads it. The fork ships the extender directly (no automatic updates), and if you compare it against the regular builds in the AppData folder, the sizes are roughly equal.
