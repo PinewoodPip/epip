@@ -49,15 +49,17 @@ nav:
   - Major Features:
     - "UI Improvements": "Features/UI.md"
     - "Vanity": "Features/Vanity.md"
+    - "Inventory Multi-Select": "Features/InventoryMultiSelect.md"
     - "Quick Find": "Features/QuickFind.md"
-    - "Animation Cancelling": "Features/AnimationCancelling.md"
     - "Hotbar Groups": "Features/HotbarGroups.md"
+    - "Animation Cancelling": "Features/AnimationCancelling.md"
     - "Camera": "Features/Camera.md"
     - "Tooltip Adjustments": "Features/TooltipAdjustments.md"
     - "Vanilla Fixes": "Features/VanillaFixes.md"
   - Technical Documentation: 
     - "Introduction": "docs.md"
     - "Terminology": "Documentation/Terminology.md"
+    - "Feature Development": "Documentation/Feature.md"
     - "Important Tables": "Documentation/Global Tables/Epip.md"
     - Client:
       - "Pointer": "Documentation/Client/Pointer.md"

@@ -45,9 +45,10 @@ Major features have dedicated pages for them, accessible from the sidebar, or fr
 
 - **[UI Improvements](Features/UI.md)**: list of improvements to the vanilla UIs as well as some custom UIs.
 - **[Vanity](Features/Vanity.md)**: exhaustive cosmetic equipment transmog, featuring a menu to browse item models, dyeing, persistent outfits, and much more.
+- **[Inventory Multi-Select](Features/InventoryMultiSelect.md)**: allows you to mass-select items in the inventory UIs to speed up inventory management.
 - **[Quick Find](Features/QuickFind.md)**: filterable view of the party inventory, making searching for specific items easier.
-- **[Animation Cancelling](Features/AnimationCancelling.md)**: speeds up combat by ending player skill animations early.
 - **[Hotbar Groups](Features/HotbarGroups.md)**: customizable, shared groups of additional hotbar slots.
+- **[Animation Cancelling](Features/AnimationCancelling.md)**: speeds up combat by ending player skill animations early.
 - **[Camera](Features/Camera.md)**: settings to tweak the game camera.
 - **[Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
 - **[Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
