@@ -6,28 +6,29 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Vector library offers a numeric vector data structure and methods to work with them.">
+        <meta name="description" content="The Inventory Multi-Select feature adds the ability to select multiple items in the inventory UIs to perform batch operations such as moving them to different inventories.
+It may be enabled from the &quot;Inventory&quot; settings tab (&quot;Multi-select controls&quot;).">
       
       
       
-        <link rel="canonical" href="https://pinewood.team/epip/Documentation/Utilities/Vector/">
+        <link rel="canonical" href="https://pinewood.team/epip/Features/InventoryMultiSelect/">
       
       
-        <link rel="prev" href="../Text/">
+        <link rel="prev" href="../Vanity/">
       
       
-        <link rel="next" href="../OOP/">
+        <link rel="next" href="../QuickFind/">
       
-      <link rel="icon" href="../../../img/tpw_logo_purple.png">
+      <link rel="icon" href="../../img/tpw_logo_purple.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>Vector - Epip Encounters</title>
+        <title>Inventory Multi-Select - Epip Encounters</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
       
 
@@ -43,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -79,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vector" class="md-skip">
+        <a href="#inventory-multi-select" class="md-skip">
           Skip to content
         </a>
       
@@ -95,9 +96,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Epip Encounters" class="md-header__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
+    <a href="../.." title="Epip Encounters" class="md-header__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
       
-  <img src="../../../img/tpw_logo_purple.png" alt="logo">
+  <img src="../../img/tpw_logo_purple.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vector
+              Inventory Multi-Select
             
           </span>
         </div>
@@ -180,9 +181,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Epip Encounters" class="md-nav__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
+    <a href="../.." title="Epip Encounters" class="md-nav__button md-logo" aria-label="Epip Encounters" data-md-component="logo">
       
-  <img src="../../../img/tpw_logo_purple.png" alt="logo">
+  <img src="../../img/tpw_logo_purple.png" alt="logo">
 
     </a>
     Epip Encounters
@@ -198,7 +199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -213,7 +214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../patchnotes/" class="md-nav__link">
+      <a href="../../patchnotes/" class="md-nav__link">
         Patch Notes
       </a>
     </li>
@@ -228,170 +229,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Info/faq/" class="md-nav__link">
+      <a href="../../Info/faq/" class="md-nav__link">
         FAQ
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-          Major Features
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          Major Features
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/UI/" class="md-nav__link">
-        UI Improvements
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/Vanity/" class="md-nav__link">
-        Vanity
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/InventoryMultiSelect/" class="md-nav__link">
-        Inventory Multi-Select
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/QuickFind/" class="md-nav__link">
-        Quick Find
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/HotbarGroups/" class="md-nav__link">
-        Hotbar Groups
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/AnimationCancelling/" class="md-nav__link">
-        Animation Cancelling
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/Camera/" class="md-nav__link">
-        Camera
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/TooltipAdjustments/" class="md-nav__link">
-        Tooltip Adjustments
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Features/VanillaFixes/" class="md-nav__link">
-        Vanilla Fixes
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -411,7 +251,178 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Major Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Major Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UI/" class="md-nav__link">
+        UI Improvements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Vanity/" class="md-nav__link">
+        Vanity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Inventory Multi-Select
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QuickFind/" class="md-nav__link">
+        Quick Find
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotbarGroups/" class="md-nav__link">
+        Hotbar Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AnimationCancelling/" class="md-nav__link">
+        Animation Cancelling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Camera/" class="md-nav__link">
+        Camera
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TooltipAdjustments/" class="md-nav__link">
+        Tooltip Adjustments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VanillaFixes/" class="md-nav__link">
+        Vanilla Fixes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
@@ -420,7 +431,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Technical Documentation
@@ -433,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -447,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terminology/" class="md-nav__link">
+      <a href="../../Documentation/Terminology/" class="md-nav__link">
         Terminology
       </a>
     </li>
@@ -461,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Feature/" class="md-nav__link">
+      <a href="../../Documentation/Feature/" class="md-nav__link">
         Feature Development
       </a>
     </li>
@@ -475,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Global%20Tables/Epip/" class="md-nav__link">
+      <a href="../../Documentation/Global%20Tables/Epip/" class="md-nav__link">
         Important Tables
       </a>
     </li>
@@ -516,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/Pointer/" class="md-nav__link">
+      <a href="../../Documentation/Client/Pointer/" class="md-nav__link">
         Pointer
       </a>
     </li>
@@ -564,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Introduction/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -578,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Elements/Element/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Elements/Element/" class="md-nav__link">
         Element
       </a>
     </li>
@@ -592,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Elements/Button/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Elements/Button/" class="md-nav__link">
         Button
       </a>
     </li>
@@ -606,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Elements/Color/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Elements/Color/" class="md-nav__link">
         Color
       </a>
     </li>
@@ -620,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Elements/ComboBox/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Elements/ComboBox/" class="md-nav__link">
         ComboBox
       </a>
     </li>
@@ -668,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Client/UI/Generic/Prefabs/Button/" class="md-nav__link">
+      <a href="../../Documentation/Client/UI/Generic/Prefabs/Button/" class="md-nav__link">
         Button
       </a>
     </li>
@@ -687,16 +698,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
       
       
       
@@ -705,7 +714,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_8">
           <span class="md-nav__icon md-icon"></span>
           Utilities
@@ -718,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Artifact/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Artifact/" class="md-nav__link">
         Artifact
       </a>
     </li>
@@ -732,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Character/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Character/" class="md-nav__link">
         Character
       </a>
     </li>
@@ -746,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Color/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Color/" class="md-nav__link">
         Color
       </a>
     </li>
@@ -760,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Combat/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Combat/" class="md-nav__link">
         Combat
       </a>
     </li>
@@ -774,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GameState/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/GameState/" class="md-nav__link">
         GameState
       </a>
     </li>
@@ -788,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Item/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Item/" class="md-nav__link">
         Item
       </a>
     </li>
@@ -802,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Mod/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Mod/" class="md-nav__link">
         Mod
       </a>
     </li>
@@ -816,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Net/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Net/" class="md-nav__link">
         Net
       </a>
     </li>
@@ -830,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Timer/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Timer/" class="md-nav__link">
         Timer
       </a>
     </li>
@@ -844,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Text/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Text/" class="md-nav__link">
         Text
       </a>
     </li>
@@ -856,21 +865,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Documentation/Utilities/Vector/" class="md-nav__link">
         Vector
       </a>
-      
     </li>
   
 
@@ -882,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OOP/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/OOP/" class="md-nav__link">
         OOP
       </a>
     </li>
@@ -896,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Library/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Library/" class="md-nav__link">
         Library
       </a>
     </li>
@@ -910,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../IO/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/IO/" class="md-nav__link">
         IO
       </a>
     </li>
@@ -924,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Coroutine/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Coroutine/" class="md-nav__link">
         Coroutine
       </a>
     </li>
@@ -938,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../UserVars/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/UserVars/" class="md-nav__link">
         UserVars
       </a>
     </li>
@@ -952,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Texture/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Texture/" class="md-nav__link">
         Texture
       </a>
     </li>
@@ -966,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Pointer/" class="md-nav__link">
+      <a href="../../Documentation/Utilities/Pointer/" class="md-nav__link">
         Pointer
       </a>
     </li>
@@ -1049,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tutorials/testing/" class="md-nav__link">
+      <a href="../../Tutorials/testing/" class="md-nav__link">
         Testing
       </a>
     </li>
@@ -1097,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/" class="md-nav__link">
+      <a href="../../Maintenance/" class="md-nav__link">
         Index
       </a>
     </li>
@@ -1111,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/ProjectSetup/" class="md-nav__link">
+      <a href="../../Maintenance/ProjectSetup/" class="md-nav__link">
         Project Setup
       </a>
     </li>
@@ -1125,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/IDESetup/" class="md-nav__link">
+      <a href="../../Maintenance/IDESetup/" class="md-nav__link">
         IDE Setup
       </a>
     </li>
@@ -1139,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/localization/" class="md-nav__link">
+      <a href="../../Maintenance/localization/" class="md-nav__link">
         Localization
       </a>
     </li>
@@ -1153,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/documentation/" class="md-nav__link">
+      <a href="../../Maintenance/documentation/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -1167,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Maintenance/keybinds/" class="md-nav__link">
+      <a href="../../Maintenance/keybinds/" class="md-nav__link">
         Keybinds Reference
       </a>
     </li>
@@ -1221,96 +1220,21 @@
                   
 
 
-<div><h1 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">¶</a></h1>
-<p>The <code>Vector</code> library offers a numeric vector data structure and methods to work with them.</p>
-<p>They are intended to be used as immutables. All methods and operators return a new instance of the output vector.</p>
-<p><code>Vector</code> objects implement various operators; the binary ones only usable for vectors of the same arity:</p>
-<ul>
-<li><code>+</code>: sum of components.</li>
-<li><code>-</code>: subtraction of components.</li>
-<li><code>*</code>: dot product.</li>
-<li><code>^</code>: negation; inverts the sign of all components.</li>
-</ul>
-<p>Additionally, <code>vector.Arity</code> or <code>vector.Length</code> will return the amount of elements in the vector.</p>
-<p>In Epip, their primary use is semantic clarity for functions that require 2D coordinates as parameters.</p>
-<p><doc class="VectorLib"></doc></p>
-<h1 id="vectorlib-class">VectorLib Class<a class="headerlink" href="#vectorlib-class" title="Permanent link">¶</a></h1>
-<p>Inherits from <code>Library</code>.</p>
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
-<h5 id="areequal">AreEqual<a class="headerlink" href="#areequal" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">AreEqual</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
-</code></pre></div>
-<p>Returns whether 2 vectors are equal.</p>
-<p>Vectors are equal if they have the same arity and components.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v1</b> <code>Vector</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v2</b> <code>Vector</code></p>
-
-<h5 id="clone">Clone<a class="headerlink" href="#clone" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Clone</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
-</code></pre></div>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>vector</b> <code>Vector</code></p>
-
-<h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Create</span><span class="p">()</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
-</code></pre></div>
-<p>Creates a vector of variable length.</p>
-<h5 id="dotproduct">DotProduct<a class="headerlink" href="#dotproduct" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">DotProduct</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
-</code></pre></div>
-<p>Performs a dot product between two vectors of the same dimensions.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v1</b> <code>Vector</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v2</b> <code>Vector</code></p>
-
-<h5 id="getlength">GetLength<a class="headerlink" href="#getlength" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">GetLength</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
-</code></pre></div>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>vector</b> <code>Vector</code></p>
-
-<h5 id="getnormalized">GetNormalized<a class="headerlink" href="#getnormalized" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">GetNormalized</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span> <span class="n">New</span> <span class="n">instance</span><span class="p">;</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">mutate</span><span class="p">.</span><span class="c1">-- instance; does not mutate.</span>
-</code></pre></div>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>vector</b> <code>Vector</code></p>
-
-<h5 id="negate">Negate<a class="headerlink" href="#negate" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Negate</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
-</code></pre></div>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v</b> <code>Vector</code></p>
-
-<h5 id="scalarproduct">ScalarProduct<a class="headerlink" href="#scalarproduct" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">ScalarProduct</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">scalar</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
-</code></pre></div>
-<p>Performs a scalar product of a vector, multiplying each of its components.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v</b> <code>Vector</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>scalar</b> <code>number</code></p>
-
-<h5 id="subtract">Subtract<a class="headerlink" href="#subtract" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Subtract</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
-</code></pre></div>
-<p>Subtracts the components of two vectors of the same dimension.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v1</b> <code>Vector</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v2</b> <code>Vector</code></p>
-
-<h5 id="sum">Sum<a class="headerlink" href="#sum" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">VectorLib</span><span class="p">.</span><span class="nf">Sum</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector</span>
-</code></pre></div>
-<p>Sums the components of two vectors of the same dimensions.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v1</b> <code>Vector</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>v2</b> <code>Vector</code></p>
-<p></p></div>
+<div><h1 id="inventory-multi-select">Inventory Multi-Select<a class="headerlink" href="#inventory-multi-select" title="Permanent link">¶</a></h1>
+<p>The Inventory Multi-Select feature adds the ability to select multiple items in the inventory UIs to perform batch operations such as moving them to different inventories.<br>
+It may be enabled from the "Inventory" settings tab (<em>"Multi-select controls"</em>).</p>
+<p><div class="video-container"><iframe src="https://www.youtube.com/embed/xqr88b6DGDY" style="height:400px;width:100%" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<p>By default, <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-m1">Left Mouse Button</kbd></span> will select/deselect items.<br>
+If at least one item is selected, <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-m1">Left Mouse Button</kbd></span> will select a range of items between the mouse and the first selected item. These controls can be rebound from the settings menu.</p>
+<p>Right-click selected items to access a context menu with operations, or drag and drop them to inventory slots, player inventory tabs, or container items to move them.</p>
+<p></p><center>
+<img alt="Context menu for selected items." src="../img/inventorymultiselect/context_menu.png">
+</center>
+<p>Multi-select is supported for the party inventory as well as the container inventory UI.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <em>"No More Dragging"</em> mod uses a <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-m1">Left Mouse Button</kbd></span> key combination, which may conflict with the default one for Inventory Multi-Select. You may have to rebind <em>"Toggle Item Selection"</em> to avoid issues if you're using that mod with this feature.</p>
+</div></div>
 
 
   
@@ -1350,13 +1274,13 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
         
-          <script src="../../../js/extra.js"></script>
+          <script src="../../js/extra.js"></script>
         
       
     
