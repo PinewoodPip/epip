@@ -1,7 +1,7 @@
 # Custom Extender Build
 A custom, experimental build of the extender is available for Epip which enables various features that would otherwise not be possible. This extender fork is entirely optional to use; features that require it will simply not be available if it is not used.
 
-You can download the build [here](https://drive.google.com/file/d/12KfrJ_ooeSOMDkkaulh-8l1rGskLGvXg/view?usp=drive_link) and the repository for it is [here](https://github.com/Pinewoodpip/ositools/tree/pip).
+You can download the build [here](https://drive.google.com/drive/folders/1I2ZXjbDkZW-WCdC_-EBNQvimHVHssL7m?usp=drive_link) and the repository for it is [here](https://github.com/Pinewoodpip/ositools/tree/pip). You'll need to put `libprotobuf-lite.dll` in the same directory as well; you can alternatively get it from an existing Extender installation in `\AppData\Local\DOS2ScriptExtender\ScriptExtender`.
 
 !!! warning
     **The custom build is experimental - use it only at your own risk.**
