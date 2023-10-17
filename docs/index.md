@@ -22,21 +22,23 @@ Vast customization for Epip's features is available through an in-game settings 
 
 See the [patchnotes](patchnotes.md) page for patchnotes.
 
----
-
+<details markdown="1">
+<summary>Credits & Special Thanks</summary>
 Special thanks to:
 
-- Ameranth for programming help as well as the amazing moddability of EE
-- Derpy Moa for motivation and initial ideas
-- Norbyte for the Script Extender and it's fantastic UI features
+- Ameranth for initial programming help as well as the amazing moddability of EE, without which I (Pip) would've probably never gotten into modding
+- Norbyte for the Script Extender, it's fantastic UI features as well as continuous support with all engine-related questions
 - Elric for his help with designing and drawing new UIs
-- Cathe for contributing to the feature showcases on this website, and some code and proof-reading too
+- Cathe for contributing to the feature showcases on this website, as well as some code and proof-reading
+- Derpy Moa for motivation and initial ideas
+- JoienReid, Clibanarius, AQUACORAL and the entire EE community for continuous support, inspiration and bug-reporting
 
 Translators:
 
 - Cathe & JoienReid: Russian
 - Ferocidade: Brazilian Portuguese
 - Ainsky: Simplified Chinese
+</details>
 
 ## Features
 Below is a non-exhaustive list of features; I suggest browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. Exploring the in-game settings menu is another good way of getting familiar with the mod's features.
