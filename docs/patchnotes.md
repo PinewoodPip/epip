@@ -10,12 +10,55 @@
 }
 ```
 
+## v1067 - 18/10/23
+[Download here](https://drive.google.com/file/d/1SDpgpKhatpynfcXu0OmKeo46-y-S74kd/view?usp=share_link). **Make sure you've read the installation instructions above.**
+
+### Inventory Multi-Select
+- The container inventory UI is now supported, with the same functionality as the party inventory one
+- The keybinds can now be rebound, either from the keybinds tab or directly from the "Inventory" settings tab
+- Dragging multiple items to the bottom slots of an inventory now works as expected, rather than stopping once visible slots are exhausted
+- Fixed selecting items very quickly in the party inventory causing you to use the item
+- Fixed items not being filtered properly when marked/unmarked as wares
+    - Unfortunately, this requires them to be re-added to the character inventory, which will move them to the first available slot.
+
+### World Tooltip "Open Containers" Setting
+- Fixed opening containers not working when characters were close enough to the container to open it without moving
+- You may now switch to a different container or cancel with left-click while moving to open one, simulating vanilla behaviour
+
+### Other changes and additions
+- Added an option to auto-listen to nearby dialogues, enabled from the "Notifications" tab (*"Auto-Listen Dialogues"* and *"Auto-Listen Range Limit"*)
+    - Due to limitations with the extender, these options are only available when using [the custom build](extender.md).
+- The "Toggle World Tooltips" keybind now works if the vanilla keybinding is changed, and is now possibly less janky
+- Epip keybinds now support binding left-click in button chords
+- Added a setting to highlight empty slots in the container inventory UI upon hovering over them, for consistency with the party inventory. Can be enabled from the "Inventory" settings tab (*"Highlight Empty Container Slots"*)
+
+### Fixes
+- Fixed Meistr's note (and other items not tagged as books) not being considered a book for the respective Quick Find filter
+- Fixed "Book read."/"Key used." tooltips having an inconsistent appearance
+- Fixed Discord Rich Presence overhaul mode when within subregions that have no name
+- Fixed "Toggle World Tooltips" not re-enabling tooltips after exiting dialogue
+- Fixed Physical and Piercing resistances in the character sheet appearing multiple times and having the wrong icons
+- Fixed Discord Rich Presence periodically closing some UIs when it was set to the overhaul mode
+- Fixed the difficulty dropdown in vanilla gameplay settings not using translated strings, as well as being unlocked in Honour mode
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+
+- Added `Epip.IsPipFork()`
+- OsirisIDEAnnotationGenerator: "bool" params in Osiris annotations are now a integer|boolean union
+- IDEAnnotations now better supports Ext.Enums
+- WorldTooltip now handles duplicated events better when it comes to cancelling them
+- Minor annotations fixes and cleanups
+- CharacterSheet: fixed hooks firing when there is no update, added stat icons enum
+- Added `Input.GetCurrentAction()`
+- Minor additions to some libraries
+
+</details>
+
 ## v1066 - 30/09/23
 
 !!! info ""
     This patch was reuploaded on 1/10/23 to fix an issue when playing with a controller.
-
-[Download here](https://drive.google.com/file/d/15RiJMqoJHTiF8ptIPzjHshTCzQu34ZKW/view?usp=sharing). **Make sure you've read the installation instructions above.**
 
 Due to Extender shenanigans, the development of v1066 spanned ~3 months and 12 beta releases; it would be a tremendous amount of work to aggregate all changes, so they are laid out in chronological order as previously shown on the beta page.
 
