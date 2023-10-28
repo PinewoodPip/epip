@@ -56,6 +56,7 @@ nav:
     - "Animation Cancelling": "Features/AnimationCancelling.md"
     - "Camera": "Features/Camera.md"
     - "Tooltip Adjustments": "Features/TooltipAdjustments.md"
+    - "Codex": "Features/Codex.md"
     - "Vanilla Fixes": "Features/VanillaFixes.md"
   - Technical Documentation: 
     - "Introduction": "docs.md"

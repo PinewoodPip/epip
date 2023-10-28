@@ -54,6 +54,7 @@ Major features have dedicated pages for them, accessible from the sidebar, or fr
 - **[Animation Cancelling](Features/AnimationCancelling.md)**: speeds up combat by ending player skill animations early.
 - **[Camera](Features/Camera.md)**: settings to tweak the game camera.
 - **[Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
+- **[Codex](Features/Codex.md)**: an in-game reference for various topics.
 - **[Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
 
 The rest of this page covers changes and additions that are not (yet) categorized into other pages.
