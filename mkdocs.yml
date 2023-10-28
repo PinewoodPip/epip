@@ -52,6 +52,7 @@ nav:
     - "Inventory Multi-Select": "Features/InventoryMultiSelect.md"
     - "Quick Find": "Features/QuickFind.md"
     - "Hotbar Groups": "Features/HotbarGroups.md"
+    - "Settings Menu": "Features/SettingsMenu.md"
     - "Animation Cancelling": "Features/AnimationCancelling.md"
     - "Camera": "Features/Camera.md"
     - "Tooltip Adjustments": "Features/TooltipAdjustments.md"

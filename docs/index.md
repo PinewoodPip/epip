@@ -50,6 +50,7 @@ Major features have dedicated pages for them, accessible from the sidebar, or fr
 - **[Inventory Multi-Select](Features/InventoryMultiSelect.md)**: allows you to mass-select items in the inventory UIs to speed up inventory management.
 - **[Quick Find](Features/QuickFind.md)**: filterable view of the party inventory, making searching for specific items easier.
 - **[Hotbar Groups](Features/HotbarGroups.md)**: customizable, shared groups of additional hotbar slots.
+- **[Settings Menu](Features/SettingsMenu.md)**: an in-game settings menu that allows you to toggle and customize most of Epip's features.
 - **[Animation Cancelling](Features/AnimationCancelling.md)**: speeds up combat by ending player skill animations early.
 - **[Camera](Features/Camera.md)**: settings to tweak the game camera.
 - **[Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
