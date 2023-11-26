@@ -18,9 +18,9 @@ Vast customization for Epip's features is available through an in-game settings 
 **[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5)**. Load after both EE Core and EE Origins, if you have them.
 
 !!! info ""
-    **[Latest version, v1067](patchnotes.md). (18/10/23)**
+    **[Latest version, v1068](patchnotes.md). (26/11/23)**
 
-See the [patchnotes](patchnotes.md) page for patchnotes.
+See the [patchnotes](patchnotes.md) page for patchnotes. Development updates and nightly builds are posted in the [*#epipeline*](https://discord.gg/SevYmQc573) channel on the Epic Encounters discord server.
 
 <details markdown="1">
 <summary>Credits & Special Thanks</summary>

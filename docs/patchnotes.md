@@ -10,8 +10,57 @@
 }
 ```
 
+## v1068 - 26/11/23
+[Download here](https://drive.google.com/file/d/1e6k-IIRVkUaji-0GbcAwGQi2i6sUzuF2/view?usp=drive_link). **Make sure you've read the installation instructions above.**
+
+This patch contains various fixes for older features, as well as a few new requested features.
+
+### Vanity
+- Transmogging should now correctly use the "masks" of the chosen appearance
+    - This fixes incorrect behaviour when using items or transmogs that hid other item slots (ex. dresses hiding gloves or leggings)
+- Fixed "Lock appearance" not working correctly for off-hand weapons
+- The "built-in" dyes tab is now sorted alphabetically, and uses more human-readable names
+- You no longer need to remove transmog to drill items
+- Fixed the "built-in" tab only displaying item colors used by armor
+- Fixed a regression from the last patch related to racial skill cooldowns that would break transmogging for undead characters
+- Fixed character sheet icons not being updated when transmogging items with "Lock appearance"
+
+### Enemy Health Bar
+- Added a setting to control when and how resistances are displayed under the bar, accessed from the "General" tab (*"Resistances Display"*)
+    - It's now possible to only show non-0 resistances, or show them all but only if any are not 0, or hide them entirely
+    - Defaults to the previous behaviour (displaying all resistances at all times)
+- Various strings displayed there are now translatable (aggro status, stat acronyms, level label)
+
+### Other changes and additions
+- Added a setting to display item tooltips in inventory UIs to the sides of the UI rather than by the cursor, accessible from the "Tooltips" tab (*"Inventory Item Tooltips Position"*)
+- Added settings to control the delay before item and item comparison tooltips display in the inventory UIs, accessed from the "Tooltips" tab (*"Inventory Item Tooltip Delay"* and *"Item Comparison Tooltip Delay"*)
+- The tooltips for weapon range deltamods are now translatable, and the tooltip itself should now also work for non-EE deltamods
+
+### Other fixes
+- Fixed the tooltip for the "Filtered Statuses" setting not specifying it affects the Alternative Status Display only
+- Fixed the "Display B/H on player portraits" and "Escape Key Closes EE UIs" settings displaying if EE was not enabled
+- Statuses in the enemy health bar will no longer overlap with the B/H indicator if there is no text displayed below the bar
+- Fixed equipped items being unequipped when drag-and-dropping them into the Greatforge
+- The Alternative Status Display and Settings Menu are now positioned correctly if the `UIScaling` game setting is not 1
+- The settings menu is now repositioned when opening it, adjusting the positioning if the resolution was changed
+- The "Quick Swap" option to access Quick Find is no longer displayed on items that cannot be unequipped (ex. Source Collars)
+- Possibly fixed the party wheel menu not working in splitscreen
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+
+- Examine UI: added `GetItem()`, `TooltipRequested` event and expanded entry type enum
+- Added class annotations to `Features.EnemyHealthBarExtraInfo` as well as `GetResistances` hook
+- IDEAnnotations: enum table values are now a union of `Enum<MyEnum>|MyEnum`
+- Added a workaround for an extender bug with UserVars that causes it to trigger the "Journal updated" notification
+- TooltipLib: fixed dummy tooltip data not being cleared before rendering custom tooltips
+- CharacterLib: add `CORPSELESS_DEATH_TYPES` set
+- ColorLib: added colors for skill school footer tooltips
+- Minor style and annotation fixes
+
+</details>
+
 ## v1067 - 18/10/23
-[Download here](https://drive.google.com/file/d/1SDpgpKhatpynfcXu0OmKeo46-y-S74kd/view?usp=share_link). **Make sure you've read the installation instructions above.**
 
 ### Inventory Multi-Select
 - The container inventory UI is now supported, with the same functionality as the party inventory one
