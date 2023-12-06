@@ -1281,6 +1281,10 @@
 <li>Requires <code>UIObjectManagerPlayerState</code>'s <code>ActiveUIObjectHandle</code> and <code>UIUnderMouseCursor</code> to be writeable. More information <a href="https://discord.com/channels/607369048929468456/1109024195528118282/1156471924675858443">available in #epipeline</a></li>
 </ul>
 </li>
+<li>Graying out unavailable skills on the hotbar works properly for mods that hook the <code>GetSkillAPCost</code> event<ul>
+<li>Without the fork, support for this can be added by replicating the hook's logic for <code>Character.Hooks.GetSkillAPCost</code></li>
+</ul>
+</li>
 </ul>
 <p>Features for modders:</p>
 <ul>
@@ -1290,6 +1294,8 @@
 <li>Attempting to call an unregistered console command now shows a warning; this is useful to realize faster that you've made a typo, are calling the command from the wrong context, didn't register it properly, or ran into any other shenanigans</li>
 <li>The console now says "Entering lua client console" when entering the client context (previously it would erroneously still say "server")</li>
 <li>Documentation of <code>OsirisExtenderSettings.json</code> is more up-to-date</li>
+<li>Removed the unnecessary "Synching user vars to unknown game object" message, as valid scenarios of this exist (ex. if the object is on another level)</li>
+<li>Added <code>Ext.Stats.Math.GetSkillAPCost()</code>, which respects any Lua hooks</li>
 </ul>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h2>
 <h3 id="why-is-the-dll-so-much-bigger">Why is the dll so much bigger?<a class="headerlink" href="#why-is-the-dll-so-much-bigger" title="Permanent link">¶</a></h3>
