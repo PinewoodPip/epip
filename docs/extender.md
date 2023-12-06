@@ -14,6 +14,8 @@ Epip features that require the fork:
 
 - Dialogue auto-listening: makes you automatically listen to dialogues that other players start nearby.
     - Requires `UIObjectManagerPlayerState`'s `ActiveUIObjectHandle` and `UIUnderMouseCursor` to be writeable. More information [available in #epipeline](https://discord.com/channels/607369048929468456/1109024195528118282/1156471924675858443)
+- Graying out unavailable skills on the hotbar works properly for mods that hook the `GetSkillAPCost` event
+    - Without the fork, support for this can be added by replicating the hook's logic for `Character.Hooks.GetSkillAPCost`
 
 Features for modders:
 
@@ -23,6 +25,8 @@ Features for modders:
 - Attempting to call an unregistered console command now shows a warning; this is useful to realize faster that you've made a typo, are calling the command from the wrong context, didn't register it properly, or ran into any other shenanigans
 - The console now says "Entering lua client console" when entering the client context (previously it would erroneously still say "server")
 - Documentation of `OsirisExtenderSettings.json` is more up-to-date
+- Removed the unnecessary "Synching user vars to unknown game object" message, as valid scenarios of this exist (ex. if the object is on another level)
+- Added `Ext.Stats.Math.GetSkillAPCost()`, which respects any Lua hooks
 
 ## FAQ
 
