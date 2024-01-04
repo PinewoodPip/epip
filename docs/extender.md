@@ -27,6 +27,7 @@ Features for modders:
 - Documentation of `OsirisExtenderSettings.json` is more up-to-date
 - Removed the unnecessary "Synching user vars to unknown game object" message, as valid scenarios of this exist (ex. if the object is on another level)
 - Added `Ext.Stats.Math.GetSkillAPCost()`, which respects any Lua hooks
+- Fixed `Ext.Behavior.Skill.AddById()` crashing the game when the skill is used
 
 ## FAQ
 
