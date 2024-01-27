@@ -108,7 +108,8 @@ Right-click a row on the hotbar to bring up a context menu where you can "push" 
 
 Additionally, all "engine actions" (except for flee) are available from the vanilla actions drawer.
 
-[The hotbar improvements are also available as a standalone mod with no EE dependency.](https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297)
+#### Miscellaneous
+- A setting exists to allow dragging unlearnt skills onto the hotbar, for example from the [Codex](Features/Codex.md). This is useful for creating placeholders for skills you plan on acquiring later. You can find it in the "Hotbar" tab (*"Allow dragging in unlearnt skills"*).
 
 ### Settings Menu
 The settings menu has been expanded to allow mods to add their own settings. Epip includes its own tab full of options to customize its features.
@@ -227,8 +228,14 @@ Easy to use cosmetic customization system, including armor transmogrification, c
 Wanna drip as hard as this? Learn more at the dedicated [feature page](Features/Vanity.md).  
 ![Maddest drip](img/showcase/drip.png)
 
-## Miscellaneous Bug Fixes and Adjustments
-Certain client-side vanilla issues have been fixed. You may read about them at their [dedicated page](Features/VanillaFixes.md).
+## Miscellaneous
+- Certain client-side vanilla issues have been fixed. You may read about them at their [dedicated page](Features/VanillaFixes.md).
+- A setting exists to auto-listen to nearby dialogues, enabled from the "Notifications" tab (*"Auto-Listen Dialogues"* and *"Auto-Listen Range Limit"*).
+    - Due to limitations within the Extender, this requires a special build from [here](extender.md).
+- A setting exists to highlight empty slots in the container inventory UI upon hovering over them, for consistency with the party inventory. Can be enabled from the "Inventory" settings tab (*"Highlight Empty Container Slots"*).
+- Discord Rich Presence customization is available in the "Miscellaneous UI" settings tab.
+    - You may set both lines to anything you desire, or have them be set to show your character level, area and overhaul.
+    <center>![Overhaul mode.](Features/img/discordrichpresence/overhaul_mode.png)</center>
 
 ## For developers
 Epip is built using numerous libraries, making client-side scripting and UI modding easier. This site's documentation of them is heavily WIP. Every UI touched by Epip has a lua table with wrapper APIs to manipulate it. Additionally, multiple utility libraries are available:

@@ -15,6 +15,7 @@ The following filter options are available:
     - Weapon & armor type (ex. bow, dagger, heavy armor...)
     - Culled items (EE)
     - Equipped items
+    - Wares
     - Stat boost: you may do a text search for bonuses such as +Warfare
 - Consumables
     - Potions
@@ -25,6 +26,9 @@ The following filter options are available:
     - Ability school
 - Containers (backpacks, barrels, etc.)
     - Empty containers
+- Miscellaneous
+    - Books & Keys
+    - Used items (read books & used keys)
 
 The UI may be dragged by the top part, and will keep its position within the same session when re-opened.
 

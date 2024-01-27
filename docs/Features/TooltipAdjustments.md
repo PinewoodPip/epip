@@ -2,7 +2,6 @@
 Numerous fixes and additions have been made to tooltips to improve their clarity. Some of these may be toggled off or reconfigured from the "Tooltips" tab in the settings menu.
 
 ### General
-- Delay for simple tooltips appearing is customizable in the settings menu.
 - Skill tooltips now account for effects that increase or decrease AP costs.
 - Status tooltips show who applied the status (if anyone), as well as whether the status comes from an equipped item.
 - Deltamods that previously did not show clearly in tooltips (+range, +elemental damage) now have blue labels in tooltips, like others.
@@ -18,6 +17,10 @@ Numerous fixes and additions have been made to tooltips to improve their clarity
 - Active Defense statuses now show their charges and max charges.
 - Holding shift in combat displays partial AP costs for movement.
 - Containers (backpacks, barrels, etc.) show the names of the first few items within them. Defaults to previewing up to 3 items.
+- A setting exists to display item tooltips in inventory UIs to the sides of the UI rather than by the cursor, accessible from the "Tooltips" tab (*"Inventory Item Tooltips Position"*). This prevents the tooltips from obscuring other items within the UI.
+- Delay for simple tooltips appearing is customizable in the settings menu.
+- The delay before item and item comparison tooltips display in the inventory UIs is customizable through the *"Inventory Item Tooltip Delay"* and *"Item Comparison Tooltip Delay" settings.
+- Background of formatted tooltips can be made opaque through the *"Opaque Background"* setting.
 
 ![Container preview.](./img/tooltipadjustments/container_preview.png)
 
