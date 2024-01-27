@@ -1275,13 +1275,14 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>DeltaTime</b> <code>integer</code> Milliseconds elapsed since last tick (NOT the last running tick)</p>
 
 <h4 id="luaresetted-event">LuaResetted (event)<a class="headerlink" href="#luaresetted-event" title="Permanent link">¶</a></h4>
-<p>An event object with no parameters.</p>
 <h4 id="clientready-event">ClientReady (event)<a class="headerlink" href="#clientready-event" title="Permanent link">¶</a></h4>
 <p>Fired when the client transitions from PrepareRunning to Running,</p>
 <p>as well as when lua is reset.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>CharacterNetID</b> <code>NetId</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>ProfileGUID</b> <code>GUID</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>FromReset</b> <code>boolean</code> `true` if the event was fired from a lua reset.</p>
 
 <h4 id="regionstarted-event">RegionStarted (event)<a class="headerlink" href="#regionstarted-event" title="Permanent link">¶</a></h4>
 <p>Server-only.</p>

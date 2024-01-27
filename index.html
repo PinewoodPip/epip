@@ -270,6 +270,19 @@
     Hotbar
   </a>
   
+    <nav class="md-nav" aria-label="Hotbar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    Miscellaneous
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -424,8 +437,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#miscellaneous-bug-fixes-and-adjustments" class="md-nav__link">
-    Miscellaneous Bug Fixes and Adjustments
+  <a href="#miscellaneous_1" class="md-nav__link">
+    Miscellaneous
   </a>
   
 </li>
@@ -1563,6 +1576,19 @@
     Hotbar
   </a>
   
+    <nav class="md-nav" aria-label="Hotbar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    Miscellaneous
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1717,8 +1743,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#miscellaneous-bug-fixes-and-adjustments" class="md-nav__link">
-    Miscellaneous Bug Fixes and Adjustments
+  <a href="#miscellaneous_1" class="md-nav__link">
+    Miscellaneous
   </a>
   
 </li>
@@ -1831,6 +1857,7 @@ Localization is only possible thanks to the members of our community. If you wan
 <li>Cathe &amp; JoienReid: Russian</li>
 <li>Ferocidade: Brazilian Portuguese</li>
 <li>Ainsky: Simplified Chinese</li>
+<li>Drayander: French</li>
 </ul>
 </details>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">¶</a></h2>
@@ -1880,7 +1907,10 @@ Localization is only possible thanks to the members of our community. If you wan
 <p>Right-click a row on the hotbar to bring up a context menu where you can "push" groups of slots around (great for inserting spells inbetween!), clear unmemorized spells, or save "loadouts" to restore your hotbars in later playthroughs.</p>
 <p><img alt="Hotbar context menu." src="img/showcase/hotbar_context_menu.png"></p>
 <p>Additionally, all "engine actions" (except for flee) are available from the vanilla actions drawer.</p>
-<p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2759281297">The hotbar improvements are also available as a standalone mod with no EE dependency.</a></p>
+<h4 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">¶</a></h4>
+<ul>
+<li>A setting exists to allow dragging unlearnt skills onto the hotbar, for example from the <a href="Features/Codex/">Codex</a>. This is useful for creating placeholders for skills you plan on acquiring later. You can find it in the "Hotbar" tab (<em>"Allow dragging in unlearnt skills"</em>).</li>
+</ul>
 <h3 id="settings-menu">Settings Menu<a class="headerlink" href="#settings-menu" title="Permanent link">¶</a></h3>
 <p>The settings menu has been expanded to allow mods to add their own settings. Epip includes its own tab full of options to customize its features.</p>
 <p><img alt="Options menu." src="img/showcase/options_settings.png"></p>
@@ -1953,8 +1983,20 @@ Localization is only possible thanks to the members of our community. If you wan
 <p>Easy to use cosmetic customization system, including armor transmogrification, custom RGB dyes, quick outfit swapping and auras.<br>
 Wanna drip as hard as this? Learn more at the dedicated <a href="Features/Vanity/">feature page</a>.<br>
 <img alt="Maddest drip" src="img/showcase/drip.png"></p>
-<h2 id="miscellaneous-bug-fixes-and-adjustments">Miscellaneous Bug Fixes and Adjustments<a class="headerlink" href="#miscellaneous-bug-fixes-and-adjustments" title="Permanent link">¶</a></h2>
-<p>Certain client-side vanilla issues have been fixed. You may read about them at their <a href="Features/VanillaFixes/">dedicated page</a>.</p>
+<h2 id="miscellaneous_1">Miscellaneous<a class="headerlink" href="#miscellaneous_1" title="Permanent link">¶</a></h2>
+<ul>
+<li>Certain client-side vanilla issues have been fixed. You may read about them at their <a href="Features/VanillaFixes/">dedicated page</a>.</li>
+<li>A setting exists to auto-listen to nearby dialogues, enabled from the "Notifications" tab (<em>"Auto-Listen Dialogues"</em> and <em>"Auto-Listen Range Limit"</em>).<ul>
+<li>Due to limitations within the Extender, this requires a special build from <a href="extender/">here</a>.</li>
+</ul>
+</li>
+<li>A setting exists to highlight empty slots in the container inventory UI upon hovering over them, for consistency with the party inventory. Can be enabled from the "Inventory" settings tab (<em>"Highlight Empty Container Slots"</em>).</li>
+<li>Discord Rich Presence customization is available in the "Miscellaneous UI" settings tab.<ul>
+<li>You may set both lines to anything you desire, or have them be set to show your character level, area and overhaul.
+<center><img alt="Overhaul mode." src="Features/img/discordrichpresence/overhaul_mode.png"></center></li>
+</ul>
+</li>
+</ul>
 <h2 id="for-developers">For developers<a class="headerlink" href="#for-developers" title="Permanent link">¶</a></h2>
 <p>Epip is built using numerous libraries, making client-side scripting and UI modding easier. This site's documentation of them is heavily WIP. Every UI touched by Epip has a lua table with wrapper APIs to manipulate it. Additionally, multiple utility libraries are available:</p>
 <ul>

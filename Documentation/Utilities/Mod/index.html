@@ -1254,6 +1254,7 @@
 <p>The <code>GUIDS</code> table contains the GUIDs of various notable mods.</p>
 <p><doc class="ModLib"></doc></p>
 <h1 id="modlib-class">ModLib Class<a class="headerlink" href="#modlib-class" title="Permanent link">¶</a></h1>
+<p>Inherits from <code>Library</code>.</p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
 <h5 id="get">Get<a class="headerlink" href="#get" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">ModLib</span><span class="p">.</span><span class="nf">Get</span><span class="p">()</span>
@@ -1270,15 +1271,22 @@
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">Module</span><span class="p">[]</span>
 </code></pre></div>
 <p>Returns a list of the currently loaded mods.</p>
+<h5 id="getoverhaul">GetOverhaul<a class="headerlink" href="#getoverhaul" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">ModLib</span><span class="p">.</span><span class="nf">GetOverhaul</span><span class="p">()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">Module</span><span class="err">?</span> <span class="c1">-- `nil` if no overhaul is being played.</span>
+</code></pre></div>
+<p>Returns the game overhaul being played.</p>
+<p>In the case of there being multiple active, default behaviour is to return the first one loaded. The hook is fired afterwards and its module may be non-nil.</p>
+<p>See the <code>GAME_OVERHAULS</code> table for extending.</p>
 <h5 id="getstoryversion">GetStoryVersion<a class="headerlink" href="#getstoryversion" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">ModLib</span><span class="p">.</span><span class="nf">GetStoryVersion</span><span class="p">(</span><span class="n">guid</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="err">?</span> <span class="c1">-- Major, minor, revision, build version. Fails if the mod is not loaded.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">ModLib</span><span class="p">.</span><span class="nf">GetStoryVersion</span><span class="p">(</span><span class="n">guid</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="err">?</span> <span class="c1">-- Major, minor, revision, build version. Fails if the mod is not loaded.</span>
 </code></pre></div>
 <p>Returns the story version of a mod.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code></p>
 
 <h5 id="isloaded">IsLoaded<a class="headerlink" href="#isloaded" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">ModLib</span><span class="p">.</span><span class="nf">IsLoaded</span><span class="p">(</span><span class="n">guid</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">ModLib</span><span class="p">.</span><span class="nf">IsLoaded</span><span class="p">(</span><span class="n">guid</span><span class="p">)</span>
 </code></pre></div>
 <p>Returns whether a mod is loaded.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>guid</b> <code>GUID</code></p>

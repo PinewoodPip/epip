@@ -1278,6 +1278,12 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>PlayerIndex</b> <code>integer</code></p>
 
+<h4 id="uidragstarted-event">UIDragStarted (event)<a class="headerlink" href="#uidragstarted-event" title="Permanent link">¶</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>UI</b> <code>UIObject</code></p>
+
+<h4 id="uidragended-event">UIDragEnded (event)<a class="headerlink" href="#uidragended-event" title="Permanent link">¶</a></h4>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>UI</b> <code>UIObject</code></p>
+
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
 <h5 id="getcurrentcharacter">GetCurrentCharacter<a class="headerlink" href="#getcurrentcharacter" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">GetCurrentCharacter</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">,</span> <span class="n">includeDead</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
@@ -1338,6 +1344,12 @@
 </code></pre></div>
 <p>Returns whether the player's cursor is dragging anything.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
+
+<h5 id="stopdragging">StopDragging<a class="headerlink" href="#stopdragging" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">PointerLib</span><span class="p">.</span><span class="nf">StopDragging</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+</code></pre></div>
+<p>Stops a drag-drop.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to `1`.</p>
 <p></p></div>
 
 

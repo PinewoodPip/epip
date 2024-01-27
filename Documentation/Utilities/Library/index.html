@@ -1320,22 +1320,16 @@
 </code></pre></div>
 <p>Ends the current profiling session.</p>
 <p><strong>Does nothing outside of Debug mode.</strong></p>
-<h5 id="error">Error<a class="headerlink" href="#error" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">Error</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
-</code></pre></div>
-<p>Throws an error prefixed by the thrower method name.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>method</b> <code>string</code></p>
-
 <h5 id="getclass">GetClass<a class="headerlink" href="#getclass" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">(</span><span class="n">className</span><span class="p">)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="err">`</span><span class="n">T</span><span class="err">`</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">(</span><span class="n">className</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="err">`</span><span class="n">T</span><span class="err">`</span>
 </code></pre></div>
 <p>Returns a class's base table.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>`T`</code></p>
 
 <h5 id="getmodvariable">GetModVariable<a class="headerlink" href="#getmodvariable" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetModVariable</span><span class="p">(</span><span class="n">modGUID</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">any</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetModVariable</span><span class="p">(</span><span class="n">modGUID</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">any</span>
 </code></pre></div>
 <p>Returns the value of a mod variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modGUID</b> <code>GUID</code></p>
@@ -1343,19 +1337,19 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>name</b> <code>string</code></p>
 
 <h5 id="getpackageprefix">GetPackagePrefix<a class="headerlink" href="#getpackageprefix" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetPackagePrefix</span><span class="p">()</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetPackagePrefix</span><span class="p">()</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Returns the package prefix for this library's subclasses.</p>
 <h5 id="gettranslatedstringhandleforkey">GetTranslatedStringHandleForKey<a class="headerlink" href="#gettranslatedstringhandleforkey" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetTranslatedStringHandleForKey</span><span class="p">(</span><span class="n">localKey</span><span class="p">)</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">TranslatedStringHandle</span><span class="err">?</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetTranslatedStringHandleForKey</span><span class="p">(</span><span class="n">localKey</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">TranslatedStringHandle</span><span class="err">?</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>localKey</b> <code>string</code></p>
 
 <h5 id="getuservariable">GetUserVariable<a class="headerlink" href="#getuservariable" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetUserVariable</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">any</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">GetUserVariable</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="n">variable</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">any</span>
 </code></pre></div>
 <p>Gets the value of a user variable on an entity component.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>component</b> <code>UserVarsLib_CompatibleComponent</code></p>
@@ -1363,56 +1357,25 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>variable</b> <code>string|UserVarsLib_UserVar</code></p>
 
 <h5 id="isdebug">IsDebug<a class="headerlink" href="#isdebug" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">IsDebug</span><span class="p">()</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">IsDebug</span><span class="p">()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether <code>:Debug()</code> has been ran successfully.</p>
-<h5 id="log">Log<a class="headerlink" href="#log" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">Log</span><span class="p">(...)</span>
-</code></pre></div>
-<p>Log a value.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
-
-<h5 id="logerror">LogError<a class="headerlink" href="#logerror" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">LogError</span><span class="p">(...)</span>
-</code></pre></div>
-<p>Log an error.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
-
 <h5 id="logmethod">LogMethod<a class="headerlink" href="#logmethod" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">LogMethod</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="p">...)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">LogMethod</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="p">...)</span>
 </code></pre></div>
 <p>Log a message in the format "[MODULE] method(): msg"</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>method</b> <code>any</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
-<h5 id="lognotimplemented">LogNotImplemented<a class="headerlink" href="#lognotimplemented" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">LogNotImplemented</span><span class="p">(</span><span class="n">methodName</span><span class="p">)</span>
-</code></pre></div>
-<p>Logs a "Not implemented" warning. Use as a placeholder.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
-
-<h5 id="logwarning">LogWarning<a class="headerlink" href="#logwarning" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">LogWarning</span><span class="p">(...)</span>
-</code></pre></div>
-<p>Log a warning.</p>
-<p>Requires logging level to be set to WARN or lower.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
-
 <h5 id="mute">Mute<a class="headerlink" href="#mute" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">Mute</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">Mute</span><span class="p">()</span>
 </code></pre></div>
 <p>Stop all non-error, non-warning logging from this feature.</p>
-<h5 id="rawlog">RawLog<a class="headerlink" href="#rawlog" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RawLog</span><span class="p">(...)</span>
-</code></pre></div>
-<p>Log values without any prefixing.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
-
 <h5 id="registerclass">RegisterClass<a class="headerlink" href="#registerclass" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterClass</span><span class="p">(</span><span class="n">className</span><span class="p">,</span> <span class="n">class</span><span class="p">,</span> <span class="n">parentClasses</span><span class="p">)</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   <span class="o">-&gt;</span> <span class="err">`</span><span class="n">T</span><span class="err">`</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterClass</span><span class="p">(</span><span class="n">className</span><span class="p">,</span> <span class="n">class</span><span class="p">,</span> <span class="n">parentClasses</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="err">`</span><span class="n">T</span><span class="err">`</span>
 </code></pre></div>
 <p>Registers a class.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>`T`</code></p>
@@ -1422,7 +1385,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>parentClasses</b> <code>string[]?</code> Classes this one inherits from.</p>
 
 <h5 id="registermodvariable">RegisterModVariable<a class="headerlink" href="#registermodvariable" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterModVariable</span><span class="p">(</span><span class="n">modGUID</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterModVariable</span><span class="p">(</span><span class="n">modGUID</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </code></pre></div>
 <p>Registers a mod variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modGUID</b> <code>GUID</code></p>
@@ -1432,16 +1395,23 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>UserVarsLib_ModVar</code></p>
 
 <h5 id="registertranslatedstring">RegisterTranslatedString<a class="headerlink" href="#registertranslatedstring" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">tsk</span><span class="p">)</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>   <span class="o">-&gt;</span> <span class="n">Library_TranslatedString</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">tsk</span><span class="p">)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   <span class="o">-&gt;</span> <span class="n">Library_TranslatedString</span>
 </code></pre></div>
 <p>Registers a TSK.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tsk</b> <code>Library_TranslatedString</code> ModTable, FeatureID and Handle fields are auto-initialized.</p>
 
+<h5 id="registertranslatedstring_1">RegisterTranslatedString<a class="headerlink" href="#registertranslatedstring_1" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterTranslatedString</span><span class="p">(</span><span class="n">tsk</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>   <span class="o">-&gt;</span> <span class="n">Library_TranslatedString</span>
+</code></pre></div>
+<p>Table-only overload.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tsk</b> <code>Library_TranslatedString</code> ModTable, FeatureID and Handle fields are auto-initialized.</p>
+
 <h5 id="registeruservariable">RegisterUserVariable<a class="headerlink" href="#registeruservariable" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterUserVariable</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">RegisterUserVariable</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </code></pre></div>
 <p>Registers a user variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>name</b> <code>string</code></p>
@@ -1449,7 +1419,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>UserVarsLib_UserVar?</code></p>
 
 <h5 id="setmodvariable">SetModVariable<a class="headerlink" href="#setmodvariable" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">SetModVariable</span><span class="p">(</span><span class="n">modGUID</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">SetModVariable</span><span class="p">(</span><span class="n">modGUID</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the value of a mod variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modGUID</b> <code>GUID</code></p>
@@ -1459,7 +1429,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>any</code></p>
 
 <h5 id="setuservariable">SetUserVariable<a class="headerlink" href="#setuservariable" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">SetUserVariable</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">SetUserVariable</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the value of a user variable.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>component</b> <code>UserVarsLib_CompatibleComponent</code></p>
@@ -1469,22 +1439,30 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>any</code></p>
 
 <h5 id="shutup">ShutUp<a class="headerlink" href="#shutup" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">ShutUp</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">ShutUp</span><span class="p">()</span>
 </code></pre></div>
 <p>Stop all non-error logging.</p>
 <h5 id="startprofiling">StartProfiling<a class="headerlink" href="#startprofiling" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">StartProfiling</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">StartProfiling</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 </code></pre></div>
 <p>Starts a profiling session.</p>
 <p><strong>Does nothing outside of Debug mode.</strong></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> Session ID.</p>
 
-<h5 id="thrownotimplemented">ThrowNotImplemented<a class="headerlink" href="#thrownotimplemented" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">ThrowNotImplemented</span><span class="p">(</span><span class="n">methodName</span><span class="p">)</span>
+<h5 id="__setup">__Setup<a class="headerlink" href="#__setup" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">__Setup</span><span class="p">()</span>
 </code></pre></div>
-<p>Throws a "Not implemented" error. Use as a placeholder.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
-<p></p></div>
+<p>Invoked on SessionLoaded if the feature is not disabled.</p>
+<p>Override to run initialization routines.</p>
+<p>@virtual</p>
+<h5 id="__test">__Test<a class="headerlink" href="#__test" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="kr">function</span> <span class="nc">Library</span><span class="p">:</span><span class="nf">__Test</span><span class="p">()</span>
+</code></pre></div>
+<p>Invoked on a small delay after SessionLoaded if Epip.IsDeveloperMode(true) is true and the feature is being debugged.</p>
+<p>@virtual
+</p></div>
 
 
   

@@ -1264,7 +1264,7 @@
 <h4 id="pressed-event">Pressed (event)<a class="headerlink" href="#pressed-event" title="Permanent link">¶</a></h4>
 <p>Fires only if the button is enabled.</p>
 <h4 id="rightclicked-event">RightClicked (event)<a class="headerlink" href="#rightclicked-event" title="Permanent link">¶</a></h4>
-<p>An event object with no parameters.</p>
+<p>Fires even if the button is disabled.</p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
 <h5 id="create">Create<a class="headerlink" href="#create" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">ui</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
@@ -1340,7 +1340,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">GenericUI_Prefab_Button</span><span class="p">:</span><span class="nf">SetLabel</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">align</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the label of the button.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>label</b> <code>string</code> Set to an empty string to hide the label.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>label</b> <code>TextLib_String</code> Set to an empty string to hide the label.</p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>align</b> <code>GenericUI_Element_Text_Align?</code> Defaults to `"Center"`.</p>
 
@@ -1378,6 +1378,8 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>HighlightedOverlay</b> <code>TextureLib_Texture?</code> If not present, `IdleOverlay` will be used instead.</p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>PressedOverlay</b> <code>TextureLib_Texture?</code> If not present, `IdleOverlay` will be used instead.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>PressedLabelYOffset</b> <code>number?</code> Position offset to apply to the label while in the pressed state.</p>
 
 <h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">¶</a></h2>
 <p></p></div>

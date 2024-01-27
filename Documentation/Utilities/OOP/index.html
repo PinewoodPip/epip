@@ -1277,18 +1277,26 @@
 <p>Throws if the class is not registered.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>`T`</code></p>
 
+<h5 id="implementsclass">ImplementsClass<a class="headerlink" href="#implementsclass" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">OOPLib</span><span class="p">.</span><span class="nf">ImplementsClass</span><span class="p">(</span><span class="n">tbl</span><span class="p">,</span> <span class="n">class</span><span class="p">)</span>
+</code></pre></div>
+<p>Returns whether a table implements a class.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tbl</b> <code>table|Class</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>class</b> <code>string|Class</code></p>
+
 <h5 id="isclass">IsClass<a class="headerlink" href="#isclass" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">OOPLib</span><span class="p">.</span><span class="nf">IsClass</span><span class="p">(</span><span class="n">tbl</span><span class="p">,</span> <span class="n">className</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">OOPLib</span><span class="p">.</span><span class="nf">IsClass</span><span class="p">(</span><span class="n">tbl</span><span class="p">,</span> <span class="n">class</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether a table is a class table or instance.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tbl</b> <code>table</code></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>tbl</b> <code>table|Class</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>string?</code> If present, `true` will only be returned if the table *is* the requested class.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>class</b> <code>(string|Class)?</code> If present, `true` will only be returned if the table *is* the exact requested class.</p>
 
 <h5 id="registerclass">RegisterClass<a class="headerlink" href="#registerclass" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">OOPLib</span><span class="p">.</span><span class="nf">RegisterClass</span><span class="p">(</span><span class="n">className</span><span class="p">,</span> <span class="n">class</span><span class="p">,</span> <span class="n">parentClasses</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="err">`</span><span class="n">T</span><span class="err">`</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">OOPLib</span><span class="p">.</span><span class="nf">RegisterClass</span><span class="p">(</span><span class="n">className</span><span class="p">,</span> <span class="n">class</span><span class="p">,</span> <span class="n">parentClasses</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="err">`</span><span class="n">T</span><span class="err">`</span>
 </code></pre></div>
 <p>Registers a class.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>string|`T`</code></p>
@@ -1298,7 +1306,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>parentClasses</b> <code>string[]?</code> Classes this one inherits from.</p>
 
 <h5 id="setmetatable">SetMetatable<a class="headerlink" href="#setmetatable" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">OOPLib</span><span class="p">.</span><span class="nf">SetMetatable</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">metatable</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">OOPLib</span><span class="p">.</span><span class="nf">SetMetatable</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">metatable</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets a table's metatable. __index is set to index the metatable itself, using the metatable's __index as a fallback.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>table</b> <code>table</code> Mutated.</p>
@@ -1309,35 +1317,96 @@
 <h1 id="class-class">Class Class<a class="headerlink" href="#class-class" title="Permanent link">¶</a></h1>
 <h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">¶</a></h2>
 <h5 id="getclassdefinition">GetClassDefinition<a class="headerlink" href="#getclassdefinition" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">GetClassDefinition</span><span class="p">()</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">Class</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">GetClassDefinition</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">Class</span>
 </code></pre></div>
 <p>Returns the main table that defines this class instance.</p>
 <h5 id="getclassname">GetClassName<a class="headerlink" href="#getclassname" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">GetClassName</span><span class="p">()</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">GetClassName</span><span class="p">()</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Returns the name of the class.</p>
 <h5 id="getparentclasses">GetParentClasses<a class="headerlink" href="#getparentclasses" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">GetParentClasses</span><span class="p">()</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">Class</span><span class="p">[]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">GetParentClasses</span><span class="p">()</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">Class</span><span class="p">[]</span>
 </code></pre></div>
 <p>Returns the parent classes of the class.</p>
-<h5 id="implementsclass">ImplementsClass<a class="headerlink" href="#implementsclass" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">ImplementsClass</span><span class="p">(</span><span class="n">className</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<h5 id="implementsclass_1">ImplementsClass<a class="headerlink" href="#implementsclass_1" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">ImplementsClass</span><span class="p">(</span><span class="n">class</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether this class implements another.</p>
 <p>Hierarchies are considered.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>className</b> <code>string</code></p>
+<p>Will return <code>true</code> if this class is the queried one.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>class</b> <code>string|Class</code></p>
 
 <h5 id="__create">__Create<a class="headerlink" href="#__create" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">---@protected</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__Create</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>   <span class="o">-&gt;</span> <span class="n">Class</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__Create</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>   <span class="o">-&gt;</span> <span class="n">Class</span>
 </code></pre></div>
 <p>Creates a new instance of the class.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>table?</code> Table with the initial fields of the instance.</p>
+
+<h5 id="__error">__Error<a class="headerlink" href="#__error" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__Error</span><span class="p">(...,</span> <span class="n">method</span><span class="p">)</span>
+</code></pre></div>
+<p>Throws an error prefixed with the class and method name, blaming the third-level function in the stack - usually user code.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>method</b> <code>string</code></p>
+
+<h5 id="__getloggingprefix">__GetLoggingPrefix<a class="headerlink" href="#__getloggingprefix" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__GetLoggingPrefix</span><span class="p">()</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+</code></pre></div>
+<p>Returns the prefix to use for logging messages.</p>
+<h5 id="__internalerror">__InternalError<a class="headerlink" href="#__internalerror" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__InternalError</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="p">...)</span>
+</code></pre></div>
+<p>Throws an error prefixed with the class and method name caused at the callee function.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>method</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
+
+<h5 id="__log">__Log<a class="headerlink" href="#__log" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__Log</span><span class="p">(...)</span>
+</code></pre></div>
+<p>Logs a message.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
+
+<h5 id="__logerror">__LogError<a class="headerlink" href="#__logerror" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__LogError</span><span class="p">(...)</span>
+</code></pre></div>
+<p>Logs an error without halting execution.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
+
+<h5 id="__lognotimplemented">__LogNotImplemented<a class="headerlink" href="#__lognotimplemented" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__LogNotImplemented</span><span class="p">(</span><span class="n">methodName</span><span class="p">)</span>
+</code></pre></div>
+<p>Logs a "Not implemented" warning. Use as a placeholder.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
+
+<h5 id="__logwarning">__LogWarning<a class="headerlink" href="#__logwarning" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__LogWarning</span><span class="p">(...)</span>
+</code></pre></div>
+<p>Logs a warning.</p>
+<p>Requires logging level to be set to WARN or lower.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
+
+<h5 id="__thrownotimplemented">__ThrowNotImplemented<a class="headerlink" href="#__thrownotimplemented" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kr">function</span> <span class="nc">Class</span><span class="p">:</span><span class="nf">__ThrowNotImplemented</span><span class="p">(</span><span class="n">methodName</span><span class="p">)</span>
+</code></pre></div>
+<p>Throws a "Not implemented" error. Use as a placeholder.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>methodName</b> <code>string</code></p>
 <p></p></div>
 
 

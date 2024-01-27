@@ -1289,9 +1289,14 @@
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>setting</b> <code>string|SettingsLib_Setting</code></p>
 
+<h5 id="isenabled">IsEnabled<a class="headerlink" href="#isenabled" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">IsEnabled</span><span class="p">()</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
+<p>Returns whether the feature has <em>not</em> been disabled. Use to condition your feature's logic.</p>
 <h5 id="registerinputaction">RegisterInputAction<a class="headerlink" href="#registerinputaction" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">RegisterInputAction</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">InputLib_Action</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">RegisterInputAction</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">InputLib_Action</span>
 </code></pre></div>
 <p>Registers an InputLib action.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code> Will be prefixed with the mod table and feature ID.</p>
@@ -1299,8 +1304,8 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>action</b> <code>InputLib_Action</code></p>
 
 <h5 id="registersetting">RegisterSetting<a class="headerlink" href="#registersetting" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">RegisterSetting</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">SettingsLib_Setting</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">RegisterSetting</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">SettingsLib_Setting</span>
 </code></pre></div>
 <p>Registers a setting with the feature's module ID.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
@@ -1308,18 +1313,28 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>SettingsLib_Setting</code></p>
 
 <h5 id="registertest">RegisterTest<a class="headerlink" href="#registertest" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">RegisterTest</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">Feature_Test</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">RegisterTest</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">Feature_Test</span>
 </code></pre></div>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>name</b> <code>string</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>func</b> <code>fun(inst:CoroutineInstance)</code></p>
 
 <h5 id="savesettings">SaveSettings<a class="headerlink" href="#savesettings" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">SaveSettings</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">SaveSettings</span><span class="p">()</span>
 </code></pre></div>
+<h5 id="setenabled">SetEnabled<a class="headerlink" href="#setenabled" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">SetEnabled</span><span class="p">(</span><span class="n">requestID</span><span class="p">,</span> <span class="n">enabled</span><span class="p">)</span>
+</code></pre></div>
+<p>Requests the feature to be enabled or disabled.</p>
+<p>Features are enabled by default, and stay disabled so long</p>
+<p>as at there stays at least one request to disable them.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>requestID</b> <code>string</code></p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>enabled</b> <code>boolean</code></p>
+
 <h5 id="setsettingvalue">SetSettingValue<a class="headerlink" href="#setsettingvalue" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">SetSettingValue</span><span class="p">(</span><span class="n">setting</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">SetSettingValue</span><span class="p">(</span><span class="n">setting</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the value of a setting.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>setting</b> <code>string|SettingsLib_Setting</code></p>
@@ -1327,23 +1342,12 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>any</code></p>
 
 <h5 id="__initialize">__Initialize<a class="headerlink" href="#__initialize" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">---@protected</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">__Initialize</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">__Initialize</span><span class="p">()</span>
 </code></pre></div>
 <p>Called after the feature is registered.</p>
 <p>Override to run initialization routines - this is preferable over initializing things at the root of your script, as it is hookable.</p>
-<p>@virtual</p>
-<h5 id="__setup">__Setup<a class="headerlink" href="#__setup" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">---@protected</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">__Setup</span><span class="p">()</span>
-</code></pre></div>
-<p>Invoked on SessionLoaded if the feature is not disabled.</p>
-<p>Override to run initialization routines.</p>
-<h5 id="__test">__Test<a class="headerlink" href="#__test" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">---@protected</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kr">function</span> <span class="nc">Feature</span><span class="p">:</span><span class="nf">__Test</span><span class="p">()</span>
-</code></pre></div>
-<p>Invoked on a small delay after SessionLoaded if Epip.IsDeveloperMode(true) is true and the feature is being debugged.
+<p>@virtual
 </p></div>
 
 

@@ -1304,16 +1304,14 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>message</b> <code>any</code></p>
 
 <h5 id="posttouser">PostToUser<a class="headerlink" href="#posttouser" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">NetLib</span><span class="p">.</span><span class="nf">PostToUser</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">excludedChar</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">NetLib</span><span class="p">.</span><span class="nf">PostToUser</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 </code></pre></div>
 <p>Sends a message to a user.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>user</b> <code>UserId</code></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>user</b> <code>UserId|Character</code></p>
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>channel</b> <code>`T`</code></p>
 
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>message</b> <code>T</code></p>
-
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>excludedChar</b> <code>GUID?</code></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>message</b> <code>T?</code></p>
 
 <h5 id="registerlistener">RegisterListener<a class="headerlink" href="#registerlistener" title="Permanent link">¶</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">NetLib</span><span class="p">.</span><span class="nf">RegisterListener</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
