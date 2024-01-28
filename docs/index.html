@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The features of Epip Encounters are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.">
+        <meta name="description" content="The features of Epip are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.">
       
       
       
@@ -271,7 +271,21 @@
   
     <li class="md-nav__item">
       <a href="../Features/UI/" class="md-nav__link">
-        UI Improvements
+        General UI Improvements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Features/Hotbar/" class="md-nav__link">
+        Hotbar
       </a>
     </li>
   
@@ -356,6 +370,20 @@
     <li class="md-nav__item">
       <a href="../Features/AnimationCancelling/" class="md-nav__link">
         Animation Cancelling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Features/EpicEncountersQoL/" class="md-nav__link">
+        Epic Encounters QoL
       </a>
     </li>
   
@@ -1320,7 +1348,7 @@
 
 
 <div><h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">¶</a></h1>
-<p>The features of Epip Encounters are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.</p>
+<p>The features of Epip are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.</p>
 <p>Since late 2021, the focus of development has shifted to making the internals of the mod available as libraries, aiming to provide utility, better maintainability, extendability and easy manipulation of UIs from lua.</p>
 <p>The ultimate goal is to make the mod easy for someone else to continue working on after/if I depart - EE is an overhaul built to last and be tinkered with, and I would like to honor that in my own project.</p>
 <p>This change will be a long process. There are still many features of the mod that remain to be rewritten to the new standards and methodology, or extended to provide functionality beyond what the current mod needs.</p>
@@ -1334,7 +1362,7 @@
 <li><code>Client</code>: contains client-specific calls as well as tables offering UI-specific calls, events and hooks.</li>
 <li><code>Utilities</code>: contains utility methods useful across many contexts.  </li>
 </ul>
-<p>The scripting in Epip Encounters focuses on event-driven programming. Aside from functions, systems and features tend to implement events and hooks which allow other scripts to react to them being raised.</p>
+<p>The scripting in Epip focuses on event-driven programming. Aside from functions, systems and features tend to implement events and hooks which allow other scripts to react to them being raised.</p>
 <p>Event listeners allow you to react to events sent from scripts. They can receive parameters and are executed in the order that they were registered.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Listen for the shift key being pressed/unpressed.</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Client</span><span class="p">.</span><span class="n">Input</span><span class="p">:</span><span class="n">RegisterListener</span><span class="p">(</span><span class="s2">"SneakConesToggled"</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">pressed</span><span class="p">)</span>
