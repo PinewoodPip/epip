@@ -48,6 +48,7 @@ nav:
   - FAQ: Info/faq.md
   - Major Features:
     - "UI Improvements": "Features/UI.md"
+    - "Hotbar": "Features/Hotbar.md"
     - "Vanity": "Features/Vanity.md"
     - "Inventory Multi-Select": "Features/InventoryMultiSelect.md"
     - "Quick Find": "Features/QuickFind.md"
