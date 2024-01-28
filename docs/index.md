@@ -83,11 +83,11 @@ Press the `+`/`-` buttons by the panel in the bottom left to add/remove bars. Mo
 
 
 ### Settings Menu
-The settings menu has been expanded to allow mods to add their own settings. Epip includes its own tab full of options to customize its features.
+Epip includes its own [Settings Menu](Features/SettingsMenu.md) UI full of options to toggle or customize its features - you may use as few or many of them as you want.
 
-![Options menu.](img/showcase/options_settings.png)
+<center>![Options menu.](Features/img/settingsmenu/general_tab.png)</center>
 
-The input menu has received similar treatment, with custom keybindings becoming possible. You must first click the "Controls" tab before you can access custom keybinds added by Epip. *(In v1066+, this menu is accessible through a "Keybinds" tab in the Epip settings menu instead).*
+The Epip Settings Menu also makes custom hotkeys possible, including ones for Meditate & Source Infuse (in Epic Encounters), an examine hotkey, as well as binding the 12 "action buttons" from the [Hotbar UI](Features/Hotbar.md).
 
 Custom hotkeys include Meditate, Source Infuse, as well as binding the 12 "action buttons" from the Hotbar UI.
 
