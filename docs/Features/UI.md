@@ -117,10 +117,7 @@ It's full of useful information, such as:
 ## New UIs
 Numerous new UIs have been added for various purposes. Some of these have dedicated pages on them under the "Major Features" section.
 
-### BH Overheads
-A "Show B/H" keybind exists that will display Battered & Harried of nearby characters in combat while held. Stacks that meet the tier 3 requirement will be shown with higher opacity.
 
-![BH Overheads feature.](img/ui/bhoverheads.png)
 
 ## Rewards UI
 An option has been added to allow viewing the character sheet while within the quest rewards screen, allowing you to compare rewards to your party's currently equipped items.  

@@ -52,6 +52,7 @@ Major features have dedicated pages for them, accessible from the sidebar, or fr
 - **[Hotbar Groups](Features/HotbarGroups.md)**: customizable, shared groups of additional hotbar slots.
 - **[Settings Menu](Features/SettingsMenu.md)**: an in-game settings menu that allows you to toggle and customize most of Epip's features.
 - **[Animation Cancelling](Features/AnimationCancelling.md)**: speeds up combat by ending player skill animations early.
+- **[Epic Encounters QoL](Features/EpicEncountersQoL.md)**: page covering features only applicable to Epic Encounters 2.
 - **[Camera](Features/Camera.md)**: settings to tweak the game camera.
 - **[Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
 - **[Codex](Features/Codex.md)**: an in-game reference for various topics.
@@ -159,13 +160,6 @@ You can now unlearn skills by right-clicking them in the skillbook while out of 
 ### Crafting
 The crafting UI now remembers your previous tab, instead of always defaulting to showing all items - this is helpful for using the Greatforge. Additionally, you can set the default tab of the UI in the settings menu.
 
-### Gift Bags and mod incompatibilities
-Gift bag mods incompatible with EE are no longer selectable, to prevent regrets. Gift bags that work but for one reason or another are undesirable show a warning upon attempting to enable them.
-
-![Giftbag warning.](img/showcase/giftbags_warning.png)
-
-Common mods incompatible with EE or its add-ons now show a warning when you load into the game with them enabled.
-
 ### Quick Examine
 A "Quick Examine" panel can be opened with a custom hotkey (defaults to `V`). This panel is mainly used to show the effects enemies have from the "Epic Enemies" feature, but it also displays the character's artifacts, useful to check your ally's effects in multiplayer. More information will be added to this panel in the future.
 
@@ -192,36 +186,6 @@ Chat commands are added, beginning with a slash (/). The following commands exis
 An alphabetical sorting option as well as a search bar can be enabled in the options for the save/load UI.
 
 ![Save/load overlay.](img/showcase/saveload_overlay.png)
-
-## Ascension/Meditate
-
-### Ascension
-You can now use the `Esc` key to go back to the previous page in the Ascension UI, or exit it if you're on the default page. An option exists to make this key always exit the UI.
-
-An "Immersive Meditation" setting can be enabled to hide the minimap and hotbar while within the EE UIs.
-
-### Greatforge Context Menus
-Item context menus now have options to quickly dismantle items, as well as to remove their runes. Doing so still costs the usual amount of gold/splinters respectively.
-
-![Item context menu.](img/showcase/item_context_menu.png)
-
-Containers with equipment in them get a "Mass Dismantle" option, letting you rapidly dismantle unwanted gear.
-
-![Mass Dismantle gif.](img/showcase/mass_dismantle.gif)
-
-### Greatforge
-An option to add sockets to items ("Drill Sockets") has been added. This does not allow you to break the 2 socket limit for one-handed weaponry.
-
-The Empower option now properly scales armor values, however this will only take effect after a save+reload.
-
-Additionally, an option to rename items ("Engrave") has been added. This is purely cosmetic.
-
-## Epic Enemies
-Epic Enemies is a randomizer feature enabled from the ingame settings menu. It bestows enemies with EE perks such as keyword activators/mutators, artifacts, and more. You can configure the relative chance of each effect being rolled on enemies.
-
-![Epic Enemies menu.](img/showcase/epic_enemies.png)
-
-These effects will be applied to enemies when they enter combat. You may use the "Quick Examine" feature to view the perks that each enemy rolled; see its respective section in this site for more info.
 
 ## Vanity
 Easy to use cosmetic customization system, including armor transmogrification, custom RGB dyes, quick outfit swapping and auras.  
