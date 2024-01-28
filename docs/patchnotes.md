@@ -10,6 +10,9 @@
 }
 ```
 
+!!! warning ""
+    Support for the controller UI is currently very limited. Most features will not be accessible while playing with a controller.
+
 ## v1068 - 26/11/23
 [Download here](https://drive.google.com/file/d/1e6k-IIRVkUaji-0GbcAwGQi2i6sUzuF2/view?usp=drive_link). **Make sure you've read the installation instructions above.**
 
@@ -377,7 +380,7 @@ Due to some reorganization, you will have to rebind the B/H Overheads hotkey.
 - Added a new setting that speeds up picking items through clicking their world tooltips; you may find it underneath the Animation Cancelling setting
 - In the mods menu, "Targets story mode" tooltip is now "Targets campaign mode" to prevent confusion
 
-![Remaining move distance tooltip.](../Features/img/tooltipadjustments/remaining_move_distance.png)
+![Remaining move distance tooltip.](Features/img/tooltipadjustments/remaining_move_distance.png)
 
 ##### Quick Inventory
 - Added a "Miscellaneous" filter, which currently shows books and keys
@@ -386,7 +389,7 @@ Due to some reorganization, you will have to rebind the B/H Overheads hotkey.
 ##### Codex
 The Codex has received a new "Info" section, where textual information will be placed. Currently, it contains Epip changelogs; the previous UI for these has been removed. The "Epip has been updated" message box will now take you to this UI instead.
 
-![Info Codex.](../Features/img/codex/info.png)
+![Info Codex.](Features/img/codex/info.png)
 
 ##### World Tooltips
 
@@ -512,7 +515,7 @@ Generic:
 ### 16/07/23 beta upload
 This patch adds an Artifacts tab to the Codex.
 
-![Artifacts Codex.](../Features/img/codex/artifacts.png)
+![Artifacts Codex.](Features/img/codex/artifacts.png)
 
 Artifacts that you own (either equipped or in the party inventory, as item or rune) are highlighted. You may filter artifacts by their slot, associated keywords, as well as tier, if you're using Derpy's Artifact Tiers.
 
