@@ -26,7 +26,20 @@ Numerous fixes and additions have been made to tooltips to improve their clarity
 
 ![Surface tooltip showing ownership and damage scaling, as well as partial AP movement costs.](img/tooltipadjustments/surface.png)
 
-### EE-specific
+### World Tooltips
+The item tooltips that are displayed by holding ++lalt++ by default have received many options to improve their usability:
+
+- A keybind has been added to make them toggleable, so you don't need to hold the key all the time.
+- A setting exists to enable these tooltips for all items, similar to the "Let there be tooltips" mod, but with compatibility for all modded items.
+    - Additional settings exist to filter out types of items you may be not interested in, such as beds, doors, lights, etc.
+- You may hide these tooltips for empty looted containers and bodies.
+- A setting exists that makes clicking the tooltips open containers rather than pick them up.
+- You may highlight tooltips for certain kinds of items in a customizable color to distinguish them.
+
+![Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.](../img/showcase/world_tooltips.png)
+<center>*Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.*</center>
+
+### Changes for Epic Encounters
 
 - "Stat Adjustments" in tooltips are now merged into one line.
 - Added a label for items that have been Masterworked.
