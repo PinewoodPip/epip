@@ -63,17 +63,22 @@ The rest of this page covers changes and additions that are not yet categorized 
 
 ## UI
 
-### Target Status Bar
-Health bar shown at the top of the screen has been reworked to look better and include more information. More details [here](Features/UI.md#target-status-bar).
+### Target Health Bar
+The health bar shown at the top of the screen has been reworked to look better and include more information, showing resistances, Battered/Harried in Epic Encounters, as well as AP, SP, initiative and more while holding ++lshift++ - saving you many trips to the examine UI. More details [here](Features/UI.md#target-status-bar).
 
-![Health bar showcase](Features/img/ui/health_bar.png)
+<center>![Health bar showcase](Features/img/ui/health_bar.png)</center>
+<center>![Health bar alt](Features/img/ui/health_bar_shift.png)</center>
 
 ### Player Portraits
-Player portraits display has also received some love, most notably - the list of statuses will now wrap onto a second row to prevent it from obscuring most of your screen. More details [here](Features/UI.md#player-portraits).
+The player portraits UI has received various improvements:
 
-![Player Info preview.](Features/img/ui/player_info.png)
+- The list of statuses will now wrap onto a second row, preventing them from obscuring most of your screen.
+- An improved status bar can be enabled through the *"Alternative Status Display"* setting, which allows filtering and manual sorting of statuses by right-clicking them.
+- Battered/Harried indicators can be enabled in the settings menu.
 
-Epip makes dozens of other UI changes to improve your experience. You can read about the rest of them [here](Features/UI.md).
+More details available [here](Features/UI.md#player-portraits).
+
+<center>![Player Info preview.](Features/img/ui/player_info.png)</center>
 
 ### Hotbar
 Epip offers a heavily improved Hotbar UI, featuring multiple bars, custom "action" buttons in the bottom left, and numerous functions to make hotbar management easier.
@@ -82,7 +87,7 @@ Press the `+`/`-` buttons by the panel in the bottom left to add/remove bars. Mo
 
 <center>![Hotbar preview.](Features/img/hotbar/hotbar_extra_slots.png)</center>
 
-## Vanity
+### Vanity
 Epip features an easy-to-use cosmetic item customization system, including armor transmogrification, custom color dyes, quick outfit swapping and auras, all through a new UI integrated into the character sheet.
 
 Right-click an equipped item and select *"Vanity..."* in its context menu to get started, or learn more at the dedicated [feature page](Features/Vanity.md).
@@ -96,36 +101,51 @@ Epip includes its own [Settings Menu](Features/SettingsMenu.md) UI full of optio
 
 The Epip Settings Menu also makes custom hotkeys possible, including ones for Meditate & Source Infuse (in Epic Encounters), an examine hotkey, as well as binding the 12 "action buttons" from the [Hotbar UI](Features/Hotbar.md).
 
-Custom hotkeys include Meditate, Source Infuse, as well as binding the 12 "action buttons" from the Hotbar UI.
+### Inventory
+Epip offers numerous improvements and options to keep your inventory and items convenient to use, including:
 
-![Input menu.](img/showcase/options_input.png)
+- [Multi-select controls](Features/InventoryMultiSelect.md), allowing fast operations on groups of items, even across different bags/containers.
+- A brand new [Quick Find UI](Features/QuickFind.md) that shows a customizable filtered view of the party inventory to find items quicker.
+- A setting has been added to enable infinite carry weight for all party members.
+- A setting exists to automatically identify items, optionally not requiring any Loremaster.
+- Consumable items, like mushrooms and food, no longer require you to use them once for them to show their effects in the tooltip.
 
-Additionally, the difficulty can now be changed to/from tactician freely at any time. The side effects of this have not been studied well, but everything appears to work fine with the exception of already-initialized enemies having missing HP and consumables(?).
+<center>![Multi-select demostration.](Features/img/inventorymultiselect/demo.gif)</center>
+<center>*Multi-select demostration.*</center>
 
 ### Tooltip Adjustments
-Tooltips have received numerous fixes and improvements, displaying a lot of information in a clearer manner. You can read about them at their [dedicated page](Features/TooltipAdjustments.md).
+Tooltips have received numerous fixes and improvements, displaying a lot of information in a clearer manner, as well as details previously unmentioned such as sources of statuses. You can read about them at their [dedicated page](Features/TooltipAdjustments.md).
 
-![A weapon tooltip showing the changes.](img/showcase/weapon_tooltip.png)
-
-### Inventory
-A setting has been added to enable infinite carry weight for all party members. You can also enable automatic identifying of items, optionally not requiring any Loremaster.
-
-Consumable items, like mushrooms and food, no longer require you to use them once for them to show their effects in the tooltip.
+<center>![A weapon tooltip showing the changes.](img/showcase/weapon_tooltip.png)</center>
+<center>*A weapon tooltip showing the various tooltip additions, such as Quality, range and Masterwork indicator.*</center>
 
 ### Combat Log
-You may now filter out individual types of messages in the combat log by right-clicking it. Certain messages have been reworded for clarity and can now "merge" if they happen in quick succession, improving readability. You can also clear the log from the context menu.
+A setting exists to enable various improvements to the Combat Log UI, such as:
+
+- Filtering out individual types of messages, by right-clicking the UI to open a context menu.
+- Certain messages have been reworded for clarity and can now "merge" into a single line if they happen in quick succession, improving readability.
+- You clear the log from its context menu.
 
 ![Combat log filters.](img/showcase/combat_log.png)
 
-### World Tooltips
-A keybind has been added to make world item tooltips toggleable, so you don't need to hold alt all the time. A setting also exists to disable these tooltips for empty containers and bodies, as well as to make clicking the tooltips open containers rather than pick them up.
+!!! warning ""
+    Combat log improvements are currently only available while playing in English.
 
-Additional settings exist to enable these tooltips for more item types, as well as to highlight certain types of items with a customizable color.
+### World Tooltips
+The item tooltips that are displayed by holding ++lalt++ by default have received many options to improve their usability:
+
+- A keybind has been added to make them toggleable, so you don't need to hold the key all the time.
+- A setting exists to enable these tooltips for all items, similar to the "Let there be tooltips" mod, but with compatibility for all modded items.
+    - Additional settings exist to filter out types of items you may be not interested in, such as beds, doors, lights, etc.
+- You may hide these tooltips for empty looted containers and bodies.
+- A setting exists that makes clicking the tooltips open containers rather than pick them up.
+- You may highlight tooltips for certain kinds of items in a customizable color to distinguish them.
 
 ![Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.](img/showcase/world_tooltips.png)
+<center>*Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.*</center>
 
 ### Quick Examine
-A "Quick Examine" panel can be opened with a custom hotkey (defaults to `V`). This panel is mainly used to show the effects enemies have from the "Epic Enemies" feature, but it also displays the character's artifacts, useful to check your ally's effects in multiplayer. More information will be added to this panel in the future.
+A new "Quick Examine" UI can be opened with a custom hotkey (defaults to `V`). This panel is mainly used to show the effects enemies have from the ["Epic Enemies"](Features/EpicEncountersQoL.md#epic-enemies) feature, but it can also display the character's artifacts, skills and equipment, useful to check information of your allies in multiplayer.
 
 ![Quick Examine.](img/showcase/quick_examine.png)
 
