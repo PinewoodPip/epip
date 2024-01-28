@@ -1,26 +1,21 @@
-# Epip Encounters
+# Epip
 
-Epip Encounters is a UI and quality-of-life mod targeting [Epic Encounters 2](https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#), though it may also be used with the vanilla Divinity: Original Sin 2 game or other overhaul mods.
+Epip is a UI and quality-of-life mod targeting [Epic Encounters 2](https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#), though it may also be used with the vanilla Divinity: Original Sin 2 game or other overhaul mods.
 
 Epip introduces dozens of usability improvements to the vanilla UIs, as well as numerous new custom UIs to fulfill needs the vanilla ones cannot. See [the features section](#features) for details.
 
-Vast customization for Epip's features is available through an in-game settings menu - you may use as many or as few features as you deem necessary.
+Vast customization for Epip's features is available through an in-game [settings menu](Features/SettingsMenu.md) - you may use as many or as few features as you deem necessary, with most of them being disabled by default.
 
 ## Download
-
-!!! info "Language warning"
-    Only English is fully supported, however crowdsourced translations are underway.  
-    Localization is only possible thanks to the members of our community. If you want to help with it - feel free to contribute at [our translation spreadsheet](https://docs.google.com/spreadsheets/d/1N590ol649CFsMJuU2-UNBqWQP8cONo-CnUCcC1TPRgI/).
-
-    You may change the language from the "General" tab in the Epip settings menu.
-
-
 **[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5)**. Load after both EE Core and EE Origins, if you have them.
 
 !!! info ""
     **[Latest version, v1068](patchnotes.md). (26/11/23)**
 
 See the [patchnotes](patchnotes.md) page for patchnotes. Development updates and nightly builds are posted in the [*#epipeline*](https://discord.gg/SevYmQc573) channel on the Epic Encounters discord server.
+
+!!! info "Language support"
+    You may change the language from the "General" tab in the [Epip Settings Menu](Features/SettingsMenu.md). Localizations are crowdsourced; if you want to help with them, ask for details in [*#epipeline*](https://discord.gg/SevYmQc573).
 
 <details markdown="1">
 <summary>Credits & Special Thanks</summary>
@@ -38,12 +33,18 @@ Translators:
 - Cathe & JoienReid: Russian
 - Ferocidade: Brazilian Portuguese
 - Ainsky: Simplified Chinese
+- Drayander: French
 </details>
 
 ## Features
-Below is a non-exhaustive list of features; I suggest browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. Exploring the in-game settings menu is another good way of getting familiar with the mod's features.
+Below is a non-exhaustive list of features; I suggest browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. Exploring the in-game [Settings Menu](Features/SettingsMenu.md) is another good way of getting familiar with the mod's features.
 
-Major features have dedicated pages for them, accessible from the sidebar, or from the following index:
+!!! info "Settings Info"
+    Many features are disabled by default and must be explicitly enabled from the [Settings Menu](Features/SettingsMenu.md).
+
+    This is to make the mod less overwhelming, as well as to respect that not all of its features will appeal to every player.
+
+Major features have dedicated pages for them accessible from the sidebar. This front page is a summary of them and other minor ones.
 
 - **[UI Improvements](Features/UI.md)**: list of improvements to the vanilla UIs as well as some custom UIs.
 - **[Vanity](Features/Vanity.md)**: exhaustive cosmetic equipment transmog, featuring a menu to browse item models, dyeing, persistent outfits, and much more.
@@ -58,7 +59,7 @@ Major features have dedicated pages for them, accessible from the sidebar, or fr
 - **[Codex](Features/Codex.md)**: an in-game reference for various topics.
 - **[Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
 
-The rest of this page covers changes and additions that are not (yet) categorized into other pages.
+The rest of this page covers changes and additions that are not yet categorized into other pages.
 
 ## UI
 
