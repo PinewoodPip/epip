@@ -1,6 +1,8 @@
 ﻿# UI improvements
 Epip contains a plethora of functional and cosmetic improvements over the base game UI. Big thanks to Elric for the new art assets used!
 
+Numerous new UIs have also been added for various purposes. Some of these have dedicated pages on them under the "Major Features" section, other minor ones are documented here instead.
+
 ## Target Status Bar
 
 ### Resistance and B/H Display
@@ -114,13 +116,38 @@ It's full of useful information, such as:
 
 ![Custom stat tab](img/ui/keywords.png)
 
-## New UIs
-Numerous new UIs have been added for various purposes. Some of these have dedicated pages on them under the "Major Features" section.
+### Examine UI
+The Examine UI now shows Critical Chance, and can be configured to open on the sides of the screen instead of the center.
 
+A hotkey exists to the open the UI.
 
+Additionally, there is now a keybind to open the examine menu, and capitalization of the word "Status efects" has been made consistent with the rest of the UI.
+
+### Skillbook
+You can now unlearn skills by right-clicking them in the skillbook while out of combat. Innate skills cannot be unlearnt.
+
+### Chat
+Chat commands are added, beginning with a slash (/). The following commands exist:
+
+- `/rp`: shows a message over your current character's head. Great for role-playing.
+- `/emote`: plays an animation for your current character. Use `/help emote` to see all emotes.
+- `/help`: shows all commands, or help for a particular command.
+
+### Save/Load UI
+An alphabetical sorting option as well as a search bar can be enabled in the options for the save/load UI.
+
+![Save/load overlay.](../img/showcase/saveload_overlay.png)
+
+### Crafting
+The crafting UI now remembers your previous tab, instead of always defaulting to showing all items - this is helpful for using the Greatforge in Epic Encounters. Additionally, you can set the default tab of the UI in the settings menu.
 
 ## Rewards UI
 An option has been added to allow viewing the character sheet while within the quest rewards screen, allowing you to compare rewards to your party's currently equipped items.  
 Located in **Options -> Epip settings -> Inventory -> Show Character Sheet in Reward UI**. Disabled by default.  
 
 ![Rewards ui showcase](img/ui/rewards.png)
+
+## Overhead Text and Notifications
+- Settings have been added to shorten the duration of overhead text, and to change their size (as well as the size of damage numbers).
+- Notifications from characters casting skills in combat are repositioned to show above the hotbar, so as not to obscure the enemy health bars. They can also be disabled in the settings.
+- You can change the duration of the area transition labels, or disable them entirely.

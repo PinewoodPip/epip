@@ -117,45 +117,10 @@ Additional settings exist to enable these tooltips for more item types, as well 
 
 ![Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.](img/showcase/world_tooltips.png)
 
-### Overhead Text and Notifications
-Settings have been added to shorten the duration of overhead text, and to change their size (as well as the size of damage numbers).
-
-Notifications from characters casting skills in combat are repositioned to show above the hotbar, so as not to obscure the enemy health bars. They can also be disabled in the settings.
-
-Additionally, you can change the duration of the area transition labels, or disable them entirely.
-
-### Skillbook
-You can now unlearn skills by right-clicking them in the skillbook while out of combat. Innate skills cannot be unlearnt.
-
-### Crafting
-The crafting UI now remembers your previous tab, instead of always defaulting to showing all items - this is helpful for using the Greatforge. Additionally, you can set the default tab of the UI in the settings menu.
-
 ### Quick Examine
 A "Quick Examine" panel can be opened with a custom hotkey (defaults to `V`). This panel is mainly used to show the effects enemies have from the "Epic Enemies" feature, but it also displays the character's artifacts, useful to check your ally's effects in multiplayer. More information will be added to this panel in the future.
 
 ![Quick Examine.](img/showcase/quick_examine.png)
-
-### Examine
-The Examine UI now shows Critical Chance, and can be configured to open on the sides of the screen instead of the center.
-
-Additionally, there is now a keybind to open the examine menu, and capitalization of the word "Status efects" has been made consistent with the rest of the UI.
-
-### Ingame Patchnotes
-A new journal UI can be accessed from the Hotbar actions, or after updating the mod. It lists the patchnotes of Epip, and other mods can add information/patchnotes there freely as well. Updating the mod will also show a prompt to open the UI. *(In v1066+, this UI has been replaced by the Codex).*
-
-![Custom journal.](img/showcase/journal.png)
-
-### Chat
-Chat commands are added, beginning with a slash (/). The following commands exist:
-
-- `/rp`: shows a message over your current character's head. Great for role-playing.
-- `/emote`: plays an animation for your current character. Use `/help emote` to see all emotes.
-- `/help`: shows all commands, or help for a particular command.
-
-### Save/Load UI
-An alphabetical sorting option as well as a search bar can be enabled in the options for the save/load UI.
-
-![Save/load overlay.](img/showcase/saveload_overlay.png)
 
 ## Vanity
 Easy to use cosmetic customization system, including armor transmogrification, custom RGB dyes, quick outfit swapping and auras.  

@@ -47,7 +47,7 @@ nav:
   # - Beta Versions: beta.md
   - FAQ: Info/faq.md
   - Major Features:
-    - "UI Improvements": "Features/UI.md"
+    - "General UI Improvements": "Features/UI.md"
     - "Hotbar": "Features/Hotbar.md"
     - "Vanity": "Features/Vanity.md"
     - "Inventory Multi-Select": "Features/InventoryMultiSelect.md"
