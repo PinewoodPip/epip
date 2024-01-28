@@ -81,6 +81,12 @@ Press the `+`/`-` buttons by the panel in the bottom left to add/remove bars. Mo
 
 <center>![Hotbar preview.](Features/img/hotbar/hotbar_extra_slots.png)</center>
 
+## Vanity
+Epip features an easy-to-use cosmetic item customization system, including armor transmogrification, custom color dyes, quick outfit swapping and auras, all through a new UI integrated into the character sheet.
+
+Right-click an equipped item and select *"Vanity..."* in its context menu to get started, or learn more at the dedicated [feature page](Features/Vanity.md).
+
+![Maddest drip, by a Cathe](img/showcase/drip.png)
 
 ### Settings Menu
 Epip includes its own [Settings Menu](Features/SettingsMenu.md) UI full of options to toggle or customize its features - you may use as few or many of them as you want.
@@ -121,11 +127,6 @@ Additional settings exist to enable these tooltips for more item types, as well 
 A "Quick Examine" panel can be opened with a custom hotkey (defaults to `V`). This panel is mainly used to show the effects enemies have from the "Epic Enemies" feature, but it also displays the character's artifacts, useful to check your ally's effects in multiplayer. More information will be added to this panel in the future.
 
 ![Quick Examine.](img/showcase/quick_examine.png)
-
-## Vanity
-Easy to use cosmetic customization system, including armor transmogrification, custom RGB dyes, quick outfit swapping and auras.  
-Wanna drip as hard as this? Learn more at the dedicated [feature page](Features/Vanity.md).  
-![Maddest drip](img/showcase/drip.png)
 
 ## Miscellaneous
 - Certain client-side vanilla issues have been fixed. You may read about them at their [dedicated page](Features/VanillaFixes.md).
