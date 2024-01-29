@@ -47,6 +47,7 @@ Below is a non-exhaustive list of features; I suggest browsing the latest [patch
 Major features have dedicated pages for them accessible from the sidebar. This front page is a summary of them and other minor ones.
 
 - **[UI Improvements](Features/UI.md)**: list of improvements to the vanilla UIs as well as some custom UIs.
+- **[Hotbar](Features/Hotbar.md)**: improvements to the Hotbar UI: multiple bars, slot management options, loadouts and customizable extra hotkey buttons.
 - **[Vanity](Features/Vanity.md)**: exhaustive cosmetic equipment transmog, featuring a menu to browse item models, dyeing, persistent outfits, and much more.
 - **[Inventory Multi-Select](Features/InventoryMultiSelect.md)**: allows you to mass-select items in the inventory UIs to speed up inventory management.
 - **[Quick Find](Features/QuickFind.md)**: filterable view of the party inventory, making searching for specific items easier.
@@ -59,7 +60,7 @@ Major features have dedicated pages for them accessible from the sidebar. This f
 - **[Codex](Features/Codex.md)**: an in-game reference for various topics.
 - **[Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
 
-The rest of this page covers changes and additions that are not yet categorized into other pages.
+The rest of this page offers an overview of the major features and also covers and additions that are not yet categorized into other pages.
 
 ## UI
 
@@ -149,6 +150,9 @@ A new "Quick Examine" UI can be opened with a custom hotkey (defaults to `V`). T
 
 ![Quick Examine.](img/showcase/quick_examine.png)
 
+## Other UI Changes
+For other UI changes, see the [General UI Improvements](Features/UI.md) page.
+
 ## Miscellaneous
 - Certain client-side vanilla issues have been fixed. You may read about them at their [dedicated page](Features/VanillaFixes.md).
 - A setting exists to auto-listen to nearby dialogues, enabled from the "Notifications" tab (*"Auto-Listen Dialogues"* and *"Auto-Listen Range Limit"*).
@@ -157,59 +161,3 @@ A new "Quick Examine" UI can be opened with a custom hotkey (defaults to `V`). T
 - Discord Rich Presence customization is available in the "Miscellaneous UI" settings tab.
     - You may set both lines to anything you desire, or have them be set to show your character level, area and overhaul.
     <center>![Overhaul mode.](Features/img/discordrichpresence/overhaul_mode.png)</center>
-
-## For developers
-Epip is built using numerous libraries, making client-side scripting and UI modding easier. This site's documentation of them is heavily WIP. Every UI touched by Epip has a lua table with wrapper APIs to manipulate it. Additionally, multiple utility libraries are available:
-
-- `Client`: contains queries relating to the client.
-- `Client.UI`: holds all UI tables; too many to list individually, below are the most noteworthy ones.
-    - `Client.UI.MessageBox`: allows you to open your own message boxes, which may also prompt for user string input.
-    - `Client.UI.ContextMenu`: allows creating custom context menus, with numerous new types of elements and support for nested menus. Warning: it's a very old API and does not hold up to current standards. A rewrite is pending.
-- `Client.Flash`: contains utility methods for handling Flash elements from lua.
-- `Client/Server.lua`: allows registering osiris symbol listeners from the client.
-- `Osiris`: provides a cleaner way of working with Osiris symbols: allows passing of extender entity objects in place of GUIDs, returning from user queries, and unpacking DB query results.
-- `Character`, `Item`: libraries with numerous utility functions for the related entity types.
-- `Text`: utility methods for working with text, featuring a super-versatile `Format` function for dealing with those pesky html font tags.
-- `Timer`: self-explanatory. Also supports tick-based timers.
-- `Coroutine`: improved coroutine table, with the ability to sleep coroutines, either for a certain amount of time or until a condition is met.
-- `Color`, `Vector`: utilities for dealing with colors and vectors.
-- `Client.UI.Generic`: allows for the creation of UIs using only lua. Work-in-progress (well, everything here is, in a way).
-- `Epip`: main mod table, containing registered Features.
-
-### Developer Features
-#### Debug Cheats
-
-If the extender developer mode is available, a cheats context menu is added to characters, with numerous handy functions like:
-
-- Copying GUID to clipboard
-- Teleporting
-- Kill/resurrect
-- Next-gen godmode ("Pipmode"), with infinite AP and 0 skill cooldowns
-- Adding Flexstats, ExtendedStats, attributes/abilities, skills, statuses and more
-- Spawning all artifacts, or specific treasure tables or templates
-
-![Debug context menu.](img/showcase/debug_cheats.png)
-
-#### Debug Display
-In developer mode, a UI widget with FPS, TPS and mod version info can be enabled from the settings. This widget can be dragged around.
-
-![Debug display.](img/showcase/debug_display.png)
-
-#### Debug Menu
-In developer mode, a menu with debugging options for Features can be opened using a keybind (defaults to LCtrl + F). You can use it to change logging levels, disable features, and run tests. Your logging/debug settings are persistent.
-
-![Debug menu.](img/showcase/debug_menu.png)
-
-#### AI Logging
-An option exists to log AI scoring to the console.
-
-![AI logging.](img/showcase/ai_logging.png)
-
-#### Console Commands
-A few miscellaneous console commands are added:
-
-- `!bruteforceuitypes`: client-side; attempts to find the TypeIDs of all UIs currently instanced, including custom ones
-- `!soundtest`: client-side; plays all the sounds defined in the UI sounds lsx and shows their name. Useful for inspiration.
-- `!animtest`: server-side; plays all human female animations on the currently controlled character. Cannot be interrupted once started!
-- `!worryaboutsuchsmallthings`: tests the performance between `EsvCharacter:HasTag()` and `Osi.IsTagged()`
-- `!testactionhandles`: tests string handles for "actions" from the Stats library.
