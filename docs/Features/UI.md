@@ -116,29 +116,29 @@ It's full of useful information, such as:
 
 ![Custom stat tab](img/ui/keywords.png)
 
-### Examine UI
+## Examine UI
 The Examine UI now shows Critical Chance, and can be configured to open on the sides of the screen instead of the center.
 
 A hotkey exists to the open the UI.
 
 Additionally, there is now a keybind to open the examine menu, and capitalization of the word "Status efects" has been made consistent with the rest of the UI.
 
-### Skillbook
+## Skillbook
 You can now unlearn skills by right-clicking them in the skillbook while out of combat. Innate skills cannot be unlearnt.
 
-### Chat
+## Chat
 Chat commands are added, beginning with a slash (/). The following commands exist:
 
 - `/rp`: shows a message over your current character's head. Great for role-playing.
 - `/emote`: plays an animation for your current character. Use `/help emote` to see all emotes.
 - `/help`: shows all commands, or help for a particular command.
 
-### Save/Load UI
+## Save/Load UI
 An alphabetical sorting option as well as a search bar can be enabled in the options for the save/load UI.
 
 ![Save/load overlay.](../img/showcase/saveload_overlay.png)
 
-### Crafting
+## Crafting
 The crafting UI now remembers your previous tab, instead of always defaulting to showing all items - this is helpful for using the Greatforge in Epic Encounters. Additionally, you can set the default tab of the UI in the settings menu.
 
 ## Rewards UI
