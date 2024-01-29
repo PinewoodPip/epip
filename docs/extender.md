@@ -8,7 +8,7 @@ You can download the build [here](https://drive.google.com/drive/folders/1I2ZXjb
 
     In multiplayer, all players should use the same extender build (either Norbyte's or this custom one). Switching between them is safe.
 
-## Exlusive Features and Changes
+## Exclusive Features and Changes
 
 Epip features that require the fork:
 
