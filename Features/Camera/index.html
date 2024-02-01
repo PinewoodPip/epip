@@ -432,6 +432,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pitch-controls" class="md-nav__link">
+    Pitch Controls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#angles" class="md-nav__link">
     Angles
   </a>
@@ -1300,6 +1307,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pitch-controls" class="md-nav__link">
+    Pitch Controls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#angles" class="md-nav__link">
     Angles
   </a>
@@ -1324,16 +1338,18 @@
 <div><h1 id="camera">Camera<a class="headerlink" href="#camera" title="Permanent link">¶</a></h1>
 <p>The Epip settings menu features a dedicated tab for customizing camera properties such as the zoom, angle, and field of view.</p>
 <p><img alt="Camera settings tab." src="../img/camera/main_settings.png"></p>
-<hr>
 <p><img alt="Maximum zoom out." src="../img/camera/example_max_zoomout.png">
 </p><center>Example of the maximum zoom out level.</center>
+<h2 id="pitch-controls">Pitch Controls<a class="headerlink" href="#pitch-controls" title="Permanent link">¶</a></h2>
+<p>An "Adjust Pitch" keybind exists that allows you to change the vertical angle of the camera on the fly while it is held.</p>
+<p></p><center><img alt='"Adjust Pitch" usage example.' src="../img/camera/adjust_pitch.gif"></center>
+<p>Other new settings exist in that same tab to adjust sensitivity, invert the controls as well as to allow the pitch to go negative.</p>
 <h2 id="angles">Angles<a class="headerlink" href="#angles" title="Permanent link">¶</a></h2>
-<p>For each camera mode, the game accepts two angles: one used when zoomed in as much as possible, and the second used when the camera is zoomed out as much as possible.</p>
+<p>For each camera mode, the game accepts two angles: one used when zoomed in as much as possible, and the second used when the camera is zoomed out as much as possible. Position values for these modes are customizable within the "Camera" settings tab.</p>
 <p>Any zoom level inbetween the minimum and maximum will have its angle resolved through linear interpolation.</p>
 <p><img alt="Angle settings tab." src="../img/camera/angle_settings.png"></p>
 <p>These angles are actually position offsets applied to the camera, with the values being multiplied by the zoom level. This means that raising "Angle value 2" will result in the camera being higher up.</p>
 <p>However, the game camera always points towards the ground or the focused character, and as such, raising the Y level also means it will point more towards the ground.</p>
-<hr>
 <p><img alt="Example of an angle with a low Y (Angle value 2)." src="../img/camera/example_low_tilt.png">
 </p><center>Example of an angle with a low Y (angle value 2)</center></div>
 
