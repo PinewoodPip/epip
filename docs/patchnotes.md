@@ -13,7 +13,7 @@
 !!! warning ""
     Support for the controller UI is currently very limited. Most features will not be accessible while playing with a controller.
 
-## v1069 - 1/2/2024
+## v1069 - 1/02/24
 [Download here](https://drive.google.com/file/d/1iW_PmMPqfd4rUUs1o69qUWhJQHh0wgt_/view?usp=drive_link). **Make sure you've read the installation instructions above.**
 
 This patch contains various fixes, a few new features as well as polishing for older ones.
