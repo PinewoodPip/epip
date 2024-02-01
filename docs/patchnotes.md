@@ -13,9 +13,138 @@
 !!! warning ""
     Support for the controller UI is currently very limited. Most features will not be accessible while playing with a controller.
 
-## v1068 - 26/11/23
-[Download here](https://drive.google.com/file/d/1e6k-IIRVkUaji-0GbcAwGQi2i6sUzuF2/view?usp=drive_link). **Make sure you've read the installation instructions above.**
+## v1069 - 1/2/2024
+[Download here](https://drive.google.com/file/d/1iW_PmMPqfd4rUUs1o69qUWhJQHh0wgt_/view?usp=drive_link). **Make sure you've read the installation instructions above.**
 
+This patch contains various fixes, a few new features as well as polishing for older ones.
+
+!!! info "Do not get too excited"
+    Despite the version number ending in "69", this version does not add sex to the mod.
+
+### Camera
+- Added a keybind to change the camera pitch (vertical angle), *"Adjust Camera Pitch"*, located in the "Camera" tab and unbound by default
+	- While held, moving the mouse up/down will change the pitch; this basically lets you change it on the fly
+	- Other new settings exist in that same tab to adjust sensitivity, invert the controls as well as to allow the pitch to go negative
+		- A negative pitch allows you to look straight up; this clips the camera into the ground, and therefore is disabled by default for aesthetic reasons
+<center>!["Adjust Pitch" usage example.](Features/img/camera/adjust_pitch.gif)</center>
+
+### Quick Examine
+- Added a new widget that displays the equipped items of player characters, enabled by default
+    - The order in which items appear can be set through the *"Equipment Slots Order"* setting in the Quick Examine tab
+<center>![Equipment widget.](Features/img/quickexamine/widget_equipment.png)</center>
+- The grid-like widgets now use a consistent appearance, and the size of icons has been increased for readability
+- The related settings are now translatable and use more consistent wording
+
+### Vanity
+- Added a button to remove dyes
+- Fixed wrong item appearances being used for polymorphed characters
+- Fixed the armor toggle within character creation not working correctly
+
+### Player Health Bar
+- Added a setting to control every how many action points the golden divider appears in the AP bar, accessible from the "Hotbar" tab (*"AP Divider Interval"*).
+	- Defaults to 4 in EE (as before) and never otherwise, as it didn't make sense for vanilla people to have that every 4 AP as well (was pretty much an oversight)
+- The AP bar is now centered better
+- The UI is now repositioned immediately after resolution changes
+- Fixed positioning when UIScaling was >1
+
+### Settings Menu
+- The tab buttons are now more compact and support scrolling (once we add more of them)
+- The apply button now tells you whether you need to reload the game for changes to take effect
+- Most settings throughout Epip UIs (ex. Settings Menu and Quick Find) can be right-clicked to reset them to the default value
+- Keybind settings now show "Unbound" for unbound slots, and light up when hovered over for better UX
+- The useless cancel button has been replaced with text showing the Epip version and build date
+- Fixed some text not wrapping in the settings menu after changing tabs
+
+### Hotbar
+- Fixed slots not considering changes to SP costs, causing them to be grayed out incorrectly when these were applied (ex. Apotheosis in vanilla)
+- Fixed slots being grayed out while possessing GM mode NPCs that didn't meet skill ability requirements (which they don't have to, apparently)
+- Fixed a leftover vanilla graphic sometimes appearing to the right of the bar
+- Fixed the combat log button being visible in dialogue and improved its positioning to fix visual gaps
+
+### Quick Find
+- Slightly sped up equipment filters
+- The default value for the item slot setting is now "Any" instead of "Helmet"
+- Fixed a bug in Epip UIs that caused dropdowns to fire change events twice
+    - As a direct consequence, the Quick Find and Codex UIs now basically update 2x faster when changing the dropdown settings
+
+### Other changes and additions
+- Added French translations by Drayander
+- Physical & piercing (no longer "pierce") resistances in character sheet are now translated
+- When holding shift to show skill damage multipliers in tooltips, the damage types are now translated, the colors should be consistent with the ones the game uses and this feature now also works for skills that reference the damage of other skills (which includes most scripted skills and others such as Flaming Tongues)
+- The Flanked status now shows the amount of flankers in its tooltip
+- Skill tooltips now reflect statuses that change SP costs, like the previous feature that did so for AP cost boosts
+- Added English as an explicit language option
+    - This allows you to play the game in a different language but keep Epip in English
+- The name of the "Fix Astrologer's Gaze / Far Out Man range" setting is now dynamic and shows the name of the talent based on your active mods to avoid confusion
+- Epip keybinds are now considered as "released" once you release any of the keys needed for them, instead of all keys needing to be released
+	- This change only matters for keybinds that need to be held for them to do something
+- Multiple old strings have been made translatable
+- Giftbag compatibility warnings have become translatable
+- The "Enable world tooltips for all items" setting has been moved up to be the first one within its settings category, and its description has become translatable
+- The Animation Cancelling setting is now a simple checkbox and works like the "server-side" option did. The "client-side" option has been removed as it was a failed experiment
+    - You're going to have to re-enable the setting
+- For GM mode: added a setting to automatically apply bonuses to rolls based on character attributes, accessed from a new "Game Master" settings tab (*"Automatic Roll Bonus"*)
+- Added a new UI to paint surfaces, accessible in developer mode through the *"Toggle Surface Painter"* and *"Paint Surface"* keybinds (unbound by default)
+
+### Other fixes
+- Fixed some Epip tooltips not being positioned correctly when UIScaling was changed
+- Fixed Hotbar Groups not being restored properly after lua resets
+- Removed Origins (the vanilla campaign) as dependency (was an oversight from the gameplay mod era)
+- Fixed cooldowns not appearing in the Quick Examine skills widget
+- Fixed backgrounds for scrollbars not displaying correctly in Epip UIs
+- Fixed some typos in some setting tooltips
+- Fixed developer keybinds showing up in the keybinds settings tab outside of developer mode
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+- Fixed some error spam from Auto-Identify
+- Fixed `Item.GetEquippedSlot()` when slot to return was supposed to be `nil`
+- Added `Color` alias for `RGBColor` and `classname` alias for OOP class names (`string`)
+- Added `Client.UI.Time.GetDateFromString()`
+    - Date stuff will likely soon be moved to a proper library
+- Fixed unsubscribing event listeners during Throw(), which would possibly prevent further ones from firing during that throw
+- SettingWidgets now supports ClampedNumber, rendering them as sliders
+    - It is also possible to set them to not set the setting values directly, useful for systems that manage them (ex. Settings Menu)
+    - Fixed element IDs not considering the module, leading to possible ID conflicts
+- Slight refactoring to HotbarTweaks with a negligible performance increase for dragging in unlearnt skills
+- Added extra sanity checks to prevent the first hotbar row from being considered "not visible"
+- `Item.GetEquippedSlot()` now consistently returns a string type (never an enum)
+- Library:RegisterTranslatedString() now has a table-only overload
+    - Other similar calls will likely get the same treatment for readability
+- The UserVars library now has a workaround for uservars not being synched to clients joining mid-session
+- UserVars are now cleared for dying summons to reduce savegame bloat
+- Cleanups to HotbarGroups in preparation for a future expansion; scripts have been moved and Group now inherits from GenericUI_Instance instead of holding
+- Added AOO to the table of hardcoded statuses with no icons in StatsLib
+- New calls within StatsLib: `GetItemColor()`
+- New calls within CharacterLib: `GetSkillAPCost()`
+- Added UI.GM.Roll
+- DamageLib now has damage type colors and name handles
+- CameraLib now has getters and setters for position switches
+- `Text.GetTranslatedString()` now warns instead of errorring when used during module load
+- Various annotation fixes and improvements
+- InputLib:
+	- Fixed mouse movement events not using Vector
+- OOP: added static `ImplementsClass()` method and Class overloads for `Class:ImplementsClass()` & `Class:IsClass()`
+- Generic legacy tooltips now use type IDs consistent with the Tooltip library
+- Refactored Quick Examine to use Class for the widgets, and added a Grid widget to reduce code duplication
+- Fixed default error message for interfacing with destroyed tables
+- Logging methods from Library have been moved to Class
+- Epip features are now auto-muted outside of Epip developer mode
+- The Generic Textures test UI now has a tab for input icons, and the script has been cleaned up a bit
+- ColorLib now ensures RGB values are integers
+- TextLib:
+    - Added Casing formatting option
+    - TSKs can now be used as Text for recursive formatting
+- Removed old & unused status sorting scripts
+- Generic:
+    - `Destroy()` now also calls itself recursively on child elements for sanity
+    - Added more textures and styles
+    - Added LoadingFlower prefab, mostly for fun
+    - Button prefab styles now support offsets for labels when they are pressed
+    - Button now supports passing TSKs directly to `SetLabel()` - similar Epip calls will likely get the same treatment in the future
+</details>
+
+## v1068 - 26/11/23
 This patch contains various fixes for older features, as well as a few new requested features.
 
 ### Vanity
