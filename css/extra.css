@@ -91,6 +91,11 @@ code {
   color: #000000 !important;
 }
 
+/* Used by nightly.md table; prevents text in first column from wrapping */
+td:first-child {
+  white-space: nowrap;
+}
+
 img {
   margin-top: 2px;
   margin-bottom: 2px;
