@@ -10,11 +10,171 @@
 }
 ```
 
-!!! warning ""
-    Support for the controller UI is currently very limited. Most features will not be accessible while playing with a controller.
+## v1071 - 28/07/2024
+!!! info ""
+    [Download here](https://drive.google.com/file/d/1ET1BPwS52uf46PKLrnxjIEhI1mHxDr-X/view?usp=sharing). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod. **Make sure you've read the additional installation instructions above.**
+
+This update lays out the foundations for controller support, making various Epip UIs and features usable with a controller for the first time. In addition to that, a new ["Quick Loot"](#quick-loot) feature has been added, as well as a comprehensive Polish translation by Nektun.
+
+In other news, we've recently also released an [Epip-style mod for DOS1](https://www.pinewood.team/ep1p/). Check it out if you also enjoy the prequel.
+
+## Controller support
+
+The settings menu can now be accessed from the controller settings menu, and it supports controller and keyboard navigation.
+
+There is currently no clear indicator of which settings are applicable, but numerous old ones that previously weren't or had some inaccessible features now work with controllers:
+
+- *"Show Minimap"* setting
+- *"Resistances Display"* setting
+    - Resistances are shown by the name of characters
+    - Opening the context menu for a character while in combat displays the "alternative" information (AP, SP, initiative, etc.)
+- *"Immersive Meditation"* setting
+- [Quick Find](Features/QuickFind.md) UI
+- Most tooltip adjustments
+- You can now toggle filters for the "Alternative Status Bar" by pressing the right stick
+
+<center>![Resistances display on controller.](Features/img/ui/controller_resistances_display.png)</center>
+<center><i>Resistances display on the controller UI.</i></center>
+
+In Epip UIs with controller support, a new "Navigation Bar" widget at the bottom of the screen displays the UI's controls.
+
+![Navigation Bar widget.](Features/img/ui/navigation_bar.png)
+
+You can disable the Navigation Bar in the settings (*"Show controller Navigation Bar"* in the "Miscellaneous UI" tab) or enable it for keyboard + mouse as well - as any UIs that got this controller support also support keyboard navigation. When playing with a controller, you can also configure which glyphs to show (Xbox or Playstation style) with the *"Controller Icons Style"* setting.
+
+It's worth noting that no convenient ways exist yet to access UIs that require a keybind press, such as Quick Find. Our recommended temporary solution is to create a Steam Input virtual menu to be able to execute the respective keybinds. In v1072, custom radial menus will be added to remedy this.
+
+Interacting with keybind and "set" settings (ex. Animation Cancelling blacklist) is not currently supported.
+
+## Quick Loot
+A new "Quick Loot" UI has been added, which allows you to loot items from nearby containers and corpses through a unified UI with a single keybind press.
+
+<center>![Quick Loot showcase.](Features/img/quickloot/showcase.gif)</center>
+
+To use it, hold down the new *"Quick Loot: Start Search"* keybind (unbound by default) to select containers & corpses nearby. You may also configure the keybind from the new "Quick Loot" settings tab as well as increase the default search range and enable visual feedback for looting.
+
+Various filters exist to avoid picking up undesired items, quickly accessible via the settings button in the UI.
+
+![Filter settings.](Features/img/quickloot/filters.png)
+
+Hovering over items will show their source container/corpse in the tooltip, and you may also use the vanilla "take all" keybind to loot all items in the UI.
+
+The Quick Loot UI supports controllers. When playing with a controller, you may hold down the right-stick to begin searching.
+
+Note that containers that are locked, out of line-of-sight or considered as stealing will not be looted.
+
+## Inventories
+- You can now open containers (ex. backpacks) in the trade UI by right-clicking them; left-clicking items within will offer them for trade
+    - ++lctrl++ + ++m1++ on a container will instead offer all the items inside for trade
+
+<center>![Using containers in the trade UI.](Features/img/ui/trade_backpacks.gif)</center>
+
+- Multi-select improvements:
+    - Added support for dragging items in and out of containers that are not owned by the party, ex. barrels in the world and the Lady Vengeance chest
+        - Due to quirks with these, items dragged in & out of them will go to the first available slot rather than hovered one
+    - The "Store on Lady Vengeance" context menu option no longer shows up in Fort Joy
+
+## Camera
+- Added a setting to control the rotation speed when using the rotate camera keybinds (*"Keybind Rotation Speed"*)
+- Added a setting to prevent the zoom level from changing when entering dialogue (*"Preserve zoom level in dialogues"*)
+- Added settings for minimum zoom distance
+- The vanilla "Close-up dialogue" setting no longer zooms-in the camera obnoxiously close to characters
+- Fixed stuttering when changing the pitch without moving the camera to the sides
+
+![Comparison of close-up dialogue option.](Features/img/misc/closeup-dialogue.png)
+<center><i>Before & after comparison of the vanilla "Close-up Dialogue" setting.</i></center>
+
+## Vanity
+- Added a setting to revert the appearance of items when they are unequipped; "*Revert appearance of unequipped items*" in the new "Vanity" settings tab; disabled by default
+    - This can be helpful to keep your inventory readable when using transmogs that alter icons heavily
+- Reduced stuttering when transmogging or dyeing items
+- Appearance is now refreshed when toggling your helmet
+- Most of the UI is now translatable
+- Fixed the UI closing when the selected item is unequipped
+- Fixed default equipment colors being wrong when not using EE
+- Fixed issues with item models that mask their own equip slots, ex. full-body armors from Majora's Fashion Sins
+- Fixed racial skills disappearing from the hotbar when refreshing Vanity appearances
+
+## Hotbar
+- Fixed slots being visible beyond the edge of the hotbar when using aspect ratios shorter than 16:9
+- Fixed the "endpiece" at the right appearing after exiting dialogue in cases when it shouldn't
+
+## Other changes and additions
+- Added Polish translation by Nektun
+- Added partial Spanish translation by AquaVXI
+- Chain/unchain hotbar action now preserves order of party members in the UI, rather than shuffling them around
+- Added a setting to render each icon in the skillbook UI separately, which fixes the issue of icons disappearing when using too many mods that add more - *"Render icons individually"* setting in the "Miscellaneous UI" tab, disabled by default
+- Epip features that show character names should now show the translated names
+- Stat tooltips no longer show "+0%" effects (ex. from vanilla perks deprecated in EE)
+- Improved consistency of setting names; settings that start with a verb no longer capitalize all words
+- The scrollable area of the settings menu tabs has been adjusted to not crop out buttons
+- Epic Enemies effects are now translatable
+- Merging EE stat adjustment tooltips now works with translation mods
+- Custom tooltips in Epip UIs now support refreshing them with the shift key, though there aren't any uses of this yet
+    - Currently only works on unmemorized skills (the left panel)
+- You are now warned if you're using an outdated version of the Extender fork
+    - If you were using it before, v1071 requires you to update by redownloading it
+
+## Other fixes
+- Potentially fixed a rare issue with Animation Cancelling and AP refund effects (ex. the Executioner talent) that could cause a character's turn to end prematurely
+- Fixed positioning simple tooltips in Epip UIs (ex. highscore dates in Bedazzled)
+- Fixed the language setting not warning you that you need to reload the game
+- Fixed the caret resetting when typing in text settings
+- Fixed warnings in the gift bags UI not using translations
+- Fixed the "Escape closes EE UIs" setting not working
+- Added safeguards against opening the party inventory UI while loading (which can rarely cause a crash for non-hosts)
+- Fixed the save/load UI breaking showing no saves after deleting one
+- Fixed "Save/Load UI Improvements" not working in the save UI
+- Possibly prevented a rare crash that could occur for non-hosts while loading
+- Fixed the "General" settings tab not using a translatable name
+- Fixed numerous console error messages when playing with a controller
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+- EpicEnemies:
+    - Added Priority field for effects; effects will roll in order of priority tiers, climbing down tiers when no more eligible effects remain in the current one.
+    - Added Prerequisites field for effects, which allows defining effects that must be present beforehand (or be paid for on-the-spot) for an effect to be eligible.
+    - Added AI type requirement field for effects
+    - Added Artifacts and KeywordStats fields for effects
+    - Added support for providing lists of SpecialLogic for effects
+    - Changed class names, deprecated EFFECTS field in favor of new GetRegisteredEffects()
+    - Refactored hooks and events to use new system
+    - The Quick Examine widget now shows effect IDs
+- TooltipLib:
+    - Added support for showStatTooltip UI calls
+- Client.IsActiveCombatant() no longer relies on UIs
+    - This should make it more robust when the EE flee effect is involved
+- Various cleanups, annotation adjustments and removals of obsolete scripts and snippets (ex. in Vanity)
+- IDEAnnotations now has better support for enums/bitfields, and some signatures of Extender methods have been fixed
+- ModLib now has some popular campaign GUIDs
+- EntityLib now has level IDs of Origins levels
+- The Set data structure now aliases indexing to Contains()
+- table lib:
+    - Optimized join()
+- Added `OOP.RegisterDeprecatedKeyRedirect()`
+- Various refactorings to Vanity, mostly to standardize reverting appearances
+- Added `EMPTY` table global
+- Host status can now be determined on controller UI
+- Added controller GameMenu, MainMenu UI tables
+- CharacterLib: added GetDisplayName(), GetLootableItems()
+- Generic:
+    - Added PooledContainer prefab, largely inspired by the Quick Find grid
+    - Added Text:IsFocused()
+    - Added more button, frame and miscellaneous textures, as well as Playstation input icons
+    - Disabled pooling until rare issues with it are ironed out
+    - Navigation:
+        - Subclasses are now registered to Navigation library rather than Generic
+        - Added ScrollList component
+        - General polishing and robustness improvements, especially when elements are destroyed (ex. List now clamps focused index)
+        - Consolidated input events into "actions"
+        - Added NavigationBar widget
+        - List no longer has up/down events
+        - Fixed creating components for prefabs
+        - FormElements now emulate mouse events for navigation, displaying tooltips - though they are still positioned by the cursor.
+        - Added support for Sliders for legacy element navigation
+</details>
 
 ## v1070 - 1/04/24 (more or less)
-[Download here](https://drive.google.com/file/d/13gCN1Lo5cE3Qzwy94PSTJ59weMalv83H/view?usp=drive_link). **Make sure you've read the installation instructions above.**
 
 v1070 is the 1070th release of Epip (aka "The Easter patch") and marks the third anniversary of the mod, but most importantly, the first anniversary of our infamous Bedazzled minigame! And what better way to celebrate Easter than with some bedazzling new additions to it?
 
