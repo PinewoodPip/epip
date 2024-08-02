@@ -3,6 +3,8 @@ A custom, experimental build of the extender is available for Epip which enables
 
 You can download the build [here](https://drive.google.com/drive/folders/1I2ZXjbDkZW-WCdC_-EBNQvimHVHssL7m?usp=drive_link) and the repository for it is [here](https://github.com/Pinewoodpip/ositools/tree/pip). You'll need to put `libprotobuf-lite.dll` in the same directory as well; you can alternatively get it from an existing Extender installation in `\AppData\Local\DOS2ScriptExtender\ScriptExtender`.
 
+The current version of the fork is v2, from 2/08/2024.
+
 !!! warning
     **The custom build is experimental - use it only at your own risk.**
 
@@ -16,6 +18,9 @@ Epip features that require the fork:
     - Requires `UIObjectManagerPlayerState`'s `ActiveUIObjectHandle` and `UIUnderMouseCursor` to be writeable. More information [available in #epipeline](https://discord.com/channels/607369048929468456/1109024195528118282/1156471924675858443)
 - Graying out unavailable skills on the hotbar works properly for mods that hook the `GetSkillAPCost` event
     - Without the fork, support for this can be added by replicating the hook's logic for `Character.Hooks.GetSkillAPCost`
+- Showing outlines for containers and corpses while searching with Quick Loot
+- Vanity weapon animation swaps
+- Accurately determining if items can be sent to the Lady Vengeance chest (or equivalent) when using the multi-select context menus
 
 Features for modders:
 
@@ -27,6 +32,10 @@ Features for modders:
 - Documentation of `OsirisExtenderSettings.json` is more up-to-date
 - Removed the unnecessary "Synching user vars to unknown game object" message, as valid scenarios of this exist (ex. if the object is on another level)
 - Added `Ext.Stats.Math.GetSkillAPCost()`, which respects any Lua hooks
+- Added `Ext.Entity.SetHighlight()`, which allows you to add outlines to characters and items (like the ones when you hover over them or use tactical highlights)
+    - Note that although passing unused player IDs appears to work to create outlines that cannot be overwritten, this is unintended and can crash the game after some time
+- Added `Ext.Events.GetCharacterWeaponAnimationSetType`, which lets you swap the weapon animations for characters
+- Added `Ext.Client.GetGameControl()`, though this structure's mapping currently only contains the `CanSendToLadyVengeance` bool
 - Fixed `Ext.Behavior.Skill.AddById()` crashing the game when the skill is used
 
 ## FAQ
