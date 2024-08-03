@@ -1744,6 +1744,7 @@
 <div><h1 id="custom-extender-build">Custom Extender Build<a class="headerlink" href="#custom-extender-build" title="Permanent link">¶</a></h1>
 <p>A custom, experimental build of the extender is available for Epip which enables various features that would otherwise not be possible. This extender fork is entirely optional to use; features that require it will simply not be available if it is not used.</p>
 <p>You can download the build <a href="https://drive.google.com/drive/folders/1I2ZXjbDkZW-WCdC_-EBNQvimHVHssL7m?usp=drive_link">here</a> and the repository for it is <a href="https://github.com/Pinewoodpip/ositools/tree/pip">here</a>. You'll need to put <code>libprotobuf-lite.dll</code> in the same directory as well; you can alternatively get it from an existing Extender installation in <code>\AppData\Local\DOS2ScriptExtender\ScriptExtender</code>.</p>
+<p>The current version of the fork is v2, from 2/08/2024.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>The custom build is experimental - use it only at your own risk.</strong></p>
@@ -1760,6 +1761,9 @@
 <li>Without the fork, support for this can be added by replicating the hook's logic for <code>Character.Hooks.GetSkillAPCost</code></li>
 </ul>
 </li>
+<li>Showing outlines for containers and corpses while searching with Quick Loot</li>
+<li>Vanity weapon animation swaps</li>
+<li>Accurately determining if items can be sent to the Lady Vengeance chest (or equivalent) when using the multi-select context menus</li>
 </ul>
 <p>Features for modders:</p>
 <ul>
@@ -1771,6 +1775,12 @@
 <li>Documentation of <code>OsirisExtenderSettings.json</code> is more up-to-date</li>
 <li>Removed the unnecessary "Synching user vars to unknown game object" message, as valid scenarios of this exist (ex. if the object is on another level)</li>
 <li>Added <code>Ext.Stats.Math.GetSkillAPCost()</code>, which respects any Lua hooks</li>
+<li>Added <code>Ext.Entity.SetHighlight()</code>, which allows you to add outlines to characters and items (like the ones when you hover over them or use tactical highlights)<ul>
+<li>Note that although passing unused player IDs appears to work to create outlines that cannot be overwritten, this is unintended and can crash the game after some time</li>
+</ul>
+</li>
+<li>Added <code>Ext.Events.GetCharacterWeaponAnimationSetType</code>, which lets you swap the weapon animations for characters</li>
+<li>Added <code>Ext.Client.GetGameControl()</code>, though this structure's mapping currently only contains the <code>CanSendToLadyVengeance</code> bool</li>
 <li>Fixed <code>Ext.Behavior.Skill.AddById()</code> crashing the game when the skill is used</li>
 </ul>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h2>
