@@ -1,8 +1,9 @@
-# Changelog
+# Changelog & Downloads
 
 !!! warning "Extender devel version required"
-    Requires extender v60.
-    To get it, create the following `ScriptExtenderUpdaterConfig.json` file in the same folder where you installed the Extender (`DefEd/bin`) or download a pre-made config file <a href="/epip/ScriptExtenderUpdaterConfig.json" download>from here</a>.
+    [**Requires v60 of Norbyte's Script Extender**](https://github.com/Norbyte/ositools/releases/tag/updater_v5).
+    
+    To get it, create the following `ScriptExtenderUpdaterConfig.json` file in the same folder where you initially installed the Extender (`DefEd/bin`) or download a pre-made config file <a href="/epip/ScriptExtenderUpdaterConfig.json" download>from here</a>.
 ```{ .yaml .copy }
 {
 	"UpdateChannel": "Devel",
@@ -13,6 +14,8 @@
 ## v1071 - 28/07/2024
 !!! info ""
     [Download here](https://drive.google.com/file/d/1ET1BPwS52uf46PKLrnxjIEhI1mHxDr-X/view?usp=sharing). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod. **Make sure you've read the additional installation instructions above.**
+    
+    Load after Epic Encounters Core & Origins if you have it; load order does not matter otherwise.
 
 This update lays out the foundations for controller support, making various Epip UIs and features usable with a controller for the first time. In addition to that, a new ["Quick Loot"](#quick-loot) feature has been added, as well as a comprehensive Polish translation by Nektun.
 

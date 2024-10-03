@@ -1,16 +1,13 @@
 # Epip
 
-Epip is a UI and quality-of-life mod targeting [Epic Encounters 2](https://docs.google.com/document/d/1du5jE2dyDE4B4-Za0wolfe50ReeKXqkqdgG5FvAwKTo/edit#), though it may also be used with the vanilla Divinity: Original Sin 2 game or other overhaul mods.
-
-Epip introduces dozens of usability improvements to the vanilla UIs, as well as numerous new custom UIs to fulfill needs the vanilla ones cannot. See [the features section](#features) for details.
+Epip is an extensive UI and quality-of-life mod for Divinity: Original Sin 2 that introduces dozens of usability improvements to vanilla UIs, as well as numerous new custom UIs to fulfill needs the original ones cannot. See [the features section](#features) for details.
 
 Vast customization for Epip's features is available through an in-game [settings menu](Features/SettingsMenu.md) - you may use as many or as few features as you deem necessary, with most of them being disabled by default.
 
 ## Download
-**[Requires Norbyte's Script Extender](https://github.com/Norbyte/ositools/releases/tag/updater_v5)**. Load after both EE Core and EE Origins, if you have them.
 
 !!! info ""
-    **[Latest version, v1071](patchnotes.md). (28/07/24)**
+    **[Latest release download, v1071](patchnotes.md) (28/07/24)**
 
 See the [patchnotes](patchnotes.md) page for patchnotes. Development updates and nightly builds are posted in the [*#epipeline*](https://discord.gg/SevYmQc573) channel on the Epic Encounters discord server.
 
