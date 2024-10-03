@@ -44,21 +44,21 @@ Below is a non-exhaustive list of features; I suggest browsing the latest [patch
 
     This is to make the mod less overwhelming, as well as to respect that not all of its features will appeal to every player.
 
-Major features have dedicated pages for them accessible from the sidebar. This front page is a summary of them and other minor ones.
+Major features have dedicated pages for them accessible from the sidebar. This front page is a summary of them and other minor, uncategorized ones.
 
-- **[UI Improvements](Features/UI.md)**: list of improvements to the vanilla UIs as well as some custom UIs.
-- **[Hotbar](Features/Hotbar.md)**: improvements to the Hotbar UI: multiple bars, slot management options, loadouts and customizable extra hotkey buttons.
-- **[Vanity](Features/Vanity.md)**: exhaustive cosmetic equipment transmog, featuring a menu to browse item models, dyeing, persistent outfits, and much more.
-- **[Inventory Multi-Select](Features/InventoryMultiSelect.md)**: allows you to mass-select items in the inventory UIs to speed up inventory management.
-- **[Quick Find](Features/QuickFind.md)**: filterable view of the party inventory, making searching for specific items easier.
-- **[Hotbar Groups](Features/HotbarGroups.md)**: customizable, shared groups of additional hotbar slots.
-- **[Settings Menu](Features/SettingsMenu.md)**: an in-game settings menu that allows you to toggle and customize most of Epip's features.
-- **[Animation Cancelling](Features/AnimationCancelling.md)**: speeds up combat by ending player skill animations early.
-- **[Epic Encounters QoL](Features/EpicEncountersQoL.md)**: page covering features only applicable to Epic Encounters 2.
-- **[Camera](Features/Camera.md)**: settings to tweak the game camera.
-- **[Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
-- **[Codex](Features/Codex.md)**: an in-game reference for various topics.
-- **[Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
+- **[🧼 General UI Improvements](Features/UI.md)**: improvements to the vanilla UIs as well as some minor custom UIs.
+- **[🗃️ Hotbar](Features/Hotbar.md)**: improvements to the Hotbar UI: multiple bars, slot management options, loadouts and customizable extra hotkey buttons.
+- **[👗 Vanity](Features/Vanity.md)**: exhaustive cosmetic equipment transmog, featuring a menu to browse item models, dyeing, persistent outfits, and much more.
+- **[✋ Inventory Multi-Select](Features/InventoryMultiSelect.md)**: allows you to mass-select items in the inventory UIs to speed up inventory management.
+- **[🔎 Quick Find](Features/QuickFind.md)**: filterable view of the party inventory, making searching for specific items easier.
+- **[🗂️ Hotbar Groups](Features/HotbarGroups.md)**: customizable, shared groups of additional hotbar slots.
+- **[⚙️ Settings Menu](Features/SettingsMenu.md)**: in-game settings menu that allows you to toggle and customize most of Epip's features.
+- **[🏃‍♂️ Animation Cancelling](Features/AnimationCancelling.md)**: speeds up combat by ending player skill animations early.
+- **[✨ Epic Encounters QoL](Features/EpicEncountersQoL.md)**: page covering features only applicable to Epic Encounters 2.
+- **[📷 Camera](Features/Camera.md)**: settings to tweak the game camera.
+- **[🏷️ Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
+- **[📖 Codex](Features/Codex.md)**: in-game reference for various topics.
+- **[🔧 Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
 
 The rest of this page offers an overview of the major features and also covers and additions that are not yet categorized into other pages.
 
