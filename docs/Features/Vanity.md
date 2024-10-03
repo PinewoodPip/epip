@@ -30,6 +30,9 @@ Using transmog is as easy as clicking on your desired option, no extra items or 
 
 If you think we've missed some of vanilla variants or want to see support for more third-party mods - feel free to tell us.
 
+!!! info ""
+    By default, Vanity changes applied to equipment are reverted when the item is unequipped. You can control this behaviour with the "*Revert appearance of unequipped items*" setting in the Vanity settings tab.
+
 ### Autotransmog
 Found your perfect look? Want to keep it for the rest of the game? "Lock Appearance" option is here for you. When it's ticked newly equipped gear will be automatically transmogrified to match your previous look.  
 

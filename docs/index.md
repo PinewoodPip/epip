@@ -31,6 +31,8 @@ Translators:
 - Ferocidade: Brazilian Portuguese
 - Ainsky: Simplified Chinese
 - Drayander: French
+- Nektun: Polish
+- AquaVXI: Spanish (partial)
 </details>
 
 ## Features
@@ -47,6 +49,7 @@ Major features have dedicated pages for them accessible from the sidebar. This f
 - **[🗃️ Hotbar](Features/Hotbar.md)**: improvements to the Hotbar UI: multiple bars, slot management options, loadouts and customizable extra hotkey buttons.
 - **[👗 Vanity](Features/Vanity.md)**: exhaustive cosmetic equipment transmog, featuring a menu to browse item models, dyeing, persistent outfits, and much more.
 - **[✋ Inventory Multi-Select](Features/InventoryMultiSelect.md)**: allows you to mass-select items in the inventory UIs to speed up inventory management.
+- **[🎒 Quick Loot](Features/QuickLoot.md)**: loot nearby containers and corpses in one go from a single UI.
 - **[🔎 Quick Find](Features/QuickFind.md)**: filterable view of the party inventory, making searching for specific items easier.
 - **[🗂️ Hotbar Groups](Features/HotbarGroups.md)**: customizable, shared groups of additional hotbar slots.
 - **[⚙️ Settings Menu](Features/SettingsMenu.md)**: in-game settings menu that allows you to toggle and customize most of Epip's features.
@@ -56,6 +59,7 @@ Major features have dedicated pages for them accessible from the sidebar. This f
 - **[🏷️ Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
 - **[📖 Codex](Features/Codex.md)**: in-game reference for various topics.
 - **[🔧 Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
+- **[🎮 Controller Support](Features/ControllerSupport.md)**: information on which Epip features currently support controllers.
 
 The rest of this page offers an overview of the major features and also covers and additions that are not yet categorized into other pages.
 

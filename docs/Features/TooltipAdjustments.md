@@ -21,6 +21,7 @@ Numerous fixes and additions have been made to tooltips to improve their clarity
 - Delay for simple tooltips appearing is customizable in the settings menu.
 - The delay before item and item comparison tooltips display in the inventory UIs is customizable through the *"Inventory Item Tooltip Delay"* and *"Item Comparison Tooltip Delay" settings.
 - Background of formatted tooltips can be made opaque through the *"Opaque Background"* setting.
+- "+0%" stat increases are no longer shown - this mostly concerns mods that dummy out vanilla behaviours.
 
 ![Container preview.](./img/tooltipadjustments/container_preview.png)
 

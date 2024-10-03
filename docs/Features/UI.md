@@ -123,8 +123,16 @@ A hotkey exists to the open the UI.
 
 Additionally, there is now a keybind to open the examine menu, and capitalization of the word "Status efects" has been made consistent with the rest of the UI.
 
+## Trade UI
+- You can now open containers (ex. backpacks) in the trade UI by right-clicking them; left-clicking items within will offer them for trade
+    - ++lctrl++ + ++m1++ on a container will instead offer all the items inside for trade
+
+<center>![Using containers in the trade UI.](img/ui/trade_backpacks.gif)</center>
+
 ## Skillbook
 You can now unlearn skills by right-clicking them in the skillbook while out of combat. Innate skills cannot be unlearnt.
+
+Additionally, a setting has been added to render each icon in the skillbook UI separately (*"Render icons individually"* in the "Miscellaneous UI" settings tab). This fixes the issue of icons disappearing when using too many mods that add them, though causes the UI to take longer to open.
 
 ## Chat
 Chat commands are added, beginning with a slash (/). The following commands exist:

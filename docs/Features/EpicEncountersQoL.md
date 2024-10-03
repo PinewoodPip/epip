@@ -29,7 +29,7 @@ The Empower option now properly scales armor values, however due to technical li
 Additionally, an option to rename items ("Engrave") has been added. This is purely cosmetic.
 
 ## Tooltips
-Many EE-specific adjustments have been made to tooltips, detailed in the [Tooltips](../Features/TooltipAdjustments.md#ee-specific) page.
+Many EE-specific adjustments have been made to tooltips, detailed in the [Tooltips](../Features/TooltipAdjustments.md#changes-for-epic-encounters) page.
 
 <center>![A weapon tooltip showing the changes.](../img/showcase/weapon_tooltip.png)</center>
 

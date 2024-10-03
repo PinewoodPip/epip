@@ -21,7 +21,7 @@ Epip implements multiple handy new actions, in addition to some vanilla function
 - Source Infuse & Meditate
 - Toggle Minimap
 - Resting (using a bedroll from anywhere in your party inventory - no need to find one for everyone!)
-- Toggle Party Link (instantaneous, no animation!)
+- Toggle Party Link (instantaneous, no animation, and preserves order in the portraits UI)
 - Respec (if Portable Respec Mirror mod is installed)
 
 The purpose of the action bar is to provide a centralized place for modders to add shortcuts/hotkeys to their interfaces or features, eliminating the need for interactable books that clutter your inventory and freeing up space on the hotbar.

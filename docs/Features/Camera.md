@@ -26,3 +26,10 @@ However, the game camera always points towards the ground or the focused charact
 
 ![Example of an angle with a low Y (Angle value 2).](img/camera/example_low_tilt.png)
 <center>Example of an angle with a low Y (angle value 2)</center>
+
+## Other Features
+- The *"Keybind Rotation Speed"* setting allows you to control the rotation speed when using the rotate camera keybinds.
+- The vanilla "Close-up dialogue" setting no longer zooms-in the camera obnoxiously close to characters.
+
+![Comparison of close-up dialogue option.](img/misc/closeup-dialogue.png)
+<center><i>Before & after comparison of the vanilla "Close-up Dialogue" setting.</i></center>

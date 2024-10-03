@@ -51,6 +51,7 @@ nav:
     - "Hotbar": "Features/Hotbar.md"
     - "Vanity": "Features/Vanity.md"
     - "Inventory Multi-Select": "Features/InventoryMultiSelect.md"
+    - "Quick Loot": "Features/QuickLoot.md"
     - "Quick Find": "Features/QuickFind.md"
     - "Hotbar Groups": "Features/HotbarGroups.md"
     - "Settings Menu": "Features/SettingsMenu.md"
@@ -60,6 +61,7 @@ nav:
     - "Tooltip Adjustments": "Features/TooltipAdjustments.md"
     - "Codex": "Features/Codex.md"
     - "Vanilla Fixes": "Features/VanillaFixes.md"
+    - "Controller Support": "Features/ControllerSupport.md"
   - Technical Documentation: 
     - "Introduction": "docs.md"
     - "Terminology": "Documentation/Terminology.md"
