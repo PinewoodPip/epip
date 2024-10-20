@@ -1,6 +1,6 @@
 # Documentation
 
-The features of Epip Encounters are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.
+The features of Epip are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.
 
 Since late 2021, the focus of development has shifted to making the internals of the mod available as libraries, aiming to provide utility, better maintainability, extendability and easy manipulation of UIs from lua.
 
@@ -21,7 +21,7 @@ The mod's root table contains the following tables:
 - `Client`: contains client-specific calls as well as tables offering UI-specific calls, events and hooks.
 - `Utilities`: contains utility methods useful across many contexts.  
 
-The scripting in Epip Encounters focuses on event-driven programming. Aside from functions, systems and features tend to implement events and hooks which allow other scripts to react to them being raised.
+The scripting in Epip focuses on event-driven programming. Aside from functions, systems and features tend to implement events and hooks which allow other scripts to react to them being raised.
 
 Event listeners allow you to react to events sent from scripts. They can receive parameters and are executed in the order that they were registered.
 

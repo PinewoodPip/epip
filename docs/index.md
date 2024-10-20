@@ -7,7 +7,7 @@ Vast customization for Epip's features is available through an in-game [settings
 ## Download
 
 !!! info ""
-    **[Latest release download, v1071](patchnotes.md) (28/07/24)**
+    **[Latest release download, v1072](patchnotes.md) (20/10/24)**
 
 See the [patchnotes](patchnotes.md) page for patchnotes. Development updates and nightly builds are posted in the [*#epipeline*](https://discord.gg/SevYmQc573) channel on the Epic Encounters discord server.
 

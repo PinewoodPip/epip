@@ -1,7 +1,7 @@
 # Codex
 The Codex is a new UI that serves as an in-game knowledgebase or reference for various topics. It is opened with ++lctrl+g++ by default.
 
-The Codex is split up into various "sections", navigable througbh the index on the left side of the UI. Each section may also have settings that filter the information displayed. Other mods may add their own sections or extend existing ones.
+The Codex is split up into various "sections", navigable through the index on the left side of the UI. Each section may also have settings that filter the information displayed. Other mods may add their own sections or extend existing ones.
 
 ## Skills
 The Skills section displays skills that are obtainable by the player, acting as an extended skillbook UI that lets you consult the tooltips of skills regardless of whether your characters have them.
