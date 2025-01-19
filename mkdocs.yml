@@ -62,6 +62,7 @@ nav:
     - "Codex": "Features/Codex.md"
     - "Vanilla Fixes": "Features/VanillaFixes.md"
     - "Controller Support": "Features/ControllerSupport.md"
+    - "Radial Menus": "Features/RadialMenus.md"
   - Technical Documentation: 
     - "Introduction": "docs.md"
     - "Terminology": "Documentation/Terminology.md"

@@ -60,6 +60,7 @@ Major features have dedicated pages for them accessible from the sidebar. This f
 - **[📖 Codex](Features/Codex.md)**: in-game reference for various topics.
 - **[🔧 Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
 - **[🎮 Controller Support](Features/ControllerSupport.md)**: information on which Epip features currently support controllers.
+- **[🛞 Radial Menus](Features/RadialMenus.md)**: an alternative way of preparing skills or accessing Epip features that normally require keybinds.
 
 The rest of this page offers an overview of the major features and also covers and additions that are not yet categorized into other pages.
 
