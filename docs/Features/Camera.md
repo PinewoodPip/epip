@@ -29,6 +29,7 @@ However, the game camera always points towards the ground or the focused charact
 
 ## Other Features
 - The *"Keybind Rotation Speed"* setting allows you to control the rotation speed when using the rotate camera keybinds.
+- The *"Preserve position in dialogues"* setting prevents the camera from centering on NPCs in dialogue.
 - The vanilla "Close-up dialogue" setting no longer zooms-in the camera obnoxiously close to characters.
 
 ![Comparison of close-up dialogue option.](img/misc/closeup-dialogue.png)

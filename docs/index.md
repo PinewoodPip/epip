@@ -61,6 +61,7 @@ Major features have dedicated pages for them accessible from the sidebar. This f
 - **[🔧 Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
 - **[🎮 Controller Support](Features/ControllerSupport.md)**: information on which Epip features currently support controllers.
 - **[🛞 Radial Menus](Features/RadialMenus.md)**: an alternative way of preparing skills or accessing Epip features that normally require keybinds.
+- **[❇️ Miscellaneous QoL](Features/MiscellaneousQoL.md)**: list of various quality-of-life improvements that do not fit other feature pages.
 
 The rest of this page offers an overview of the major features and also covers and additions that are not yet categorized into other pages.
 
@@ -100,7 +101,7 @@ Right-click an equipped item and select *"Vanity..."* in its context menu to get
 ### Settings Menu
 Epip includes its own [Settings Menu](Features/SettingsMenu.md) UI full of options to toggle or customize its features - you may use as few or many of them as you want.
 
-<center>![Options menu.](Features/img/settingsmenu/general_tab.png)</center>
+<center>![Options menu.](Features/img/settingsmenu/info_tab.png)</center>
 
 The Epip Settings Menu also makes custom hotkeys possible, including ones for Meditate & Source Infuse (in Epic Encounters), an examine hotkey, as well as binding the 12 "action buttons" from the [Hotbar UI](Features/Hotbar.md).
 

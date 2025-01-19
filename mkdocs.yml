@@ -63,6 +63,7 @@ nav:
     - "Vanilla Fixes": "Features/VanillaFixes.md"
     - "Controller Support": "Features/ControllerSupport.md"
     - "Radial Menus": "Features/RadialMenus.md"
+    - "Miscellaneous QoL": "Features/MiscellaneousQoL.md"
   - Technical Documentation: 
     - "Introduction": "docs.md"
     - "Terminology": "Documentation/Terminology.md"

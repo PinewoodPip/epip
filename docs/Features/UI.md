@@ -73,8 +73,10 @@ Accessible through **Epip Settings -> General -> Character Level Display**, disa
 ![Treasure display option.](img/ui/treasure_display.png)
 
 ## Player Status Bar
-The player health bar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text was removed to improve readability.  
-Additionally, the AP display now features dividers every 4 AP, making it easier to see at a quick glance how much AP you've got left. Your maximum SP is also shown at all times.  
+The player health bar now shows its values at all times (you needn't hover over it anymore), and the Physical/Magic Armor text was removed to improve readability. Your maximum SP is also shown at all times.
+
+Additionally, an *"AP Divider Interval"* setting exists to make the AP display show a divider graphic every set amount of action points, making it easier to see at a quick glance how many standard-cost actions you've got left. This is useful when playing with overhauls that use DOS1-style AP economy (Epic Encounters & Divinity Farandole), where the AP bar is otherwise hard to read.
+
 Further minor graphical tweaks were made, such as properly centering AP/SP displays and adding a dropshadow to AP bar to improve its readability.  
 
 ![Player status bar showcase](img/ui/status_console.png)

@@ -80,7 +80,7 @@ The Improved Hotbar mod comes from Epip; it existed to allow that particular fea
 Since Epip is now usable without EE, the standalone hotbar mod is obsolete and will not receive any further updates, possibly being removed from the workshop sometime in the future.
 
 ## Will all features have controller support?
-Controller support for UI mods largely requires all the work to be done twice; this is an immense time commitment for a single developer. Nonetheless, in 2024 we've made large progress towards controller support; versions [v1071](../patchnotes.md#v1071-28072024) and [v1072](#v1072-20102024) were almost entirely dedicated to providing controller support for Epip's major features. You can read more about current controller support in its [dedicated page](../Features/ControllerSupport.md).
+Controller support for UI mods largely requires all the work to be done twice; this is an immense time commitment for a single developer. Nonetheless, in 2024 we've made large progress towards controller support; versions [v1071](../patchnotes.md#v1071-28072024) and [v1072](../patchnotes.md#v1072-20102024) were almost entirely dedicated to providing controller support for Epip's major features. You can read more about current controller support in its [dedicated page](../Features/ControllerSupport.md).
 
 Additionally, since v1066, mouse control is enabled while playing with a controller. This allows you to use certain custom Epip UIs that still lack controller navigation.
 

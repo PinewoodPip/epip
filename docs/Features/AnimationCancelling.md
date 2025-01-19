@@ -5,8 +5,8 @@ Animation Cancelling is a feature that greatly speeds up combat by ending the pl
 
 This is particularly helpful for summon skills, which consist mostly of end-lag.
 
-Unlike previous implementations, Epip's Animation Cancelling works properly with many skill types that were previously problematic, such as multi-projectile or jump skills. Additionally, the setting applies per-player, rather than globally.
+Unlike implementations in older mods, Epip's Animation Cancelling works properly with many skill types that were previously problematic, such as multi-projectile or jump skills. Additionally, most of the settings apply per-player, rather than globally. Attack animations can also be shortened in this way with the *"Cancel attack animations"* setting.
 
-This feature is currently only available for player characters. For enemies, use EE's Faster AI Spells mod.
+A separate setting exists to enable animation cancelling for NPCs (*"Cancel NPC animations"*), which will cancel both their skill and attack animations.
 
 An additional setting exists to speed up picking items by clicking their world tooltips (*"Speed up world tooltip item pickups"*) - normally this prevents your character from acting until the animation completes, which is inconsistent with regular item pickups.

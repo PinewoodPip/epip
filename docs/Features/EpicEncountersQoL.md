@@ -8,9 +8,15 @@ A *"Show B/H"* keybind exists that will display Battered & Harried of nearby cha
 ## Ascension/Meditate
 
 ### Ascension
-You can now use the `Esc` key to go back to the previous page in the Ascension UI, or exit it if you're on the default page. An option exists to make this key always exit the UI.
+You can now use the `Esc` key to go back to the previous page in the Ascension UI, or exit it if you're on the default page. A setting exists to make this key always exit the UI (*"Escape Key Closes EE UIs"* in the "Epic Encounters" settings tab).
 
 An "Immersive Meditation" setting can be enabled to hide the minimap and hotbar while within the EE UIs.
+
+Proper controller support for the Ascension UI exists; when not using the pointer mode, you can navigate nodes and wheels with the left stick and use the A & B buttons to interact with elements or go back respectively, with other controls being listed on the [Navigation Bar](../Features/ControllerSupport.md#navigation).
+
+![type:video](https://www.youtube.com/embed/gQo4A-MFX24)
+
+You can still use the pointer mode as before, which you'll need to in order to access less commonly-used elements like the keyword descriptions, the "Deallocate All" button and other EE UIs.
 
 ### Greatforge Context Menus
 Item context menus now have options to quickly dismantle items, as well as to remove their runes. Doing so still costs the usual amount of gold/splinters respectively.

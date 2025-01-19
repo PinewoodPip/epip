@@ -10,6 +10,8 @@ Numerous fixes and additions have been made to tooltips to improve their clarity
 - Added a keybind to scroll tooltips, useful for 3-socket items whose tooltips often overflow the screen.
 - Books that have been read and keys that have been used now have a green label in their tooltip.
 - Long item tooltips will be top-anchored, helping with the issue of being unable to compare items while wielding a heavily upgraded item.
+- When in combat, the cursor now displays a warning when attempting to move to a spot that would cause you to exit combat (roughly 27.5m away from the nearest enemy in 2D distance)
+    - This warning also displays when using movement skills (Jump, Rush, Teleport skills)
 - Fixed cone and zone-type skill tooltips saying that their range is boosted by Astrologer's Gaze (Far-out Man in vanilla), as they are not actually affected.
 - Surface tooltips now show their owner - the character from who the surface scales from.
 - Surface tooltips now render on top of the hotbar.

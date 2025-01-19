@@ -60,6 +60,12 @@ Weapons with elemental damage normally get glowing visual effect applied to them
 
 ![Transmog ele effects](img/vanity/ele_effects.png)
 
+### Animation Swaps
+When using the updated version of the [extender fork](../extender.md), you can change your weapon animations to those of other weapon types; select the Weapon item slot for this option to appear. This also changes the stance your characters have in combat or while unsheathed.
+
+![type:video](https://www.youtube.com/embed/BrpHSf9sgb4)
+<center><i>Weapon animation swap showcase.</i></center>
+
 ## Outfits Tab ![Outfits tab icon](img/vanity/outfits_tab_icon.png){style='height:35px;'}
 Have you mastered the art of drip? Have you found your ultimate image? Never wanna wear anything else ever again? Save your entire get-up and use it across playthroughs with a few clicks.  
 
