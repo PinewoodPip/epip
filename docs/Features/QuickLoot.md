@@ -11,7 +11,7 @@ Various filters exist to avoid picking up undesired items, quickly accessible vi
 
 Hovering over items will show their source container/corpse in the tooltip, and you may also use the vanilla "take all" keybind to loot all items in the UI.
 
-When using the updated version of the [extender fork](extender.md), containers and corpses show outlines while within the search radius to make them easier to spot.
+When using the updated version of the [extender fork](../extender.md), containers and corpses show outlines while within the search radius to make them easier to spot.
 
 !!! info ""
     🎮 The Quick Loot UI supports controllers. When playing with a controller, you may hold down the right-stick to begin searching.

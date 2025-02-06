@@ -25,10 +25,10 @@ markdown_extensions:
     - admonition
     - attr_list
     - md_in_html
-extra:
-  analytics:
-    provider: google
-    property: G-K2XG4QX6F3
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-K2XG4QX6F3
 extra_css:
   - css/extra.css
 extra_javascript:
