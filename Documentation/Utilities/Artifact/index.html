@@ -1859,22 +1859,36 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>artifactID</b> <code>string</code></p>
 
 <h5 id="getequippedpowers">GetEquippedPowers<a class="headerlink" href="#getequippedpowers" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">GetEquippedPowers</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Server-only)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">GetEquippedPowers</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">ArtifactLib_ArtifactDefinition</span><span class="p">[]</span>
-</code></pre></div>
-<p>Returns a list of artifact powers active on char.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code></p>
-
-<h5 id="getequippedpowers_1">GetEquippedPowers<a class="headerlink" href="#getequippedpowers_1" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">GetEquippedPowers</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">ArtifactLib_ArtifactDefinition</span><span class="p">[]</span>
 </code></pre></div>
 <p>Returns a list of artifact powers active on char.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
 
-<h5 id="isequipped">IsEquipped<a class="headerlink" href="#isequipped" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">IsEquipped</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">artifact</span><span class="p">)</span> <span class="c1">-- (Server-only)</span>
+<h5 id="getequippedpowers_1">GetEquippedPowers<a class="headerlink" href="#getequippedpowers_1" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">GetEquippedPowers</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="c1">-- (Server-only)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">ArtifactLib_ArtifactDefinition</span><span class="p">[]</span>
+</code></pre></div>
+<p>Returns a list of artifact powers active on char.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code></p>
+
+<h5 id="isartifact">IsArtifact<a class="headerlink" href="#isartifact" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">IsArtifact</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
+<p>Returns whether an item is an Artifact.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
+
+<h5 id="isartifactfocus">IsArtifactFocus<a class="headerlink" href="#isartifactfocus" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">IsArtifactFocus</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
+<p>Returns whether an item is an Artifact focus rune.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>item</b> <code>Item</code></p>
+
+<h5 id="isequipped">IsEquipped<a class="headerlink" href="#isequipped" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">IsEquipped</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">artifact</span><span class="p">)</span> <span class="c1">-- (Server-only)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char has the artifact power active.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EsvCharacter</code></p>
@@ -1882,8 +1896,8 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>artifact</b> <code>ArtifactLib_ArtifactDefinition|string</code></p>
 
 <h5 id="isequipped_1">IsEquipped<a class="headerlink" href="#isequipped_1" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">IsEquipped</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">artifact</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">IsEquipped</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">artifact</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether char has the artifact power active.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code></p>
@@ -1891,14 +1905,14 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>artifact</b> <code>ArtifactLib_ArtifactDefinition|string</code></p>
 
 <h5 id="isownedbyparty">IsOwnedByParty<a class="headerlink" href="#isownedbyparty" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">IsOwnedByParty</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">IsOwnedByParty</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 </code></pre></div>
 <p>Returns whether the party owns an artifact.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>id</b> <code>string</code></p>
 
 <h5 id="registerartifact">RegisterArtifact<a class="headerlink" href="#registerartifact" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">RegisterArtifact</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">ArtifactLib_ArtifactDefinition</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">ArtifactLib</span><span class="p">.</span><span class="nf">RegisterArtifact</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">ArtifactLib_ArtifactDefinition</span>
 </code></pre></div>
 <p>Registers the data for an artifact.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>data</b> <code>ArtifactLib_ArtifactDefinition</code></p>

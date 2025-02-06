@@ -1837,17 +1837,28 @@
 <p>Does not support alpha.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>num</b> <code>integer</code></p>
 
-<h5 id="createfromhex">CreateFromHex<a class="headerlink" href="#createfromhex" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">ColorLib</span><span class="p">.</span><span class="nf">CreateFromHex</span><span class="p">(</span><span class="n">hex</span><span class="p">)</span>
+<h5 id="createfromhsv">CreateFromHSV<a class="headerlink" href="#createfromhsv" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">ColorLib</span><span class="p">.</span><span class="nf">CreateFromHSV</span><span class="p">(</span><span class="n">hue</span><span class="p">,</span> <span class="n">saturation</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
+</code></pre></div>
+<p>Creates a color from HSV values.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>hue</b> <code>integer</code> In degrees.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>saturation</b> <code>number</code> As percentage.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>number</code> As percentage.</p>
+
+<h5 id="createfromhex">CreateFromHex<a class="headerlink" href="#createfromhex" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">ColorLib</span><span class="p">.</span><span class="nf">CreateFromHex</span><span class="p">(</span><span class="n">hex</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
 </code></pre></div>
 <p>Creates a color from an html-format hex color code.</p>
 <p>Does not support alpha.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>hex</b> <code>string</code></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>hex</b> <code>htmlcolor</code></p>
 
 <h5 id="createfromrgb">CreateFromRGB<a class="headerlink" href="#createfromrgb" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">ColorLib</span><span class="p">.</span><span class="nf">CreateFromRGB</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">ColorLib</span><span class="p">.</span><span class="nf">CreateFromRGB</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
 </code></pre></div>
 <p>Creates a color from RGBA values. Expected range of values is [0-255].</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>red</b> <code>integer?</code></p>
@@ -1858,8 +1869,15 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>alpha</b> <code>integer?</code></p>
 
+<h5 id="ishexcolorcode">IsHexColorCode<a class="headerlink" href="#ishexcolorcode" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">ColorLib</span><span class="p">.</span><span class="nf">IsHexColorCode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
+<p>Returns whether a string is a valid hex color code.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code> May be prefixed with "#".</p>
+
 <h5 id="lerp">Lerp<a class="headerlink" href="#lerp" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">ColorLib</span><span class="p">.</span><span class="nf">Lerp</span><span class="p">(</span><span class="n">startColor</span><span class="p">,</span> <span class="n">targetColor</span><span class="p">,</span> <span class="n">progress</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">ColorLib</span><span class="p">.</span><span class="nf">Lerp</span><span class="p">(</span><span class="n">startColor</span><span class="p">,</span> <span class="n">targetColor</span><span class="p">,</span> <span class="n">progress</span><span class="p">)</span>
 </code></pre></div>
 <p>Creates a new color whose RGB components are linearly interpolated from one to another.</p>
 <p>Uses the alpha of the target color.</p>
@@ -1873,13 +1891,13 @@
 <h1 id="rgbcolor-class">RGBColor Class<a class="headerlink" href="#rgbcolor-class" title="Permanent link">¶</a></h1>
 <h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">¶</a></h2>
 <h5 id="clone_1">Clone<a class="headerlink" href="#clone_1" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">Clone</span><span class="p">()</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">Clone</span><span class="p">()</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
 </code></pre></div>
 <p>Returns a new instance of RGBColor with the same values.</p>
 <h5 id="create_1">Create<a class="headerlink" href="#create_1" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
 </code></pre></div>
 <p>Creates a color from RGBA values.</p>
 <p>Expected range is [0-255] and will be clamped.</p>
@@ -1892,44 +1910,61 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>a</b> <code>integer?</code> Defaults to 255.</p>
 
 <h5 id="createfromdecimal_1">CreateFromDecimal<a class="headerlink" href="#createfromdecimal_1" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">CreateFromDecimal</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">CreateFromDecimal</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
 </code></pre></div>
 <p>Creates a color from a decimal value.</p>
 <p>Does not support alpha.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>num</b> <code>integer</code></p>
 
+<h5 id="createfromhsv_1">CreateFromHSV<a class="headerlink" href="#createfromhsv_1" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">CreateFromHSV</span><span class="p">(</span><span class="n">hue</span><span class="p">,</span> <span class="n">saturation</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">number</span> <span class="c1">-- Color and RGB values as floats.</span>
+</code></pre></div>
+<p>Creates a color from HSV values.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>hue</b> <code>integer</code> In degrees.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>saturation</b> <code>number</code> As fraction.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>number</code> As fraction.</p>
+
 <h5 id="createfromhex_1">CreateFromHex<a class="headerlink" href="#createfromhex_1" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">CreateFromHex</span><span class="p">(</span><span class="n">hex</span><span class="p">)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">CreateFromHex</span><span class="p">(</span><span class="n">hex</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
 </code></pre></div>
 <p>Creates a color from a hexadecimal value.</p>
 <p>Does not support alpha.</p>
-<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>hex</b> <code>string</code></p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>hex</b> <code>htmlcolor</code></p>
 
 <h5 id="equals">Equals<a class="headerlink" href="#equals" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">Equals</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">Equals</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether 2 colors have the same RGBA values.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color</b> <code>RGBColor</code></p>
 
 <h5 id="todecimal">ToDecimal<a class="headerlink" href="#todecimal" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">ToDecimal</span><span class="p">(</span><span class="n">addAlpha</span><span class="p">)</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">ToDecimal</span><span class="p">(</span><span class="n">addAlpha</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span>
 </code></pre></div>
 <p>Returns the decimal representation of the color.</p>
 <p>Actionscript expects colors to be represented in this way.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>addAlpha</b> <code>boolean?</code> Defaults to false.</p>
 
 <h5 id="tofloats">ToFloats<a class="headerlink" href="#tofloats" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">ToFloats</span><span class="p">()</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">number</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">ToFloats</span><span class="p">()</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">number</span>
 </code></pre></div>
 <p>Returns the RGBA values as floats in the range[0.0 - 1.0]</p>
+<h5 id="tohsv">ToHSV<a class="headerlink" href="#tohsv" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">ToHSV</span><span class="p">()</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="p">,</span> <span class="n">integer</span><span class="p">,</span> <span class="n">integer</span> <span class="c1">-- Hue, saturation, value.</span>
+</code></pre></div>
+<p>Converts RGB values to HSV.</p>
+<p>Ignores alpha.</p>
 <h5 id="tohex">ToHex<a class="headerlink" href="#tohex" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">ToHex</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">addAlpha</span><span class="p">)</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">ToHex</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">addAlpha</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Returns the hexadecimal representation of the color.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>prefix</b> <code>boolean?</code> Prefix the string with #. Defaults to false.</p>
@@ -1937,14 +1972,14 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>addAlpha</b> <code>boolean?</code> Defaults to false. If enabled, resulting color will be in the format `#RRGGBBAA`</p>
 
 <h5 id="unpack">Unpack<a class="headerlink" href="#unpack" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">Unpack</span><span class="p">()</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span> <span class="p">...</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">:</span><span class="nf">Unpack</span><span class="p">()</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span> <span class="p">...</span>
 </code></pre></div>
 <p>Unpacks the color's RGB values, alpha included.</p>
 <h5 id="__add">__add<a class="headerlink" href="#__add" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">---@protected</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">__add</span><span class="p">(</span><span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">)</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">__add</span><span class="p">(</span><span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">)</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
 </code></pre></div>
 <p>__add overload. Adds the RGB values of both colors.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color1</b> <code>RGBColor</code></p>
@@ -1952,9 +1987,9 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color2</b> <code>RGBColor</code></p>
 
 <h5 id="__eq">__eq<a class="headerlink" href="#__eq" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">---@protected</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">__eq</span><span class="p">(</span><span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">)</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">__eq</span><span class="p">(</span><span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">)</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>__eq overload. Equivalent to calling RGBColor:Equals()</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color1</b> <code>RGBColor</code></p>
@@ -1962,9 +1997,9 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color2</b> <code>RGBColor</code></p>
 
 <h5 id="__sub">__sub<a class="headerlink" href="#__sub" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">---@protected</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">__sub</span><span class="p">(</span><span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">)</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1">---@protected</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kr">function</span> <span class="nc">RGBColor</span><span class="p">.</span><span class="nf">__sub</span><span class="p">(</span><span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">)</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>   <span class="o">-&gt;</span> <span class="n">RGBColor</span>
 </code></pre></div>
 <p>__sub overload. Subtracts the RGB values.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>color1</b> <code>RGBColor</code></p>

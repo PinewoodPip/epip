@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The features of Epip are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.">
+        <meta name="description" content="The features of Epip are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding. To ease development and future maintenance, the codebase is split into numerous core libraries and modular-ish end-user features, with an open-closed-aware &amp; event-driven design that aims to make it easy to build new client &amp; UI features, extend and/or modify existing ones, even from outside Epip.">
       
       
       
@@ -1887,12 +1887,13 @@
 
 
 <div><h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">¶</a></h1>
-<p>The features of Epip are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding.</p>
-<p>Since late 2021, the focus of development has shifted to making the internals of the mod available as libraries, aiming to provide utility, better maintainability, extendability and easy manipulation of UIs from lua.</p>
-<p>The ultimate goal is to make the mod easy for someone else to continue working on after/if I depart - EE is an overhaul built to last and be tinkered with, and I would like to honor that in my own project.</p>
-<p>This change will be a long process. There are still many features of the mod that remain to be rewritten to the new standards and methodology, or extended to provide functionality beyond what the current mod needs.</p>
-<p>Anything that is documented here is considered stable and unlikely to change drastically - <strong>any changes to these calls/systems will be mentioned in future patch notes.</strong></p>
-<p>The definitions here are auto-generated from EmmyLua annotations within the scripts (using <code>update_docs.py</code> found in the mod). Functions are tagged through <code>@meta</code> to denote tags like "Client-only", "EE-only". Declaring these at the top of the file tags all functions in the file.</p>
+<p>The features of Epip are built on top of a lot of trial-and-error research and work on client-side scripting and UI modding. To ease development and future maintenance, the codebase is split into numerous core libraries and modular-ish end-user features, with an open-closed-aware &amp; event-driven design that aims to make it easy to build new client &amp; UI features, extend and/or modify existing ones, even from outside Epip.</p>
+<p>These documentation pages include an overview of the project's structure and workflow, explaining the core libraries, APIs of individual features and how to make use of them - either for your own mods or for maintaining Epip itself.</p>
+<p>The ultimate goal is to make the mod easy for someone else to continue working on after/if I depart - Epic Encounters, the mod that inspired Epip, is an overhaul built to last and be tinkered with, and I would like to honor that in my own project.</p>
+<p>Since Epip has been in development for multiple years and was our first modding project, code standards and style has 
+There are still many features of the mod that remain to be rewritten to the new standards and methodology, or extended to provide functionality beyond what the current mod needs.</p>
+<p>Anything that is documented here is however considered stable and unlikely to change drastically - <strong>any changes to these calls/systems will be mentioned in future patch notes (in the "technical stuff" sections).</strong></p>
+<p>The symbol definitions on the pages are auto-generated from LLS annotations within the mod, making the mod "self-documenting" to an extent.</p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
 <p>The mod's root table contains the following tables:</p>
 <ul>

@@ -1988,17 +1988,24 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>...</b> <code>any</code></p>
 
+<h5 id="formattime">FormatTime<a class="headerlink" href="#formattime" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">FormatTime</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+</code></pre></div>
+<p>Formats a time in the format MM:SS, where M is minutes and S is seconds.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>time</b> <code>integer</code> In seconds.</p>
+
 <h5 id="generateguid">GenerateGUID<a class="headerlink" href="#generateguid" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GenerateGUID</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">GUID</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GenerateGUID</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">GUID</span>
 </code></pre></div>
 <p>Generate a random GUID.</p>
 <p>Source: https://gist.github.com/jrus/3197011</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>pattern</b> <code>pattern?</code> Defaults to GUID4 pattern.</p>
 
 <h5 id="generatelocalizationtemplate">GenerateLocalizationTemplate<a class="headerlink" href="#generatelocalizationtemplate" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GenerateLocalizationTemplate</span><span class="p">(</span><span class="n">modTable</span><span class="p">,</span> <span class="n">existingTemplate</span><span class="p">)</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">TextLib_LocalizationTemplate</span><span class="p">,</span> <span class="n">integer</span><span class="p">[]</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="p">[]</span><span class="err">?</span> <span class="c1">-- Second param is new strings, third is outdated strings. Second param onwards is only returned while patching.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GenerateLocalizationTemplate</span><span class="p">(</span><span class="n">modTable</span><span class="p">,</span> <span class="n">existingTemplate</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">TextLib_LocalizationTemplate</span><span class="p">,</span> <span class="n">integer</span><span class="p">[]</span><span class="err">?</span><span class="p">,</span> <span class="n">integer</span><span class="p">[]</span><span class="err">?</span> <span class="c1">-- Second param is new strings, third is outdated strings. Second param onwards is only returned while patching.</span>
 </code></pre></div>
 <p>Generates a template file for localizing strings registered through this library.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>modTable</b> <code>string?</code> Defaults to "EpipEncounters"</p>
@@ -2006,25 +2013,27 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>existingTemplate</b> <code>TextLib_LocalizationTemplate?</code> If present, translated strings from this template will be patched into the new one, if the reference text is still up-to-date.</p>
 
 <h5 id="generatetranslatedstringhandle">GenerateTranslatedStringHandle<a class="headerlink" href="#generatetranslatedstringhandle" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GenerateTranslatedStringHandle</span><span class="p">()</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">TranslatedStringHandle</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GenerateTranslatedStringHandle</span><span class="p">()</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">TranslatedStringHandle</span>
 </code></pre></div>
 <p>Generates a random handle in the format that Larian uses for TranslatedStringHandle.</p>
 <h5 id="getcurrentlanguage">GetCurrentLanguage<a class="headerlink" href="#getcurrentlanguage" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetCurrentLanguage</span><span class="p">()</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetCurrentLanguage</span><span class="p">(</span><span class="n">useOverride</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Returns the language the game is set to.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>useOverride</b> <code>boolean?</code> Whether to consider the Epip language override setting. Defaults to `true`.</p>
+
 <h5 id="getstringkeyhandle">GetStringKeyHandle<a class="headerlink" href="#getstringkeyhandle" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetStringKeyHandle</span><span class="p">(</span><span class="n">stringKey</span><span class="p">)</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   <span class="o">-&gt;</span> <span class="n">TranslatedStringHandle</span><span class="err">?</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetStringKeyHandle</span><span class="p">(</span><span class="n">stringKey</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="n">TranslatedStringHandle</span><span class="err">?</span>
 </code></pre></div>
 <p>Returns the handle for a string key.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>stringKey</b> <code>string</code></p>
 
 <h5 id="gettranslatedstring">GetTranslatedString<a class="headerlink" href="#gettranslatedstring" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">fallBack</span><span class="p">)</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span> <span class="c1">-- Defaults to the handle, or fallBack if specified.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">fallBack</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span> <span class="c1">-- Defaults to the handle, or fallBack if specified.</span>
 </code></pre></div>
 <p>Returns the string bound to a TranslatedStringHandle, or a key.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle|string|TextLib_TranslatedString</code> Accepts handles or keys.</p>
@@ -2032,8 +2041,8 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>fallBack</b> <code>string?</code></p>
 
 <h5 id="gettranslatedstringtranslation">GetTranslatedStringTranslation<a class="headerlink" href="#gettranslatedstringtranslation" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetTranslatedStringTranslation</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="err">?</span> <span class="c1">-- `nil` if the handle is not translated</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">GetTranslatedStringTranslation</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="err">?</span> <span class="c1">-- `nil` if the handle is not translated</span>
 </code></pre></div>
 <p>Returns the translation for a handle.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
@@ -2041,14 +2050,15 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>language</b> <code>string?</code> Defaults to current language.</p>
 
 <h5 id="istranslatedstringregistered">IsTranslatedStringRegistered<a class="headerlink" href="#istranslatedstringregistered" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">IsTranslatedStringRegistered</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">IsTranslatedStringRegistered</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether a TSK handle was registered <strong>through the Text library.</strong></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
 
 <h5 id="join">Join<a class="headerlink" href="#join" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">separator</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">separator</span><span class="p">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Joins two strings together.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str1</b> <code>string</code></p>
@@ -2058,7 +2068,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>separator</b> <code>string?</code> Defaults to ` `</p>
 
 <h5 id="loadlocalization">LoadLocalization<a class="headerlink" href="#loadlocalization" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">LoadLocalization</span><span class="p">(</span><span class="n">language</span><span class="p">,</span> <span class="n">filePath</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">LoadLocalization</span><span class="p">(</span><span class="n">language</span><span class="p">,</span> <span class="n">filePath</span><span class="p">)</span>
 </code></pre></div>
 <p>Loads a localization file. Must be in the format generated by GenerateLocalizationTemplate()</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>language</b> <code>string</code></p>
@@ -2066,8 +2076,8 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>filePath</b> <code>string</code></p>
 
 <h5 id="registertranslatedstring">RegisterTranslatedString<a class="headerlink" href="#registertranslatedstring" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">RegisterTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>   <span class="o">-&gt;</span> <span class="n">TextLib_TranslatedString</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">RegisterTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   <span class="o">-&gt;</span> <span class="n">TextLib_TranslatedString</span>
 </code></pre></div>
 <p>Registers a translated string.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
@@ -2075,22 +2085,22 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
 
 <h5 id="removeguidprefix">RemoveGUIDPrefix<a class="headerlink" href="#removeguidprefix" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">RemoveGUIDPrefix</span><span class="p">(</span><span class="n">guid</span><span class="p">)</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   <span class="o">-&gt;</span> <span class="n">GUID</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">RemoveGUIDPrefix</span><span class="p">(</span><span class="n">guid</span><span class="p">)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>   <span class="o">-&gt;</span> <span class="n">GUID</span>
 </code></pre></div>
 <p>Returns the GUID passed by parameter with any prefixes removed.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>guid</b> <code>PrefixedGUID</code></p>
 
 <h5 id="removetrailingzeros">RemoveTrailingZeros<a class="headerlink" href="#removetrailingzeros" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">RemoveTrailingZeros</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">RemoveTrailingZeros</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Removes trailing zeros from a number and returns it as string.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>num</b> <code>number</code></p>
 
 <h5 id="replace">Replace<a class="headerlink" href="#replace" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">str</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">str</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Replaces a plain string within text.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
@@ -2102,8 +2112,8 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>count</b> <code>integer?</code> Amount of ocurrences to replace. Defaults to `math.maxinteger`.</p>
 
 <h5 id="replacelarianplaceholders">ReplaceLarianPlaceholders<a class="headerlink" href="#replacelarianplaceholders" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">ReplaceLarianPlaceholders</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">ReplaceLarianPlaceholders</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Replaces Larian placeholders (ex. "[1]", "[2]") within str.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
@@ -2111,15 +2121,15 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>replacement</b> <code>(string|string[])?</code> Defaults to empty string. If a list is passed and it's length is shorter than the amount of placeholders, the last placeholder will be used for the remaining replacements.</p>
 
 <h5 id="resolve">Resolve<a class="headerlink" href="#resolve" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Resolve</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Resolve</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
 </code></pre></div>
 <p>Resolves a translated string, or returns the string itself if the passed parameter is already of string type.</p>
 <p>Useful to reduce verbosity in situations where a text variable might be a TSK or a raw lua string.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>TextLib_TranslatedString|string</code></p>
 
 <h5 id="round">Round<a class="headerlink" href="#round" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Round</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">decimals</span><span class="p">)</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Round</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">decimals</span><span class="p">)</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Returns a string representation of a number, rounded.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>value</b> <code>number</code></p>
@@ -2127,14 +2137,14 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>decimals</b> <code>integer</code> Defaults to 0.</p>
 
 <h5 id="separatepascalcase">SeparatePascalCase<a class="headerlink" href="#separatepascalcase" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SeparatePascalCase</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SeparatePascalCase</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Returns a string with spaces inserted inbetween PascalCase words.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
 <h5 id="setstringkey">SetStringKey<a class="headerlink" href="#setstringkey" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SetStringKey</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">handle</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SetStringKey</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">handle</span><span class="p">)</span>
 </code></pre></div>
 <p>Binds a TSK to a string key.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>key</b> <code>string</code></p>
@@ -2142,7 +2152,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
 
 <h5 id="settranslatedstring">SetTranslatedString<a class="headerlink" href="#settranslatedstring" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SetTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SetTranslatedString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the text of a translated string.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>handle</b> <code>TranslatedStringHandle</code></p>
@@ -2150,7 +2160,7 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
 
 <h5 id="settranslatedstringtranslation">SetTranslatedStringTranslation<a class="headerlink" href="#settranslatedstringtranslation" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SetTranslatedStringTranslation</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SetTranslatedStringTranslation</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <p>Sets the translation of a TSK.</p>
 <p>The handle's bound text will be updated if the game's language matches.</p>
@@ -2161,8 +2171,8 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
 
 <h5 id="split">Split<a class="headerlink" href="#split" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="n">inputstr</span><span class="p">,</span> <span class="n">sep</span><span class="p">)</span>
-<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="p">[]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="n">inputstr</span><span class="p">,</span> <span class="n">sep</span><span class="p">)</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="p">[]</span>
 </code></pre></div>
 <p>Split a string by delimiter. Source: https://stackoverflow.com/questions/1426954/split-string-in-lua</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>inputstr</b> <code>string</code></p>
@@ -2170,26 +2180,26 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>sep</b> <code>string</code></p>
 
 <h5 id="splitpascalcase">SplitPascalCase<a class="headerlink" href="#splitpascalcase" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SplitPascalCase</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
-<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="p">[]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">SplitPascalCase</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span><span class="p">[]</span>
 </code></pre></div>
 <p>Splits up a pascal-case (ex. "PascalCase") string into words.</p>
 <p>Will split up consecutive uppercase characters.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code> First letter will be automatically capitalized.</p>
 
 <h5 id="split_2">Split_2<a class="headerlink" href="#split_2" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Split_2</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Split_2</span><span class="p">()</span>
 </code></pre></div>
 <h5 id="stripfonttags">StripFontTags<a class="headerlink" href="#stripfonttags" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">StripFontTags</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
-<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">StripFontTags</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Removes all <font> tags from a string. WIP!</font></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>
 
 <h5 id="uncapitalize">Uncapitalize<a class="headerlink" href="#uncapitalize" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Uncapitalize</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
-<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kr">function</span> <span class="nc">TextLib</span><span class="p">.</span><span class="nf">Uncapitalize</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Turns the first letter of a string into lowercase.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>str</b> <code>string</code></p>

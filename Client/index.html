@@ -1808,9 +1808,22 @@
 
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@field</i></b></span> <b>OldSize</b> <code>Vector2</code></p>
 
+<h4 id="indialoguestatechanged-event">InDialogueStateChanged (event)<a class="headerlink" href="#indialoguestatechanged-event" title="Permanent link">¶</a></h4>
+<p>Event table: {InDialogue:boolean}</p>
+<h4 id="localcoopstarted-event">LocalCoopStarted (event)<a class="headerlink" href="#localcoopstarted-event" title="Permanent link">¶</a></h4>
+<p>Will be thrown during session load if reloading while in local co-op.</p>
+<h4 id="localcoopended-event">LocalCoopEnded (event)<a class="headerlink" href="#localcoopended-event" title="Permanent link">¶</a></h4>
+<h4 id="selectormodechanged-event">SelectorModeChanged (event)<a class="headerlink" href="#selectormodechanged-event" title="Permanent link">¶</a></h4>
+<p>Event table: {PlayerIndex:integer, Enabled:boolean}</p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
+<h5 id="cansendtoladyvengeance">CanSendToLadyVengeance<a class="headerlink" href="#cansendtoladyvengeance" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">CanSendToLadyVengeance</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
+<p>Returns whether the "Store on Lady Vengeance" item context menu option is available.</p>
+<p><strong>Inaccurate outside of Origins if the extender fork is not installed.</strong></p>
 <h5 id="copytoclipboard">CopyToClipboard<a class="headerlink" href="#copytoclipboard" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">CopyToClipboard</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">CopyToClipboard</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
 </code></pre></div>
 <p>Copies text to the clipboard.  </p>
 <p>Some characters, like newlines, will be trimmed out as per the vanilla scripting on the swf.</p>
@@ -1818,108 +1831,132 @@
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>text</b> <code>string</code></p>
 
 <h5 id="getactiveui">GetActiveUI<a class="headerlink" href="#getactiveui" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetActiveUI</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   <span class="o">-&gt;</span> <span class="n">UIObject</span><span class="err">?</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetActiveUI</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">UIObject</span><span class="err">?</span>
 </code></pre></div>
 <p>Returns the last UIObject the player has interacted with.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to `1`.</p>
 
 <h5 id="getcharacter">GetCharacter<a class="headerlink" href="#getcharacter" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetCharacter</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="o">-&gt;</span> <span class="n">EclCharacter</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetCharacter</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">EclCharacter</span>
 </code></pre></div>
 <p>Returns the currently-controlled character on the client.  </p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
 <h5 id="getdate">GetDate<a class="headerlink" href="#getdate" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetDate</span><span class="p">(</span><span class="n">utc</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   <span class="o">-&gt;</span> <span class="n">DateTime</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetDate</span><span class="p">(</span><span class="n">utc</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">DateTime</span>
 </code></pre></div>
 <p>Returns the current date and time as an object. Relies on Client.UI.Time</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>utc</b> <code>boolean</code> Whether to use UTC time. Defaults to false.</p>
 
 <h5 id="getdatestring">GetDateString<a class="headerlink" href="#getdatestring" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetDateString</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetDateString</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">string</span>
 </code></pre></div>
 <p>Returns the current date and time as a string.</p>
 <h5 id="getglobaluiscale">GetGlobalUIScale<a class="headerlink" href="#getglobaluiscale" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetGlobalUIScale</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetGlobalUIScale</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">number</span>
 </code></pre></div>
 <p>Returns the UI scale preference of the user.</p>
 <p>This refers to the UIScaling setting; it is unaffected by resolution.</p>
 <h5 id="getmouseposition">GetMousePosition<a class="headerlink" href="#getmouseposition" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetMousePosition</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="p">,</span> <span class="n">integer</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetMousePosition</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">integer</span><span class="p">,</span> <span class="n">integer</span>
 </code></pre></div>
 <p>Returns the global position of the mouse in the screen space, in pixel coordinates.</p>
 <h5 id="getprofileguid">GetProfileGUID<a class="headerlink" href="#getprofileguid" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetProfileGUID</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   <span class="o">-&gt;</span> <span class="n">GUID</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetProfileGUID</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">GUID</span>
 </code></pre></div>
 <p>Returns the profile GUID of a player.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to 1.</p>
 
 <h5 id="getui">GetUI<a class="headerlink" href="#getui" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetUI</span><span class="p">(</span><span class="n">ui</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   <span class="o">-&gt;</span> <span class="n">UI</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetUI</span><span class="p">(</span><span class="n">ui</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">UI</span>
 </code></pre></div>
 <p>Returns the Epip UI table for a UI, if registered.</p>
+<p><strong>Does not support Generic UIs.</strong></p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>ui</b> <code>UIObject|integer</code> UI or type ID.</p>
 
 <h5 id="getviewportsize">GetViewportSize<a class="headerlink" href="#getviewportsize" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetViewportSize</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">GetViewportSize</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector2</span>
 </code></pre></div>
 <p>Returns the viewport size.</p>
 <h5 id="isactivecombatant">IsActiveCombatant<a class="headerlink" href="#isactivecombatant" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsActiveCombatant</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
-</code></pre></div>
-<p>Returns whether the client's char is currently playing its turn in a combat. TODO this fails while fear is applied.</p>
-<p>Relies on StatusConsole.</p>
-<h5 id="iscursoroverui">IsCursorOverUI<a class="headerlink" href="#iscursoroverui" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsCursorOverUI</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsActiveCombatant</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
+<p>Returns whether the client's char is currently playing its turn in a combat.</p>
+<h5 id="iscursoroverui">IsCursorOverUI<a class="headerlink" href="#iscursoroverui" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsCursorOverUI</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether the cursor is over any UIObject.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to `1`.</p>
 
 <h5 id="ishost">IsHost<a class="headerlink" href="#ishost" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsHost</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsHost</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if the client is the host of the current session.  </p>
 <p>Relies on GameMenu.</p>
 <h5 id="isincombat">IsInCombat<a class="headerlink" href="#isincombat" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsInCombat</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsInCombat</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether the client char is in combat.</p>
 <h5 id="isindialogue">IsInDialogue<a class="headerlink" href="#isindialogue" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsInDialogue</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsInDialogue</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether the client character is currently in dialogue.</p>
 <h5 id="isingameplaystate">IsInGameplayState<a class="headerlink" href="#isingameplaystate" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsInGameplayState</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsInGameplayState</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if the game is in a gameplay state, or late into loading.</p>
+<h5 id="isinselectormode">IsInSelectorMode<a class="headerlink" href="#isinselectormode" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsInSelectorMode</span><span class="p">(</span><span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+</code></pre></div>
+<p>Returns whether a player is in controller selector mode.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>playerIndex</b> <code>integer?</code> Defaults to `1`.</p>
+
+<h5 id="islocalcoop">IsLocalCoop<a class="headerlink" href="#islocalcoop" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsLocalCoop</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
+<p>Returns whether the game is in local co-op mode.</p>
 <h5 id="ispreparinginfusion">IsPreparingInfusion<a class="headerlink" href="#ispreparinginfusion" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsPreparingInfusion</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsPreparingInfusion</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns true if the client character is preparing a Source Infusion.</p>
 <h5 id="isusingcontroller">IsUsingController<a class="headerlink" href="#isusingcontroller" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsUsingController</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsUsingController</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
 </code></pre></div>
 <p>Returns whether the client is using a controller.</p>
+<h5 id="isusingkeyboardandmouse">IsUsingKeyboardAndMouse<a class="headerlink" href="#isusingkeyboardandmouse" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">IsUsingKeyboardAndMouse</span><span class="p">()</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>   <span class="o">-&gt;</span> <span class="n">boolean</span>
+</code></pre></div>
+<p>Returns whether the client is playing with keyboard and mouse.</p>
+<h5 id="prepareskill">PrepareSkill<a class="headerlink" href="#prepareskill" title="Permanent link">¶</a></h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">PrepareSkill</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">skillID</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+</code></pre></div>
+<p>Attempts to enter a skill preparation state.</p>
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>char</b> <code>EclCharacter</code> Must be active.</p>
+
+<p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>skillID</b> <code>skill</code></p>
+
 <h5 id="worldpositiontoscreen">WorldPositionToScreen<a class="headerlink" href="#worldpositiontoscreen" title="Permanent link">¶</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">WorldPositionToScreen</span><span class="p">(</span><span class="n">worldPosition</span><span class="p">,</span> <span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kr">function</span> <span class="nc">ClientLib</span><span class="p">.</span><span class="nf">WorldPositionToScreen</span><span class="p">(</span><span class="n">worldPosition</span><span class="p">,</span> <span class="n">playerIndex</span><span class="p">)</span> <span class="c1">-- (Client-only)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>   <span class="o">-&gt;</span> <span class="n">Vector2</span>
 </code></pre></div>
 <p>Translates world coordinates to screen position.</p>
 <p style="margin-bottom:0px;"><span style="color:#B04A6E;"><b><i>@param</i></b></span> <b>worldPosition</b> <code>Vector3</code></p>

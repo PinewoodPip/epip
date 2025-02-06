@@ -1784,6 +1784,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Class Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Names
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1812,7 +1827,11 @@
 <li>They are not set by default, but are not nil-able once the class is fully initialized; this is for example the case for Generic elements that are supposed to always exist for a UI, but aren't instanced until the UI is accessed for the first time</li>
 </ul>
 <p>If a variable is nil-able, it may be defined in the table, especially if it has nil as the default value and is private - but this rule isn't followed as strictly.</p>
-<p>When using constants within instance methods, it's better to refer to them using <code>self.CONSTANT</code> as that allows for overriding them on a per-instance basis. Of course, in certain cases that constant might be checked before another script has any chance to alter it.</p></div>
+<p>When using constants within instance methods, it's better to refer to them using <code>self.CONSTANT</code> as that allows for overriding them on a per-instance basis. Of course, in certain cases that constant might be checked before another script has any chance to alter it.</p>
+<h3 id="field-names">Field Names<a class="headerlink" href="#field-names" title="Permanent link">¶</a></h3>
+<ul>
+<li>Constants that are TSKs are <em>not</em> written in all-caps.</li>
+</ul></div>
 
 
 
