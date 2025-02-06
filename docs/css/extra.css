@@ -105,6 +105,11 @@ summary {
   user-select: none;
 }
 
+/* Underline links in main content section */
+.md-content a {
+  text-decoration: underline;
+}
+
 /* Admonitions */
 
 .admonition {
