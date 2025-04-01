@@ -2,12 +2,14 @@
 
 Epip is an extensive UI and quality-of-life mod for Divinity: Original Sin 2 that introduces dozens of usability improvements to vanilla UIs, as well as numerous new custom UIs to fulfill needs the original ones cannot. See [the features section](#features) for details.
 
+Epip implements improvements such as a larger hotbar, multi-select in inventories, equipment transmog and RGB dyes, unlocked camera and much, much more, while staying unintrusive out-of-the-box and deeply customizable.
+
 Vast customization for Epip's features is available through an in-game [settings menu](Features/SettingsMenu.md) - you may use as many or as few features as you deem necessary, with most of them being disabled by default.
 
 ## Download
 
 !!! info ""
-    **[Latest release download, v1072](patchnotes.md) (20/10/24)**
+    **[Latest release download, v1073](patchnotes.md) (1/04/25, 4th anniversary patch)**
 
 See the [patchnotes](patchnotes.md) page for patchnotes. Development updates and nightly builds are posted in the [*#epipeline*](https://discord.gg/SevYmQc573) channel on the Epic Encounters discord server.
 
@@ -23,14 +25,14 @@ Special thanks to:
 - Elric for his help with designing and drawing new UIs
 - Cathe for contributing to the feature showcases on this website, as well as some code and proof-reading
 - Derpy Moa for motivation and initial ideas
-- JoienReid, Clibanarius, AQUACORAL and the entire EE community for continuous support, inspiration and bug-reporting
+- JoienReid, Clibanarius, AQUACORAL, Farandole and the entire EE community for continuous support, inspiration and bug-reporting
 
 Translators:
 
 - Cathe & JoienReid: Russian
 - Ferocidade: Brazilian Portuguese
 - Ainsky: Simplified Chinese
-- Drayander: French
+- Drayander & Farandole: French
 - Nektun: Polish
 - AquaVXI: Spanish (partial)
 </details>
@@ -57,6 +59,7 @@ Major features have dedicated pages for them accessible from the sidebar. This f
 - **[✨ Epic Encounters QoL](Features/EpicEncountersQoL.md)**: page covering features only applicable to Epic Encounters 2.
 - **[📷 Camera](Features/Camera.md)**: settings to tweak the game camera.
 - **[🏷️ Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
+- **[💎 Bedazzled](Features/Bedazzled.md)**: a full-fledged match-3 minigame.
 - **[📖 Codex](Features/Codex.md)**: in-game reference for various topics.
 - **[🔧 Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
 - **[🎮 Controller Support](Features/ControllerSupport.md)**: information on which Epip features currently support controllers.

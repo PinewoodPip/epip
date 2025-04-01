@@ -1,11 +1,11 @@
-site_name: Epip Encounters
+site_name: Epip
 site_url: https://pinewood.team/epip/
 theme:
   name: material
   collapse_navigation: false
   navigation_depth: 3
-  logo: img/epipe.png
-  favicon: img/epipe.png
+  logo: img/epiparty.png
+  favicon: img/epiparty.png
 markdown_extensions:
     - pymdownx.highlight:
         anchor_linenums: true
@@ -14,6 +14,9 @@ markdown_extensions:
     - pymdownx.inlinehilite
     - pymdownx.snippets
     - pymdownx.superfences
+    - pymdownx.caret
+    - pymdownx.mark
+    - pymdownx.tilde
     - pymdownx.keys:
         key_map: {
           "m1": "Left Mouse Button",
@@ -25,10 +28,10 @@ markdown_extensions:
     - admonition
     - attr_list
     - md_in_html
-# extra:
-#   analytics:
-#     provider: google
-#     property: G-K2XG4QX6F3
+extra:
+  analytics:
+    provider: google
+    property: G-K2XG4QX6F3
 extra_css:
   - css/extra.css
 extra_javascript:
@@ -59,6 +62,7 @@ nav:
     - "Epic Encounters QoL": "Features/EpicEncountersQoL.md"
     - "Camera": "Features/Camera.md"
     - "Tooltip Adjustments": "Features/TooltipAdjustments.md"
+    - "Bedazzled": "Features/Bedazzled.md"
     - "Codex": "Features/Codex.md"
     - "Vanilla Fixes": "Features/VanillaFixes.md"
     - "Controller Support": "Features/ControllerSupport.md"

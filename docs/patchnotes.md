@@ -11,11 +11,195 @@
 }
 ```
 
-## v1072 - 20/10/2024
+## v1073 - 1/04/2025 - 4th Anniversary Patch
 !!! info ""
-    [Download here](https://drive.google.com/file/d/1yLSuMp5DKNeEEpIagg92ovVxYT1gd_06/view?usp=drive_link). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod. **Make sure you've read the additional installation instructions above.**
+    [Download here](https://drive.google.com/file/d/11loWWjIPVtTFBzv-xwUr8wo2MRh2-Dq5/view?usp=drive_link). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod. **Make sure you've read the additional installation instructions above.**
     
     Load after Epic Encounters Core & Origins if you have it; load order does not matter otherwise.
+
+Contrary to popular belief, v1073 is not the 1073rd release of Epip, but it is our 4th anniversary patch! ![Epiparty emoji](img/epiparty.png){: style="width:auto;height:32px;" }
+
+In usual anniversary fashion, we are proud to present even more innovative additions that will change your playthroughs forever - as well as numerous other additions and changes from the past few months.
+
+### Custom Portraits
+Unsatifisfied with the portraits the game generates for your characters? Think you can do better? Put your artistic intuitions to work and customize your character's portraits with **Assprite™**, our brand new not-fully-fledged spriting editor!
+
+Right-click a character portrait on the player portraits UI and select "*Set custom portrait...*" to get started.
+
+![type:video](https://www.youtube.com/embed/8eFpy0jacPQ)
+
+Assprite empowers you with ~~all~~ some of the tools you need to retouch or completely revamp your portrait shots to your vision, featuring:
+
+- 1️⃣ brush of many possibilities
+- Non-greedy paint bucket
+- The long-awaited color picker UI
+- Undoing doing & redoing undid dones
+- AI generation & degeneration tools
+- Hardware acceleration & deceleration support
+- Loading from PNG & saving & loading to & from DDS, for the busy people
+- & More & more
+
+Custom portraits are visible in all UIs that show character portraits, including to other players in multiplayer, and persist throughout saves. If you regret a makeover, you can hit up the Magic Mirror to undo your doings.
+
+<center>![Custom portraits example.](Features/img/customportraits/character_sheet.png)</center>
+
+!!! info "Extender fork required"
+    Custom Portraits require [our fork of the Script Extender](extender.md), which has been updated to add support for this feature; **redownload it if you had it**.
+
+Some tips and disclaimers:
+
+- The texture format the game uses for portraits (BC1 DDS) is very lossy; when editing portraits, we recommend doing changes in one go rather than applying & reloading the portrait multiple times, as the colors will be degraded each time you apply the portrait.
+- When using the "Load" function, images need to be 80x100 pixels.
+    - PNGs must be 8-bit color with no transparency nor interlacing.
+    - DDS images must be BC1-compressed.
+- Portraits are saved to `/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/Osiris Data`, or the equivalent path.
+- After applying a portrait, backups of the new & old portraits are stored under `Osiris Data/Epip/PortraitBackups`. You can re-apply these portraits via the "Load" option.
+- Using the Magic Mirror will re-generate the character's portrait. If you haven't explicitly saved the previous portrait, you can try to use the ones from the backup folder.
+
+---
+
+### Challenged Modes
+Though generally well-appreciated, Epip has always had one issue with it that really stuck out: low "replayability" in the traditional mod sense.
+
+The vast majority of users tend to use only a single settings loadout they're comfortable with throughout all their playthroughs, leading to a sense of low build variety in an otherwise deep mod.
+
+To address this, this patch introduces a new system that encourages players to step outside of their comfort zone: ***Epip Challenged Modes***.
+
+![Challenged Modes selection screen.](img/challenged_mode.png)
+<center><i>Challenged Modes selection UI.</i></center>
+
+Challenged Modes are modifiers that can be chosen at the start of playthroughs to add new rules to Epip's usage, forcing you to re-think your settings and the UIs you use, and explore exotic setting builds you might've never thought of before. This patch adds the following Challenged Modes:
+
+- **Nuzlocke Mode**: start with 3 random settings enabled. For every character level, you can enable 1 additional setting. Pick your features wisely.
+- **Hardcore Mode**: if an Epip feature bugs out, it stays bugged for the rest of the playthrough. No reloads, restarts nor updates will fix it.
+- **Descent Mode**: start with your normal settings loadout. For every 1 real-life hour, a random setting is disabled. Can you beat the game before your UI descends to the DOS2 equivalent of the cavemen era?
+- **Permadisable Mode**: once a setting is disabled, it cannot be enabled again for the rest of the playthrough. If you enable a feature, you have to commit to using it.
+- **Democracy Mode**: all settings are set to the most popular choice among all Epip players. These are, perhaps very surprisingly to you, a lot different from yours.
+- **A/B/C/D/E/F/G Testing Mode**: all settings are randomized, and you cannot even open the settings menu to see which ones were enabled.
+- **Timewarp Mode**: random bugs from previous versions of Epip are re-introduced. Additionally, summon portraits are extra-warped (stretched on more than 2 dimensions).
+- **Controlled Mode**: you can only play with a controller. To compensate, your controller's battery is always charged (if it has a battery) or it always plugs in right on the first attempt (if it's USB).
+
+Though not designed to, Challenged Modes can be stacked to produce intentional undefined behaviour. If you're brave, you may reach new UX spiritual heights by undertaking multiple gamemodes at once - but beware, as reaching 7 Gamemode stacks will make you vulnerable to Tier 3 bugs.
+
+All Challenged Modes are disabled by default. We hope you'll find Challenged Modes to be highly "regarded".
+
+!!! info "Availability"
+    To prevent overwhelming new players, Challenged Modes are unlocked after beating each major Epip feature at least once, including [Bedazzled](Features/Bedazzled.md). Our analytics show most of you STILL haven't reached Grandmaster rank, so we needed to give you a push.
+
+---
+
+### [Vanity](Features/Vanity.md)
+- If the [extender fork](extender.md) is installed, transmogs & dyeing is much faster and doesn't cause a flickering effect anymore!
+    - Additionally, dyes are applied immediately when changing the sliders, acting as a "live-preview"
+
+![Dye live-preview showcase](Features/img/vanity/live_preview_and_anim_swaps.gif)
+<center><i>Live-preview for dyes and weapon animation swaps (in case you missed them last update).</i></center>
+
+- Added a "*Vanity: Copy Appearance*" option to item context menus while Vanity is open, which copies their transmog, icon and color to your corresponding equipped item
+    - For weapons and shields, you may choose which hand slot their appearance is copied to
+    - For randomly-generated items, the icon you get through this may not be correct at the moment.
+- Added a "*Force show hair*" option for helmet transmogs, which will show hair for helmets that normally hide it
+- Clicking the color squares in the Dyes tab now opens the new Color Picker UI (though it currently doesn't work with live-preview)
+- Fixed an issue with polymorph mods that could cause racial skills to be wrongly given to the player when using Vanity
+- When Vanity refreshes character visuals, it should no longer cause racial skills to blink or have their cooldown reset in any case
+- Fixed not being able to delete outfits
+
+---
+
+### [Hotbar Groups](Features/HotbarGroups.md)
+- Added a "*Lock position*" option in group context menus, which hides the dragging handle
+- Hotbar groups are now hidden while in dialogue or meditating (if "*Immersive Meditation*" is enabled)
+- Added support for the `UIScaling` vanilla setting
+- Fixed groups not considering items in containers, making item slots wrongly grey out / get cleared in that case
+
+---
+
+### [Quick Loot](Features/QuickLoot.md)
+- Added a "Show ground items" setting to Quick Loot, which lets you roleplay as a better version of the apportation spell
+    - Item tooltips will warn you if picking up the item would overencumber you, and the loot all button will avoid encumbering you & warn you if any items were omited due to this
+- Fixed the "Looting GFX" setting being reset randomly
+
+---
+
+## [Bedazzled](Features/Bedazzled.md)
+- Added "bruh moments": if you do not make a valid move for ~30 seconds, a bruh moment will occur and the rough location of a valid move will be revealed to you in a dream.
+
+On the topic of Bedazzled, we're hosting a Bedazzled tournament to kick off its 3rd season! Submit a new Bedazzled Twimst've score to [*#epipeline*](https://discord.gg/SevYmQc573) before the 10th of April for a chance to win **YET ANOTHER** key for [Lazy Galaxy 2](https://store.steampowered.com/app/1477950/Lazy_Galaxy_2/), our labor of love whose release turned 3 years old just ~2 weeks ago (and is also on sale right now wink wink)!
+
+!!! info
+    Submitted scores must be played on default Bedazzled Twimst've settings and must include a screenshot of the game over screen. You do not need to play on final destination and items may be enabled.
+
+!!! tip "Bonus challenge"
+    Submit a video clip of a 6-in-a-row match to win... something, we'll figure out a good prize for it. Point is, I don't think it has happened to anyone before and I just remembered from browsing the source code that it does do something!!!
+
+---
+
+### Other additions and changes
+- Added a keybind for [Animation Cancelling](Features/AnimationCancelling.md); defaults to ++rshift++ + ++del++ + ++r++, for consistency with Stardew Valley's
+- Finally DMCA'd the Improved Hotbar mod since I was tired of seeing people still using it
+- Moved the mod's wiki from Wikia to Miraheze
+- Added some keyboard navigation support to the Ascension UI
+    - In the aspect wheel: use left/right arrows to cycle options, enter to select one
+    - In an aspect graph:
+        - Right arrow selects the next node, or the first node not yet obtained if none are selected
+        - Left arrow selects the previous node, or the first node if none are selected
+        - Hotbar slot keys (ie. the digit keys by default) select subnodes, ex. the 1️⃣ key selects subnode 1; you can also press enter to toggle them while selected.
+    - There is no keyboard navigation for the Core yet.
+- The "*Remember panel positions*" setting now supports the [Quick Find](Features/QuickFind.md) and [Quick Loot](Features/QuickLoot.md) UIs
+- Skill slots in [Radial Menus](Features/RadialMenus.md) now show the skill tooltip on the side of the menu
+- In developer mode, holding shift while viewing an item tooltip will show its stats object ID and tags
+- Added programmable christmas tree lights to the settings menu, available when it's festive enough
+    - You may call this the "Quick Festivities" feature, where the Quick part refers to how rushed it was
+    - See `ProgrammableLights/Programs/Default.lua` for an example on how to create your own light patterns
+- In the Skills [Codex](Features/Codex.md), you can now search by the statuses that skills directly apply (ie. the ones that show in the blue lines in the tooltip), either by their name or stats ID
+- Statuses that come from equipped items no longer also show their character source in their tooltip, since it's redundant
+- Rainbow overlays during festivities now cycle through the colors ~3x slower
+- As usual, anniversary shenanigans from previous years make a temporary return, so don't panic if you were worried they wouldn't
+
+---
+
+### Fixes
+- Fixed typos in "Prosperity" and "Violent Strikes" keywords when their text would appear over characters's heads
+- Fixed surface tooltips appearing in the wrong position when not playing with 16:9 aspect ratio
+    - No need to thank me, Cathe
+- Fixed some UI layering issues with our workaround for the controller area search UI's bugs when custom UIs are present
+- Fixed changed settings being discarded when changing tabs in the settings menu
+- Fixed a regression from v1072 with the "Escape closes EE UIs" setting that could cause characters to get stuck in the UI area
+- Fixed the Hotbar wrongly allowing skills from expired polymorph statuses to be used
+    - Interestingly, this is a bug with the game itself that the vanilla hotbar happens to not allow to occur
+- Fixed NPC [Animation Cancelling](Features/AnimationCancelling.md) causing softlocks in Windego and Dallis fights
+- Fixed a bug in the fix for +AP costs that allowed you to basic-attack yourself, and made the fix only apply when strictly necessary (when you can't pay `normalActionCost + apCostBoost * 2` AP)
+- Fixed some benign error and warning messages when shift was pressed during loading screens or hovering over abilities in the character sheet
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+- Disabled all scripts in editor since the extender barely works there at all
+    - This should make Epip less annoying to have set as a dependency while in-editor
+- Resetting lua now hides all message boxes, ensuring you cannot soft-lock yourself when resetting with custom message boxes open
+- Fixed various inaccuracies in the PNG decoder
+- Fixed Item.GetItemInPartyInventory() recursiveness
+- Item.GetPartyTemplateCount() is now recursive
+- TooltipLib now supports ability tooltips
+- The GiftbagsWarning feature now has APIs to make it usable by other mods
+- Added HSV support to ColorLib, as well as IsHexColorCode()
+- Added ColorPicker UI
+- Fixed some textures in GenericUITextures being in the wrong tables
+- Animation Cancelling now supports blacklisting specific characters
+- Added Charcter.SetSkillCooldown()
+- Added numerous CommonStrings TSKs, as well as some for EE concepts
+- Added Image prefab
+- Added "Color" setting type and SettingWidgets integration
+- VectorLib: added :Floor(), :Ceil() and :Round()
+- Generic:
+    - Added SetTextFormat(), SetFocused() and SetMaxCharacters() to Text
+    - Added Texture:SetSize()
+    - Added Element:GetMousePosition()
+    - Fixed UI position not being considered for :GetScreenPosition()
+- Fixed inserting new elements in FormattedTooltip:InsertAfter()
+- Minor cleanups and annotation adjustments
+</details>
+
+## v1072 - 20/10/2024
 
 This update adds supports for custom radial menus, as well as expanding controller support with natural controller navigation for Epic Encounters's Ascension UI. As usual, numerous other features and fixes are included.
 
