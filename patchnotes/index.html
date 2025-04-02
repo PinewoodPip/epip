@@ -5198,19 +5198,9 @@
 
 
 <div><h1 id="changelog-downloads">Changelog &amp; Downloads<a class="headerlink" href="#changelog-downloads" title="Permanent link">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Extender devel version required</p>
-<p><a href="https://github.com/Norbyte/ositools/releases/tag/updater_v5"><strong>Requires v60 of Norbyte's Script Extender</strong></a>.</p>
-<p>To get it, create the following <code>ScriptExtenderUpdaterConfig.json</code> file in the same folder where you initially installed the Extender (<code>DefEd/bin</code>) or download a pre-made config file <a href="/epip/ScriptExtenderUpdaterConfig.json" download>from here</a>.</p>
-</div>
-<div class="copy highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p p-Indicator">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s">"UpdateChannel"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"Devel"</span><span class="p p-Indicator">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="s">"TargetVersion"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"60.0.0.0"</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p p-Indicator">}</span>
-</code></pre></div>
 <h2 id="v1073-1042025-4th-anniversary-patch">v1073 - 1/04/2025 - 4th Anniversary Patch<a class="headerlink" href="#v1073-1042025-4th-anniversary-patch" title="Permanent link">¶</a></h2>
 <div class="admonition info">
-<p><a href="https://drive.google.com/file/d/11loWWjIPVtTFBzv-xwUr8wo2MRh2-Dq5/view?usp=drive_link">Download here</a>. Place the <code>.pak</code> within <code>\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods</code> as with any other mod. <strong>Make sure you've read the additional installation instructions above.</strong></p>
+<p><a href="https://drive.google.com/file/d/11loWWjIPVtTFBzv-xwUr8wo2MRh2-Dq5/view?usp=drive_link">Download here</a>. Place the <code>.pak</code> within <code>\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods</code> as with any other mod.</p>
 <p>Load after Epic Encounters Core &amp; Origins if you have it; load order does not matter otherwise.</p>
 </div>
 <p>Contrary to popular belief, v1073 is not the 1073rd release of Epip, but it is our 4th anniversary patch! <img alt="Epiparty emoji" src="../img/epiparty.png" style="width:auto;height:32px;"></p>
@@ -5232,10 +5222,6 @@
 </ul>
 <p>Custom portraits are visible in all UIs that show character portraits, including to other players in multiplayer, and persist throughout saves. If you regret a makeover, you can hit up the Magic Mirror to undo your doings.</p>
 <p></p><center><img alt="Custom portraits example." src="../Features/img/customportraits/character_sheet.png"></center>
-<div class="admonition info">
-<p class="admonition-title">Extender fork required</p>
-<p>Custom Portraits require <a href="../extender/">our fork of the Script Extender</a>, which has been updated to add support for this feature; <strong>redownload it if you had it</strong>.</p>
-</div>
 <p>Some tips and disclaimers:</p>
 <ul>
 <li>The texture format the game uses for portraits (BC1 DDS) is very lossy; when editing portraits, we recommend doing changes in one go rather than applying &amp; reloading the portrait multiple times, as the colors will be degraded each time you apply the portrait.</li>
@@ -5275,7 +5261,7 @@
 <hr>
 <h3 id="vanity"><a href="../Features/Vanity/">Vanity</a><a class="headerlink" href="#vanity" title="Permanent link">¶</a></h3>
 <ul>
-<li>If the <a href="../extender/">extender fork</a> is installed, transmogs &amp; dyeing is much faster and doesn't cause a flickering effect anymore!<ul>
+<li>Transmogs &amp; dyeing is much faster and doesn't cause a flickering effect anymore!<ul>
 <li>Additionally, dyes are applied immediately when changing the sliders, acting as a "live-preview"</li>
 </ul>
 </li>
@@ -7726,8 +7712,8 @@
 <p><strong>On the technical side of things:</strong></p>
 <ul>
 <li>Added an alias for the <code>Ext</code> table to make it easier to type:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">SEX</span> <span class="o">=</span> <span class="n">Ext</span> <span class="c1">-- Short for "Script EXtender"</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">SEX</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s2">"Welcome to Norbyte's SEX v56 !"</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">SEX</span> <span class="o">=</span> <span class="n">Ext</span> <span class="c1">-- Short for "Script EXtender"</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">SEX</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s2">"Welcome to Norbyte's SEX v56 !"</span><span class="p">)</span>
 </code></pre></div></li>
 <li>Fixed more inconsistencies with copy/paste in the message boxes</li>
 <li>Added an option to log AI scoring to the console: the top 3 actions will be shown anytime decisions are made. Work-in-progress as some of the AI features in the extender are currently bugged.</li>
@@ -7737,11 +7723,11 @@
 <li>Tooltips for Ascension stats in the stats tab are now created dynamically, so there's no need to edit them if you've edited the description/name</li>
 <li>Added a <code>Server</code> table on the client, from which listeners for any Osiris symbol can be created, eliminating the need for boilerplate code on the server side if you need to listen for Osiris stuff.</li>
 <li>Added an <code>Osiris</code> table on server to make user queries and DB queries a bit less aids to use in lua:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- DBs with only one tuple return their contents directly, rather than as a list</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">local</span> <span class="n">_</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Osiris</span><span class="p">.</span><span class="n">DB_PIP_EpicStats_DamageDealt</span><span class="p">(</span><span class="n">char</span><span class="p">.</span><span class="n">MyGuid</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">-- User queries can also return variables directly from their output DBs, even for queries with multiple outputs</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">local</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Osiris</span><span class="p">.</span><span class="n">QRY_AMER_KeywordStat_VitalityVoid_GetRadius</span><span class="p">(</span><span class="n">char</span><span class="p">.</span><span class="n">MyGuid</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- DBs with only one tuple return their contents directly, rather than as a list</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">local</span> <span class="n">_</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Osiris</span><span class="p">.</span><span class="n">DB_PIP_EpicStats_DamageDealt</span><span class="p">(</span><span class="n">char</span><span class="p">.</span><span class="n">MyGuid</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">-- User queries can also return variables directly from their output DBs, even for queries with multiple outputs</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">local</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Osiris</span><span class="p">.</span><span class="n">QRY_AMER_KeywordStat_VitalityVoid_GetRadius</span><span class="p">(</span><span class="n">char</span><span class="p">.</span><span class="n">MyGuid</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div></li>
 </ul>
 <p><strong>On the future side of things:</strong></p>
