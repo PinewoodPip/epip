@@ -3,6 +3,8 @@
 ## v1073 - 1/04/2025 - 4th Anniversary Patch
 !!! info ""
     [Download here](https://drive.google.com/file/d/11loWWjIPVtTFBzv-xwUr8wo2MRh2-Dq5/view?usp=drive_link). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod.
+
+    **[Requires Norbyte's Script Extender.](https://github.com/Norbyte/ositools/releases/tag/updater_v5)** 
     
     Load after Epic Encounters Core & Origins if you have it; load order does not matter otherwise.
 
