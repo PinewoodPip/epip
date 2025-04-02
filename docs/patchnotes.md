@@ -1,19 +1,8 @@
 # Changelog & Downloads
 
-!!! warning "Extender devel version required"
-    [**Requires v60 of Norbyte's Script Extender**](https://github.com/Norbyte/ositools/releases/tag/updater_v5).
-    
-    To get it, create the following `ScriptExtenderUpdaterConfig.json` file in the same folder where you initially installed the Extender (`DefEd/bin`) or download a pre-made config file <a href="/epip/ScriptExtenderUpdaterConfig.json" download>from here</a>.
-```{ .yaml .copy }
-{
-	"UpdateChannel": "Devel",
-	"TargetVersion": "60.0.0.0"
-}
-```
-
 ## v1073 - 1/04/2025 - 4th Anniversary Patch
 !!! info ""
-    [Download here](https://drive.google.com/file/d/11loWWjIPVtTFBzv-xwUr8wo2MRh2-Dq5/view?usp=drive_link). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod. **Make sure you've read the additional installation instructions above.**
+    [Download here](https://drive.google.com/file/d/11loWWjIPVtTFBzv-xwUr8wo2MRh2-Dq5/view?usp=drive_link). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod.
     
     Load after Epic Encounters Core & Origins if you have it; load order does not matter otherwise.
 
@@ -42,9 +31,6 @@ Assprite empowers you with ~~all~~ some of the tools you need to retouch or comp
 Custom portraits are visible in all UIs that show character portraits, including to other players in multiplayer, and persist throughout saves. If you regret a makeover, you can hit up the Magic Mirror to undo your doings.
 
 <center>![Custom portraits example.](Features/img/customportraits/character_sheet.png)</center>
-
-!!! info "Extender fork required"
-    Custom Portraits require [our fork of the Script Extender](extender.md), which has been updated to add support for this feature; **redownload it if you had it**.
 
 Some tips and disclaimers:
 
@@ -89,7 +75,7 @@ All Challenged Modes are disabled by default. We hope you'll find Challenged Mod
 ---
 
 ### [Vanity](Features/Vanity.md)
-- If the [extender fork](extender.md) is installed, transmogs & dyeing is much faster and doesn't cause a flickering effect anymore!
+- Transmogs & dyeing is much faster and doesn't cause a flickering effect anymore!
     - Additionally, dyes are applied immediately when changing the sliders, acting as a "live-preview"
 
 ![Dye live-preview showcase](Features/img/vanity/live_preview_and_anim_swaps.gif)

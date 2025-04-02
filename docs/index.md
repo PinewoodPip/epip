@@ -162,7 +162,6 @@ For other UI changes, see the [General UI Improvements](Features/UI.md) page.
 ## Miscellaneous
 - Certain client-side vanilla issues have been fixed. You may read about them at their [dedicated page](Features/VanillaFixes.md).
 - A setting exists to auto-listen to nearby dialogues, enabled from the "Notifications" tab (*"Auto-Listen Dialogues"* and *"Auto-Listen Range Limit"*).
-    - Due to limitations within the Extender, this requires a special build from [here](extender.md).
 - A setting exists to highlight empty slots in the container inventory UI upon hovering over them, for consistency with the party inventory. Can be enabled from the "Inventory" settings tab (*"Highlight Empty Container Slots"*).
 - Discord Rich Presence customization is available in the "Miscellaneous UI" settings tab.
     - You may set both lines to anything you desire, or have them be set to show your character level, area and overhaul.
