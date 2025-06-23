@@ -5,6 +5,11 @@ Epip is a very large and diverse mod, and it is only natural that not all featur
 
 The "Info" tab acts as a landing page and also offers non-intrusive tips on features that are otherwise obscure or easily missable. You may also enable these to show during loading screens.
 
+Additionally, Epip's language may be configured there. Epip currently supports **Russian, Simplified Chinese, Polish, Brazilian Portuguese, and French**, and its language may be set independently of the game's.
+
+! info ""
+    Localizations are crowdsourced; anyone is welcome to help! Ask for details in [*#epipeline*](https://discord.gg/SevYmQc573).
+
 The "Keybinds" tab allows you to customize the bindings for all hotkeys that Epip adds. Some hotkeys have descriptions as tooltips when hovered over. For convenience, some hotkeys may also be displayed and rebound from other settings menu tabs, next to settings relevant to them.
 
 ![Keybinds tab.](img/settingsmenu/keybinds_tab.png)

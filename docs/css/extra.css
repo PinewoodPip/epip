@@ -161,3 +161,92 @@ summary {
 .nf, .nc, .kr { 
   font-weight: 700;
 }
+
+/*
+ * Card style
+ * Source: https://uiverse.io/JohnnyCSilva/jolly-elephant-67
+*/
+
+.card-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+a.card {
+  text-decoration: none;
+  color: unset !important;
+}
+
+.card {
+  width: 340px;
+  height: 320px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 15px 15px 30px #bebebe;
+             /* -15px -15px 30px #ffffff; */
+  transition: 0.2s ease-in-out;
+}
+
+/* Make cards compact on mobile layouts */
+@media (max-width: 730px) {
+  .card {
+    width: 100%;
+    height: fit-content !important;
+  }
+}
+
+.card-img {
+  overflow: hidden;
+  width: 100%;
+  height: 50%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: linear-gradient(#e66465, #9198e5);
+  display: flex;
+  align-items: top;
+  justify-content: right;
+  border-bottom: 2px solid #7d428f;
+}
+
+.card-img img {
+  width: 100%;
+  transition: transform .2s; /* Animation */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+  margin: 0 !important;
+}
+.card:hover img {
+  transform: scale(1.05); /* Zoom in on hover */
+}
+
+.card hr {
+  margin: 0 !important;
+}
+
+.card-text {
+  margin: 10px 15px 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+}
+
+.card-text h3 {
+  margin-top: 0 !important;
+  text-align: center;
+  font-size: large;
+  font-weight: 600;
+  color: black;
+}
+
+.card-text p {
+  font-size: 13px;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+}

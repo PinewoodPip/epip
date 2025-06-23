@@ -1,20 +1,29 @@
 # Epip
 
-Epip is an extensive UI and quality-of-life mod for Divinity: Original Sin 2 that introduces dozens of usability improvements to vanilla UIs, as well as numerous new custom UIs to fulfill needs the original ones cannot. See [the features section](#features) for details.
+Epip is an extensive UI and quality-of-life mod for *Divinity: Original Sin 2* that introduces dozens of usability improvements to vanilla UIs, as well as numerous new custom UIs to fulfill needs the original ones cannot. See [the features section](#features) for details.
 
-Epip implements improvements such as a larger hotbar, multi-select in inventories, equipment transmog and RGB dyes, unlocked camera and much, much more, while staying unintrusive out-of-the-box and deeply customizable.
+Epip implements improvements such as a **larger hotbar**, **multi-select in inventories**, **equipment transmog and RGB dyes**, unlocked camera and much, much more, while staying unintrusive out-of-the-box and deeply customizable.
 
-Vast customization for Epip's features is available through an in-game [settings menu](Features/SettingsMenu.md) - you may use as many or as few features as you deem necessary, with most of them being disabled by default.
+Vast customization for Epip's features is available through an in-game [settings menu](Features/SettingsMenu.md) - you may use as many or as few features as you like, with most of them being disabled by default.
 
-## Download
+## Download & links
 
 !!! info ""
     **[Latest release download, v1073](patchnotes.md) (1/04/25, 4th anniversary patch)**
 
-See the [patchnotes](patchnotes.md) page for patchnotes. Development updates and nightly builds are posted in the [*#epipeline*](https://discord.gg/SevYmQc573) channel on the Epic Encounters discord server.
+    See the [patchnotes](patchnotes.md) page for the latest additions.
 
-!!! info "Language support"
-    You may change the language from the "General" tab in the [Epip Settings Menu](Features/SettingsMenu.md). Localizations are crowdsourced; if you want to help with them, ask for details in [*#epipeline*](https://discord.gg/SevYmQc573).
+    Development discussion and nightly builds are posted in the [*#epipeline*](https://discord.gg/SevYmQc573) channel on the Epic Encounters discord server.
+
+
+<details markdown="1">
+<summary>Language support</summary>
+You may change the language from the "General" tab in the [Epip Settings Menu](Features/SettingsMenu.md).
+
+Epip currently supports 🇷🇺 Russian, 🇨🇳 Simplified Chinese, 🇵🇱 Polish, 🇧🇷 Brazilian Portuguese, and 🇫🇷 French.
+
+Localizations are crowdsourced; anyone is welcome to help! Ask for details in [*#epipeline*](https://discord.gg/SevYmQc573).
+</details>
 
 <details markdown="1">
 <summary>Credits & Special Thanks</summary>
@@ -38,35 +47,231 @@ Translators:
 </details>
 
 ## Features
-Below is a non-exhaustive list of features; I suggest browsing the latest [patchnotes](patchnotes.md) to get up to speed with latest additions. Exploring the in-game [Settings Menu](Features/SettingsMenu.md) is another good way of getting familiar with the mod's features.
+
+Epip has dozens of features covering all sort of UI & QoL improvements, with the major ones having their own pages on this site. Exploring the in-game [Settings Menu](Features/SettingsMenu.md) is another good way of getting familiar with what the mod offers.
+
+<div class="card-gallery">
+    <!-- Hotbar -->
+    <a class="card" href="Features/Hotbar">
+        <div class="card-img">
+            <img src="img/hotbar/five_bars.png"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Improved Hotbar</h3>
+            <hr/>
+            <p>See multiple hotbar rows, save row loadouts and rearrange slots quickly. Never lose track of all your skills!</p>
+        </div>
+    </a>
+
+    <!-- Healthbar -->
+    <a class="card" href="Features/UI#Resistances-and-bh-display">
+        <div class="card-img">
+            <img src="Features/img/ui/enemy_health_bar.gif"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Improved Health Bars</h3>
+            <hr/>
+            <p>View character resistances, initiative, AP and more directly by health bars - less trips to the Examine UI!</p>
+        </div>
+    </a>
+
+    <!-- Multi-select -->
+    <a class="card" href="Features/InventoryMultiSelect">
+        <div class="card-img">
+            <img src="Features/img/inventorymultiselect/demo_small.gif"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Inventory Multi-Select</h3>
+            <hr/>
+            <p>Move multiple items at a time across inventories and backpacks, mass-mark them as wares or send to Lady Vengeance.</p>
+        </div>
+    </a>
+
+    <!-- Vanity -->
+    <a class="card" href="Features/Vanity">
+        <div class="card-img">
+            <img src="Features/img/vanity/showcase.gif"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Vanity</h3>
+            <hr/>
+            <p>Transmog equipment, dye it any color, save outfits, swap animations and more from a convenient UI. Unleash your Epip Drip™!</p>
+        </div>
+    </a>
+
+    <!-- Statuses -->
+    <a class="card" href="#player-portraits">
+        <div class="card-img">
+            <img src="Features/img/ui/player_info.png"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Improved Status Bar</h3>
+            <hr/>
+            <p>Wrap statuses to a second row, filter out spammy statuses, hide summons and more.</p>
+        </div>
+    </a>
+
+    <!-- Quick Loot -->
+    <a class="card" href="Features/QuickLoot">
+        <div class="card-img">
+            <img src="Features/img/quickloot/showcase_cropped.gif"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Quick Loot</h3>
+            <hr/>
+            <p>Loot all nearby containers and corpses from a single UI, with loot filters. Spend less time looting, more time adventuring!</p>
+        </div>
+    </a>
+
+    <!-- Tooltips -->
+    <a class="card" href="Features/TooltipAdjustments#world-tooltips">
+        <div class="card-img">
+            <img src="img/showcase/world_tooltips.png"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Better World Tooltips</h3>
+            <hr/>
+            <p>See world tooltips for all items, filter out empty containers or highlight items of interest.</p>
+        </div>
+    </a>
+
+    <!-- Bedazzled -->
+    <a class="card" href="Features/Bedazzled">
+        <div class="card-img">
+            <img src="Features/img/bedazzled/showcase_small.gif"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Bedazzled</h3>
+            <hr/>
+            <p>Take a break from sinning to enjoy a full-fledged match 3 minigame, with multiple gamemodes and ELO rankings.</p>
+        </div>
+    </a>
+
+    <!-- Camera -->
+    <a class="card" href="Features/Camera">
+        <div class="card-img">
+            <img src="Features/img/camera/showcase.gif"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Camera Improvements</h3>
+            <hr/>
+            <p>Freely rotate the camera, zoom out further, customize angles to experience Rivellon like never before!</p>
+        </div>
+    </a>
+
+    <!-- Quick Find -->
+    <a class="card" href="Features/QuickFind">
+        <div class="card-img">
+            <img src="Features/img/quickfind/showcase.gif"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Quick Find</h3>
+            <hr/>
+            <p>Search items from your party inventory with customizable filters. No need to tidy your inventory to find what you need!</p>
+        </div>
+    </a>
+
+    <!-- Animation Cancelling -->
+    <a class="card" href="Features/AnimationCancelling">
+        <div class="card-img">
+            <img src="Features/img/animationcancelling/showcase.gif"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Animation Cancelling</h3>
+            <hr/>
+            <p>Speed up skills & attacks and save time during both your turns and the enemy's!</p>
+        </div>
+    </a>
+
+    <!-- Settings Menu -->
+    <a class="card" href="Features/SettingsMenu">
+        <div class="card-img">
+            <img src="Features/img/settingsmenu/inventory_tab.png"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Settings Menu</h3>
+            <hr/>
+            <p>Toggle or customize each Epip feature to your liking; don't like a feature? Disable it! Nothing's forced onto you.</p>
+        </div>
+    </a>
+
+    <!-- Epic Encounters QoL -->
+    <a class="card" href="Features/EpicEncountersQoL">
+        <div class="card-img">
+            <img src="Features/img/epicencounters/navigation.png"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Epic Encounters 2 QoL</h3>
+            <hr/>
+            <p>Access Meditate & Source Infusion quickly with keybinds, navigate Ascensions with a controller, and do Greatforging right from context menus!</p>
+        </div>
+    </a>
+
+    <!-- Hotbar Groups -->
+    <a class="card" href="Features/HotbarGroups">
+        <div class="card-img">
+            <img src="Features/img/hotbargroups/example_small.png"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Hotbar Groups</h3>
+            <hr/>
+            <p>Create floating hotbars that are shared across characters. Perfect for consumables and shared skills!</p>
+        </div>
+    </a>
+
+    <!-- Radial Menus -->
+    <a class="card" href="Features/RadialMenus">
+        <div class="card-img">
+            <img src="Features/img/radialmenus/showcase.png"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Radial Menus</h3>
+            <hr/>
+            <p>Create custom radial menus to skills or shortcuts with a wheel UI. Great for speeding up skill-casting on controllers!</p>
+        </div>
+    </a>
+
+    <!-- Codex -->
+    <a class="card" href="Features/Codex">
+        <div class="card-img">
+            <img src="Features/img/codex/skills_section_with_tooltip.png"/>
+        </div>
+
+        <div class="card-text">
+            <h3>Codex</h3>
+            <hr/>
+            <p>View tooltips of all skills right in the game even if you don't have them. Perfect for previewing modded skills!</p>
+        </div>
+    </a>
+</div>
+
+## Other features
+Major features have dedicated pages for them accessible from the sidebar. The rest of this front page is a listing of other minor features not yet categorized into other pages.
 
 !!! info "Settings Info"
     Many features are disabled by default and must be explicitly enabled from the [Settings Menu](Features/SettingsMenu.md).
 
     This is to make the mod less overwhelming, as well as to respect that not all of its features will appeal to every player.
 
-Major features have dedicated pages for them accessible from the sidebar. This front page is a summary of them and other minor, uncategorized ones.
-
 - **[🧼 General UI Improvements](Features/UI.md)**: improvements to the vanilla UIs as well as some minor custom UIs.
-- **[🗃️ Hotbar](Features/Hotbar.md)**: improvements to the Hotbar UI: multiple bars, slot management options, loadouts and customizable extra hotkey buttons.
-- **[👗 Vanity](Features/Vanity.md)**: exhaustive cosmetic equipment transmog, featuring a menu to browse item models, dyeing, persistent outfits, and much more.
-- **[✋ Inventory Multi-Select](Features/InventoryMultiSelect.md)**: allows you to mass-select items in the inventory UIs to speed up inventory management.
-- **[🎒 Quick Loot](Features/QuickLoot.md)**: loot nearby containers and corpses in one go from a single UI.
-- **[🔎 Quick Find](Features/QuickFind.md)**: filterable view of the party inventory, making searching for specific items easier.
-- **[🗂️ Hotbar Groups](Features/HotbarGroups.md)**: customizable, shared groups of additional hotbar slots.
-- **[⚙️ Settings Menu](Features/SettingsMenu.md)**: in-game settings menu that allows you to toggle and customize most of Epip's features.
-- **[🏃‍♂️ Animation Cancelling](Features/AnimationCancelling.md)**: speeds up combat by ending player skill animations early.
-- **[✨ Epic Encounters QoL](Features/EpicEncountersQoL.md)**: page covering features only applicable to Epic Encounters 2.
-- **[📷 Camera](Features/Camera.md)**: settings to tweak the game camera.
-- **[🏷️ Tooltip Adjustments](Features/TooltipAdjustments.md)**: miscellaneous improvements and fixes to tooltips.
-- **[💎 Bedazzled](Features/Bedazzled.md)**: a full-fledged match-3 minigame.
-- **[📖 Codex](Features/Codex.md)**: in-game reference for various topics.
 - **[🔧 Vanilla Fixes](Features/VanillaFixes.md)**: fixes to various vanilla client issues.
 - **[🎮 Controller Support](Features/ControllerSupport.md)**: information on which Epip features currently support controllers.
-- **[🛞 Radial Menus](Features/RadialMenus.md)**: an alternative way of preparing skills or accessing Epip features that normally require keybinds.
 - **[❇️ Miscellaneous QoL](Features/MiscellaneousQoL.md)**: list of various quality-of-life improvements that do not fit other feature pages.
-
-The rest of this page offers an overview of the major features and also covers and additions that are not yet categorized into other pages.
 
 ## UI
 
