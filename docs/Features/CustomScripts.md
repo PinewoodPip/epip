@@ -39,3 +39,7 @@ Disables all shenanigans that occur on April Fools and Pip's Birthday (January 2
 ### [Allow AI to use all skills](https://github.com/PinewoodPip/EpipCustomScripts/blob/main/RemoveAICannotUseFlags.lua)
 
 Removes the `CannotUse` AI flag from all skills in the game, including modded ones. Note that generally this flag is used very consciously by designers, as such don't expect the NPCs to use those skills coherently.
+
+### [Skill Nuzlocke](https://github.com/PinewoodPip/EpipCustomScripts/blob/main/SkillNuzlocke.lua)
+
+Adds a warning to tooltips of skills that are already memorized by some character in your party. Can be used for self-imposed challenges of not repeating skills throughout your party. Does not actually prevent multiple characters from memorizing a specific skill.
