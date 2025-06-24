@@ -68,6 +68,7 @@ nav:
     - "Controller Support": "Features/ControllerSupport.md"
     - "Radial Menus": "Features/RadialMenus.md"
     - "Miscellaneous QoL": "Features/MiscellaneousQoL.md"
+    - "Custom Scripts": "Features/CustomScripts.md"
   - Technical Documentation: 
     - "Introduction": "docs.md"
     - "Terminology": "Documentation/Terminology.md"
