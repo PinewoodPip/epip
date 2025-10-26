@@ -1,11 +1,12 @@
 site_name: Epip
 site_url: https://pinewood.team/epip/
+repo_url: https://github.com/pinewoodpip/epipencounters/
 theme:
   name: material
   collapse_navigation: false
   navigation_depth: 3
-  logo: img/epiparty.png
-  favicon: img/epiparty.png
+  logo: img/epiparagon.png
+  favicon: img/epiparagon.png
 markdown_extensions:
     - pymdownx.highlight:
         anchor_linenums: true
