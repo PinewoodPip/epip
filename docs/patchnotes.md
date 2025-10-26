@@ -1,12 +1,108 @@
 # Changelog & Downloads
 
-## v1073 - 1/04/2025 - 4th Anniversary Patch
+## v1074 - 26/10/2025 - The non-summer non-major update
 !!! info ""
-    [Download here](https://drive.google.com/file/d/11loWWjIPVtTFBzv-xwUr8wo2MRh2-Dq5/view?usp=drive_link). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod.
+    [Download here](https://drive.google.com/file/d/1N5qE7rkJ2zBDFemHVb958E-S0ipIBYu3/view?usp=drive_link). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod.
 
     **[Requires Norbyte's Script Extender.](https://github.com/Norbyte/ositools/releases/tag/updater_v5)** 
     
     Load after Epic Encounters Core & Origins if you have it; load order does not matter otherwise.
+
+Long time no see! The main focus of this patch is updating older features to make them localizable; this includes our **Improved Combat Log** 📜, one of Epip's oldest features, which means that message filtering & merging should now work for all game languages! 🌐✨
+
+Additionally, the **Chinese localization has received major updates**, courtesy of HeiMao. This brings the Chinese localization back to almost full completion, just in time for the tremendous spike in traffic the mod is seeing from the Chinese community! 📈
+
+The update also brings in the usual set of improvements and fixes throughout Epip's many features.
+
+!!! info ""
+    Want to help out with localizing Epip into your language? Ask for details in [*#epipeline*](https://discord.gg/SevYmQc573)!
+    
+    All languages are welcome, even ones the game itself doesn't support, and we use a crowdsourced spreadsheet to make translations convenient.
+
+---
+
+### [Improved Combat Log](index.md#combat-log)
+- Filtering messages and merging consecutive ones should now work across all game languages
+    - If this feature is new to you, you may enable it through the *"Improved Combat Log"* setting in the "Miscellaneous UI" tab!
+
+![type:video](https://www.youtube.com/embed/RbXgNtl-q7g)
+
+- Added an *"Improved Keyword Color Contrast"* setting in the Combat Log section under "Miscellaneous UI", which replaces some colors with poor contrast in the combat log with lighter ones that are more readable
+    - This affects magic armor restoration (which was horrendously unreadable), the red enemy color, and some skill school colors
+    ![Comparison of vanilla text colors and alternative ones with the setting enabled.](Features/img/combatlog/improved_contrast.png)
+    <center><i>Comparison of vanilla text colors and alternative ones with "Improved Keyword Color Contrast".</i></center>
+
+- Fixed Epic Encounters-specific filters appearing even when EE is not loaded
+- The Epic Encounters-specific messages are now localizable
+- Other labels in the UI, such as filter names, are now localizable
+
+---
+
+### [Quick Loot](Features/QuickLoot.md)
+- You can now right-click items to loot them as wares
+    - Right-clicking the "Loot all" button will also loot all items as wares
+- Hovering over items in the UI will now show a white outline around their container/corpse in the world, or the item itself if it's on the ground, to help you tell where looted items are coming from
+
+![Example of new outlines in Quick Loot.](Features/img/quickloot/outlines.gif)
+
+- Filtered-out items are now excluded from "Loot all"
+    - This means that if "Filter Mode" is set to "Grey out", the greyed-out items won't be looted when using "Loot all".
+- If *"Show Clutter"* is disabled, light items (torches, candles, etc.) will also be filtered out
+- You can now start Quick Loot while your character is moving; this will stop their movement
+- Looting items should now trigger most scripted on-pickup events (ex. when looting Braccus's Spear)
+- Fixed weight calculation for lootable items that had no stats
+
+---
+
+### [Hotbar Groups](Features/HotbarGroups.md)
+- Added a "Snap to Hotbar" option in the context menu. If enabled, the group will stay vertically aligned with the top-most hotbar.
+    - Snapped groups can still be moved horizontally
+    ![Example of the "Snap to Hotbar" functionality.](Features/img/hotbargroups/snap_to_hotbar.gif)
+- Hotbar Groups now save when slots change or the group is moved
+    - This should address situations of data loss from making changes and exiting the game before the timed auto-save triggered
+
+### Other additions and changes
+
+- [Radial Menus](Features/RadialMenus.md): skill & item slots now use our common hotbar slot UI element, making them display cooldowns and tooltips
+- [Quick Examine](index.md#quick-examine): skills are now ordered by their school and source; skills granted by items are shown last
+- [Codex](Features/Codex.md): the sourcery filter in the Skills tab now includes skills that cost source points
+- In gamemaster mode, the stats tab in the Character Sheet is automatically reverted to the vanilla custom stats tab
+- Added descriptions to the top of most settings tab that were missing them, explaining the settings they contain
+- Turn order notifications above the hotbar ("Your turn"/"Enemy turn") have been re-added
+    - These were previously removed in Epip due to bugs with the Flash recompiler
+    - A setting has been added to toggle them (*"Turn Notifications"* in the "Notifications" tab); they are disabled by default to preserve their absence that existing Epip players are used to
+- The following texts are now localizable:
+    - Player Portraits context menu
+    - Costs for the "Dismantle" & "Extract Runes" EE context menu options
+    - Emphasis color settings for World Tooltip filters
+    - The stats tab, including all Epic Encounters-related text there
+    - Treasure table displays
+    - Camera settings tab
+    - Many of these strings are already localized into Russian, courtesy of JoienReid as usual ❤
+
+---
+
+### Fixes
+- [Vanity](Features/Vanity.md): fixed toggling visibility of items not refreshing the character's visuals
+- [Quick Find](Features/QuickFind.md): fixed the "Artifacts" rarity filter appearing without EE
+- Fixed being able to dismantle items in the pickpocket UI through the context menu (lol)
+- Fixed the Book UI appearing behind the gray overlay and Party Inventory after using the Trade UI
+- Fixed the Greatforge's Engrave option not being left-aligned
+- Fixed a long-standing issue where a horizontal line of brown pixels could appear above the hotbar when playing at certain resolutions
+    - This is technically a bug in the game's UI system, but was triggered by us misconfiguring the new textures
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+- The ShroudToggle feature can now be disabled to workaround hardware-specific crashes from the engine functions involved. You may use a Personal Script to do so.
+- Fixed a possible infinite loop in Text.ReplaceLarianPlaceholders() when digits were involved in the string
+- CombatLog got major refactorings to modernize it:
+    - Message handlers use the modern class system
+    - Events & hooks were migrated to the modern systems
+    - Patterns are now constructed dynamically using the vanilla translated strings to support all languages
+    - Base color is now stripped from the raw messages sent to listeners, to simplify patterns
+</details>
+
+## v1073 - 1/04/2025 - 4th Anniversary Patch
 
 Contrary to popular belief, v1073 is not the 1073rd release of Epip, but it is our 4th anniversary patch! ![Epiparty emoji](img/epiparty.png){: style="width:auto;height:32px;" }
 

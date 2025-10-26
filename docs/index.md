@@ -9,7 +9,7 @@ Vast customization for Epip's features is available through an in-game [settings
 ## Download & links
 
 !!! info ""
-    **[Latest release download, v1073](patchnotes.md) (1/04/25, 4th anniversary patch)**
+    **[Latest release download, v1074](patchnotes.md) (26/10/25, The non-summer non-major update)**
 
     See the [patchnotes](patchnotes.md) page for the latest additions.
 
@@ -40,7 +40,7 @@ Translators:
 
 - Cathe & JoienReid: Russian
 - Ferocidade: Brazilian Portuguese
-- Ainsky: Simplified Chinese
+- Ainsky & HeiMao: Simplified Chinese
 - Drayander & Farandole: French
 - Nektun: Polish
 - AquaVXI: Spanish (partial)
@@ -336,12 +336,9 @@ A setting exists to enable various improvements to the Combat Log UI, such as:
 
 - Filtering out individual types of messages, by right-clicking the UI to open a context menu.
 - Certain messages have been reworded for clarity and can now "merge" into a single line if they happen in quick succession, improving readability.
-- You clear the log from its context menu.
+- You can clear the log from its context menu.
 
 ![Combat log filters.](img/showcase/combat_log.png)
-
-!!! warning ""
-    Combat log improvements are currently only available while playing in English.
 
 ### World Tooltips
 The item tooltips that are displayed by holding ++lalt++ by default have received many options to improve their usability:
