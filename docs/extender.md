@@ -8,7 +8,7 @@ You can download the build [here](https://drive.google.com/drive/folders/1I2ZXjb
 
 The current version of the fork is v4, from 1/04/2025. If installed correctly, you should see the version by the extender version in the title screen:
 
-<center>![Fork version display.](img/extender/fork_version.png)</center>
+<center markdown="1">![Fork version display.](img/extender/fork_version.png)</center>
 
 !!! warning
     **The custom build is experimental - use it only at your own risk.**

@@ -278,8 +278,8 @@ Major features have dedicated pages for them accessible from the sidebar. The re
 ### Target Health Bar
 The health bar shown at the top of the screen has been reworked to look better and include more information, showing resistances, Battered/Harried in Epic Encounters, as well as AP, SP, initiative and more while holding ++lshift++ - saving you many trips to the examine UI. More details [here](Features/UI.md#target-status-bar).
 
-<center>![Health bar showcase](Features/img/ui/health_bar.png)</center>
-<center>![Health bar alt](Features/img/ui/health_bar_shift.png)</center>
+<center markdown="1">![Health bar showcase](Features/img/ui/health_bar.png)</center>
+<center markdown="1">![Health bar alt](Features/img/ui/health_bar_shift.png)</center>
 
 ### Player Portraits
 The player portraits UI has received various improvements:
@@ -290,14 +290,14 @@ The player portraits UI has received various improvements:
 
 More details available [here](Features/UI.md#player-portraits).
 
-<center>![Player Info preview.](Features/img/ui/player_info.png)</center>
+<center markdown="1">![Player Info preview.](Features/img/ui/player_info.png)</center>
 
 ### Hotbar
 Epip offers a heavily improved Hotbar UI, featuring multiple bars, custom "action" buttons in the bottom left, and numerous functions to make hotbar management easier.
 
 Press the `+`/`-` buttons by the panel in the bottom left to add/remove bars. More details on Hotbar improvements are available in its [dedicated subpage](Features/Hotbar.md).
 
-<center>![Hotbar preview.](Features/img/hotbar/hotbar_extra_slots.png)</center>
+<center markdown="1">![Hotbar preview.](Features/img/hotbar/hotbar_extra_slots.png)</center>
 
 ### Vanity
 Epip features an easy-to-use cosmetic item customization system, including armor transmogrification, custom color dyes, quick outfit swapping and auras, all through a new UI integrated into the character sheet.
@@ -309,7 +309,7 @@ Right-click an equipped item and select *"Vanity..."* in its context menu to get
 ### Settings Menu
 Epip includes its own [Settings Menu](Features/SettingsMenu.md) UI full of options to toggle or customize its features - you may use as few or many of them as you want.
 
-<center>![Options menu.](Features/img/settingsmenu/info_tab.png)</center>
+<center markdown="1">![Options menu.](Features/img/settingsmenu/info_tab.png)</center>
 
 The Epip Settings Menu also makes custom hotkeys possible, including ones for Meditate & Source Infuse (in Epic Encounters), an examine hotkey, as well as binding the 12 "action buttons" from the [Hotbar UI](Features/Hotbar.md).
 
@@ -322,14 +322,14 @@ Epip offers numerous improvements and options to keep your inventory and items c
 - A setting exists to automatically identify items, optionally not requiring any Loremaster.
 - Consumable items, like mushrooms and food, no longer require you to use them once for them to show their effects in the tooltip.
 
-<center>![Multi-select demostration.](Features/img/inventorymultiselect/demo.gif)</center>
-<center>*Multi-select demostration.*</center>
+<center markdown="1">![Multi-select demostration.](Features/img/inventorymultiselect/demo.gif)</center>
+<center markdown="1">*Multi-select demostration.*</center>
 
 ### Tooltip Adjustments
 Tooltips have received numerous fixes and improvements, displaying a lot of information in a clearer manner, as well as details previously unmentioned such as sources of statuses. You can read about them at their [dedicated page](Features/TooltipAdjustments.md).
 
-<center>![A weapon tooltip showing the changes.](img/showcase/weapon_tooltip.png)</center>
-<center>*A weapon tooltip showing the various tooltip additions, such as Quality, range and Masterwork indicator.*</center>
+<center markdown="1">![A weapon tooltip showing the changes.](img/showcase/weapon_tooltip.png)</center>
+<center markdown="1">*A weapon tooltip showing the various tooltip additions, such as Quality, range and Masterwork indicator.*</center>
 
 ### Combat Log
 A setting exists to enable various improvements to the Combat Log UI, such as:
@@ -351,7 +351,7 @@ The item tooltips that are displayed by holding ++lalt++ by default have receive
 - You may highlight tooltips for certain kinds of items in a customizable color to distinguish them.
 
 ![Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.](img/showcase/world_tooltips.png)
-<center>*Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.*</center>
+<center markdown="1">*Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.*</center>
 
 ### Quick Examine
 A new "Quick Examine" UI can be opened with a custom hotkey (defaults to `V`). This panel is mainly used to show the effects enemies have from the ["Epic Enemies"](Features/EpicEncountersQoL.md#epic-enemies) feature, but it can also display the character's artifacts, skills and equipment, useful to check information of your allies in multiplayer.
@@ -367,4 +367,4 @@ For other UI changes, see the [General UI Improvements](Features/UI.md) page.
 - A setting exists to highlight empty slots in the container inventory UI upon hovering over them, for consistency with the party inventory. Can be enabled from the "Inventory" settings tab (*"Highlight Empty Container Slots"*).
 - Discord Rich Presence customization is available in the "Miscellaneous UI" settings tab.
     - You may set both lines to anything you desire, or have them be set to show your character level, area and overhaul.
-    <center>![Overhaul mode.](Features/img/discordrichpresence/overhaul_mode.png)</center>
+    <center markdown="1">![Overhaul mode.](Features/img/discordrichpresence/overhaul_mode.png)</center>

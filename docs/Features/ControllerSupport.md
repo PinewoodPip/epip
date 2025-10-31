@@ -29,8 +29,8 @@ The following features have special considerations for controller use:
 - The *"Resistances Display"* setting shows its information by the bars that appear when targeting characters, by their name
     - Opening the context menu for a character while in combat displays the "alternative" information (AP, SP, initiative, etc.)
 
-<center>![Resistances display on controller.](img/ui/controller_resistances_display.png)</center>
-<center><i>Resistances display on the controller UI.</i></center>
+<center markdown="1">![Resistances display on controller.](img/ui/controller_resistances_display.png)</center>
+<center markdown="1"><i>Resistances display on the controller UI.</i></center>
 
 The following is a (non-comprehensive) list of other settings/features which have had controller support added for them:
 

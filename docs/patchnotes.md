@@ -30,7 +30,7 @@ The update also brings in the usual set of improvements and fixes throughout Epi
 - Added an *"Improved Keyword Color Contrast"* setting in the Combat Log section under "Miscellaneous UI", which replaces some colors with poor contrast in the combat log with lighter ones that are more readable
     - This affects magic armor restoration (which was horrendously unreadable), the red enemy color, and some skill school colors
     ![Comparison of vanilla text colors and alternative ones with the setting enabled.](Features/img/combatlog/improved_contrast.png)
-    <center><i>Comparison of vanilla text colors and alternative ones with "Improved Keyword Color Contrast".</i></center>
+    <center markdown="1"><i>Comparison of vanilla text colors and alternative ones with "Improved Keyword Color Contrast".</i></center>
 
 - Fixed Epic Encounters-specific filters appearing even when EE is not loaded
 - The Epic Encounters-specific messages are now localizable
@@ -128,7 +128,7 @@ Assprite empowers you with ~~all~~ some of the tools you need to retouch or comp
 
 Custom portraits are visible in all UIs that show character portraits, including to other players in multiplayer, and persist throughout saves. If you regret a makeover, you can hit up the Magic Mirror to undo your doings.
 
-<center>![Custom portraits example.](Features/img/customportraits/character_sheet.png)</center>
+<center markdown="1">![Custom portraits example.](Features/img/customportraits/character_sheet.png)</center>
 
 Some tips and disclaimers:
 
@@ -150,7 +150,7 @@ The vast majority of users tend to use only a single settings loadout they're co
 To address this, this patch introduces a new system that encourages players to step outside of their comfort zone: ***Epip Challenged Modes***.
 
 ![Challenged Modes selection screen.](img/challenged_mode.png)
-<center><i>Challenged Modes selection UI.</i></center>
+<center markdown="1"><i>Challenged Modes selection UI.</i></center>
 
 Challenged Modes are modifiers that can be chosen at the start of playthroughs to add new rules to Epip's usage, forcing you to re-think your settings and the UIs you use, and explore exotic setting builds you might've never thought of before. This patch adds the following Challenged Modes:
 
@@ -177,7 +177,7 @@ All Challenged Modes are disabled by default. We hope you'll find Challenged Mod
     - Additionally, dyes are applied immediately when changing the sliders, acting as a "live-preview"
 
 ![Dye live-preview showcase](Features/img/vanity/live_preview_and_anim_swaps.gif)
-<center><i>Live-preview for dyes and weapon animation swaps (in case you missed them last update).</i></center>
+<center markdown="1"><i>Live-preview for dyes and weapon animation swaps (in case you missed them last update).</i></center>
 
 - Added a "*Vanity: Copy Appearance*" option to item context menus while Vanity is open, which copies their transmog, icon and color to your corresponding equipped item
     - For weapons and shields, you may choose which hand slot their appearance is copied to
@@ -348,7 +348,7 @@ Settings that were previously there have been moved to other tabs, mainly "Misce
 - Fixed Vanity Transmog swapping hands of weapons while dual-wielding
 
 ![type:video](https://www.youtube.com/embed/BrpHSf9sgb4)
-<center><i>Weapon animation swap showcase.</i></center>
+<center markdown="1"><i>Weapon animation swap showcase.</i></center>
 
 ### Quick Loot
 - When using the updated version of the [extender fork](extender.md), containers and corpses now show outlines while within the search radius
@@ -475,8 +475,8 @@ There is currently no clear indicator of which settings are applicable, but nume
 - Most tooltip adjustments
 - You can now toggle filters for the "Alternative Status Bar" by pressing the right stick
 
-<center>![Resistances display on controller.](Features/img/ui/controller_resistances_display.png)</center>
-<center><i>Resistances display on the controller UI.</i></center>
+<center markdown="1">![Resistances display on controller.](Features/img/ui/controller_resistances_display.png)</center>
+<center markdown="1"><i>Resistances display on the controller UI.</i></center>
 
 In Epip UIs with controller support, a new "Navigation Bar" widget at the bottom of the screen displays the UI's controls.
 
@@ -491,7 +491,7 @@ Interacting with keybind and "set" settings (ex. Animation Cancelling blacklist)
 ## Quick Loot
 A new "Quick Loot" UI has been added, which allows you to loot items from nearby containers and corpses through a unified UI with a single keybind press.
 
-<center>![Quick Loot showcase.](Features/img/quickloot/showcase.gif)</center>
+<center markdown="1">![Quick Loot showcase.](Features/img/quickloot/showcase.gif)</center>
 
 To use it, hold down the new *"Quick Loot: Start Search"* keybind (unbound by default) to select containers & corpses nearby. You may also configure the keybind from the new "Quick Loot" settings tab as well as increase the default search range and enable visual feedback for looting.
 
@@ -509,7 +509,7 @@ Note that containers that are locked, out of line-of-sight or considered as stea
 - You can now open containers (ex. backpacks) in the trade UI by right-clicking them; left-clicking items within will offer them for trade
     - ++lctrl++ + ++m1++ on a container will instead offer all the items inside for trade
 
-<center>![Using containers in the trade UI.](Features/img/ui/trade_backpacks.gif)</center>
+<center markdown="1">![Using containers in the trade UI.](Features/img/ui/trade_backpacks.gif)</center>
 
 - Multi-select improvements:
     - Added support for dragging items in and out of containers that are not owned by the party, ex. barrels in the world and the Lady Vengeance chest
@@ -524,7 +524,7 @@ Note that containers that are locked, out of line-of-sight or considered as stea
 - Fixed stuttering when changing the pitch without moving the camera to the sides
 
 ![Comparison of close-up dialogue option.](Features/img/misc/closeup-dialogue.png)
-<center><i>Before & after comparison of the vanilla "Close-up Dialogue" setting.</i></center>
+<center markdown="1"><i>Before & after comparison of the vanilla "Close-up Dialogue" setting.</i></center>
 
 ## Vanity
 - Added a setting to revert the appearance of items when they are unequipped; "*Revert appearance of unequipped items*" in the new "Vanity" settings tab; disabled by default
@@ -626,7 +626,7 @@ Bedazzled has received its first expansion, adding a new gamemode, modifiers, st
 !!! info ""
     Out of the loop? Simply right-click a rune or rune-crafting gem and select the "Bedazzle" option in the context menu to get started.
 
-<center>![Anniversary edition logo.](Features/img/bedazzled/bedazzled_anniversary_edition.png)</center>
+<center markdown="1">![Anniversary edition logo.](Features/img/bedazzled/bedazzled_anniversary_edition.png)</center>
 
 Changes & additions:
 
@@ -639,8 +639,8 @@ A new game mode has been added: *Bedazzled Twimst've*
     - Crafting runes and destroying Epipes grants additional free moves
 - The original Bedazzled experience is now known as the *Classic* gamemode
 
-<center>![Bedazzled Twimst've gameplay.](Features/img/bedazzled/twimstve.gif)</center>
-<center>*Bedazzled Twimst've gameplay.*</center>
+<center markdown="1">![Bedazzled Twimst've gameplay.](Features/img/bedazzled/twimstve.gif)</center>
+<center markdown="1">*Bedazzled Twimst've gameplay.*</center>
 
 ---
 
@@ -665,7 +665,7 @@ Multiple high-scores are now tracked, for each possible combination of gamemode 
 ##### Elo Rating
 Elo rating has been implemented to represent your relative Bedazzled skill. Each game finished increases your Elo based on your score, and reaching Elo milestones will grant you noble titles in recognition of your expertise.
 
-<center>![Elo rating and title.](Features/img/bedazzled/elo.png)</center>
+<center markdown="1">![Elo rating and title.](Features/img/bedazzled/elo.png)</center>
 
 Players who had Bedazzled scores set before this update will retroactively gain Elo based on their 5 best scores. All other scrubs begin at 0 Elo.
 
@@ -727,12 +727,12 @@ This patch contains various fixes, a few new features as well as polishing for o
 	- While held, moving the mouse up/down will change the pitch; this basically lets you change it on the fly
 	- Other new settings exist in that same tab to adjust sensitivity, invert the controls as well as to allow the pitch to go negative
 		- A negative pitch allows you to look straight up; this clips the camera into the ground, and therefore is disabled by default for aesthetic reasons
-<center>!["Adjust Pitch" usage example.](Features/img/camera/adjust_pitch.gif)</center>
+<center markdown="1">!["Adjust Pitch" usage example.](Features/img/camera/adjust_pitch.gif)</center>
 
 ### Quick Examine
 - Added a new widget that displays the equipped items of player characters, enabled by default
     - The order in which items appear can be set through the *"Equipment Slots Order"* setting in the Quick Examine tab
-<center>![Equipment widget.](Features/img/quickexamine/widget_equipment.png)</center>
+<center markdown="1">![Equipment widget.](Features/img/quickexamine/widget_equipment.png)</center>
 - The grid-like widgets now use a consistent appearance, and the size of icons has been increased for readability
 - The related settings are now translatable and use more consistent wording
 
@@ -949,7 +949,7 @@ Due to Extender shenanigans, the development of v1066 spanned ~3 months and 12 b
 - Added customization for Discord Rich Presence, available from the "Miscellaneous UI" settings tab
 	- You may set both lines to anything you desire, or have them be set to show your character level, area and overhaul
 
-<center>![Overhaul mode.](Features/img/discordrichpresence/overhaul_mode.png)</center>
+<center markdown="1">![Overhaul mode.](Features/img/discordrichpresence/overhaul_mode.png)</center>
 
 - The Quick Find UI is now layered below the book UI
 
@@ -1011,7 +1011,7 @@ Due to Extender shenanigans, the development of v1066 spanned ~3 months and 12 b
 - Numerous old tooltip-related strings are now translateable (and already translated into some languages)
 
 ![Codex setting to show tooltips on the left, with opaque background enabled.](./Features/img/codex/skills_tooltips_on_left.png)
-<center>*Codex setting to show tooltips on the left, with opaque background enabled.*</center>
+<center markdown="1">*Codex setting to show tooltips on the left, with opaque background enabled.*</center>
 
 #### Fixes
 - Fixed context menu positioning on resolutions other 16:9 and 1080p
@@ -1114,7 +1114,7 @@ Use ++ctrl+m1++ to select/deselect items. If at least one item is selected, ++sh
 
 Right-click selected items to access a context menu with operations, or drag and drop them to inventory slots, player inventory tabs, or container items to move them.
 
-<center>
+<center markdown="1">
 ![Context menu for selected items.](./Features/img/inventorymultiselect/context_menu.png)
 </center>
 

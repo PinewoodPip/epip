@@ -1,6 +1,6 @@
 Epip offers a heavily improved Hotbar UI, featuring multiple bars, custom "action" buttons in the bottom left, and numerous functions to make hotbar management easier.
 
-<center>![Hotbar preview.](img/hotbar/hotbar_extra_slots.png)</center>
+<center markdown="1">![Hotbar preview.](img/hotbar/hotbar_extra_slots.png)</center>
 
 To add/remove rows, click the small +/- icons to the right of the buttons area. You can cycle each row independently through all 5 rows of slots that the game allows. You can have up to 5 rows visible.
 
@@ -10,7 +10,7 @@ The buttons next to the portrait are now customizable; when your hotbar is unloc
 
 Right click one of those buttons or click the `^` button to bring up a "drawer" with all the actions that you can drag and drop onto your actions bar. You can also click them to use them directly from there.
 
-<center>![Hotbar action drawer preview.](img/hotbar/hotbar_actions_drawer.png)</center>
+<center markdown="1">![Hotbar action drawer preview.](img/hotbar/hotbar_actions_drawer.png)</center>
 
 These buttons can be used with keyboard hotkeys; to do so, you must assign keys to them from the "Keybinds" tab in the [Epip Settings Menu](../Features/SettingsMenu.md). They are labelled "Hotbar Action #N" there.
 
@@ -28,7 +28,7 @@ The purpose of the action bar is to provide a centralized place for modders to a
 
 Right-click a row on the hotbar to bring up a context menu where you can "push" groups of slots around (great for inserting spells inbetween!), clear unmemorized spells, or save "loadouts" to restore your hotbars in later playthroughs.
 
-<center>![Hotbar context menu.](img/hotbar/hotbar_context_menu.png)</center>
+<center markdown="1">![Hotbar context menu.](img/hotbar/hotbar_context_menu.png)</center>
 
 !!! info ""
     Looking for additional hotbar slots that can be freely positioned anywhere on the screen? Check out the [Hotbar Groups](../Features/HotbarGroups.md) feature.

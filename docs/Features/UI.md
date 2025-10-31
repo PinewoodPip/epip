@@ -129,7 +129,7 @@ Additionally, there is now a keybind to open the examine menu, and capitalizatio
 - You can now open containers (ex. backpacks) in the trade UI by right-clicking them; left-clicking items within will offer them for trade
     - ++lctrl++ + ++m1++ on a container will instead offer all the items inside for trade
 
-<center>![Using containers in the trade UI.](img/ui/trade_backpacks.gif)</center>
+<center markdown="1">![Using containers in the trade UI.](img/ui/trade_backpacks.gif)</center>
 
 ## Skillbook
 You can now unlearn skills by right-clicking them in the skillbook while out of combat. Innate skills cannot be unlearnt.

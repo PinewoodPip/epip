@@ -40,7 +40,7 @@ The item tooltips that are displayed by holding ++lalt++ by default have receive
 - You may highlight tooltips for certain kinds of items in a customizable color to distinguish them.
 
 ![Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.](../img/showcase/world_tooltips.png)
-<center>*Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.*</center>
+<center markdown="1">*Color-coded world item tooltips. Containers, equipment and consumables are all highlighted in a different, customizable color.*</center>
 
 ### Changes for Epic Encounters
 

@@ -3,11 +3,11 @@ Satisfy all of your cosplay needs with an easy to use, non-intrusive vanity syst
 Unlike some other implementations, this has **absolutely no gameplay side effects**. It even works with Gift Bag 5 armor sets!  
 Access its menu by right-clicking any of your equipped items and choosing the "Vanity..." option.  
 
-<center>![Vanity submenu](img/vanity/submenu.png)</center>
+<center markdown="1">![Vanity submenu](img/vanity/submenu.png)</center>
 
 From here you will have access to a number of tabs packed with customization features.  
 
-<center>![Tabs overview](img/vanity/tabs.png)</center>
+<center markdown="1">![Tabs overview](img/vanity/tabs.png)</center>
 
 ## Transmog Tab ![Transmog tab icon](img/vanity/transmog_tab_icon.png){style='height:35px;'}
 
@@ -16,7 +16,7 @@ From here you will have access to a number of tabs packed with customization fea
 Equipment tab lets you seamlessly transmogrify the appearance of your weapons and armors.  
 The item you've used to access this tab is its focus, indicated by the dropdown list at the top. To select another item to tinker with you can use right-click -> Vanity... on it or said dropdown list.  
 
-<center>![Transmog list](img/vanity/transmog_list.png)</center>
+<center markdown="1">![Transmog list](img/vanity/transmog_list.png)</center>
 
 ### Basics
 Transmog options consist of vanilla armor variants and options added by cosmetic mods. Support is included for ["Majora's Project Fashion Sins"](https://steamcommunity.com/sharedfiles/filedetails/?id=1815898410), ["Rendal's NPC Armors"](https://steamcommunity.com/sharedfiles/filedetails/?id=1515827226) and ["Visitors from Cyseal"](https://steamcommunity.com/sharedfiles/filedetails/?id=2828485171) mods, displaying their visuals as additional options within the UI.
@@ -64,7 +64,7 @@ Weapons with elemental damage normally get glowing visual effect applied to them
 You can change your weapon animations to those of other weapon types; select the Weapon item slot for this option to appear. This also changes the stance your characters have in combat or while unsheathed.
 
 ![type:video](https://www.youtube.com/embed/BrpHSf9sgb4)
-<center><i>Weapon animation swap showcase.</i></center>
+<center markdown="1"><i>Weapon animation swap showcase.</i></center>
 
 ## Outfits Tab ![Outfits tab icon](img/vanity/outfits_tab_icon.png){style='height:35px;'}
 Have you mastered the art of drip? Have you found your ultimate image? Never wanna wear anything else ever again? Save your entire get-up and use it across playthroughs with a few clicks.  
@@ -110,7 +110,7 @@ You can save your favorite dyes to reuse them later by pressing ![Dyes save butt
 
 Saved dyes will appear under "Custom Dyes" collapsing list. There also are a few built-in dyes for you to use or take inspiration from.  
 
-<center>![Dyes customs](img/vanity/dyes_custom.png)</center>
+<center markdown="1">![Dyes customs](img/vanity/dyes_custom.png)</center>
 
 ## Auras Tab ![Vanity tab icon](img/vanity/transmog_tab_icon.png){style='height:35px;'}
 All these drip options were not enough for you? Want to make your presence even more noticeable? Apply permanent visual effects to your character in Auras tab.  

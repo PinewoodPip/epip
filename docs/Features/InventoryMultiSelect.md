@@ -9,7 +9,7 @@ If at least one item is selected, ++shift+m1++ will select a range of items betw
 
 Right-click selected items to access a context menu with operations, or drag and drop them to inventory slots, player inventory tabs, or container items to move them.
 
-<center>
+<center markdown="1">
 ![Context menu for selected items.](./img/inventorymultiselect/context_menu.png)
 </center>
 

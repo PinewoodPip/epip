@@ -4,12 +4,12 @@ The Epip settings menu features a dedicated tab for customizing camera propertie
 ![Camera settings tab.](img/camera/main_settings.png)
 
 ![Maximum zoom out.](img/camera/example_max_zoomout.png)
-<center>Example of the maximum zoom out level.</center>
+<center markdown="1">Example of the maximum zoom out level.</center>
 
 ## Pitch Controls
 An "Adjust Pitch" keybind exists that allows you to change the vertical angle of the camera on the fly while it is held.
 
-<center>!["Adjust Pitch" usage example.](img/camera/adjust_pitch.gif)</center>
+<center markdown="1">!["Adjust Pitch" usage example.](img/camera/adjust_pitch.gif)</center>
 
 Other new settings exist in that same tab to adjust sensitivity, invert the controls as well as to allow the pitch to go negative.
 
@@ -25,7 +25,7 @@ These angles are actually position offsets applied to the camera, with the value
 However, the game camera always points towards the ground or the focused character, and as such, raising the Y level also means it will point more towards the ground.
 
 ![Example of an angle with a low Y (Angle value 2).](img/camera/example_low_tilt.png)
-<center>Example of an angle with a low Y (angle value 2)</center>
+<center markdown="1">Example of an angle with a low Y (angle value 2)</center>
 
 ## Other Features
 - The *"Keybind Rotation Speed"* setting allows you to control the rotation speed when using the rotate camera keybinds.
@@ -33,4 +33,4 @@ However, the game camera always points towards the ground or the focused charact
 - The vanilla "Close-up dialogue" setting no longer zooms-in the camera obnoxiously close to characters.
 
 ![Comparison of close-up dialogue option.](img/misc/closeup-dialogue.png)
-<center><i>Before & after comparison of the vanilla "Close-up Dialogue" setting.</i></center>
+<center markdown="1"><i>Before & after comparison of the vanilla "Close-up Dialogue" setting.</i></center>

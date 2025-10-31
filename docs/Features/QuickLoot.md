@@ -1,7 +1,7 @@
 # Quick Loot
 Quick Loot is a new UI that allows you to loot items from nearby containers and corpses through a unified UI with a single keybind press.
 
-<center>![Quick Loot showcase.](img/quickloot/showcase.gif)</center>
+<center markdown="1">![Quick Loot showcase.](img/quickloot/showcase.gif)</center>
 
 To use it, hold down the new *"Quick Loot: Start Search"* keybind (unbound by default) to select containers & corpses nearby. The keybind may also be bound from the "Quick Loot" settings tab, which includes other settings such as increasing the default search range and enabling visual feedback for looting.
 

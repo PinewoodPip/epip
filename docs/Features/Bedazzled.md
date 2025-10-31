@@ -1,10 +1,10 @@
 # Bedazzled
 Bedazzled is a full-fledged match-3 minigame inspired by the Bejeweled series, supporting multiple gamemodes, modifiers, leaderboards and ELO rankings.
 
-<center>![Bedazzled Anniversary Edition logo.](./img/bedazzled/bedazzled_anniversary_edition.png)</center>
+<center markdown="1">![Bedazzled Anniversary Edition logo.](./img/bedazzled/bedazzled_anniversary_edition.png)</center>
 
-<center>![Bedazzled Classic gameplay.](./img/bedazzled/classic.gif)</center>
-<center>*Bedazzled Classic gameplay.*</center>
+<center markdown="1">![Bedazzled Classic gameplay.](./img/bedazzled/classic.gif)</center>
+<center markdown="1">*Bedazzled Classic gameplay.*</center>
 
 Right-click a rune or rune-crafting gem and select the "*Bedazzle*" option from the context menu to get started. 
 
@@ -21,8 +21,8 @@ Bedazzled supports 2 gamemodes:
 - *Bedazzled Twimst've*: spin2win by rotating groups of 2x2 gems to make matches.
     - You have a limited "free matches" that allow you to do so even if the move wouldn't create a match, replenishable by crafting runes and cleansing Epipes.
 
-<center>![Bedazzled Twimst've gameplay.](./img/bedazzled/twimstve.gif)</center>
-<center>*Bedazzled Twimst've gameplay.*</center>
+<center markdown="1">![Bedazzled Twimst've gameplay.](./img/bedazzled/twimstve.gif)</center>
+<center markdown="1">*Bedazzled Twimst've gameplay.*</center>
 
 Matching 4 or more gems of a kind will transform them into powerful runes and artifacts:
 
