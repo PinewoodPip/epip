@@ -1,12 +1,209 @@
 # Changelog & Downloads
 
-## v1074 - 26/10/2025 - The non-summer non-major update
+## v1075 - 1/04/2026 - The 5th Anniversary Update!
 !!! info ""
-    [Download here](https://drive.google.com/file/d/1N5qE7rkJ2zBDFemHVb958E-S0ipIBYu3/view?usp=drive_link). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod.
+    [Download here](https://drive.google.com/file/d/1sKYz1uJM2u3Z5vsp4vXke_rFDjcCBo14/view?usp=drive_link). Place the `.pak` within `\Documents\Larian Studios\Divinity Original Sin 2 Definitive Edition\Mods` as with any other mod.
 
     **[Requires Norbyte's Script Extender.](https://github.com/Norbyte/ositools/releases/tag/updater_v5)** 
     
     Load after Epic Encounters Core & Origins if you have it; load order does not matter otherwise.
+
+As of 1st of April, Epip is now 5️⃣ years old! That's half a decade of Epiping! ![Epiparty emoji](img/epiparty.png){: style="width:auto;height:32px; margin:0; vertical-align: middle;" }
+
+It's a crazy milestone, and I'm incredibly grateful for all the support - I hope Epip will continue making your playthroughs more enjoyable for many years to come! 🥳
+
+As usual, we've got an Anniversary Patch ™ that brings the usual set of new features, small improvements and many fixes for issues reported the past few months. Also, a teaser for something new 👀
+
+### Anniversary shenanigans
+
+As is tradition for Epip anniversaries, **party mode** will be active throughout April 1st 🎊 - so do not be surprised when your Epip starts tweaking! New shenanigans debut this year as well.
+
+If you're an Epip veteran, you might know that we always have a big, silly yet innovative new feature prepared for the Anniversary patches. This year, since the 5️⃣th anniversary is so grand, we'll be doing something different to celebrate: **we will be releasing a brand new mod instead!**
+
+Without spoiling much, it will add a new gameplay system to the game, a new skill school, and progression systems - and it will very much have that anniversary patch spirit 🎣
+
+<center markdown="1">![New mod teaser.](img/showcase/new_mod_teaser.gif)</center>
+<center markdown="1"><i>New mod teaser.</i></center>
+
+It will take a couple more days to polish it for release, but we're hoping to have it out by the end of the week - still fitting imo, Epip was called the "easter patch" originally after all. Happy Easter btw!! 🥚
+
+Keep an eye out on the [Epic Encounters discord server](https://discord.gg/SevYmQc573), as we'll likely do a soft-launch there and the usual anniversary showcase stream with Cathe!
+
+Now, back to the anniversary patch changelog:
+
+---
+
+### [Quick Loot](Features/QuickLoot.md)
+Quick Loot got some neat new features and improvements, credits to willfindlay for contributing them on our [GitHub](https://github.com/pinewoodpip/epipencounters/)!
+
+- Activating Quick Loot while sneaking now lets you steal NPC-owned items on the ground or in containers 🥷
+    - **Stealing items this way will still trigger crimes**
+    - Stolen goods are distinguished visually in the UI and with red outlines
+    - When stealing, the search circle effect becomes red-ish
+    - The UI will close if you unsneak for any reason
+
+<center markdown="1">![Quick Loot steal mode.](Features/img/quickloot/stealing.gif)</center>
+<center markdown="1"><i>New Quick Loot steal mode.</i></center>
+
+- You can now cancel searches by right-clicking or pressing ++esc++
+- The UI now closes when entering dialogue
+- The line-of-sight check has been extended to also include raycasts to the corners of the items's AABBs
+    - This should fix bookshelves not being lootable!
+- Added line-of-sight checks for ground items and corpses (they didn't have them before)
+
+---
+
+### Container Customization
+
+The context menu for container items now has new options to customize them, to improve your inventory management even further:
+
+- Added a **"Rename..."** option, which lets you change the container name to distinguish your bags easier
+- Added a **"Set icon..."** option, which lets you change the container's icon in the inventory
+
+<center markdown="1">![A renamed container with a custom icon.](img/container_customization.png)</center>
+<center markdown="1"><i>A customized & renamed container.</i></center>
+
+---
+
+### [Vanity](Features/Vanity.md)
+Transmog has received some improvements:
+
+- Visuals are now automatically registered to the Transmog UI for all mods loaded, meaning there's no need to make compatibility patches for them anymore
+    - As a result, GB5️⃣ Armor Sets and EE Artifacts are now available for Transmog!
+- Improved detection of which visuals are weapons; as a result, uniques that were previously missing such as Alexandar's Staff are now available!
+
+<center markdown="1">![Armor Sets and new uniques in Transmog.](Features/img/vanity/armor_sets.png)</center>
+<center markdown="1"><i>Armor Sets and new uniques in Transmog.</i></center>
+
+---
+
+### Special Anniversary additions!
+- We added an Epipe mascot to the settings menu! And you can pet it!!! ![Epiparty emoji](img/epiparty.png){: style="width:auto;height:32px; margin:0; vertical-align: middle;" }
+
+    <center markdown="1">![New parting phrase example.](img/epipe_mascot.gif)</center>
+
+- Added new parting phrases in dialog 👋
+    - Your character will now take their leave in much more style ✨
+
+    <center markdown="1">![New parting phrase example.](img/take_your_leave_in_style.png)</center>
+    <center markdown="1"><i>One of the many epic new lines you can say when taking your leave. [With a fitting portrait](#custom-portraits).</i></center>
+
+- Renamed the Paragon artifact in EE to "Paragon Fiskalny"
+- Renamed "features" to "**epip**hanies"
+- Fixed typo in Protean Artifact name in EE
+- The "Load" button in the pause menu is now more honest
+- Improved the accuracy of the header texts in the Character Sheet & Party Inventory UIs
+
+---
+
+### [Quick Examine](Features/QuickExamine.md)
+- Added a "Talents" widget. Hover over talent names to see their tooltips.
+- Resources display now shows movement distance, and the labels have been compacted to save space
+
+---
+
+### [Quick Find](Features/QuickFind.md)
+- Added a *"Runes"* category filter
+    - This filter may also display items which have runes inserted, to ease finding items to extract runes out of
+- Added an *"Only show items in containers"* filter, which can be used to quickly search items within only your bags - very handy for bag enthusiasts!
+
+---
+
+### [Combat Log]((index.md#combat-log))
+- Added "Absorbed Damage" and "Deaths" filters
+    - The "Death" filter only includes the death reason messages (ex. "X was burnt to a crisp"), it does not filter out kills ("X killed Y")
+        - This helps to declutter redundant extra messages, as for skill kills, the game normally sends 2 messages (the death one and the "X killed Y" message)
+    - The "Absorbed Damage" filter covers the "X took no damage" and "X regained Y from high resistance" messages
+
+---
+
+### Other additions and changes
+- **Hotbar Groups**: item slots now attempt to preserve the reference to the specific item you dragged into them
+    - Ex. if you drag in a backpack, the slot should remember which specific backpack it was
+    - For existing hotbar groups, you will have to drag your items back in for this to apply
+- **[Custom Portraits](#custom-portraits)**: you can now load PNGs without needing to strip their metadata first (lol)
+- **Inventory Multi-Select**: added a *"Drop items"* context menu option, which scatters the items around your character
+    - If you select your whole inventory and do this, you can roleplay as a loot piñata
+- The character sheet's "Damage" stat now displays a breakdown of your basic attack damage types in the tooltip
+    - This is also visible in the tooltip of the "Basic Attack" action
+    - When dual-wielding, the numbers won't actually add up to the amount displayed in the character sheet due to its calculation being wrong
+- Tooltips for vanilla hotbar buttons now use vanilla translations
+- Very, very minor performance improvements to all UIs that Epip adds Lua hooks for - mostly affects ones to which the engine sends data constantly, ex. world tooltips & overheads
+- The fix for +AP Cost debuffs applying twice now also works when using items within containers
+
+### Fixes
+
+- **Hotbar**:
+    - Fixed party chain/unchain action working inconsistently at high FPS
+        - Also fixed UI volume becoming muted if the keybind was used repeatedly in quick succession
+    - Fixed skills with custom requirements not greying out correctly if the skill is granted from an item (affected Divinity Farandole)
+    - Fixed vanilla slot keybinds not working if they were bound with a modifier (shift, ctrl, etc.)
+- **Inventory Multiselect**: multi-select is now canceled when switching inventory filters or sorting to avoid visual artifacts
+- **Codex**: fixed Rod of Abeyance and Rod of Convicition's keywords being mixed up in the filters
+- **Quick Loot**:
+    - Fixed search not working in very specific areas of the campaign (ex. Peacemaker shipwreck, Blackpits docks) that had different logic for treasure level
+    - Fixed outlines not being removed when canceling a search
+- **Quick Examine**:
+    - Fixed error when a character had items equipped in the hidden slots (overhead, wings, etc.), ex. Inner Demon
+- Fixed the "Show aggro information" setting not showing in the settings menu
+- Fixed summon names not displaying correctly in ex. status source tooltips
+- The "Show fog of war" setting no longer tries to run in GM mode, so the custom scripts to workaround the crashes with it should no longer be necessary
+- Fixed entering empty text into message boxes not working correctly
+
+Localizations:
+    - Various old dropdown & button texts in the settings menu have been made translatable
+    - Fixed the "Keywords & Misc." text not being included in the translation sheet for some languages
+
+<details markdown=1>
+<summary>Fixes for various benign console warnings/errors</summary>
+- Fixed a stack overflow error if the vanilla "Show world tooltips" and Epip "Toggle world tooltips" keybinds were bound to the same keys
+- Fixed an error message when the stats tab updates for non-controlled player characters
+- Fixed a hotbar error message when entering combat
+- Fixed an error message while loading when using the mod as a pak
+- Fixed benign error messages when items were being equipped or status were applied right when their characters died (ex. summoning out of combat)
+- Fixed benign Vanity error messages in character creation
+- Fixed benign Hotbar Groups error message when exiting character
+- Fixed a benign error when trying to load Vanity settings for new users that don't have any creation
+- **Animation Cancelling**: fixed benign error message when picking up items from a container in the world if "Speed up world tooltip item pick-ups" was enabled
+- Fixed more benign error messages:
+    - Hotbar Groups during loading if a group had "snap to hotbar" enabled
+    - Inventory Multi-select when dropping items (small regression)
+    - Checking to unlearn skills the character doesn't have (likely due to delayed tooltips while unlearning)
+- Removed some stray prints from old scripts
+- Updated some older scripts to filter out their logging by default
+- Fixed error message from sorting equipment in Quick Find if EE was not enabled
+- Fixed benign error message from context menu when right-clicking items/characters
+- Fixed a ton of warnings related to the context menu (I think like 90% of the "type mismatch" warnings were from that UI lol)
+</details>
+
+<details markdown="1">
+<summary>Technical stuff</summary>
+- **Custom Scripts**: you can now enter a folder name to register `Shared.lua`, `Client.lua` and `Server.lua` scripts from it automatically at once
+- ItemLib: added GetGrantedSkills(), INVENTORY_TYPES enum and INVENTORY_TEXTURES map
+    - Fixed return value types for rune getters
+- Replaced some stray always-enabled log calls
+- Fixed Client.IsActiveCombatant() to always return boolean
+- Bedazzled:
+    - Fixed GetGemSpawnWeight hook and typos in annotations
+    - Exposed UI.DefaultModifierSettings add InstantiateGameMode hook
+    - Added MatchScoreFlyoverCreated event; flyovers are now also created regardless of whether matches affect score
+    - Added a Reason field to GameOver event, shown in the UI
+    - Scores can no longer become negative
+    - Improved type annotations, added constants for the rune modifiers and their order
+- StatsLib: can now call GetStatusIcon() using a stats object instead of status instance
+- GenericUI:
+    - Added TypewriterText prefab, which animates displaying text using a typewriter effect (like typical dialog boxes in other games)
+    - Added FormLabel prefab; a form-like prefab that just displays non-interactable text on the right
+- TextLib: added StripFormatting() and GetTranslatedStringData()
+- IconPicker now includes container icons
+- `TooltipLib`:
+    - Added support for tooltips from the Examine UI
+    - Added support for Character Creation ability tooltips
+    - This makes features like status source text work with them, and fixes console warnings coming from those tooltips
+- Added type & method annotations for `Client.UI.ContextMenu`
+</details>
+
+## v1074 - 26/10/2025 - The non-summer non-major update
 
 Long time no see! The main focus of this patch is updating older features to make them localizable; this includes our **Improved Combat Log** 📜, one of Epip's oldest features, which means that message filtering & merging should now work for all game languages! 🌐✨
 

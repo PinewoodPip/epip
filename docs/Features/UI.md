@@ -68,7 +68,7 @@ Accessible through <b>Options -> Epip settings -> General -> Show Aggro Informat
 
 ### Treasure Display
 An option has been added to display noteworthy EE item drops of enemies and containers on their health bar. For characters, this only shows while holding shift. Changes and special cases from Derpy's Tweaks are supported.
-Accessible through **Epip Settings -> General -> Character Level Display**, disabled by default.  
+Accessible through **Epip Settings -> General -> Show loot drops in health bar**, disabled by default.  
 
 ![Treasure display option.](img/ui/treasure_display.png)
 
@@ -106,6 +106,11 @@ You can right-click your portraits to open a context menu where you can hide the
 The character sheet now shows physical and piercing resistances.
 
 ![Charsheet res](img/ui/resistances.png)
+
+Additional improvements:
+
+- The "Next level" label now displays the percentage progress to the next level up.
+- The tooltip for the damage label now includes a damage type breakdown of your basic attack.
 
 The tags tab is replaced with a brand new "Keywords and misc." tab.  
 It's full of useful information, such as:

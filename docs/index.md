@@ -9,7 +9,7 @@ Vast customization for Epip's features is available through an in-game [settings
 ## Download & links
 
 !!! info ""
-    **[Latest release download, v1074](patchnotes.md) (26/10/25, The non-summer non-major update)**
+    **[Latest release download, v1075](patchnotes.md) - 1/04/26, The 5th anniversary patch!**
 
     See the [patchnotes](patchnotes.md) page for the latest additions.
 
@@ -35,6 +35,7 @@ Special thanks to:
 - Cathe for contributing to the feature showcases on this website, as well as some code and proof-reading
 - Derpy Moa for motivation and initial ideas
 - JoienReid, Clibanarius, AQUACORAL, Farandole and the entire EE community for continuous support, inspiration and bug-reporting
+- willfindlay for various contributions to the Quick Loot feature
 
 Translators:
 
