@@ -12,7 +12,7 @@ As of 1st of April, Epip is now 5️⃣ years old! That's half a decade of Epipi
 
 It's a crazy milestone, and I'm incredibly grateful for all the support - I hope Epip will continue making your playthroughs more enjoyable for many years to come! 🥳
 
-As usual, we've got an Anniversary Patch ™ that brings the usual set of new features, small improvements and many fixes for issues reported the past few months. Also, a teaser for something new 👀
+As usual, we've got an **Anniversary Patch ™** that brings the usual set of new features, small improvements and many fixes for issues reported the past few months. Also, a teaser for something new 👀
 
 ### Anniversary shenanigans
 
@@ -34,7 +34,7 @@ Now, back to the anniversary patch changelog:
 ---
 
 ### [Quick Loot](Features/QuickLoot.md)
-Quick Loot got some neat new features and improvements, credits to willfindlay for contributing them on our [GitHub](https://github.com/pinewoodpip/epipencounters/)!
+Quick Loot got some neat new features and improvements, credits to William Findlay for contributing them on our [GitHub](https://github.com/pinewoodpip/epipencounters/)!
 
 - Activating Quick Loot while sneaking now lets you steal NPC-owned items on the ground or in containers 🥷
     - **Stealing items this way will still trigger crimes**
@@ -70,7 +70,7 @@ Transmog has received some improvements:
 
 - Visuals are now automatically registered to the Transmog UI for all mods loaded, meaning there's no need to make compatibility patches for them anymore
     - As a result, GB5️⃣ Armor Sets and EE Artifacts are now available for Transmog!
-- Improved detection of which visuals are weapons; as a result, uniques that were previously missing such as Alexandar's Staff are now available!
+- Improved detection of which visuals are weapons; as a result, uniques that were previously missing such as Alexandar's Staff are now available! 🪄
 
 <center markdown="1">![Armor Sets and new uniques in Transmog.](Features/img/vanity/armor_sets.png)</center>
 <center markdown="1"><i>Armor Sets and new uniques in Transmog.</i></center>
@@ -151,8 +151,9 @@ Transmog has received some improvements:
 - Fixed entering empty text into message boxes not working correctly
 
 Localizations:
-    - Various old dropdown & button texts in the settings menu have been made translatable
-    - Fixed the "Keywords & Misc." text not being included in the translation sheet for some languages
+
+- Various old dropdown & button texts in the settings menu have been made translatable
+- Fixed the "Keywords & Misc." text not being included in the translation sheet for some languages
 
 <details markdown=1>
 <summary>Fixes for various benign console warnings/errors</summary>

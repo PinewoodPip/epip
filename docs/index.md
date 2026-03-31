@@ -35,7 +35,7 @@ Special thanks to:
 - Cathe for contributing to the feature showcases on this website, as well as some code and proof-reading
 - Derpy Moa for motivation and initial ideas
 - JoienReid, Clibanarius, AQUACORAL, Farandole and the entire EE community for continuous support, inspiration and bug-reporting
-- willfindlay for various contributions to the Quick Loot feature
+- William Findlay for various contributions to the Quick Loot feature
 
 Translators:
 
